@@ -1,0 +1,23 @@
+\begin{tikzpicture}[
+  chart/.style={draw, rounded corners, minimum width=3.2cm, minimum height=1.1cm, align=center},
+  gen/.style={draw, rounded corners, dashed, minimum width=3.2cm, minimum height=1.1cm, align=center},
+  arrow/.style={->, thick},
+  badarrow/.style={->, thick, dashed},
+  note/.style={align=center, font=\small}
+]
+
+\node[chart] (A) at (0,0) {Local chart\\$F_{1,\alpha}\cong\mathbb H$};
+\node[chart] (B) at (6.0,0) {Local chart\\$F_{1,\beta}\cong\mathbb H$};
+
+\node[chart] (C) at (0,-3) {Existing chart\\admissible fold};
+\node[gen] (D) at (6.0,-3) {Generated chart\\$\operatorname{normGen}(B)$};
+
+\draw[arrow] (A) -- node[left, note] {admissible\\transition} (C);
+\draw[badarrow] (B) -- node[right, note] {residual\\transition} (D);
+
+\draw[thick, dotted] ([yshift=0.45cm]A.east) -- ([yshift=0.45cm]B.west);
+\node[note] at (3.0,0.95) {local isomorphism\\does not imply identity};
+
+\node[note] at (3.0,-4.4) {Global collapse is allowed only by admissible equivalence.};
+
+\end{tikzpicture}
