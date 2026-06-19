@@ -80,7 +80,7 @@ Figure~\ref{fig:local-global-collapse} summarizes the central distinction.
 \begin{figure}[t]
 \centering
 \input{figures/local_global_collapse.tikz}
-\caption{Local closure does not imply global collapse. A solid arrow denotes an admissible transition; a dashed arrow denotes a residual transition.}
+\caption{Local closure does not imply global collapse. A solid arrow denotes an admissible transition as described in Section~\ref{sec:admissible-transitions}; a dashed arrow denotes a residual transition as described in Section~\ref{sec:residual-transitions}. The generated chart is normalized rather than collapsed, reflecting the Gen-normalization procedure of Section~\ref{sec:gen-normalization}.}
 \label{fig:local-global-collapse}
 \end{figure}
 
@@ -268,6 +268,7 @@ However, for $\alpha\neq\beta$, we do not identify $F_{1,\alpha}$ and $F_{1,\bet
 Thus two elements with the same coordinate expression in two different charts remain distinct unless an admissible equivalence is explicitly given.
 
 \section{Admissible Transitions}
+\label{sec:admissible-transitions}
 
 A transition
 \[
@@ -292,7 +293,41 @@ The admissible equivalence relation is generated only by such structure-preservi
 
 Residual transitions are not included in admissible equivalence.
 
+\subsection*{Operational criterion for admissibility}
+
+In the present version, admissibility is treated as a structural condition rather than as a fully implemented decision procedure. A transition
+\[
+T_{\beta\alpha}:F_{1,\alpha}\to F_{1,\beta}
+\]
+is admissible only if it preserves all data required to regard the two local charts as the same chart for the purposes of the current construction.
+
+Concretely, the intended admissibility criterion consists of the following preservation requirements:
+\begin{enumerate}
+  \item \textbf{unit preservation}:
+  \[
+  T_{\beta\alpha}(e_{0,\alpha})=e_{0,\beta};
+  \]
+  \item \textbf{multiplication preservation}:
+  \[
+  T_{\beta\alpha}(xy)=T_{\beta\alpha}(x)T_{\beta\alpha}(y);
+  \]
+  \item \textbf{conjugation preservation}:
+  \[
+  T_{\beta\alpha}(x^*)=T_{\beta\alpha}(x)^*;
+  \]
+  \item \textbf{local trace preservation}:
+  \[
+  Q_\beta(T_{\beta\alpha}(x))=Q_\alpha(x);
+  \]
+  \item \textbf{boundary preservation}, meaning that generated boundary data is mapped to boundary data with the same structural origin.
+\end{enumerate}
+
+The abstract predicate \texttt{ExistingBoundary} in the minimal Lean kernel should be read as a placeholder for the case where these preservation requirements have already been satisfied at the boundary level. It is not intended to identify charts merely because they are algebraically isomorphic.
+
+A full decision procedure for admissibility, including boundary isomorphism and residual purity, is deferred to later versions.
+
 \section{Residual Transitions}
+\label{sec:residual-transitions}
 
 A transition that fails to preserve the required data is called \textbf{residual}.
 
@@ -349,6 +384,7 @@ The boundary of the generated chart records its origin:
 Generated charts are therefore not identified solely by algebraic isomorphism. Their boundary data is part of their identity.
 
 \section{Gen-Normalization}
+\label{sec:gen-normalization}
 
 Gen-normalization determines whether a generated chart can be folded into an existing admissible chart or must be retained as a new normalized residual chart.
 
@@ -363,6 +399,7 @@ The normalization procedure follows four informal rules.
 The purpose of normalization is not to erase residuals. It is to prevent repeated unresolved generation while preserving non-admissible differences.
 
 \section{Minimal Rewriting Kernel}
+\label{sec:minimal-rewriting-kernel}
 
 A minimal rewriting kernel can be isolated as follows.
 
@@ -378,6 +415,29 @@ A one-step reduction relation $Red$ includes:
 \end{enumerate}
 
 In the restricted kernel, pure transport is temporarily excluded from $Red$ until a transport cost, a transport normality condition, or a separate preprocessing relation is introduced.
+
+\subsection*{Why transport is excluded from the restricted kernel}
+
+The relation \texttt{PureMove} represents admissible transport between local elements. It is declared in the Lean kernel but intentionally excluded from the restricted reduction relation $Red$.
+
+The reason is technical. A transport step may preserve both
+\[
+openGenCount
+\]
+and
+\[
+termSize.
+\]
+If such a step were included without an additional decreasing measure, the restricted termination proof would no longer be immediate.
+
+Future versions may restore transport in one of three ways:
+\begin{enumerate}
+  \item by assigning a \textbf{transport cost} that strictly decreases along admissible transport chains;
+  \item by requiring a \textbf{transport normality} condition, so that transport is performed only as a preprocessing step;
+  \item by separating transport from $Red$ and treating it as an equivalence-side operation rather than as a reduction step.
+\end{enumerate}
+
+In v0.2-pre, the goal is deliberately narrower: to isolate a terminating Gen-normalization core before restoring the full transport system.
 
 A lightweight measure is defined by
 \[
