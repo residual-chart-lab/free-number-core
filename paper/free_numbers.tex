@@ -3,6 +3,7 @@
 \usepackage[a4paper,margin=1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage{tikz}
+\usetikzlibrary{positioning,calc}
 \usepackage{booktabs}
 \usepackage{hyperref}
 \usepackage{listings}
@@ -16,7 +17,7 @@
 }
 
 \lstdefinelanguage{Lean}{
-  morekeywords={namespace,abbrev,structure,where,inductive,def,constant,theorem,by,Prop,Nat,Type,deriving,Repr,DecidableEq,not,Exists,fun,exact,cases,simp,end},
+  morekeywords={namespace,abbrev,structure,where,inductive,def,axiom,theorem,by,Prop,Nat,Type,deriving,Repr,DecidableEq,Not,Exists,fun,exact,cases,simp,end},
   sensitive=true,
   morecomment=[l]{--},
   morecomment=[s]{/-}{-/},
@@ -40,7 +41,7 @@
 
 \title{Free Numbers:\\Local Quaternionic Closure and Global Residual Chart Normalization\\\large A Non-Collapsing Quaternionic Chart Algebra}
 \author{Free Number Authors}
-\date{Version v0.2-pre\\2026-06-19}
+\date{Version v0.2-pre.2\\2026-06-21}
 
 \begin{document}
 \maketitle
@@ -135,6 +136,12 @@ In particular, this paper does not assume:
 \end{enumerate}
 
 The global structure $F$ is not identified with $\mathbb H$. Only the local closure $F_1$ is quaternionic.
+
+The current Lean mini-kernel uses \texttt{Nat} tags for \texttt{Chart} and \texttt{LocalId}. These tags are provisional syntactic labels only. In particular, chart distinctness, disjoint-copy semantics, and boundary isomorphism are not yet enforced at the kernel level. The kernel proves termination of the restricted Gen-normalization core only; it does not yet formalize the full non-identical-copy semantics of
+\[
+\bigsqcup_{\alpha} F_{1,\alpha}.
+\]
+These components are deferred to later versions under chart-distinctness refinement, \texttt{BoundaryIso}, and \texttt{EqAdm}.
 
 \section{Local Closure \texorpdfstring{$F_1$}{F1}}
 
@@ -437,13 +444,17 @@ Future versions may restore transport in one of three ways:
   \item by separating transport from $Red$ and treating it as an equivalence-side operation rather than as a reduction step.
 \end{enumerate}
 
-In v0.2-pre, the goal is deliberately narrower: to isolate a terminating Gen-normalization core before restoring the full transport system.
+In v0.2-pre.2, the goal remains deliberately narrower: to isolate a terminating Gen-normalization core before restoring the full transport system.
 
-A lightweight measure is defined by
+A lightweight measure is defined by the repeated-addition form
 \[
-weight(X)=2\cdot openGenCount(X)+termSize(X).
+weight(X)=openGenCount(X)+openGenCount(X)+termSize(X).
 \]
-For the restricted kernel, every one-step reduction strictly decreases this measure:
+This is mathematically equal to
+\[
+2\cdot openGenCount(X)+termSize(X),
+\]
+but the repeated-addition form matches the Lean kernel exactly and keeps the natural-number expression syntactically minimal. For the restricted kernel, every one-step reduction strictly decreases this measure:
 \[
 Red(X,Y)\Rightarrow weight(Y)<weight(X).
 \]
@@ -545,11 +556,24 @@ A minimal Lean-style rewriting kernel supports the claim that the restricted Gen
 
 The following appendix contains the minimal rewriting kernel used to represent terms, one-step reductions, transitive reductions, normal forms, and a decreasing weight measure. This kernel is intentionally restricted: pure transport is not yet included in the reduction relation.
 
+The termination theorem is proved relative to Lean's standard \texttt{propext} axiom together with the abstract relations \texttt{LocalMul}, \texttt{ExistingBoundary}, and \texttt{FreshBoundary}. Running
+\begin{lstlisting}[language=Lean]
+#print axioms FreeNumKernel.red_weight_decreases
+\end{lstlisting}
+is expected to list exactly these dependencies:
+\begin{lstlisting}[language=Lean]
+propext
+FreeNumKernel.ExistingBoundary
+FreeNumKernel.FreshBoundary
+FreeNumKernel.LocalMul
+\end{lstlisting}
+The abstract relation \texttt{PureMove} is declared but excluded from \texttt{Red}, and is therefore not expected to appear in this dependency list.
+
 \lstinputlisting[language=Lean]{../lean/Minimal.lean}
 
 \section{Axioms and Deferred Components}
 
-The present version separates proved components, definitional components, and deferred components. Table~\ref{tab:axioms} lists the abstract assumptions used in the minimal formal kernel and indicates their intended role in later versions.
+The present version separates proved components, definitional components, and deferred components. Table~\ref{tab:axioms} lists the abstract assumptions used in the minimal formal kernel and indicates their intended role in later versions. The dependency profile of \texttt{red\_weight\_decreases} is explicitly exposed rather than hidden: it is relative to \texttt{propext} and to the abstract relations A1--A3.
 
 \begin{table}[h]
 \centering
@@ -570,7 +594,7 @@ A9 & \texttt{EffectiveMagProjection} & Residual-sensitive scalar projection & De
 A10 & \texttt{TransportNormalizedReduction} & Restore transport into reduction & Deferred \\
 \bottomrule
 \end{tabular}
-\caption{Axioms and deferred components in v0.2-pre.}
+\caption{Axioms and deferred components in v0.2-pre.2.}
 \label{tab:axioms}
 \end{table}
 
@@ -578,6 +602,6 @@ The minimal kernel proves only the following restricted claim:
 \[
 Red(X,Y)\Rightarrow weight(Y)<weight(X).
 \]
-This establishes termination for the restricted Gen-normalization core, not for the full admissible transport system.
+This establishes termination for the restricted Gen-normalization core, not for the full admissible transport system. It is not a proof of weak confluence, global normal-form uniqueness, full admissible transport, or full chart-distinctness semantics.
 
 \end{document}
