@@ -1,4 +1,4 @@
-﻿# No-Go Note: Single Quaternionic Compression Cannot Preserve Residual History
+# No-Go Note: Single Quaternionic Compression Cannot Preserve Residual History
 
 > Subtitle: local closure does not imply global collapse
 
@@ -19,7 +19,7 @@ Let $B_2$ be the two-letter boundary-word space:
 
 $$
 B_2=
-\\mathrm{span}_{\mathbb R}
+\mathrm{span}_{\mathbb R}
 \{\,i\mid i,\ i\mid j,\ j\mid i,\ j\mid j\,\}.
 $$
 
@@ -87,7 +87,7 @@ Hence
 
 $$
 \ker m_2=
-\\mathrm{span}_{\mathbb R}
+\mathrm{span}_{\mathbb R}
 \{\,i\mid i-j\mid j,\ i\mid j+j\mid i\,\}.
 $$
 
@@ -188,7 +188,7 @@ $$
 Then
 
 $$
-Q_2=\\mathrm{span}_{\mathbb R}\{e,\kappa\}.
+Q_2=\mathrm{span}_{\mathbb R}\{e,\kappa\}.
 $$
 
 Moreover,
@@ -286,7 +286,7 @@ Several attempted escapes collapse back into the same obstruction.
 Using only the commutator
 
 $$
-R_i,R_j=2k
+R_i,R_j(1)=2k
 $$
 
 detects quaternionic noncommutativity.
