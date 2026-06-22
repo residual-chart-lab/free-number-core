@@ -1,884 +1,549 @@
-# \# No-Go Note: Single Quaternionic Compression Cannot Preserve Residual History
+# No-Go Note: Single Quaternionic Compression Cannot Preserve Residual History
 
-# 
+> **Subtitle:** local closure does not imply global collapse
 
-# 副題：
+## 0. Scope
 
-# 
+This note does **not** claim that free numbers are impossible.
 
-# > local closure does not imply global collapse
+It proves a narrower no-go result:
 
-# 
+$$
+\boxed{
+\text{Within a single compression model } m:B\to\mathbb H,
+\text{ residual detection and history preservation cannot be achieved at the same time.}
+}
+$$
 
-# \## 0. Scope
+Here, (B) is a boundary-word space and (\mathbb H) is the quaternion algebra.
 
-# 
+The purpose of this note is to record the limitation of the single-compression model.
+The conclusion is not that the free-number program fails, but that the next formulation must move beyond a single projection into (\mathbb H), most likely toward a staged, Hopf-algebraic, or renormalization-like structure.
 
-# This note does \*\*not\*\* claim that free numbers are impossible.
+---
 
-# 
+## 1. Boundary-word space
 
-# It proves a narrower no-go result:
+Let
 
-# 
+$$
+B_2=
+\mathrm{span}_{\mathbb R}
+{,i|i,\ i|j,\ j|i,\ j|j,}
+$$
 
-# \[
+be the two-letter boundary-word space.
 
-# \\boxed{
+Define the quaternionic compression map
 
-# \\text{Within a single compression model } m:B\\to\\mathbb H,
+$$
+m_2:B_2\to\mathbb H
+$$
 
-# \\text{ residual detection and history preservation cannot be achieved at the same time.}
+by
 
-# }
+$$
+m_2(a|b)=ba.
+$$
 
-# ]
+Using the quaternion relations
 
-# 
+$$
+i^2=j^2=k^2=-1,
+\qquad
+ij=k,
+\qquad
+ji=-k,
+$$
 
-# Here (B) is a boundary-word space and (\\mathbb H) is the quaternion algebra.
+we have
 
-# 
+$$
+m_2(i|i)=-1,
+$$
 
-# The point of this note is to record why the single-compression model is insufficient, so that the next formulation must move to a staged or Hopf-algebraic structure.
+$$
+m_2(i|j)=ji=-k,
+$$
 
-# 
+$$
+m_2(j|i)=ij=k,
+$$
 
-# \---
+$$
+m_2(j|j)=-1.
+$$
 
-# 
+---
 
-# \## 1. Boundary-word space
+## 2. Kernel calculation
 
-# 
+Take a general element
 
-# Let
+$$
+x=
+\alpha(i|i)+\beta(i|j)+\gamma(j|i)+\delta(j|j).
+$$
 
-# 
+Then
 
-# \[
+$$
+m_2(x)
+======
 
-# B\_2=
+-(\alpha+\delta)+(\gamma-\beta)k.
+$$
 
-# \\mathrm{span}\_{\\mathbb R}
+Therefore,
 
-# {i|i,\\ i|j,\\ j|i,\\ j|j}
+$$
+m_2(x)=0
+$$
 
-# ]
+if and only if
 
-# 
+$$
+\alpha+\delta=0,
+\qquad
+\gamma-\beta=0.
+$$
 
-# be the two-letter boundary-word space.
+Hence
 
-# 
+$$
+\boxed{
+\ker m_2
+========
 
-# Define the quaternionic compression map
+\mathrm{span}_{\mathbb R}
+{,i|i-j|j,\ i|j+j|i,}.
+}
+$$
 
-# 
+This is the first stable result.
 
-# \[
+The quaternionic compression kills the symmetric mixed component
 
-# m\_2:B\_2\\to\\mathbb H
+$$
+i|j+j|i,
+$$
 
-# ]
+because
 
-# 
+$$
+m_2(i|j+j|i)=ji+ij=-k+k=0.
+$$
 
-# by
+By contrast, the antisymmetric component survives.
 
-# 
+---
 
-# \[
+## 3. Boundary antisymmetry leakage
 
-# m\_2(a|b)=ba.
+Define the boundary antisymmetry
 
-# ]
+$$
+\Delta_\partial(i|j)=i|j-j|i.
+$$
 
-# 
+Then
 
-# Using
+$$
+m_2(\Delta_\partial(i|j))
+=========================
 
-# 
+# m_2(i|j)-m_2(j|i)
 
-# \[
+ji-ij.
+$$
 
-# i^2=j^2=k^2=-1,\\qquad ij=k,\\qquad ji=-k,
+Since
 
-# ]
+$$
+ji=-k,
+\qquad
+ij=k,
+$$
 
-# 
+we get
 
-# we have
+$$
+m_2(\Delta_\partial(i|j))
+=========================
 
-# 
+-2k\neq0.
+$$
 
-# \[
+Therefore
 
-# m\_2(i|i)=-1,
+$$
+\boxed{
+\Delta_\partial(i|j)\notin\ker m_2.
+}
+$$
 
-# ]
+This gives the minimal residual obstruction:
 
-# 
+$$
+\boxed{
+\Omega_{\min}=[\Delta_\partial(i|j)]\neq0.
+}
+$$
 
-# \[
+This is a hand-computable model of the principle:
 
-# m\_2(i|j)=ji=-k,
+$$
+\boxed{
+\text{local closure does not imply global collapse.}
+}
+$$
 
-# ]
+---
 
-# 
+## 4. Residual quotient
 
-# \[
+Define
 
-# m\_2(j|i)=ij=k,
+$$
+Q_2=B_2/\ker m_2.
+$$
 
-# ]
+Since
 
-# 
+$$
+\dim B_2=4,
+\qquad
+\dim\ker m_2=2,
+$$
 
-# \[
+we have
 
-# m\_2(j|j)=-1.
+$$
+\dim Q_2=2.
+$$
 
-# ]
+Let
 
-# 
+$$
+e=-[i|i],
+\qquad
+\kappa=[j|i].
+$$
 
-# \---
+Then
 
-# 
+$$
+Q_2=
+\mathrm{span}_{\mathbb R}{e,\kappa}.
+$$
 
-# \## 2. Kernel calculation
+Moreover,
 
-# 
+$$
+[i|j]=-[j|i]=-\kappa.
+$$
 
-# Take a general element
+Thus
 
-# 
+$$
+[\Delta_\partial(i|j)]
+======================
 
-# \[
+# [i|j]-[j|i]
 
-# x=
+-2\kappa.
+$$
 
-# \\alpha(i|i)+\\beta(i|j)+\\gamma(j|i)+\\delta(j|j).
+So
 
-# ]
+$$
+\boxed{
+\Omega_{\min}=-2\kappa\neq0.
+}
+$$
 
-# 
+The local image of (Q_2) is
 
-# Then
+$$
+\mathbb R\oplus\mathbb R k\subset\mathbb H.
+$$
 
-# 
+Thus
 
-# \[
+$$
+Q_2\cong\mathbb C_k.
+$$
 
-# m\_2(x)
+This observation is important.
 
-# ======
+Although (Q_2) is produced as a residual quotient, its local algebraic image is the familiar complex plane (\mathbb C_k\subset\mathbb H). Therefore, (Q_2) alone cannot be claimed as a new multiplication table or a new algebraic object.
 
-# 
+The positive result is not that (Q_2) is a new algebra.
+The positive result is that the boundary antisymmetry (\Delta_\partial(i|j)) fails to lie in (\ker m_2).
 
-# \-(\\alpha+\\delta)+(\\gamma-\\beta)k.
+---
 
-# ]
+## 5. The no-go
 
-# 
+The single-compression model faces the following obstruction.
 
-# Therefore
+To detect the residual obstruction, we quotient by the kernel:
 
-# 
+$$
+Q_2=B_2/\ker m_2.
+$$
 
-# \[
+This makes
 
-# m\_2(x)=0
+$$
+\Omega_{\min}=[\Delta_\partial]\neq0
+$$
 
-# ]
+visible as a residual class.
 
-# 
+However, quotienting also removes the detailed boundary-word information contained in (\ker m_2).
 
-# if and only if
+If we want the erased history to affect later operations, we must retain the pre-quotient word space (B_2). But then the later effect is produced by information retained in (B_2), not by (Q_2) itself.
 
-# 
+Hence the tension:
 
-# \[
+$$
+\boxed{
+\text{To obtain }\Omega\text{, we quotient by }\ker m.
+}
+$$
 
-# \\alpha+\\delta=0,
+$$
+\boxed{
+\text{To preserve history for later operations, we must retain the pre-quotient boundary words.}
+}
+$$
 
-# \\qquad
+Thus:
 
-# \\gamma-\\beta=0.
+$$
+\boxed{
+\text{In a single compression model }m:B\to\mathbb H,
+\Omega\text{ and history preservation are structurally incompatible.}
+}
+$$
 
-# ]
+This is the no-go result.
 
-# 
+---
 
-# Hence
+## 6. Failed escape routes
 
-# 
+Several attempted escapes collapse back into the same obstruction.
 
-# \[
+### 6.1 Value-level noncommutativity
 
-# \\boxed{
+Using only
 
-# \\ker m\_2
+$$
+[R_i,R_j](1)=2k
+$$
 
-# ========
+detects quaternionic noncommutativity, but the result remains inside (\mathbb H).
 
-# 
+So it is absorbed as an ordinary quaternionic value.
 
-# \\mathrm{span}\_{\\mathbb R}
+This does not produce a residual object outside the local algebra.
 
-# {,i|i-j|j,\\ i|j+j|i,}.
+---
 
-# }
+### 6.2 Adding (\varepsilon\mathbb H)
 
-# ]
+Introducing an auxiliary residual grade such as
 
-# 
+$$
+\mathbb H\oplus\varepsilon\mathbb H
+$$
 
-# This is the first stable result.
+can create a nonzero term.
 
-# 
+However, unless the residual grade has an independent structural role, it is either an enlarged algebra or an artificially retained term.
 
-# The quaternionic compression kills the symmetric mixed component
+It does not solve the single-compression problem.
 
-# 
+The issue is not merely that some extra symbol can be retained.
+The issue is whether the retained information survives in a way that is not reducible to the local projection into (\mathbb H).
 
-# \[
+---
 
-# i|j+j|i,
+### 6.3 Adding an external tag (\eta_{ij})
 
-# ]
+Writing a residual as
 
-# 
+$$
+(-2k)\eta_{ij}
+$$
 
-# because
+prevents absorption into (\mathbb H), but only by adding a non-absorbed tag by hand.
 
-# 
+This is not a structural derivation.
 
-# \[
+It is equivalent to declaring that the history should not be forgotten, rather than deriving a mechanism by which the history remains active.
 
-# m\_2(i|j+j|i)=ji+ij=-k+k=0.
+---
 
-# ]
+### 6.4 Keeping a presentation
 
-# 
+One may keep the short exact sequence
 
-# By contrast, the antisymmetric component survives.
+$$
+0\to K_2\to B_2\to Q_2\to0
+$$
 
-# 
+and define obstruction maps from (K_2) to later quotients.
 
-# \---
+This is technically meaningful.
 
-# 
+For example, with
 
-# \## 3. Boundary antisymmetry leakage
+$$
+K_2=\ker m_2,
+$$
 
-# 
+one can take
 
-# Define the boundary antisymmetry
+$$
+\sigma=i|j+j|i\in K_2
+$$
 
-# 
+and define an internal insertion
 
-# \[
+$$
+I_i(a|b)=a|i|b.
+$$
 
-# \\Delta\_\\partial(i|j)=i|j-j|i.
+Then
 
-# ]
+$$
+I_i(\sigma)=i|i|j+j|i|i.
+$$
 
-# 
+Using
 
-# Then
+$$
+m_3(a|b|c)=cba,
+$$
 
-# 
+we get
 
-# \[
+$$
+m_3(i|i|j)=jii=-j,
+$$
 
-# m\_2(\\Delta\_\\partial(i|j))
+and
 
-# =========================
+$$
+m_3(j|i|i)=iij=-j.
+$$
 
-# 
+Therefore
 
-# \# m\_2(i|j)-m\_2(j|i)
+$$
+m_3(I_i(\sigma))=-2j\neq0.
+$$
 
-# 
+This shows that
 
-# ji-ij.
+$$
+I_i(K_2)\not\subset \ker m_3.
+$$
 
-# ]
+So the kernel of one stage is not stable under the next insertion.
 
-# 
+This is an important signal.
+However, it does not yet solve the no-go.
 
-# Since
+The reason is that this effect depends on retaining the (B_2)-level word information. In (Q_2=B_2/K_2), the element (\sigma) is already zero:
 
-# 
+$$
+[\sigma]=0\in Q_2.
+$$
 
-# \[
+Thus the insertion calculation uses information from the pre-quotient presentation, not from (Q_2) alone.
 
-# ji=-k,\\qquad ij=k,
+Keeping the presentation is a meaningful record of origin, but it does not by itself produce a non-projective residual object inside the single-compression model.
 
-# ]
+---
 
-# 
+## 7. The criterion for the next formulation
 
-# we get
+The core test is:
 
-# 
+$$
+\boxed{
+\text{Does the structure carry information that is not killed by }\Phi?
+}
+$$
 
-# \[
+Here (\Phi) denotes the local projection or local image into (\mathbb H).
 
-# m\_2(\\Delta\_\\partial(i|j))
+The failed attempts above all collapse because the relevant information is either:
 
-# =========================
+1. absorbed into (\mathbb H), or
+2. retained only by keeping the pre-quotient word space (B_2), or
+3. added as an external tag.
 
-# 
+Therefore, the next formulation must carry data that is not reducible to the local quaternionic image.
 
-# \-2k\\neq0.
+This suggests that a staged, Hopf-algebraic, or Connes-Kreimer-like renormalization structure is required.
 
-# ]
+The essential requirement is:
 
-# 
+$$
+\boxed{
+\text{The next structure must contain non-projective data not killed by }\Phi.
+}
+$$
 
-# Therefore
+---
 
-# 
+## 8. Conclusion
 
-# \[
+The stable positive result is:
 
-# \\boxed{
+$$
+\boxed{
+\Delta_\partial(i|j)\notin\ker m_2.
+}
+$$
 
-# \\Delta\_\\partial(i|j)\\notin\\ker m\_2.
+The stable negative result is:
 
-# }
+$$
+\boxed{
+\text{A single quaternionic compression can detect a residual obstruction, but cannot also preserve the history needed for later causal propagation.}
+}
+$$
 
-# ]
+Therefore, this no-go does not refute free numbers.
 
-# 
+It shows that the single-compression model is too small.
 
-# This gives the minimal residual obstruction:
+The next formulation must carry information that is not destroyed by the local projection
 
-# 
+$$
+\Phi:\text{residual structure}\to\mathbb H.
+$$
 
-# \[
+A natural candidate is a staged, Hopf-algebraic, or Connes-Kreimer-like renormalization structure.
 
-# \\boxed{
+However, the free-number direction must retain the distinction:
 
-# \\Omega\_{\\min}=\[\\Delta\_\\partial(i|j)]\\neq0.
+$$
+\boxed{
+\text{Connes-Kreimer: grafting first.}
+}
+$$
 
-# }
+$$
+\boxed{
+\text{Free numbers: quaternionic local rigidity first.}
+}
+$$
 
-# ]
-
-# 
-
-# This is a hand-computable model of the principle:
-
-# 
-
-# \[
-
-# \\boxed{
-
-# \\text{local closure does not imply global collapse.}
-
-# }
-
-# ]
-
-# 
-
-# \---
-
-# 
-
-# \## 4. Residual quotient
-
-# 
-
-# Define
-
-# 
-
-# \[
-
-# Q\_2=B\_2/\\ker m\_2.
-
-# ]
-
-# 
-
-# Since
-
-# 
-
-# \[
-
-# \\dim B\_2=4,
-
-# \\qquad
-
-# \\dim\\ker m\_2=2,
-
-# ]
-
-# 
-
-# we have
-
-# 
-
-# \[
-
-# \\dim Q\_2=2.
-
-# ]
-
-# 
-
-# Let
-
-# 
-
-# \[
-
-# e=-\[i|i],
-
-# \\qquad
-
-# \\kappa=\[j|i].
-
-# ]
-
-# 
-
-# Then
-
-# 
-
-# \[
-
-# Q\_2=
-
-# \\mathrm{span}\_{\\mathbb R}{e,\\kappa}.
-
-# ]
-
-# 
-
-# Moreover,
-
-# 
-
-# \[
-
-# \[i|j]=-\[j|i]=-\\kappa.
-
-# ]
-
-# 
-
-# Thus
-
-# 
-
-# \[
-
-# \[\\Delta\_\\partial(i|j)]
-
-# ======================
-
-# 
-
-# \# \[i|j]-\[j|i]
-
-# 
-
-# \-2\\kappa.
-
-# ]
-
-# 
-
-# So
-
-# 
-
-# \[
-
-# \\boxed{
-
-# \\Omega\_{\\min}=-2\\kappa\\neq0.
-
-# }
-
-# ]
-
-# 
-
-# The local image of (Q\_2) is
-
-# 
-
-# \[
-
-# \\mathbb R\\oplus\\mathbb R k\\subset\\mathbb H.
-
-# ]
-
-# 
-
-# Thus
-
-# 
-
-# \[
-
-# Q\_2\\cong\\mathbb C\_k.
-
-# ]
-
-# 
-
-# This observation is important: (Q\_2) is not a new multiplication table. Locally, it is isomorphic to the familiar complex plane inside (\\mathbb H).
-
-# 
-
-# Therefore, (Q\_2) alone cannot be claimed as a new algebraic object.
-
-# 
-
-# \---
-
-# 
-
-# \## 5. The no-go
-
-# 
-
-# The single-compression model faces the following obstruction.
-
-# 
-
-# To detect the residual obstruction, we quotient by the kernel:
-
-# 
-
-# \[
-
-# Q\_2=B\_2/\\ker m\_2.
-
-# ]
-
-# 
-
-# This makes
-
-# 
-
-# \[
-
-# \\Omega\_{\\min}=\[\\Delta\_\\partial]\\neq0
-
-# ]
-
-# 
-
-# visible as a residual class.
-
-# 
-
-# However, quotienting also removes the detailed boundary-word information contained in (\\ker m\_2).
-
-# 
-
-# If we want the erased history to affect later operations, we must keep the pre-quotient word space (B\_2).
-
-# 
-
-# But then the later effect is produced by information retained in (B\_2), not by (Q\_2) itself.
-
-# 
-
-# Hence the tension:
-
-# 
-
-# \[
-
-# \\boxed{
-
-# \\text{To obtain }\\Omega\\text{, we quotient by }\\ker m.
-
-# }
-
-# ]
-
-# 
-
-# \[
-
-# \\boxed{
-
-# \\text{To preserve history for later operations, we must retain the pre-quotient boundary words.}
-
-# }
-
-# ]
-
-# 
-
-# Thus:
-
-# 
-
-# \[
-
-# \\boxed{
-
-# \\text{In a single compression model }m:B\\to\\mathbb H,
-
-# \\Omega\\text{ and history preservation are structurally incompatible.}
-
-# }
-
-# ]
-
-# 
-
-# This is the no-go result.
-
-# 
-
-# \---
-
-# 
-
-# \## 6. Failed escape routes
-
-# 
-
-# Several attempted escapes collapse back into the same obstruction.
-
-# 
-
-# \### 6.1 Value-level noncommutativity
-
-# 
-
-# Using only
-
-# 
-
-# \[
-
-# \[R\_i,R\_j](1)=2k
-
-# ]
-
-# 
-
-# detects quaternionic noncommutativity, but the result remains inside (\\mathbb H).
-
-# 
-
-# So it is absorbed as an ordinary quaternionic value.
-
-# 
-
-# \### 6.2 Adding (\\varepsilon\\mathbb H)
-
-# 
-
-# Introducing an auxiliary residual grade such as
-
-# 
-
-# \[
-
-# \\mathbb H\\oplus\\varepsilon\\mathbb H
-
-# ]
-
-# 
-
-# can create a nonzero term, but unless the residual grade has an independent structural role, it is either an enlarged algebra or an artificially retained term.
-
-# 
-
-# It does not solve the single-compression problem.
-
-# 
-
-# \### 6.3 Adding an external tag (\\eta\_{ij})
-
-# 
-
-# Writing a residual as
-
-# 
-
-# \[
-
-# (-2k)\\eta\_{ij}
-
-# ]
-
-# 
-
-# prevents absorption into (\\mathbb H), but only by adding a non-absorbed tag by hand.
-
-# 
-
-# This is not a structural derivation.
-
-# 
-
-# \### 6.4 Keeping a presentation
-
-# 
-
-# One may keep the short exact sequence
-
-# 
-
-# \[
-
-# 0\\to K\_2\\to B\_2\\to Q\_2\\to0
-
-# ]
-
-# 
-
-# and define obstruction maps from (K\_2) to later quotients.
-
-# 
-
-# This is technically meaningful.
-
-# 
-
-# However, any later effect obtained in this way depends on retaining (B\_2)-level word information.
-
-# 
-
-# Therefore it is not an effect of (Q\_2) alone.
-
-# 
-
-# The presentation records where the obstruction came from, but it does not by itself give a non-projective residual object inside the single-compression model.
-
-# 
-
-# \---
-
-# 
-
-# \## 7. Conclusion
-
-# 
-
-# The stable positive result is:
-
-# 
-
-# \[
-
-# \\boxed{
-
-# \\Delta\_\\partial(i|j)\\notin\\ker m\_2.
-
-# }
-
-# ]
-
-# 
-
-# The stable negative result is:
-
-# 
-
-# \[
-
-# \\boxed{
-
-# \\text{A single quaternionic compression can detect a residual obstruction, but cannot also preserve the history needed for later causal propagation.}
-
-# }
-
-# ]
-
-# 
-
-# Therefore, this no-go does not refute free numbers.
-
-# 
-
-# It shows that the single-compression model is too small.
-
-# 
-
-# The next formulation must carry information that is not destroyed by the local projection
-
-# 
-
-# \[
-
-# \\Phi:\\text{residual structure}\\to\\mathbb H.
-
-# ]
-
-# 
-
-# The next test is:
-
-# 
-
-# \[
-
-# \\boxed{
-
-# \\text{Does the next structure contain information not killed by }\\Phi?
-
-# }
-
-# ]
-
-# 
-
-# A natural candidate is a staged, Hopf-algebraic, or Connes-Kreimer-like renormalization structure.
-
-# 
-
-# However, the free-number direction must retain the distinction:
-
-# 
-
-# \[
-
-# \\boxed{
-
-# \\text{Connes-Kreimer: grafting first.}
-
-# }
-
-# ]
-
-# 
-
-# \[
-
-# \\boxed{
-
-# \\text{Free numbers: quaternionic local rigidity first.}
-
-# }
-
-# ]
-
-# 
-
-# This note identifies the obstruction that forces us beyond a single-compression model.
-
-# 
-
+This note identifies the obstruction that forces us beyond a single-compression model.
