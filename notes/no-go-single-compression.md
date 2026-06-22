@@ -200,11 +200,7 @@ $$
 Thus
 
 $$
-[\Delta_{\partial}(i\mid j)]
-=
-[i\mid j]-[j\mid i]
-=
--2\kappa.
+[\Delta_{\partial}(i\mid j)]=[i\mid j]-[j\mid i]=-2\kappa.
 $$
 
 So
