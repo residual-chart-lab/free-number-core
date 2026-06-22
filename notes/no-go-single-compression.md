@@ -120,8 +120,7 @@ $$
 Then
 
 $$
-m_2(\Delta_{\partial}(i\mid j))
-=m_2(i\mid j)-m_2(j\mid i)=ji-ij.
+m_2(\Delta_{\partial}(i\mid j))=m_2(i\mid j)-m_2(j\mid i)=ji-ij.
 $$
 
 Since
