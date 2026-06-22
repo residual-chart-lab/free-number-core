@@ -1,10 +1,10 @@
 ﻿# No-Go Note: Single Quaternionic Compression Cannot Preserve Residual History
 
-> **Subtitle:** local closure does not imply global collapse
+> Subtitle: local closure does not imply global collapse
 
 This note records a limited no-go result for a single quaternionic compression model.
 
-It does **not** claim that free numbers are impossible.  
+It does not claim that free numbers are impossible.  
 It claims only that, inside a single compression model $m:B\to\mathbb H$, residual detection and history preservation cannot be achieved at the same time.
 
 Here, $B$ is a boundary-word space, $\mathbb H$ is the quaternion algebra, and $m$ is a compression map from boundary words into $\mathbb H$.
@@ -155,7 +155,7 @@ $$
 
 This is a hand-computable model of the principle:
 
-> **local closure does not imply global collapse.**
+> local closure does not imply global collapse.
 
 ---
 
@@ -504,4 +504,5 @@ $$
 $$
 
 This note identifies the obstruction that forces us beyond a single-compression model.
+
 
