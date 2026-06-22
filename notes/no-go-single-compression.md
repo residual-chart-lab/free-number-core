@@ -279,12 +279,14 @@ This is the no-go result.
 
 Several attempted escapes collapse back into the same obstruction.
 
-### ### 6.1 Value-level noncommutativity
+---
+
+### 6.1 Value-level noncommutativity
 
 Using only the commutator
 
 $$
-[R_i,R_j](1)=2k
+R_i,R_j=2k
 $$
 
 detects quaternionic noncommutativity.
