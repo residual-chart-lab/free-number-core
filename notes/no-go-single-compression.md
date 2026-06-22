@@ -279,17 +279,23 @@ This is the no-go result.
 
 Several attempted escapes collapse back into the same obstruction.
 
-### 6.1 Value-level noncommutativity
+### ### 6.1 Value-level noncommutativity
 
-Using only
+Using only the commutator
 
 $$
 [R_i,R_j](1)=2k
 $$
 
-detects quaternionic noncommutativity, but the result remains inside $\mathbb H$.
+detects quaternionic noncommutativity.
 
-So it is absorbed as an ordinary quaternionic value.
+However, the result still lies inside the quaternion algebra:
+
+$$
+2k\in\mathbb H.
+$$
+
+Therefore it is absorbed as an ordinary quaternionic value.
 
 This does not produce a residual object outside the local algebra.
 
