@@ -16,7 +16,7 @@ The possible infinite residual ladder is not claimed here. It is mentioned only 
 
 ## 1. Setup
 
-Let $ \mathbb{H} $ be the quaternion algebra, with imaginary basis $i,j,k$, satisfying
+Let $\mathbb{H}$ be the quaternion algebra, with imaginary basis $i,j,k$, satisfying
 
 $$
 i^2=j^2=k^2=-1,\qquad ij=k,\qquad ji=-k.
