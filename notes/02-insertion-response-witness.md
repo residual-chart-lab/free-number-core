@@ -16,19 +16,19 @@ The possible infinite residual ladder is not claimed here. It is mentioned only 
 
 ## 1. Setup
 
-Let \( \mathbb H \) be the quaternion algebra, with imaginary basis \(i,j,k\), satisfying
+Let $ \mathbb{H} $ be the quaternion algebra, with imaginary basis $i,j,k$, satisfying
 
 $$
 i^2=j^2=k^2=-1,\qquad ij=k,\qquad ji=-k.
 $$
 
-Let \(B_n\) be the real vector space spanned by boundary words
+Let $B_n$ be the real vector space spanned by boundary words
 
 $$
 a_1|a_2|\cdots|a_n,
 $$
 
-where each \(a_r\) is an imaginary quaternionic unit.
+where each $a_r$ is an imaginary quaternionic unit.
 
 Define the reversed compression map
 
@@ -48,9 +48,9 @@ $$
 
 A single compression map cannot serve both as a judge of local closure and as a witness of residual history.
 
-If a witness factors through \(m_n\), then it cannot distinguish elements inside the same \(m_n\)-fiber.
+If a witness factors through $m_n$, then it cannot distinguish elements inside the same $m_n$-fiber.
 
-In particular, it cannot detect a nonzero element inside \(\ker m_n\).
+In particular, it cannot detect a nonzero element inside $\ker m_n$.
 
 So the residual witness must be non-aligned with the judging compression.
 
@@ -66,13 +66,13 @@ $$
 w=a_1|\cdots|a_n,
 $$
 
-define insertion at position \(r\), where \(0\le r\le n\), by
+define insertion at position $r$, where $0\le r\le n$, by
 
 $$
 I_c^{(r)}(w)=a_1|\cdots|a_r|c|a_{r+1}|\cdots|a_n.
 $$
 
-Define the \(r\)-th insertion response by
+Define the $r$-th insertion response by
 
 $$
 \mathcal R_n^{(r)}(x)(c)=m_{n+1}(I_c^{(r)}x).
@@ -84,7 +84,7 @@ $$
 \mathcal R_n(x)=\left(\mathcal R_n^{(0)}(x),\mathcal R_n^{(1)}(x),\ldots,\mathcal R_n^{(n)}(x)\right).
 $$
 
-For a word \(w=a_1|\cdots|a_n\), set
+For a word $w=a_1|\cdots|a_n$, set
 
 $$
 P_r(w)=a_r\cdots a_1,\qquad Q_r(w)=a_n\cdots a_{r+1}.
@@ -98,7 +98,7 @@ $$
 
 This formula is the basic mechanism.
 
-If \(x\in\ker m_n\), then the two exterior insertions vanish:
+If $x\in\ker m_n$, then the two exterior insertions vanish:
 
 $$
 \mathcal R_n^{(0)}(x)(c)=m_n(x)c=0.
@@ -156,7 +156,7 @@ $$
 L_\sigma(c)=m_3(i|c|j+j|c|i).
 $$
 
-Since \(m_3(a|b|c)=cba\), we get
+Since $m_3(a|b|c)=cba$, we get
 
 $$
 L_\sigma(c)=jci+icj.
@@ -177,16 +177,16 @@ $$
 Hence
 
 $$
-\ker L_\sigma=\mathbb R k.
+\ker L_\sigma=\mathbb{R} k.
 $$
 
 And
 
 $$
-\mathrm{Im}\,L_\sigma=\mathrm{span}_{\mathbb R}\{i,j\}.
+\mathrm{Im}\,L_\sigma=\mathrm{span}_{\mathbb{R}}\{i,j\}.
 $$
 
-Thus \(\sigma\) is killed by \(m_2\), but it is detected by the next-stage insertion-response witness.
+Thus $\sigma$ is killed by $m_2$, but it is detected by the next-stage insertion-response witness.
 
 In compact form:
 
@@ -206,23 +206,23 @@ So exterior insertion sees nothing, but internal insertion detects the residual.
 
 ## 5. Why this is not a hand-made tag
 
-This witness is not obtained by choosing a special value of \(c\).
+This witness is not obtained by choosing a special value of $c$.
 
-The whole response operator \(L_\sigma:V\to\mathbb H\) is used.
+The whole response operator $L_\sigma:V\to\mathbb{H}$ is used.
 
 Its structure is quaternionic:
 
 $$
-\ker L_\sigma=\mathbb R k.
+\ker L_\sigma=\mathbb{R} k.
 $$
 
 $$
-\mathrm{Im}\,L_\sigma=\mathrm{span}_{\mathbb R}\{i,j\}.
+\mathrm{Im}\,L_\sigma=\mathrm{span}_{\mathbb{R}}\{i,j\}.
 $$
 
-The original word \(\sigma=i|j+j|i\) belongs to the \(i,j\)-plane.
+The original word $\sigma=i|j+j|i$ belongs to the $i,j$-plane.
 
-The response vanishes in the normal direction \(k=i\times j\), and its image lies in the original plane.
+The response vanishes in the normal direction $k=i\times j$, and its image lies in the original plane.
 
 So the witness is determined by the quaternionic plane-normal decomposition, not by an external tag.
 
@@ -230,7 +230,7 @@ So the witness is determined by the quaternionic plane-normal decomposition, not
 
 ## 6. Coordinate-free form
 
-Let \(a,b\) be orthogonal unit imaginary quaternions, and set
+Let $a,b$ be orthogonal unit imaginary quaternions, and set
 
 $$
 n=a\times b.
@@ -269,13 +269,13 @@ $$
 Therefore
 
 $$
-\ker L_{a,b}=\mathbb R(a\times b).
+\ker L_{a,b}=\mathbb{R}(a\times b).
 $$
 
 And
 
 $$
-\mathrm{Im}\,L_{a,b}=\mathrm{span}_{\mathbb R}\{a,b\}.
+\mathrm{Im}\,L_{a,b}=\mathrm{span}_{\mathbb{R}}\{a,b\}.
 $$
 
 This shows that the residual is governed by the oriented two-plane and its normal direction.
@@ -284,7 +284,7 @@ This shows that the residual is governed by the oriented two-plane and its norma
 
 ## 7. Relation to the antisymmetric component
 
-For the same orthogonal pair \(a,b\), define
+For the same orthogonal pair $a,b$, define
 
 $$
 \Delta_{a,b}=a|b-b|a.
@@ -308,14 +308,14 @@ $$
 m_2(\Delta_{a,b})=-2n.
 $$
 
-So the antisymmetric component is seen directly by \(m_2\) as the normal direction.
+So the antisymmetric component is seen directly by $m_2$ as the normal direction.
 
-By contrast, the symmetric component is killed by \(m_2\), but seen by the insertion-response witness as a plane-valued response.
+By contrast, the symmetric component is killed by $m_2$, but seen by the insertion-response witness as a plane-valued response.
 
 Thus the two basic modes are:
 
 - antisymmetric mode: directly visible as the normal direction;
-- symmetric mode: killed by \(m_2\), but visible by next-stage internal insertion.
+- symmetric mode: killed by $m_2$, but visible by next-stage internal insertion.
 
 This is the minimal place where the judge and the witness separate.
 
@@ -371,7 +371,7 @@ $$
 \mathcal R_3^{(1)}(\tau_k)(d)=-2pi+2qj.
 $$
 
-Thus, if \(d\) has a component in the \(i,j\)-plane, this response is nonzero.
+Thus, if $d$ has a component in the $i,j$-plane, this response is nonzero.
 
 So
 
@@ -381,7 +381,7 @@ $$
 
 This gives a second robust step:
 
-a component killed by \(m_3\) can still reappear under a non-aligned four-letter insertion response.
+a component killed by $m_3$ can still reappear under a non-aligned four-letter insertion response.
 
 ---
 
@@ -389,7 +389,7 @@ a component killed by \(m_3\) can still reappear under a non-aligned four-letter
 
 This note claims the following minimal mechanism.
 
-There exist nonzero boundary components \(x\) such that
+There exist nonzero boundary components $x$ such that
 
 $$
 x\in\ker m_n
@@ -401,14 +401,14 @@ $$
 \mathcal R_n(x)\neq0.
 $$
 
-The witness \(\mathcal R_n\) is not a tag.
+The witness $\mathcal R_n$ is not a tag.
 
-It is induced canonically by all insertion positions and the next compression map \(m_{n+1}\).
+It is induced canonically by all insertion positions and the next compression map $m_{n+1}$.
 
 This gives a concrete way to separate:
 
-- the judging compression \(m_n\);
-- the witnessing response profile \(\mathcal R_n\).
+- the judging compression $m_n$;
+- the witnessing response profile $\mathcal R_n$.
 
 The first kills the component.
 
@@ -426,8 +426,8 @@ The two-step phenomenon above suggests a possible residual ladder, but the full 
 
 In other words, one must carefully distinguish:
 
-- the boundary word space \(B_n\), where words are retained;
-- the compression map \(m_n:B_n\to\mathbb H\), where words are evaluated.
+- the boundary word space $B_n$, where words are retained;
+- the compression map $m_n:B_n\to\mathbb{H}$, where words are evaluated.
 
 That distinction is essential, but it is not developed fully in this note.
 
@@ -474,7 +474,7 @@ $$
 Thus
 
 $$
-\ker L_\sigma=\mathbb R k,\qquad \mathrm{Im}\,L_\sigma=\mathrm{span}_{\mathbb R}\{i,j\}.
+\ker L_\sigma=\mathbb{R} k,\qquad \mathrm{Im}\,L_\sigma=\mathrm{span}_{\mathbb{R}}\{i,j\}.
 $$
 
 This is the first canonical insertion-response witness.
