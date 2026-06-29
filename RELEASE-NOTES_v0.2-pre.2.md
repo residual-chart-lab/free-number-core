@@ -35,19 +35,17 @@ FreeNumKernel.LocalMul
 
 - Updated the paper so that the displayed weight definition matches the Lean implementation.
 
-The restricted termination weight is written as
+The restricted termination weight is written as:
 
-$$
-weight(X)
-=
-openGenCount(X)+openGenCount(X)+termSize(X).
-$$
+```text
+weight(X) = openGenCount(X) + openGenCount(X) + termSize(X)
+```
 
-This is mathematically equal to
+This is mathematically equal to:
 
-$$
-2\cdot openGenCount(X)+termSize(X),
-$$
+```text
+2 * openGenCount(X) + termSize(X)
+```
 
 but the repeated-addition form is used to match the Lean kernel exactly.
 
