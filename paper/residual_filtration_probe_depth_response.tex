@@ -1,0 +1,715 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{booktabs}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  citecolor=blue!50!black,
+  urlcolor=blue!50!black
+}
+
+\lstset{
+  basicstyle=\ttfamily\scriptsize,
+  breaklines=true,
+  columns=fullflexible,
+  frame=single,
+  keepspaces=true,
+  showstringspaces=false,
+  tabsize=2,
+  language=Python
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Hh}{\mathbb{H}}
+\newcommand{\Rr}{\mathbb{R}}
+\newcommand{\V}{V}
+\newcommand{\Bn}{B_n}
+\newcommand{\Sn}{S^n_0V}
+\newcommand{\Ker}{\operatorname{ker}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\ImH}{\operatorname{Im}\mathbb{H}}
+\newcommand{\id}{\operatorname{id}}
+
+\title{Residual Filtration and Probe-Depth Response\\
+\large in Quaternionic Boundary Words\\[0.5em]
+\normalsize A Companion Note to \emph{Free Numbers v0.2-pre.2}}
+\author{Free Number Authors}
+\date{2026-06-29}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This companion note studies residual kernels that arise from quaternionic boundary word spaces.
+Let $V=\operatorname{Im}\mathbb{H}$ and $B_n=V^{\otimes n}$.
+The reversed compression map
+\[
+  m_n(a_1|\cdots|a_n)=a_n\cdots a_1
+\]
+collapses boundary words into the quaternion algebra $\mathbb{H}$.
+A single compression map cannot simultaneously serve as both a local closure judge and a residual-history witness.
+To separate these roles, we introduce insertion-response profiles and probe-depth responses.
+
+At length $2$, we prove
+\[
+  \Ker m_2=S^2_0V,
+  \qquad
+  K_2^{\mathrm{null}}=0,
+\]
+because the internal insertion response sends $S\in S^2_0V$ to $-2S$.
+At length $3$, representation theory and an exact integer rank computation give
+\[
+  K_3^{\mathrm{null}}=S^3_0V.
+\]
+Thus the highest-spin cubic component is invisible at probe depth $1$.
+We then define a depth-$2$ insertion profile and an internal-internal component $A_3$.
+For $S\in S^3_0V$, exact computation gives
+\[
+  A_3(S)=4C_S,
+\]
+where $C_S(x,y)=S(x,y)$ is the ordinary two-variable contraction, viewed as a map into $\mathbb{H}$.
+Hence the length-$3$ next-null residual is not absolutely invisible; it is invisible only at insufficient probe depth.
+The general pattern suggested by these computations is not claimed as a theorem here.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+
+The main \emph{Free Numbers} paper introduces local quaternionic closure and global residual chart normalization.
+Its central design principle is that local algebraic closure should not imply global collapse.
+The present note does not replace that core construction.
+Instead, it isolates a smaller technical mechanism that appears inside the residual side of the theory: boundary word compression, non-aligned kernels, and probe-depth response.
+
+The guiding question is the following.
+When a boundary word is killed by a compression map, has the residual history truly vanished, or has it only become invisible to that particular observation?
+
+We show that the answer depends on probe depth.
+At length $2$, the killed component is recovered by a depth-$1$ response.
+At length $3$, the highest-spin component is invisible at depth $1$, but becomes visible at depth $2$.
+This gives the first vertical step of a residual filtration indexed not only by word length $n$, but also by probe depth $d$.
+
+The scope is intentionally narrow.
+We prove only the length-$2$ and length-$3$ statements listed above and provide exact scripts for reproducing the finite computations.
+We do not claim a general infinite ladder.
+
+\paragraph{Relation to the core paper.}
+The core paper constructs local closures $F_1\cong\mathbb{H}$ and a global non-collapsing chart structure.
+Here we work in the associated pure-imaginary boundary word spaces
+\[
+  B_n=V^{\otimes n},\qquad V=\operatorname{Im}\mathbb{H},
+\]
+and study the finite linear maps produced by reversed quaternionic compression and insertion probes.
+
+\section{Boundary words and reversed compression}
+
+Let
+\[
+  V=\operatorname{Im}\mathbb{H}=\operatorname{span}_{\mathbb{R}}\{i,j,k\}.
+\]
+For pure imaginary quaternions $u,v\in V$, we use
+\[
+  uv=-u\cdot v+u\times v.
+\]
+Let
+\[
+  B_n=V^{\otimes n}
+\]
+be the real vector space spanned by boundary words
+\[
+  a_1|\cdots|a_n.
+\]
+
+\begin{definition}[Reversed compression]
+The reversed compression map is
+\[
+  m_n:B_n\to\mathbb{H},
+  \qquad
+  m_n(a_1|\cdots|a_n)=a_n\cdots a_1.
+\]
+In particular,
+\[
+  m_2(u|v)=vu,
+  \qquad
+  m_3(a|b|c)=cba.
+\]
+\end{definition}
+
+Let
+\[
+  K_n=\Ker m_n.
+\]
+The subspace $K_n$ records boundary combinations that vanish under the $n$-fold compression.
+The central point of this note is that the vanishing of $m_n(x)$ does not necessarily mean that $x$ has no residual structure.
+It means only that $x$ is invisible to the compression $m_n$.
+
+\section{Why a single compression map is not enough}
+
+A single compression map
+\[
+  m:B\to\mathbb{H}
+\]
+has two incompatible roles.
+It can be used as a local closure judge, because it sends boundary words to quaternionic values.
+But if one quotients by $\Ker m$, then all history lying inside $\Ker m$ has been collapsed.
+Thus the same map cannot also serve as a witness for the residual history that it has killed.
+
+This is the single-compression no-go principle:
+
+\begin{quote}
+A single compression map cannot simultaneously be the judge of local closure and the witness of residual persistence.
+\end{quote}
+
+To see residuals killed by $m_n$, one must use a non-aligned observation.
+The insertion-response profiles below are the smallest such non-aligned witnesses.
+
+\section{Depth-1 insertion response}
+
+For $0\le r\le n$, define the insertion map
+\[
+  I_d^{(r)}(a_1|\cdots|a_n)
+  =a_1|\cdots|a_r|d|a_{r+1}|\cdots|a_n.
+\]
+The $r$-th insertion response is
+\[
+  \mathcal{R}_n^{(r)}(x)(d)=m_{n+1}(I_d^{(r)}x).
+\]
+For a word $w=a_1|\cdots|a_n$, write
+\[
+  P_r(w)=a_r\cdots a_1,
+  \qquad
+  Q_r(w)=a_n\cdots a_{r+1}.
+\]
+Then
+\[
+  m_{n+1}(I_d^{(r)}w)=Q_r(w)dP_r(w).
+\]
+
+If $x\in\Ker m_n$, the exterior responses vanish:
+\[
+  \mathcal{R}_n^{(0)}(x)(d)=m_n(x)d=0,
+  \qquad
+  \mathcal{R}_n^{(n)}(x)(d)=dm_n(x)=0.
+\]
+Thus, at depth $1$, the internal insertions are the essential residual probes.
+
+Define
+\[
+  K_n^{\mathrm{null}}
+  =
+  \Ker m_n\cap\Ker \mathcal{R}_n,
+\]
+where $\Ker \mathcal{R}_n$ means vanishing under all internal depth-$1$ insertion responses.
+
+\section{Length 2: residual decomposition}
+
+We identify $B_2=V\otimes V$.
+As an $SO(3)$ representation,
+\[
+  V\otimes V=\mathbb{R}g\oplus\Lambda^2V\oplus S^2_0V.
+\]
+The dimensions are $9=1+3+5$.
+Here $\mathbb{R}g$ is the trace component, $\Lambda^2V$ is the antisymmetric component, and $S^2_0V$ is the symmetric trace-free component.
+
+\begin{lemma}
+\label{lem:kerm2}
+For $m_2(u|v)=vu$,
+\[
+  \Ker m_2=S^2_0V.
+\]
+\end{lemma}
+
+\begin{proof}
+Let
+\[
+  x=\sum_{a,b}T_{ab}e_a|e_b,
+  \qquad
+  e_1=i,
+  \quad e_2=j,
+  \quad e_3=k.
+\]
+Then
+\[
+  m_2(x)=\sum_{a,b}T_{ab}e_be_a.
+\]
+Using $e_be_a=-\delta_{ab}+e_b\times e_a$, we get
+\[
+  m_2(x)=-\operatorname{tr}(T)+\sum_{a,b}T_{ab}(e_b\times e_a).
+\]
+The real part sees the trace of $T$.
+The vector part sees exactly the antisymmetric part of $T$, and the cross product identifies $\Lambda^2V$ with $V$.
+Therefore $m_2(x)=0$ exactly when $T$ is symmetric and trace-free.
+Hence $\Ker m_2=S^2_0V$.
+\end{proof}
+
+\begin{lemma}
+\label{lem:r2}
+For $S\in S^2_0V$,
+\[
+  \mathcal{R}_2^{(1)}(S)(c)=-2S(c).
+\]
+Thus
+\[
+  \mathcal{R}_2^{(1)}|_{S^2_0V}=-2\operatorname{id}.
+\]
+\end{lemma}
+
+\begin{proof}
+Write
+\[
+  S=\sum_{a,b}S_{ab}e_a|e_b,
+  \qquad S_{ab}=S_{ba},
+  \qquad \sum_a S_{aa}=0.
+\]
+The internal response is
+\[
+  \mathcal{R}_2^{(1)}(S)(c)=\sum_{a,b}S_{ab}e_bce_a.
+\]
+For pure imaginary $u,c,v\in V$, use the triple-product identity
+\[
+  ucv=-(u\cdot c)v-\det(u,c,v)+c(u\cdot v)-u(c\cdot v).
+\]
+Apply this with $u=e_b$ and $v=e_a$.
+The determinant term vanishes after summing against the symmetric tensor $S_{ab}$.
+The trace term vanishes because $S$ is trace-free.
+The two remaining terms are both $-S(c)$.
+Therefore
+\[
+  \mathcal{R}_2^{(1)}(S)(c)=-2S(c).
+\]
+\end{proof}
+
+\begin{corollary}
+\label{cor:k2null}
+At length $2$,
+\[
+  K_2^{\mathrm{null}}=0.
+\]
+\end{corollary}
+
+\section{Length 3: the first next-null residual}
+
+At length $3$, the representation decomposition is
+\[
+  V^{\otimes3}\simeq V_0\oplus3V_1\oplus2V_2\oplus V_3.
+\]
+The dimensions are
+\[
+  1+3\cdot3+2\cdot5+7=27.
+\]
+The highest-spin component is
+\[
+  V_3=S^3_0V.
+\]
+
+The compression map
+\[
+  m_3:V^{\otimes3}\to\mathbb{H}
+\]
+has codomain $\mathbb{H}\simeq V_0\oplus V_1$.
+The depth-$1$ response maps have codomain
+\[
+  \Hom(V,\mathbb{H})\simeq V_0\oplus2V_1\oplus V_2.
+\]
+There is no $V_3$ component in either codomain.
+By equivariance and Schur's lemma,
+\[
+  S^3_0V\subseteq K_3^{\mathrm{null}}.
+\]
+
+To prove equality, define
+\[
+  T_3=m_3\oplus\mathcal{R}_3^{(1)}\oplus\mathcal{R}_3^{(2)}.
+\]
+This is a map
+\[
+  T_3:V^{\otimes3}\to
+  \mathbb{H}\oplus\Hom(V,\mathbb{H})\oplus\Hom(V,\mathbb{H}).
+\]
+The domain has dimension $27$ and the codomain has dimension $4+12+12=28$.
+In the basis $e_a|e_b|e_c$, the matrix entries are determined by
+\[
+  m_3(e_a|e_b|e_c)=e_ce_be_a,
+\]
+\[
+  \mathcal{R}_3^{(1)}(e_a|e_b|e_c)(d)=e_ce_bde_a,
+\]
+and
+\[
+  \mathcal{R}_3^{(2)}(e_a|e_b|e_c)(d)=e_cde_be_a.
+\]
+Exact integer computation gives
+\[
+  \rank(T_3)=20.
+\]
+Thus
+\[
+  \dim\Ker T_3=27-20=7.
+\]
+Since $\dim S^3_0V=7$, we get the equality.
+
+\begin{theorem}[Length-3 next-null residual]
+\label{thm:k3null}
+At length $3$,
+\[
+  K_3^{\mathrm{null}}=S^3_0V.
+\]
+\end{theorem}
+
+This means that the highest-spin cubic component is invisible to the depth-$1$ response.
+The next section shows that it is nevertheless visible at probe depth $2$.
+
+\section{Probe depth 2: the first vertical step}
+
+The full depth-$2$ insertion profile consists of all maps obtained by inserting two probe variables into a length-$3$ boundary word and then applying the length-$5$ reversed compression $m_5$.
+
+We use one component of that full profile.
+For a word $e_a|e_b|e_c$, take the internal-internal double insertion
+\[
+  e_a|x|e_b|y|e_c.
+\]
+After reversed compression, this gives
+\[
+  m_5(e_a|x|e_b|y|e_c)=e_cye_bxe_a.
+\]
+Define
+\[
+  A_3(T)(x,y)=\sum_{a,b,c}T_{abc}e_cye_bxe_a
+\]
+for
+\[
+  T=\sum_{a,b,c}T_{abc}e_a|e_b|e_c.
+\]
+
+\begin{remark}[Component versus full profile]
+The map $A_3$ is not asserted to be the whole depth-$2$ profile.
+It is one internal-internal component of the canonical full profile.
+We do not claim that other depth-$2$ insertion components vanish.
+We use only the safe implication that if one component is injective on a subspace, then the full profile detects that subspace.
+\end{remark}
+
+For $S\in S^3_0V$, define the contraction embedding
+\[
+  C_S:V\otimes V\to V\subset\mathbb{H},
+  \qquad
+  C_S(x,y)=S(x,y).
+\]
+In coordinates,
+\[
+  C_S(x,y)=\sum_{a,b,c}S_{abc}x_ay_be_c.
+\]
+Thus
+\[
+  C:S^3_0V\to\Hom(V^{\otimes2},\mathbb{H})
+\]
+is the natural contraction embedding.
+
+\subsection{Why depth 2 can see spin 3}
+
+At depth $1$,
+\[
+  \Hom(V,\mathbb{H})\simeq V_0\oplus2V_1\oplus V_2,
+\]
+so there is no $V_3$ component.
+At depth $2$,
+\[
+  \Hom(V^{\otimes2},\mathbb{H})
+  \simeq
+  2V_0\oplus4V_1\oplus3V_2\oplus V_3.
+\]
+The depth-$2$ codomain therefore contains $V_3$ for the first time.
+This does not by itself prove visibility, but it makes visibility representation-theoretically possible.
+The coefficient is computed directly.
+
+\begin{theorem}[Depth-2 detection of the cubic highest-spin residual]
+\label{thm:a3}
+For every $S\in S^3_0V$,
+\[
+  A_3(S)=4C_S.
+\]
+Equivalently, for all $x,y\in V$,
+\[
+  A_3(S)(x,y)=4S(x,y).
+\]
+Consequently, $A_3$ is injective on $S^3_0V$.
+Since $A_3$ is one component of the full depth-$2$ insertion profile, the full depth-$2$ profile detects the entire space $K_3^{\mathrm{null}}=S^3_0V$.
+\end{theorem}
+
+\begin{proof}
+The identity is verified by exact integer computation on a basis of $S^3_0V$.
+The script in Appendix~\ref{app:a3} constructs the map $A_3$, constructs the contraction map $C$, constructs the symmetric trace-free subspace $S^3_0V$, and checks that $(A_3-4C)$ vanishes on a basis.
+It also checks that the restricted image has rank $7$.
+\end{proof}
+
+\subsection{Example}
+
+Consider
+\[
+  S=i|i|i-i|j|j-j|i|j-j|j|i.
+\]
+This is the harmonic cubic component corresponding to $x^3-3xy^2$, hence $S\in S^3_0V$.
+From Theorem~\ref{thm:k3null}, it is invisible at depth $1$.
+At depth $2$,
+\[
+  A_3(S)(i,i)=4i,
+\]
+\[
+  A_3(S)(i,j)=-4j,
+\]
+and
+\[
+  A_3(S)(j,j)=-4i.
+\]
+These agree with $4S(i,i)$, $4S(i,j)$, and $4S(j,j)$.
+
+\section{Consequences}
+
+Theorem~\ref{thm:k3null} says that $S^3_0V$ is invisible at depth $1$.
+Theorem~\ref{thm:a3} says that the same residual is visible at depth $2$.
+Thus the residual is not absolutely invisible.
+It is invisible only at insufficient probe depth.
+
+This is the first vertical step of the residual filtration:
+\[
+  \text{depth }1:\ \text{invisible},
+  \qquad
+  \text{depth }2:\ \text{visible}.
+\]
+Together with the length-$2$ result, the picture is:
+\[
+  K_2^{\mathrm{null}}=0,
+  \qquad
+  K_3^{\mathrm{null}}=S^3_0V,
+  \qquad
+  A_3|_{S^3_0V}=4C.
+\]
+
+\section{Non-claims and suggested pattern}
+
+The computations above suggest the pattern
+\[
+  A_n|_{S^n_0V}=(-2)^{n-1}\operatorname{id},
+\]
+with coefficient $-2$ at $n=2$ and $+4=(-2)^2$ at $n=3$.
+However, this paper does not claim the general theorem.
+It does not claim that all highest-spin residuals are detected exactly at depth $n-1$.
+It does not claim an infinite residual ladder.
+
+The only claims established here are:
+\[
+  K_2^{\mathrm{null}}=0,
+  \qquad
+  K_3^{\mathrm{null}}=S^3_0V,
+  \qquad
+  A_3(S)=4C_S\quad(S\in S^3_0V).
+\]
+
+The general spin-depth pattern remains a suggested direction for later work.
+
+\section{Conclusion}
+
+Residual kernels in quaternionic boundary word spaces are not merely artifacts of failed compression.
+They carry information that may become visible at higher probe depth.
+At length $2$, depth $1$ already recovers the killed symmetric trace-free component.
+At length $3$, depth $1$ fails to see the highest-spin cubic component, but depth $2$ detects it as $4C_S$.
+
+This establishes a small but precise two-axis picture: word length controls which highest-spin residuals appear, while probe depth controls when they become visible.
+The resulting structure is a residual filtration in both length and probe depth.
+
+\appendix
+
+\section{Exact rank check for the length-3 null residual}
+\label{app:t3}
+
+The following script constructs the exact integer matrix $T_3$ and computes its rank.
+
+\begin{lstlisting}
+import sympy as sp
+
+# Quaternion basis order:
+# 0 = 1, 1 = i, 2 = j, 3 = k
+
+def qmul(x, y):
+    a0, a1, a2, a3 = x
+    b0, b1, b2, b3 = y
+    return [
+        a0*b0 - a1*b1 - a2*b2 - a3*b3,
+        a0*b1 + a1*b0 + a2*b3 - a3*b2,
+        a0*b2 - a1*b3 + a2*b0 + a3*b1,
+        a0*b3 + a1*b2 - a2*b1 + a3*b0,
+    ]
+
+basis = [
+    [1, 0, 0, 0],  # 1
+    [0, 1, 0, 0],  # i
+    [0, 0, 1, 0],  # j
+    [0, 0, 0, 1],  # k
+]
+
+imag = [basis[1], basis[2], basis[3]]
+
+def prod(seq):
+    v = basis[0]
+    for x in seq:
+        v = qmul(v, x)
+    return v
+
+cols = []
+
+for a in range(3):
+    for b in range(3):
+        for c in range(3):
+            ea, eb, ec = imag[a], imag[b], imag[c]
+            col = []
+
+            # m_3(e_a|e_b|e_c) = e_c e_b e_a
+            col += prod([ec, eb, ea])
+
+            # R_3^(1)(e_a|e_b|e_c)(d) = e_c e_b d e_a
+            for d in range(3):
+                ed = imag[d]
+                col += prod([ec, eb, ed, ea])
+
+            # R_3^(2)(e_a|e_b|e_c)(d) = e_c d e_b e_a
+            for d in range(3):
+                ed = imag[d]
+                col += prod([ec, ed, eb, ea])
+
+            cols.append(col)
+
+M = sp.Matrix.hstack(*[sp.Matrix(col) for col in cols])
+
+print(M.shape)
+print(M.rank())
+\end{lstlisting}
+
+Expected output:
+\begin{lstlisting}
+(28, 27)
+20
+\end{lstlisting}
+
+\section{Exact check for the depth-2 identity}
+\label{app:a3}
+
+The following script verifies $A_3(S)=4C_S$ on a basis of $S^3_0V$.
+
+\begin{lstlisting}
+import sympy as sp
+from itertools import product, permutations
+
+# Quaternion basis order:
+# 0 = 1, 1 = i, 2 = j, 3 = k
+
+def qmul(x, y):
+    a0, a1, a2, a3 = x
+    b0, b1, b2, b3 = y
+    return sp.Matrix([
+        a0*b0 - a1*b1 - a2*b2 - a3*b3,
+        a0*b1 + a1*b0 + a2*b3 - a3*b2,
+        a0*b2 - a1*b3 + a2*b0 + a3*b1,
+        a0*b3 + a1*b2 - a2*b1 + a3*b0,
+    ])
+
+basis = [
+    sp.Matrix([1, 0, 0, 0]),  # 1
+    sp.Matrix([0, 1, 0, 0]),  # i
+    sp.Matrix([0, 0, 1, 0]),  # j
+    sp.Matrix([0, 0, 0, 1]),  # k
+]
+
+imag = [basis[1], basis[2], basis[3]]
+
+def prodq(seq):
+    v = basis[0]
+    for x in seq:
+        v = qmul(v, x)
+    return v
+
+triples = list(product(range(3), repeat=3))
+idx = {t: i for i, t in enumerate(triples)}
+
+# A3 matrix:
+# rows are indexed by (x, y, quaternion_component), dimension 3*3*4 = 36.
+# columns are indexed by (a, b, c), dimension 27.
+A = sp.zeros(36, 27)
+
+# C matrix:
+# ordinary contraction C_S(x,y)=S(x,y), viewed in H.
+C = sp.zeros(36, 27)
+
+for col, (a, b, c) in enumerate(triples):
+    ea, eb, ec = imag[a], imag[b], imag[c]
+
+    for x in range(3):
+        ex = imag[x]
+        for y in range(3):
+            ey = imag[y]
+            rowbase = (x*3 + y)*4
+
+            # A3(e_a|e_b|e_c)(x,y) = e_c y e_b x e_a
+            out = prodq([ec, ey, eb, ex, ea])
+            for h in range(4):
+                A[rowbase + h, col] = out[h]
+
+            # C(e_a|e_b|e_c)(x,y) = delta_{a,x} delta_{b,y} e_c
+            if a == x and b == y:
+                for h in range(4):
+                    C[rowbase + h, col] = ec[h]
+
+# Build equations for S^3_0 V inside V^{tensor 3}.
+eqs = []
+
+# Symmetry equations: T_abc = T_perm(a,b,c).
+for t in triples:
+    for p in set(permutations(t)):
+        if t < p:
+            row = [0]*27
+            row[idx[t]] = 1
+            row[idx[p]] = -1
+            eqs.append(row)
+
+# Trace-free equations: sum_a T_aac = 0 for c = 0,1,2.
+for c in range(3):
+    row = [0]*27
+    for a in range(3):
+        row[idx[(a, a, c)]] = 1
+    eqs.append(row)
+
+E = sp.Matrix(eqs)
+S3_basis = E.nullspace()
+
+print("dim S^3_0 V =", len(S3_basis))
+
+D = A - 4*C
+
+checks = [D*v == sp.zeros(36, 1) for v in S3_basis]
+print("A3 - 4C vanishes on basis:", all(checks))
+
+restricted_images = sp.Matrix.hstack(*[A*v for v in S3_basis])
+print("rank of A3 on S^3_0 V =", restricted_images.rank())
+\end{lstlisting}
+
+Expected output:
+\begin{lstlisting}
+dim S^3_0 V = 7
+A3 - 4C vanishes on basis: True
+rank of A3 on S^3_0 V = 7
+\end{lstlisting}
+
+\end{document}
