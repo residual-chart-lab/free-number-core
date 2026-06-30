@@ -51,9 +51,7 @@ $$
 A depth `d` insertion profile is specified by an ordered tuple of distinct slots
 
 $$
-\vec r=(r_1,\ldots,r_d),
-\qquad
-0\leq r_1\lt r_2\lt\cdots\lt r_d\leq n.
+\vec r=(r_1,\ldots,r_d), \qquad 0\leq r_1\lt r_2\lt\cdots\lt r_d\leq n.
 $$
 
 Given probes
@@ -77,17 +75,13 @@ The resulting word has length `n+d`.
 For an element `T` of `B_n`, define the response component
 
 $$
-\mathcal R_{n,d}^{\vec r}(T)(x_1,\ldots,x_d)
-=
-m_{n+d}(I_{\vec x}^{\vec r}T).
+\mathcal R_{n,d}^{\vec r}(T)(x_1,\ldots,x_d) = m_{n+d}(I_{\vec x}^{\vec r}T).
 $$
 
 Equivalently,
 
 $$
-\mathcal R_{n,d}^{\vec r}
-:
-B_n\to\mathrm{Hom}(V^{\otimes d},\mathbb H).
+\mathcal R_{n,d}^{\vec r} : B_n\to\mathrm{Hom}(V^{\otimes d},\mathbb H).
 $$
 
 The full depth `d` response profile is the collection of all such components over all
@@ -102,41 +96,25 @@ the full distinct-slot profile.
 Let `S_full(n,d)` be the set of all depth `d` distinct slot choices
 
 $$
-\vec r=(r_1,\ldots,r_d),
-\qquad
-0\leq r_1\lt r_2\lt\cdots\lt r_d\leq n.
+\vec r=(r_1,\ldots,r_d), \qquad 0\leq r_1\lt r_2\lt\cdots\lt r_d\leq n.
 $$
 
 Let `S_int(n,d)` be the set of all depth `d` distinct internal slot choices
 
 $$
-\vec r=(r_1,\ldots,r_d),
-\qquad
-1\leq r_1\lt r_2\lt\cdots\lt r_d\leq n-1.
+\vec r=(r_1,\ldots,r_d), \qquad 1\leq r_1\lt r_2\lt\cdots\lt r_d\leq n-1.
 $$
 
 Define the full-null residual space through depth `d` by
 
 $$
-K_{n,d}^{full-null}
-=
-\ker m_n
-\cap
-\bigcap_{1\leq d'\leq d}
-\bigcap_{\vec r\in S_{full}(n,d')}
-\ker\mathcal R_{n,d'}^{\vec r}.
+K_{n,d}^{full-null} = \ker m_n \cap \bigcap_{1\leq d'\leq d} \bigcap_{\vec r\in S_{full}(n,d')} \ker\mathcal R_{n,d'}^{\vec r}.
 $$
 
 Define the internal-null residual space through depth `d` by
 
 $$
-K_{n,d}^{int-null}
-=
-\ker m_n
-\cap
-\bigcap_{1\leq d'\leq d}
-\bigcap_{\vec r\in S_{int}(n,d')}
-\ker\mathcal R_{n,d'}^{\vec r}.
+K_{n,d}^{int-null} = \ker m_n \cap \bigcap_{1\leq d'\leq d} \bigcap_{\vec r\in S_{int}(n,d')} \ker\mathcal R_{n,d'}^{\vec r}.
 $$
 
 The full-null condition is stronger than the internal-null condition:
@@ -187,9 +165,7 @@ $$
 After reversed compression,
 
 $$
-A_n(e_{a_1}|\cdots|e_{a_n})(x_1,\ldots,x_{n-1})
-=
-e_{a_n}x_{n-1}e_{a_{n-1}}\cdots x_1e_{a_1}.
+A_n(e_{a_1}|\cdots|e_{a_n})(x_1,\ldots,x_{n-1}) = e_{a_n}x_{n-1}e_{a_{n-1}}\cdots x_1e_{a_1}.
 $$
 
 The definition of `A_n` contains no coefficient. Any coefficient such as `-2`, `4`,
@@ -214,9 +190,7 @@ $$
 Thus
 
 $$
-C_S\in\mathrm{Hom}(V^{\otimes(n-1)},V)
-\subseteq
-\mathrm{Hom}(V^{\otimes(n-1)},\mathbb H).
+C_S\in\mathrm{Hom}(V^{\otimes(n-1)},V) \subseteq \mathrm{Hom}(V^{\otimes(n-1)},\mathbb H).
 $$
 
 The vertical response question is whether `A_n` restricts to a scalar multiple of `C_S`
@@ -251,9 +225,7 @@ $$
 The target of a depth `d` response is
 
 $$
-\mathrm{Hom}(V^{\otimes d},\mathbb H)
-\simeq
-\mathbb H\otimes V^{\otimes d}.
+\mathrm{Hom}(V^{\otimes d},\mathbb H) \simeq \mathbb H\otimes V^{\otimes d}.
 $$
 
 Since

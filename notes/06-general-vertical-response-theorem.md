@@ -38,9 +38,7 @@ be the contraction map into `V`, regarded as a subspace of `H`.
 The canonical vertical component is
 
 $$
-A_n(e_{a_1}|\cdots|e_{a_n})(x_1,\ldots,x_{n-1})
-=
-e_{a_n}x_{n-1}e_{a_{n-1}}\cdots x_1e_{a_1}.
+A_n(e_{a_1}|\cdots|e_{a_n})(x_1,\ldots,x_{n-1}) = e_{a_n}x_{n-1}e_{a_{n-1}}\cdots x_1e_{a_1}.
 $$
 
 The theorem is:
@@ -106,9 +104,7 @@ $$
 Using the definition of `A_n`,
 
 $$
-A_n(S)(x_1,\ldots,x_{n-1})
-=
-\sum S_{a_1\cdots a_n}\,e_{a_n}x_{n-1}e_{a_{n-1}}\cdots x_1e_{a_1}.
+A_n(S)(x_1,\ldots,x_{n-1}) = \sum S_{a_1\cdots a_n}\,e_{a_n}x_{n-1}e_{a_{n-1}}\cdots x_1e_{a_1}.
 $$
 
 Fix the first `n-2` indices. Since `S` is symmetric and trace-free, the two-index slice
@@ -128,27 +124,19 @@ $$
 and trace-freeness gives
 
 $$
-\sum_a M^{a_1,\ldots,a_{n-2}}_{aa}
-=
-\sum_a S_{a_1\cdots a_{n-2}aa}
-=
-0.
+\sum_a M^{a_1,\ldots,a_{n-2}}_{aa} = \sum_a S_{a_1\cdots a_{n-2}aa} = 0.
 $$
 
 Applying Lemma 2.1 to the last two indices gives
 
 $$
-\sum_{a,b}S_{a_1\cdots a_{n-2}ab}\,e_bx_{n-1}e_a
-=
--2\sum_c(S_{x_{n-1}})_{a_1\cdots a_{n-2}c}\,e_c.
+\sum_{a,b}S_{a_1\cdots a_{n-2}ab}\,e_bx_{n-1}e_a = -2\sum_c(S_{x_{n-1}})_{a_1\cdots a_{n-2}c}\,e_c.
 $$
 
 Substituting this into the definition of `A_n` gives the recursion
 
 $$
-A_n(S)(x_1,\ldots,x_{n-1})
-=
--2A_{n-1}(S_{x_{n-1}})(x_1,\ldots,x_{n-2}).
+A_n(S)(x_1,\ldots,x_{n-1}) = -2A_{n-1}(S_{x_{n-1}})(x_1,\ldots,x_{n-2}).
 $$
 
 This recursion contains the entire coefficient pattern.
@@ -171,17 +159,13 @@ $$
 Using the recursion,
 
 $$
-A_n(S)(x_1,\ldots,x_{n-1})
-=
--2(-2)^{n-2}C_{S_{x_{n-1}}}(x_1,\ldots,x_{n-2}).
+A_n(S)(x_1,\ldots,x_{n-1}) = -2(-2)^{n-2}C_{S_{x_{n-1}}}(x_1,\ldots,x_{n-2}).
 $$
 
 But
 
 $$
-C_{S_{x_{n-1}}}(x_1,\ldots,x_{n-2})
-=
-C_S(x_1,\ldots,x_{n-1}).
+C_{S_{x_{n-1}}}(x_1,\ldots,x_{n-2}) = C_S(x_1,\ldots,x_{n-1}).
 $$
 
 Therefore
