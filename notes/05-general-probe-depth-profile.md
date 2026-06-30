@@ -11,7 +11,7 @@ is proved separately in Note 06.
 Let
 
 $$
-V=\operatorname{Im}\mathbb H=\operatorname{span}_{\mathbb R}\{i,j,k\}.
+V=\mathrm{Im}\mathbb H=\mathrm{span}_{\mathbb R}\{i,j,k\}.
 $$
 
 For each word length $n\geq 1$, define the boundary-word space
@@ -83,7 +83,7 @@ $$
 Equivalently,
 
 $$
-\mathcal R_{n,d}^{\vec r}:B_n\to\operatorname{Hom}(V^{\otimes d},\mathbb H).
+\mathcal R_{n,d}^{\vec r}:B_n\to\mathrm{Hom}(V^{\otimes d},\mathbb H).
 $$
 
 The full depth-$d$ response profile is the collection of all such components over all
@@ -192,7 +192,7 @@ $$
 Thus
 
 $$
-C_S\in\operatorname{Hom}(V^{\otimes(n-1)},V)\subseteq\operatorname{Hom}(V^{\otimes(n-1)},\mathbb H).
+C_S\in\mathrm{Hom}(V^{\otimes(n-1)},V)\subseteq\mathrm{Hom}(V^{\otimes(n-1)},\mathbb H).
 $$
 
 The vertical response question is whether $A_n$ restricts to a scalar multiple of $C_S$
@@ -227,7 +227,7 @@ $$
 The target of a depth-$d$ response is
 
 $$
-\operatorname{Hom}(V^{\otimes d},\mathbb H)\simeq\mathbb H\otimes V^{\otimes d}.
+\mathrm{Hom}(V^{\otimes d},\mathbb H)\simeq\mathbb H\otimes V^{\otimes d}.
 $$
 
 Since

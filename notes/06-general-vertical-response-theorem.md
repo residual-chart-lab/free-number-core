@@ -16,7 +16,7 @@ It does not identify the full response profile with this component.
 Let
 
 $$
-V=\operatorname{Im}\mathbb H=\operatorname{span}_{\mathbb R}\{i,j,k\}.
+V=\mathrm{Im}\mathbb H=\mathrm{span}_{\mathbb R}\{i,j,k\}.
 $$
 
 Let
