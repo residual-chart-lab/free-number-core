@@ -242,7 +242,7 @@ the local closure has quaternionic form $F_1\simeq\mathbb{H}$.
 
 For elements $x$ and $y$ inside a common local chart $\alpha$:
 
-$$T(x *_\alpha y) = T(x) *_\beta T(y).$$
+$$T(x \mathbin{*}_{\alpha} y) = T(x) \mathbin{*}_{\beta} T(y).$$
 
 This is a condition inside the local closure only.
 
@@ -250,7 +250,7 @@ It does not address products that generate a new chart.
 
 For an element $x$ inside a local chart, local conjugation is preserved as
 
-$$T(x^*) = T(x)^*.$$
+$$T(x^{*}) = T(x)^{*}.$$
 
 Conjugation is a local return operation.
 
@@ -360,7 +360,7 @@ residual signature.
 In this note, the signature is read as anchored in a generated mismatch identity
 $\gamma$:
 
-$$\mathrm{Res}_{\gamma}(S) = (\Delta^e,\Delta^\cdot,\Delta^*,\Delta^Q).$$
+$$\mathrm{Res}_{\gamma}(S) = (\Delta^{e},\Delta^{\cdot},\Delta^{*},\Delta^{Q}).$$
 
 This is not a detached tuple.
 
@@ -370,7 +370,7 @@ identity $\gamma$.
 The components measure failure to preserve the unit, the multiplication, the
 conjugation, and the internal local trace $Q_\alpha$.
 
-The trace component $\Delta^Q$ is internal.
+The trace component $\Delta^{Q}$ is internal.
 
 It is measured against $Q_\alpha$ and $N_F$.
 
@@ -463,7 +463,7 @@ It is not agreement of an external projection.
 
 A signature is a coherent witness when its four components
 
-$$(\Delta^e,\Delta^\cdot,\Delta^*,\Delta^Q)$$
+$$(\Delta^{e},\Delta^{\cdot},\Delta^{*},\Delta^{Q})$$
 
 are mutually consistent as the record of a single generated mismatch identity
 $\gamma$, rather than an incompatible collection of unrelated failures.
