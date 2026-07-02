@@ -5,42 +5,31 @@ This note consolidates the admissible identity conditions for generated charts.
 It replaces the separate boundary-isomorphism, admissible-equivalence, and
 residual-purity notes with a single layer.
 
-The purpose is narrow.
+The guiding question is:
 
-The question is:
+> What is allowed to count as identity?
 
-```text
-What is allowed to count as identity?
-```
+The answer has three parts.
 
-The answer has three parts:
-
-```text
-BoundaryIso
-EqAdm
-ResidualPurity
-```
-
-`BoundaryIso` controls generated boundary identity.
-
-`EqAdm` controls admissible equivalence of generated chart elements.
-
-`ResidualPurity` controls retained residual mismatch and forbids inadmissible
-inferences from projection to identity.
+| condition | role |
+|---|---|
+| `BoundaryIso` | controls generated boundary identity |
+| `EqAdm` | controls admissible equivalence of generated chart elements |
+| `ResidualPurity` | controls retained residual mismatch and forbids inadmissible inference from projection to identity |
 
 Together, these conditions define the admissible identity layer of free numbers.
 
-They do not prove weak confluence.
+This note does not prove weak confluence.
 
-They do not choose a transport implementation.
+This note does not choose a transport implementation.
 
 ## 1. Purpose
 
 The local closure of a single chart may have quaternionic form:
 
-```text
-F_1 ~= H
-```
+$$
+F_1 \simeq \mathbb{H}.
+$$
 
 But this local fact does not identify all generated charts inside one global
 ambient quaternion algebra.
@@ -51,9 +40,7 @@ compressed value alone.
 Compression can identify values while leaving generation history, boundary
 identity, product tree, insertion response, or residual structure nontrivial.
 
-```text
-compression is not disappearance
-```
+> Compression is not disappearance.
 
 This note fixes the identity layer that prevents inadmissible collapse.
 
@@ -64,25 +51,23 @@ residual-normalization, and weak-confluence stages.
 
 Two generated elements may have the same compressed value:
 
-```text
-m_n(u) = m_n(v)
-```
+$$
+m_n(u) = m_n(v).
+$$
 
 This does not imply that they are admissibly identical.
 
 Likewise, two elements may have the same projected value:
 
-```text
-rho(X) = rho(Y)
-```
+$$
+\rho(X) = \rho(Y).
+$$
 
-This does not imply:
+This does not imply any of the following:
 
-```text
-X = Y
-EqAdm(X, Y)
-the residual between X and Y is erased
-```
+- $X = Y$;
+- $\mathrm{EqAdm}(X,Y)$;
+- the residual between $X$ and $Y$ is erased.
 
 Compressed equality and projected equality are value-level facts.
 
@@ -97,15 +82,15 @@ A generated chart is not represented only by its local quaternionic value.
 It also carries a generated boundary identity. In the notation of the main text,
 the boundary of a generated chart is recorded as
 
-```text
-partial gamma = (alpha, x; beta, y)
-```
+$$
+\partial\gamma = (\alpha, x;\, \beta, y).
+$$
 
 This record is part of the generated identity.
 
-Here `alpha` and `beta` denote the two chart-side or term-side positions involved
-in the generation event, and `x` and `y` denote the boundary data attached at
-those positions.
+Here $\alpha$ and $\beta$ denote the two chart-side or term-side positions
+involved in the generation event, and $x$ and $y$ denote the boundary data
+attached at those positions.
 
 ### 3.1 Boundary identity is not algebraic isomorphism
 
@@ -124,55 +109,57 @@ boundary identity
 A boundary identity records how a chart was produced and how it sits in the
 global residual structure.
 
-A BoundaryIso must preserve that generated identity.
+A `BoundaryIso` must preserve that generated identity.
 
 It is not merely an isomorphism of local quaternion algebras.
 
 ### 3.2 Definition of BoundaryIso
 
-Let `b` and `b'` be generated boundary identities.
+Let $b$ and $b'$ be generated boundary identities:
 
-Write their boundary records as
+$$
+b=(\alpha,x;\,\beta,y),
+\qquad
+b'=(\alpha',x';\,\beta',y').
+$$
 
-```text
-b  = (alpha,  x; beta,  y)
-b' = (alpha', x'; beta', y')
-```
-
-A BoundaryIso between `b` and `b'` is an invertible admissible correspondence
+A `BoundaryIso` between $b$ and $b'$ is an invertible admissible correspondence
 between generated boundary identities.
 
 Equivalently, it is a structured witness
 
-```text
-theta : b <-> b'
-```
+$$
+\theta : b \leftrightarrow b'
+$$
 
 such that both directions preserve the boundary data specified below.
 
-Thus BoundaryIso is a symmetric relation:
+Thus `BoundaryIso` is symmetric:
 
-```text
-BoundaryIso(b, b') iff BoundaryIso(b', b)
-```
+$$
+\mathrm{BoundaryIso}(b,b')
+\quad\Longleftrightarrow\quad
+\mathrm{BoundaryIso}(b',b).
+$$
 
-In the orientation-preserving case, it sends
+In the orientation-preserving case, it sends the two incidence pairs as generated
+boundary positions:
 
-```text
-(alpha, x) to (alpha', x')
-(beta,  y) to (beta',  y')
-```
-
-as generated boundary positions, not merely as algebraic values.
+$$
+(\alpha,x) \mapsto (\alpha',x'),
+\qquad
+(\beta,y) \mapsto (\beta',y').
+$$
 
 If an orientation-reversing boundary correspondence is allowed, it is represented
-by an explicit reversal tag.
+by an explicit reversal tag. In that case, the reversal swaps the two incidence
+pairs:
 
-In that case, the reversal swaps the two incidence pairs:
-
-```text
-(alpha, x; beta, y) <-> (beta', y'; alpha', x')
-```
+$$
+(\alpha,x;\,\beta,y)
+\leftrightarrow
+(\beta',y';\,\alpha',x').
+$$
 
 The reversal tag is involutive and is recorded in both directions.
 
@@ -182,35 +169,39 @@ No commutativity of boundary generation is assumed.
 
 ### 3.3 BoundaryIso preservation requirements
 
-A BoundaryIso must preserve:
+A `BoundaryIso` must preserve the following data.
 
-```text
-generated provenance
-incidence data
-boundary order, or an explicit reversal tag
-attachment labels
-compression compatibility
-residual information already encoded in the boundary identity
-```
+| data | requirement |
+|---|---|
+| generated provenance | the generated origin is preserved |
+| incidence data | incidence pairs are preserved, up to explicit reversal |
+| boundary order | boundary order is preserved, or an explicit reversal tag is recorded |
+| attachment labels | boundary attachments remain part of the correspondence |
+| compression compatibility | compatible compressed values are required |
+| encoded residual information | residual information already encoded in boundary identity is retained |
 
 Incidence-pair exchange and boundary-order reversal are treated as the same
 primitive boundary-reversal operation.
 
 There is no second unrecorded reversal.
 
-Compression compatibility is one-way.
+Compression compatibility is one-way:
 
-```text
-BoundaryIso(b, b') implies compatible compressed values
-```
+$$
+\mathrm{BoundaryIso}(b,b')
+\Longrightarrow
+\text{compatible compressed values}.
+$$
 
-The converse is not assumed.
+The converse is not assumed:
 
-```text
-compatible compressed values do not imply BoundaryIso(b, b')
-```
+$$
+\text{compatible compressed values}
+\not\Longrightarrow
+\mathrm{BoundaryIso}(b,b').
+$$
 
-BoundaryIso does not assert full residual purity.
+`BoundaryIso` does not assert full residual purity.
 
 It only says what it means for generated boundary identities to correspond.
 
@@ -218,9 +209,15 @@ It only says what it means for generated boundary identities to correspond.
 
 The global free-number structure is defined modulo admissible equivalence:
 
-```text
-F = Term_R(disjoint union of local closures) / EqAdm
-```
+$$
+F
+=
+\mathrm{Term}_{R}
+\left(
+\bigsqcup \text{local closures}
+\right)
+/\mathrm{EqAdm}.
+$$
 
 The quotient is only as meaningful as the equivalence relation `EqAdm`.
 
@@ -232,85 +229,78 @@ no longer an equivalence condition on the structure itself.
 
 It becomes a by-product of a procedure.
 
-This note therefore fixes `EqAdm` as a condition on the candidate correspondence
-itself, before any transport implementation is chosen.
+This note fixes `EqAdm` as a condition on the candidate correspondence itself,
+before any transport implementation is chosen.
 
 ### 4.1 Candidate admissible equivalence
 
-Let
-
-```text
-T : element -> element
-```
-
-be a candidate correspondence between generated chart elements.
+Let $T$ be a candidate correspondence between generated chart elements.
 
 `T` is a candidate admissible equivalence when it preserves the structures listed
 in this section.
 
-The requirement is not that `T` becomes admissible after transport or
+The requirement is not that $T$ becomes admissible after transport or
 normalization.
 
-The requirement is that `T` preserves the listed structures directly.
+The requirement is that $T$ preserves the listed structures directly.
 
-If `T` fails any preservation requirement before transport, no later transport
-step can make `T` admissible.
+If $T$ fails any preservation requirement before transport, no later transport
+step can make $T$ admissible.
 
 ### 4.2 Boundary identity is the shared spine
 
 The preservation requirements are not a flat parallel list.
 
-Unit, local algebra, and trace preservation must all remain compatible with the
-boundary identity supplied by `BoundaryIso`.
-
-The generated-product requirement depends explicitly on `BoundaryIso`.
+Unit, local algebra, internal trace, generated-product tree compatibility, and
+boundary identity must be compatible with the same generated boundary
+correspondence.
 
 Boundary identity is the shared spine of admissible equivalence.
 
 ### 4.3 Unit preservation as generated-unit correspondence
 
-For charts `alpha` and `beta`, a candidate equivalence must send the
+For charts $\alpha$ and $\beta$, a candidate equivalence must send the
 distinguished local unit of the source to the distinguished local unit of the
 target:
 
-```text
-T(e_{0,alpha}) = e_{0,beta}
-```
+$$
+T(e_{0,\alpha}) = e_{0,\beta}.
+$$
 
-This is not read as the abstract statement that both units are the same `1` in
-`H`.
+This is not read as the abstract statement that both units are the same $1$ in
+$\mathbb{H}$.
 
-It is read as a generated-unit correspondence: the generated-unit identity at
-`alpha` corresponds to the generated-unit identity at `beta` under the same
-admissible boundary correspondence used for `BoundaryIso`.
+It is read as a generated-unit correspondence.
+
+The generated-unit identity at $\alpha$ corresponds to the generated-unit
+identity at $\beta$ under the same admissible boundary correspondence used for
+`BoundaryIso`.
 
 Thus unit preservation does not identify units merely because both local closures
-are algebraically isomorphic to `H`.
+are algebraically isomorphic to $\mathbb{H}$.
 
 ### 4.4 Local algebra preservation
 
 This requirement concerns only operations internal to a single local chart, where
-the local closure has quaternionic form:
+the local closure has quaternionic form $F_1\simeq\mathbb{H}$.
 
-```text
-F_1 ~= H
-```
+For elements $x$ and $y$ inside a common local chart $\alpha$:
 
-For elements `x` and `y` inside a common local chart `alpha`,
-
-```text
-T(x *_alpha y) = T(x) *_beta T(y)
-```
+$$
+T(x *_\alpha y)
+=
+T(x) *_\beta T(y).
+$$
 
 This is a condition inside the local closure only.
 
 It does not address products that generate a new chart.
 
-For an element `x` inside a local chart, local conjugation is preserved as
+For an element $x$ inside a local chart, local conjugation is preserved as
 
-```text
-T(x*) = T(x)*
-```
+$$
+T(x^*) = T(x)^*.
+$$
 
 Conjugation is a local return operation.
 
@@ -319,34 +309,34 @@ generated charts.
 
 ### 4.5 Internal trace preservation
 
-A candidate equivalence must preserve the local self-consistency trace.
+A candidate equivalence must preserve the local self-consistency trace:
 
-```text
-Q_beta(T(x)) = Q_alpha(x)
-```
+$$
+Q_\beta(T(x)) = Q_\alpha(x).
+$$
 
-Here `Q_alpha` is the internal local trace form, the internal norm-like quantity
-`N_F` associated with the local chart.
+Here $Q_\alpha$ is the internal local trace form, the internal norm-like quantity
+$N_F$ associated with the local chart.
 
 It is not the external projection.
 
 This is an internal trace condition.
 
-It is not a condition on an external projection `rho`.
+It is not a condition on an external projection $\rho$.
 
 In particular,
 
-```text
-rho(x) = rho(y)
-```
+$$
+\rho(x)=\rho(y)
+$$
 
 must not be used to create admissible equivalence.
 
 Equality after projection does not imply `EqAdm`.
 
-Compression compatibility is not restated here.
+Compression compatibility belongs to `BoundaryIso`.
 
-It belongs to `BoundaryIso` and is not duplicated as a trace condition.
+It is not duplicated as a trace condition.
 
 ### 4.6 Generated-product tree compatibility
 
@@ -361,15 +351,11 @@ No global associativity is assumed.
 
 The two product trees
 
-```text
+$$
 (XY)Z
-```
-
-and
-
-```text
+\qquad\text{and}\qquad
 X(YZ)
-```
+$$
 
 may carry different generated boundary identities.
 
@@ -378,7 +364,7 @@ generated boundary identities is provided.
 
 The requirement is therefore stated on trees, not on flat products.
 
-A candidate equivalence `T` must send each source product tree to an admissibly
+A candidate equivalence $T$ must send each source product tree to an admissibly
 corresponding target product tree, so that the generated boundary identity of the
 source tree corresponds under `BoundaryIso` to the generated boundary identity of
 the target tree.
@@ -396,73 +382,72 @@ admissible target belong to the later weak-confluence stage.
 
 ### 4.7 Transport cannot repair failed admissibility
 
-All EqAdm preservation requirements are conditions on the candidate
+All `EqAdm` preservation requirements are conditions on the candidate
 correspondence before transport.
 
 Trace preservation is the sharpest example.
 
-If a candidate correspondence fails to preserve the internal trace `Q_alpha`
+If a candidate correspondence fails to preserve the internal trace $Q_\alpha$
 before transport, transport cannot make it admissible.
 
-```text
-transport cannot repair a failed trace condition
-```
+> Transport cannot repair a failed trace condition.
 
 The same independence holds for unit, local algebra, boundary identity, and
 generated-product tree compatibility.
 
 Transport is selected later.
 
-Any later transport implementation must respect an `EqAdm` that is already
-fixed.
+Any later transport implementation must respect an `EqAdm` that is already fixed.
 
 ## 5. ResidualPurity: retained mismatch and forbidden inference
 
-ResidualPurity is not downstream of EqAdm as a definition.
+`ResidualPurity` is not downstream of `EqAdm` as a definition.
 
-It is complementary to EqAdm.
+It is complementary to `EqAdm`.
 
-EqAdm says when generated chart elements may be identified.
+`EqAdm` says when generated chart elements may be identified.
 
-ResidualPurity says when a mismatch that is not identified may be retained as a
+`ResidualPurity` says when a mismatch that is not identified may be retained as a
 coherent residual.
 
 ### 5.1 Residual signature anchored in a mismatch identity
 
-For a candidate transition `S` between local closures, the main text records a
+For a candidate transition $S$ between local closures, the main text records a
 residual signature.
 
 In this note, the signature is read as anchored in a generated mismatch identity
-`gamma`:
+$\gamma$:
 
-```text
-Res_gamma(S) = (Delta_e, Delta_mul, Delta_star, Delta_Q)
-```
+$$
+\mathrm{Res}_{\gamma}(S)
+=
+(\Delta^e,\Delta^\cdot,\Delta^*,\Delta^Q).
+$$
 
 This is not a detached tuple.
 
 All four components are measured relative to the same generated mismatch
-identity `gamma`.
+identity $\gamma$.
 
-The components measure failure to preserve, respectively, the unit, the
-multiplication, the conjugation, and the internal local trace `Q_alpha`.
+The components measure failure to preserve the unit, the multiplication, the
+conjugation, and the internal local trace $Q_\alpha$.
 
-The trace component `Delta_Q` is internal.
+The trace component $\Delta^Q$ is internal.
 
-It is measured against `Q_alpha` and `N_F`.
+It is measured against $Q_\alpha$ and $N_F$.
 
-It is not measured against an external projection `rho` or an external magnitude
-defect `Gamma`.
+It is not measured against an external projection $\rho$ or an external magnitude
+defect $\Gamma$.
 
 ### 5.2 Purity is not vanishing
 
 If one required
 
-```text
-Res_gamma(S) = 0
-```
+$$
+\mathrm{Res}_{\gamma}(S)=0
+$$
 
-for all four components, then `S` would preserve unit, multiplication,
+for all four components, then $S$ would preserve unit, multiplication,
 conjugation, and internal trace.
 
 That is an admissible transition, not a retained residual.
@@ -520,9 +505,7 @@ Projected equality is permitted to occur.
 
 It is not permitted to invalidate a referential mismatch.
 
-```text
-Projected equality must not invalidate referential mismatch.
-```
+> Projected equality must not invalidate referential mismatch.
 
 This is the residual-side counterpart of the equivalence-side statement that
 transport cannot repair a failed condition.
@@ -544,19 +527,17 @@ It is not agreement of an external projection.
 
 A signature is a coherent witness when its four components
 
-```text
-(Delta_e, Delta_mul, Delta_star, Delta_Q)
-```
+$$
+(\Delta^e,\Delta^\cdot,\Delta^*,\Delta^Q)
+$$
 
 are mutually consistent as the record of a single generated mismatch identity
-`gamma`, rather than an incompatible collection of unrelated failures.
+$\gamma$, rather than an incompatible collection of unrelated failures.
 
 Thus:
 
-```text
-A residual signature is pure when it remains a coherent witness of referential
-mismatch and is not invalidated by projected equality.
-```
+> A residual signature is pure when it remains a coherent witness of referential
+> mismatch and is not invalidated by projected equality.
 
 Purity is judged from the internal consistency of a signature anchored in the
 same generated mismatch identity.
@@ -587,25 +568,26 @@ The dependency structure is not a single straight ladder.
 
 There is a direct dependency:
 
-```text
-BoundaryIso first
-EqAdm later
-```
+$$
+\mathrm{BoundaryIso}
+\longrightarrow
+\mathrm{EqAdm}.
+$$
 
 `EqAdm` uses `BoundaryIso` as its boundary component and depends on it for
 generated-product tree compatibility.
 
-ResidualPurity is not defined downstream of EqAdm.
+`ResidualPurity` is not defined downstream of `EqAdm`.
 
-It is complementary to EqAdm:
+It is complementary to `EqAdm`.
 
-```text
-EqAdm governs admissible identification.
-ResidualPurity governs retained mismatch when identification is not admissible.
-```
+| condition | governs |
+|---|---|
+| `EqAdm` | admissible identification |
+| `ResidualPurity` | retained mismatch when identification is not admissible |
 
 The three conditions together provide the identity layer used before weak
-confluence:
+confluence.
 
 ```text
 BoundaryIso
@@ -636,10 +618,11 @@ A transport move that identifies elements while failing to preserve
 
 Thus the dependency direction is:
 
-```text
-admissible identity layer first
-transport policy later
-```
+$$
+\text{admissible identity layer first}
+\qquad
+\text{transport policy later}.
+$$
 
 Transport may not create identity.
 
@@ -687,8 +670,8 @@ This note does not claim:
    product tree;
 6. that a pure residual is a vanishing residual;
 7. that every nonzero residual signature is pure;
-8. that residual purity is decided by an external projection `rho`;
-9. that residual purity is decided by the magnitude defect `Gamma`;
+8. that residual purity is decided by an external projection $\rho$;
+9. that residual purity is decided by the magnitude defect $\Gamma$;
 10. that residual purity is decided by visibility at some probe depth;
 11. that weak confluence follows from the identity layer alone;
 12. that this note chooses a transport implementation;
@@ -703,9 +686,7 @@ transport normalization.
 
 The admissible identity layer answers the question:
 
-```text
-What is allowed to count as identity?
-```
+> What is allowed to count as identity?
 
 `BoundaryIso` says that generated boundary identities may correspond only through
 an invertible admissible correspondence.
@@ -717,24 +698,22 @@ compatibility are preserved before transport.
 `ResidualPurity` says that retained residual mismatch is neither erased into
 equality nor admitted as arbitrary noise.
 
-A pure residual signature is anchored in a generated mismatch identity `gamma`.
+A pure residual signature is anchored in a generated mismatch identity $\gamma$.
 
 Its components are coherent as the record of that mismatch, and projected equality
 does not invalidate it.
 
-```text
-Projected equality must not invalidate referential mismatch.
-```
+> Projected equality must not invalidate referential mismatch.
 
-The dependency structure is branched, not a single ladder:
+The dependency structure is branched, not a single ladder.
 
-```text
-BoundaryIso -> EqAdm
+$$
+\mathrm{BoundaryIso}\longrightarrow\mathrm{EqAdm}
+$$
 
-ResidualPurity is complementary to EqAdm
+while `ResidualPurity` is complementary to `EqAdm`.
 
-BoundaryIso, EqAdm, and ResidualPurity are used before weak confluence
-```
+`BoundaryIso`, `EqAdm`, and `ResidualPurity` are used before weak confluence.
 
 Transport and weak confluence come later.
 
