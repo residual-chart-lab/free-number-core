@@ -12,7 +12,7 @@ separately in Note 06.
 
 Let
 
-$$V=\operatorname{Im}\mathbb{H}=\operatorname{span}_{\mathbb{R}}\{i,j,k\}.$$
+$$V=\mathrm{Im}\mathbb{H}=\mathrm{span}_{\mathbb{R}}\{i,j,k\}.$$
 
 For each word length $n\ge 1$, define the boundary-word space
 
@@ -64,7 +64,7 @@ $$\mathcal{R}_{n,d}^{\vec r}(T)(x_1,\ldots,x_d)=m_{n+d}\left(I_{\vec x}^{\vec r}
 
 Equivalently,
 
-$$\mathcal{R}_{n,d}^{\vec r}:B_n\to\operatorname{Hom}(V^{\otimes d},\mathbb{H}).$$
+$$\mathcal{R}_{n,d}^{\vec r}:B_n\to\mathrm{Hom}(V^{\otimes d},\mathbb{H}).$$
 
 The full depth $d$ response profile is the collection of all such components over
 all distinct slot choices $\vec r$.
@@ -89,15 +89,15 @@ $$\vec r=(r_1,\ldots,r_d),\qquad 1\le r_1<r_2<\cdots<r_d\le n-1.$$
 
 Define the full-null residual space through depth $d$ by
 
-$$K_{n,d}^{\mathrm{full\text{-}null}}=\ker m_n\cap\bigcap_{1\le d'\le d}\ \bigcap_{\vec r\in\mathcal{S}_{\mathrm{full}}(n,d')}\ker\mathcal{R}_{n,d'}^{\vec r}.$$
+$$K_{n,d}^{\mathrm{fullNull}}=\ker m_n\cap\bigcap_{1\le d'\le d}\ \bigcap_{\vec r\in\mathcal{S}_{\mathrm{full}}(n,d')}\ker\mathcal{R}_{n,d'}^{\vec r}.$$
 
 Define the internal-null residual space through depth $d$ by
 
-$$K_{n,d}^{\mathrm{int\text{-}null}}=\ker m_n\cap\bigcap_{1\le d'\le d}\ \bigcap_{\vec r\in\mathcal{S}_{\mathrm{int}}(n,d')}\ker\mathcal{R}_{n,d'}^{\vec r}.$$
+$$K_{n,d}^{\mathrm{intNull}}=\ker m_n\cap\bigcap_{1\le d'\le d}\ \bigcap_{\vec r\in\mathcal{S}_{\mathrm{int}}(n,d')}\ker\mathcal{R}_{n,d'}^{\vec r}.$$
 
 The full-null condition is stronger than the internal-null condition:
 
-$$K_{n,d}^{\mathrm{full\text{-}null}}\subseteq K_{n,d}^{\mathrm{int\text{-}null}}.$$
+$$K_{n,d}^{\mathrm{fullNull}}\subseteq K_{n,d}^{\mathrm{intNull}}.$$
 
 This separation prevents a selected internal component from being mistaken for
 the full response profile.
@@ -151,7 +151,7 @@ $$C_S(x_1,\ldots,x_{n-1})=S(x_1,\ldots,x_{n-1}).$$
 
 Thus
 
-$$C_S\in\operatorname{Hom}(V^{\otimes(n-1)},V)\subseteq\operatorname{Hom}(V^{\otimes(n-1)},\mathbb{H}).$$
+$$C_S\in\mathrm{Hom}(V^{\otimes(n-1)},V)\subseteq\mathrm{Hom}(V^{\otimes(n-1)},\mathbb{H}).$$
 
 The vertical response question is whether $A_n$ restricts to a scalar multiple of
 $C_S$ on $S^n_0V$.
@@ -178,7 +178,7 @@ $$A_n(S)=(-2)^{n-1}C_S\qquad(S\in S^n_0V,\ n\ge 2).$$
 
 The target of a depth $d$ response is
 
-$$\operatorname{Hom}(V^{\otimes d},\mathbb{H})\simeq\mathbb{H}\otimes V^{\otimes d}.$$
+$$\mathrm{Hom}(V^{\otimes d},\mathbb{H})\simeq\mathbb{H}\otimes V^{\otimes d}.$$
 
 Since
 
