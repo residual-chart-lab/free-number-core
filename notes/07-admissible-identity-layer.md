@@ -27,9 +27,7 @@ This note does not choose a transport implementation.
 
 The local closure of a single chart may have quaternionic form:
 
-$$
-F_1 \simeq \mathbb{H}.
-$$
+$$F_1 \simeq \mathbb{H}.$$
 
 But this local fact does not identify all generated charts inside one global
 ambient quaternion algebra.
@@ -51,17 +49,13 @@ residual-normalization, and weak-confluence stages.
 
 Two generated elements may have the same compressed value:
 
-$$
-m_n(u) = m_n(v).
-$$
+$$m_n(u) = m_n(v).$$
 
 This does not imply that they are admissibly identical.
 
 Likewise, two elements may have the same projected value:
 
-$$
-\rho(X) = \rho(Y).
-$$
+$$\rho(X) = \rho(Y).$$
 
 This does not imply any of the following:
 
@@ -82,9 +76,7 @@ A generated chart is not represented only by its local quaternionic value.
 It also carries a generated boundary identity. In the notation of the main text,
 the boundary of a generated chart is recorded as
 
-$$
-\partial\gamma = (\alpha, x;\, \beta, y).
-$$
+$$\partial\gamma = (\alpha, x;\, \beta, y).$$
 
 This record is part of the generated identity.
 
@@ -117,49 +109,31 @@ It is not merely an isomorphism of local quaternion algebras.
 
 Let $b$ and $b'$ be generated boundary identities:
 
-$$
-b=(\alpha,x;\,\beta,y),
-\qquad
-b'=(\alpha',x';\,\beta',y').
-$$
+$$b=(\alpha,x;\,\beta,y), \qquad b'=(\alpha',x';\,\beta',y').$$
 
 A `BoundaryIso` between $b$ and $b'$ is an invertible admissible correspondence
 between generated boundary identities.
 
 Equivalently, it is a structured witness
 
-$$
-\theta : b \leftrightarrow b'
-$$
+$$\theta : b \leftrightarrow b'$$
 
 such that both directions preserve the boundary data specified below.
 
 Thus `BoundaryIso` is symmetric:
 
-$$
-\mathrm{BoundaryIso}(b,b')
-\quad\Longleftrightarrow\quad
-\mathrm{BoundaryIso}(b',b).
-$$
+$$\mathrm{BoundaryIso}(b,b') \quad\Longleftrightarrow\quad \mathrm{BoundaryIso}(b',b).$$
 
 In the orientation-preserving case, it sends the two incidence pairs as generated
 boundary positions:
 
-$$
-(\alpha,x) \mapsto (\alpha',x'),
-\qquad
-(\beta,y) \mapsto (\beta',y').
-$$
+$$(\alpha,x) \mapsto (\alpha',x'), \qquad (\beta,y) \mapsto (\beta',y').$$
 
 If an orientation-reversing boundary correspondence is allowed, it is represented
 by an explicit reversal tag. In that case, the reversal swaps the two incidence
 pairs:
 
-$$
-(\alpha,x;\,\beta,y)
-\leftrightarrow
-(\beta',y';\,\alpha',x').
-$$
+$$(\alpha,x;\,\beta,y) \leftrightarrow (\beta',y';\,\alpha',x').$$
 
 The reversal tag is involutive and is recorded in both directions.
 
@@ -187,19 +161,11 @@ There is no second unrecorded reversal.
 
 Compression compatibility is one-way:
 
-$$
-\mathrm{BoundaryIso}(b,b')
-\Longrightarrow
-\text{compatible compressed values}.
-$$
+$$\mathrm{BoundaryIso}(b,b') \Longrightarrow \text{compatible compressed values}.$$
 
 The converse is not assumed:
 
-$$
-\text{compatible compressed values}
-\not\Longrightarrow
-\mathrm{BoundaryIso}(b,b').
-$$
+$$\text{compatible compressed values} \not\Longrightarrow \mathrm{BoundaryIso}(b,b').$$
 
 `BoundaryIso` does not assert full residual purity.
 
@@ -209,15 +175,7 @@ It only says what it means for generated boundary identities to correspond.
 
 The global free-number structure is defined modulo admissible equivalence:
 
-$$
-F
-=
-\mathrm{Term}_{R}
-\left(
-\bigsqcup \text{local closures}
-\right)
-/\mathrm{EqAdm}.
-$$
+$$F = \mathrm{Term}_{R} \left( \bigsqcup \text{local closures} \right) /\mathrm{EqAdm}.$$
 
 The quotient is only as meaningful as the equivalence relation `EqAdm`.
 
@@ -263,9 +221,7 @@ For charts $\alpha$ and $\beta$, a candidate equivalence must send the
 distinguished local unit of the source to the distinguished local unit of the
 target:
 
-$$
-T(e_{0,\alpha}) = e_{0,\beta}.
-$$
+$$T(e_{0,\alpha}) = e_{0,\beta}.$$
 
 This is not read as the abstract statement that both units are the same $1$ in
 $\mathbb{H}$.
@@ -286,11 +242,7 @@ the local closure has quaternionic form $F_1\simeq\mathbb{H}$.
 
 For elements $x$ and $y$ inside a common local chart $\alpha$:
 
-$$
-T(x *_\alpha y)
-=
-T(x) *_\beta T(y).
-$$
+$$T(x *_\alpha y) = T(x) *_\beta T(y).$$
 
 This is a condition inside the local closure only.
 
@@ -298,9 +250,7 @@ It does not address products that generate a new chart.
 
 For an element $x$ inside a local chart, local conjugation is preserved as
 
-$$
-T(x^*) = T(x)^*.
-$$
+$$T(x^*) = T(x)^*.$$
 
 Conjugation is a local return operation.
 
@@ -311,9 +261,7 @@ generated charts.
 
 A candidate equivalence must preserve the local self-consistency trace:
 
-$$
-Q_\beta(T(x)) = Q_\alpha(x).
-$$
+$$Q_\beta(T(x)) = Q_\alpha(x).$$
 
 Here $Q_\alpha$ is the internal local trace form, the internal norm-like quantity
 $N_F$ associated with the local chart.
@@ -326,9 +274,7 @@ It is not a condition on an external projection $\rho$.
 
 In particular,
 
-$$
-\rho(x)=\rho(y)
-$$
+$$\rho(x)=\rho(y)$$
 
 must not be used to create admissible equivalence.
 
@@ -351,11 +297,7 @@ No global associativity is assumed.
 
 The two product trees
 
-$$
-(XY)Z
-\qquad\text{and}\qquad
-X(YZ)
-$$
+$$(XY)Z \qquad \text{and} \qquad X(YZ)$$
 
 may carry different generated boundary identities.
 
@@ -418,11 +360,7 @@ residual signature.
 In this note, the signature is read as anchored in a generated mismatch identity
 $\gamma$:
 
-$$
-\mathrm{Res}_{\gamma}(S)
-=
-(\Delta^e,\Delta^\cdot,\Delta^*,\Delta^Q).
-$$
+$$\mathrm{Res}_{\gamma}(S) = (\Delta^e,\Delta^\cdot,\Delta^*,\Delta^Q).$$
 
 This is not a detached tuple.
 
@@ -443,9 +381,7 @@ defect $\Gamma$.
 
 If one required
 
-$$
-\mathrm{Res}_{\gamma}(S)=0
-$$
+$$\mathrm{Res}_{\gamma}(S)=0$$
 
 for all four components, then $S$ would preserve unit, multiplication,
 conjugation, and internal trace.
@@ -527,9 +463,7 @@ It is not agreement of an external projection.
 
 A signature is a coherent witness when its four components
 
-$$
-(\Delta^e,\Delta^\cdot,\Delta^*,\Delta^Q)
-$$
+$$(\Delta^e,\Delta^\cdot,\Delta^*,\Delta^Q)$$
 
 are mutually consistent as the record of a single generated mismatch identity
 $\gamma$, rather than an incompatible collection of unrelated failures.
@@ -568,11 +502,7 @@ The dependency structure is not a single straight ladder.
 
 There is a direct dependency:
 
-$$
-\mathrm{BoundaryIso}
-\longrightarrow
-\mathrm{EqAdm}.
-$$
+$$\mathrm{BoundaryIso} \longrightarrow \mathrm{EqAdm}.$$
 
 `EqAdm` uses `BoundaryIso` as its boundary component and depends on it for
 generated-product tree compatibility.
@@ -618,11 +548,7 @@ A transport move that identifies elements while failing to preserve
 
 Thus the dependency direction is:
 
-$$
-\text{admissible identity layer first}
-\qquad
-\text{transport policy later}.
-$$
+$$\text{admissible identity layer first} \qquad \text{transport policy later}.$$
 
 Transport may not create identity.
 
@@ -707,9 +633,7 @@ does not invalidate it.
 
 The dependency structure is branched, not a single ladder.
 
-$$
-\mathrm{BoundaryIso}\longrightarrow\mathrm{EqAdm}
-$$
+$$\mathrm{BoundaryIso}\longrightarrow\mathrm{EqAdm}$$
 
 while `ResidualPurity` is complementary to `EqAdm`.
 
