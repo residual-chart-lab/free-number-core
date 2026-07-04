@@ -21,10 +21,10 @@ non-top-spin part of the kernel.
 The main statement is
 
 $$
-K_3\cap \ker D_3 = S^3_0V,
+K_3\cap \ker\,D_3 = S^3_0V,
 $$
 
-where $K_3=\ker m_3$ and $D_3$ is the full depth-one profile.
+where $K_3=\ker\,m_3$ and $D_3$ is the full depth-one profile.
 
 Thus, in length three, the residual kernel is completely detected by depths one
 and two:
@@ -71,7 +71,7 @@ $$
 Let
 
 $$
-K_3=\ker m_3.
+K_3=\ker\,m_3.
 $$
 
 The map $m_3$ is $SO(3)$-equivariant and surjective onto
@@ -95,7 +95,7 @@ $$
 Hence
 
 $$
-\mathrm{rank} m_3=4,\qquad \dim K_3=27-4=23.
+\mathrm{rank}\,m_3=4,\qquad \dim\,K_3=27-4=23.
 $$
 
 ## 2. The representation decomposition
@@ -151,7 +151,7 @@ $$
 the symmetric trace-free tensors of rank three. Its dimension is
 
 $$
-\dim S^3_0V = 2\cdot 3+1=7.
+\dim\,S^3_0V = 2\cdot 3+1=7.
 $$
 
 ## 3. The depth-one profile
@@ -210,7 +210,7 @@ $$
 Hence
 
 $$
-S^3_0V\subset \ker D_3.
+S^3_0V\subset \ker\,D_3.
 $$
 
 Also, since $m_3$ has target $V_0\oplus V_1$, the same top-spin summand lies in
@@ -223,7 +223,7 @@ $$
 Therefore
 
 $$
-S^3_0V\subset K_3\cap \ker D_3.
+S^3_0V\subset K_3\cap \ker\,D_3.
 $$
 
 The question is whether anything else remains invisible at depth one.
@@ -248,21 +248,21 @@ The matrices of $m_3$ and $D_3$ in these bases have integer entries. Direct
 row-reduction over $\mathbb Q$ gives
 
 $$
-\mathrm{rank} m_3=4,
+\mathrm{rank}\,m_3=4,
 $$
 
 and
 
 $$
-\mathrm{rank}(D_3|_{K_3})=16.
+\mathrm{rank}\,(D_3|_{K_3})=16.
 $$
 
 Equivalently,
 
 $$
 \begin{aligned}
-\dim(K_3\cap \ker D_3)
-  &= \dim K_3-\mathrm{rank}(D_3|_{K_3})\\
+\dim\,(K_3\cap \ker\,D_3)
+  &= \dim\,K_3-\mathrm{rank}\,(D_3|_{K_3})\\
   &= 23-16\\
   &= 7.
 \end{aligned}
@@ -273,19 +273,19 @@ subspace. The symmetric tensors in $S^3V$ have dimension $10$; imposing the thre
 trace equations gives
 
 $$
-\dim S^3_0V=7.
+\dim\,S^3_0V=7.
 $$
 
 The inclusion
 
 $$
-S^3_0V\subset K_3\cap \ker D_3
+S^3_0V\subset K_3\cap \ker\,D_3
 $$
 
 and the equality of dimensions therefore imply equality of subspaces:
 
 $$
-K_3\cap \ker D_3 = S^3_0V.
+K_3\cap \ker\,D_3 = S^3_0V.
 $$
 
 The computation is exact: no numerical approximation is involved. An accompanying
@@ -297,7 +297,7 @@ rationals.
 **Proposition (Depth-one detection in length three).** Let
 
 $$
-K_3=\ker m_3\subset V^{\otimes 3}
+K_3=\ker\,m_3\subset V^{\otimes 3}
 $$
 
 and let
@@ -309,7 +309,7 @@ $$
 be the full depth-one insertion profile. Then
 
 $$
-K_3\cap \ker D_3 = S^3_0V.
+K_3\cap \ker\,D_3 = S^3_0V.
 $$
 
 Equivalently, the only length-three residuals invisible both to compression and
@@ -318,7 +318,7 @@ to every depth-one insertion probe are the highest-spin harmonic tensors.
 *Proof.* We already have
 
 $$
-S^3_0V\subset K_3\cap \ker D_3
+S^3_0V\subset K_3\cap \ker\,D_3
 $$
 
 because neither $m_3$ nor $D_3$ has a $V_3$ target component.
@@ -326,20 +326,22 @@ because neither $m_3$ nor $D_3$ has a $V_3$ target component.
 By exact row-reduction,
 
 $$
-\dim(K_3\cap \ker D_3)=7.
+\dim\,(K_3\cap \ker\,D_3)=7.
 $$
 
 But
 
 $$
-\dim S^3_0V=7.
+\dim\,S^3_0V=7.
 $$
 
 Hence the inclusion is an equality:
 
 $$
-K_3\cap \ker D_3=S^3_0V.\qquad \square
+K_3\cap \ker\,D_3=S^3_0V.
 $$
+
+This proves the proposition.
 
 ## 6. Consequence: complete detection of $K_3$
 
