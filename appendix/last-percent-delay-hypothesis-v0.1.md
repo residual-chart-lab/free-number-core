@@ -13,9 +13,7 @@ persistence compounds near zero.
 
 The key idea is:
 
-$$
-\text{near zero, the decay rate itself may decay.}
-$$
+> near zero, the decay rate itself may decay.
 
 When the remaining amount gets smaller, the process does not merely have less to
 lose; it may also become worse at losing. This creates a terminal tail.
@@ -104,14 +102,12 @@ Here:
 This gives the model
 
 $$
-\boxed{
 \frac{dE}{dt}
 =
--kE\left(\frac{E}{E+\alpha}\right)^p
-}
+-kE\left(\frac{E}{E+\alpha}\right)^p.
 $$
 
-or equivalently
+Equivalently,
 
 $$
 \frac{dE}{dt}
@@ -302,15 +298,12 @@ $$
 
 This is the “compound” part of the model:
 
-$$
-\text{less remaining amount}
-\quad\Rightarrow\quad
-\text{smaller decay rate}
-\quad\Rightarrow\quad
-\text{more persistence}
-\quad\Rightarrow\quad
-\text{even slower terminal change}.
-$$
+```text
+less remaining amount
+=> smaller decay rate
+=> more persistence
+=> even slower terminal change
+```
 
 In ordinary exponential decay, halving time is constant. In the terminal
 persistence model, halving time grows geometrically as one approaches zero.
@@ -445,11 +438,7 @@ Those effects may also produce last-percent behavior.
 
 The present note isolates a different mechanism:
 
-$$
-\boxed{
-\text{the decay rate itself decreases near zero.}
-}
-$$
+> the decay rate itself decreases near zero.
 
 This alone is enough to produce compound terminal persistence.
 
@@ -470,8 +459,6 @@ future connection points include:
 
 The intended relation is therefore:
 
-$$
-\text{not a Free Numbers theorem, but a nearby model.}
-$$
+> not a Free Numbers theorem, but a nearby model.
 
 It is a small model of how “almost gone” can become structurally long-lived.
