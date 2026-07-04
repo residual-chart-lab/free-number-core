@@ -1,219 +1,230 @@
 # Free Numbers: Depth-One Detection in Length Three
 
-Let `V = Im H` be the space of imaginary quaternions, with basis `i, j, k`.
-For length three, the boundary-word space is
+Let $V=\operatorname{Im}\mathbb H$ be the space of imaginary quaternions, with
+basis $i,j,k$. For length three, the boundary-word space is
 
-```text
-B_3 = V ⊗ V ⊗ V.
-```
+$$
+B_3 = V\otimes V\otimes V.
+$$
 
 The reversed compression map
 
-```text
-m_3(a | b | c) = c b a
-```
+$$
+m_3(a\mid b\mid c)=cba
+$$
 
 has a large kernel. The vertical-response theorem detects the top-spin part
-`S^3_0 V ≅ V_3` of this kernel at depth two. This note records what happens one
+$S^3_0V\cong V_3$ of this kernel at depth two. This note records what happens one
 depth earlier: the depth-one insertion profile detects exactly the remaining,
 non-top-spin part of the kernel.
 
 The main statement is
 
-```text
-K_3 ∩ ker D_3 = S^3_0 V,
-```
+$$
+K_3\cap \ker D_3 = S^3_0V,
+$$
 
-where `K_3 = ker m_3` and `D_3` is the full depth-one profile.
+where $K_3=\ker m_3$ and $D_3$ is the full depth-one profile.
 
 Thus, in length three, the residual kernel is completely detected by depths one
 and two:
 
-```text
-depth 1 detects  2V_1 ⊕ 2V_2,
-depth 2 detects  V_3.
-```
+$$
+\begin{aligned}
+\text{depth }1 &\text{ detects } 2V_1\oplus 2V_2,\\
+\text{depth }2 &\text{ detects } V_3.
+\end{aligned}
+$$
 
 ## 1. Compression in length three
 
 Let
 
-```text
-V = Im H = span_R{i, j, k},
-```
+$$
+V=\operatorname{Im}\mathbb H=\operatorname{span}_{\mathbb R}\{i,j,k\},
+$$
 
 with quaternion multiplication on imaginary elements
 
-```text
-uv = -(u · v) + (u × v).
-```
+$$
+uv=-(u\cdot v)+(u\times v).
+$$
 
 The length-three boundary-word space is
 
-```text
-B_3 = V^{⊗3},
-```
+$$
+B_3=V^{\otimes 3},
+$$
 
 with basis words written
 
-```text
-a | b | c.
-```
+$$
+a\mid b\mid c.
+$$
 
 The reversed compression map is
 
-```text
-m_3 : B_3 → H,
-m_3(a | b | c) = c b a.
-```
+$$
+m_3:B_3\to \mathbb H,\qquad m_3(a\mid b\mid c)=cba.
+$$
 
 Let
 
-```text
-K_3 = ker m_3.
-```
+$$
+K_3=\ker m_3.
+$$
 
-The map `m_3` is `SO(3)`-equivariant and surjective onto
+The map $m_3$ is $SO(3)$-equivariant and surjective onto
 
-```text
-H ≅ V_0 ⊕ V_1.
-```
+$$
+\mathbb H\cong V_0\oplus V_1.
+$$
 
 For example, it has nonzero scalar and imaginary outputs:
 
-```text
-m_3(i | j | k) = k j i = 1,
-m_3(i | i | i) = i i i = -i.
-```
+$$
+m_3(i\mid j\mid k)=kji=1,
+$$
+
+and
+
+$$
+m_3(i\mid i\mid i)=iii=-i.
+$$
 
 Hence
 
-```text
-rank m_3 = 4,
-dim K_3 = 27 - 4 = 23.
-```
+$$
+\operatorname{rank} m_3=4,\qquad \dim K_3=27-4=23.
+$$
 
 ## 2. The representation decomposition
 
 The standard Clebsch-Gordan decomposition gives
 
-```text
-V_1 ⊗ V_1 = V_0 ⊕ V_1 ⊕ V_2.
-```
+$$
+V_1\otimes V_1 = V_0\oplus V_1\oplus V_2.
+$$
 
 Therefore
 
-```text
-V^{⊗3}
-  = (V_1 ⊗ V_1) ⊗ V_1
-  = (V_0 ⊕ V_1 ⊕ V_2) ⊗ V_1
-  = V_0 ⊕ 3V_1 ⊕ 2V_2 ⊕ V_3.
-```
+$$
+\begin{aligned}
+V^{\otimes 3}
+  &= (V_1\otimes V_1)\otimes V_1\\
+  &= (V_0\oplus V_1\oplus V_2)\otimes V_1\\
+  &= V_0\oplus 3V_1\oplus 2V_2\oplus V_3.
+\end{aligned}
+$$
 
-Since `m_3` is `SO(3)`-equivariant, Schur's lemma separates the calculation
-by isotypic component. The target contains only `V_0` and `V_1`, so the `V_2`
-and `V_3` source components lie in the kernel. The scalar example
+Since $m_3$ is $SO(3)$-equivariant, Schur's lemma separates the calculation by
+isotypic component. The target contains only $V_0$ and $V_1$, so the $V_2$ and
+$V_3$ source components lie in the kernel. The scalar example
 
-```text
-m_3(i | j | k) = 1
-```
+$$
+m_3(i\mid j\mid k)=1
+$$
 
-shows that the unique source copy of `V_0` maps nontrivially to the target
-`V_0`, hence is not in the kernel. The imaginary example
+shows that the unique source copy of $V_0$ maps nontrivially to the target $V_0$,
+hence is not in the kernel. The imaginary example
 
-```text
-m_3(i | i | i) = -i
-```
+$$
+m_3(i\mid i\mid i)=-i
+$$
 
-shows that the map from the `3V_1` isotypic component to the target `V_1` is
+shows that the map from the $3V_1$ isotypic component to the target $V_1$ is
 nonzero. By Schur's lemma this map has rank one on the multiplicity space, so its
-kernel inside `3V_1` is `2V_1`.
+kernel inside $3V_1$ is $2V_1$.
 
 Therefore
 
-```text
-K_3 ≅ 2V_1 ⊕ 2V_2 ⊕ V_3.
-```
+$$
+K_3\cong 2V_1\oplus 2V_2\oplus V_3.
+$$
 
 The top-spin summand is
 
-```text
-V_3 ≅ S^3_0 V,
-```
+$$
+V_3\cong S^3_0V,
+$$
 
 the symmetric trace-free tensors of rank three. Its dimension is
 
-```text
-dim S^3_0 V = 2·3 + 1 = 7.
-```
+$$
+\dim S^3_0V = 2\cdot 3+1=7.
+$$
 
 ## 3. The depth-one profile
 
 There are two internal gaps in a length-three word. The depth-one profile inserts
 one probe variable into either gap and then compresses.
 
-For a basis word `a | b | c`, define
+For a basis word $a\mid b\mid c$, define
 
-```text
-D_3^{(1)}(a | b | c)(x) = c b x a,
-D_3^{(2)}(a | b | c)(x) = c x b a,
-```
+$$
+D_3^{(1)}(a\mid b\mid c)(x)=cbxa,
+$$
 
-where `x ∈ V`.
+and
+
+$$
+D_3^{(2)}(a\mid b\mid c)(x)=cxba,
+$$
+
+where $x\in V$.
 
 The full depth-one profile is
 
-```text
-D_3 = (D_3^{(1)}, D_3^{(2)})
-    : B_3 → Hom(V, H) ⊕ Hom(V, H).
-```
+$$
+D_3=(D_3^{(1)},D_3^{(2)}):B_3\to \operatorname{Hom}(V,\mathbb H)\oplus \operatorname{Hom}(V,\mathbb H).
+$$
 
 Equivalently,
 
-```text
-D_3 : B_3 → 2(H ⊗ V).
-```
+$$
+D_3:B_3\to 2(\mathbb H\otimes V).
+$$
 
 Since
 
-```text
-H ⊗ V
-  ≅ (V_0 ⊕ V_1) ⊗ V_1
-  ≅ V_0 ⊕ 2V_1 ⊕ V_2,
-```
+$$
+\mathbb H\otimes V
+  \cong (V_0\oplus V_1)\otimes V_1
+  \cong V_0\oplus 2V_1\oplus V_2,
+$$
 
-the target of `D_3` decomposes as
+the target of $D_3$ decomposes as
 
-```text
-2(H ⊗ V) ≅ 2V_0 ⊕ 4V_1 ⊕ 2V_2.
-```
+$$
+2(\mathbb H\otimes V)\cong 2V_0\oplus 4V_1\oplus 2V_2.
+$$
 
-In particular, the target contains no `V_3`. Since `D_3` is `SO(3)`-equivariant,
-every source summand of type `V_3` maps to zero. In length three, the source has
-a unique `V_3` summand, namely
+In particular, the target contains no $V_3$. Since $D_3$ is $SO(3)$-equivariant,
+every source summand of type $V_3$ maps to zero. In length three, the source has
+a unique $V_3$ summand, namely
 
-```text
-S^3_0 V ≅ V_3.
-```
+$$
+S^3_0V\cong V_3.
+$$
 
 Hence
 
-```text
-S^3_0 V ⊂ ker D_3.
-```
+$$
+S^3_0V\subset \ker D_3.
+$$
 
-Also, since `m_3` has target `V_0 ⊕ V_1`, the same top-spin summand lies in the
-compression kernel:
+Also, since $m_3$ has target $V_0\oplus V_1$, the same top-spin summand lies in
+the compression kernel:
 
-```text
-S^3_0 V ⊂ K_3.
-```
+$$
+S^3_0V\subset K_3.
+$$
 
 Therefore
 
-```text
-S^3_0 V ⊂ K_3 ∩ ker D_3.
-```
+$$
+S^3_0V\subset K_3\cap \ker D_3.
+$$
 
 The question is whether anything else remains invisible at depth one.
 
@@ -221,53 +232,61 @@ The question is whether anything else remains invisible at depth one.
 
 Use the ordered basis
 
-```text
-{i, j, k}^{⊗3}
-```
+$$
+\{i,j,k\}^{\otimes 3}
+$$
 
-for `B_3`, and the ordered basis
+for $B_3$, and the ordered basis
 
-```text
-{1, i, j, k}
-```
+$$
+\{1,i,j,k\}
+$$
 
-for `H`.
+for $\mathbb H$.
 
-The matrices of `m_3` and `D_3` in these bases have integer entries. Direct
-row-reduction over `Q` gives
+The matrices of $m_3$ and $D_3$ in these bases have integer entries. Direct
+row-reduction over $\mathbb Q$ gives
 
-```text
-rank m_3 = 4,
-rank D_3|_{K_3} = 16.
-```
+$$
+\operatorname{rank} m_3=4,
+$$
+
+and
+
+$$
+\operatorname{rank}(D_3|_{K_3})=16.
+$$
 
 Equivalently,
 
-```text
-dim(K_3 ∩ ker D_3) = dim K_3 - rank(D_3|_{K_3})
-                   = 23 - 16
-                   = 7.
-```
+$$
+\begin{aligned}
+\dim(K_3\cap \ker D_3)
+  &= \dim K_3-\operatorname{rank}(D_3|_{K_3})\\
+  &= 23-16\\
+  &= 7.
+\end{aligned}
+$$
 
 A second exact check identifies the seven-dimensional kernel with the harmonic
-subspace. The symmetric tensors in `S^3 V` have dimension `10`; imposing the
-three trace equations gives
+subspace. The symmetric tensors in $S^3V$ have dimension $10$; imposing the three
+trace equations gives
 
-```text
-dim S^3_0 V = 7.
-```
+$$
+\dim S^3_0V=7.
+$$
 
 The inclusion
 
-```text
-S^3_0 V ⊂ K_3 ∩ ker D_3
-```
+$$
+S^3_0V\subset K_3\cap \ker D_3
+$$
 
 and the equality of dimensions therefore imply equality of subspaces:
 
-```text
-K_3 ∩ ker D_3 = S^3_0 V.
-```
+$$
+K_3\cap \ker D_3 = S^3_0V.
+$$
 
 The computation is exact: no numerical approximation is involved. An accompanying
 SymPy certificate can reproduce these ranks and the subspace equality over the
@@ -277,119 +296,121 @@ rationals.
 
 **Proposition (Depth-one detection in length three).** Let
 
-```text
-K_3 = ker m_3 ⊂ V^{⊗3}
-```
+$$
+K_3=\ker m_3\subset V^{\otimes 3}
+$$
 
 and let
 
-```text
-D_3 : V^{⊗3} → Hom(V,H) ⊕ Hom(V,H)
-```
+$$
+D_3:V^{\otimes 3}\to \operatorname{Hom}(V,\mathbb H)\oplus \operatorname{Hom}(V,\mathbb H)
+$$
 
 be the full depth-one insertion profile. Then
 
-```text
-K_3 ∩ ker D_3 = S^3_0 V.
-```
+$$
+K_3\cap \ker D_3 = S^3_0V.
+$$
 
 Equivalently, the only length-three residuals invisible both to compression and
 to every depth-one insertion probe are the highest-spin harmonic tensors.
 
 *Proof.* We already have
 
-```text
-S^3_0 V ⊂ K_3 ∩ ker D_3
-```
+$$
+S^3_0V\subset K_3\cap \ker D_3
+$$
 
-because neither `m_3` nor `D_3` has a `V_3` target component.
+because neither $m_3$ nor $D_3$ has a $V_3$ target component.
 
 By exact row-reduction,
 
-```text
-dim(K_3 ∩ ker D_3) = 7.
-```
+$$
+\dim(K_3\cap \ker D_3)=7.
+$$
 
 But
 
-```text
-dim S^3_0 V = 7.
-```
+$$
+\dim S^3_0V=7.
+$$
 
 Hence the inclusion is an equality:
 
-```text
-K_3 ∩ ker D_3 = S^3_0 V. ∎
-```
+$$
+K_3\cap \ker D_3=S^3_0V.\qquad \square
+$$
 
-## 6. Consequence: complete detection of `K_3`
+## 6. Consequence: complete detection of $K_3$
 
 The kernel decomposes as
 
-```text
-K_3 ≅ 2V_1 ⊕ 2V_2 ⊕ V_3.
-```
+$$
+K_3\cong 2V_1\oplus 2V_2\oplus V_3.
+$$
 
-The proposition says that the depth-one profile misses exactly the `V_3` summand.
+The proposition says that the depth-one profile misses exactly the $V_3$ summand.
 Therefore it detects the whole non-top-spin part:
 
-```text
-D_3 detects  2V_1 ⊕ 2V_2.
-```
+$$
+D_3 \text{ detects } 2V_1\oplus 2V_2.
+$$
 
 The vertical-response theorem gives the depth-two response on the top-spin
 component:
 
-```text
-A_3(S) = 4 C_S,     S ∈ S^3_0 V.
-```
+$$
+A_3(S)=4C_S,\qquad S\in S^3_0V.
+$$
 
-Since `C` is injective, depth two detects the remaining `V_3`.
+Since $C$ is injective, depth two detects the remaining $V_3$.
 
 Thus the length-three residual kernel is completely detected by depths one and
 two:
 
-```text
-K_3 = (2V_1 ⊕ 2V_2) ⊕ V_3,
-```
+$$
+K_3=(2V_1\oplus 2V_2)\oplus V_3,
+$$
 
 with
 
-```text
-depth 1 detecting  2V_1 ⊕ 2V_2,
-depth 2 detecting  V_3.
-```
+$$
+\begin{aligned}
+\text{depth }1 &\text{ detecting } 2V_1\oplus 2V_2,\\
+\text{depth }2 &\text{ detecting } V_3.
+\end{aligned}
+$$
 
 This is the first complete spin-depth profile.
 
 ## 7. Multiplicity-space refinement
 
 The statement above is independent of a choice of basis in the multiplicity
-spaces. In particular, on the `V_2`-isotypic part of `K_3`,
+spaces. In particular, on the $V_2$-isotypic part of $K_3$,
 
-```text
-(K_3)_{V_2} ≅ 2V_2,
-```
+$$
+(K_3)_{V_2}\cong 2V_2,
+$$
 
-the depth-one response induces an injective map of `SO(3)`-modules into the
-`V_2`-isotypic part of the target
+the depth-one response induces an injective map of $SO(3)$-modules into the
+$V_2$-isotypic part of the target
 
-```text
-2(H ⊗ V) ≅ 2V_0 ⊕ 4V_1 ⊕ 2V_2.
-```
+$$
+2(\mathbb H\otimes V)\cong 2V_0\oplus 4V_1\oplus 2V_2.
+$$
 
-Equivalently, after choosing bases of the two multiplicity spaces, the `V_2`
-response is represented by a full-rank `2 × 2` matrix.
+Equivalently, after choosing bases of the two multiplicity spaces, the $V_2$
+response is represented by a full-rank $2\times 2$ matrix.
 
 The concrete entries of that matrix depend on the chosen multiplicity bases. The
 basis-free statement is the rank statement: the depth-one response is injective
-on the `V_2`-isotypic part of `K_3`.
+on the $V_2$-isotypic part of $K_3$.
 
-The same applies to the `V_1`-isotypic part:
+The same applies to the $V_1$-isotypic part:
 
-```text
-(K_3)_{V_1} ≅ 2V_1,
-```
+$$
+(K_3)_{V_1}\cong 2V_1,
+$$
 
 which is also detected at depth one.
 
@@ -397,35 +418,37 @@ which is also detected at depth one.
 
 Length three has the first nontrivial residual kernel:
 
-```text
-K_3 ≅ 2V_1 ⊕ 2V_2 ⊕ V_3.
-```
+$$
+K_3\cong 2V_1\oplus 2V_2\oplus V_3.
+$$
 
 Compression kills all of it. The depth-one insertion profile recovers exactly the
 intermediate-spin part,
 
-```text
-2V_1 ⊕ 2V_2,
-```
+$$
+2V_1\oplus 2V_2,
+$$
 
 and misses exactly the top-spin part,
 
-```text
-V_3 = S^3_0 V.
-```
+$$
+V_3=S^3_0V.
+$$
 
 The top-spin part is then recovered by the depth-two vertical response,
 
-```text
-A_3(S) = 4 C_S.
-```
+$$
+A_3(S)=4C_S.
+$$
 
 So, in length three, the probe-depth filtration is complete:
 
-```text
-depth 1:  intermediate spins,
-depth 2:  top spin.
-```
+$$
+\begin{aligned}
+\text{depth }1 &: \text{ intermediate spins},\\
+\text{depth }2 &: \text{ top spin}.
+\end{aligned}
+$$
 
 The top-spin theorem is therefore not an isolated phenomenon. It is the upper
 edge of a spin-depth visibility profile already visible in length three.
