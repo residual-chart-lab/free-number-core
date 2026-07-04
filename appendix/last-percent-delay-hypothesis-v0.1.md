@@ -25,8 +25,7 @@ lose; it may also become worse at losing. This creates a terminal tail.
 Let $E(t)>0$ denote a remaining amount. The standard exponential model is
 
 $$
-\frac{dE}{dt}=-kE,
-\qquad k>0.
+\frac{dE}{dt}=-kE, \qquad k>0.
 $$
 
 Its solution is
@@ -78,9 +77,7 @@ $$
 and
 
 $$
-R(E)\to 0
-\qquad
-(E\to 0).
+R(E)\to 0 \qquad (E\to 0).
 $$
 
 That is: as the remaining amount approaches zero, the process slows down.
@@ -88,9 +85,7 @@ That is: as the remaining amount approaches zero, the process slows down.
 A minimal smooth choice is
 
 $$
-R(E)=\left(\frac{E}{E+\alpha}\right)^p,
-\qquad
-\alpha>0,\quad p>0.
+R(E)=\left(\frac{E}{E+\alpha}\right)^p, \qquad \alpha>0,\quad p>0.
 $$
 
 Here:
@@ -102,17 +97,13 @@ Here:
 This gives the model
 
 $$
-\frac{dE}{dt}
-=
--kE\left(\frac{E}{E+\alpha}\right)^p.
+\frac{dE}{dt} = -kE\left(\frac{E}{E+\alpha}\right)^p.
 $$
 
 Equivalently,
 
 $$
-\frac{dE}{dt}
-=
--k\,\frac{E^{p+1}}{(E+\alpha)^p}.
+\frac{dE}{dt} = -k\,\frac{E^{p+1}}{(E+\alpha)^p}.
 $$
 
 ---
@@ -156,9 +147,7 @@ $$
 The model becomes
 
 $$
-\frac{dE}{dt}
-\sim
--\frac{k}{\alpha^p}E^{p+1}.
+\frac{dE}{dt} \sim -\frac{k}{\alpha^p}E^{p+1}.
 $$
 
 This is no longer exponential. It is a terminal power-law tail.
@@ -182,31 +171,19 @@ $$
 Since
 
 $$
-\frac{d}{dt}E^{-p}
-=
--pE^{-p-1}\frac{dE}{dt}
-=
-p\lambda,
+\frac{d}{dt}E^{-p} = -pE^{-p-1}\frac{dE}{dt} = p\lambda,
 $$
 
 we obtain
 
 $$
-E(t)^{-p}
-=
-E(t_0)^{-p}+p\lambda(t-t_0).
+E(t)^{-p} = E(t_0)^{-p}+p\lambda(t-t_0).
 $$
 
 Therefore
 
 $$
-E(t)
-\sim
-\left(
-E(t_0)^{-p}
-+
-\frac{pk}{\alpha^p}(t-t_0)
-\right)^{-1/p}.
+E(t) \sim \left( E(t_0)^{-p} + \frac{pk}{\alpha^p}(t-t_0) \right)^{-1/p}.
 $$
 
 So the terminal tail decays like
@@ -226,34 +203,19 @@ time.
 For $0<E_2<E_1$, separation of variables gives the exact time
 
 $$
-T(E_1\to E_2)
-=
-\frac{1}{k}
-\int_{E_2}^{E_1}
-\frac{(E+\alpha)^p}{E^{p+1}}\,dE.
+T(E_1\to E_2) = \frac{1}{k} \int_{E_2}^{E_1} \frac{(E+\alpha)^p}{E^{p+1}}\,dE.
 $$
 
 Near zero, this has the leading asymptotic
 
 $$
-T(E_1\to E_2)
-\sim
-\frac{\alpha^p}{kp}
-\left(
-E_2^{-p}-E_1^{-p}
-\right).
+T(E_1\to E_2) \sim \frac{\alpha^p}{kp} \left( E_2^{-p}-E_1^{-p} \right).
 $$
 
 In particular, the time to move from $2\varepsilon$ down to $\varepsilon$ is
 
 $$
-T(2\varepsilon\to \varepsilon)
-\sim
-\frac{\alpha^p}{kp}
-\left(
-1-2^{-p}
-\right)
-\varepsilon^{-p}.
+T(2\varepsilon\to \varepsilon) \sim \frac{\alpha^p}{kp} \left( 1-2^{-p} \right) \varepsilon^{-p}.
 $$
 
 As $\varepsilon\to 0$, this diverges.
@@ -273,21 +235,13 @@ $$
 From the previous section,
 
 $$
-\tau(\varepsilon)
-\sim
-\frac{\alpha^p}{kp}
-\left(
-1-2^{-p}
-\right)
-\varepsilon^{-p}.
+\tau(\varepsilon) \sim \frac{\alpha^p}{kp} \left( 1-2^{-p} \right) \varepsilon^{-p}.
 $$
 
 Therefore
 
 $$
-\frac{\tau(\varepsilon)}{\tau(2\varepsilon)}
-\sim
-2^p.
+\frac{\tau(\varepsilon)}{\tau(2\varepsilon)} \sim 2^p.
 $$
 
 Each later halving is longer than the previous terminal halving by the factor
@@ -321,9 +275,7 @@ $$
 Then
 
 $$
-\frac{dE}{dt}
-=
--k\frac{E^2}{E+\alpha}.
+\frac{dE}{dt} = -k\frac{E^2}{E+\alpha}.
 $$
 
 Separating variables,
@@ -335,24 +287,13 @@ $$
 Since
 
 $$
-\int \frac{E+\alpha}{E^2}\,dE
-=
-\int\left(\frac{1}{E}+\frac{\alpha}{E^2}\right)dE
-=
-\log E-\frac{\alpha}{E},
+\int \frac{E+\alpha}{E^2}\,dE = \int\left(\frac{1}{E}+\frac{\alpha}{E^2}\right)dE = \log E-\frac{\alpha}{E},
 $$
 
 the time from $E_1$ to $E_2$ is
 
 $$
-T(E_1\to E_2)
-=
-\frac{1}{k}
-\left[
-\log\frac{E_1}{E_2}
-+
-\alpha\left(\frac{1}{E_2}-\frac{1}{E_1}\right)
-\right].
+T(E_1\to E_2) = \frac{1}{k} \left[ \log\frac{E_1}{E_2} + \alpha\left(\frac{1}{E_2}-\frac{1}{E_1}\right) \right].
 $$
 
 The exponential part contributes only
@@ -364,10 +305,7 @@ $$
 while the terminal persistence term contributes
 
 $$
-\frac{\alpha}{k}
-\left(
-\frac{1}{E_2}-\frac{1}{E_1}
-\right).
+\frac{\alpha}{k} \left( \frac{1}{E_2}-\frac{1}{E_1} \right).
 $$
 
 As $E_2\to 0$, the second term dominates.
@@ -375,12 +313,7 @@ As $E_2\to 0$, the second term dominates.
 For the halving step $2\varepsilon\to \varepsilon$,
 
 $$
-T(2\varepsilon\to \varepsilon)
-=
-\frac{1}{k}
-\left[
-\log 2+\frac{\alpha}{2\varepsilon}
-\right].
+T(2\varepsilon\to \varepsilon) = \frac{1}{k} \left[ \log 2+\frac{\alpha}{2\varepsilon} \right].
 $$
 
 The terminal halving time grows like
@@ -397,8 +330,8 @@ The contrast can be summarized as follows.
 
 | model | equation | terminal halving time |
 |---|---|---|
-| exponential decay | $\dfrac{dE}{dt}=-kE$ | constant: $\dfrac{\log 2}{k}$ |
-| terminal persistence | $\dfrac{dE}{dt}=-kE\left(\dfrac{E}{E+\alpha}\right)^p$ | grows like $\varepsilon^{-p}$ |
+| exponential decay | $\frac{dE}{dt}=-kE$ | constant: $\frac{\log 2}{k}$ |
+| terminal persistence | $\frac{dE}{dt}=-kE\left(\frac{E}{E+\alpha}\right)^p$ | grows like $\varepsilon^{-p}$ |
 
 The terminal persistence model does not merely slow the entire process by a
 constant factor. It changes the tail type.
