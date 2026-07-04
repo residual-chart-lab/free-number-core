@@ -1,6 +1,6 @@
 # Free Numbers: Depth-One Detection in Length Three
 
-Let $V=\operatorname{Im}\mathbb H$ be the space of imaginary quaternions, with
+Let $V=\mathrm{Im}\mathbb H$ be the space of imaginary quaternions, with
 basis $i,j,k$. For length three, the boundary-word space is
 
 $$
@@ -41,7 +41,7 @@ $$
 Let
 
 $$
-V=\operatorname{Im}\mathbb H=\operatorname{span}_{\mathbb R}\{i,j,k\},
+V=\mathrm{Im}\mathbb H=\mathrm{span}_{\mathbb R}\{i,j,k\},
 $$
 
 with quaternion multiplication on imaginary elements
@@ -95,7 +95,7 @@ $$
 Hence
 
 $$
-\operatorname{rank} m_3=4,\qquad \dim K_3=27-4=23.
+\mathrm{rank} m_3=4,\qquad \dim K_3=27-4=23.
 $$
 
 ## 2. The representation decomposition
@@ -176,7 +176,7 @@ where $x\in V$.
 The full depth-one profile is
 
 $$
-D_3=(D_3^{(1)},D_3^{(2)}):B_3\to \operatorname{Hom}(V,\mathbb H)\oplus \operatorname{Hom}(V,\mathbb H).
+D_3=(D_3^{(1)},D_3^{(2)}):B_3\to \mathrm{Hom}(V,\mathbb H)\oplus \mathrm{Hom}(V,\mathbb H).
 $$
 
 Equivalently,
@@ -248,13 +248,13 @@ The matrices of $m_3$ and $D_3$ in these bases have integer entries. Direct
 row-reduction over $\mathbb Q$ gives
 
 $$
-\operatorname{rank} m_3=4,
+\mathrm{rank} m_3=4,
 $$
 
 and
 
 $$
-\operatorname{rank}(D_3|_{K_3})=16.
+\mathrm{rank}(D_3|_{K_3})=16.
 $$
 
 Equivalently,
@@ -262,7 +262,7 @@ Equivalently,
 $$
 \begin{aligned}
 \dim(K_3\cap \ker D_3)
-  &= \dim K_3-\operatorname{rank}(D_3|_{K_3})\\
+  &= \dim K_3-\mathrm{rank}(D_3|_{K_3})\\
   &= 23-16\\
   &= 7.
 \end{aligned}
@@ -303,7 +303,7 @@ $$
 and let
 
 $$
-D_3:V^{\otimes 3}\to \operatorname{Hom}(V,\mathbb H)\oplus \operatorname{Hom}(V,\mathbb H)
+D_3:V^{\otimes 3}\to \mathrm{Hom}(V,\mathbb H)\oplus \mathrm{Hom}(V,\mathbb H)
 $$
 
 be the full depth-one insertion profile. Then
