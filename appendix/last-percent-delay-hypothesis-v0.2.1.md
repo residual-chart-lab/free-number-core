@@ -6,10 +6,8 @@ Many people report a similar experience near a limit. A battery at one percent s
 
 This note separates two things that the common report fuses:
 
-```text
-The tail is a hypothesis.
-The surprise is a measurable mismatch.
-```
+> The tail is a hypothesis.  
+> The surprise is a measurable mismatch.
 
 The tail is something we put into a decay model. Whether any real system has such a tail is an empirical question.
 
@@ -21,49 +19,49 @@ That separation is the point of the note.
 
 ## 1. A decay model with a terminal tail
 
-Let `E(t) ≥ 0` be a remaining quantity — charge, reserve, fuel, capacity, or any positive amount that depletes.
+Let $E(t)\ge0$ be a remaining quantity — charge, reserve, fuel, capacity, or any positive amount that depletes.
 
 Ordinary depletion is exponential:
 
-```text
-dE/dt = -kE.
-```
+$$
+\frac{dE}{dt}=-kE.
+$$
 
 Its relative decay rate is constant:
 
-```text
--Ė/E = k.
-```
+$$
+-\frac{\dot E}{E}=k.
+$$
 
-The “last percent holds on” report can be modelled as the claim that the relative decay rate drops as `E → 0`.
+The “last percent holds on” report can be modelled as the claim that the relative decay rate drops as $E\to0$.
 
 A simple terminal-tail model is:
 
-```text
-dE/dt = -k · E^{n+1} / (E^n + α^n),      k > 0, α > 0, n > 0.
-```
+$$
+\frac{dE}{dt}=-k\,\frac{E^{n+1}}{E^n+\alpha^n},\qquad k>0,\quad \alpha>0,\quad n>0.
+$$
 
 Equivalently,
 
-```text
-dE/dt = -kE / (1 + (α/E)^n).
-```
+$$
+\frac{dE}{dt}=-\frac{kE}{1+(\alpha/E)^n}.
+$$
 
-For `E ≫ α`, this becomes ordinary exponential decay:
+For $E\gg\alpha$, this becomes ordinary exponential decay:
 
-```text
-dE/dt ≈ -kE.
-```
+$$
+\frac{dE}{dt}\approx-kE.
+$$
 
-For `E ≪ α`, it becomes
+For $E\ll\alpha$, it becomes
 
-```text
-dE/dt ≈ -(k/α^n) E^{n+1}.
-```
+$$
+\frac{dE}{dt}\approx-\frac{k}{\alpha^n}E^{n+1}.
+$$
 
-Thus the terminal region is no longer exponential. It has a power-law crawl. The smaller `E` becomes, the slower the relative decay becomes.
+Thus the terminal region is no longer exponential. It has a power-law crawl. The smaller $E$ becomes, the slower the relative decay becomes.
 
-The parameter `α` sets the scale at which the tail begins to matter. The exponent `n` sets how strongly the tail bites.
+The parameter $\alpha$ sets the scale at which the tail begins to matter. The exponent $n$ sets how strongly the tail bites.
 
 This is an assumption. Nothing here claims that a real battery, body, flame, organism, or engineered system obeys this equation. It is the minimal shape that turns “the last percent holds on” into a solvable time law.
 
@@ -73,29 +71,29 @@ This is an assumption. Nothing here claims that a real battery, body, flame, org
 
 The model integrates exactly. Separating variables gives
 
-```text
-t(E) = (1/k) ∫_E^{E₀} ( 1/u + α^n u^{-n-1} ) du.
-```
+$$
+t(E)=\frac1k\int_E^{E_0}\left(\frac1u+\alpha^n u^{-n-1}\right)\,du.
+$$
 
 Therefore,
 
-```text
-t(E) = (1/k) [ log(E₀/E) + (α^n/n)(E^{-n} - E₀^{-n}) ].
-```
+$$
+t(E)=\frac1k\left[\log\frac{E_0}{E}+\frac{\alpha^n}{n}\left(E^{-n}-E_0^{-n}\right)\right].
+$$
 
 The first term is ordinary exponential time:
 
-```text
-t_ordinary(E) = (1/k) log(E₀/E).
-```
+$$
+t_{\mathrm{ordinary}}(E)=\frac1k\log\frac{E_0}{E}.
+$$
 
 The second term is terminal-tail time:
 
-```text
-t_tail(E) = (α^n/(kn))(E^{-n} - E₀^{-n}).
-```
+$$
+t_{\mathrm{tail}}(E)=\frac{\alpha^n}{kn}\left(E^{-n}-E_0^{-n}\right).
+$$
 
-While `E ≫ α`, the tail term is negligible. As `E → 0`, the tail term diverges like `E^{-n}`.
+While $E\gg\alpha$, the tail term is negligible. As $E\to0$, the tail term diverges like $E^{-n}$.
 
 So the ideal model never reaches zero in finite time. All extra terminal time lives in the second term.
 
@@ -105,37 +103,37 @@ So the ideal model never reaches zero in finite time. All extra terminal time li
 
 Now introduce an observer who has learned only the ordinary regime and extrapolates it into the terminal regime.
 
-For a fall from `A` to `B`, with `A > B > 0`, the ordinary observer predicts
+For a fall from $A$ to $B$, with $A>B>0$, the ordinary observer predicts
 
-```text
-t_pred(A,B) = (1/k) log(A/B).
-```
+$$
+t_{\mathrm{pred}}(A,B)=\frac1k\log\frac AB.
+$$
 
 The actual time under the tailed model is
 
-```text
-t_actual(A,B) = (1/k) [ log(A/B) + (α^n/n)(B^{-n} - A^{-n}) ].
-```
+$$
+t_{\mathrm{actual}}(A,B)=\frac1k\left[\log\frac AB+\frac{\alpha^n}{n}\left(B^{-n}-A^{-n}\right)\right].
+$$
 
 Define observer error by
 
-```text
-Δt(A,B; α,n) = t_actual - t_pred.
-```
+$$
+\Delta t(A,B;\alpha,n)=t_{\mathrm{actual}}-t_{\mathrm{pred}}.
+$$
 
 Then
 
-```text
-Δt(A,B; α,n) = (α^n/(kn))(B^{-n} - A^{-n}).
-```
+$$
+\Delta t(A,B;\alpha,n)=\frac{\alpha^n}{kn}\left(B^{-n}-A^{-n}\right).
+$$
 
 This is the surprise, made quantitative: the gap between what an ordinary-regime observer expects and what the assumed tailed model delivers.
 
 Three features fix its meaning:
 
-- `Δt → 0` as `α → 0`. No assumed tail, no model-generated surprise.
-- `Δt → ∞` as `B → 0` for `n > 0`. The nearer the terminal region, the larger the predicted surprise.
-- `Δt` scales with `α^n`. The surprise is controlled by the tail’s onset scale and shape.
+- $\Delta t\to0$ as $\alpha\to0$. No assumed tail, no model-generated surprise.
+- $\Delta t\to\infty$ as $B\to0$ for $n>0$. The nearer the terminal region, the larger the predicted surprise.
+- $\Delta t$ scales with $\alpha^n$. The surprise is controlled by the tail’s onset scale and shape.
 
 The observer is not surprised because the equation is mysterious. The observer is surprised because the ordinary clock has been extrapolated beyond its regime.
 
@@ -143,39 +141,39 @@ The observer is not surprised because the equation is mysterious. The observer i
 
 ## 4. The surprise factor
 
-For a terminal halving step from `2ε` to `ε`, the ordinary observer predicts the usual halving time:
+For a terminal halving step from $2\varepsilon$ to $\varepsilon$, the ordinary observer predicts the usual halving time:
 
-```text
-t_pred = (1/k) log 2.
-```
+$$
+t_{\mathrm{pred}}=\frac1k\log2.
+$$
 
 The tailed model gives
 
-```text
-t_actual = (1/k) [ log 2 + (α^n/n)(ε^{-n} - (2ε)^{-n}) ].
-```
+$$
+t_{\mathrm{actual}}=\frac1k\left[\log2+\frac{\alpha^n}{n}\left(\varepsilon^{-n}-(2\varepsilon)^{-n}\right)\right].
+$$
 
 Define the surprise factor by
 
-```text
-S(ε) = t_actual/t_pred.
-```
+$$
+S(\varepsilon)=\frac{t_{\mathrm{actual}}}{t_{\mathrm{pred}}}.
+$$
 
 Then
 
-```text
-S(ε) = 1 + ((α/ε)^n(1 - 2^{-n}))/(n log 2).
-```
+$$
+S(\varepsilon)=1+\frac{(\alpha/\varepsilon)^n(1-2^{-n})}{n\log2}.
+$$
 
-This depends on `ε` only through the ratio
+This depends on $\varepsilon$ only through the ratio
 
-```text
-ρ = α/ε.
-```
+$$
+\rho=\frac{\alpha}{\varepsilon}.
+$$
 
 So the surprise is scale-free in this limited sense: it is not literally “one percent” that matters, but how deep into the tail the observer is watching.
 
-At `ε ≈ α`, the surprise is order one. For `ε ≪ α`, it grows like `(α/ε)^n`.
+At $\varepsilon\approx\alpha$, the surprise is order one. For $\varepsilon\ll\alpha$, it grows like $(\alpha/\varepsilon)^n$.
 
 This is why the “last percent” can feel special regardless of the full scale: the model says the felt anomaly tracks tail-depth, not the absolute reading.
 
@@ -187,59 +185,57 @@ The two halves of the note are not merely placed side by side. They are connecte
 
 A purely psychological explanation could say, qualitatively, that time feels stretched near an endpoint. This model does something narrower and more testable: it makes the magnitude of the surprise a definite function of the assumed tail shape.
 
-```text
-Δt = (α^n/(kn))(B^{-n} - A^{-n}).
-```
+$$
+\Delta t=\frac{\alpha^n}{kn}\left(B^{-n}-A^{-n}\right).
+$$
 
 For halving near the terminal region,
 
-```text
-S - 1 = ((α/ε)^n(1 - 2^{-n}))/(n log 2).
-```
+$$
+S-1=\frac{(\alpha/\varepsilon)^n(1-2^{-n})}{n\log2}.
+$$
 
-Thus the surprise is not a free psychological quantity inside this model. It is shaped by `α` and `n`.
+Thus the surprise is not a free psychological quantity inside this model. It is shaped by $\alpha$ and $n$.
 
-A single surprise measurement does not uniquely recover `(α,n)`. It constrains a family of possible tails.
+A single surprise measurement does not uniquely recover $(\alpha,n)$. It constrains a family of possible tails.
 
 However, in the ideal noiseless halving case, two measurements at two distinct terminal depths are enough in principle to determine the two parameters.
 
 Let
 
-```text
-Q_i = S(ε_i) - 1,
-```
+$$
+Q_i=S(\varepsilon_i)-1.
+$$
 
-for two distinct depths `ε_1` and `ε_2`. Then
+for two distinct depths $\varepsilon_1$ and $\varepsilon_2$. Then
 
-```text
-Q_i = ((α/ε_i)^n(1 - 2^{-n}))/(n log 2).
-```
+$$
+Q_i=\frac{(\alpha/\varepsilon_i)^n(1-2^{-n})}{n\log2}.
+$$
 
-Taking the ratio cancels `α` and gives
+Taking the ratio cancels $\alpha$ and gives
 
-```text
-Q_1/Q_2 = (ε_2/ε_1)^n.
-```
+$$
+\frac{Q_1}{Q_2}=\left(\frac{\varepsilon_2}{\varepsilon_1}\right)^n.
+$$
 
 Hence, when the data are compatible and non-degenerate,
 
-```text
-n = log(Q_1/Q_2) / log(ε_2/ε_1).
-```
+$$
+n=\frac{\log(Q_1/Q_2)}{\log(\varepsilon_2/\varepsilon_1)}.
+$$
 
-Once `n` is obtained, `α` is recovered from either measurement:
+Once $n$ is obtained, $\alpha$ is recovered from either measurement:
 
-```text
-α = ε_i [ Q_i · n log 2 / (1 - 2^{-n}) ]^{1/n}.
-```
+$$
+\alpha=\varepsilon_i\left[\frac{Q_i\,n\log2}{1-2^{-n}}\right]^{1/n}.
+$$
 
 Thus the diagnostic structure is:
 
-```text
-one depth        → family of possible tails
-two depths       → parameter recovery in the ideal two-parameter model
-three or more    → overdetermined consistency check or falsification
-```
+- one depth: family of possible tails;
+- two depths: parameter recovery in the ideal two-parameter model;
+- three or more depths: overdetermined consistency check or falsification.
 
 If a physical tail is present, the map should fit the measured terminal delays with a stable parameter pair or a stable parameter family.
 
@@ -259,15 +255,15 @@ The system really does slow its relative decay near zero.
 
 Possible mechanisms could include protective circuitry, reserve mobilization, saturating kinetics, nonlinear readout correction, or other threshold behaviour.
 
-In this case, `Δt` corresponds to real extra time, and the observer’s surprise is a response to a real terminal tail.
+In this case, $\Delta t$ corresponds to real extra time, and the observer’s surprise is a response to a real terminal tail.
 
 ### Type II — observer error only
 
 The system does not physically slow in the relevant variable, but the observer’s terminal attention, expectation, display interpretation, or readout nonlinearity creates the felt anomaly.
 
-In this case, `Δt` is zero for the physical system, but the surprise remains observer-side.
+In this case, $\Delta t$ is zero for the physical system, but the surprise remains observer-side.
 
-The model does not decide which case holds. It provides shared coordinates — `Δt`, `S`, and the tail-to-surprise diagnostic map — in which Type I and Type II can be distinguished.
+The model does not decide which case holds. It provides shared coordinates — $\Delta t$, $S$, and the tail-to-surprise diagnostic map — in which Type I and Type II can be distinguished.
 
 Type I should leave a stable tail signature across measurements. Type II should not.
 
@@ -287,17 +283,17 @@ Three broad corrections are useful.
 
 ### Type A — cutoff
 
-Choose a small threshold `E_cut`, with
+Choose a small threshold $E_{\mathrm{cut}}$, with
 
-```text
-0 < E_cut ≪ α.
-```
+$$
+0<E_{\mathrm{cut}}\ll\alpha.
+$$
 
-The system follows the tailed law until `E(t) = E_cut`, then shuts down by rule:
+The system follows the tailed law until $E(t)=E_{\mathrm{cut}}$, then shuts down by rule:
 
-```text
-E(t) = E_cut  ⇒  E(t⁺) = 0.
-```
+$$
+E(t)=E_{\mathrm{cut}}\quad\Rightarrow\quad E(t^+)=0.
+$$
 
 This is an engineering or boundary-condition collapse.
 
@@ -305,58 +301,63 @@ This is an engineering or boundary-condition collapse.
 
 A tempting but incorrect finite-death attempt is
 
-```text
-dE/dt = -(kE + μ)/(1 + (α/E)^n).
-```
+$$
+\frac{dE}{dt}=-\frac{kE+\mu}{1+(\alpha/E)^n}.
+$$
 
 Near zero this behaves as
 
-```text
-dE/dt ≈ -(μ/α^n)E^n.
-```
+$$
+\frac{dE}{dt}\approx-\frac{\mu}{\alpha^n}E^n.
+$$
 
-For `n ≥ 1`, this still does not generally force finite-time arrival at zero.
+For $n\ge1$, this still does not generally force finite-time arrival at zero.
 
 The corrected external-drain model puts the fixed drain outside the slowdown factor:
 
-```text
-dE/dt = -kE/(1 + (α/E)^n) - μ,      μ > 0.
-```
+$$
+\frac{dE}{dt}=-\frac{kE}{1+(\alpha/E)^n}-\mu,\qquad \mu>0.
+$$
 
 Then
 
-```text
-dE/dt → -μ     as E → 0.
-```
+$$
+\frac{dE}{dt}\to-\mu\qquad(E\to0).
+$$
 
-So the system reaches zero in finite time, provided `E = 0` is treated as an absorbing boundary.
+So the system reaches zero in finite time, provided $E=0$ is treated as an absorbing boundary.
 
 The crossover where the terminal slowdown term and the external drain have comparable magnitude is
 
-```text
-(k/α^n)E_*^{n+1} ≈ μ.
-```
+$$
+\frac{k}{\alpha^n}E_\ast^{n+1}\approx\mu.
+$$
 
 Hence
 
-```text
-E_* ≈ (μα^n/k)^{1/(n+1)}.
-```
+$$
+E_\ast\approx\left(\frac{\mu\alpha^n}{k}\right)^{1/(n+1)}.
+$$
 
-For `E ≫ E_*`, terminal persistence dominates. For `E ≪ E_*`, the external drain cuts the tail.
+For $E\gg E_\ast$, terminal persistence dominates. For $E\ll E_\ast$, the external drain cuts the tail.
 
 ### Type C — structural collapse
 
-In a structural collapse model, the system itself changes near a critical threshold `E_collapse`.
+In a structural collapse model, the system itself changes near a critical threshold $E_{\mathrm{collapse}}$.
 
 Below that point, the tail law is no longer valid because the structure that supported it has failed.
 
 A schematic piecewise form is:
 
-```text
-dE/dt = -kE/(1 + (α/E)^n)       for E > E_collapse,
-E = E_collapse                 ⇒ E(t⁺) = 0.
-```
+$$
+\frac{dE}{dt}=-\frac{kE}{1+(\alpha/E)^n}\qquad(E>E_{\mathrm{collapse}}),
+$$
+
+with collapse rule
+
+$$
+E=E_{\mathrm{collapse}}\quad\Rightarrow\quad E(t^+)=0.
+$$
 
 The point is not the specific formula. The point is that finite death can occur because the structure maintaining terminal persistence is destroyed.
 
@@ -382,10 +383,8 @@ It claims only:
 
 The clean slogan is:
 
-```text
-The tail is a hypothesis.
-The surprise is a measurable mismatch.
-```
+> The tail is a hypothesis.  
+> The surprise is a measurable mismatch.
 
 ---
 
@@ -397,10 +396,8 @@ This is not a Y-axis theorem.
 
 At this stage, the relation is only metaphorical resonance:
 
-```text
-something that seemed almost gone may still be acting,
-and the observer may misread the terminal regime.
-```
+> something that seemed almost gone may still be acting,  
+> and the observer may misread the terminal regime.
 
 No formal map to Free Numbers is claimed. No formal map to the Y-axis theory is claimed.
 
