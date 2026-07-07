@@ -1,4 +1,6 @@
-# Free Numbers - Local Quaternionic Closure & Global Residual Charts
+# Free Numbers
+
+**Local quaternionic closure. Global residual charts.**
 
 **Version:** v0.2-pre  
 **License:** MIT  
@@ -6,205 +8,120 @@
 
 Free Numbers is a formal project for a **non-collapsing quaternionic chart algebra**.
 
-Locally, each elementary closure has quaternionic form.  
-Globally, local charts are not collapsed into a single ambient quaternion algebra unless admissible structure-preserving transitions justify the identification.
+The local unit of the theory has quaternionic form. Globally, however, local charts are **not** automatically collapsed into one ambient quaternion algebra. They can be identified only when an admissible, structure-preserving certificate justifies the identification.
 
-Free Numbers are not a theory of flow.  
-They are a theory of **failed identification under compression**.
-
-Compression is not disappearance.
+> Compression is not disappearance.
 
 The project is intentionally limited to the algebraic, residual, and rewriting core.
 
-## Repository Structure
+---
 
-| Layer | Contents | Status |
-|---|---|---|
-| `/paper/` | LaTeX draft, PDF draft, and TikZ figure source | v0.2-pre |
-| `/lean/` | Lean 4 mini-kernel: `Minimal.lean` for restricted termination; `Certified.lean` for the certified reduction skeleton | restricted / certified kernels |
-| `/docs/` | `axioms.md`, release notes, license notes | v0.2-pre |
-| `/notes/` | technical notes on residual response, probe-depth profiles, spin-depth filtration, and certified weak confluence | active notes |
+## What this project is about
 
-## Core Claim
+Free Numbers studies what remains when a value-level compression forgets too much.
 
-The local closure `F_1` has quaternionic algebraic form:
+A boundary word can compress to a quaternionic value, but different boundary histories may still carry different residual structure. The purpose of the framework is to keep that structure visible instead of erasing it.
 
-```text
-F_1 ~= H
-```
+In short:
 
-However, the global free-number structure `F` is not identified with a single quaternion algebra.
+- local closures look quaternionic;
+- global charts remain distinct unless certified otherwise;
+- residual mismatch is tracked as structure;
+- value equality is too coarse to be the final identity test.
 
-Local charts remain distinct unless connected by admissible equivalence.
+---
 
-In this sense, residual mismatch is not erased by compression.  
-It is tracked as structure.
+## Main results so far
 
-## Compression and Residual Visibility
+### 1. Vertical response theorem
 
-For each word length `n >= 1`, define the boundary-word space
+The canonical vertical response on the highest-spin component is now proved for all lengths.
 
-```text
-B_n = V^{tensor n}
-```
+The low-length pattern
 
-where
+- length 2: coefficient −2
+- length 3: coefficient 4
+- length 4: coefficient −8
 
-```text
-V = Im H = span_R {i, j, k}.
-```
+is not merely experimental. It is the first part of the general coefficient rule.
 
-The reversed compression map sends a boundary word to a quaternionic value:
+Scope: this theorem concerns the canonical vertical component on the highest-spin symmetric trace-free part. It does **not** classify the full residual profile.
 
-```text
-m_n(a_1 | a_2 | ... | a_n) = a_n ... a_2 a_1.
-```
+See: `notes/06-general-vertical-response-theorem.md`
 
-A residual may vanish under `m_n` without being structurally absent.
+---
 
-The probe-depth response profile records how residuals behave after inserting probes into boundary-word slots and recompressing.
+### 2. Spin-depth filtration
 
-The theorem below proves visibility only for the highest-spin component `S^n_0 V` through the canonical vertical component `A_n`.
+A tempting simplification fails.
 
-It does not classify all residual components.
-
-## Vertical Response Theorem
-
-Notes 05 and 06 introduce the general probe-depth profile and prove the scalar coefficient for the canonical vertical component.
-
-The theorem concerns the highest-spin symmetric trace-free component
-
-```text
-S^n_0 V subset V^{tensor n}
-```
-
-and the canonical internal vertical response `A_n`.
-
-For
-
-```text
-S in S^n_0 V, n >= 2
-```
-
-the canonical vertical response satisfies
-
-```text
-A_n(S) = (-2)^(n-1) C_S
-```
-
-where `C_S` is the contraction map obtained from `S`.
-
-Thus the previously verified low-length computations
-
-```text
-A_2 = -2 C
-A_3 =  4 C
-A_4 = -8 C
-```
-
-are recovered as the first instances of the theorem.
-
-They are no longer merely a suggested pattern.
-
-The coefficient `(-2)^(n-1)` is not inserted into the definition of `A_n`.  
-It is the output of repeated two-index quaternionic collapse.
-
-## What This Theorem Does Not Claim
-
-The Vertical Response Theorem concerns only the canonical internal vertical component.
-
-It does not claim:
-
-1. that the full depth response profile is equivalent to the canonical vertical component;
-2. a complete classification of all full-null or internal-null residual spaces;
-3. that every residual invisible at one depth is visible at the next;
-4. a full-profile infinite ladder theorem;
-5. a completed global semantic theory of free numbers.
-
-The result proves only the scalar coefficient of the canonical vertical response on `S^n_0 V`.
-
-## Spin-Depth Filtration
-
-Note 11 records the first place where a tempting simplification fails.
-
-The simple diagonal spin-depth rule is false.
+The simple diagonal spin-depth rule is **false**.
 
 In length 4, the same spin can split across different probe depths. The failure is not disorder; it reveals a finer multiplicity-space filtration.
 
-The certified computations show:
+What survives is stronger than the failed simplification:
 
-```text
-K_4 = 2V_0 + 5V_1 + 6V_2 + 3V_3 + V_4
-```
+- value-level compression is too coarse;
+- probe-depth filtration retains residual structure;
+- multiplicity spaces carry real information.
 
-and the `V_2` multiplicity splits across depth:
+See: `notes/11-spin-depth-filtration.md`
 
-```text
-6V_2 = 3V_2 + 3V_2
-```
+---
 
-Thus value-level compression is too coarse to see the full residual structure. Probe-depth filtration retains structure that the value map erases.
+### 3. Certified weak confluence
 
-## Certified Red and Restricted Weak Confluence
+Raw reduction is not the theorem target.
 
-Note 12 separates the raw rewrite target from the certified rewrite target.
+Certified reduction is.
 
-RawRed is not the theorem target.
+The raw minimal kernel has separate abstract placeholders for existing and fresh generated boundaries. That is not enough to state the confluence theorem safely.
 
-CertifiedRed is the theorem target.
+The certified system uses one generated-boundary decision:
 
-The raw minimal kernel uses abstract placeholders:
+- either a boundary folds into an existing target with a certificate;
+- or it is retained as fresh with evidence that no certified fold exists.
 
-```text
-ExistingBoundary : Boundary -> Boundary -> Prop
-FreshBoundary    : Boundary -> Prop
-```
+An existing fold is never naked. It carries its admissibility witness.
 
-These are not enough to state the confluence theorem without further structure.
+The main theorem of Note 12:
 
-The certified system replaces the two independent predicates by a single generated-boundary decision:
-
-```text
-GenDecision(B, R)
-  = existing(B', witness)
-  | fresh(no-existing-witness)
-```
-
-An existing fold is not naked. It carries an admissibility certificate, including boundary-isomorphism data.
-
-The main theorem of Note 12 is:
-
-```text
-Restricted CertifiedRed is weakly confluent
-up to BoundaryIso on boundary certificates.
-```
+> Restricted CertifiedRed is weakly confluent up to BoundaryIso on boundary certificates.
 
 This is not a claim of syntactic confluence, trace-level confluence, or transport-inclusive confluence.
 
-The finite-data route to computability is also identified: BoundaryIso, EqAdm, ResidualPurity, ExistingFoldWitness, and FreshDecision are decidable when implemented as finite structural checks over finite registries.
+See: `notes/12-certified-red-restricted-weak-confluence.md`
 
-The Lean file `lean/Certified.lean` is the first conservative skeleton of this certified relation. It does not yet formalize the full confluence theorem. It puts the certified reduction shape into Lean and proves that the certified reduction still strictly decreases the existing termination weight.
+---
 
-## Quick Build: Minimal Lean Project
+## Lean files
 
-The restricted Lean mini-kernel typechecks under Lean 4 on Windows and does not require mathlib.
+| File | Role |
+|---|---|
+| `lean/Minimal.lean` | Raw restricted rewriting core and termination weight |
+| `lean/Certified.lean` | Certified reduction skeleton for Note 12 |
 
-The checked files are:
+`Minimal.lean` keeps the original restricted termination kernel.
 
-```text
-lean/Minimal.lean
-lean/Certified.lean
-```
+`Certified.lean` introduces the certified generated-boundary decision. The first version is conservative: `BoundaryIso` is equality, `ResidualPurity` is a placeholder, and the certified reduction is proved to strictly decrease the same weight.
 
-A successful check produces no output from Lean.
+This puts the key design into Lean:
 
-Direct checks from the repository's `lean` directory:
+> Do not allow naked folds. Make every fold carry its certificate.
+
+---
+
+## Quick Lean check
+
+From the repository root:
 
 ```bash
 cd lean
 lean Minimal.lean
 lean Certified.lean
 ```
+
+A successful check usually produces no output.
 
 If using a generated Lake project:
 
@@ -216,78 +133,82 @@ cp ../lean/Minimal.lean FreeNumKernel/Minimal.lean
 cp ../lean/Certified.lean FreeNumKernel/Certified.lean
 ```
 
-Depending on the generated Lake layout, add the following import lines to the project root file if needed:
+Then add imports if needed:
 
 ```lean
 import FreeNumKernel.Minimal
 import FreeNumKernel.Certified
 ```
 
-Then run:
+and run:
 
 ```bash
 lake build
 ```
 
-A direct syntax/typecheck check may also be possible:
+Do not use `lean -run` for these files. They are theorem/kernel files, not executable programs.
 
-```bash
-lake env lean FreeNumKernel/Minimal.lean
-lake env lean FreeNumKernel/Certified.lean
-```
+---
 
-Do not use `lean -run` for these files; they are theorem/kernel files, not executable programs.
+## Repository structure
 
-## Optional: Mathlib Project
+| Layer | Contents | Status |
+|---|---|---|
+| `paper/` | LaTeX draft, PDF draft, and figure source | v0.2-pre |
+| `lean/` | Lean mini-kernel and certified reduction skeleton | active |
+| `docs/` | Axioms, release notes, license notes | active |
+| `notes/` | Technical notes on residual visibility, filtration, and confluence | active |
 
-A mathlib-based project is not required for v0.2-pre. If later versions use mathlib, create a mathlib project separately:
+---
 
-```bash
-lake +leanprover-community/mathlib4:lean-toolchain new free_num_kernel math
-cd free_num_kernel
-lake exe cache get
-lake build
-```
+## What is proved, what is not claimed
 
-## Why "Free"?
+### Proved or certified in the current notes
 
-The term "free" refers to the fact that local closures are not automatically collapsed into a single global ambient algebra.
+- The local closure has quaternionic form.
+- The vertical response coefficient on the highest-spin component is proved.
+- The simple diagonal spin-depth rule fails at length 4.
+- A finer spin-depth filtration survives.
+- Restricted CertifiedRed is weakly confluent up to boundary-certificate isomorphism.
+- The Lean skeleton now separates raw reduction from certified reduction.
 
-Residual mismatch is tracked rather than erased.
+### Not claimed
 
-Local closure:
+- A completed theory of meaning, cognition, time, or physical reality.
+- Full trace-level confluence.
+- Transport-inclusive confluence.
+- Decidability of semantic equality under all future contexts.
+- A completed Lean formalization of full BoundaryIso, EqAdm, ResidualPurity, or GenDecision.
 
-```text
-F_1 ~= H
-```
+---
 
-Global structure:
+## Why “Free”?
 
-```text
-F = Term_R(disjoint union of local closures) / admissible equivalence
-```
+“Free” means local closures are not automatically collapsed into a single global ambient algebra.
 
 The point is not that compression fails.
 
 The point is that compression can identify values while leaving boundary history, insertion response, or residual structure nontrivial.
 
-## Scope
+Residual mismatch is tracked rather than erased.
 
-This project does not claim a completed theory of meaning, cognition, time, or physical reality.
+---
+
+## Current scope
 
 The current release is limited to:
 
-```text
-local quaternionic closure
-boundary-word compression
-highest-spin residual visibility through the canonical vertical response
-spin-depth filtration in low lengths
-restricted rewriting termination
-certified reduction skeleton
-restricted certified weak confluence at the boundary-certificate level
-```
+- local quaternionic closure;
+- boundary-word compression;
+- highest-spin residual visibility through the canonical vertical response;
+- low-length spin-depth filtration;
+- restricted rewriting termination;
+- certified reduction skeleton;
+- restricted certified weak confluence at the boundary-certificate level.
 
-Possible extensions to broader residual-based reconstruction are outside the scope of v0.2-pre.
+Broader residual-based reconstruction is outside the scope of v0.2-pre.
+
+---
 
 ## License
 
