@@ -1,6 +1,6 @@
 # The Last-Percent Delay Hypothesis — v0.2.1-register-closed
 
-*An appendix note. Not a Free Numbers theorem. Not a Y-axis theorem. A neighbouring model that happens to share the same soil.*
+*An appendix note. Not a Free Numbers theorem. A neighbouring model sharing a related residual viewpoint.*
 
 Many people report a similar experience near a limit. A battery at one percent seems to hold longer than one percent should. A runner past “I can’t” sometimes gets another stretch of distance. A prognosis may be outlived by a factor. These reports are common enough, across enough independent settings, to be worth treating as a modelling question rather than dismissing as mere illusion — while being equally careful not to infer a physical law from anecdote.
 
@@ -388,19 +388,17 @@ The clean slogan is:
 
 ---
 
-## 9. Relation to Free Numbers and the Y-axis theory
+## 9. Relation to Free Numbers
 
 This is not a Free Numbers theorem.
-
-This is not a Y-axis theorem.
 
 At this stage, the relation is only metaphorical resonance:
 
 > something that seemed almost gone may still be acting,  
 > and the observer may misread the terminal regime.
 
-No formal map to Free Numbers is claimed. No formal map to the Y-axis theory is claimed.
+No formal map to Free Numbers is claimed.
 
-They share soil, not structure.
+No result in this appendix is used as a premise in the Free Numbers theorem chain.
 
 The note should therefore be treated as an independent appendix model: a detachable branch, not part of the trunk.
