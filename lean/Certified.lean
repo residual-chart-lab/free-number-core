@@ -124,7 +124,7 @@ theorem certifiedRed_openGen_noninc
     {X Y : Term}
     (h : CertifiedRed R decideGen X Y) :
     openGenCount Y <= openGenCount X := by
-  cases h <;> simp [openGenCount, normTarget]
+  cases h <;> simp [openGenCount]
 
 /-- CertifiedRed strictly decreases the same termination weight as Minimal.Red. -/
 theorem certifiedRed_weight_decreases
@@ -133,7 +133,7 @@ theorem certifiedRed_weight_decreases
     {X Y : Term}
     (h : CertifiedRed R decideGen X Y) :
     weight Y < weight X := by
-  cases h <;> simp [weight, openGenCount, termSize, normTarget]
+  cases h <;> simp [weight, openGenCount, termSize]
 
 /-- Same decrease expressed in the CertifiedRedRel direction. -/
 theorem certifiedRedRel_weight_decreases
