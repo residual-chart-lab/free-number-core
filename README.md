@@ -21,9 +21,9 @@ The project is intentionally limited to the algebraic, residual, and rewriting c
 | Layer | Contents | Status |
 |---|---|---|
 | `/paper/` | LaTeX draft, PDF draft, and TikZ figure source | v0.2-pre |
-| `/lean/` | Lean 4 mini-kernel: `Term`, restricted `Red`, `RedStar`, `NormalForm`, and `weight` | restricted kernel |
+| `/lean/` | Lean 4 mini-kernel: `Minimal.lean` for restricted termination; `Certified.lean` for the certified reduction skeleton | restricted / certified kernels |
 | `/docs/` | `axioms.md`, release notes, license notes | v0.2-pre |
-| `/notes/` | technical notes on residual response, probe-depth profiles, and vertical visibility | active notes |
+| `/notes/` | technical notes on residual response, probe-depth profiles, spin-depth filtration, and certified weak confluence | active notes |
 
 ## Core Claim
 
@@ -123,23 +123,104 @@ It does not claim:
 
 The result proves only the scalar coefficient of the canonical vertical response on `S^n_0 V`.
 
+## Spin-Depth Filtration
+
+Note 11 records the first place where a tempting simplification fails.
+
+The simple diagonal spin-depth rule is false.
+
+In length 4, the same spin can split across different probe depths. The failure is not disorder; it reveals a finer multiplicity-space filtration.
+
+The certified computations show:
+
+```text
+K_4 = 2V_0 + 5V_1 + 6V_2 + 3V_3 + V_4
+```
+
+and the `V_2` multiplicity splits across depth:
+
+```text
+6V_2 = 3V_2 + 3V_2
+```
+
+Thus value-level compression is too coarse to see the full residual structure. Probe-depth filtration retains structure that the value map erases.
+
+## Certified Red and Restricted Weak Confluence
+
+Note 12 separates the raw rewrite target from the certified rewrite target.
+
+RawRed is not the theorem target.
+
+CertifiedRed is the theorem target.
+
+The raw minimal kernel uses abstract placeholders:
+
+```text
+ExistingBoundary : Boundary -> Boundary -> Prop
+FreshBoundary    : Boundary -> Prop
+```
+
+These are not enough to state the confluence theorem without further structure.
+
+The certified system replaces the two independent predicates by a single generated-boundary decision:
+
+```text
+GenDecision(B, R)
+  = existing(B', witness)
+  | fresh(no-existing-witness)
+```
+
+An existing fold is not naked. It carries an admissibility certificate, including boundary-isomorphism data.
+
+The main theorem of Note 12 is:
+
+```text
+Restricted CertifiedRed is weakly confluent
+up to BoundaryIso on boundary certificates.
+```
+
+This is not a claim of syntactic confluence, trace-level confluence, or transport-inclusive confluence.
+
+The finite-data route to computability is also identified: BoundaryIso, EqAdm, ResidualPurity, ExistingFoldWitness, and FreshDecision are decidable when implemented as finite structural checks over finite registries.
+
+The Lean file `lean/Certified.lean` is the first conservative skeleton of this certified relation. It does not yet formalize the full confluence theorem. It puts the certified reduction shape into Lean and proves that the certified reduction still strictly decreases the existing termination weight.
+
 ## Quick Build: Minimal Lean Project
 
 The restricted Lean mini-kernel typechecks under Lean 4 on Windows and does not require mathlib.
 
-The checked file is `lean/Minimal.lean`. A successful check produces no output from Lean.
+The checked files are:
+
+```text
+lean/Minimal.lean
+lean/Certified.lean
+```
+
+A successful check produces no output from Lean.
+
+Direct checks from the repository's `lean` directory:
+
+```bash
+cd lean
+lean Minimal.lean
+lean Certified.lean
+```
+
+If using a generated Lake project:
 
 ```bash
 lake new free_num_kernel
 cd free_num_kernel
 mkdir -p FreeNumKernel
 cp ../lean/Minimal.lean FreeNumKernel/Minimal.lean
+cp ../lean/Certified.lean FreeNumKernel/Certified.lean
 ```
 
-Depending on the generated Lake layout, add the following import line to the project root file if needed:
+Depending on the generated Lake layout, add the following import lines to the project root file if needed:
 
 ```lean
 import FreeNumKernel.Minimal
+import FreeNumKernel.Certified
 ```
 
 Then run:
@@ -152,9 +233,10 @@ A direct syntax/typecheck check may also be possible:
 
 ```bash
 lake env lean FreeNumKernel/Minimal.lean
+lake env lean FreeNumKernel/Certified.lean
 ```
 
-Do not use `lean -run` for `Minimal.lean`; it is a theorem/kernel file, not an executable program.
+Do not use `lean -run` for these files; they are theorem/kernel files, not executable programs.
 
 ## Optional: Mathlib Project
 
@@ -199,7 +281,10 @@ The current release is limited to:
 local quaternionic closure
 boundary-word compression
 highest-spin residual visibility through the canonical vertical response
-restricted rewriting kernel
+spin-depth filtration in low lengths
+restricted rewriting termination
+certified reduction skeleton
+restricted certified weak confluence at the boundary-certificate level
 ```
 
 Possible extensions to broader residual-based reconstruction are outside the scope of v0.2-pre.
