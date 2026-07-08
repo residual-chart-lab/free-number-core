@@ -434,6 +434,41 @@ procedure for `BoundaryIso`, `EqAdm`, `ResidualPurity`, or `GenDecision`.
 
 That formalization is deferred.
 
+### Current Lean implementation status
+
+The current Lean layer verifies the equality-based certified-kernel skeleton.
+
+```text
+Minimal.lean
+  raw restricted termination kernel
+
+Certified.lean
+  certified reduction skeleton
+  CertifiedRed strict weight decrease
+
+BoundaryIso.lean
+  finite boundary-certificate scaffold
+  equality-based certificate isomorphism
+  refl / symm / trans / decidable
+
+DecideGen.lean
+  equality-based finite-registry decision
+  decideGenFromRegistry
+```
+
+This is not yet the full structural `BoundaryIso` / `EqAdm` / `ResidualPurity`
+decision procedure. The current implementation proves that the certified
+`GenDecision` shape can be computed from a finite registry in the
+equality-based kernel.
+
+Thus the Lean status is:
+
+```text
+computational skeleton verified;
+structural certificate upgrade deferred.
+```
+
+
 The deferred item is not the mathematical confluence theorem for
 `CertifiedRed`; it is the full machine-checked implementation of the decision
 procedure and its soundness proofs.
@@ -450,7 +485,7 @@ syntactic confluence of all terms;
 trace-level confluence;
 transport-inclusive confluence;
 decidability of semantic equality under all contexts;
-completed Lean formalization of BoundaryIso / EqAdm / GenDecision.
+completed Lean formalization of full structural BoundaryIso / EqAdm / nontrivial ResidualPurity.
 ```
 
 It claims the restricted certificate-level confluence theorem for `CertifiedRed`,
@@ -476,8 +511,9 @@ data.
 Therefore restricted `CertifiedRed` is weakly confluent up to
 boundary-certificate isomorphism.
 
-The next engineering step is not another confluence theorem. It is the concrete
-finite decision procedure for boundary certificates.
+The next engineering step is not another confluence theorem. The equality-based
+finite-registry decision procedure is now represented by `DecideGen.lean`; the
+remaining engineering step is the structural certificate upgrade.
 
 ```text
 Do not allow naked folds.
