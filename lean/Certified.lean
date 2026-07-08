@@ -1,4 +1,4 @@
-import Minimal
+import BoundaryIsoStructural
 
 /-
 FreeNumKernel / Certified.lean
@@ -10,54 +10,59 @@ Minimal.lean keeps the raw restricted termination kernel.
 Certified.lean introduces the certified generated-boundary decision used by
 Note 12.
 
-First conservative version:
-  - BoundaryIso is equality on Boundary.
-  - ResidualPurity is True.
+Structural-connection version:
+  - BoundaryIso is induced by the structural boundary-certificate skeleton.
+  - ResidualPurity is still True.
   - EqAdm / ExistingFoldWitness are witness structures.
   - Generated-boundary reduction is driven by one GenDecision object.
   - The certified reduction still strictly decreases the existing weight.
 
-The point of this first version is not full boundary semantics.
-The point is to put "do not allow naked folds" into the Lean shape.
+This connects Certified.lean to BoundaryIsoStructural.lean without yet
+implementing nontrivial ResidualPurity or full provenance extraction.
 -/
 
 namespace FreeNumKernel
 
-/-- Conservative boundary isomorphism.
+/-- Boundary isomorphism induced by structural boundary certificates.
 
-This first version uses equality.
-Later versions can replace this with finite structural isomorphism of boundary
-certificates.
+This is the safe structural v1 relation:
+  certificate equality, up to the certificate reversal involution.
 -/
 def BoundaryIso (B B' : Boundary) : Prop :=
-  B = B'
+  BoundaryStructIsoFromCert B B'
 
 theorem boundaryIso_refl (B : Boundary) :
   BoundaryIso B B := by
-  rfl
+  exact boundaryStructIsoFromCert_refl B
 
 theorem boundaryIso_symm {B B' : Boundary} :
   BoundaryIso B B' -> BoundaryIso B' B := by
   intro h
-  exact h.symm
+  exact boundaryStructIsoFromCert_symm h
 
 theorem boundaryIso_trans {B B' B'' : Boundary} :
   BoundaryIso B B' -> BoundaryIso B' B'' -> BoundaryIso B B'' := by
   intro h1 h2
-  exact h1.trans h2
+  exact boundaryStructIsoFromCert_trans h1 h2
+
+instance boundaryIso_decidable (B B' : Boundary) :
+    Decidable (BoundaryIso B B') := by
+  unfold BoundaryIso
+  infer_instance
 
 /-- Conservative residual purity placeholder.
 
-This is intentionally permissive in the first certified skeleton.
-Later versions should replace it with the finite residual-purity checks.
+This remains intentionally permissive at this stage.
+The structural BoundaryIso connection and nontrivial ResidualPurity are kept
+as separate axes.
 -/
 def ResidualPurity (_B _B' : Boundary) : Prop :=
   True
 
 /-- Admissible-equivalence witness for a fold.
 
-The first version keeps only the certified boundary relation and residual-purity
-slot. More finite preservation checks can be added later.
+This version keeps the certified boundary relation and residual-purity slot.
+More finite preservation checks can be added later.
 -/
 structure EqAdmWitness (B B' : Boundary) where
   boundaryIso  : BoundaryIso B B'

@@ -3,22 +3,22 @@ import Certified
 /-
 FreeNumKernel / DecideGen.lean
 
-First concrete registry-based decision procedure for certified generation.
+Concrete registry-based decision procedure for certified generation.
 
-This file connects the GenDecision shape from Certified.lean to a finite
-registry search in the first conservative setting:
-  - Certified.BoundaryIso is equality on Boundary.
-  - Certified.ResidualPurity is True.
-  - Therefore an existing-fold witness can be built from boundary equality.
+This version connects the registry scan to the structural BoundaryIso layer:
+  - Certified.BoundaryIso is induced by BoundaryIsoStructural.lean.
+  - ResidualPurity is still True.
+  - An existing-fold witness can be built from a BoundaryIso witness.
 
-This is not the full structural BoundaryIso/EqAdm decision procedure yet.
-It is the first equality-based root for decideGen.
+This is not the full structural BoundaryIso/EqAdm/ResidualPurity decision
+procedure yet. It is the finite registry scan over the current structural
+certificate skeleton.
 -/
 
 namespace FreeNumKernel
 
-/-- Build an existing-fold witness from boundary equality. -/
-def existingWitnessOfEq {B B' : Boundary} (h : B = B') :
+/-- Build an existing-fold witness from a boundary-isomorphism witness. -/
+def existingWitnessOfIso {B B' : Boundary} (h : BoundaryIso B B') :
     ExistingFoldWitness B B' :=
   {
     eqAdm := {
@@ -30,12 +30,13 @@ def existingWitnessOfEq {B B' : Boundary} (h : B = B') :
 /--
 Construct a certified generated-boundary decision from a finite registry.
 
-First conservative version:
-  - existing if B is equal to some boundary already in R;
+Structural skeleton version:
+  - existing if B is boundary-isomorphic to some boundary already in R;
   - fresh otherwise.
 
-This turns `decideGen` from a mysterious external parameter into a concrete
-finite registry scan in the equality-based certified kernel.
+The head contradiction in the fresh branch now uses the BoundaryIso witness
+carried by ExistingFoldWitness directly, rather than reducing everything to
+raw boundary equality.
 -/
 def decideGenFromRegistry : (R : List Boundary) -> (B : Boundary) -> GenDecision R B
   | [], _B =>
@@ -44,8 +45,8 @@ def decideGenFromRegistry : (R : List Boundary) -> (B : Boundary) -> GenDecision
         cases hmem)
 
   | B0 :: R, B =>
-      if h : B = B0 then
-        GenDecision.existing B0 (existingWitnessOfEq h)
+      if h : BoundaryIso B B0 then
+        GenDecision.existing B0 (existingWitnessOfIso h)
       else
         match decideGenFromRegistry R B with
         | GenDecision.existing B' w =>
@@ -57,7 +58,9 @@ def decideGenFromRegistry : (R : List Boundary) -> (B : Boundary) -> GenDecision
                 simpa using hmem
               cases hcases with
               | inl hhead =>
-                  exact h (w.eqAdm.boundaryIso.trans hhead)
+                  have hb0 : BoundaryIso B B0 := by
+                    simpa [hhead] using w.eqAdm.boundaryIso
+                  exact h hb0
               | inr htail =>
                   exact hfresh B' htail w)
 
