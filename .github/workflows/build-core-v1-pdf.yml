@@ -1,0 +1,51 @@
+name: Build Core v1 PDF
+
+on:
+  push:
+    branches:
+      - core-reconstruction
+    paths:
+      - core/free_numbers_core_v1.tex
+      - .github/workflows/build-core-v1-pdf.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install LaTeX toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            latexmk \
+            texlive-latex-base \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
+            texlive-science \
+            lmodern
+
+      - name: Compile PDF
+        working-directory: core
+        run: |
+          latexmk -pdf -interaction=nonstopmode -halt-on-error free_numbers_core_v1.tex
+          pdfinfo free_numbers_core_v1.pdf | grep '^Pages:'
+          test "$(pdfinfo free_numbers_core_v1.pdf | awk '/^Pages:/ {print $2}')" = "10"
+
+      - name: Commit generated PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add core/free_numbers_core_v1.pdf
+          if git diff --cached --quiet; then
+            echo "PDF is already current."
+          else
+            git commit -m "Rebuild valid Free Numbers Core v1 PDF"
+            git push
+          fi
