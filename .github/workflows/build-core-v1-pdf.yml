@@ -1,12 +1,6 @@
 name: Build Core v1 PDF
 
 on:
-  push:
-    branches:
-      - core-reconstruction
-    paths:
-      - core/free_numbers_core_v1.tex
-      - .github/workflows/build-core-v1-pdf.yml
   pull_request:
     branches:
       - core-reconstruction
@@ -26,6 +20,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: core-reconstruction
+          fetch-depth: 0
 
       - name: Install LaTeX toolchain
         run: |
@@ -80,6 +75,7 @@ jobs:
             else
               git commit -m "Record Core v1 PDF build diagnostic"
             fi
+            git pull --rebase origin core-reconstruction
             git push origin HEAD:core-reconstruction
           fi
 
