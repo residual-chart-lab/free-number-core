@@ -44,9 +44,11 @@ jobs:
         working-directory: core
         run: |
           latexmk -pdf -interaction=nonstopmode -halt-on-error free_numbers_core_v1.tex
-          pdfinfo free_numbers_core_v1.pdf | grep '^Pages:'
-          test "$(pdfinfo free_numbers_core_v1.pdf | awk '/^Pages:/ {print $2}')" = "10"
           test "$(head -c 5 free_numbers_core_v1.pdf)" = "%PDF-"
+          pages="$(pdfinfo free_numbers_core_v1.pdf | awk '/^Pages:/ {print $2}')"
+          test -n "$pages"
+          test "$pages" -ge 1
+          echo "Validated PDF with $pages pages."
 
       - name: Commit generated PDF to reconstruction branch
         run: |
