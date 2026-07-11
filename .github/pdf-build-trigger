@@ -1,2 +1,3 @@
 Trigger reproducible rebuild of core/free_numbers_core_v1.pdf.
 Retry after portable validation update.
+Retry with concise LaTeX diagnostics.
