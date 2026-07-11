@@ -4,3 +4,4 @@ Retry with concise LaTeX diagnostics.
 Retry while preserving build.log on failure.
 Retry with texlive-plain-generic.
 Retry with serialized publishing.
+Retry with TeX Gyre font metrics.
