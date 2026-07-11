@@ -41,27 +41,47 @@ jobs:
             lmodern >/dev/null
 
       - name: Compile and validate PDF
+        id: compile
         working-directory: core
         run: |
-          if ! latexmk -pdf -interaction=nonstopmode -halt-on-error free_numbers_core_v1.tex > build.log 2>&1; then
-            echo "LaTeX compilation failed. Tail of build.log:"
-            tail -n 200 build.log
-            exit 1
+          set +e
+          latexmk -pdf -interaction=nonstopmode -halt-on-error free_numbers_core_v1.tex > build.log 2>&1
+          rc=$?
+          set -e
+          if [ "$rc" -ne 0 ]; then
+            echo "valid=false" >> "$GITHUB_OUTPUT"
+            echo "LaTeX compilation failed with status $rc."
+            tail -n 80 build.log
+            exit 0
           fi
           test "$(head -c 5 free_numbers_core_v1.pdf)" = "%PDF-"
           pages="$(pdfinfo free_numbers_core_v1.pdf | awk '/^Pages:/ {print $2}')"
           test -n "$pages"
           test "$pages" -ge 1
           echo "Validated PDF with $pages pages."
+          echo "valid=true" >> "$GITHUB_OUTPUT"
 
-      - name: Commit generated PDF to reconstruction branch
+      - name: Commit generated PDF or diagnostic log
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add core/free_numbers_core_v1.pdf
-          if git diff --cached --quiet; then
-            echo "PDF is already current."
+          if [ "${{ steps.compile.outputs.valid }}" = "true" ]; then
+            git add core/free_numbers_core_v1.pdf
+            git rm -f --ignore-unmatch core/build.log
           else
-            git commit -m "Rebuild valid Free Numbers Core v1 PDF"
+            git add core/build.log
+          fi
+          if git diff --cached --quiet; then
+            echo "No generated changes."
+          else
+            if [ "${{ steps.compile.outputs.valid }}" = "true" ]; then
+              git commit -m "Rebuild valid Free Numbers Core v1 PDF"
+            else
+              git commit -m "Record Core v1 PDF build diagnostic"
+            fi
             git push origin HEAD:core-reconstruction
           fi
+
+      - name: Fail after preserving diagnostic
+        if: steps.compile.outputs.valid != 'true'
+        run: exit 1
