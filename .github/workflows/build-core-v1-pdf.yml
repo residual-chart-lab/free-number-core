@@ -29,8 +29,8 @@ jobs:
 
       - name: Install LaTeX toolchain
         run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
+          sudo apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends \
             latexmk \
             poppler-utils \
             texlive-latex-base \
@@ -38,12 +38,16 @@ jobs:
             texlive-fonts-recommended \
             texlive-fonts-extra \
             texlive-science \
-            lmodern
+            lmodern >/dev/null
 
       - name: Compile and validate PDF
         working-directory: core
         run: |
-          latexmk -pdf -interaction=nonstopmode -halt-on-error free_numbers_core_v1.tex
+          if ! latexmk -pdf -interaction=nonstopmode -halt-on-error free_numbers_core_v1.tex > build.log 2>&1; then
+            echo "LaTeX compilation failed. Tail of build.log:"
+            tail -n 200 build.log
+            exit 1
+          fi
           test "$(head -c 5 free_numbers_core_v1.pdf)" = "%PDF-"
           pages="$(pdfinfo free_numbers_core_v1.pdf | awk '/^Pages:/ {print $2}')"
           test -n "$pages"
