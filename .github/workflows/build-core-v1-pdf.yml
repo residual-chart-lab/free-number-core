@@ -7,6 +7,12 @@ on:
     paths:
       - core/free_numbers_core_v1.tex
       - .github/workflows/build-core-v1-pdf.yml
+  pull_request:
+    branches:
+      - core-reconstruction
+    paths:
+      - core/free_numbers_core_v1.tex
+      - .github/pdf-build-trigger
   workflow_dispatch:
 
 permissions:
@@ -16,14 +22,17 @@ jobs:
   build-pdf:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
+      - name: Check out reconstruction branch
         uses: actions/checkout@v4
+        with:
+          ref: core-reconstruction
 
       - name: Install LaTeX toolchain
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
             latexmk \
+            poppler-utils \
             texlive-latex-base \
             texlive-latex-extra \
             texlive-fonts-recommended \
@@ -31,14 +40,15 @@ jobs:
             texlive-science \
             lmodern
 
-      - name: Compile PDF
+      - name: Compile and validate PDF
         working-directory: core
         run: |
           latexmk -pdf -interaction=nonstopmode -halt-on-error free_numbers_core_v1.tex
           pdfinfo free_numbers_core_v1.pdf | grep '^Pages:'
           test "$(pdfinfo free_numbers_core_v1.pdf | awk '/^Pages:/ {print $2}')" = "10"
+          test "$(head -c 5 free_numbers_core_v1.pdf)" = "%PDF-"
 
-      - name: Commit generated PDF
+      - name: Commit generated PDF to reconstruction branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -47,5 +57,5 @@ jobs:
             echo "PDF is already current."
           else
             git commit -m "Rebuild valid Free Numbers Core v1 PDF"
-            git push
+            git push origin HEAD:core-reconstruction
           fi
