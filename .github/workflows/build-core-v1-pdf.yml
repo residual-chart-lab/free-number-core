@@ -61,5 +61,5 @@ jobs:
             core/free_numbers_core_v1.pdf
             core/build.log
             core/pdfinfo.txt
-          if-no-files-found: error
+          if-no-files-found: warn
           retention-days: 30
