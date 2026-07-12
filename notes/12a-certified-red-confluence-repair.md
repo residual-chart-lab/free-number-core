@@ -1,4 +1,4 @@
-# Note 12 — Certified Red: Corrected Theorem Split
+# Note 12a — Certified Red Confluence Repair
 
 **Status:** correction and theorem split for Note 12  
 **Date:** 2026-07-12  
@@ -227,10 +227,3 @@ The governing design principle remains valid:
 > Make every fold carry its certificate.
 
 The correction is that certificates remove one ambiguity; they do not automatically discharge every confluence obligation.
-
-
----
-
-## Archival location
-
-The superseded unconditional version is preserved at `archive/notes/12-certified-red-restricted-weak-confluence-original.md`.

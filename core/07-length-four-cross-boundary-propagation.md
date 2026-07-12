@@ -932,13 +932,29 @@ Since
 \dim RR=25,
 \]
 
-its kernel has dimension nine. By the multiplicity-free decomposition of \(RR\), this kernel is exactly
+its kernel has dimension nine. The dimension count alone does not identify the kernel: \(V_0\oplus V_1\oplus V_2\) also has dimension nine. The identification uses the full depth-two profile.
+
+Compression and every depth-one response vanish on \(RR\), and \(D_{13}\) is the only depth-two component that can be nonzero there. Hence
+
+\[
+\ker\bigl(D_{13}|_{RR}\bigr)=F_2^{(4)}\cap RR.
+\]
+
+The independently verified length-four subspace equality is
+
+\[
+F_2^{(4)}=S^4_0V,
+\]
+
+and \(S^4_0V\subset RR\). Therefore
 
 \[
 \boxed{
-\ker\bigl(D_{13}|_{RR}\bigr)=V_4=S^4_0V.
+\ker\bigl(D_{13}|_{RR}\bigr)=S^4_0V=V_4.
 }
 \]
+
+The rank calculation \(25-16=9=\dim V_4\) is a consistency check, not the sole identification argument.
 
 The all-length vertical-response theorem gives
 
