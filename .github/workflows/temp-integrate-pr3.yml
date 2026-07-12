@@ -27,7 +27,7 @@ jobs:
           cp core/free_numbers_core_v1.pdf audit-artifact/free_numbers_core_v1_before.pdf
 
       - name: Integrate audited repairs
-        run: python3 scripts/integrate_audit_repairs.py
+        run: python3 scripts/integrate_audit_repairs_v2.py
 
       - name: Install LaTeX and PDF tools
         run: |
