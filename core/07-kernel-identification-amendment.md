@@ -49,9 +49,7 @@ F_2^{(4)}:=\ker D_4^{\le2}.
 The exact length-four spin-depth certificate proves the subspace equality
 
 \[
-oxed{
 F_2^{(4)}=S^4_0V=V_4.
-}
 \]
 
 The sector analysis in Core 07 proves that on \(RR\):
@@ -83,9 +81,7 @@ F_2^{(4)}\cap RR
 Consequently,
 
 \[
-oxed{
 \ker(D_{13}|_{RR})=S^4_0V=V_4.
-}
 \]
 
 The rank computation supplies a consistency check:
@@ -104,20 +100,16 @@ For nonzero \(S,T\in S^2_0V\), Core 07 proves
 D_{13}(S|T)(d_1,d_2)=4T(d_2)S(d_1).
 \]
 
-Choose \(d_1,d_2\) so that \(S(d_1)
-e0\) and \(T(d_2)
-e0\). Because \(\mathbb H\) is a division algebra,
+Choose \(d_1,d_2\) so that \(S(d_1)\ne0\) and \(T(d_2)\ne0\). Because \(\mathbb H\) is a division algebra,
 
 \[
-T(d_2)S(d_1)
-e0.
+T(d_2)S(d_1)\ne0.
 \]
 
 Thus
 
 \[
-D_{13}(S|T)
-e0.
+D_{13}(S|T)\ne0.
 \]
 
 Hence the surviving \(V_4\) sector contains no nonzero decomposable tensor \(S\otimes T\). Its elements are necessarily coherent linear combinations whose individual depth-two responses cancel.
