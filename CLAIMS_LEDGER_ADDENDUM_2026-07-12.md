@@ -20,7 +20,7 @@ F_1\cong_{\mathbb R\mathrm{-alg}}\mathbb H.
 
 **Source:** `paper/LOCAL_CLOSURE_PRESENTATION_AMENDMENT.md`.
 
-**Integration remaining:** replace the implicit construction in `paper/free_numbers.tex`.
+**Integration state:** integrated into `paper/free_numbers.tex`.
 
 ## 2. FN-CONF-001 — Certified confluence
 
@@ -63,8 +63,8 @@ The equality uses the checked global subspace result \(F_2^{(4)}=S^4_0V\), not m
 
 | Repair | Mathematical status | Parent-file integration |
 |---|---|---|
-| Explicit \(F_1\) quotient presentation | complete | pending |
-| Note 12 theorem split | complete | pending |
-| Core 07 kernel argument | complete | pending |
+| Explicit \(F_1\) quotient presentation | complete | integrated |
+| Note 12 theorem split | complete | integrated |
+| Core 07 kernel argument | complete | integrated |
 
 No claim in this addendum concerns novelty or priority in the literature.

@@ -1,521 +1,236 @@
-# Note 12 — Certified Red and Restricted Weak Confluence
+# Note 12 — Certified Red: Corrected Theorem Split
 
-This note fixes the confluence statement for the restricted generated-normalization
-core.
+**Status:** correction and theorem split for Note 12  
+**Date:** 2026-07-12  
+**Applies to:** `lean/Minimal.lean`, `lean/Certified.lean`, `lean/BoundaryIsoStructural.lean`, and `lean/DecideGen.lean`
 
-The confluence theorem is not stated for a raw reduction relation with arbitrary
-independent predicates. It is stated for the certified relation obtained by
-putting the `If / Otherwise` structure of generated normalization into the type
-of the rule.
+## 0. Correction notice
 
-The governing principle is:
+The unconditional wording of Theorem 12.6 in Note 12 is too strong for the definitions currently present in Lean.
 
-```text
-Do not allow naked folds.
-Make every fold carry its certificate.
-```
+Two different reduction systems were mixed together:
 
----
+1. the **current root-only Lean skeleton**, in which `CertifiedRed` acts only on a term whose root is either a local atom multiplication or a generated boundary; and
+2. the **intended contextual rewriting system**, in which reductions may occur inside larger terms and interact with an outer generated-boundary decision.
 
-## 1. Raw Red is not the target
-
-The current minimal kernel contains abstract placeholders of the form
-
-```text
-ExistingBoundary : Boundary -> Boundary -> Prop
-FreshBoundary    : Boundary -> Prop
-```
-
-If these are treated as arbitrary independent predicates, confluence cannot be
-claimed. A raw model could allow both the existing and fresh branches for the
-same generated boundary, or it could allow a fold into a boundary whose
-certificate is not boundary-isomorphic to the source.
-
-Thus the theorem is not about this raw relation.
-
-The intended generated-normalization clause is:
-
-```text
-If the generated chart is admissibly equivalent to an existing chart, fold it.
-Otherwise, retain it as a new normalized generated chart.
-```
-
-This clause is a single decision, not two unrelated tests.
+These systems require different confluence statements. This note separates them.
 
 ---
 
-## 2. Certified Red
+## 1. Current root-only certified system
 
-Let `R` be the finite registry of existing normalized generated boundaries.
+For a fixed finite registry `R` and fixed function
 
-For each generated boundary `B`, the certified system uses one decision object:
-
-```text
-GenDecision(B, R)
-  = existing(B', w)
-  | fresh(h)
+```lean
+decideGen : (B : Boundary) -> GenDecision R B
 ```
 
-The existing branch carries a witness
+current `CertifiedRed` has two root rules:
 
 ```text
-w : ExistingFoldWitness(B, B')
+G1_local:
+  mul (atom x) (atom y) -> atom z
+  when LocalMul x y z
+
+G_gen:
+  gen B -> normGen (normTarget (decideGen B))
 ```
 
-including the finite certificate data required for a sound fold:
+The generated-boundary target is deterministic because `decideGen` is a function. The local multiplication target is not deterministic under the present declarations, because
+
+```lean
+axiom LocalMul : LocalElem -> LocalElem -> LocalElem -> Prop
+```
+
+is an arbitrary relation.
+
+### Required hypothesis
+
+Define the functionality condition
 
 ```text
-BoundaryIso(cert(B), cert(B'))
-ResidualPurity(B, B')
-EqAdm(B, B')
-boundary-origin preservation
+LocalMulFunctional :=
+  for all x y z z',
+  LocalMul x y z ->
+  LocalMul x y z' ->
+  z = z'.
 ```
 
-The fresh branch carries negative finite evidence:
+A weaker replacement is possible—local confluence of the local algebra—but functionality is the correct first condition for the intended quaternionic multiplication table.
+
+### Theorem 1.1 — Root one-step determinism
+
+Assume `LocalMulFunctional`. For fixed `R` and `decideGen`, if
 
 ```text
-h : for every B' in R, no ExistingFoldWitness(B, B') exists.
+CertifiedRed R decideGen X Y
+CertifiedRed R decideGen X Z
 ```
 
-`CertifiedRed` is the restricted reduction relation whose generated-boundary
-step is driven by this `GenDecision`.
+then
 
-The old predicates `ExistingBoundary` and `FreshBoundary` are recovered only as
-projections of this decision object. They are not independent primitives.
+```text
+Y = Z.
+```
+
+### Proof
+
+Proceed by cases on the first reduction.
+
+- If the source is `mul (atom x) (atom y)`, the second reduction can only be another `G1_local` step with the same input atoms. `LocalMulFunctional` makes the output atoms equal.
+- If the source is `gen B`, the second reduction can only be `G_gen`, and both targets are definitionally determined by the same value `decideGen B`.
+- The two rule families cannot overlap because their source constructors differ.
+
+Therefore the one-step target is unique. \(\square\)
+
+### Corollary 1.2 — Root local confluence
+
+Under `LocalMulFunctional`, current root-only `CertifiedRed` is locally confluent by equality, hence also locally confluent up to `BoundaryIso` wherever a boundary certificate is defined.
+
+This result does not require the critical-pair list from Note 12. The present root-only relation has no inner-redex/outer-decision overlap.
+
+### Termination
+
+The theorem already checked in `lean/Certified.lean` remains valid:
+
+```lean
+CertifiedRed R decideGen X Y -> weight Y < weight X.
+```
+
+Thus the current root-only system is terminating. Under `LocalMulFunctional`, every pair of reachable normal forms from the same source must coincide. A formal Lean theorem for multi-step unique normal forms remains to be added.
 
 ---
 
-## 3. BoundaryIso as a finite structural isomorphism
+## 2. Intended contextual certified system
 
-`BoundaryIso` is not semantic equality under all future contexts.
+The prose argument in Note 12 discusses reductions inside larger terms. Such a relation is not the current `CertifiedRed`; it must be defined as a compatible or contextual closure.
 
-It is a finite structural isomorphism of boundary certificates. The finite
-certificate data includes:
+Call the future relation
 
 ```text
-boundary ports
-structural-origin labels
-incidence data
-order or reversal tag
-attachment data
-product-tree addresses
-residual-signature-visible sites
+ContextualCertifiedRed.
 ```
 
-A `BoundaryIso` witness is a finite correspondence preserving this data.
+At minimum it must specify closure under the constructors for multiplication and conjugation, and it must state how a reduction inside data used to form a generated boundary changes the boundary certificate.
 
-This immediately gives the structural facts needed below.
+### Required hypotheses for a confluence theorem
 
-### Lemma 12.1 — BoundaryIso is an equivalence relation
+A valid contextual theorem needs the following explicit data.
 
-`BoundaryIso` is reflexive, symmetric, and transitive.
+#### H1. Local algebra condition
 
-Proof sketch.
+`LocalMul` is functional, or its own contextual reduction is terminating and locally confluent.
 
-Reflexivity is the identity correspondence on the finite certificate. Symmetry
-is obtained by inverting the finite correspondence; the reversal tag is
-involutive. Transitivity is composition of finite correspondences, with
-preservation of ports, origins, incidence, order data, attachments, tree
-addresses, and visible residual sites preserved under composition.
+#### H2. Contextual reduction definition
 
-Thus `BoundaryIso` is an equivalence relation on boundary certificates.
+Every allowed inner step is generated by an explicit context grammar. The proof cannot use “inner G1” until such contexts exist in the relation.
+
+#### H3. Certificate preservation
+
+An inner admissible local step preserves the generated-boundary certificate up to the chosen finite `BoundaryIso`.
+
+#### H4. Decision stability
+
+`GenDecision` is invariant under `BoundaryIso`, including transport of existing witnesses and transport of certified freshness.
+
+#### H5. Equivalence compatibility
+
+`BoundaryIso` must be a reduction-compatible equivalence or congruence on the objects compared at the end of the confluence theorem.
+
+#### H6. Termination
+
+The contextual system must have a well-founded measure. The existing root-only weight theorem does not automatically prove termination after arbitrary contextual closure or after transport is restored.
+
+#### H7. Newman theorem modulo equivalence
+
+The exact version of Newman’s lemma being used must be stated and proved or cited: termination plus local confluence modulo a compatible equivalence implies confluence modulo that equivalence.
+
+### Theorem 2.1 — Conditional contextual confluence schema
+
+If H1–H7 hold, and if all contextual critical pairs are exhausted and joinable modulo `BoundaryIso`, then `ContextualCertifiedRed` is confluent modulo `BoundaryIso`.
+
+This is presently a proof schema, not a theorem of the current Lean kernel.
 
 ---
 
-## 4. Restricted rules
+## 3. What the single `GenDecision` really fixes
 
-The restricted certified core uses the following rule families.
+The certified decision object still solves a real problem.
 
-```text
-G1: local multiplication of atoms
-G3: generated boundary folds into an existing normalized boundary
-G4: generated boundary is retained as a fresh normalized boundary
-```
-
-In `CertifiedRed`, G3 and G4 are not independent rules. They are the two
-branches of `GenDecision`.
+For a fixed boundary and registry, the old branches
 
 ```text
-existing(B', w)  gives  gen(B) -> normGen(B')
-fresh(h)         gives  gen(B) -> normGen(B)
+existing
+fresh
 ```
+
+are no longer independent predicates. They are constructors of one decision value. Therefore a single evaluation cannot simultaneously choose both branches.
+
+This removes the old `G3/G4` ambiguity at the decision layer.
+
+It does **not** by itself prove confluence of the whole rewriting system. Local multiplication branching, contextual overlap, certificate compatibility, and termination remain separate proof obligations.
 
 ---
 
-## 5. Local structural lemmas
+## 4. Updated implementation status
 
-The critical-pair analysis uses three structural lemmas. They are not extra
-assumptions on the theorem; they follow from the definitions of the restricted
-system and boundary certificates.
-
-### Lemma 12.2 — G1 preserves boundary certificates
-
-An inner G1 step preserves the boundary certificate up to `BoundaryIso`.
-
-```text
-B -> B1 by an inner G1 step
-implies BoundaryIso(cert(B), cert(B1)).
-```
-
-Proof sketch.
-
-G1 is local multiplication inside the chart-level atom algebra. It performs
-
-```text
-mul(atom, atom) -> atom
-```
-
-inside the local core. It does not rewrite the generated-boundary identity
-itself. The boundary certificate records structural origin, incidence,
-attachment, order, and visible residual sites. Since G1 is an admissible local
-transition with zero residual signature and does not alter the boundary-origin
-data, the certificate before and after the inner G1 step is the same up to the
-identity `BoundaryIso`.
-
-### Lemma 12.3 — GenDecision is stable under BoundaryIso
-
-If generated boundaries have boundary-isomorphic certificates, then the
-generated-boundary decision is stable up to `BoundaryIso`.
-
-```text
-BoundaryIso(cert(B), cert(B1))
-implies the decisions for B and B1 produce BoundaryIso-compatible results.
-```
-
-Proof sketch.
-
-`GenDecision` inspects only the finite certificate data used by
-`BoundaryIso`, `EqAdm`, `ResidualPurity`, and boundary-origin preservation. These
-checks are invariant under `BoundaryIso` of certificates. This lemma uses Lemma
-12.1 to transport witnesses across `BoundaryIso`.
-
-If `B` has an existing fold witness to `B'`, then transport along the
-`BoundaryIso(cert(B), cert(B1))` correspondence gives a corresponding existing
-fold witness for `B1` to a certificate-isomorphic target. If no existing witness
-exists for `B`, then no witness exists for `B1`; otherwise the inverse transport
-would produce one for `B`.
-
-Thus the existing and fresh outcomes are stable up to certificate isomorphism.
-
-### Lemma 12.4 — Restricted rule overlaps are exhausted
-
-For the restricted system, every one-step branch is one of the following forms:
-
-```text
-G3 / G4 branch on the same generated boundary
-two existing targets for the same generated boundary
-G1 / G1
-inner G1 / outer generated-boundary decision
-same rule, same witness
-same rule, administratively different witness
-```
-
-No other critical-pair shape occurs in the restricted core.
-
-This is a syntactic exhaustion of the listed restricted rules.
-
----
-
-## 6. Critical pair analysis
-
-### 6.1 G3 / G4 overlap
-
-There is no G3 / G4 critical pair in `CertifiedRed`.
-
-For a fixed generated boundary `B`, `GenDecision(B, R)` has exactly one of the
-following forms:
-
-```text
-existing(B', w)
-fresh(h)
-```
-
-It cannot be both. Thus the old `ExistingFreshExclusive` side condition is no
-longer an external assumption. It is the shape of the decision object.
-
-### 6.2 Multiple existing targets
-
-If two existing witnesses are available,
-
-```text
-existing(B1, w1)
-existing(B2, w2)
-```
-
-then the witnesses contain
-
-```text
-BoundaryIso(cert(B), cert(B1))
-BoundaryIso(cert(B), cert(B2)).
-```
-
-By Lemma 12.1, the two targets are certificate-isomorphic:
-
-```text
-BoundaryIso(cert(B1), cert(B2)).
-```
-
-Thus multiple existing targets do not create a certificate-level obstruction.
-
-### 6.3 G1 / G1
-
-There is no nontrivial nested G1 / G1 overlap in the atom-level local
-multiplication rule. Atoms are leaves for this restricted rule.
-
-Parallel G1 steps either coincide or commute by disjointness of support. Hence
-G1 / G1 branches are locally joinable.
-
-### 6.4 Inner G1 / outer generated-boundary decision
-
-The remaining nontrivial shape is an inner G1 step inside a generated boundary
-together with an outer generated-boundary decision.
-
-By Lemma 12.2, the inner G1 step preserves the boundary certificate up to
-`BoundaryIso`. By Lemma 12.3, the generated-boundary decision is stable under
-that certificate isomorphism.
-
-Therefore reducing inside first or deciding the generated boundary first gives
-certificate-isomorphic results.
-
----
-
-## 7. Local confluence
-
-### Proposition 12.5 — Local confluence of restricted CertifiedRed
-
-Restricted `CertifiedRed` is locally confluent up to `BoundaryIso` on boundary
-certificates.
-
-Proof.
-
-By Lemma 12.4, the critical-pair shapes are exhausted by the cases in Section 6.
-G3 / G4 overlap is impossible by `GenDecision`. Multiple existing targets are
-joined by Lemma 12.1. G1 / G1 branches are trivial or parallel. Inner G1 / outer
-generated-boundary branches are joined by Lemmas 12.2 and 12.3.
-
-Thus every one-step branch is joinable up to `BoundaryIso` on boundary
-certificates.
-
----
-
-## 8. Restricted weak confluence
-
-Termination of the restricted generated-normalization core was already supplied
-by the strict decrease measure for restricted `Red`.
-
-Using that prior termination result, Newman-style reasoning gives the main
-theorem.
-
-### Theorem 12.6 — Restricted weak confluence for CertifiedRed
-
-Restricted `CertifiedRed` is weakly confluent up to `BoundaryIso` on boundary
-certificates.
-
-Equivalently:
-
-```text
-If CertifiedRed X Y and CertifiedRed X Z,
-then there exist Y', Z' such that
-CertifiedRedStar Y Y',
-CertifiedRedStar Z Z',
-and BoundaryIso(cert(Y'), cert(Z')).
-```
-
-Proof.
-
-By the prior termination theorem, restricted `CertifiedRed` is terminating. By
-Proposition 12.5, it is locally confluent up to `BoundaryIso` on boundary
-certificates. Therefore, by Newman-style reasoning, it is weakly confluent up to
-`BoundaryIso` on boundary certificates.
-
----
-
-## 9. Decidability of the generated-boundary decision
-
-Logical confluence is separate from computability of the decision procedure.
-
-For an executable normalization engine, one needs:
-
-```text
-GenDecisionComputable:
-  for every generated boundary B and finite registry R,
-  GenDecision(B, R) is computable.
-```
-
-The route is finite.
-
-```text
-BoundaryCertificateFinite
-BoundaryIsoDecidable
-EqAdmDecidable
-ResidualPurityDecidable
-ExistingFoldWitnessDecidable
-FreshDecisionDecidable over finite registries
-```
-
-### 9.1 BoundaryIso decidability
-
-Since `BoundaryIso` is a finite structural isomorphism of finite boundary
-certificates, it is decidable by finite search over finite correspondences.
-
-The search checks preservation of finite data:
-
-```text
-ports
-structural origins
-incidence
-order or reversal tag
-attachment data
-tree addresses
-visible residual sites
-```
-
-Each component has decidable equality, and the certificate is finite.
-
-### 9.2 EqAdm decidability
-
-`EqAdm` remains decidable when it is restricted to the intended finite
-preservation checks:
-
-```text
-unit preservation
-local multiplication preservation
-conjugation preservation
-trace preservation
-boundary preservation
-```
-
-The boundary part uses `BoundaryIso`. The local algebraic checks take place in
-the finite syntactic presentation of the local chart data and the quaternionic
-core used by the restricted kernel.
-
-The definition must not be enlarged to mean equality under all future contexts.
-That would change the problem.
-
-### 9.3 Fresh decision
-
-Freshness is the negative branch:
-
-```text
-fresh(B, R) iff for every B' in R, no ExistingFoldWitness(B, B') exists.
-```
-
-Because `R` is finite and `ExistingFoldWitness` is decidable, freshness is
-decidable by finite search.
-
-Thus `GenDecision` is computable for finite registries.
-
----
-
-## 10. What is proved, and what remains deferred
-
-This note separates three levels.
-
-### Logical confluence
-
-For `CertifiedRed`, restricted weak confluence up to `BoundaryIso` follows from
-the certified decision structure, the local structural lemmas above, and the
-prior termination theorem.
-
-This is the main result of the note.
-
-### Principle of computability
-
-If boundary certificates are represented as finite structural data and
-`BoundaryIso`, `EqAdm`, and `ResidualPurity` are implemented as finite checks,
-then `GenDecision` is computable.
-
-Thus the certified normalization engine is executable in principle.
-
-### Formal implementation
-
-The current minimal Lean kernel does not yet implement the full decision
-procedure for `BoundaryIso`, `EqAdm`, `ResidualPurity`, or `GenDecision`.
-
-That formalization is deferred.
-
-### Current Lean implementation status
-
-The current Lean layer verifies the equality-based certified-kernel skeleton.
+The current Lean state is:
 
 ```text
 Minimal.lean
-  raw restricted termination kernel
+  root-only restricted raw reduction
+  strict weight decrease
 
-Certified.lean
-  certified reduction skeleton
-  CertifiedRed strict weight decrease
-
-BoundaryIso.lean
-  finite boundary-certificate scaffold
-  equality-based certificate isomorphism
+BoundaryIsoStructural.lean
+  finite certificate skeleton
+  equality up to explicit reversal
   refl / symm / trans / decidable
 
+Certified.lean
+  BoundaryIso connected to the structural certificate relation
+  one GenDecision controls generated-boundary reduction
+  strict weight decrease
+  ResidualPurity remains True
+
 DecideGen.lean
-  equality-based finite-registry decision
-  decideGenFromRegistry
+  finite registry search using the current structural BoundaryIso
+  full provenance extraction and nontrivial ResidualPurity deferred
 ```
 
-This is not yet the full structural `BoundaryIso` / `EqAdm` / `ResidualPurity`
-decision procedure. The current implementation proves that the certified
-`GenDecision` shape can be computed from a finite registry in the
-equality-based kernel.
-
-Thus the Lean status is:
-
-```text
-computational skeleton verified;
-structural certificate upgrade deferred.
-```
-
-
-The deferred item is not the mathematical confluence theorem for
-`CertifiedRed`; it is the full machine-checked implementation of the decision
-procedure and its soundness proofs.
+The earlier equality-only `BoundaryIso.lean` is a superseded conservative scaffold, not the active certified relation.
 
 ---
 
-## 11. Non-claims
+## 5. Corrected claim table
 
-This note does not claim:
-
-```text
-confluence for RawRed with arbitrary ExistingBoundary and FreshBoundary;
-syntactic confluence of all terms;
-trace-level confluence;
-transport-inclusive confluence;
-decidability of semantic equality under all contexts;
-completed Lean formalization of full structural BoundaryIso / EqAdm / nontrivial ResidualPurity.
-```
-
-It claims the restricted certificate-level confluence theorem for `CertifiedRed`,
-and the finite-data route by which the certified decision can be made computable.
+| Claim | Status |
+|---|---|
+| Current root-only `CertifiedRed` terminates | Lean-checked |
+| Current root-only `CertifiedRed` is one-step deterministic | Conditional on `LocalMulFunctional`; proof given here |
+| A single `GenDecision` excludes simultaneous existing/fresh outcomes | By construction |
+| Finite registry search is executable for the current witness relation | Lean skeleton present |
+| Full contextual certified confluence modulo `BoundaryIso` | Open proof obligation |
+| Transport-inclusive confluence | Not claimed |
+| Nontrivial residual-purity soundness | Not implemented |
 
 ---
 
-## 12. Summary
+## 6. Replacement wording for Note 12
 
-The confluence problem is resolved at the certified level.
+Replace the unconditional theorem statement with:
 
-The old G3 / G4 critical pair disappears when the `If / Otherwise` structure is
-represented as a single `GenDecision`. Existing folds carry their
-`BoundaryIso`-sound witnesses. Freshness is the certified absence of such a
-witness in a finite registry.
+> For the current root-only certified kernel, strict termination is machine-checked. If local multiplication is functional, the one-step relation is deterministic and therefore locally confluent. The broader contextual confluence theorem modulo structural boundary isomorphism remains conditional on an explicit contextual reduction, certificate-preservation and decision-stability lemmas, a compatible equivalence framework, and a termination theorem for that contextual system.
 
-BoundaryIso is an equivalence relation because it is finite structural
-isomorphism. G1 preserves boundary certificates because it is a local admissible
-transition that does not touch boundary-origin data. GenDecision is stable under
-BoundaryIso because it inspects only BoundaryIso-invariant finite certificate
-data.
+The governing design principle remains valid:
 
-Therefore restricted `CertifiedRed` is weakly confluent up to
-boundary-certificate isomorphism.
+> Do not allow naked folds.  
+> Make every fold carry its certificate.
 
-The next engineering step is not another confluence theorem. The equality-based
-finite-registry decision procedure is now represented by `DecideGen.lean`; the
-remaining engineering step is the structural certificate upgrade.
+The correction is that certificates remove one ambiguity; they do not automatically discharge every confluence obligation.
 
-```text
-Do not allow naked folds.
-Make every fold carry its certificate.
-```
+
+---
+
+## Archival location
+
+The superseded unconditional version is preserved at `archive/notes/12-certified-red-restricted-weak-confluence-original.md`.
