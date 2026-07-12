@@ -15,7 +15,7 @@ F_1=T(U)/(u^2+1,\ v^2+1,\ uv+vu).
 Then every word reduces to a linear combination of \(1,u,v,uv\), while the map \(u\mapsto i\), \(v\mapsto j\) surjects onto \(\mathbb H\). Hence \(\dim F_1=4\), and
 
 \[
-F_1\cong_{\mathbb R	ext{-alg}}\mathbb H.
+F_1\cong_{\mathbb R\mathrm{-alg}}\mathbb H.
 \]
 
 **Source:** `paper/LOCAL_CLOSURE_PRESENTATION_AMENDMENT.md`.
