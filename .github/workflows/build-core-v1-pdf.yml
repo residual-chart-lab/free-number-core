@@ -6,21 +6,24 @@ on:
       - core-reconstruction
     paths:
       - core/free_numbers_core_v1.tex
-      - .github/pdf-build-trigger
+      - .github/workflows/build-core-v1-pdf.yml
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: core-v1-pdf-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build-pdf:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+
     steps:
-      - name: Check out reconstruction branch
+      - name: Check out PR merge state
         uses: actions/checkout@v4
-        with:
-          ref: core-reconstruction
-          fetch-depth: 0
 
       - name: Install LaTeX toolchain
         run: |
@@ -38,48 +41,25 @@ jobs:
             lmodern >/dev/null
 
       - name: Compile and validate PDF
-        id: compile
         working-directory: core
         run: |
-          set +e
-          latexmk -pdf -interaction=nonstopmode -halt-on-error free_numbers_core_v1.tex > build.log 2>&1
-          rc=$?
-          set -e
-          if [ "$rc" -ne 0 ]; then
-            echo "valid=false" >> "$GITHUB_OUTPUT"
-            echo "LaTeX compilation failed with status $rc."
-            tail -n 80 build.log
-            exit 0
-          fi
+          set -o pipefail
+          latexmk -pdf -interaction=nonstopmode -halt-on-error free_numbers_core_v1.tex 2>&1 | tee build.log
           test "$(head -c 5 free_numbers_core_v1.pdf)" = "%PDF-"
-          pages="$(pdfinfo free_numbers_core_v1.pdf | awk '/^Pages:/ {print $2}')"
+          pdfinfo free_numbers_core_v1.pdf | tee pdfinfo.txt
+          pages="$(awk '/^Pages:/ {print $2}' pdfinfo.txt)"
           test -n "$pages"
           test "$pages" -ge 1
           echo "Validated PDF with $pages pages."
-          echo "valid=true" >> "$GITHUB_OUTPUT"
 
-      - name: Commit generated PDF or diagnostic log
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [ "${{ steps.compile.outputs.valid }}" = "true" ]; then
-            git add core/free_numbers_core_v1.pdf
-            git rm -f --ignore-unmatch core/build.log
-          else
-            git add core/build.log
-          fi
-          if git diff --cached --quiet; then
-            echo "No generated changes."
-          else
-            if [ "${{ steps.compile.outputs.valid }}" = "true" ]; then
-              git commit -m "Rebuild valid Free Numbers Core v1 PDF"
-            else
-              git commit -m "Record Core v1 PDF build diagnostic"
-            fi
-            git pull --rebase origin core-reconstruction
-            git push origin HEAD:core-reconstruction
-          fi
-
-      - name: Fail after preserving diagnostic
-        if: steps.compile.outputs.valid != 'true'
-        run: exit 1
+      - name: Upload PDF build artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: free-numbers-core-v1-pdf
+          path: |
+            core/free_numbers_core_v1.pdf
+            core/build.log
+            core/pdfinfo.txt
+          if-no-files-found: error
+          retention-days: 30
