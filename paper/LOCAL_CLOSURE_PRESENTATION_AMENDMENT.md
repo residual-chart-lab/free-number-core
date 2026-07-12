@@ -27,9 +27,7 @@ u^2+1,\qquad v^2+1,\qquad uv+vu.
 Define
 
 \[
-oxed{
 F_1:=T(U)/I.
-}
 \]
 
 Because \(T(U)\) is associative and \(I\) is a two-sided ideal, \(F_1\) is a unital associative real algebra. Write the images of \(u,v\) in the quotient by the same letters and set
@@ -95,7 +93,7 @@ i^2=j^2=-1,\qquad ij+ji=0.
 Therefore \(\phi\) descends to a unital algebra homomorphism
 
 \[
-ar\phi:F_1\longrightarrow\mathbb H.
+\overline{\phi}:F_1\longrightarrow\mathbb H.
 \]
 
 Its image contains
@@ -104,7 +102,7 @@ Its image contains
 1,\qquad i,\qquad j,\qquad ij=k,
 \]
 
-so \(ar\phi\) is surjective. Consequently
+so \(\overline{\phi}\) is surjective. Consequently
 
 \[
 \dim_{\mathbb R}F_1\ge\dim_{\mathbb R}\mathbb H=4.
@@ -116,14 +114,13 @@ Together with Lemma 3.1,
 \dim_{\mathbb R}F_1=4.
 \]
 
-The surjective linear map \(ar\phi:F_1	o\mathbb H\) is therefore an isomorphism.
+The surjective linear map \(\overline{\phi}:F_1\longrightarrow\mathbb H\) is therefore an isomorphism.
 
 ### Theorem 4.1 — Local quaternionic closure
 
 \[
-oxed{
-F_1=T(U)/(u^2+1,\ v^2+1,\ uv+vu)\cong_{\mathbb R	ext{-alg}}\mathbb H.
-}
+F_1=T(U)/(u^2+1,\ v^2+1,\ uv+vu)
+\cong_{\mathbb R\mathrm{-alg}}\mathbb H.
 \]
 
 Under this isomorphism,
