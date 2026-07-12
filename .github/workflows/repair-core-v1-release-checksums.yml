@@ -1,0 +1,69 @@
+name: Repair Core v1.0.0 release checksums
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches:
+      - core-reconstruction
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    if: >-
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.head.ref == 'release/core-v1-checksum-fix'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      RELEASE_TAG: core-v1.0.0
+      TARGET_SHA: 9efc241d38e5ca2cd07f425b747bfb5d67ea0235
+      PDF_SHA256: e97dc6b4b5e005575f4e5d2b4930e6d2d96f86440004d4dcf35acf92e604952a
+      BUNDLE_SHA256: 78052dfc29108c7c9a9b77b7c98d80311f790631120f78da403f27f0e00a14ad
+
+    steps:
+      - name: Verify tag target
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git ls-remote "https://github.com/$GITHUB_REPOSITORY.git" "refs/tags/$RELEASE_TAG" > tag.txt
+          test "$(awk '{print $1}' tag.txt)" = "$TARGET_SHA"
+
+      - name: Write asset-oriented checksum manifest
+        run: |
+          mkdir -p repaired
+          cat > repaired/SHA256SUMS.txt <<EOF
+          $PDF_SHA256  Free-Numbers-Core-v1.0.0.pdf
+          $BUNDLE_SHA256  Free-Numbers-Core-v1.0.0-bundle.zip
+          EOF
+
+      - name: Replace and verify release checksum asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release upload "$RELEASE_TAG" repaired/SHA256SUMS.txt \
+            --repo "$GITHUB_REPOSITORY" \
+            --clobber
+
+          mkdir -p verify
+          gh release download "$RELEASE_TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --pattern SHA256SUMS.txt \
+            --dir verify
+          cmp repaired/SHA256SUMS.txt verify/SHA256SUMS.txt
+          cat verify/SHA256SUMS.txt
+
+      - name: Upload repair audit artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: core-v1.0.0-checksum-repair
+          path: |
+            repaired/SHA256SUMS.txt
+            verify/SHA256SUMS.txt
+            tag.txt
+          if-no-files-found: warn
+          retention-days: 30
