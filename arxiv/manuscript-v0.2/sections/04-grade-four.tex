@@ -1,0 +1,128 @@
+\section{Grade two and grade four}\label{sec:grade-four}
+
+\subsection{The grade-two zero fiber}
+
+Let $g=\sum_{a=1}^3 e_a|e_a$.  Under the standard $SO(3)$ decomposition,
+\begin{equation}\label{eq:b2-decomp}
+  B_2=V\otimes V
+  \cong \R g\oplus\Lambda^2V\oplus S^2_0V.
+\end{equation}
+Via the Euclidean metric, we identify $S^2_0V$ with the symmetric trace-free endomorphisms of $V$.
+Let
+\[
+  P=\R g\oplus\Lambda^2V\cong V_0\oplus V_1,
+  \qquad
+  R=S^2_0V\cong V_2.
+\]
+The compression $m_2$ detects the trace and antisymmetric components and kills the symmetric trace-free component.  Hence
+\begin{equation}\label{eq:grade-two-kernel}
+  \ker m_2=R=S^2_0V.
+\end{equation}
+For $S\in R$, a direct quaternionic calculation gives
+\begin{equation}\label{eq:grade-two-response}
+  A_2(S)(d)=-2S(d).
+\end{equation}
+Thus every nonzero $S\in R$ has $\depth(S)=1$.  Equivalently, the grade-two residual sector is zero-valued but contextually active.
+
+For $S,T\in R\setminus\{0\}$, Theorem~\ref{thm:additive-depth} gives
+\begin{equation}\label{eq:pure-residual-depth}
+  \depth(S\concat T)=2.
+\end{equation}
+The factorwise two-probe response can be written
+\begin{equation}\label{eq:D13}
+  D_{13}(S\concat T)(d_1,d_2)=4T(d_2)S(d_1),
+\end{equation}
+and is nonzero for suitable probes.
+
+\subsection{Algebraic coherence delay}
+
+The grade-four space splits by the two grade-two factors:
+\begin{equation}\label{eq:b4-sector}
+  B_4=(P\otimes P)\oplus(P\otimes R)\oplus(R\otimes P)\oplus(R\otimes R).
+\end{equation}
+\begin{proposition}[Grade-four depth table]\label{prop:grade-four-table}
+The combined response ranks are
+\begin{equation}\label{eq:b4-ranks}
+\begin{array}{c|cccc}
+ d&0&1&2&3\\
+ \hline
+ \operatorname{rank}D_4^{\le d}&4&32&72&81\\
+ \dim F_d^{(4)}&77&49&9&0.
+\end{array}
+\end{equation}
+The sectorwise invisible dimensions are
+\begin{equation}\label{eq:b4-sector-table}
+\begin{array}{c|rrrr|r}
+ &P\otimes P&P\otimes R&R\otimes P&R\otimes R&\text{total}\\
+\hline
+F_0^{(4)}&12&20&20&25&77\\
+F_1^{(4)}&0&12&12&25&49\\
+F_2^{(4)}&0&0&0&9&9\\
+F_3^{(4)}&0&0&0&0&0.
+\end{array}
+\end{equation}
+Moreover,
+\begin{equation}\label{eq:spin-four-survivor}
+  F_2^{(4)}=F_2^{(4)}\cap(R\otimes R)=S^4_0V\cong V_4,
+  \qquad \dim S^4_0V=9.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The rank and sector-kernel tables are obtained from the exact integer matrices of all partial responses through each depth; no floating-point rank calculation is used.  The computation is reproduced by \texttt{scripts/verify\_depth4.py}.
+
+For the final identification, $S^4_0V\cong V_4$ is the Cartan-product summand of
+$R\otimes R=V_2\otimes V_2$.  By Lemma~\ref{lem:partial-equivariance}, every partial response is equivariant.  Moreover,
+\[
+  \Hom(V^{\otimes r},\Hq)\cong V^{\otimes r}\otimes(V_0\oplus V_1)
+\]
+contains no spin larger than $r+1$.  Thus depth zero has target spin at most one, depth one at most two, and depth two at most three.  Hence every such response vanishes on $V_4$, so $S^4_0V\subseteq F_2^{(4)}$.  The rank table gives $\dim F_2^{(4)}=9=\dim V_4$, proving equality.  Finally $F_3^{(4)}=0$ by all-gap reconstruction.
+\end{proof}
+
+By the factorization law, the depth-two responses with gap sets $\{1,2\}$ and $\{2,3\}$ vanish identically on $R\otimes R$ because one grade-two factor remains unprobed and is killed by $m_2$.  Hence the only potentially nonzero depth-two channel on this sector is \eqref{eq:D13}.  Since $F_3^{(4)}=0$, every nonzero vector in the subspace \eqref{eq:spin-four-survivor} has depth three.
+
+\begin{definition}[Algebraic coherence delay]
+A non-decomposable linear combination has algebraic coherence delay when it is detected strictly later than every nonzero decomposable tensor from which it is assembled.
+\end{definition}
+
+Equation \eqref{eq:spin-four-survivor} supplies such a delay: no nonzero pure tensor $S\concat T$ belongs to $F_2^{(4)}$ by \eqref{eq:pure-residual-depth}, but suitable linear combinations of these depth-two tensors do.  Their entire response profile through depth two cancels, and the combined state first appears at depth three.  This is an algebraic statement, not a claim of quantum coherence.
+
+\begin{corollary}[Equivariant depth layers]\label{cor:depth-layers}
+Let
+\[
+  L_d^{(4)}=F_{d-1}^{(4)}/F_d^{(4)},
+  \qquad F_{-1}^{(4)}=B_4.
+\]
+Sector by sector, the first-detection layers are
+\begin{equation}\label{eq:sector-layers}
+\begin{array}{c|cccc}
+ &L_0&L_1&L_2&L_3\\
+\hline
+P\otimes P&V_0\oplus V_1&V_0\oplus2V_1\oplus V_2&0&0\\
+P\otimes R&0&V_1\oplus V_2&V_2\oplus V_3&0\\
+R\otimes P&0&V_1\oplus V_2&V_2\oplus V_3&0\\
+R\otimes R&0&0&V_0\oplus V_1\oplus V_2\oplus V_3&V_4.
+\end{array}
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:layers}
+\begin{aligned}
+ L_0^{(4)}&\cong V_0\oplus V_1,\\
+ L_1^{(4)}&\cong V_0\oplus4V_1\oplus3V_2,\\
+ L_2^{(4)}&\cong V_0\oplus V_1\oplus3V_2\oplus3V_3,\\
+ L_3^{(4)}&\cong V_4.
+\end{aligned}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+We have $P\cong V_0\oplus V_1$ and $R\cong V_2$.  The restriction $m_2|_P:P\to\Hq$ is an equivariant isomorphism.  Hence the depth-zero quotient of $P\otimes P$ is $V_0\oplus V_1$; subtracting it from
+$P\otimes P\cong2V_0\oplus3V_1\oplus V_2$ gives its depth-one row.
+
+Each mixed sector decomposes as
+$V_1\oplus2V_2\oplus V_3$.  Its only nonzero depth-one response has target
+$\Hom(V,\Hq)$, whose maximum spin is two, so $V_3$ is in the depth-one kernel.  The twelve-dimensional sector kernel in Proposition~\ref{prop:grade-four-table} must therefore be $V_2\oplus V_3$, yielding the two mixed rows.  Finally,
+$R\otimes R\cong V_0\oplus V_1\oplus V_2\oplus V_3\oplus V_4$, and Proposition~\ref{prop:grade-four-table} identifies its depth-three survivor as $V_4$.  This proves \eqref{eq:sector-layers}; summing the rows gives \eqref{eq:layers}.
+\end{proof}
+
+The layer dimensions are $4,28,40,9$.  In particular, copies of $V_0,V_1,V_2$ occur at more than one detection depth.  Representation type alone therefore does not determine visibility depth; factor origin also matters.
