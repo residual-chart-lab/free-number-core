@@ -1,0 +1,37 @@
+ARXIV SUBMISSION METADATA
+
+Title:
+Exact Reconstruction under Noncommutative Quaternionic Compression: Contextual Responses, Recursive Decoding, and Observability Depth
+
+Authors:
+Akihiko Kura (Residual Chart Lab)
+
+Abstract:
+Let $V=\operatorname{Im}\mathbb H$, $B_n=V^{\otimes n}$, and let $m_n(a_1|\cdots|a_n)=a_n\cdots a_1$ be reversed quaternionic compression. The maps $m_n$ are deliberately non-injective: distinct boundary tensors may have the same quaternionic value. We show that the distinctions erased at value level remain exactly recoverable from a canonical family of contextual responses. Inserting one imaginary-quaternion probe into every internal gap defines $A_n:B_n\to\operatorname{Hom}(V^{\otimes(n-1)},\mathbb H)$. A single twelve-dimensional multiplication map $\Theta:V\otimes\mathbb H\to\operatorname{Hom}(V,\mathbb H)$ is an isomorphism with an explicit inverse. Its standard-basis determinant is $256$, while an equivariant block decomposition explains invertibility sector by sector. Iterating $\Theta^{-1}$ removes one outer boundary layer at a time and proves that $A_n$ is injective for every finite $n$. Partial insertion responses define a finite observability filtration by first detection depth. This depth is additive on nonzero decomposable concatenations, while non-decomposable superpositions can be detected strictly later. At grade four a nine-dimensional spin-four sector exhibits such an algebraic coherence delay. Exact-response coordinates also carry a natural unital associative graded product induced by boundary concatenation. The construction is therefore an explicit finite model in which coarse noncommutative compression coexists with exact contextual recoverability. It suggests interfaces with active sensing, query-addressable memory, and provenance-preserving computation, but no compression-rate, noise-stability, or practical memory-efficiency theorem is claimed.
+
+Comments:
+15 pages, no figures. Exact integer certificate scripts and source are available at https://github.com/residual-chart-lab/free-number-core . Extends the frozen Free Numbers Core v1.0.0 artifact, Zenodo DOI: 10.5281/zenodo.21328471.
+
+Primary category:
+math.RA (Rings and Algebras)
+
+Cross-list:
+None for version 1
+
+License to select:
+arXiv.org perpetual, non-exclusive license 1.0
+
+Journal reference:
+Leave blank
+
+DOI:
+Leave blank (the Zenodo DOI belongs to the prior frozen technical artifact, not to this manuscript)
+
+Report number:
+Leave blank
+
+MSC class:
+Leave blank
+
+Are you an author of this paper?:
+Yes
