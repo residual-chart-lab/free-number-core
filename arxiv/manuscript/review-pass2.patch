@@ -1,0 +1,253 @@
+--- a/arxiv/manuscript/main.tex
++++ b/arxiv/manuscript/main.tex
+@@ -71,7 +71,7 @@
+ \[
+   \Theta:V\otimes\mathbb H\longrightarrow\Hom(V,\mathbb H)
+ \]
+-is an isomorphism with an explicit inverse.  Its equivariant block decomposition gives determinant $256$ in compatible standard bases.  Iterating $\Theta^{-1}$ removes one outer boundary layer at a time and proves that $A_n$ is injective for every finite $n$.
++is an isomorphism with an explicit inverse.  Its standard-basis determinant is $256$, while an equivariant block decomposition explains invertibility sector by sector.  Iterating $\Theta^{-1}$ removes one outer boundary layer at a time and proves that $A_n$ is injective for every finite $n$.
+ 
+ Partial insertion responses define a finite observability filtration by first detection depth.  This depth is additive on nonzero decomposable concatenations, while non-decomposable superpositions can be detected strictly later.  At grade four a nine-dimensional spin-four sector exhibits such an algebraic coherence delay.  Exact-response coordinates also carry a natural unital associative graded product induced by boundary concatenation.  The construction is therefore an explicit finite model in which coarse noncommutative compression coexists with exact contextual recoverability.  It suggests interfaces with active sensing, query-addressable memory, and provenance-preserving computation, but no compression-rate, noise-stability, or practical memory-efficiency theorem is claimed.
+ \end{abstract}
+@@ -264,18 +264,19 @@
+ \[
+   \det\Theta=256.
+ \]
+-In equivariant coordinates the same determinant factors as
++With the representation-adapted coordinate conventions of
++\eqref{eq:theta-block-formulas}--\eqref{eq:spin-one-matrix}, the block matrix has determinant
+ \[
+-  1^1\left(\det\begin{pmatrix}-1&2\\1&0\end{pmatrix}\right)^3(-2)^5.
++  1^1\left(\det\begin{pmatrix}-1&2\\1&0\end{pmatrix}\right)^3(-2)^5=256.
+ \]
+ \end{proposition}
+ 
+ \begin{proof}
+-Evaluation of the twelve basis vectors gives an integer $12\times12$ matrix with determinant $256$.  The block formulas explain the value: the scalar sector contributes $1$, the $2\times2$ multiplicity-space matrix in \eqref{eq:spin-one-matrix} acts identically on the three coordinates of $V_1$ and contributes $(-2)^3$, and the five-dimensional spin-two sector contributes $(-2)^5$.  The accompanying exact certificate reproduces both the standard-basis determinant and the block factorization.
++Evaluation of the twelve basis vectors gives an integer $12\times12$ matrix with determinant $256$.  Independently, the block formulas show that the scalar sector is multiplication by $1$, the spin-one multiplicity matrix has determinant $-2$ and is repeated over three coordinates, and the spin-two sector is multiplication by $-2$ on a five-dimensional space.  Hence every irreducible block is invertible, and the determinant of the displayed representation-adapted block matrix is $1\cdot(-2)^3\cdot(-2)^5=256$.  The accompanying exact certificate reproduces the standard-basis matrix and both numerical calculations.
+ \end{proof}
+ 
+ \begin{remark}
+-The representation decomposition \eqref{eq:theta-modules} is standard.  The model-specific fact is that the concrete multiplication-defined map $\Theta$ is nonzero and invertible on every irreducible block, and that the same inverse can be reused recursively at every tensor grade.
++A numerical determinant for a map between two separately based spaces depends on the chosen domain and codomain bases.  The invariant content of the equivariant calculation is that every irreducible block is nonzero and invertible.  The representation decomposition \eqref{eq:theta-modules} is standard; the model-specific fact is that the concrete multiplication-defined map $\Theta$ is invertible on every block and that the same inverse is reused recursively at every tensor grade.
+ \end{remark}
+ 
+ \section{All-grade exact reconstruction}\label{sec:reconstruction}
+@@ -328,19 +329,40 @@
+ 
+ The all-gap map proves eventual visibility.  To measure how much intervention is required, we retain responses with only selected gaps probed.
+ 
+-Let the internal gaps of a grade-$n$ word be indexed by $\{1,\ldots,n-1\}$.  For a subset $S$, define
++For $n\ge1$, index the internal gaps of a grade-$n$ word by $\{1,\ldots,n-1\}$.  For
++$S\subseteq\{1,\ldots,n-1\}$, define
+ \[
+   D_S:B_n\longrightarrow\Hom(V^{\otimes|S|},\Hq)
+ \]
+-by inserting probe variables exactly in the gaps indexed by $S$ and multiplying directly across every unprobed gap.  The probe variables are ordered by increasing gap index.  In particular,
++as follows.  For a pure tensor $a_1|\cdots|a_n$ and probes $(d_j)_{j\in S}$ ordered by increasing gap index, set
++\begin{equation}\label{eq:partial-explicit}
++  D_S(a_1|\cdots|a_n)((d_j)_{j\in S})
++  =a_n c_{n-1}a_{n-1}\cdots c_1a_1,
++  \qquad
++  c_j=\begin{cases}d_j,&j\in S,\\1,&j\notin S.\end{cases}
++\end{equation}
++Thus an unprobed gap contributes the quaternionic unit.  In particular,
+ \[
+   D_\varnothing=m_n,
+   \qquad
+   D_{\{1,\ldots,n-1\}}=A_n.
+ \]
+ 
++\begin{lemma}[Equivariance of partial responses]\label{lem:partial-equivariance}
++Let a unit quaternion $q$ act diagonally on $B_n$ by conjugation and on the response space by
++\[
++  (q\cdot F)((d_j)_{j\in S})
++  =qF((q^{-1}d_jq)_{j\in S})q^{-1}.
++\]
++Then every $D_S$ is $SO(3)$-equivariant.  Consequently each $F_d^{(n)}$ is an $SO(3)$-submodule.
++\end{lemma}
++
++\begin{proof}
++Conjugation is an algebra automorphism of $\Hq$.  Applying it to every boundary letter and every inserted probe in \eqref{eq:partial-explicit} conjugates the final product, which is exactly the displayed codomain action.
++\end{proof}
++
+ \begin{definition}[Residual-depth filtration]
+-Set
++For $0\le d\le n-1$, set
+ \begin{equation}\label{eq:depth-filtration}
+   D_n^{\le d}=\bigoplus_{|S|\le d}D_S,
+   \qquad
+@@ -365,24 +387,31 @@
+ 
+ \subsection{Partial-response factorization}
+ 
+-Let $x\in B_m$ and $y\in B_n$.  A selected-gap set in the concatenation $x\concat y$ splits into internal gaps $S_x$ of $x$, the bridge gap, and internal gaps $S_y$ of $y$.  Directly from the reversed product order,
++Let $m,n\ge1$, $x\in B_m$, and $y\in B_n$.  For
++$S\subseteq\{1,\ldots,m+n-1\}$, set
++\[
++  S_x=S\cap\{1,\ldots,m-1\},
++  \qquad
++  S_y=\{j-m:j\in S,\ j>m\}.
++\]
++The bridge gap is $m$.  Directly from the reversed product order and with the arguments on the two factors kept independent,
+ \begin{equation}\label{eq:partial-factorization}
+   D_S(x\concat y)
+   =D_{S_y}(y)\,\eta\,D_{S_x}(x),
+ \end{equation}
+-where $\eta=1$ when the bridge is unprobed and $\eta=d_*$ when it is probed.  Probe arguments on the two factors are independent.
++where $\eta=1$ when $m\notin S$ and $\eta=d_*$ when the bridge is probed.  Equation \eqref{eq:partial-factorization} is an identity of multilinear maps after ordering the variables as the $x$-variables, the optional bridge variable, and the $y$-variables.
+ 
+ \subsection{Exact-response product}
+ 
+-For $F\in\Aresp_m$ and $G\in\Aresp_n$, define
++For $m,n\ge1$, $F\in\Aresp_m$, and $G\in\Aresp_n$, define the bilinear product
+ \begin{equation}\label{eq:bridge-product}
+   (F\bridge G)(\mathbf d,\eta,\mathbf e)
+-  =G(\mathbf e)\,\eta\,F(\mathbf d).
++  =G(\mathbf e)\,\eta\,F(\mathbf d),
+ \end{equation}
+-At grade zero, scalars act by ordinary scalar multiplication.
++where $\mathbf d\in V^{m-1}$, $\eta\in V$, and $\mathbf e\in V^{n-1}$.  At grade zero, scalars act by ordinary scalar multiplication.
+ 
+ \begin{proposition}[Bridge compatibility]\label{prop:bridge}
+-For $x\in B_m$ and $y\in B_n$,
++For $m,n\ge1$, $x\in B_m$, and $y\in B_n$,
+ \[
+   A_m(x)\bridge A_n(y)=A_{m+n}(x\concat y).
+ \]
+@@ -394,7 +423,7 @@
+ \end{proof}
+ 
+ \begin{theorem}[Additivity of first detection depth]\label{thm:additive-depth}
+-For nonzero $x\in B_m$ and nonzero $y\in B_n$,
++Let $m,n\ge1$.  For nonzero $x\in B_m$ and nonzero $y\in B_n$,
+ \begin{equation}\label{eq:additive-depth}
+   \depth(x\concat y)=\depth(x)+\depth(y).
+ \end{equation}
+@@ -414,14 +443,20 @@
+ For $d\ge1$, $G_d^{(n)}=F_{d-1}^{(n)}$.
+ 
+ \begin{corollary}[Multiplicative filtration law]\label{cor:multiplicative-filtration}
+-For all $p,q,m,n$,
++Let $m,n\ge1$ and $p,q\ge0$.  Under the canonical concatenation identification
++$B_m\otimes B_n\cong B_{m+n}$,
+ \[
+   G_p^{(m)}\otimes G_q^{(n)}
+   \subseteq G_{p+q}^{(m+n)}.
+ \]
+-Every nonzero decomposable tensor in the left-hand side has depth exactly equal to the sum of the depths of its factors.  Linear combinations may lie deeper by cancellation.
++Every nonzero decomposable tensor in the left-hand side has depth equal to the sum of the depths of its two factors.  Linear combinations may lie deeper by cancellation.
+ \end{corollary}
+ 
++\begin{proof}
++A nonzero pure tensor $x\concat y$ with $x\in G_p^{(m)}$ and $y\in G_q^{(n)}$ has
++$\depth(x\concat y)=\depth(x)+\depth(y)\ge p+q$ by Theorem~\ref{thm:additive-depth}.  Such pure tensors span $G_p^{(m)}\otimes G_q^{(n)}$, and $G_{p+q}^{(m+n)}$ is a linear subspace, proving the inclusion.
++\end{proof}
++
+ Thus residual depth behaves like a valuation on decomposable concatenations and as a superadditive filtration on their linear span.
+ 
+ \section{Grade two and grade four}\label{sec:grade-four}
+@@ -497,10 +532,15 @@
+ \begin{proof}
+ The rank and sector-kernel tables are obtained from the exact integer matrices of all partial responses through each depth; no floating-point rank calculation is used.  The computation is reproduced by \texttt{scripts/verify\_depth4.py}.
+ 
+-For the final identification, $S^4_0V$ is the spin-four irreducible subspace of $R\otimes R$.  Every response of depth at most two is $SO(3)$-equivariant and has target spin at most three: depth zero lands in $\Hq\cong V_0\oplus V_1$, depth one in copies of $\Hom(V,\Hq)$ with maximum spin two, and depth two in copies of $\Hom(V^{\otimes2},\Hq)$ with maximum spin three.  Hence every such response vanishes on $V_4$, so $S^4_0V\subseteq F_2^{(4)}$.  The rank table gives $\dim F_2^{(4)}=9=\dim V_4$, proving equality.  Finally $F_3^{(4)}=0$ by all-gap reconstruction.
++For the final identification, $S^4_0V\cong V_4$ is the Cartan-product summand of
++$R\otimes R=V_2\otimes V_2$.  By Lemma~\ref{lem:partial-equivariance}, every partial response is equivariant.  Moreover,
++\[
++  \Hom(V^{\otimes r},\Hq)\cong V^{\otimes r}\otimes(V_0\oplus V_1)
++\]
++contains no spin larger than $r+1$.  Thus depth zero has target spin at most one, depth one at most two, and depth two at most three.  Hence every such response vanishes on $V_4$, so $S^4_0V\subseteq F_2^{(4)}$.  The rank table gives $\dim F_2^{(4)}=9=\dim V_4$, proving equality.  Finally $F_3^{(4)}=0$ by all-gap reconstruction.
+ \end{proof}
+ 
+-Inside $R\otimes R$, the only potentially nonzero depth-two channel away from the spin-four kernel is \eqref{eq:D13}.  Since $F_3^{(4)}=0$, every nonzero vector in the subspace \eqref{eq:spin-four-survivor} has depth three.
++By the factorization law, the depth-two responses with gap sets $\{1,2\}$ and $\{2,3\}$ vanish identically on $R\otimes R$ because one grade-two factor remains unprobed and is killed by $m_2$.  Hence the only potentially nonzero depth-two channel on this sector is \eqref{eq:D13}.  Since $F_3^{(4)}=0$, every nonzero vector in the subspace \eqref{eq:spin-four-survivor} has depth three.
+ 
+ \begin{definition}[Algebraic coherence delay]
+ A non-decomposable linear combination has algebraic coherence delay when it is detected strictly later than every nonzero decomposable tensor from which it is assembled.
+@@ -508,12 +548,24 @@
+ 
+ Equation \eqref{eq:spin-four-survivor} supplies such a delay: no nonzero pure tensor $S\concat T$ belongs to $F_2^{(4)}$ by \eqref{eq:pure-residual-depth}, but suitable linear combinations of these depth-two tensors do.  Their entire response profile through depth two cancels, and the combined state first appears at depth three.  This is an algebraic statement, not a claim of quantum coherence.
+ 
+-The first-detection layers
++\begin{corollary}[Equivariant depth layers]\label{cor:depth-layers}
++Let
+ \[
+   L_d^{(4)}=F_{d-1}^{(4)}/F_d^{(4)},
+-  \qquad F_{-1}^{(4)}=B_4,
++  \qquad F_{-1}^{(4)}=B_4.
+ \]
+-have equivariant decompositions
++Sector by sector, the first-detection layers are
++\begin{equation}\label{eq:sector-layers}
++\begin{array}{c|cccc}
++ &L_0&L_1&L_2&L_3\\
++\hline
++P\otimes P&V_0\oplus V_1&V_0\oplus2V_1\oplus V_2&0&0\\
++P\otimes R&0&V_1\oplus V_2&V_2\oplus V_3&0\\
++R\otimes P&0&V_1\oplus V_2&V_2\oplus V_3&0\\
++R\otimes R&0&0&V_0\oplus V_1\oplus V_2\oplus V_3&V_4.
++\end{array}
++\end{equation}
++Consequently,
+ \begin{equation}\label{eq:layers}
+ \begin{aligned}
+  L_0^{(4)}&\cong V_0\oplus V_1,\\
+@@ -522,7 +574,17 @@
+  L_3^{(4)}&\cong V_4.
+ \end{aligned}
+ \end{equation}
+-Indeed, $P\cong V_0\oplus V_1$ and $R\cong V_2$.  Compression is an isomorphism from $P$ onto $\Hq\cong V_0\oplus V_1$, fixing $L_0$.  In each mixed sector, the depth-one target has maximum spin two, so the $V_3$ summand remains hidden; the sector rank leaves one additional $V_2$ in the kernel.  In $R\otimes R=V_0\oplus V_1\oplus V_2\oplus V_3\oplus V_4$, the depth-two target has maximum spin three and Proposition~\ref{prop:grade-four-table} identifies the remaining kernel as $V_4$.  Combining the two mixed sectors and $P\otimes P$ gives \eqref{eq:layers}.
++\end{corollary}
++
++\begin{proof}
++We have $P\cong V_0\oplus V_1$ and $R\cong V_2$.  The restriction $m_2|_P:P\to\Hq$ is an equivariant isomorphism.  Hence the depth-zero quotient of $P\otimes P$ is $V_0\oplus V_1$; subtracting it from
++$P\otimes P\cong2V_0\oplus3V_1\oplus V_2$ gives its depth-one row.
++
++Each mixed sector decomposes as
++$V_1\oplus2V_2\oplus V_3$.  Its only nonzero depth-one response has target
++$\Hom(V,\Hq)$, whose maximum spin is two, so $V_3$ is in the depth-one kernel.  The twelve-dimensional sector kernel in Proposition~\ref{prop:grade-four-table} must therefore be $V_2\oplus V_3$, yielding the two mixed rows.  Finally,
++$R\otimes R\cong V_0\oplus V_1\oplus V_2\oplus V_3\oplus V_4$, and Proposition~\ref{prop:grade-four-table} identifies its depth-three survivor as $V_4$.  This proves \eqref{eq:sector-layers}; summing the rows gives \eqref{eq:layers}.
++\end{proof}
+ 
+ The layer dimensions are $4,28,40,9$.  In particular, copies of $V_0,V_1,V_2$ occur at more than one detection depth.  Representation type alone therefore does not determine visibility depth; factor origin also matters.
+ 
+@@ -605,6 +667,38 @@
+ 
+ The theorem is not that compression preserves all information.  It does not.  The theorem is that distinctions erased by the coarse value remain finitely recoverable in exact-response coordinates.
+ 
++\appendix
++\section{Exact certificate matrices}\label{app:certificates}
++
++The finite computations used in Proposition~\ref{prop:det-theta} and
++Proposition~\ref{prop:grade-four-table} can be reconstructed without floating-point arithmetic.
++
++For $\Theta$, columns are indexed by $(a,\mu)$ with
++$1\le a\le3$ and $0\le\mu\le3$, representing $e_a\otimes q_\mu$.
++Rows are indexed by $(c,\nu)$, representing the $q_\nu$-coordinate of
++$\Theta(e_a\otimes q_\mu)(e_c)=e_ae_cq_\mu$.  All entries are integers in
++$\{0,\pm1\}$.
++
++For the grade-four response matrix through depth $d$, columns are indexed by
++words $(a_1,a_2,a_3,a_4)\in\{1,2,3\}^4$.  Rows are indexed by a selected-gap set
++$S\subseteq\{1,2,3\}$ with $|S|\le d$, a basis-probe assignment
++$(c_j)_{j\in S}\in\{1,2,3\}^{|S|}$, and an output coordinate
++$\nu\in\{0,1,2,3\}$.  The corresponding entry is the $q_\nu$-coefficient of
++\[
++  D_S(e_{a_1}|e_{a_2}|e_{a_3}|e_{a_4})((e_{c_j})_{j\in S}).
++\]
++Again every entry is in $\{0,\pm1\}$, so the ranks in
++\eqref{eq:b4-ranks} are ranks over $\mathbb Q$.  Restriction to the four sectors in
++\eqref{eq:b4-sector} is performed using the integer bases
++\[
++\begin{aligned}
++P&=\Span\{g,\ e_1|e_2-e_2|e_1,\ e_2|e_3-e_3|e_2,\ e_3|e_1-e_1|e_3\},\\
++R&=\Span\{e_1|e_1-e_2|e_2,\ e_2|e_2-e_3|e_3,\\
++&\hspace{3.5em}e_1|e_2+e_2|e_1,\ e_2|e_3+e_3|e_2,\ e_3|e_1+e_1|e_3\}.
++\end{aligned}
++\]
++The repository scripts implement exactly these matrices and assert the displayed determinant, ranks, and sector-kernel dimensions.
++
+ \begin{thebibliography}{99}
+ 
+ \bibitem{balle2015}
