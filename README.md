@@ -1,214 +1,87 @@
 # Free Numbers
 
-**Local quaternionic closure. Global residual charts.**
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21328470.svg)](https://doi.org/10.5281/zenodo.21328470)
 
-**Version:** v0.2-pre  
-**License:** MIT  
-**Status:** public draft candidate with active technical notes
-
-Free Numbers is a formal project for a **non-collapsing quaternionic chart algebra**.
-
-The local unit of the theory has quaternionic form. Globally, however, local charts are **not** automatically collapsed into one ambient quaternion algebra. They can be identified only when an admissible, structure-preserving certificate justifies the identification.
+**Frozen release:** Core v1.0.0  
+**Version DOI:** [10.5281/zenodo.21328471](https://doi.org/10.5281/zenodo.21328471)  
+**Concept DOI:** [10.5281/zenodo.21328470](https://doi.org/10.5281/zenodo.21328470)  
+**Frozen tag:** `core-v1.0.0`  
+**Frozen commit:** `9efc241d38e5ca2cd07f425b747bfb5d67ea0235`  
+**License:** MIT
 
 > Compression is not disappearance.
 
-The project is intentionally limited to the algebraic, residual, and rewriting core.
+Free Numbers Core v1.0.0 is a quaternionic exact-response framework for finite boundary words. It studies information that is lost under ordinary quaternionic compression but remains recoverable through canonical probe insertion.
 
----
+## Core v1.0.0
 
-## What this project is about
+For \(V=\operatorname{Im}\mathbb H\), let
 
-Free Numbers studies what remains when a value-level compression forgets too much.
+\[
+B_n=V^{\otimes n},
+\qquad
+m_n(a_1|\cdots|a_n)=a_n\cdots a_1.
+\]
 
-A boundary word can compress to a quaternionic value, but different boundary histories may still carry different residual structure. The purpose of the framework is to keep that structure visible instead of erasing it.
+The frozen Core v1.0.0 release establishes an exact-response realization in which finite boundary states can be reconstructed from their all-gap probe responses.
 
-In short:
+The audited core includes:
 
-- local closures look quaternionic;
-- global charts remain distinct unless certified otherwise;
-- residual mismatch is tracked as structure;
-- value equality is too coarse to be the final identity test.
+- an explicit associative presentation of the local quaternionic closure;
+- the local decoder
+  \[
+  \Theta:V\otimes\mathbb H\longrightarrow\operatorname{Hom}(V,\mathbb H),
+  \]
+  with explicit inverse and exact determinant `256`;
+- all-grade reconstruction for every finite tensor length;
+- finite visibility: every nonzero finite state is detected by depth at most `n-1`;
+- an associative bridge product on exact-response coordinates;
+- the vertical-response law on the highest-spin component;
+- exact low-length spin-depth calculations and reproducible certificates;
+- a claims ledger separating proofs, exact checks, specifications, conjectures, and open problems.
 
----
+## Scope
 
-## Main results so far
+Core v1.0.0 is deliberately narrower than the full Free Numbers research program.
 
-### 1. Vertical response theorem
+It does **not** claim:
 
-The canonical vertical response on the highest-spin component is now proved for all lengths.
+- completion of the full Residual Chart OS;
+- contextual confluence modulo `BoundaryIso`;
+- a complete all-length multiplicity-depth classification;
+- universality or novelty relative to all prior literature;
+- physical, temporal, cognitive, or consciousness applications.
 
-The low-length pattern
+The current root-only certified reduction is deterministic and locally confluent under functional `LocalMul`. The stronger contextual confluence problem remains open under explicit hypotheses.
 
-- length 2: coefficient −2
-- length 3: coefficient 4
-- length 4: coefficient −8
+## Frozen release
 
-is not merely experimental. It is the first part of the general coefficient rule.
+- [GitHub Release: `core-v1.0.0`](https://github.com/residual-chart-lab/free-number-core/releases/tag/core-v1.0.0)
+- [Zenodo record for v1.0.0](https://doi.org/10.5281/zenodo.21328471)
+- [Concept DOI for all versions](https://doi.org/10.5281/zenodo.21328470)
+- [Audited reconstruction branch](https://github.com/residual-chart-lab/free-number-core/tree/core-reconstruction)
 
-Scope: this theorem concerns the canonical vertical component on the highest-spin symmetric trace-free part. It does **not** classify the full residual profile.
+The release bundle contains the PDF and LaTeX sources, the claims ledger, supporting notes, exact computational certificates, a release manifest, and SHA-256 checksums.
 
-See: `notes/06-general-vertical-response-theorem.md`
+## Repository map
 
----
-
-### 2. Spin-depth filtration
-
-A tempting simplification fails.
-
-The simple diagonal spin-depth rule is **false**.
-
-In length 4, the same spin can split across different probe depths. The failure is not disorder; it reveals a finer multiplicity-space filtration.
-
-What survives is stronger than the failed simplification:
-
-- value-level compression is too coarse;
-- probe-depth filtration retains residual structure;
-- multiplicity spaces carry real information.
-
-See: `notes/11-spin-depth-filtration.md`
-
----
-
-### 3. Certified weak confluence
-
-Raw reduction is not the theorem target.
-
-Certified reduction is.
-
-The raw minimal kernel has separate abstract placeholders for existing and fresh generated boundaries. That is not enough to state the confluence theorem safely.
-
-The certified system uses one generated-boundary decision:
-
-- either a boundary folds into an existing target with a certificate;
-- or it is retained as fresh with evidence that no certified fold exists.
-
-An existing fold is never naked. It carries its admissibility witness.
-
-The main theorem of Note 12:
-
-> Restricted CertifiedRed is weakly confluent up to BoundaryIso on boundary certificates.
-
-This is not a claim of syntactic confluence, trace-level confluence, or transport-inclusive confluence.
-
-See: `notes/12-certified-red-restricted-weak-confluence.md`
-
----
-
-## Lean files
-
-| File | Role |
+| Path | Contents |
 |---|---|
-| `lean/Minimal.lean` | Raw restricted rewriting core and termination weight |
-| `lean/Certified.lean` | Certified reduction skeleton for Note 12 |
+| `core/` | Core v1 theorem chain, TeX source, and frozen PDF |
+| `paper/` | Broader paper source and local-closure presentation |
+| `certificates/` | Exact computational certificates |
+| `notes/` | Technical development notes and open branches |
+| `lean/` | Lean normalization and certified-reduction skeletons |
+| `CLAIMS_LEDGER.md` | Audited status of repository claims |
+| `CLAIMS_LEDGER_ADDENDUM_2026-07-12.md` | Parent-document integration record |
 
-`Minimal.lean` keeps the original restricted termination kernel.
+## Citation
 
-`Certified.lean` introduces the certified generated-boundary decision. The first version is conservative: `BoundaryIso` is equality, `ResidualPurity` is a placeholder, and the certified reduction is proved to strictly decrease the same weight.
-
-This puts the key design into Lean:
-
-> Do not allow naked folds. Make every fold carry its certificate.
-
----
-
-## Quick Lean check
-
-From the repository root:
-
-```bash
-cd lean
-lean Minimal.lean
-lean Certified.lean
+```text
+Residual Chart Lab. (2026). Free Numbers Core v1.0.0 (Version 1.0.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.21328471
 ```
 
-A successful check usually produces no output.
-
-If using a generated Lake project:
-
-```bash
-lake new free_num_kernel
-cd free_num_kernel
-mkdir -p FreeNumKernel
-cp ../lean/Minimal.lean FreeNumKernel/Minimal.lean
-cp ../lean/Certified.lean FreeNumKernel/Certified.lean
-```
-
-Then add imports if needed:
-
-```lean
-import FreeNumKernel.Minimal
-import FreeNumKernel.Certified
-```
-
-and run:
-
-```bash
-lake build
-```
-
-Do not use `lean -run` for these files. They are theorem/kernel files, not executable programs.
-
----
-
-## Repository structure
-
-| Layer | Contents | Status |
-|---|---|---|
-| `paper/` | LaTeX draft, PDF draft, and figure source | v0.2-pre |
-| `lean/` | Lean mini-kernel and certified reduction skeleton | active |
-| `docs/` | Axioms, release notes, license notes | active |
-| `notes/` | Technical notes on residual visibility, filtration, and confluence | active |
-
----
-
-## What is proved, what is not claimed
-
-### Proved or certified in the current notes
-
-- The local closure has quaternionic form.
-- The vertical response coefficient on the highest-spin component is proved.
-- The simple diagonal spin-depth rule fails at length 4.
-- A finer spin-depth filtration survives.
-- Restricted CertifiedRed is weakly confluent up to boundary-certificate isomorphism.
-- The Lean skeleton now separates raw reduction from certified reduction.
-
-### Not claimed
-
-- A completed theory of meaning, cognition, time, or physical reality.
-- Full trace-level confluence.
-- Transport-inclusive confluence.
-- Decidability of semantic equality under all future contexts.
-- A completed Lean formalization of full BoundaryIso, EqAdm, ResidualPurity, or GenDecision.
-
----
-
-## Why “Free”?
-
-“Free” means local closures are not automatically collapsed into a single global ambient algebra.
-
-The point is not that compression fails.
-
-The point is that compression can identify values while leaving boundary history, insertion response, or residual structure nontrivial.
-
-Residual mismatch is tracked rather than erased.
-
----
-
-## Current scope
-
-The current release is limited to:
-
-- local quaternionic closure;
-- boundary-word compression;
-- highest-spin residual visibility through the canonical vertical response;
-- low-length spin-depth filtration;
-- restricted rewriting termination;
-- certified reduction skeleton;
-- restricted certified weak confluence at the boundary-certificate level.
-
-Broader residual-based reconstruction is outside the scope of v0.2-pre.
-
----
+Machine-readable citation metadata is provided in [`CITATION.cff`](CITATION.cff).
 
 ## License
 
