@@ -1,0 +1,85 @@
+name: Update Core v1.0.0 Release DOI
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches:
+      - core-reconstruction
+    paths:
+      - .github/doi-release-trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-release:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TAG: core-v1.0.0
+      TARGET_SHA: 9efc241d38e5ca2cd07f425b747bfb5d67ea0235
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify frozen tag target
+        run: |
+          git fetch --tags --force
+          actual="$(git rev-list -n 1 "$TAG")"
+          test "$actual" = "$TARGET_SHA"
+          echo "Verified $TAG -> $actual"
+
+      - name: Write DOI-aware release notes
+        run: |
+          cat > release-notes.md <<'EOF'
+          # Free Numbers Core v1.0.0
+
+          First frozen and audited release of the Free Numbers quaternionic exact-response core for finite boundary words.
+
+          ## Persistent identifiers
+
+          - **Version DOI:** https://doi.org/10.5281/zenodo.21328471
+          - **Concept DOI (all versions):** https://doi.org/10.5281/zenodo.21328470
+          - **Frozen commit:** `9efc241d38e5ca2cd07f425b747bfb5d67ea0235`
+          - **Frozen tag:** `core-v1.0.0`
+
+          ## Included results
+
+          - explicit associative presentation of the local quaternionic closure;
+          - local decoder with explicit inverse and exact determinant `256`;
+          - all-grade reconstruction for every finite tensor length;
+          - finite visibility by depth at most `n-1`;
+          - associative bridge product on exact-response coordinates;
+          - vertical-response theorem on the highest-spin component;
+          - exact low-length spin-depth calculations and reproducible certificates;
+          - audited claims ledger separating proofs, exact checks, specifications, conjectures, and open problems.
+
+          ## Scope
+
+          Core v1.0.0 does not claim completion of the full Residual Chart OS, contextual confluence modulo `BoundaryIso`, a complete all-length multiplicity-depth law, universality, or physical and consciousness applications.
+
+          ## Citation
+
+          Residual Chart Lab. (2026). *Free Numbers Core v1.0.0* (Version 1.0.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.21328471
+
+          ## Assets
+
+          - `Free-Numbers-Core-v1.0.0.pdf`
+          - `Free-Numbers-Core-v1.0.0-bundle.zip`
+          - `SHA256SUMS.txt`
+          EOF
+
+      - name: Update GitHub Release notes
+        run: |
+          gh release edit "$TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "Free Numbers Core v1.0.0" \
+            --notes-file release-notes.md
+
+      - name: Verify DOI in release notes
+        run: |
+          gh release view "$TAG" --repo "$GITHUB_REPOSITORY" --json body --jq .body > release-body.txt
+          grep -F "10.5281/zenodo.21328471" release-body.txt
+          grep -F "10.5281/zenodo.21328470" release-body.txt
