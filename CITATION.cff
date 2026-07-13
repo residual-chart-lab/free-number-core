@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use Free Numbers Core v1.0.0, please cite it using the metadata below."
+title: "Free Numbers Core v1.0.0"
+type: software
+authors:
+  - name: "Residual Chart Lab"
+version: "1.0.0"
+date-released: 2026-07-13
+doi: "10.5281/zenodo.21328471"
+url: "https://github.com/residual-chart-lab/free-number-core"
+repository-code: "https://github.com/residual-chart-lab/free-number-core"
+license: MIT
+keywords:
+  - Free Numbers
+  - quaternion algebra
+  - tensor algebra
+  - exact-response reconstruction
+  - probe-depth filtration
+  - representation theory
+  - Lean
+  - research software
+abstract: >-
+  Free Numbers Core v1.0.0 is a quaternionic exact-response framework for
+  finite boundary words. It develops canonical probe-insertion responses,
+  a local decoder, all-grade reconstruction for finite tensor length,
+  finite visibility bounds, an associative bridge product on exact-response
+  coordinates, and exact low-length spin-depth calculations.
