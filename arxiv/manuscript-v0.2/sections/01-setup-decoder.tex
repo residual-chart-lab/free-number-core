@@ -1,0 +1,131 @@
+\section{Tensor states, compression, and contextual responses}\label{sec:setup}
+
+Throughout, $\Hq$ is the real quaternion algebra and
+\[
+  V=\operatorname{Im}\Hq=\Span_{\R}\{e_1,e_2,e_3\}.
+\]
+For $u,v\in V$ we use
+\begin{equation}\label{eq:qproduct}
+  uv=-u\cdot v+u\times v.
+\end{equation}
+Set
+\[
+  B_0=\R\mathbf 1,\qquad B_n=V^{\otimes n}\quad(n\ge 1),
+\]
+and write a pure tensor as $a_1|\cdots|a_n$.  Concatenation is denoted by $\concat$.
+
+\begin{definition}[Reversed quaternionic compression]
+For $n\ge 1$, define the real-linear map
+\[
+  m_n:B_n\to\Hq,
+  \qquad
+  m_n(a_1|\cdots|a_n)=a_n\cdots a_1.
+\]
+At grade zero set $m_0(\lambda\mathbf 1)=\lambda$.
+\end{definition}
+
+The reversal is not essential to injectivity questions, but it fixes the order used in all response and composition formulas.
+
+\begin{definition}[All-gap response]
+For $n=0$ set $A_0=\id_{\R}$.  For $n=1$, set $A_1(a)=a$.  For $n\ge 2$, define
+\[
+  A_n:B_n\longrightarrow \Hom(V^{\otimes(n-1)},\Hq)
+\]
+by multilinear extension of \eqref{eq:all-gap}.  Write
+\[
+  \Aresp_n=\im A_n,
+  \qquad
+  \Aresp=\bigoplus_{n\ge 0}\Aresp_n.
+\]
+\end{definition}
+
+The all-gap response keeps the original boundary letters fixed and inserts one independently chosen probe into each original internal gap.  It is not the compression map $m_n$ and should not be interpreted as an inverse of $m_n$.
+
+\section{The local decoder}\label{sec:local-decoder}
+
+The central local map is $\Theta$ from \eqref{eq:theta}.  Both its domain and codomain have real dimension twelve, but dimension equality alone does not prove invertibility.
+
+\begin{theorem}[Explicit local inverse]\label{thm:theta-inverse}
+For every $F\in\Hom(V,\Hq)$ there are unique $h_1,h_2,h_3\in\Hq$ such that
+\[
+  F(d)=\sum_{a=1}^3 e_a d h_a\qquad(d\in V).
+\]
+They are given by
+\begin{equation}\label{eq:theta-inverse}
+  h_a=\frac12\sum_{b,c=1}^3\eps_{abc}\,e_bF(e_c).
+\end{equation}
+Consequently $\Theta$ is an isomorphism.
+\end{theorem}
+
+\begin{proof}
+Substitute $F(e_c)=\sum_r e_r e_c h_r$ into \eqref{eq:theta-inverse}.  The quaternionic basis identity
+\begin{equation}\label{eq:basis-contraction}
+  \frac12\sum_{b,c=1}^3\eps_{abc}\,e_be_re_c=\delta_{ar}
+\end{equation}
+gives $h_a$ back.  Identity \eqref{eq:basis-contraction} follows directly from $e_ae_b=-\delta_{ab}+\sum_c\eps_{abc}e_c$.  Thus the displayed formula is a left inverse.  Since domain and codomain have equal finite dimension, it is the two-sided inverse.
+\end{proof}
+
+\subsection{Equivariant block decomposition}
+
+The explicit inverse is enough for reconstruction.  The following decomposition explains why the multiplication-defined map is invertible and where its determinant comes from.
+
+The unit quaternions act on $V$ and $\Hq$ by conjugation.  Give $V\otimes\Hq$ the tensor action and $\Hom(V,\Hq)$ the action
+\[
+  (q\cdot F)(d)=qF(q^{-1}dq)q^{-1}.
+\]
+Then $\Theta$ is equivariant.  As real $SO(3)$-modules,
+\begin{equation}\label{eq:theta-modules}
+  V\otimes\Hq
+  \cong V\otimes(\R\oplus V)
+  \cong V_0\oplus 2V_1\oplus V_2,
+\end{equation}
+and the same decomposition holds for $\Hom(V,\Hq)$.
+
+Write $h_a=\alpha_a+u_a$, set $\alpha=\sum_a\alpha_ae_a$, and define $U\in\operatorname{End}(V)$ by $Ue_a=u_a$.  Decompose
+\[
+  U=tI+A_p+S,
+\]
+where $A_p(d)=p\times d$ and $S\in S^2_0V$.  If
+\[
+  \Theta(\alpha,U)(d)=\sigma(d)+W(d),
+\]
+then quaternion multiplication gives
+\begin{equation}\label{eq:theta-block-formulas}
+  \sigma(d)=(-\alpha+2p)\cdot d,
+  \qquad
+  W(d)=\alpha\times d+t\,d-2S(d).
+\end{equation}
+Thus the scalar block has multiplier $1$, the spin-two block has multiplier $-2$, and the two spin-one copies are coupled by
+\begin{equation}\label{eq:spin-one-matrix}
+  \begin{pmatrix}\beta\\ r\end{pmatrix}
+  =
+  \begin{pmatrix}-1&2\\1&0\end{pmatrix}
+  \begin{pmatrix}\alpha\\p\end{pmatrix},
+\end{equation}
+where $\sigma(d)=\beta\cdot d$ and the skew part of $W$ is $r\times d$.
+
+\begin{proposition}[Structural determinant]\label{prop:det-theta}
+Let $q_0=1$ and $q_a=e_a$ for $1\le a\le3$.  Use the domain basis
+\[
+  \mathcal B_{\mathrm{dom}}=(e_a\otimes q_\mu)_{1\le a\le3,\,0\le\mu\le3}
+\]
+and identify the codomain with $\Hq^3$ by
+$F\mapsto(F(e_1),F(e_2),F(e_3))$, using quaternion coordinates in the basis
+$(q_0,q_1,q_2,q_3)$.  In these standard bases,
+\[
+  \det\Theta=256.
+\]
+With the representation-adapted coordinate conventions of
+\eqref{eq:theta-block-formulas}--\eqref{eq:spin-one-matrix}, the block matrix has determinant
+\[
+  1^1\left(\det\begin{pmatrix}-1&2\\1&0\end{pmatrix}\right)^3(-2)^5=256.
+\]
+\end{proposition}
+
+\begin{proof}
+Evaluation of the twelve basis vectors gives an integer $12\times12$ matrix with determinant $256$.  Independently, the block formulas show that the scalar sector is multiplication by $1$, the spin-one multiplicity matrix has determinant $-2$ and is repeated over three coordinates, and the spin-two sector is multiplication by $-2$ on a five-dimensional space.  Hence every irreducible block is invertible, and the determinant of the displayed representation-adapted block matrix is $1\cdot(-2)^3\cdot(-2)^5=256$.  The accompanying exact certificate reproduces the standard-basis matrix and both numerical calculations.
+\end{proof}
+
+\begin{remark}
+A numerical determinant for a map between two separately based spaces depends on the chosen domain and codomain bases.  The invariant content of the equivariant calculation is that every irreducible block is nonzero and invertible.  The representation decomposition \eqref{eq:theta-modules} is standard; the model-specific fact is that the concrete multiplication-defined map $\Theta$ is invertible on every block and that the same inverse is reused recursively at every tensor grade.
+\end{remark}

@@ -1,0 +1,75 @@
+\section{Composition and depth additivity}\label{sec:depth}
+
+\subsection{Partial-response factorization}
+
+Let $m,n\ge1$, $x\in B_m$, and $y\in B_n$.  For
+$S\subseteq\{1,\ldots,m+n-1\}$, set
+\[
+  S_x=S\cap\{1,\ldots,m-1\},
+  \qquad
+  S_y=\{j-m:j\in S,\ j>m\}.
+\]
+The bridge gap is $m$.  Directly from the reversed product order and with the arguments on the two factors kept independent,
+\begin{equation}\label{eq:partial-factorization}
+  D_S(x\concat y)
+  =D_{S_y}(y)\,\eta\,D_{S_x}(x),
+\end{equation}
+where $\eta=1$ when $m\notin S$ and $\eta=d_*$ when the bridge is probed.  Equation \eqref{eq:partial-factorization} is an identity of multilinear maps after ordering the variables as the $x$-variables, the optional bridge variable, and the $y$-variables.
+
+\subsection{Exact-response product}
+
+For $m,n\ge1$, $F\in\Aresp_m$, and $G\in\Aresp_n$, define the bilinear product
+\begin{equation}\label{eq:bridge-product}
+  (F\bridge G)(\mathbf d,\eta,\mathbf e)
+  =G(\mathbf e)\,\eta\,F(\mathbf d),
+\end{equation}
+where $\mathbf d\in V^{m-1}$, $\eta\in V$, and $\mathbf e\in V^{n-1}$.  At grade zero, scalars act by ordinary scalar multiplication.
+
+\begin{proposition}[Bridge compatibility]\label{prop:bridge}
+For $m,n\ge1$, $x\in B_m$, and $y\in B_n$,
+\[
+  A_m(x)\bridge A_n(y)=A_{m+n}(x\concat y).
+\]
+Consequently $(\Aresp,\bridge,1)$ is a unital associative graded real algebra, and $A=\bigoplus_n A_n$ is a graded algebra isomorphism from the tensor algebra $T(V)$ onto $\Aresp$.
+\end{proposition}
+
+\begin{proof}
+The compatibility identity is \eqref{eq:partial-factorization} with every internal gap and the bridge probed.  Associativity and the unit follow from associativity of quaternion multiplication and concatenation, or equivalently by transport through the injective graded map $A$.
+\end{proof}
+
+\begin{theorem}[Additivity of first detection depth]\label{thm:additive-depth}
+Let $m,n\ge1$.  For nonzero $x\in B_m$ and nonzero $y\in B_n$,
+\begin{equation}\label{eq:additive-depth}
+  \depth(x\concat y)=\depth(x)+\depth(y).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Set $p=\depth(x)$ and $q=\depth(y)$.  Choose gap sets $S_x,S_y$ of sizes $p,q$ for which $D_{S_x}(x)$ and $D_{S_y}(y)$ are nonzero maps.  Choose their probe arguments independently so that both quaternionic outputs are nonzero.  Leaving the bridge unprobed, \eqref{eq:partial-factorization} gives their product.  Since $\Hq$ is a division algebra, the product is nonzero.  Hence $\depth(x\concat y)\le p+q$.
+
+Conversely, consider a response of total depth less than $p+q$.  Let $r$ and $s$ be the numbers of internal probes used in $x$ and $y$, and let the bridge contribution be either zero or one.  If both $r\ge p$ and $s\ge q$, the total depth is at least $p+q$.  Therefore $r<p$ or $s<q$.  The corresponding factor response is identically zero, so \eqref{eq:partial-factorization} vanishes.  Thus no smaller depth detects $x\concat y$.
+\end{proof}
+
+Define the shifted filtration
+\[
+  G_d^{(n)}=\{x\in B_n:\depth(x)\ge d\},
+  \qquad G_0^{(n)}=B_n.
+\]
+For $d\ge1$, $G_d^{(n)}=F_{d-1}^{(n)}$.
+
+\begin{corollary}[Multiplicative filtration law]\label{cor:multiplicative-filtration}
+Let $m,n\ge1$ and $p,q\ge0$.  Under the canonical concatenation identification
+$B_m\otimes B_n\cong B_{m+n}$,
+\[
+  G_p^{(m)}\otimes G_q^{(n)}
+  \subseteq G_{p+q}^{(m+n)}.
+\]
+Every nonzero decomposable tensor in the left-hand side has depth equal to the sum of the depths of its two factors.  Linear combinations may lie deeper by cancellation.
+\end{corollary}
+
+\begin{proof}
+A nonzero pure tensor $x\concat y$ with $x\in G_p^{(m)}$ and $y\in G_q^{(n)}$ has
+$\depth(x\concat y)=\depth(x)+\depth(y)\ge p+q$ by Theorem~\ref{thm:additive-depth}.  Such pure tensors span $G_p^{(m)}\otimes G_q^{(n)}$, and $G_{p+q}^{(m+n)}$ is a linear subspace, proving the inclusion.
+\end{proof}
+
+Thus residual depth behaves like a valuation on decomposable concatenations and as a superadditive filtration on their linear span.

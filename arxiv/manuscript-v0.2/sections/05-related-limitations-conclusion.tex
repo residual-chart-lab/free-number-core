@@ -1,0 +1,86 @@
+\section{Related work and contribution boundary}\label{sec:related}
+
+The relevant neighboring literatures use overlapping words---realization, observability, tomography, intervention, compression---but address different mathematical objects.  Shared vocabulary does not imply equivalence, and unfamiliar vocabulary does not establish novelty.
+
+\subsection{Noncommutative realization and weighted automata}
+
+Noncommutative rational functions admit finite linear realizations, minimality theory, difference-differential calculus, and local-global principles \cite{kaliuzhnyi2010,volcic2015}.  Weighted automata similarly represent rational series through finite state spaces and Hankel matrices, with canonical forms and minimization theory \cite{balle2015}.  These frameworks establish that finite realization of noncommutative data and contextual distinguishability are known ideas.
+
+The object reconstructed here is not a minimal realization of a rational function or automaton.  It is a fixed finite tensor state hidden by a deliberately many-to-one quaternionic value map.  The contextual variables occupy the internal slots of that tensor, and the reconstruction is driven by one explicit multiplication gate reused across all grades.  No equivalent of the full package $(m_n,A_n,\Theta^{-1},F_d^{(n)},\bridge)$ has been located in these sources.
+
+\subsection{Observability}
+
+Classical and multivariable systems recover states from families of outputs.  Free-semigroup observability operators use word-indexed output maps in noncommutative state-space systems \cite{ball2006}.  Hence a descending joint-kernel observability chain is not new in broad form.
+
+The native filtration here is indexed by subsets of internal gaps in a fixed boundary tensor, rather than by iterates of a transition operator.  Its model-specific features are the slot factorization \eqref{eq:partial-factorization}, exact depth additivity on decomposable concatenations, coherence-induced delay, and equivariant separation by factor origin.  We do not claim that the filtration cannot be encoded artificially as an observability chain of an enlarged linear system.
+
+\subsection{Process tensors and tomography}
+
+Process-tensor frameworks reconstruct multi-time quantum processes from controlled interventions and retain memory that is invisible to a coarse current-state description \cite{pollock2015,pollock2018,xiang2021}.  This is the closest operational analogy to internal contextual probing.  The targets there are completely positive multi-time quantum maps with positivity, probability, and experimental statistics.  The present construction is a static real-algebraic tensor model with imaginary-quaternion probes, exact symbolic inversion, and no physical process claim.
+
+Tensor-network tomography and verification recover structured quantum states from complete or efficient families of observables \cite{cruz2021,lidiak2022}.  Those works address measurement or sample complexity under structural assumptions.  Core exactness is algebraic: it does not establish robustness, sample efficiency, or low-rank recovery.
+
+\subsection{Quaternionic tensor analysis and coding}
+
+Quaternionic multilinear analysis studies tensor decompositions, uniqueness, and computation under noncommutative scalar multiplication \cite{flamant2024}.  Quaternionic analysis also has a substantial representation-theoretic literature \cite{frenkel2007,frenkel2019}.  These areas provide the standard algebraic and representation-theoretic background; the ordinary quaternion identities and the decomposition $V\otimes V=V_0\oplus V_1\oplus V_2$ are not claimed as new.
+
+State-space descriptions of convolutional codes formalize encoders, equivalence, and finite-state behavior \cite{gluesing2006,holub2017}.  The present model has no channel, minimum distance, redundancy, rate, error distribution, or noisy-decoding theorem.  It is therefore not yet an error-correcting code.  The coding interface is architectural: equality of coarse outputs does not identify internal states, while structured contextual queries preserve exact distinguishability.
+
+\subsection{Current documented claim}
+
+The literature audit supports the following bounded statement:
+
+\begin{quote}
+We have not located in the reviewed noncommutative-realization, weighted-automata, observability, tomography, process-tensor, coding, or quaternionic-tensor literature an equivalent construction that combines a deliberately many-to-one reversed quaternionic value map, canonical all-gap insertion responses, one grade-independent recursive local decoder, a finite first-detection-depth filtration, and an explicit associative composition law on exact-response coordinates.
+\end{quote}
+
+This is a report of the documented search, not an absolute claim over all mathematical literature.  In particular, the existence of the twelve-dimensional vector-space isomorphism is not asserted to be novel in isolation, and the associativity of $\bridge$ is partly transported from concatenation.  The sharper model-specific features are the multiplication-defined recursive gate and the residual-depth structure.
+
+\section{Scope, limitations, and open problems}\label{sec:limitations}
+
+The main proved statements are exact and finite:
+\begin{itemize}
+  \item $m_n$ is many-to-one, but $A_n$ is injective at every finite grade;
+  \item $\Theta^{-1}$ gives a constructive recursive decoder;
+  \item every nonzero state is visible by depth at most $n-1$;
+  \item depth is additive on nonzero decomposable concatenations;
+  \item the shifted depth filtration is multiplicative;
+  \item grade four contains a nine-dimensional coherence-delayed survivor;
+  \item exact-response coordinates compose as a unital associative graded algebra.
+\end{itemize}
+
+The paper does not prove:
+\begin{itemize}
+  \item practical storage reduction or an information-theoretic rate advantage;
+  \item minimality of the all-gap probe family;
+  \item numerical conditioning, noise robustness, or sample complexity;
+  \item an error-correcting code or production memory architecture;
+  \item universality over other division algebras or nonassociative systems;
+  \item a complete classification of $F_{d-1}^{(n)}/F_d^{(n)}$ for arbitrary $n$.
+\end{itemize}
+
+Several concrete questions follow.
+\begin{enumerate}
+  \item What is the smallest probe family that remains injective on $B_n$ or on structured subclasses?
+  \item What are the operator norm and condition number of the recursive decoder under natural Euclidean norms?
+  \item Which distributions of states have shallow average detection depth?
+  \item Can response coordinates be generated on demand from a sparse or low-complexity representation rather than stored in full?
+  \item How do the depth layers decompose by spin, factor origin, and higher coherence at general grade?
+  \item Which parts extend from $\Hq$ to matrix algebras, Clifford algebras, or other noncommutative products?
+\end{enumerate}
+
+The potential memory interpretation should therefore be stated carefully.  The construction provides a blueprint for a hierarchy in which a coarse value is cheap to consult and hidden distinctions are recoverable by deeper queries.  It does not yet prove that the complete representation is cheaper than the original state.  Any such theorem would need sparsity, average-case depth, selective recovery, generated responses, or another explicit complexity assumption.
+
+\section*{Reproducibility and archived artifact}
+
+The exact-arithmetic certificate scripts used for the determinant and grade-four rank statements are maintained with the manuscript source at
+\url{https://github.com/residual-chart-lab/free-number-core}.
+The frozen \emph{Free Numbers Core v1.0.0} technical artifact is archived at Zenodo under
+\href{https://doi.org/10.5281/zenodo.21328471}{doi:10.5281/zenodo.21328471}.
+The present manuscript reorganizes the reconstruction results for a conventional mathematical preprint and adds the equivariant decoder decomposition, the depth-additivity theorem, and the grade-four coherence-delay formulation.  It does not modify the frozen artifact.
+
+\section{Conclusion}
+
+A non-injective value map need not be the equality relation on retained states.  In the quaternionic model studied here, reversed multiplication compresses a $3^n$-dimensional tensor state to four real dimensions and loses distinctions at value level.  Canonical contextual insertion responses restore exact distinguishability.  One local twelve-dimensional inverse recursively reconstructs every finite grade, while partial responses organize hidden structure by first detection depth.  This depth is additive on decomposable concatenations and can be delayed by coherent cancellation in non-decomposable superpositions.  The response coordinates also compose compatibly with the underlying tensor algebra.
+
+The theorem is not that compression preserves all information.  It does not.  The theorem is that distinctions erased by the coarse value remain finitely recoverable in exact-response coordinates.

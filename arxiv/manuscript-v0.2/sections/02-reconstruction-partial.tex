@@ -1,0 +1,103 @@
+\section{All-grade exact reconstruction}\label{sec:reconstruction}
+
+Every $x\in B_n$ has a unique last-letter expansion
+\begin{equation}\label{eq:last-letter}
+  x=\sum_{a=1}^3 x_a|e_a,
+  \qquad x_a\in B_{n-1}.
+\end{equation}
+For $\mathbf d=(d_1,\ldots,d_{n-2})$ and $d\in V$,
+\begin{equation}\label{eq:peeling}
+  A_n(x)(\mathbf d,d)
+  =\sum_{a=1}^3 e_a d\,A_{n-1}(x_a)(\mathbf d).
+\end{equation}
+For fixed $\mathbf d$, the right-hand side is exactly a $\Theta$-image.  Applying \eqref{eq:theta-inverse} recovers all three values $A_{n-1}(x_a)(\mathbf d)$.  Since this holds for every $\mathbf d$, the three lower-grade response functions are recovered.
+
+\begin{theorem}[All-grade reconstruction]\label{thm:all-grade}
+For every finite $n\ge0$,
+\[
+  A_n:B_n\xrightarrow{\cong}\Aresp_n.
+\]
+Equivalently,
+\[
+  A_n(x)=A_n(y)\quad\Longleftrightarrow\quad x=y.
+\]
+The inverse is finite and recursive: the same local map $\Theta^{-1}$ is reused at every recursive node, and the recursion depth is $n-1$.
+\end{theorem}
+
+\begin{proof}
+Surjectivity onto $\Aresp_n$ is tautological.  We prove injectivity by induction on $n$.  It is immediate for $n=0,1$.  Suppose $A_n(x)=0$ and expand $x$ as in \eqref{eq:last-letter}.  Equation \eqref{eq:peeling} and injectivity of $\Theta$ imply
+\[
+  A_{n-1}(x_a)=0\qquad(a=1,2,3).
+\]
+By induction, all $x_a$ vanish, so $x=0$.  The same argument gives the recursive inverse.
+\end{proof}
+
+\begin{corollary}[Rank and ambient codimension]
+For $n\ge1$,
+\[
+  \dim\Aresp_n=\operatorname{rank}A_n=3^n.
+\]
+The ambient space $\Hom(V^{\otimes(n-1)},\Hq)$ has dimension $4\cdot3^{n-1}$, so $\Aresp_n$ is a structured subspace of codimension $3^{n-1}$.
+\end{corollary}
+
+\begin{remark}[What is and is not inverted]
+The compression map $m_n:B_n\to\Hq$ remains many-to-one and has no inverse.  The theorem states that the enlarged response map $A_n$ is invertible onto its image.  The distinctions erased by $m_n$ are retained in the state and exposed by contextual responses.
+\end{remark}
+
+\section{Partial responses and intervention observability}\label{sec:partial}
+
+The all-gap map proves eventual visibility.  To measure how much intervention is required, we retain responses with only selected gaps probed.
+
+For $n\ge1$, index the internal gaps of a grade-$n$ word by $\{1,\ldots,n-1\}$.  For
+$S\subseteq\{1,\ldots,n-1\}$, define
+\[
+  D_S:B_n\longrightarrow\Hom(V^{\otimes|S|},\Hq)
+\]
+as follows.  For a pure tensor $a_1|\cdots|a_n$ and probes $(d_j)_{j\in S}$ ordered by increasing gap index, set
+\begin{equation}\label{eq:partial-explicit}
+  D_S(a_1|\cdots|a_n)((d_j)_{j\in S})
+  =a_n c_{n-1}a_{n-1}\cdots c_1a_1,
+  \qquad
+  c_j=\begin{cases}d_j,&j\in S,\\1,&j\notin S.\end{cases}
+\end{equation}
+Thus an unprobed gap contributes the quaternionic unit.  In particular,
+\[
+  D_\varnothing=m_n,
+  \qquad
+  D_{\{1,\ldots,n-1\}}=A_n.
+\]
+
+\begin{lemma}[Equivariance of partial responses]\label{lem:partial-equivariance}
+Let a unit quaternion $q$ act diagonally on $B_n$ by conjugation and on the response space by
+\[
+  (q\cdot F)((d_j)_{j\in S})
+  =qF((q^{-1}d_jq)_{j\in S})q^{-1}.
+\]
+Then every $D_S$ is $SO(3)$-equivariant.  Consequently each $F_d^{(n)}$ is an $SO(3)$-submodule.
+\end{lemma}
+
+\begin{proof}
+Conjugation is an algebra automorphism of $\Hq$.  Applying it to every boundary letter and every inserted probe in \eqref{eq:partial-explicit} conjugates the final product, which is exactly the displayed codomain action.
+\end{proof}
+
+\begin{definition}[Residual-depth filtration]
+For $0\le d\le n-1$, set
+\begin{equation}\label{eq:depth-filtration}
+  D_n^{\le d}=\bigoplus_{|S|\le d}D_S,
+  \qquad
+  F_d^{(n)}=\ker D_n^{\le d}.
+\end{equation}
+Then
+\[
+  F_0^{(n)}\supseteq F_1^{(n)}\supseteq\cdots\supseteq F_{n-1}^{(n)}=0.
+\]
+For nonzero $x\in B_n$, define
+\begin{equation}\label{eq:first-depth}
+  \depth(x)=\min\{d:D_n^{\le d}(x)\ne0\}.
+\end{equation}
+Set $\depth(0)=+\infty$ by convention.
+\end{definition}
+
+The termination $F_{n-1}^{(n)}=0$ is precisely Theorem~\ref{thm:all-grade}.
+
+In the broad joint-kernel sense, \eqref{eq:depth-filtration} is an observability filtration.  Classical discrete-time systems use the chain $\bigcap_{k=0}^d\ker(CA^k)$, while multivariable and noncommutative systems replace powers by operator words.  The native Core construction is not a classical single-transition system: there is no distinguished evolution endomorphism on $B_n$, the index set is the subset lattice of internal positions in one fixed tensor, and the outputs are multilinear in freely chosen probes.  The model-specific content lies in the insertion geometry and the factorization laws below.
