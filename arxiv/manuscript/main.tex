@@ -1,0 +1,662 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!45!black,
+  citecolor=blue!45!black,
+  urlcolor=blue!45!black,
+  pdftitle={Exact Reconstruction under Noncommutative Quaternionic Compression},
+  pdfauthor={Residual Chart Lab}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlist[itemize]{leftmargin=1.6em,itemsep=0.2em,topsep=0.3em}
+\setlist[enumerate]{leftmargin=1.8em,itemsep=0.25em,topsep=0.3em}
+\allowdisplaybreaks
+\setlength{\emergencystretch}{2em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\Hq}{\mathbb H}
+\newcommand{\V}{V}
+\newcommand{\Aresp}{\mathfrak A}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\depth}{\delta}
+\newcommand{\concat}{\mathbin{\Vert}}
+\newcommand{\bridge}{\star}
+\newcommand{\eps}{\varepsilon}
+
+\title{Exact Reconstruction under Noncommutative Quaternionic Compression\\
+\large Contextual Responses, Recursive Decoding, and Observability Depth}
+\author{Residual Chart Lab}
+\date{Working arXiv manuscript, July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let $V=\operatorname{Im}\mathbb H$, $B_n=V^{\otimes n}$, and let
+\[
+  m_n(a_1|\cdots|a_n)=a_n\cdots a_1
+\]
+be reversed quaternionic compression.  The maps $m_n$ are deliberately non-injective: distinct boundary tensors may have the same quaternionic value.  We show that the distinctions erased at value level remain exactly recoverable from a canonical family of contextual responses.  Inserting one imaginary-quaternion probe into every internal gap defines
+\[
+  A_n:B_n\longrightarrow \Hom(V^{\otimes(n-1)},\mathbb H).
+\]
+A single twelve-dimensional multiplication map
+\[
+  \Theta:V\otimes\mathbb H\longrightarrow\Hom(V,\mathbb H)
+\]
+is an isomorphism with an explicit inverse.  Its equivariant block decomposition gives determinant $256$ in compatible standard bases.  Iterating $\Theta^{-1}$ removes one outer boundary layer at a time and proves that $A_n$ is injective for every finite $n$.
+
+Partial insertion responses define a finite observability filtration by first detection depth.  This depth is additive on nonzero decomposable concatenations, while non-decomposable superpositions can be detected strictly later.  At grade four a nine-dimensional spin-four sector exhibits such an algebraic coherence delay.  Exact-response coordinates also carry a natural unital associative graded product induced by boundary concatenation.  The construction is therefore an explicit finite model in which coarse noncommutative compression coexists with exact contextual recoverability.  It suggests interfaces with active sensing, query-addressable memory, and provenance-preserving computation, but no compression-rate, noise-stability, or practical memory-efficiency theorem is claimed.
+\end{abstract}
+
+\section{Introduction}
+
+Compression is usually treated as a map from a larger state space to a smaller visible-value space.  When that map is non-injective, distinct states collide, and equality of outputs no longer determines equality of states.  The usual conclusion is that the missing distinction has been lost.  This paper studies a different architecture: the visible value is allowed to be deliberately coarse, while the retained state remains exactly recoverable through a structured family of contextual interventions.
+
+Let
+\[
+  V=\operatorname{Im}\Hq,\qquad B_n=V^{\otimes n},
+\]
+and define reversed quaternionic compression by
+\begin{equation}\label{eq:compression}
+  m_n(a_1|\cdots|a_n)=a_n\cdots a_1.
+\end{equation}
+For $n\ge 2$, the real dimension of $B_n$ is $3^n$, whereas the target $\Hq$ has dimension four.  The map $m_n$ is therefore strongly non-injective.  Equality of compressed values does not identify boundary tensors.
+
+Rather than quotienting by these collisions, we retain the tensor state and probe it by inserting imaginary quaternions into its internal gaps.  The all-gap response is
+\begin{equation}\label{eq:all-gap}
+  A_n(a_1|\cdots|a_n)(d_1,\ldots,d_{n-1})
+  =a_n d_{n-1}a_{n-1}\cdots d_1a_1.
+\end{equation}
+Our main reconstruction theorem states that $A_n$ is injective for every finite grade.  Thus a many-to-one noncommutative value map can coexist with exact state recovery once contextual response data are retained.
+
+The proof is controlled by one local gate,
+\begin{equation}\label{eq:theta}
+\Theta:V\otimes\Hq\longrightarrow\Hom(V,\Hq),\qquad
+\Theta\!\left(\sum_{a=1}^3 e_a\otimes h_a\right)(d)
+=\sum_{a=1}^3 e_a d h_a,
+\end{equation}
+where $(e_1,e_2,e_3)=(i,j,k)$ is the standard imaginary-quaternion basis.  The map $\Theta$ has an explicit inverse.  Applied to the final-variable slice of $A_n(x)$, it recovers three lower-grade response functions.  Repeating the same local operation reconstructs the full tensor in finitely many stages.  No new global inverse is introduced at each grade.
+
+The contextual responses also carry a natural depth hierarchy.  For every subset $S$ of the internal gaps, let $D_S$ denote the response obtained by probing exactly the gaps in $S$.  The joint kernels
+\[
+  F_d^{(n)}=\bigcap_{|S|\le d}\ker D_S
+\]
+form a finite descending filtration ending at zero.  A nonzero state has a first detection depth $\depth(x)$.  We prove the exact concatenation law
+\[
+  \depth(x\concat y)=\depth(x)+\depth(y)
+\]
+for nonzero decomposable tensors.  Linear combinations can lie deeper because their first responses cancel.  At grade four, every nonzero decomposable pair of grade-two residuals appears at depth two, but a nine-dimensional non-decomposable subspace survives to depth three.  We call this phenomenon \emph{algebraic coherence delay}; the term is purely algebraic and carries no quantum-mechanical claim.
+
+Finally, exact-response coordinates compose.  If $F=A_m(x)$ and $G=A_n(y)$, then
+\begin{equation}\label{eq:bridge-intro}
+  (F\bridge G)(\mathbf d,\eta,\mathbf e)
+  =G(\mathbf e)\,\eta\,F(\mathbf d)
+\end{equation}
+satisfies $A_m(x)\bridge A_n(y)=A_{m+n}(x\concat y)$.  Consequently the direct sum of exact-response spaces is a unital associative graded algebra.
+
+The contribution is not another decoder for an injective encoding.  The visible quaternionic value is genuinely many-to-one.  Exactness appears only after retaining structured contextual responses.  The combined construction has five simultaneous features:
+\begin{enumerate}
+  \item deliberately coarse noncommutative compression;
+  \item canonical internal contextual probes;
+  \item one explicit grade-independent recursive local decoder;
+  \item finite first-detection depth with a multiplicative filtration law;
+  \item composition of exact-response coordinates.
+\end{enumerate}
+We do not claim that every ingredient is new in isolation.  We claim that this explicit combination closes.
+
+\subsection{Why the formulation matters}
+
+The construction separates three notions that are often conflated:
+\[
+  \text{visible value},\qquad \text{retained state},\qquad
+  \text{recoverability under intervention}.
+\]
+The value map $m_n$ is allowed to forget.  The state is not identified with that value.  Exact recovery is delegated to a controlled family of queries.  In this sense, compression is not equated with erasure.
+
+This separation suggests an architectural interface for systems in which inexpensive summaries are insufficient to identify internal states, but ambiguity can be resolved by finite contextual queries.  Potential interfaces include active sensing, structured hidden-state recovery, provenance-preserving summaries, and query-addressable memory.  No efficiency theorem is asserted here.  Since $\dim B_n=\dim\im A_n=3^n$, exactness alone does not reduce the number of real degrees of freedom that must be represented.
+
+\subsection{Organization}
+
+Section~\ref{sec:setup} defines the tensor states, compression, and response maps.  Section~\ref{sec:local-decoder} proves and decomposes the local decoder.  Section~\ref{sec:reconstruction} gives the all-grade recursive reconstruction theorem.  Sections~\ref{sec:partial}--\ref{sec:depth} develop partial responses, composition, and residual depth.  Section~\ref{sec:grade-four} analyzes the grade-four coherence delay.  Section~\ref{sec:related} compares the construction with neighboring realization, observability, tomography, process-tensor, coding, and quaternionic-tensor frameworks.  Section~\ref{sec:limitations} states the scope and open problems.
+
+\section{Tensor states, compression, and contextual responses}\label{sec:setup}
+
+Throughout, $\Hq$ is the real quaternion algebra and
+\[
+  V=\operatorname{Im}\Hq=\Span_{\R}\{e_1,e_2,e_3\}.
+\]
+For $u,v\in V$ we use
+\begin{equation}\label{eq:qproduct}
+  uv=-u\cdot v+u\times v.
+\end{equation}
+Set
+\[
+  B_0=\R\mathbf 1,\qquad B_n=V^{\otimes n}\quad(n\ge 1),
+\]
+and write a pure tensor as $a_1|\cdots|a_n$.  Concatenation is denoted by $\concat$.
+
+\begin{definition}[Reversed quaternionic compression]
+For $n\ge 1$, define the real-linear map
+\[
+  m_n:B_n\to\Hq,
+  \qquad
+  m_n(a_1|\cdots|a_n)=a_n\cdots a_1.
+\]
+At grade zero set $m_0(\lambda\mathbf 1)=\lambda$.
+\end{definition}
+
+The reversal is not essential to injectivity questions, but it fixes the order used in all response and composition formulas.
+
+\begin{definition}[All-gap response]
+For $n=0$ set $A_0=\id_{\R}$.  For $n=1$, set $A_1(a)=a$.  For $n\ge 2$, define
+\[
+  A_n:B_n\longrightarrow \Hom(V^{\otimes(n-1)},\Hq)
+\]
+by multilinear extension of \eqref{eq:all-gap}.  Write
+\[
+  \Aresp_n=\im A_n,
+  \qquad
+  \Aresp=\bigoplus_{n\ge 0}\Aresp_n.
+\]
+\end{definition}
+
+The all-gap response keeps the original boundary letters fixed and inserts one independently chosen probe into each original internal gap.  It is not the compression map $m_n$ and should not be interpreted as an inverse of $m_n$.
+
+\section{The local decoder}\label{sec:local-decoder}
+
+The central local map is $\Theta$ from \eqref{eq:theta}.  Both its domain and codomain have real dimension twelve, but dimension equality alone does not prove invertibility.
+
+\begin{theorem}[Explicit local inverse]\label{thm:theta-inverse}
+For every $F\in\Hom(V,\Hq)$ there are unique $h_1,h_2,h_3\in\Hq$ such that
+\[
+  F(d)=\sum_{a=1}^3 e_a d h_a\qquad(d\in V).
+\]
+They are given by
+\begin{equation}\label{eq:theta-inverse}
+  h_a=\frac12\sum_{b,c=1}^3\eps_{abc}\,e_bF(e_c).
+\end{equation}
+Consequently $\Theta$ is an isomorphism.
+\end{theorem}
+
+\begin{proof}
+Substitute $F(e_c)=\sum_r e_r e_c h_r$ into \eqref{eq:theta-inverse}.  The quaternionic basis identity
+\begin{equation}\label{eq:basis-contraction}
+  \frac12\sum_{b,c=1}^3\eps_{abc}\,e_be_re_c=\delta_{ar}
+\end{equation}
+gives $h_a$ back.  Identity \eqref{eq:basis-contraction} follows directly from $e_ae_b=-\delta_{ab}+\sum_c\eps_{abc}e_c$.  Thus the displayed formula is a left inverse.  Since domain and codomain have equal finite dimension, it is the two-sided inverse.
+\end{proof}
+
+\subsection{Equivariant block decomposition}
+
+The explicit inverse is enough for reconstruction.  The following decomposition explains why the multiplication-defined map is invertible and where its determinant comes from.
+
+The unit quaternions act on $V$ and $\Hq$ by conjugation.  Give $V\otimes\Hq$ the tensor action and $\Hom(V,\Hq)$ the action
+\[
+  (q\cdot F)(d)=qF(q^{-1}dq)q^{-1}.
+\]
+Then $\Theta$ is equivariant.  As real $SO(3)$-modules,
+\begin{equation}\label{eq:theta-modules}
+  V\otimes\Hq
+  \cong V\otimes(\R\oplus V)
+  \cong V_0\oplus 2V_1\oplus V_2,
+\end{equation}
+and the same decomposition holds for $\Hom(V,\Hq)$.
+
+Write $h_a=\alpha_a+u_a$, set $\alpha=\sum_a\alpha_ae_a$, and define $U\in\operatorname{End}(V)$ by $Ue_a=u_a$.  Decompose
+\[
+  U=tI+A_p+S,
+\]
+where $A_p(d)=p\times d$ and $S\in S^2_0V$.  If
+\[
+  \Theta(\alpha,U)(d)=\sigma(d)+W(d),
+\]
+then quaternion multiplication gives
+\begin{equation}\label{eq:theta-block-formulas}
+  \sigma(d)=(-\alpha+2p)\cdot d,
+  \qquad
+  W(d)=\alpha\times d+t\,d-2S(d).
+\end{equation}
+Thus the scalar block has multiplier $1$, the spin-two block has multiplier $-2$, and the two spin-one copies are coupled by
+\begin{equation}\label{eq:spin-one-matrix}
+  \begin{pmatrix}\beta\\ r\end{pmatrix}
+  =
+  \begin{pmatrix}-1&2\\1&0\end{pmatrix}
+  \begin{pmatrix}\alpha\\p\end{pmatrix},
+\end{equation}
+where $\sigma(d)=\beta\cdot d$ and the skew part of $W$ is $r\times d$.
+
+\begin{proposition}[Structural determinant]\label{prop:det-theta}
+With compatible standard real bases,
+\[
+  \det\Theta
+  =1^1\left(\det\begin{pmatrix}-1&2\\1&0\end{pmatrix}\right)^3(-2)^5
+  =256.
+\]
+\end{proposition}
+
+\begin{proof}
+The scalar sector has dimension one.  The $2\times2$ multiplicity-space matrix in \eqref{eq:spin-one-matrix} acts identically on the three coordinates of $V_1$, contributing $(-2)^3$.  The spin-two sector has dimension five and contributes $(-2)^5$.  Their product is $256$.
+\end{proof}
+
+\begin{remark}
+The representation decomposition \eqref{eq:theta-modules} is standard.  The model-specific fact is that the concrete multiplication-defined map $\Theta$ is nonzero and invertible on every irreducible block, and that the same inverse can be reused recursively at every tensor grade.
+\end{remark}
+
+\section{All-grade exact reconstruction}\label{sec:reconstruction}
+
+Every $x\in B_n$ has a unique last-letter expansion
+\begin{equation}\label{eq:last-letter}
+  x=\sum_{a=1}^3 x_a|e_a,
+  \qquad x_a\in B_{n-1}.
+\end{equation}
+For $\mathbf d=(d_1,\ldots,d_{n-2})$ and $d\in V$,
+\begin{equation}\label{eq:peeling}
+  A_n(x)(\mathbf d,d)
+  =\sum_{a=1}^3 e_a d\,A_{n-1}(x_a)(\mathbf d).
+\end{equation}
+For fixed $\mathbf d$, the right-hand side is exactly a $\Theta$-image.  Applying \eqref{eq:theta-inverse} recovers all three values $A_{n-1}(x_a)(\mathbf d)$.  Since this holds for every $\mathbf d$, the three lower-grade response functions are recovered.
+
+\begin{theorem}[All-grade reconstruction]\label{thm:all-grade}
+For every finite $n\ge0$,
+\[
+  A_n:B_n\xrightarrow{\cong}\Aresp_n.
+\]
+Equivalently,
+\[
+  A_n(x)=A_n(y)\quad\Longleftrightarrow\quad x=y.
+\]
+The inverse is finite and recursive, using $\Theta^{-1}$ once per peeled boundary layer.
+\end{theorem}
+
+\begin{proof}
+Surjectivity onto $\Aresp_n$ is tautological.  We prove injectivity by induction on $n$.  It is immediate for $n=0,1$.  Suppose $A_n(x)=0$ and expand $x$ as in \eqref{eq:last-letter}.  Equation \eqref{eq:peeling} and injectivity of $\Theta$ imply
+\[
+  A_{n-1}(x_a)=0\qquad(a=1,2,3).
+\]
+By induction, all $x_a$ vanish, so $x=0$.  The same argument gives the recursive inverse.
+\end{proof}
+
+\begin{corollary}[Rank and ambient codimension]
+For $n\ge1$,
+\[
+  \dim\Aresp_n=\operatorname{rank}A_n=3^n.
+\]
+The ambient space $\Hom(V^{\otimes(n-1)},\Hq)$ has dimension $4\cdot3^{n-1}$, so $\Aresp_n$ is a structured subspace of codimension $3^{n-1}$.
+\end{corollary}
+
+\begin{remark}[What is and is not inverted]
+The compression map $m_n:B_n\to\Hq$ remains many-to-one and has no inverse.  The theorem states that the enlarged response map $A_n$ is invertible onto its image.  The distinctions erased by $m_n$ are retained in the state and exposed by contextual responses.
+\end{remark}
+
+\section{Partial responses and intervention observability}\label{sec:partial}
+
+The all-gap map proves eventual visibility.  To measure how much intervention is required, we retain responses with only selected gaps probed.
+
+Let the internal gaps of a grade-$n$ word be indexed by $\{1,\ldots,n-1\}$.  For a subset $S$, define
+\[
+  D_S:B_n\longrightarrow\Hom(V^{\otimes|S|},\Hq)
+\]
+by inserting probe variables exactly in the gaps indexed by $S$ and multiplying directly across every unprobed gap.  The probe variables are ordered by increasing gap index.  In particular,
+\[
+  D_\varnothing=m_n,
+  \qquad
+  D_{\{1,\ldots,n-1\}}=A_n.
+\]
+
+\begin{definition}[Residual-depth filtration]
+Set
+\begin{equation}\label{eq:depth-filtration}
+  D_n^{\le d}=\bigoplus_{|S|\le d}D_S,
+  \qquad
+  F_d^{(n)}=\ker D_n^{\le d}.
+\end{equation}
+Then
+\[
+  F_0^{(n)}\supseteq F_1^{(n)}\supseteq\cdots\supseteq F_{n-1}^{(n)}=0.
+\]
+For nonzero $x\in B_n$, define
+\begin{equation}\label{eq:first-depth}
+  \depth(x)=\min\{d:D_n^{\le d}(x)\ne0\}.
+\end{equation}
+\end{definition}
+
+The termination $F_{n-1}^{(n)}=0$ is precisely Theorem~\ref{thm:all-grade}.
+
+In the broad joint-kernel sense, \eqref{eq:depth-filtration} is an observability filtration.  Classical discrete-time systems use the chain $\bigcap_{k=0}^d\ker(CA^k)$, while multivariable and noncommutative systems replace powers by operator words.  The native Core construction is not a classical single-transition system: there is no distinguished evolution endomorphism on $B_n$, the index set is the subset lattice of internal positions in one fixed tensor, and the outputs are multilinear in freely chosen probes.  The model-specific content lies in the insertion geometry and the factorization laws below.
+
+\section{Composition and depth additivity}\label{sec:depth}
+
+\subsection{Partial-response factorization}
+
+Let $x\in B_m$ and $y\in B_n$.  A selected-gap set in the concatenation $x\concat y$ splits into internal gaps $S_x$ of $x$, the bridge gap, and internal gaps $S_y$ of $y$.  Directly from the reversed product order,
+\begin{equation}\label{eq:partial-factorization}
+  D_S(x\concat y)
+  =D_{S_y}(y)\,\eta\,D_{S_x}(x),
+\end{equation}
+where $\eta=1$ when the bridge is unprobed and $\eta=d_*$ when it is probed.  Probe arguments on the two factors are independent.
+
+\subsection{Exact-response product}
+
+For $F\in\Aresp_m$ and $G\in\Aresp_n$, define
+\begin{equation}\label{eq:bridge-product}
+  (F\bridge G)(\mathbf d,\eta,\mathbf e)
+  =G(\mathbf e)\,\eta\,F(\mathbf d).
+\end{equation}
+At grade zero, scalars act by ordinary scalar multiplication.
+
+\begin{proposition}[Bridge compatibility]\label{prop:bridge}
+For $x\in B_m$ and $y\in B_n$,
+\[
+  A_m(x)\bridge A_n(y)=A_{m+n}(x\concat y).
+\]
+Consequently $(\Aresp,\bridge,1)$ is a unital associative graded real algebra, and $A=\bigoplus_n A_n$ is a graded algebra isomorphism from the tensor algebra $T(V)$ onto $\Aresp$.
+\end{proposition}
+
+\begin{proof}
+The compatibility identity is \eqref{eq:partial-factorization} with every internal gap and the bridge probed.  Associativity and the unit follow from associativity of quaternion multiplication and concatenation, or equivalently by transport through the injective graded map $A$.
+\end{proof}
+
+\begin{theorem}[Additivity of first detection depth]\label{thm:additive-depth}
+For nonzero $x\in B_m$ and nonzero $y\in B_n$,
+\begin{equation}\label{eq:additive-depth}
+  \depth(x\concat y)=\depth(x)+\depth(y).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Set $p=\depth(x)$ and $q=\depth(y)$.  Choose gap sets $S_x,S_y$ of sizes $p,q$ for which $D_{S_x}(x)$ and $D_{S_y}(y)$ are nonzero maps.  Choose their probe arguments independently so that both quaternionic outputs are nonzero.  Leaving the bridge unprobed, \eqref{eq:partial-factorization} gives their product.  Since $\Hq$ is a division algebra, the product is nonzero.  Hence $\depth(x\concat y)\le p+q$.
+
+Conversely, consider a response of total depth less than $p+q$.  Let $r$ and $s$ be the numbers of internal probes used in $x$ and $y$, and let the bridge contribution be either zero or one.  If both $r\ge p$ and $s\ge q$, the total depth is at least $p+q$.  Therefore $r<p$ or $s<q$.  The corresponding factor response is identically zero, so \eqref{eq:partial-factorization} vanishes.  Thus no smaller depth detects $x\concat y$.
+\end{proof}
+
+Define the shifted filtration
+\[
+  G_d^{(n)}=\{x\in B_n:\depth(x)\ge d\},
+  \qquad G_0^{(n)}=B_n.
+\]
+For $d\ge1$, $G_d^{(n)}=F_{d-1}^{(n)}$.
+
+\begin{corollary}[Multiplicative filtration law]\label{cor:multiplicative-filtration}
+For all $p,q,m,n$,
+\[
+  G_p^{(m)}\otimes G_q^{(n)}
+  \subseteq G_{p+q}^{(m+n)}.
+\]
+Every nonzero decomposable tensor in the left-hand side has depth exactly equal to the sum of the depths of its factors.  Linear combinations may lie deeper by cancellation.
+\end{corollary}
+
+Thus residual depth behaves like a valuation on decomposable concatenations and as a superadditive filtration on their linear span.
+
+\section{Grade two and grade four}\label{sec:grade-four}
+
+\subsection{The grade-two zero fiber}
+
+Under the standard $SO(3)$ decomposition,
+\begin{equation}\label{eq:b2-decomp}
+  B_2=V\otimes V
+  \cong \R g\oplus\Lambda^2V\oplus S^2_0V.
+\end{equation}
+Let
+\[
+  P=\R g\oplus\Lambda^2V\cong V_0\oplus V_1,
+  \qquad
+  R=S^2_0V\cong V_2.
+\]
+The compression $m_2$ detects the trace and antisymmetric components and kills the symmetric trace-free component.  Hence
+\begin{equation}\label{eq:grade-two-kernel}
+  \ker m_2=R=S^2_0V.
+\end{equation}
+Every nonzero $S\in R$ has $\depth(S)=1$.  Equivalently, the grade-two residual sector is zero-valued but contextually active.
+
+For $S,T\in R\setminus\{0\}$, Theorem~\ref{thm:additive-depth} gives
+\begin{equation}\label{eq:pure-residual-depth}
+  \depth(S\concat T)=2.
+\end{equation}
+The factorwise two-probe response can be written
+\begin{equation}\label{eq:D13}
+  D_{13}(S\concat T)(d_1,d_2)=4T(d_2)S(d_1),
+\end{equation}
+and is nonzero for suitable probes.
+
+\subsection{Algebraic coherence delay}
+
+The grade-four space splits by the two grade-two factors:
+\begin{equation}\label{eq:b4-sector}
+  B_4=(P\otimes P)\oplus(P\otimes R)\oplus(R\otimes P)\oplus(R\otimes R).
+\end{equation}
+A direct equivariant basis computation gives
+\begin{equation}\label{eq:b4-ranks}
+\begin{array}{c|cccc}
+ d&0&1&2&3\\
+ \hline
+ \operatorname{rank}D_4^{\le d}&4&32&72&81\\
+ \dim F_d^{(4)}&77&49&9&0.
+\end{array}
+\end{equation}
+The sectorwise invisible dimensions are
+\begin{equation}\label{eq:b4-sector-table}
+\begin{array}{c|rrrr|r}
+ &P\otimes P&P\otimes R&R\otimes P&R\otimes R&\text{total}\\
+\hline
+F_0^{(4)}&12&20&20&25&77\\
+F_1^{(4)}&0&12&12&25&49\\
+F_2^{(4)}&0&0&0&9&9\\
+F_3^{(4)}&0&0&0&0&0.
+\end{array}
+\end{equation}
+
+Inside $R\otimes R$, the only potentially nonzero depth-two channel is \eqref{eq:D13}.  Its kernel is
+\begin{equation}\label{eq:spin-four-survivor}
+  F_2^{(4)}\cap(R\otimes R)=S^4_0V\cong V_4,
+  \qquad \dim S^4_0V=9.
+\end{equation}
+Since $F_3^{(4)}=0$, every nonzero vector in this subspace has depth three.
+
+\begin{definition}[Algebraic coherence delay]
+A non-decomposable linear combination has algebraic coherence delay when it is detected strictly later than every nonzero decomposable tensor from which it is assembled.
+\end{definition}
+
+Equation \eqref{eq:spin-four-survivor} supplies such a delay: no nonzero pure tensor $S\concat T$ belongs to $F_2^{(4)}$ by \eqref{eq:pure-residual-depth}, but suitable linear combinations of these depth-two tensors do.  Their entire response profile through depth two cancels, and the combined state first appears at depth three.  This is an algebraic statement, not a claim of quantum coherence.
+
+The first-detection layers
+\[
+  L_d^{(4)}=F_{d-1}^{(4)}/F_d^{(4)},
+  \qquad F_{-1}^{(4)}=B_4,
+\]
+have equivariant decompositions
+\begin{equation}\label{eq:layers}
+\begin{aligned}
+ L_0^{(4)}&\cong V_0\oplus V_1,\\
+ L_1^{(4)}&\cong V_0\oplus4V_1\oplus3V_2,\\
+ L_2^{(4)}&\cong V_0\oplus V_1\oplus3V_2\oplus3V_3,\\
+ L_3^{(4)}&\cong V_4.
+\end{aligned}
+\end{equation}
+Their dimensions are $4,28,40,9$.  In particular, copies of $V_0,V_1,V_2$ occur at more than one detection depth.  Representation type alone therefore does not determine visibility depth; factor origin also matters.
+
+\begin{remark}[Verification]
+The ranks in \eqref{eq:b4-ranks} and the sector table \eqref{eq:b4-sector-table} can be reproduced by exact integer linear algebra from the quaternion multiplication table.  The accompanying repository includes a certificate script.  The identification of the final nine-dimensional kernel with $S^4_0V$ uses the equivariant inclusion $S^4_0V\subset R\otimes R$ together with the rank computation; the dimension count is a consistency check rather than the sole argument.
+\end{remark}
+
+\section{Related work and contribution boundary}\label{sec:related}
+
+The relevant neighboring literatures use overlapping words---realization, observability, tomography, intervention, compression---but address different mathematical objects.  Shared vocabulary does not imply equivalence, and unfamiliar vocabulary does not establish novelty.
+
+\subsection{Noncommutative realization and weighted automata}
+
+Noncommutative rational functions admit finite linear realizations, minimality theory, difference-differential calculus, and local-global principles \cite{kaliuzhnyi2010,volcic2015}.  Weighted automata similarly represent rational series through finite state spaces and Hankel matrices, with canonical forms and minimization theory \cite{balle2015}.  These frameworks establish that finite realization of noncommutative data and contextual distinguishability are known ideas.
+
+The object reconstructed here is not a minimal realization of a rational function or automaton.  It is a fixed finite tensor state hidden by a deliberately many-to-one quaternionic value map.  The contextual variables occupy the internal slots of that tensor, and the reconstruction is driven by one explicit multiplication gate reused across all grades.  No equivalent of the full package $(m_n,A_n,\Theta^{-1},F_d^{(n)},\bridge)$ has been located in these sources.
+
+\subsection{Observability}
+
+Classical and multivariable systems recover states from families of outputs.  Free-semigroup observability operators use word-indexed output maps in noncommutative state-space systems \cite{ball2006}.  Hence a descending joint-kernel observability chain is not new in broad form.
+
+The native filtration here is indexed by subsets of internal gaps in a fixed boundary tensor, rather than by iterates of a transition operator.  Its model-specific features are the slot factorization \eqref{eq:partial-factorization}, exact depth additivity on decomposable concatenations, coherence-induced delay, and equivariant separation by factor origin.  We do not claim that the filtration cannot be encoded artificially as an observability chain of an enlarged linear system.
+
+\subsection{Process tensors and tomography}
+
+Process-tensor frameworks reconstruct multi-time quantum processes from controlled interventions and retain memory that is invisible to a coarse current-state description \cite{pollock2015,pollock2018,xiang2021}.  This is the closest operational analogy to internal contextual probing.  The targets there are completely positive multi-time quantum maps with positivity, probability, and experimental statistics.  The present construction is a static real-algebraic tensor model with imaginary-quaternion probes, exact symbolic inversion, and no physical process claim.
+
+Tensor-network tomography and verification recover structured quantum states from complete or efficient families of observables \cite{cruz2021,lidiak2022}.  Those works address measurement or sample complexity under structural assumptions.  Core exactness is algebraic: it does not establish robustness, sample efficiency, or low-rank recovery.
+
+\subsection{Quaternionic tensor analysis and coding}
+
+Quaternionic multilinear analysis studies tensor decompositions, uniqueness, and computation under noncommutative scalar multiplication \cite{flamant2024}.  Quaternionic analysis also has a substantial representation-theoretic literature \cite{frenkel2007,frenkel2019}.  These areas provide the standard algebraic and representation-theoretic background; the ordinary quaternion identities and the decomposition $V\otimes V=V_0\oplus V_1\oplus V_2$ are not claimed as new.
+
+State-space descriptions of convolutional codes formalize encoders, equivalence, and finite-state behavior \cite{gluesing2006,holub2017}.  The present model has no channel, minimum distance, redundancy, rate, error distribution, or noisy-decoding theorem.  It is therefore not yet an error-correcting code.  The coding interface is architectural: equality of coarse outputs does not identify internal states, while structured contextual queries preserve exact distinguishability.
+
+\subsection{Current documented claim}
+
+The literature audit supports the following bounded statement:
+
+\begin{quote}
+We have not located in the reviewed noncommutative-realization, weighted-automata, observability, tomography, process-tensor, coding, or quaternionic-tensor literature an equivalent construction that combines a deliberately many-to-one reversed quaternionic value map, canonical all-gap insertion responses, one grade-independent recursive local decoder, a finite first-detection-depth filtration, and an explicit associative composition law on exact-response coordinates.
+\end{quote}
+
+This is a report of the documented search, not an absolute claim over all mathematical literature.  In particular, the existence of the twelve-dimensional vector-space isomorphism is not asserted to be novel in isolation, and the associativity of $\bridge$ is partly transported from concatenation.  The sharper model-specific features are the multiplication-defined recursive gate and the residual-depth structure.
+
+\section{Scope, limitations, and open problems}\label{sec:limitations}
+
+The main proved statements are exact and finite:
+\begin{itemize}
+  \item $m_n$ is many-to-one, but $A_n$ is injective at every finite grade;
+  \item $\Theta^{-1}$ gives a constructive recursive decoder;
+  \item every nonzero state is visible by depth at most $n-1$;
+  \item depth is additive on nonzero decomposable concatenations;
+  \item the shifted depth filtration is multiplicative;
+  \item grade four contains a nine-dimensional coherence-delayed survivor;
+  \item exact-response coordinates compose as a unital associative graded algebra.
+\end{itemize}
+
+The paper does not prove:
+\begin{itemize}
+  \item practical storage reduction or an information-theoretic rate advantage;
+  \item minimality of the all-gap probe family;
+  \item numerical conditioning, noise robustness, or sample complexity;
+  \item an error-correcting code or production memory architecture;
+  \item universality over other division algebras or nonassociative systems;
+  \item a complete classification of $F_{d-1}^{(n)}/F_d^{(n)}$ for arbitrary $n$.
+\end{itemize}
+
+Several concrete questions follow.
+\begin{enumerate}
+  \item What is the smallest probe family that remains injective on $B_n$ or on structured subclasses?
+  \item What are the operator norm and condition number of the recursive decoder under natural Euclidean norms?
+  \item Which distributions of states have shallow average detection depth?
+  \item Can response coordinates be generated on demand from a sparse or low-complexity representation rather than stored in full?
+  \item How do the depth layers decompose by spin, factor origin, and higher coherence at general grade?
+  \item Which parts extend from $\Hq$ to matrix algebras, Clifford algebras, or other noncommutative products?
+\end{enumerate}
+
+The potential memory interpretation should therefore be stated carefully.  The construction provides a blueprint for a hierarchy in which a coarse value is cheap to consult and hidden distinctions are recoverable by deeper queries.  It does not yet prove that the complete representation is cheaper than the original state.  Any such theorem would need sparsity, average-case depth, selective recovery, generated responses, or another explicit complexity assumption.
+
+\section{Conclusion}
+
+A non-injective value map need not be the equality relation on retained states.  In the quaternionic model studied here, reversed multiplication compresses a $3^n$-dimensional tensor state to four real dimensions and loses distinctions at value level.  Canonical contextual insertion responses restore exact distinguishability.  One local twelve-dimensional inverse recursively reconstructs every finite grade, while partial responses organize hidden structure by first detection depth.  This depth is additive on decomposable concatenations and can be delayed by coherent cancellation in non-decomposable superpositions.  The response coordinates also compose compatibly with the underlying tensor algebra.
+
+The theorem is not that compression preserves all information.  It does not.  The theorem is that distinctions erased by the coarse value remain finitely recoverable in exact-response coordinates.
+
+\begin{thebibliography}{99}
+
+\bibitem{balle2015}
+B. Balle, P. Panangaden, and D. Precup,
+``A canonical form for weighted automata and applications to approximate minimization,''
+\emph{arXiv:1501.06841}, 2015.
+
+\bibitem{ball2006}
+J. A. Ball, V. Bolotnikov, and Q. Fang,
+``Multivariable backward-shift-invariant subspaces and observability operators,''
+\emph{arXiv:math/0610634}, 2006.
+
+\bibitem{cruz2021}
+E. Cruz, F. Baccari, J. Tura, N. Schuch, and J. I. Cirac,
+``Preparation and verification of tensor network states,''
+\emph{arXiv:2105.06866}, 2021.
+
+\bibitem{flamant2024}
+J. Flamant, X. Luciani, S. Miron, and Y. Zniyed,
+``Multilinear analysis of quaternion arrays: theory and computation,''
+\emph{arXiv:2412.05409}, 2024.
+
+\bibitem{frenkel2007}
+I. Frenkel and M. Libine,
+``Quaternionic analysis, representation theory and physics,''
+\emph{arXiv:0711.2699}, 2007.
+
+\bibitem{frenkel2019}
+I. Frenkel and M. Libine,
+``Quaternionic analysis, representation theory and physics II,''
+\emph{arXiv:1907.01594}, 2019.
+
+\bibitem{gluesing2006}
+H. Gluesing-Luerssen and G. Schneider,
+``State space realizations and monomial equivalence for convolutional codes,''
+\emph{arXiv:cs/0603049}, 2006.
+
+\bibitem{holub2017}
+S. Holub,
+``State spaces of convolutional codes, codings and encoders,''
+\emph{arXiv:1712.01914}, 2017.
+
+\bibitem{kaliuzhnyi2010}
+D. S. Kaliuzhnyi-Verbovetskyi and V. Vinnikov,
+``Noncommutative rational functions, their difference-differential calculus and realizations,''
+\emph{arXiv:1003.0695}, 2010.
+
+\bibitem{lidiak2022}
+A. Lidiak, C. Jameson, Z. Qin, G. Tang, M. B. Wakin, Z. Zhu, and Z. Gong,
+``Quantum state tomography with tensor train cross approximation,''
+\emph{arXiv:2207.06397}, 2022.
+
+\bibitem{pollock2015}
+F. A. Pollock, C. Rodriguez-Rosario, T. Frauenheim, M. Paternostro, and K. Modi,
+``Non-Markovian quantum processes: complete framework and efficient characterisation,''
+\emph{arXiv:1512.00589}, 2015.
+
+\bibitem{pollock2018}
+F. A. Pollock, C. Rodriguez-Rosario, T. Frauenheim, M. Paternostro, and K. Modi,
+``Operational Markov condition for quantum processes,''
+\emph{arXiv:1801.09811}, 2018.
+
+\bibitem{volcic2015}
+J. Volcic,
+``Matrix coefficient realization theory of noncommutative rational functions,''
+\emph{arXiv:1505.07472}, 2015.
+
+\bibitem{xiang2021}
+L. Xiang et al.,
+``Quantify the non-Markovian process with intervening projections in a superconducting processor,''
+\emph{arXiv:2105.03333}, 2021.
+
+\end{thebibliography}
+
+\end{document}
