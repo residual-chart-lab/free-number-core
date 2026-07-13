@@ -33,3 +33,5 @@ jobs:
           git add arxiv/manuscript/main.tex
           git commit -m "Apply second hostile review to arXiv manuscript"
           git push origin HEAD:arxiv/core-v1-manuscript
+
+# Triggered after the workflow file existed on the branch.
