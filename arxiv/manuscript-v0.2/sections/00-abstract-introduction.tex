@@ -1,0 +1,88 @@
+\begin{abstract}
+Let $V=\operatorname{Im}\mathbb H$, $B_n=V^{\otimes n}$, and let
+\[
+  m_n(a_1|\cdots|a_n)=a_n\cdots a_1
+\]
+be reversed quaternionic compression.  The maps $m_n$ are deliberately non-injective: distinct boundary tensors may have the same quaternionic value.  We show that the distinctions erased at value level remain exactly recoverable from a canonical family of contextual responses.  Inserting one imaginary-quaternion probe into every internal gap defines
+\[
+  A_n:B_n\longrightarrow \Hom(V^{\otimes(n-1)},\mathbb H).
+\]
+A single twelve-dimensional multiplication map
+\[
+  \Theta:V\otimes\mathbb H\longrightarrow\Hom(V,\mathbb H)
+\]
+is an isomorphism with an explicit inverse.  Its standard-basis determinant is $256$, while an equivariant block decomposition explains invertibility sector by sector.  Iterating $\Theta^{-1}$ removes one outer boundary layer at a time and proves that $A_n$ is injective for every finite $n$.
+
+Partial insertion responses define a finite observability filtration by first detection depth.  This depth is additive on nonzero decomposable concatenations, while non-decomposable superpositions can be detected strictly later.  At grade four a nine-dimensional spin-four sector exhibits such an algebraic coherence delay.  Exact-response coordinates also carry a natural unital associative graded product induced by boundary concatenation.  The construction is therefore an explicit finite model in which coarse noncommutative compression coexists with exact contextual recoverability.  It suggests interfaces with active sensing, query-addressable memory, and provenance-preserving computation, but no compression-rate, noise-stability, or practical memory-efficiency theorem is claimed.
+\end{abstract}
+
+\section{Introduction}
+
+Compression is usually treated as a map from a larger state space to a smaller visible-value space.  When that map is non-injective, distinct states collide, and equality of outputs no longer determines equality of states.  The usual conclusion is that the missing distinction has been lost.  This paper studies a different architecture: the visible value is allowed to be deliberately coarse, while the retained state remains exactly recoverable through a structured family of contextual interventions.
+
+Let
+\[
+  V=\operatorname{Im}\Hq,\qquad B_n=V^{\otimes n},
+\]
+and define reversed quaternionic compression by
+\begin{equation}\label{eq:compression}
+  m_n(a_1|\cdots|a_n)=a_n\cdots a_1.
+\end{equation}
+For $n\ge 2$, the real dimension of $B_n$ is $3^n$, whereas the target $\Hq$ has dimension four.  The map $m_n$ is therefore strongly non-injective.  Equality of compressed values does not identify boundary tensors.
+
+Rather than quotienting by these collisions, we retain the tensor state and probe it by inserting imaginary quaternions into its internal gaps.  The all-gap response is
+\begin{equation}\label{eq:all-gap}
+  A_n(a_1|\cdots|a_n)(d_1,\ldots,d_{n-1})
+  =a_n d_{n-1}a_{n-1}\cdots d_1a_1.
+\end{equation}
+Our main reconstruction theorem states that $A_n$ is injective for every finite grade.  Thus a many-to-one noncommutative value map can coexist with exact state recovery once contextual response data are retained.
+
+The proof is controlled by one local gate,
+\begin{equation}\label{eq:theta}
+\Theta:V\otimes\Hq\longrightarrow\Hom(V,\Hq),\qquad
+\Theta\!\left(\sum_{a=1}^3 e_a\otimes h_a\right)(d)
+=\sum_{a=1}^3 e_a d h_a,
+\end{equation}
+where $(e_1,e_2,e_3)=(i,j,k)$ is the standard imaginary-quaternion basis.  The map $\Theta$ has an explicit inverse.  Applied to the final-variable slice of $A_n(x)$, it recovers three lower-grade response functions.  Repeating the same local operation reconstructs the full tensor in finitely many stages.  No new global inverse is introduced at each grade.
+
+The contextual responses also carry a natural depth hierarchy.  For every subset $S$ of the internal gaps, let $D_S$ denote the response obtained by probing exactly the gaps in $S$.  The joint kernels
+\[
+  F_d^{(n)}=\bigcap_{|S|\le d}\ker D_S
+\]
+form a finite descending filtration ending at zero.  A nonzero state has a first detection depth $\depth(x)$.  We prove the exact concatenation law
+\[
+  \depth(x\concat y)=\depth(x)+\depth(y)
+\]
+for nonzero decomposable tensors.  Linear combinations can lie deeper because their first responses cancel.  At grade four, every nonzero decomposable pair of grade-two residuals appears at depth two, but a nine-dimensional non-decomposable subspace survives to depth three.  We call this phenomenon \emph{algebraic coherence delay}; the term is purely algebraic and carries no quantum-mechanical claim.
+
+Finally, exact-response coordinates compose.  If $F=A_m(x)$ and $G=A_n(y)$, then
+\begin{equation}\label{eq:bridge-intro}
+  (F\bridge G)(\mathbf d,\eta,\mathbf e)
+  =G(\mathbf e)\,\eta\,F(\mathbf d)
+\end{equation}
+satisfies $A_m(x)\bridge A_n(y)=A_{m+n}(x\concat y)$.  Consequently the direct sum of exact-response spaces is a unital associative graded algebra.
+
+The contribution is not another decoder for an injective encoding.  The visible quaternionic value is genuinely many-to-one.  Exactness appears only after retaining structured contextual responses.  The combined construction has five simultaneous features:
+\begin{enumerate}
+  \item deliberately coarse noncommutative compression;
+  \item canonical internal contextual probes;
+  \item one explicit grade-independent recursive local decoder;
+  \item finite first-detection depth with a multiplicative filtration law;
+  \item composition of exact-response coordinates.
+\end{enumerate}
+We do not claim that every ingredient is new in isolation.  We claim that this explicit combination closes.
+
+\subsection{Why the formulation matters}
+
+The construction separates three notions that are often conflated:
+\[
+  \text{visible value},\qquad \text{retained state},\qquad
+  \text{recoverability under intervention}.
+\]
+The value map $m_n$ is allowed to forget.  The state is not identified with that value.  Exact recovery is delegated to a controlled family of queries.  In this sense, compression is not equated with erasure.
+
+This separation suggests an architectural interface for systems in which inexpensive summaries are insufficient to identify internal states, but ambiguity can be resolved by finite contextual queries.  Potential interfaces include active sensing, structured hidden-state recovery, provenance-preserving summaries, and query-addressable memory.  No efficiency theorem is asserted here.  Since $\dim B_n=\dim\im A_n=3^n$, exactness alone does not reduce the number of real degrees of freedom that must be represented.
+
+\subsection{Organization}
+
+Section~\ref{sec:setup} defines the tensor states, compression, and response maps.  Section~\ref{sec:local-decoder} proves and decomposes the local decoder.  Section~\ref{sec:reconstruction} gives the all-grade recursive reconstruction theorem.  Sections~\ref{sec:partial}--\ref{sec:depth} develop partial responses, composition, and residual depth.  Section~\ref{sec:grade-four} analyzes the grade-four coherence delay.  Section~\ref{sec:related} compares the construction with neighboring realization, observability, tomography, process-tensor, coding, and quaternionic-tensor frameworks.  Section~\ref{sec:limitations} states the scope and open problems.
