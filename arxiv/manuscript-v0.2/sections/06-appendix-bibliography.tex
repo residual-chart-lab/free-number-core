@@ -1,0 +1,105 @@
+\appendix
+\section{Exact certificate matrices}\label{app:certificates}
+
+The finite computations used in Proposition~\ref{prop:det-theta} and
+Proposition~\ref{prop:grade-four-table} can be reconstructed without floating-point arithmetic.
+
+For $\Theta$, columns are indexed by $(a,\mu)$ with
+$1\le a\le3$ and $0\le\mu\le3$, representing $e_a\otimes q_\mu$.
+Rows are indexed by $(c,\nu)$, representing the $q_\nu$-coordinate of
+$\Theta(e_a\otimes q_\mu)(e_c)=e_ae_cq_\mu$.  All entries are integers in
+$\{0,\pm1\}$.
+
+For the grade-four response matrix through depth $d$, columns are indexed by
+words $(a_1,a_2,a_3,a_4)\in\{1,2,3\}^4$.  Rows are indexed by a selected-gap set
+$S\subseteq\{1,2,3\}$ with $|S|\le d$, a basis-probe assignment
+$(c_j)_{j\in S}\in\{1,2,3\}^{|S|}$, and an output coordinate
+$\nu\in\{0,1,2,3\}$.  The corresponding entry is the $q_\nu$-coefficient of
+\[
+  D_S(e_{a_1}|e_{a_2}|e_{a_3}|e_{a_4})((e_{c_j})_{j\in S}).
+\]
+Again every entry is in $\{0,\pm1\}$, so the ranks in
+\eqref{eq:b4-ranks} are ranks over $\mathbb Q$.  Restriction to the four sectors in
+\eqref{eq:b4-sector} is performed using the integer bases
+\[
+\begin{aligned}
+P&=\Span\{g,\ e_1|e_2-e_2|e_1,\ e_2|e_3-e_3|e_2,\ e_3|e_1-e_1|e_3\},\\
+R&=\Span\{e_1|e_1-e_2|e_2,\ e_2|e_2-e_3|e_3,\\
+&\hspace{3.5em}e_1|e_2+e_2|e_1,\ e_2|e_3+e_3|e_2,\ e_3|e_1+e_1|e_3\}.
+\end{aligned}
+\]
+The repository scripts implement exactly these matrices and assert the displayed determinant, ranks, and sector-kernel dimensions.
+
+\begin{thebibliography}{99}
+
+\bibitem{balle2015}
+B. Balle, P. Panangaden, and D. Precup,
+``A canonical form for weighted automata and applications to approximate minimization,''
+\emph{arXiv:1501.06841}, 2015.
+
+\bibitem{ball2006}
+J. A. Ball, V. Bolotnikov, and Q. Fang,
+``Multivariable backward-shift-invariant subspaces and observability operators,''
+\emph{arXiv:math/0610634}, 2006.
+
+\bibitem{cruz2021}
+E. Cruz, F. Baccari, J. Tura, N. Schuch, and J. I. Cirac,
+``Preparation and verification of tensor network states,''
+\emph{arXiv:2105.06866}, 2021.
+
+\bibitem{flamant2024}
+J. Flamant, X. Luciani, S. Miron, and Y. Zniyed,
+``Multilinear analysis of quaternion arrays: theory and computation,''
+\emph{arXiv:2412.05409}, 2024.
+
+\bibitem{frenkel2007}
+I. Frenkel and M. Libine,
+``Quaternionic analysis, representation theory and physics,''
+\emph{arXiv:0711.2699}, 2007.
+
+\bibitem{frenkel2019}
+I. Frenkel and M. Libine,
+``Quaternionic analysis, representation theory and physics II,''
+\emph{arXiv:1907.01594}, 2019.
+
+\bibitem{gluesing2006}
+H. Gluesing-Luerssen and G. Schneider,
+``State space realizations and monomial equivalence for convolutional codes,''
+\emph{arXiv:cs/0603049}, 2006.
+
+\bibitem{holub2017}
+S. Holub,
+``State spaces of convolutional codes, codings and encoders,''
+\emph{arXiv:1712.01914}, 2017.
+
+\bibitem{kaliuzhnyi2010}
+D. S. Kaliuzhnyi-Verbovetskyi and V. Vinnikov,
+``Noncommutative rational functions, their difference-differential calculus and realizations,''
+\emph{arXiv:1003.0695}, 2010.
+
+\bibitem{lidiak2022}
+A. Lidiak, C. Jameson, Z. Qin, G. Tang, M. B. Wakin, Z. Zhu, and Z. Gong,
+``Quantum state tomography with tensor train cross approximation,''
+\emph{arXiv:2207.06397}, 2022.
+
+\bibitem{pollock2015}
+F. A. Pollock, C. Rodriguez-Rosario, T. Frauenheim, M. Paternostro, and K. Modi,
+``Non-Markovian quantum processes: complete framework and efficient characterisation,''
+\emph{arXiv:1512.00589}, 2015.
+
+\bibitem{pollock2018}
+F. A. Pollock, C. Rodriguez-Rosario, T. Frauenheim, M. Paternostro, and K. Modi,
+``Operational Markov condition for quantum processes,''
+\emph{arXiv:1801.09811}, 2018.
+
+\bibitem{volcic2015}
+J. Volcic,
+``Matrix coefficient realization theory of noncommutative rational functions,''
+\emph{arXiv:1505.07472}, 2015.
+
+\bibitem{xiang2021}
+L. Xiang et al.,
+``Quantify the non-Markovian process with intervening projections in a superconducting processor,''
+\emph{arXiv:2105.03333}, 2021.
+
+\end{thebibliography}
