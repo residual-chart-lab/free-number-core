@@ -400,7 +400,7 @@ V_0\oplus V_1\oplus3V_2\oplus3V_3\oplus V_4.
 ここから重要な事実が読める。
 
 - six copies of (V_2) のうち、三つは left / middle / right の gap origin を持つため depth one で見える。
-- 残り三つの (V_2) は単一 gap response では区別されず、depth two まで不可視である。その40次元層を cross-gap coherence と同定できるかは未決定である。
+- 残り三つの (V_2) は単一 gap response では区別されず、depth two まで不可視である。Note 07 により、この40次元層は coherence 条件そのものではなく、三つの pair-origin residual factors に分解することが判明した。
 - (V_1) も、depth zero で一つ、depth one で四つ、depth two で一つという origin split を持つ。
 - (V_0) も、value、middle-gap response、depth-two-visible direction の三段に分かれる。
 
@@ -549,7 +549,7 @@ F_2,\ldots,F_{n-2}
 
 ### deeper depth
 
-depth two 以上の probes は複数 gaps を同時に読む。ただし、それが中間 charts 間の coherence 条件として完全に記述できるかは次段の問題である。
+depth two の probes は複数 gaps を同時に読む。Note 07 は (n=4) について、それらが三つの pair charts と明示的 boundary matching equations で完全に記述できることを示す。
 
 したがって depth one の空間は、完成した鎖ではない。
 
@@ -566,7 +566,7 @@ depth two 以上の probes は複数 gaps を同時に読む。ただし、そ�
 
 ## 9. curvature への含意
 
-depth one では internal charts が独立なので、まだ loop consistency を問えない。複数 gap を跨ぐ response が曲率に必要な transport comparison を与えるかどうかは、depth two の構造解析後に判定する。
+depth one では internal charts が独立なので、まだ loop consistency を問えない。Note 07 の depth-two matching complex は chart gluing を与えるが、transport composition や holonomy はまだ与えない。
 
 このため plaquette を最初から既成空間上に置くのではなく、次の順序で作るべきである。
 
@@ -601,7 +601,7 @@ ALL CHECKS PASSED
 
 all-(n) depth-one theorem は Note 06 で閉じた。
 
-次の対象は (n=4,d=2) の40次元 birth layer である。
+この対象は Note 07 で解かれた。(n=4,d=2) の40次元 birth layer は
 
 \[
 \dim\mathcal Q_{4,2}-\dim\mathcal Q_{4,1}
@@ -609,4 +609,4 @@ all-(n) depth-one theorem は Note 06 で閉じた。
 =40.
 \]
 
-この層を adjacent-gap overlap、non-adjacent cross-boundary overlap、lower-depth contraction compatibility に分解する。ここから複数経路の比較と plaquette-like structure が始まる。
+pair origin により (12+16+12) へ分解する。ただし、これは curvature ではなく、固定された depth-one boundary 上の独立な pair-chart residual freedom である。

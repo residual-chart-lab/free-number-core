@@ -10,7 +10,9 @@
 - **Proved at depth 0→1:** response space は value space と新生層の明示的な代数的 extension として組み上がる。
 - **Exact-checked:** 低 grade の dimension profiles と、全長 depth-one formula の有限範囲検算。
 - **Hypothesis:** depth filtration が幾何学的空間そのものの生成機構である。
-- **Open:** depth-two birth layer を cross-chart coherence または curvature と同定すること。
+- **Proved at \(n=4,d=2\):** 三つの pair charts は明示的 boundary maps により exact に貼り合わさる。
+- **Proved:** 40次元 birth layer は coherence 条件そのものではなく、pair origin により \(12+16+12\) へ分解する。
+- **Open:** terminal response による response triangle の filling law、および transport / curvature との接続。
 
 以下で「生成」という語を線形像・生成元の意味で使う場合を除き、確立している順序は ontological / causal order ではなく **visibility / reconstruction order** である。
 
@@ -23,6 +25,8 @@
 - (n=2,3,4) の既知の exact checks を dimension-growth profile として読み替えた。
 - (n=3,d=1) の20次元空間を、二つの局所応答の fiber product として直接 presentation した。
 - 全 (n\ge3) の depth-one 空間を outer-gluing law だけで完全分類した。
+- \(n=4,d=2\) の72次元空間を、三つの36次元 pair charts の exact matching kernel として直接 presentation した。
+- 40次元 depth-two birth layer を \((V_2\oplus V_3)\oplus(V_0\oplus V_1\oplus V_2\oplus V_3)\oplus(V_2\oplus V_3)\) に局在分解した。
 
 ## Reading order
 
@@ -44,15 +48,20 @@
 6. [`notes/06-all-n-depth1-outer-gluing-theorem.md`](notes/06-all-n-depth1-outer-gluing-theorem.md)  
    局所 zero-compression gadgets による全 (n\ge3) の depth-one direct presentation。
 
+7. [`notes/07-n4-depth2-pair-chart-gluing.md`](notes/07-n4-depth2-pair-chart-gluing.md)
+
+   三つの pair charts の exact matching complex と、40次元 birth layer の \(12+16+12\) 分解。
+
 ## Exact certificate
 
 ```bash
 python3 certificates/n2_intrinsic_response_certificate.py
 python3 certificates/n3_depth1_fiber_product_certificate.py
 python3 certificates/depth1_outer_gluing_certificate.py
+python3 certificates/n4_depth2_structure_certificate.py
 ```
 
-外部ライブラリを使わず、有理数上の完全計算で (n=2) の内在的応答塔、(n=3,d=1) の fiber product、(n=3,\ldots,7) の all-length depth-one formula を検証する。
+外部ライブラリを使わず、有理数上の完全計算で (n=2) の内在的応答塔、(n=3,d=1) の fiber product、(n=3,\ldots,7) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex を検証する。
 
 Expected final line:
 
@@ -62,6 +71,6 @@ ALL CHECKS PASSED
 
 ## Next target
 
-次は (n=4,d=2) の40次元 birth layer を調べる。二つの gaps を同時に probe する response が、adjacent overlap、cross-boundary overlap、lower-depth compatibility のどれとして分解できるかを判定する。
+次は \(n=4,d=3\) の terminal all-gap response から三つの pair charts への face maps を明示し、depth-indexed response triangle の filling law を調べる。
 
-その分解が得られた場合に、四元数値輸送を持つ最小 plaquette と path nonconfluence residual への接続を検討する。
+その後で、response simplex に四元数値 transport を加えたときの path nonconfluence residual と curvature 候補を検討する。

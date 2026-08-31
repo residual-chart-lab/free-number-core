@@ -673,7 +673,7 @@ m(z)=0
 
 depth one は全長で閉じた。次は depth two である。
 
-depth-two response は二つの distinct internal gaps を同時に probe する。したがって、depth-one で自由だった interior charts の関係を初めて読みうるが、それが pairwise coherence と一致するかはまだ証明されていない。
+depth-two response は二つの distinct internal gaps を同時に probe する。Note 07 は最小例 (n=4) について、三つの pair charts が共有する depth-one boundaries の一致だけで完全に貼り合わさることを証明する。
 
 次の最小問題は (n=4,d=2)。既知の dimension は
 
@@ -687,12 +687,12 @@ depth-one からの birth dimension は
 72-32=40.
 \]
 
-目標は、この40次元を
+Note 07 により、この40次元は
 
-- adjacent-gap overlaps
-- non-adjacent cross-boundary overlap
-- common lower-depth contractions
+- adjacent pair-origin factor: 12 dimensions
+- separated pair-origin factor: 16 dimensions
+- adjacent pair-origin factor: 12 dimensions
 
-へ分解し、direct compatibility presentation を得ることである。
+へ分解され、同時に72次元 depth-two space の direct compatibility presentation が得られた。
 
-ここで初めて、複数経路を比較する plaquette-like structure が現れる可能性が高い。
+ただし得られたのは exact matching complex であり、複数経路を比較する transport や curvature ではない。
