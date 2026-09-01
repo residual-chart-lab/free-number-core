@@ -16,7 +16,9 @@
 - **Proved:** terminal response から三つの pair faces への局所公式は、一層の decoder だけで明示できる。
 - **Proved for all \(n\):** exact-depth-\((n-2)\) terminal boundary の kernel は \(S^n_0V\) であり、terminal birth 全体と一致する。
 - **Proved for all \(n\):** penultimate dimension は \(3^n-(2n+1)\)、terminal birth は \(2n+1\)、canonical \(SO(3)\)-equivariant filling は一意。
-- **Open:** terminal boundary image の all-\(n\) intrinsic presentation、canonical filler 自体の短い局所公式、および transport / curvature との接続。
+- **Proved at \(n=5\):** 四つの terminal faces は六つの pairwise common shadows の一致だけで完全に glue し、\(\mathcal P_{5,3}=\ker\partial_5\) となる。
+- **Proved at \(n=5\):** matching equations の最初の syzygy は16次元で、\(2V_0\oplus3V_1\oplus V_2\) に分解する。
+- **Open:** terminal boundary image の \(n\ge6\) intrinsic presentation、canonical filler 自体の短い局所公式、および transport / curvature との接続。
 
 以下で「生成」という語を線形像・生成元の意味で使う場合を除き、確立している順序は ontological / causal order ではなく **visibility / reconstruction order** である。
 
@@ -34,6 +36,8 @@
 - \(n=4,d=3\) の terminal filling を \(72+9\) の canonical \(SO(3)\)-splitting として閉じ、最高スピン・pair-boundary kernel・terminal birth・pure interior の四重一致を得た。
 - 全 \(n\ge2\) で highest spin = terminal boundary kernel = terminal birth = pure interior を証明した。
 - 新しい \(n=5\) rung \(232+11=243\) と terminal coefficient \(A_5=16C\) を exact-check した。
+- \(n=5\) の232次元 terminal boundary を、四つの108次元 faces と六つの36次元 common shadows の pairwise matching kernel として intrinsic に presentation した。
+- \(n=4\) response triangle では消えていた compatibility syzygy が、\(n=5\) response tetrahedron で16次元 \(2V_0\oplus3V_1\oplus V_2\) として初出することを証明した。
 
 ## Reading order
 
@@ -67,6 +71,10 @@
 
    adjacent-pair kernel theorem による全 \(n\) last-survivor equality、universal terminal dimension law、canonical filling。
 
+10. [`notes/10-n5-terminal-response-tetrahedron.md`](notes/10-n5-terminal-response-tetrahedron.md)
+
+    四つの terminal faces の intrinsic pairwise gluing、232次元 matching kernel、および16次元 compatibility syzygy。
+
 ## Exact certificate
 
 ```bash
@@ -76,9 +84,10 @@ python3 certificates/depth1_outer_gluing_certificate.py
 python3 certificates/n4_depth2_structure_certificate.py
 python3 certificates/n4_canonical_filling_certificate.py
 python3 certificates/all_n_terminal_boundary_certificate.py
+python3 certificates/n5_response_tetrahedron_certificate.py
 ```
 
-外部ライブラリを使わず、有理数上の完全計算で (n=2) の内在的応答塔、(n=3,d=1) の fiber product、(n=3,\ldots,7) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex、\(n=4,d=3\) の canonical terminal splitting、および \(n=2,\ldots,5\) の terminal boundary theorem を検証する。
+外部ライブラリを使わず、有理数上の完全計算で (n=2) の内在的応答塔、(n=3,d=1) の fiber product、(n=3,\ldots,7) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex、\(n=4,d=3\) の canonical terminal splitting、\(n=2,\ldots,5\) の terminal boundary theorem、および \(n=5\) response tetrahedron の pairwise gluing と16次元 syzygy を検証する。
 
 Expected final line:
 
@@ -88,14 +97,26 @@ ALL CHECKS PASSED
 
 ## Next target
 
-次は、image として定義した all-\(n\) terminal boundary space
+次は、\(n=4,5\) で成立した pairwise terminal descent
 
 \[
-\mathcal P_{n,n-2}=\operatorname{im}\mathbf B_n
+\mathcal P_{n,n-2}
+\stackrel{?}{=}
+\ker\partial_n
 \]
 
-を、局所 face compatibility の generators-and-relations だけで直接 presentation する。
+を \(n=6\) で exact-check する。成立する場合の checkpoint は
 
-並行して、Casimir complement 上の逆写像として得られた canonical section を、短い response-side 局所公式として書き下す。
+\[
+\operatorname{rank}\partial_6=904,
+\qquad
+\dim\ker\partial_6=716,
+\qquad
+\dim\operatorname{coker}\partial_6=176.
+\]
+
+その後、pairwise descent の all-\(n\) 証明、または最初に失敗する長さでの higher gluing obstruction を切り出す。並行して、\(n=5\) の16次元 syzygy を quotient 定義によらない局所 higher differential として書き下す。
+
+Casimir complement 上の逆写像として得られた canonical section の短い response-side 局所公式も引き続き open である。
 
 その後で、response simplex に四元数値 transport を加えたときの path nonconfluence residual と curvature 候補を検討する。

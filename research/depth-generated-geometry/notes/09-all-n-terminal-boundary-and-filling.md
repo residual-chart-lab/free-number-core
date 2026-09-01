@@ -939,7 +939,8 @@ This theorem closes:
 It leaves open:
 
 - intrinsic generators-and-relations presentations of
-  \(\mathcal P_{n,n-2}\) for general \(n\);
+  \(\mathcal P_{n,n-2}\) for general \(n\) (Note 10 closes the \(n=5\)
+  instance by a terminal response tetrahedron; \(n\ge6\) remains open);
 - short local formulas for the canonical filler itself;
 - the full intermediate multiplicity-depth filtration;
 - transport, path nonconfluence, holonomy, and curvature.
