@@ -714,9 +714,10 @@ The next all-length question is
 \tag{9.1}
 \]
 
-It holds for \(n=4\) by Note 07 and for \(n=5\) by Theorem 4.1.
+It holds for \(n=4\) by Note 07, for \(n=5\) by Theorem 4.1, and for
+\(n=6\) by Note 11.
 
-The first new test is \(n=6\). Pairwise descent predicts
+The first new test beyond this note was \(n=6\). Pairwise descent predicted
 
 \[
 \begin{aligned}
@@ -737,7 +738,11 @@ If middle exactness holds, representation bookkeeping predicts
 \tag{9.3}
 \]
 
-If (9.1) fails, the excess
+Note 11 constructs the five-face response 4-simplex and proves exactly these
+rank, kernel, cokernel, and representation-type predictions. Thus (9.1) is
+now established for \(n=4,5,6\).
+
+If (9.1) first fails at a later length, the excess
 
 \[
 \ker\partial_n/\mathcal P_{n,n-2}
