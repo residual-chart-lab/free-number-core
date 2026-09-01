@@ -6,7 +6,7 @@
 
 **Depends on:** Notes 02, 07, 09
 
-**Claim boundary:** this note proves an intrinsic pairwise-gluing presentation at \(n=5\). It does not prove pairwise descent for every \(n\), construct a canonical next differential out of the 16-dimensional syzygy module, or identify that module with curvature.
+**Claim boundary:** this note proves an intrinsic pairwise-gluing presentation at \(n=5\). The all-length pairwise descent problem left open here is solved in Note 12. A canonical next differential out of the 16-dimensional syzygy module and any curvature interpretation remain open.
 
 ---
 
@@ -702,7 +702,7 @@ The same decoder-collapse construction defines
 \partial_n:C_n^0\longrightarrow C_n^1.
 \]
 
-The next all-length question is
+The next all-length question at the time of this note was
 
 \[
 \boxed{
@@ -742,14 +742,10 @@ Note 11 constructs the five-face response 4-simplex and proves exactly these
 rank, kernel, cokernel, and representation-type predictions. Thus (9.1) is
 now established for \(n=4,5,6\).
 
-If (9.1) first fails at a later length, the excess
-
-\[
-\ker\partial_n/\mathcal P_{n,n-2}
-\]
-
-will be the first genuine higher gluing obstruction. Either outcome gives a
-precise next theorem.
+Note 12 resolves the alternative: (9.1) holds for every finite \(n\). Hence
+the excess \(\ker\partial_n/\mathcal P_{n,n-2}\) always vanishes, while the
+cokernel of \(\partial_n\) obeys the universal character law anticipated in
+this note.
 
 ---
 
@@ -790,9 +786,9 @@ ALL CHECKS PASSED
 ## 11. Claim boundary
 
 This note closes the intrinsic terminal-boundary presentation at \(n=5\).
-It does not yet prove:
+Note 12 later proves pairwise terminal descent for every \(n\). The following
+remain open:
 
-- pairwise terminal descent for every \(n\);
 - an intrinsic generators-and-relations presentation of
   \(\operatorname{coker}\partial_5\) beyond its quotient definition;
 - a canonical higher differential after \(\partial_5\);

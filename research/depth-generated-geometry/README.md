@@ -20,7 +20,9 @@
 - **Proved at \(n=5\):** matching equations の最初の syzygy は16次元で、\(2V_0\oplus3V_1\oplus V_2\) に分解する。
 - **Proved at \(n=6\):** 五つの terminal faces は十個の pairwise common shadows の一致だけで完全に glue し、\(\mathcal P_{6,4}=\ker\partial_6\) となる。
 - **Proved at \(n=6\):** 1080個の matching coordinates の compatibility syzygy は176次元で、\(10V_0\oplus21V_1\oplus15V_2\oplus4V_3\) に分解する。
-- **Open:** pairwise terminal descent の全長証明（または最初の反例）、canonical filler 自体の短い局所公式、syzygy を生成する局所 higher differential、および transport / curvature との接続。
+- **Proved for all \(n\):** pairwise common-shadow compatibility は terminal boundary の global filling に十分であり、\(\mathcal P_{n,n-2}=\ker\partial_n\) となる。
+- **Proved for all \(n\):** 最初の compatibility syzygy は普遍 character law を持ち、\(n=7\) では1200次元 \(45V_0\oplus100V_1\oplus90V_2\oplus45V_3\oplus10V_4\) となる。
+- **Open:** canonical filler 自体の短い局所公式、syzygy を生成する局所 higher differential、full intermediate filtration、および transport / curvature との接続。
 
 以下で「生成」という語を線形像・生成元の意味で使う場合を除き、確立している順序は ontological / causal order ではなく **visibility / reconstruction order** である。
 
@@ -42,6 +44,8 @@
 - \(n=4\) response triangle では消えていた compatibility syzygy が、\(n=5\) response tetrahedron で16次元 \(2V_0\oplus3V_1\oplus V_2\) として初出することを証明した。
 - \(n=6\) の716次元 terminal boundary を、五つの324次元 faces と十個の108次元 common shadows の pairwise matching kernel として intrinsic に presentation した。
 - response 4-simplex の matching rank 904 と176次元 syzygy \(10V_0\oplus21V_1\oplus15V_2\oplus4V_3\) を二つの素数体上の exact rank certificate から有理数上へ持ち上げた。
+- 全 \(n\ge2\) で actual face restrictions を simple slot contractions へ局所的に triangularize し、その Cartan kernel \(S^m_0V\oplus S^{m+1}_0V\) から pairwise terminal descent を証明した。
+- \(n=4,5,6\) の個別 exactness を普遍定理の事例へ引き上げ、matching rank・compatible boundary dimension・first syzygy character の全長公式を得た。
 
 ## Reading order
 
@@ -83,6 +87,10 @@
 
     五つの terminal faces の intrinsic pairwise gluing、716次元 matching kernel、および176次元 compatibility syzygy。
 
+12. [`notes/12-all-n-pairwise-terminal-descent.md`](notes/12-all-n-pairwise-terminal-descent.md)
+
+    局所 quaternion slide、Cartan kernel、last-face correction による全 \(n\) pairwise descent と普遍 syzygy law。
+
 ## Exact certificate
 
 ```bash
@@ -93,10 +101,11 @@ python3 certificates/n4_depth2_structure_certificate.py
 python3 certificates/n4_canonical_filling_certificate.py
 python3 certificates/all_n_terminal_boundary_certificate.py
 python3 certificates/n5_response_tetrahedron_certificate.py
+python3 certificates/all_n_pairwise_terminal_descent_certificate.py
 python3 certificates/n6_response_4simplex_modular_certificate.py
 ```
 
-最初の七本は外部ライブラリを使わず、有理数上の完全計算で (n=2) の内在的応答塔、(n=3,d=1) の fiber product、(n=3,\ldots,7) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex、\(n=4,d=3\) の canonical terminal splitting、\(n=2,\ldots,5\) の terminal boundary theorem、および \(n=5\) response tetrahedron の pairwise gluing と16次元 syzygy を検証する。
+最初の八本は外部ライブラリを使わず、有理数上の完全計算で (n=2) の内在的応答塔、(n=3,d=1) の fiber product、(n=3,\ldots,7) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex、\(n=4,d=3\) の canonical terminal splitting、\(n=2,\ldots,5\) の terminal boundary theorem、\(n=5\) response tetrahedron の pairwise gluing と16次元 syzygy、および all-\(n\) descent proof の固定局所恒等式と \(m\le4\) Cartan kernel を検証する。
 
 最後の \(n=6\) certificate は NumPy を整数行列の格納と有限体上の行基本変形にだけ用いる。浮動小数点計算は行わず、\(\mathbb F_{1009}\) と \(\mathbb F_{1013}\) 上で rank 904 を独立に確認する。有理数上の rank 上界 904 と modular minor の下界を合わせることで、\(\mathbb Q\) 上の exactness と176次元 syzygy を証明する。
 
@@ -108,17 +117,20 @@ ALL CHECKS PASSED
 
 ## Next target
 
-\(n=4,5,6\) で成立した pairwise terminal descent
+pairwise terminal descent は全 \(n\) で成立した。次の主標的は、普遍 cokernel
 
 \[
-\mathcal P_{n,n-2}
-\stackrel{?}{=}
-\ker\partial_n
+\mathfrak S_n=\operatorname{coker}\partial_n
 \]
 
-の all-\(n\) 証明が次の主標的である。decoder-collapse maps から response-simplex の最初の二段に対する intrinsic descent argument または contracting homotopy を構成する。成立すれば compatibility syzygy の普遍 character law が得られ、失敗すれば最初の \(n\) で \(\ker\partial_n/\mathcal P_{n,n-2}\) が genuine higher gluing obstruction を与える。
+を quotient 定義によらず局所 higher differential の kernel または image として実現し、response-simplex complex の次段
 
-並行して、\(n=5\) の16次元および \(n=6\) の176次元 syzygy を quotient 定義によらない局所 higher differential の像として書き下す。\(n=7\) は all-length proof の探索を補助する stress test であり、単独の大規模 rank 計算を主目標とはしない。
+\[
+C_n^0\xrightarrow{\partial_n}C_n^1
+\xrightarrow{\partial_n^{(2)}}C_n^2
+\]
+
+を構成することである。\(n=5\) の16次元と \(n=6\) の176次元はその最初の有限モデルとなる。\(n=7\) の1200次元 syzygy は、もはや大規模 rank 計算による予想ではなく全長定理の帰結である。
 
 Casimir complement 上の逆写像として得られた canonical section の短い response-side 局所公式も引き続き open である。
 

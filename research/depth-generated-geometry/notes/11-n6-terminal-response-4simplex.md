@@ -6,7 +6,7 @@
 
 **Depends on:** Notes 09 and 10
 
-**Claim boundary:** this note proves intrinsic pairwise terminal gluing at \(n=6\). It does not yet prove pairwise descent for every length, construct the next local differential after the 176-dimensional cokernel, or identify a compatibility syzygy with curvature.
+**Claim boundary:** this note proves intrinsic pairwise terminal gluing at \(n=6\). Note 12 later proves pairwise descent for every length. The next local differential after the 176-dimensional cokernel and any curvature interpretation remain open.
 
 ---
 
@@ -602,7 +602,8 @@ C_n^1
 \mathcal R_{n-3}^{\oplus\binom{n-1}{2}}.
 \]
 
-The all-length terminal descent conjecture is
+The all-length terminal descent statement, conjectural at the time of this
+calculation and proved subsequently in Note 12, is
 
 \[
 \boxed{
@@ -617,9 +618,8 @@ C_n^1
 \tag{8.1}
 \]
 
-It is now proved for \(n=4,5,6\).
-
-If (8.1) holds for every \(n\), the syzygy character is forced to be
+This note proved it for \(n=4,5,6\); Note 12 proves it for every \(n\).
+Consequently the syzygy character is
 
 \[
 \boxed{
@@ -632,7 +632,7 @@ If (8.1) holds for every \(n\), the syzygy character is forced to be
 \tag{8.2}
 \]
 
-Its dimension would be
+Its dimension is
 
 \[
 \boxed{
@@ -700,20 +700,13 @@ ALL CHECKS PASSED
 
 ## 11. Next obstruction
 
-The computational question is no longer whether \(n=6\) works. It does.
+The computational question is no longer whether \(n=6\) works. It does, and
+Note 12 proves that the same pairwise descent is exact for every \(n\).
+Consequently (8.2) is a universal compatibility-syzygy law and
+\(\ker\partial_n/\mathcal P_{n,n-2}\) vanishes at all lengths.
 
-The next mathematical task is to prove (8.1) for every \(n\) by constructing
-an intrinsic descent argument or a contracting homotopy for the first two
-response-simplex levels.
-
-The remaining alternatives are now precise:
-
-1. pairwise terminal descent is exact for every \(n\), and (8.2) becomes a
-   universal compatibility-syzygy law;
-2. exactness first fails at some later length, and
-   \(\ker\partial_n/\mathcal P_{n,n-2}\) is the first higher gluing
-   obstruction.
-
-The finite evidence has advanced from a response triangle to a tetrahedron
-and now to a 4-simplex. The next target is the all-length proof, not a larger
-isolated dimension count.
+The next obstruction lies one level later: construct a local higher
+differential whose kernel or image realizes \(\operatorname{coker}\partial_n\).
+The 16-dimensional \(n=5\) and 176-dimensional \(n=6\) modules are now the
+first two finite models of that universal problem, not evidence awaiting a
+larger isolated rank test.

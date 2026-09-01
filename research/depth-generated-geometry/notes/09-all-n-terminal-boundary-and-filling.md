@@ -4,7 +4,7 @@
 
 **Status:** theorem for every finite \(n\ge2\); exact rational checks through \(n=5\)  
 **Depends on:** Notes 01–03 and 08; the left and right local decoders of Note 07; Free Numbers Core v1, Notes 06 and 11  
-**Claim boundary:** this note proves the all-length terminal transition. It does not classify the intermediate-depth multiplicity filtration, give intrinsic compatibility equations for every terminal boundary image, or identify the terminal interior with curvature.
+**Claim boundary:** this note proves the all-length terminal transition. It does not classify the intermediate-depth multiplicity filtration or identify the terminal interior with curvature. The intrinsic compatibility equations left open here are supplied by Note 12.
 
 ---
 
@@ -936,13 +936,15 @@ This theorem closes:
 - canonical \(SO(3)\)-equivariant terminal filling;
 - the all-length fourfold identification.
 
-It leaves open:
+Note 12 subsequently closes the intrinsic generators-and-relations problem
+for \(\mathcal P_{n,n-2}\) at every length by proving
+\(\mathcal P_{n,n-2}=\ker\partial_n\).
 
-- intrinsic generators-and-relations presentations of
-  \(\mathcal P_{n,n-2}\) for general \(n\) (Notes 10 and 11 close the
-  \(n=5\) tetrahedron and \(n=6\) 4-simplex instances; the all-length
-  statement, in particular \(n\ge7\), remains open);
+The remaining open problems are:
+
 - short local formulas for the canonical filler itself;
+- a local higher differential generating the universal compatibility
+  syzygy after \(\partial_n\);
 - the full intermediate multiplicity-depth filtration;
 - transport, path nonconfluence, holonomy, and curvature.
 
