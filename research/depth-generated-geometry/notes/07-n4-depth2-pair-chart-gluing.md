@@ -788,7 +788,7 @@ ALL CHECKS PASSED
 
 ---
 
-## 11. Next problem
+## 11. Terminal filling status
 
 The internal gap set for \(n=4\) is \(\{1,2,3\}\). Exact-depth responses are indexed by its subsets:
 
@@ -797,16 +797,31 @@ The internal gap set for \(n=4\) is \(\{1,2,3\}\). Exact-depth responses are ind
 - depth two: pair charts \(H_{ij}\);
 - depth three: the full chart \(H_{123}=A_4\).
 
-Note 07 proves the face maps and exact matching law from pair charts to singleton charts. The next structural question is whether the terminal all-gap response supplies a genuine filling map for this response triangle, with the last-surviving
+Note 07 proves the face maps and exact matching law from pair charts to singleton charts. The terminal all-gap response supplies fillers because
+
+\[
+0\longrightarrow S^4_0V
+\longrightarrow V^{\otimes4}
+\xrightarrow{\ \mathbf H\ }
+\mathcal P_{4,2}
+\longrightarrow0
+\]
+
+is exact. Note 08 strengthens this observation: the Casimir complement to the
+last-surviving
 
 \[
 S^4_0V\cong V_4
 \]
 
-as its canonical interior mode, detected with coefficient
+gives the unique \(SO(3)\)-equivariant top-spin-free filler, while the remaining
+terminal freedom is detected with coefficient
 
 \[
 (-2)^3=-8.
 \]
 
-That statement would still concern a response simplex. Relating its interior mode to curvature or force would require an additional transport theorem.
+Thus the existence and abstract uniqueness of the terminal filling law are
+closed. What remains is a short direct response-side formula for that filler.
+Relating its interior mode to curvature or force still requires an additional
+transport and path-comparison theorem.

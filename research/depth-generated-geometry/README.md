@@ -12,7 +12,9 @@
 - **Hypothesis:** depth filtration が幾何学的空間そのものの生成機構である。
 - **Proved at \(n=4,d=2\):** 三つの pair charts は明示的 boundary maps により exact に貼り合わさる。
 - **Proved:** 40次元 birth layer は coherence 条件そのものではなく、pair origin により \(12+16+12\) へ分解する。
-- **Open:** terminal response による response triangle の filling law、および transport / curvature との接続。
+- **Proved at \(n=4,d=3\):** compatible pair boundary は一意な \(SO(3)\)-equivariant top-spin-free filler を持ち、全 filler は terminal \(V_4\) だけ異なる。
+- **Proved:** terminal response から三つの pair faces への局所公式は、一層の decoder だけで明示できる。
+- **Open:** canonical filler 自体の短い response-side 局所公式、all-length last-survivor equality、および transport / curvature との接続。
 
 以下で「生成」という語を線形像・生成元の意味で使う場合を除き、確立している順序は ontological / causal order ではなく **visibility / reconstruction order** である。
 
@@ -27,6 +29,7 @@
 - 全 (n\ge3) の depth-one 空間を outer-gluing law だけで完全分類した。
 - \(n=4,d=2\) の72次元空間を、三つの36次元 pair charts の exact matching kernel として直接 presentation した。
 - 40次元 depth-two birth layer を \((V_2\oplus V_3)\oplus(V_0\oplus V_1\oplus V_2\oplus V_3)\oplus(V_2\oplus V_3)\) に局在分解した。
+- \(n=4,d=3\) の terminal filling を \(72+9\) の canonical \(SO(3)\)-splitting として閉じ、最高スピン・pair-boundary kernel・terminal birth・pure interior の四重一致を得た。
 
 ## Reading order
 
@@ -52,6 +55,10 @@
 
    三つの pair charts の exact matching complex と、40次元 birth layer の \(12+16+12\) 分解。
 
+8. [`notes/08-n4-canonical-terminal-filling.md`](notes/08-n4-canonical-terminal-filling.md)
+
+   compatible pair boundary の一意な \(SO(3)\)-equivariant top-spin-free completion と、terminal interior \(V_4\)。
+
 ## Exact certificate
 
 ```bash
@@ -59,9 +66,10 @@ python3 certificates/n2_intrinsic_response_certificate.py
 python3 certificates/n3_depth1_fiber_product_certificate.py
 python3 certificates/depth1_outer_gluing_certificate.py
 python3 certificates/n4_depth2_structure_certificate.py
+python3 certificates/n4_canonical_filling_certificate.py
 ```
 
-外部ライブラリを使わず、有理数上の完全計算で (n=2) の内在的応答塔、(n=3,d=1) の fiber product、(n=3,\ldots,7) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex を検証する。
+外部ライブラリを使わず、有理数上の完全計算で (n=2) の内在的応答塔、(n=3,d=1) の fiber product、(n=3,\ldots,7) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex、および \(n=4,d=3\) の canonical terminal splitting を検証する。
 
 Expected final line:
 
@@ -71,6 +79,14 @@ ALL CHECKS PASSED
 
 ## Next target
 
-次は \(n=4,d=3\) の terminal all-gap response から三つの pair charts への face maps を明示し、depth-indexed response triangle の filling law を調べる。
+次は、Casimir complement 上の逆写像として得られた canonical section を、短い response-side 局所公式として書き下す。
+
+並行して、一般 \(n\) の terminal last-survivor equality
+
+\[
+\widehat F_{n-2}^{(n)}\stackrel{?}{=}A_n(S^n_0V)
+\]
+
+を調べる。これが成立すれば、一意な \(SO(3)\)-equivariant terminal filling は全長で従う。
 
 その後で、response simplex に四元数値 transport を加えたときの path nonconfluence residual と curvature 候補を検討する。
