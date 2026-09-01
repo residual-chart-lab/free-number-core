@@ -536,7 +536,7 @@ A_n(S)
 (-2)^{n-1}C_S.
 \]
 
-したがって
+したがって本ノート単独では
 
 \[
 \boxed{
@@ -556,15 +556,20 @@ K_{n,n-1}^{\mathrm{birth}}
 
 これは最高スピン成分の birth certificate である。
 
-注意すべきは包含と等号の違いである。
+Note 09 は、exact-depth-\((n-2)\) faces の共通 kernel を adjacent-pair
+collapse に還元し、
 
 \[
+\boxed{
 \mathfrak H_n
 =
 K_{n,n-1}^{\mathrm{birth}}
+\qquad(n\ge2)
+}
 \]
 
-は (n=2,3,4) では exact-checked されているが、一般 (n) では full-profile conjecture である。全 (n) で証明済みなのは、最高スピンがそれ以前には見えず、深度 (n-1) の canonical component で非零になることまでである。
+を全有限 \(n\) で証明する。したがって、ここで得た包含は現在では
+all-length last-survivor equality へ強化されている。
 
 ---
 

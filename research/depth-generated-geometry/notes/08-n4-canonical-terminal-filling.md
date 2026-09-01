@@ -591,20 +591,16 @@ distinguished symmetry.
 
 ---
 
-## 8. All-length reduction
+## 8. All-length consequence
 
-The filling argument has a clean conditional all-length form.
-
-### Proposition 8.1
-
-Fix \(n\ge2\). Suppose the terminal last-survivor equality holds:
+Note 09 proves the terminal last-survivor equality for every finite \(n\ge2\):
 
 \[
 \widehat F_{n-2}^{(n)}=A_n(S^n_0V)\cong V_n.
 \tag{8.1}
 \]
 
-Then the terminal forgetting map
+Therefore the terminal forgetting map
 
 \[
 \pi_{n,n-1}:\mathcal Q_{n,n-1}\longrightarrow\mathcal Q_{n,n-2}
@@ -623,7 +619,7 @@ uniquely into
 \tag{8.2}
 \]
 
-#### Proof
+### Corollary 8.1
 
 The top spin \(V_n\) occurs in \(V^{\otimes n}\) with multiplicity one. Under
 (8.1), it is exactly the kernel of terminal forgetting. The Casimir spectral
@@ -631,18 +627,8 @@ projector onto \(V_n\) supplies an invariant complement. The quotient contains
 no \(V_n\), so the difference of two equivariant sections is zero. The
 coefficient in (8.2) is the all-length vertical-response theorem. ∎
 
-For \(n=2,3,4\), hypothesis (8.1) has been exact-checked. For general \(n\), it
-remains the full-profile last-survivor conjecture. Consequently the next
-all-length problem is sharper than a generic search for fillers:
-
-\[
-\boxed{
-\widehat F_{n-2}^{(n)}\stackrel{?}{=}A_n(S^n_0V).
-}
-\tag{8.3}
-\]
-
-If (8.3) is proved, canonical terminal filling follows formally.
+Thus the \(n=4\) canonical filling theorem proved in this note is one rung of
+an unconditional all-length theorem.
 
 ---
 
@@ -663,7 +649,6 @@ is no longer open.
 
 - write \(s_{\mathrm{tf}}^{\mathrm{resp}}\) as a short direct response-side
   local formula, rather than an inverse on the Casimir complement;
-- prove or disprove the all-length last-survivor equality (8.3);
 - define transport between response charts;
 - compare two reconstruction paths with common endpoints;
 - determine whether the resulting residual lands naturally in an interior

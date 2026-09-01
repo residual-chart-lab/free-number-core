@@ -14,7 +14,9 @@
 - **Proved:** 40次元 birth layer は coherence 条件そのものではなく、pair origin により \(12+16+12\) へ分解する。
 - **Proved at \(n=4,d=3\):** compatible pair boundary は一意な \(SO(3)\)-equivariant top-spin-free filler を持ち、全 filler は terminal \(V_4\) だけ異なる。
 - **Proved:** terminal response から三つの pair faces への局所公式は、一層の decoder だけで明示できる。
-- **Open:** canonical filler 自体の短い response-side 局所公式、all-length last-survivor equality、および transport / curvature との接続。
+- **Proved for all \(n\):** exact-depth-\((n-2)\) terminal boundary の kernel は \(S^n_0V\) であり、terminal birth 全体と一致する。
+- **Proved for all \(n\):** penultimate dimension は \(3^n-(2n+1)\)、terminal birth は \(2n+1\)、canonical \(SO(3)\)-equivariant filling は一意。
+- **Open:** terminal boundary image の all-\(n\) intrinsic presentation、canonical filler 自体の短い局所公式、および transport / curvature との接続。
 
 以下で「生成」という語を線形像・生成元の意味で使う場合を除き、確立している順序は ontological / causal order ではなく **visibility / reconstruction order** である。
 
@@ -30,6 +32,8 @@
 - \(n=4,d=2\) の72次元空間を、三つの36次元 pair charts の exact matching kernel として直接 presentation した。
 - 40次元 depth-two birth layer を \((V_2\oplus V_3)\oplus(V_0\oplus V_1\oplus V_2\oplus V_3)\oplus(V_2\oplus V_3)\) に局在分解した。
 - \(n=4,d=3\) の terminal filling を \(72+9\) の canonical \(SO(3)\)-splitting として閉じ、最高スピン・pair-boundary kernel・terminal birth・pure interior の四重一致を得た。
+- 全 \(n\ge2\) で highest spin = terminal boundary kernel = terminal birth = pure interior を証明した。
+- 新しい \(n=5\) rung \(232+11=243\) と terminal coefficient \(A_5=16C\) を exact-check した。
 
 ## Reading order
 
@@ -59,6 +63,10 @@
 
    compatible pair boundary の一意な \(SO(3)\)-equivariant top-spin-free completion と、terminal interior \(V_4\)。
 
+9. [`notes/09-all-n-terminal-boundary-and-filling.md`](notes/09-all-n-terminal-boundary-and-filling.md)
+
+   adjacent-pair kernel theorem による全 \(n\) last-survivor equality、universal terminal dimension law、canonical filling。
+
 ## Exact certificate
 
 ```bash
@@ -67,9 +75,10 @@ python3 certificates/n3_depth1_fiber_product_certificate.py
 python3 certificates/depth1_outer_gluing_certificate.py
 python3 certificates/n4_depth2_structure_certificate.py
 python3 certificates/n4_canonical_filling_certificate.py
+python3 certificates/all_n_terminal_boundary_certificate.py
 ```
 
-外部ライブラリを使わず、有理数上の完全計算で (n=2) の内在的応答塔、(n=3,d=1) の fiber product、(n=3,\ldots,7) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex、および \(n=4,d=3\) の canonical terminal splitting を検証する。
+外部ライブラリを使わず、有理数上の完全計算で (n=2) の内在的応答塔、(n=3,d=1) の fiber product、(n=3,\ldots,7) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex、\(n=4,d=3\) の canonical terminal splitting、および \(n=2,\ldots,5\) の terminal boundary theorem を検証する。
 
 Expected final line:
 
@@ -79,14 +88,14 @@ ALL CHECKS PASSED
 
 ## Next target
 
-次は、Casimir complement 上の逆写像として得られた canonical section を、短い response-side 局所公式として書き下す。
-
-並行して、一般 \(n\) の terminal last-survivor equality
+次は、image として定義した all-\(n\) terminal boundary space
 
 \[
-\widehat F_{n-2}^{(n)}\stackrel{?}{=}A_n(S^n_0V)
+\mathcal P_{n,n-2}=\operatorname{im}\mathbf B_n
 \]
 
-を調べる。これが成立すれば、一意な \(SO(3)\)-equivariant terminal filling は全長で従う。
+を、局所 face compatibility の generators-and-relations だけで直接 presentation する。
+
+並行して、Casimir complement 上の逆写像として得られた canonical section を、短い response-side 局所公式として書き下す。
 
 その後で、response simplex に四元数値 transport を加えたときの path nonconfluence residual と curvature 候補を検討する。
