@@ -2,7 +2,7 @@
 
 ## local quaternion slides make every compatible response boundary globally fillable
 
-**Status:** theorem for every finite \(n\ge2\); fixed local identities and exact finite checks through the \(n=6\) local model
+**Status:** theorem for every finite \(n\ge2\); fixed local identities and exact rational checks through the \(n=6\) local model, with an auxiliary two-prime stress check at the \(n=7\) local model
 
 **Depends on:** Notes 02, 07, and 09–11
 
@@ -331,8 +331,19 @@ put
 \tag{3.2}
 \]
 
-The metric identifies \(V\cong V^*\), so (3.2) is an isomorphism. In an
-oriented orthonormal quaternion basis its determinant is \(16\).
+The metric identifies \(V\cong V^*\), so (3.2) is an isomorphism. More
+explicitly, a basis calculation gives
+
+\[
+\boxed{
+\Psi^2+\Psi-2\operatorname{id}=0,
+\qquad
+\Psi^{-1}=\frac12(\Psi+\operatorname{id}),
+\qquad
+\det\Psi=16.
+}
+\tag{3.2a}
+\]
 
 At two slots, set
 
@@ -384,14 +395,47 @@ The outermost deletion is already the outermost simple contraction. Suppose
 the deletions outside slot \(j\) have been triangularized. At the first factor
 outside \(j\), apply (3.3) pointwise in all spectator variables. Its leading
 term slides \(v_j\) one position toward the quaternion coefficient and is
-multiplied by a conjugate of \(\Psi\); its correction term is a deletion at a
-strictly outer slot, already present in the suffix stack. Continue until
-\(v_j\) reaches the coefficient.
+multiplied by a conjugate of \(\Psi\). Its correction contracts a strictly
+outer factor. Factors already crossed by \(v_j\) may appear in a different
+order afterward, but this is only a permutation of the *remaining target
+slots* after contraction. It is therefore an invertible target coordinate
+change applied to \(M_{m,k}\) for some \(k>j\), not a permutation of the
+source tensor. Thus the correction already lies in the row space of the
+outer suffix stack. Continue until \(v_j\) reaches the coefficient.
 
 The diagonal block is a composition of conjugates of \(\Psi\) by spectator
 encoders, hence is invertible. Downward induction on \(j\) gives a block
 triangular operator with invertible diagonal. The same induction beginning at
 any \(k\) proves the suffix statement. ∎
+
+Equivalently, if
+
+\[
+D_{m,j}:=\delta_{m,j}J_m,
+\qquad
+S_{m,j}:=J_{m-1}M_{m,j},
+\]
+
+then the proof constructs an invertible block-triangular target operator
+\(\mathcal U_m\) such that
+
+\[
+\boxed{
+\begin{bmatrix}
+D_{m,1}\\ \vdots\\ D_{m,m}
+\end{bmatrix}
+=
+\mathcal U_m
+\begin{bmatrix}
+S_{m,1}\\ \vdots\\ S_{m,m}
+\end{bmatrix}.
+}
+\tag{3.3a}
+\]
+
+Its off-diagonal blocks include the target permutations described above;
+its diagonal blocks are compositions of decoder conjugates and are
+invertible by (3.2a).
 
 Consequently,
 
@@ -470,10 +514,16 @@ One simple contraction becomes the fixed map
 \tag{4.3}
 \]
 
-Direct expansion in the basis \(1,e_1,e_2,e_3\) gives
+Direct expansion in the basis \(1,e_1,e_2,e_3\) gives the stronger identity
 
 \[
+\boxed{
+\kappa^2-\kappa-2\operatorname{id}=0,
+\qquad
+\kappa^{-1}=\frac12(\kappa-\operatorname{id}),
+\qquad
 \det\kappa=16.
+}
 \tag{4.4}
 \]
 
@@ -912,8 +962,8 @@ The certificate uses only Python's standard library and exact
 `fractions.Fraction` arithmetic. It verifies:
 
 - the quaternion slide identity (3.1) on the full basis;
-- \(\det\Psi=16\);
-- \(\det\kappa=16\);
+- \(\Psi^2+\Psi-2I=0\) and \(\det\Psi=16\);
+- \(\kappa^2-\kappa-2I=0\) and \(\det\kappa=16\);
 - equality of every actual-deletion and simple-contraction suffix row space
   for \(m=1,2,3,4\);
 - \(\dim K_m=4(m+1)\) for \(m=1,2,3,4\);
@@ -931,6 +981,17 @@ Expected final line:
 ```text
 ALL CHECKS PASSED
 ```
+
+An auxiliary first-unseen-rung stress check is available as
+
+```bash
+python3 certificates/n7_local_descent_modular_stress.py
+```
+
+It compares the full actual, simple, and joined row spaces at \(m=5\) over
+\(\mathbb F_{1009}\) and \(\mathbb F_{1013}\). All three ranks are \(948\),
+so the common kernel has dimension \(972-948=24=4(m+1)\). This modular check
+is not used to prove the all-\(m\) theorem.
 
 ---
 

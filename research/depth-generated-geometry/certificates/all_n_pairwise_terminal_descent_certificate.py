@@ -18,8 +18,9 @@ Second, the common simple-contraction kernel is
 
     ker(M_1,...,M_m) = S^m_0 V + S^{m+1}_0 V.
 
-This certificate checks the fixed local decoders, the exact row-space
-triangularization through m=4, and the explicit Cartan section through m=4.
+This certificate checks the fixed local decoders and their quadratic inverse
+identities, the exact row-space triangularization through m=4, and the
+explicit Cartan section through m=4.
 It uses only fractions.Fraction arithmetic from the Python standard library.
 The finite checks are evidence for the symbolic all-m proof, not a replacement
 for it.
@@ -153,8 +154,22 @@ def antisymmetric_decoder():
                             ),
                         )
                 for component, entry in enumerate(value):
-                    matrix[4 * remaining + component, column] = entry
+                    # Use the same H-major ordering on source and target:
+                    # (quaternion component, V index).
+                    matrix[3 * component + remaining, column] = entry
     return matrix
+
+
+def subtract_polynomial(linear, square, linear_coefficient, scalar):
+    """Return square + a*linear + b*I for a square exact matrix."""
+
+    result = Mat([row[:] for row in square.data])
+    for row in range(result.nrows):
+        for column in range(result.ncols):
+            result[row, column] += linear_coefficient * linear[row, column]
+            if row == column:
+                result[row, column] += scalar
+    return result
 
 
 def joint_simple_contractions(depth):
@@ -256,11 +271,26 @@ def report():
 
     psi = metric_decoder()
     antisymmetric = antisymmetric_decoder()
+    psi_polynomial = subtract_polynomial(psi, psi * psi, 1, -2)
+    antisymmetric_polynomial = subtract_polynomial(
+        antisymmetric,
+        antisymmetric * antisymmetric,
+        -1,
+        -2,
+    )
     check("the quaternion slide identity holds on the full basis", local_identity)
     check("the metric decoder Psi is invertible with determinant 16", psi.det() == 16)
     check(
+        "Psi satisfies Psi^2+Psi-2I=0, so Psi inverse is (Psi+I)/2",
+        psi_polynomial == Mat.zeros(12, 12),
+    )
+    check(
         "the antisymmetric decoder is invertible with determinant 16",
         antisymmetric.det() == 16,
+    )
+    check(
+        "kappa satisfies kappa^2-kappa-2I=0, so kappa inverse is (kappa-I)/2",
+        antisymmetric_polynomial == Mat.zeros(12, 12),
     )
 
     for depth in range(1, 5):

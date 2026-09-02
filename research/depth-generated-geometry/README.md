@@ -4,6 +4,10 @@
 
 自由数の probe-depth filtration から、depth-gated observability を独立した代数幾何プログラムとして切り出す研究ノート群。
 
+## Start here
+
+[`notes/00-checkpoint-through-note12.md`](notes/00-checkpoint-through-note12.md) は、Note 01–12 の定理依存、次元表、到達点、未解決境界、および proof audit を一枚にまとめた入口である。
+
 ## Claim boundary
 
 - **Proved:** probe depth は識別可能性と再構成の有限 filtration を与える。
@@ -48,6 +52,10 @@
 - \(n=4,5,6\) の個別 exactness を普遍定理の事例へ引き上げ、matching rank・compatible boundary dimension・first syzygy character の全長公式を得た。
 
 ## Reading order
+
+0. [`notes/00-checkpoint-through-note12.md`](notes/00-checkpoint-through-note12.md)
+
+   Note 12 までの統合地図。最初に全体と claim boundary を確認するための checkpoint。
 
 1. [`notes/01-n2-intrinsic-response-tower.md`](notes/01-n2-intrinsic-response-tower.md)  
    最小反転定理。深度1の許容条件は「応答の虚部が自己共役」。
@@ -103,11 +111,12 @@ python3 certificates/all_n_terminal_boundary_certificate.py
 python3 certificates/n5_response_tetrahedron_certificate.py
 python3 certificates/all_n_pairwise_terminal_descent_certificate.py
 python3 certificates/n6_response_4simplex_modular_certificate.py
+python3 certificates/n7_local_descent_modular_stress.py
 ```
 
 最初の八本は外部ライブラリを使わず、有理数上の完全計算で (n=2) の内在的応答塔、(n=3,d=1) の fiber product、(n=3,\ldots,7) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex、\(n=4,d=3\) の canonical terminal splitting、\(n=2,\ldots,5\) の terminal boundary theorem、\(n=5\) response tetrahedron の pairwise gluing と16次元 syzygy、および all-\(n\) descent proof の固定局所恒等式と \(m\le4\) Cartan kernel を検証する。
 
-最後の \(n=6\) certificate は NumPy を整数行列の格納と有限体上の行基本変形にだけ用いる。浮動小数点計算は行わず、\(\mathbb F_{1009}\) と \(\mathbb F_{1013}\) 上で rank 904 を独立に確認する。有理数上の rank 上界 904 と modular minor の下界を合わせることで、\(\mathbb Q\) 上の exactness と176次元 syzygy を証明する。
+最後の二本は NumPy を整数行列の格納と有限体上の行基本変形にだけ用い、浮動小数点計算は行わない。\(n=6\) certificate は \(\mathbb F_{1009}\) と \(\mathbb F_{1013}\) 上で rank 904 を独立に確認し、有理数上の rank 上界と modular minor の下界から \(\mathbb Q\) 上の exactness と176次元 syzygy を証明する。\(n=7\) local stress certificate は all-\(n\) proof の代用ではなく、最初の未使用局所次数 \(m=5\) で actual/simple/joined rank 948 と kernel dimension 24 を両素数体上で検査する。
 
 Expected final line:
 
