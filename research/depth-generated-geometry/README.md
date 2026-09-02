@@ -26,7 +26,11 @@
 - **Proved at \(n=6\):** 1080個の matching coordinates の compatibility syzygy は176次元で、\(10V_0\oplus21V_1\oplus15V_2\oplus4V_3\) に分解する。
 - **Proved for all \(n\):** pairwise common-shadow compatibility は terminal boundary の global filling に十分であり、\(\mathcal P_{n,n-2}=\ker\partial_n\) となる。
 - **Proved for all \(n\):** 最初の compatibility syzygy は普遍 character law を持ち、\(n=7\) では1200次元 \(45V_0\oplus100V_1\oplus90V_2\oplus45V_3\oplus10V_4\) となる。
-- **Open:** canonical filler 自体の短い局所公式、syzygy を生成する局所 higher differential、full intermediate filtration、および transport / curvature との接続。
+- **Constructed for all \(n\ge5\):** 四つの face と六つの edge の局所 cokernel から tetrahedral second differential \(\partial_n^{(2)}\) を定義し、\(\partial_n^{(2)}\partial_n=0\) を得る。
+- **Proved at \(n=5\):** \(\ker\partial_5^{(2)}=\operatorname{im}\partial_5\) が有理数上で成立し、16次元局所商は \(\mathbb H\otimes\mathbb H\) 型である。
+- **Exact-checked at \(n=6,7\):** tetrahedral second complex は二つの素数体上で middle-exact である。
+- **Exact-checked at \(n=7\):** interlaced support \(Q=(1,3,4,6)\) だけに generic local quotient より余分な \(\mathbb H\) が生じ、その全体が次の cokernel へ survive する。
+- **Open:** tetrahedral generation の all-\(n\) proof、局所写像 \(\omega_5\) の閉形式、placement-dependent quotient の分類、full intermediate filtration、および transport / curvature との接続。
 
 以下で「生成」という語を線形像・生成元の意味で使う場合を除き、確立している順序は ontological / causal order ではなく **visibility / reconstruction order** である。
 
@@ -50,6 +54,10 @@
 - response 4-simplex の matching rank 904 と176次元 syzygy \(10V_0\oplus21V_1\oplus15V_2\oplus4V_3\) を二つの素数体上の exact rank certificate から有理数上へ持ち上げた。
 - 全 \(n\ge2\) で actual face restrictions を simple slot contractions へ局所的に triangularize し、その Cartan kernel \(S^m_0V\oplus S^{m+1}_0V\) から pairwise terminal descent を証明した。
 - \(n=4,5,6\) の個別 exactness を普遍定理の事例へ引き上げ、matching rank・compatible boundary dimension・first syzygy character の全長公式を得た。
+- naive な triangle descent が存在しないことを \(n=5\) で確認し、最初の row relation の最小支持が四つの faces であることを切り出した。
+- 全 \(n\ge5\) で四面体支持の局所 cokernel を束ねた second differential を構成し、complex identity \(\partial_n^{(2)}\partial_n=0\) を得た。
+- \(n=5\) では有理数上、\(n=6,7\) では二素数体上で \(\ker\partial_n^{(2)}=\operatorname{im}\partial_n\) を確認した。
+- \(n=7\) で、単純な spectator tensor law を破る interlaced \(\mathbb H\) residual を初めて検出した。
 
 ## Reading order
 
@@ -99,6 +107,10 @@
 
     局所 quaternion slide、Cartan kernel、last-face correction による全 \(n\) pairwise descent と普遍 syzygy law。
 
+13. [`notes/13-tetrahedral-second-differential.md`](notes/13-tetrahedral-second-differential.md)
+
+    四面体支持の second differential、\(n=5,6,7\) middle exactness、および \(n=7\) interlaced quaternionic residual。
+
 ## Exact certificate
 
 ```bash
@@ -112,11 +124,13 @@ python3 certificates/n5_response_tetrahedron_certificate.py
 python3 certificates/all_n_pairwise_terminal_descent_certificate.py
 python3 certificates/n6_response_4simplex_modular_certificate.py
 python3 certificates/n7_local_descent_modular_stress.py
+python3 certificates/second_response_simplex_differential_certificate.py
+python3 certificates/n7_tetrahedral_syzygy_modular_stress.py
 ```
 
 最初の八本は外部ライブラリを使わず、有理数上の完全計算で (n=2) の内在的応答塔、(n=3,d=1) の fiber product、(n=3,\ldots,7) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex、\(n=4,d=3\) の canonical terminal splitting、\(n=2,\ldots,5\) の terminal boundary theorem、\(n=5\) response tetrahedron の pairwise gluing と16次元 syzygy、および all-\(n\) descent proof の固定局所恒等式と \(m\le4\) Cartan kernel を検証する。
 
-最後の二本は NumPy を整数行列の格納と有限体上の行基本変形にだけ用い、浮動小数点計算は行わない。\(n=6\) certificate は \(\mathbb F_{1009}\) と \(\mathbb F_{1013}\) 上で rank 904 を独立に確認し、有理数上の rank 上界と modular minor の下界から \(\mathbb Q\) 上の exactness と176次元 syzygy を証明する。\(n=7\) local stress certificate は all-\(n\) proof の代用ではなく、最初の未使用局所次数 \(m=5\) で actual/simple/joined rank 948 と kernel dimension 24 を両素数体上で検査する。
+NumPy を使う四本は、整数行列の格納と有限体上の行基本変形にだけ用い、浮動小数点計算は行わない。\(n=6\) certificate は \(\mathbb F_{1009}\) と \(\mathbb F_{1013}\) 上で rank 904 を独立に確認し、有理数上の rank 上界と modular minor の下界から \(\mathbb Q\) 上の exactness と176次元 syzygy を証明する。\(n=7\) local descent stress は all-\(n\) proof の代用ではなく、最初の未使用局所次数 \(m=5\) を検査する。新しい second-differential certificate は \(n=5\) を有理数上、\(n=6\) を両素数体上で検証する。\(n=7\) tetrahedral stress は十五の局所商、middle exactness、interlaced residual、および次余核の Casimir 型を両素数体上で検査する。
 
 Expected final line:
 
@@ -126,20 +140,23 @@ ALL CHECKS PASSED
 
 ## Next target
 
-pairwise terminal descent は全 \(n\) で成立した。次の主標的は、普遍 cokernel
+pairwise terminal descent は全 \(n\) で成立し、tetrahedral second map も構成された。次の主標的は、最小局所商を quotient basis なしに与える短い四元数写像
 
 \[
-\mathfrak S_n=\operatorname{coker}\partial_n
+\omega_5:\mathcal R_2^{\oplus6}
+\longrightarrow\mathbb H\otimes\mathbb H,
+\qquad
+\ker\omega_5=\operatorname{im}\partial_5
 \]
 
-を quotient 定義によらず局所 higher differential の kernel または image として実現し、response-simplex complex の次段
+を明示することである。これを spectator variables へ transport し、\(n=7\) で初出した placement correction を分類できれば、response-simplex complex
 
 \[
 C_n^0\xrightarrow{\partial_n}C_n^1
 \xrightarrow{\partial_n^{(2)}}C_n^2
 \]
 
-を構成することである。\(n=5\) の16次元と \(n=6\) の176次元はその最初の有限モデルとなる。\(n=7\) の1200次元 syzygy は、もはや大規模 rank 計算による予想ではなく全長定理の帰結である。
+の middle exactness を全 \(n\) へ上げる道が開く。
 
 Casimir complement 上の逆写像として得られた canonical section の短い response-side 局所公式も引き続き open である。
 
