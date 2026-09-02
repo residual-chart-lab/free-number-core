@@ -997,6 +997,18 @@ is not used to prove the all-\(m\) theorem.
 
 ## 10. Next target
 
+**Retrospective after Note 13.** The abstract second map requested below has
+now been constructed from four-face local cokernels. It satisfies
+
+\[
+\partial_n^{(2)}\partial_n=0
+\]
+
+for every \(n\ge5\), and middle exactness is established at \(n=5\) over
+\(\mathbb Q\) and checked at \(n=6,7\) over two prime fields. The remaining
+target is no longer the existence of a second map, but its short local
+quaternionic formula and the all-\(n\) exactness proof.
+
 The all-length question is no longer whether a larger isolated simplex still
 glues. It does.
 
