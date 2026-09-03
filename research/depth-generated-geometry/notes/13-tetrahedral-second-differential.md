@@ -58,7 +58,7 @@ vertices. In the first three nontrivial lengths,
 \[
 \boxed{
 \ker\partial_n^{(2)}=\operatorname{im}\partial_n
-\quad\(n=5,6,7\),
+\quad(n=5,6,7),
 }
 \tag{0.4}
 \]
@@ -230,7 +230,7 @@ Taking the direct sum over all \(Q\) gives the all-length identity
 \[
 \boxed{
 \partial_n^{(2)}\partial_n=0
-\qquad\(n\ge5\).
+\qquad(n\ge5).
 }
 \tag{3.3}
 \]
@@ -414,15 +414,25 @@ Exactly one support is different:
 
 \[
 \boxed{
-Q_{\mathrm{int}}=(1,3,4,6).
+Q_{212}=(1,3,4,6).
 }
 \tag{6.5}
 \]
 
-For this interlaced placement,
+Its consecutive spacing vector is
 
 \[
-\dim Y_{7,Q_{\mathrm{int}}}=148
+(3-1,4-3,6-4)=(2,1,2).
+\tag{6.5a}
+\]
+
+This support will therefore be called the **exceptional \(2\!-!1\!-!2\)
+placement**. The earlier label “interlaced” was provisional: the intervals
+\([1,3]\) and \([4,6]\) are disjoint in the standard order-theoretic sense,
+so that word should not carry mathematical weight here. For this placement,
+
+\[
+\dim Y_{7,Q_{212}}=148
 \tag{6.6}
 \]
 
@@ -430,7 +440,7 @@ and
 
 \[
 \boxed{
-Y_{7,Q_{\mathrm{int}}}
+Y_{7,Q_{212}}
 \cong
 7V_0\oplus14V_1\oplus11V_2\oplus5V_3\oplus V_4.
 }
@@ -444,6 +454,38 @@ V_0\oplus V_1\cong\mathbb H.
 \tag{6.8}
 \]
 
+Note 15 refines this total-module comparison by retaining the six labelled
+edge images. Over both tested prime fields, the two exceptional outer images
+coincide in a 144-dimensional subspace
+
+\[
+E_{12}=E_{34}=:W_{\mathrm{out}},
+\tag{6.8a}
+\]
+
+and the residual is the canonical quotient
+
+\[
+K_{212}:=Y_{7,Q_{212}}/W_{\mathrm{out}}\cong\mathbb H.
+\tag{6.8b}
+\]
+
+Exactly the four cross edges \(13,14,23,24\) surject onto (6.8b) in both
+fields. Thus the four-dimensional difference is a single shared
+edge-incidence channel, not only a multiplicity increase in the total
+character.
+
+Note 16 then realizes the quotient by the two outer images directly over
+\(\mathbb Q\), through the closed square operator
+
+\[
+\kappa_{212}(F_{13},F_{14},F_{23},F_{24})
+=
+\varepsilon_4(F_{13})-\varepsilon_4(F_{14})
+-\varepsilon_4(F_{23})+\varepsilon_4(F_{24}).
+\tag{6.8c}
+\]
+
 Thus the naive spectator law
 
 \[
@@ -453,7 +495,8 @@ Y_{n,Q}\stackrel{?}{\cong}
 \]
 
 is false without a placement correction. The first counterterm is a local
-quaternionic residual carried by one interlaced four-support.
+quaternionic residual carried by the exceptional \(2\!-!1\!-!2\)
+four-support.
 
 Summing all fifteen targets gives
 
@@ -519,7 +562,7 @@ virtual result would instead be
 The difference between (6.15) and (6.16) is again exactly \(\mathbb H\).
 
 This is the first explicit response residual which depends not only on the
-number of selected blocks but on how their positions interlace.
+number of selected blocks but on their ordered placement.
 
 ---
 
@@ -561,7 +604,8 @@ This separates two statements which should not be conflated:
 1. **generation conjecture:** four-face supports generate all first
    syzygies;
 2. **local classification problem:** determine the placement-dependent
-   module \(Y_{n,Q}\).
+   decorated quotient
+   \((Y_{n,Q};E_{12},E_{13},E_{14},E_{23},E_{24},E_{34})\).
 
 The \(n=7\) result strengthens the first while disproving the simplest answer
 to the second.
@@ -604,9 +648,10 @@ to the beginning of an actual higher complex.
 
 The important surprise is that ordered quaternion multiplication does not
 produce an ordinary simplicial or Čech complex. Triangle descent fails, four-
-face descent succeeds in the checked range, and interlacing changes the local
-quotient at \(n=7\). The higher object is therefore sensitive to the residual
-order which ordinary set-theoretic incidence forgets.
+face descent succeeds in the checked range, and the \(2\!-!1\!-!2\)
+placement changes the local quotient at \(n=7\). The higher object is
+therefore sensitive to the residual order which ordinary set-theoretic
+incidence forgets.
 
 ---
 
@@ -616,11 +661,12 @@ This note does **not** prove:
 
 - exactness of (0.3) at \(C_n^1\) for arbitrary \(n\);
 - a closed local quaternion formula for \(q_{n,Q}\);
-- a classification of \(Y_{n,Q}\) by the placement pattern of \(Q\);
+- a general all-\(n\) classification of the decorated local quotients by
+  spectator placement;
 - a third differential out of \(C_n^2\);
 - characteristic-zero versions of the full \(n=6,7\) quotient decompositions;
-- that the interlaced \(\mathbb H\) is curvature, gauge field, holonomy, or a
-  physical force.
+- that the exceptional \(2\!-!1\!-!2\) \(\mathbb H\) is curvature, gauge
+  field, holonomy, or a physical force.
 
 What has been isolated is more conservative and more useful: a precise
 placement-sensitive algebraic residual which survives one additional descent
@@ -635,6 +681,9 @@ Run from `research/depth-generated-geometry`:
 ```bash
 python3 certificates/second_response_simplex_differential_certificate.py
 python3 certificates/n7_tetrahedral_syzygy_modular_stress.py
+python3 certificates/spectator_placement_residual_certificate.py
+python3 certificates/n7_exceptional_square_operator_certificate.py
+python3 certificates/n6_capped_five_edge_operator_certificate.py
 ```
 
 The first certificate checks:
@@ -655,16 +704,29 @@ The second certificate checks, independently over both prime fields:
 - exactness at \(C_7^1\);
 - the 964-dimensional second cokernel and its actual Casimir type.
 
-Both scripts use exact rational or finite-field arithmetic only. NumPy is a
+The third certificate checks every labelled edge-image rank and Casimir
+profile at \(n=6,7\), including the central-interval defects, equality of
+the two exceptional outer images, and surjectivity of exactly the four cross
+edges onto \(K_{212}\).
+
+The fourth certificate proves the paired-collapse identities and square
+cancellation exactly, then uses two modular minors to lift the
+\(n=7\) cross-square exactness to \(\mathbb Q\).
+
+The fifth certificate proves the left/right cap identities exactly, then
+uses two modular minors to lift the \(n=6\) central-spectator five-edge
+exactness to \(\mathbb Q\).
+
+All five scripts use exact rational or finite-field arithmetic only. NumPy is a
 storage and integer row-operation backend; floating-point arithmetic is not
 used.
 
 ---
 
-## 11. Next target
+## 11. Next target — updated by Notes 14–18
 
-The shortest route to an all-\(n\) theorem is to replace the quotient-basis
-construction at \(n=5\) by a direct quaternionic operator
+Note 14 has now replaced the quotient-basis construction at \(n=5\) by the
+direct quaternionic operator
 
 \[
 \boxed{
@@ -678,16 +740,36 @@ construction at \(n=5\) by a direct quaternionic operator
 \tag{11.1}
 \]
 
-One should then:
+with a closed formula built from five explicit quaternionic operations. It
+also isolates a central four-dimensional image \(K_4\cong\mathbb H\) inside
+\(\mathbb H\otimes\mathbb H\).
 
-1. transport \(\omega_5\) through spectator variables;
-2. determine when ordered placements introduce correction summands such as
-   the \(n=7\) interlaced \(\mathbb H\);
+Note 15 shows that a placement-blind tensor transport cannot preserve the
+six edge images. Note 16 realizes the exceptional quotient directly as the
+alternating paired-collapse square \(\kappa_{212}\), and extends that
+quaternionic square complex to every odd length on odd-odd
+\(\mid\) even-even supports. Note 17 realizes the central \(n=6\) defect as
+a left/right capped five-edge operator and extends that complex to every
+even length on odd-even-even-odd supports. Their identification with
+\(K_4\) remains open. Note 18 removes one ambiguity from that problem:
+\(K_4=\iota(\mathbb H)\) now has the canonical coordinate
+\(\nu=\frac14\iota^*\), an orthogonal complement, and an explicit
+six-edge incidence table.
+
+The remaining program is therefore:
+
+1. transport \(\omega_5\) through spectator variables with an explicit
+   order-sensitive slide/correction which recovers both the cap and square
+   decoders;
+2. recover the complete \(n=6,7\) decorated edge-image profiles from that
+   transport and test whether it identifies \(K_4\) with \(K_{212}\);
 3. prove that all first syzygies are generated by these corrected
    tetrahedral operators;
 4. only after that, construct the third differential and compare multiple
    transport paths.
 
 The immediate mathematical target is therefore not curvature. It is the
-closed local formula for \(\omega_5\). That formula is the bridge between the
-finite certificates and the all-length tetrahedral-generation theorem.
+placement-aware spectator transport of the now-closed \(\omega_5\) and the
+exact origin of the measured edge-image corrections. That calculation is
+the bridge between the finite certificates and the all-length tetrahedral-
+generation theorem.

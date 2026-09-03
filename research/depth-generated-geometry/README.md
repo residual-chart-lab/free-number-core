@@ -29,8 +29,17 @@
 - **Constructed for all \(n\ge5\):** 四つの face と六つの edge の局所 cokernel から tetrahedral second differential \(\partial_n^{(2)}\) を定義し、\(\partial_n^{(2)}\partial_n=0\) を得る。
 - **Proved at \(n=5\):** \(\ker\partial_5^{(2)}=\operatorname{im}\partial_5\) が有理数上で成立し、16次元局所商は \(\mathbb H\otimes\mathbb H\) 型である。
 - **Exact-checked at \(n=6,7\):** tetrahedral second complex は二つの素数体上で middle-exact である。
-- **Exact-checked at \(n=7\):** interlaced support \(Q=(1,3,4,6)\) だけに generic local quotient より余分な \(\mathbb H\) が生じ、その全体が次の cokernel へ survive する。
-- **Open:** tetrahedral generation の all-\(n\) proof、局所写像 \(\omega_5\) の閉形式、placement-dependent quotient の分類、full intermediate filtration、および transport / curvature との接続。
+- **Exact-checked at \(n=7\):** exceptional \(2\!-!1\!-!2\) support \(Q=(1,3,4,6)\) だけに generic local quotient より余分な \(\mathbb H\) が生じ、その全体が次の cokernel へ survive する。
+- **Proved at \(n=5\):** 16次元 tetrahedral quotient は五つの明示的な四元数作用素からなる閉写像 \(\omega_5:\mathcal R_2^{\oplus6}\to\mathbb H\otimes\mathbb H\) で実現され、\(\ker\omega_5=\operatorname{im}\partial_5\) である。
+- **Proved at \(n=5\):** \(\omega_5\) の edge images は \(16,12,16,4,12,16\) 次元となり、共通12次元 channel と中央 \(\mathbb H\) channel が \(\mathbb H\otimes\mathbb H\) を直和分解する。
+- **Proved at \(n=5\):** 中央 channel は Frobenius 埋込み \(\iota(q)=\sum_\alpha e_\alpha\otimes qe_\alpha\) の像であり、\(\nu=\frac14\iota^*\) が canonical quaternion coordinate を与える。\(12+4\) 分解は直交し、六つの labelled edge の中央成分も閉形式で決まる。
+- **Exact-checked at \(n=6,7\):** total local quotient が同型でも、六つの labelled edge images は spectator placement を記憶する。中央区間への挿入は long-edge image から \(\mathbb H\) または \(\mathbb H\otimes V\) を隠す。
+- **Exact-checked at \(n=7\):** exceptional \(2\!-!1\!-!2\) residual は、等しい二つの outer-edge images による144次元 core の商として canonical に切り出され、四つの cross edges だけがその \(\mathbb H\) へ全射する。
+- **Proved for every odd \(n\ge7\):** odd-odd \(\mid\) even-even support では、adjacent-pair metric collapse の \(+,-,-,+\) square operator が cross-edge matching を消し、cokernel から \(\mathbb H\) への canonical surjection を与える。
+- **Proved over \(\mathbb Q\) at \(n=7\):** exceptional \((1,3\mid4,6)\) cross square の cokernel はちょうど \(\mathbb H\) で、閉形式 \(\kappa_{212}\) により完全に検出される。
+- **Proved for every even \(n\ge6\):** odd-even-even-odd support では、left/right cap collapse の五辺作用素が matching を消し、cokernel から \(\mathbb H\) への canonical surjection を与える。
+- **Proved over \(\mathbb Q\) at \(n=6\):** central-spectator quotient \(Y_{6,(1,2,4,5)}/E_{14}\) はちょうど \(\mathbb H\) で、閉形式 \(\chi_6=(-\lambda^L,+\lambda^L,0,-\lambda^R,+\lambda^R)\) により完全に検出される。
+- **Open:** tetrahedral generation の all-\(n\) proof、placement-aware spectator transport、decorated quotient の一般分類、full intermediate filtration、および transport / curvature との接続。
 
 以下で「生成」という語を線形像・生成元の意味で使う場合を除き、確立している順序は ontological / causal order ではなく **visibility / reconstruction order** である。
 
@@ -57,7 +66,18 @@
 - naive な triangle descent が存在しないことを \(n=5\) で確認し、最初の row relation の最小支持が四つの faces であることを切り出した。
 - 全 \(n\ge5\) で四面体支持の局所 cokernel を束ねた second differential を構成し、complex identity \(\partial_n^{(2)}\partial_n=0\) を得た。
 - \(n=5\) では有理数上、\(n=6,7\) では二素数体上で \(\ker\partial_n^{(2)}=\operatorname{im}\partial_n\) を確認した。
-- \(n=7\) で、単純な spectator tensor law を破る interlaced \(\mathbb H\) residual を初めて検出した。
+- \(n=7\) で、単純な spectator tensor law を破る exceptional \(2\!-!1\!-!2\) \(\mathbb H\) residual を初めて検出した。
+- \(n=5\) の16次元 tetrahedral quotient を quotient basis から解放し、五つの \(SO(3)\)-natural quaternion operators による閉形式 \(\omega_5\) として実現した。
+- \(\omega_5\) の内部に \((\mathbb H\otimes V)\oplus\mathbb H\) という \(12+4\) channel decomposition を同定した。
+- 中央 channel を \(K_4=\iota(\mathbb H)\) と同定し、\(\mathbb H\otimes\mathbb H=W_{12}\overset{\perp}{\oplus}K_4\) および projector \(P_{K_4}=\frac14\iota\iota^*\) を得た。
+- canonical coordinate \(\nu=\frac14\iota^*\) により六つの seed edge の中央成分を \((+\,\frac14uv\bar h,0,-\,\frac14uv\bar h,-\,\frac14uv(\bar h+2h),0,+\,\frac14uv\bar h)\) として完全に書き下した。
+- \(n=6,7\) の全四面体支持について、total quotient に加えて六つの labelled edge images の rank と Casimir profile を二素数体上で完全分類した。
+- 同じ total \(SO(3)\)-type の背後に spectator placement が edge-incidence data として残ることを検出し、中央挿入の \(\mathbb H\) / \(\mathbb H\otimes V\) defect を分離した。
+- exceptional \(2\!-!1\!-!2\) の148次元商を、144次元 outer core と canonical cross-edge quotient \(K_{212}\cong\mathbb H\) に分解した。
+- 偶数深度 response の adjacent-pair metric collapse \(\varepsilon_{2r}\) を構成し、odd-before-even の actual common shadows がすべて同じ reverse quaternion product へ落ちる全 \(r\) 恒等式を証明した。
+- この parity-collapse から全奇数 \(n\ge7\) の quaternionic square complex を構成し、\(n=7\) では \(3888\to1296\to4\) の exact sequence を有理数上で閉じた。
+- 奇数深度 response の left/right cap collapses \(\lambda_{2r+1}^L,\lambda_{2r+1}^R\) を構成し、odd-even / even-odd の actual common shadows を同じ total product へ落とす全 \(r\) 恒等式を証明した。
+- この cap-collapse から全偶数 \(n\ge6\) の capped five-edge complex を構成し、\(n=6\) では \(1296\to540\to4\) の exact sequence と central-spectator quotient を有理数上で閉じた。
 
 ## Reading order
 
@@ -109,7 +129,27 @@
 
 13. [`notes/13-tetrahedral-second-differential.md`](notes/13-tetrahedral-second-differential.md)
 
-    四面体支持の second differential、\(n=5,6,7\) middle exactness、および \(n=7\) interlaced quaternionic residual。
+    四面体支持の second differential、\(n=5,6,7\) middle exactness、および \(n=7\) exceptional \(2\!-!1\!-!2\) quaternionic residual。
+
+14. [`notes/14-closed-quaternionic-tetrahedral-operator.md`](notes/14-closed-quaternionic-tetrahedral-operator.md)
+
+    五つの明示的 quaternion operators による \(\omega_5\) の閉形式、tetrahedral exact sequence、および target 内部の \(12+4\) channel decomposition。
+
+15. [`notes/15-spectator-placement-residuals.md`](notes/15-spectator-placement-residuals.md)
+
+    六つの labelled edge images による配置記憶、中央 spectator defect、および exceptional \(2\!-!1\!-!2\) の canonical quaternionic cross-edge quotient。
+
+16. [`notes/16-parity-square-quaternionic-residual.md`](notes/16-parity-square-quaternionic-residual.md)
+
+    adjacent-pair metric collapse、全奇数長の parity-square complex、および \(n=7\) exceptional cross-square cokernel の閉四元数公式。
+
+17. [notes/17-even-length-capped-five-edge-residual.md](notes/17-even-length-capped-five-edge-residual.md)
+
+    left/right cap collapse、全偶数長の odd-even-even-odd complex、および \(n=6\) central-spectator quotient の閉四元数公式。
+
+18. [notes/18-canonical-seed-quaternion-coordinate.md](notes/18-canonical-seed-quaternion-coordinate.md)
+
+    Frobenius 埋込みによる seed \(K_4\) の canonical quaternion coordinate、直交 \(12+4\) 分解、および六辺すべての中央成分。
 
 ## Exact certificate
 
@@ -122,15 +162,20 @@ python3 certificates/n4_canonical_filling_certificate.py
 python3 certificates/all_n_terminal_boundary_certificate.py
 python3 certificates/n5_response_tetrahedron_certificate.py
 python3 certificates/all_n_pairwise_terminal_descent_certificate.py
+python3 certificates/n5_quaternionic_second_differential_certificate.py
+python3 certificates/n5_central_channel_factorization_certificate.py
 python3 certificates/n6_response_4simplex_modular_certificate.py
 python3 certificates/n7_local_descent_modular_stress.py
 python3 certificates/second_response_simplex_differential_certificate.py
 python3 certificates/n7_tetrahedral_syzygy_modular_stress.py
+python3 certificates/spectator_placement_residual_certificate.py
+python3 certificates/n7_exceptional_square_operator_certificate.py
+python3 certificates/n6_capped_five_edge_operator_certificate.py
 ```
 
-最初の八本は外部ライブラリを使わず、有理数上の完全計算で (n=2) の内在的応答塔、(n=3,d=1) の fiber product、(n=3,\ldots,7) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex、\(n=4,d=3\) の canonical terminal splitting、\(n=2,\ldots,5\) の terminal boundary theorem、\(n=5\) response tetrahedron の pairwise gluing と16次元 syzygy、および all-\(n\) descent proof の固定局所恒等式と \(m\le4\) Cartan kernel を検証する。
+最初の十本は外部ライブラリを使わず、有理数上の完全計算で (n=2) の内在的応答塔、(n=3,d=1) の fiber product、(n=3,\ldots,7) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex、\(n=4,d=3\) の canonical terminal splitting、\(n=2,\ldots,5\) の terminal boundary theorem、\(n=5\) response tetrahedron の pairwise gluing と16次元 syzygy、all-\(n\) descent proof の固定局所恒等式、閉形式 \(\omega_5\) とその \(12+4\) channel decomposition、および seed \(K_4\) の Frobenius factorization と直交 projector を検証する。
 
-NumPy を使う四本は、整数行列の格納と有限体上の行基本変形にだけ用い、浮動小数点計算は行わない。\(n=6\) certificate は \(\mathbb F_{1009}\) と \(\mathbb F_{1013}\) 上で rank 904 を独立に確認し、有理数上の rank 上界と modular minor の下界から \(\mathbb Q\) 上の exactness と176次元 syzygy を証明する。\(n=7\) local descent stress は all-\(n\) proof の代用ではなく、最初の未使用局所次数 \(m=5\) を検査する。新しい second-differential certificate は \(n=5\) を有理数上、\(n=6\) を両素数体上で検証する。\(n=7\) tetrahedral stress は十五の局所商、middle exactness、interlaced residual、および次余核の Casimir 型を両素数体上で検査する。
+NumPy を使う七本は、整数行列の格納と有限体上の行基本変形にだけ用い、浮動小数点計算は行わない。\(n=6\) certificate は \(\mathbb F_{1009}\) と \(\mathbb F_{1013}\) 上で rank 904 を独立に確認し、有理数上の rank 上界と modular minor の下界から \(\mathbb Q\) 上の exactness と176次元 syzygy を証明する。\(n=7\) local descent stress は all-\(n\) proof の代用ではなく、最初の未使用局所次数 \(m=5\) を検査する。second-differential certificate は \(n=5\) を有理数上、\(n=6\) を両素数体上で検証する。\(n=7\) tetrahedral stress は十五の局所商、middle exactness、exceptional \(2\!-!1\!-!2\) residual、および次余核の Casimir 型を両素数体上で検査する。spectator-placement certificate は \(n=6,7\) の全 labelled edge-image profile と canonical outer-core quotient を同じ二素数体上で検査する。exceptional-square certificate は paired collapse と square cancellation を有理数上で確認し、二つの modular minors から cross-square exactness を \(\mathbb Q\) 上へ持ち上げる。capped-five-edge certificate は left/right cap identities を整数上で確認し、二つの modular minors から \(n=6\) central-spectator quotient の exactness を \(\mathbb Q\) 上へ持ち上げる。
 
 Expected final line:
 
@@ -140,7 +185,7 @@ ALL CHECKS PASSED
 
 ## Next target
 
-pairwise terminal descent は全 \(n\) で成立し、tetrahedral second map も構成された。次の主標的は、最小局所商を quotient basis なしに与える短い四元数写像
+pairwise terminal descent は全 \(n\) で成立し、tetrahedral second map も構成された。さらに Note 14 で、最小局所商は quotient basis なしの閉四元数写像
 
 \[
 \omega_5:\mathcal R_2^{\oplus6}
@@ -149,14 +194,30 @@ pairwise terminal descent は全 \(n\) で成立し、tetrahedral second map も
 \ker\omega_5=\operatorname{im}\partial_5
 \]
 
-を明示することである。これを spectator variables へ transport し、\(n=7\) で初出した placement correction を分類できれば、response-simplex complex
+として解決した。Note 15 は、placement-blind な spectator tensor law では不十分であることを edge-image incidence から示した。次の主標的は、五つの primitive operators に order-sensitive slide/correction を加え、\(n=6,7\) の全 decorated local quotients
+
+\[
+\mathscr Y_{n,Q}
+=
+\left(Y_{n,Q};E_{12},E_{13},E_{14},E_{23},E_{24},E_{34}\right)
+\]
+
+を同じ placement-aware transport law から回収することである。
+
+Note 16 は exceptional spacing \((2,1,2)\) の cross-edge quotient を、paired collapse
+
+\[
+\varepsilon_4(F)=\sum_{a,b}F(e_a,e_a,e_b,e_b)
+\]
+
+の alternating square \(\kappa_{212}\) として有理数上で閉じた。さらに odd-odd \(\mid\) even-even support へ同じ構成が全奇数長で伸びる。Note 17 は \(n=6\) central-spectator quotient を left/right cap collapse \(\chi_6\) として有理数上で閉じ、odd-even-even-odd support へ全偶数長で伸ばした。Note 18 は seed channel を \(K_4=\iota(\mathbb H)\) と固定し、\(\nu=\frac14\iota^*\) によりその canonical quaternion coordinate と全 edge-incidence pattern を与えた。残る核心は、この固定された seed decoder と二つの exact quotient decoder を placement-aware chain transport が実際に結ぶかである。これが成立すれば、response-simplex complex
 
 \[
 C_n^0\xrightarrow{\partial_n}C_n^1
 \xrightarrow{\partial_n^{(2)}}C_n^2
 \]
 
-の middle exactness を全 \(n\) へ上げる道が開く。
+の middle exactness を全 \(n\) へ上げるための local transport law が得られる。
 
 Casimir complement 上の逆写像として得られた canonical section の短い response-side 局所公式も引き続き open である。
 

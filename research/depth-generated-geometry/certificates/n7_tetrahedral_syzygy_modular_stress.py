@@ -50,7 +50,7 @@ def run(prime):
         f"cokernel {result['cokernel_dimension']}"
     )
     for support, dimension in zip(supports, local_dimensions):
-        marker = "  <interlaced>" if support == EXCEPTIONAL_SUPPORT else ""
+        marker = "  <exceptional 2-1-2>" if support == EXCEPTIONAL_SUPPORT else ""
         print(
             f"  Q={support}: dim {dimension}, "
             f"type {local_types[support]}{marker}"
@@ -75,7 +75,7 @@ def run(prime):
             local_dimensions.count(144) == 14,
         ),
         (
-            "the interlaced quotient has dimension 148",
+            "the exceptional 2-1-2 quotient has dimension 148",
             local_dimensions[supports.index(EXCEPTIONAL_SUPPORT)] == 148,
         ),
         (
@@ -87,7 +87,7 @@ def run(prime):
             ),
         ),
         (
-            "the interlaced quotient has one extra H=V0+V1",
+            "the exceptional 2-1-2 quotient has one extra H=V0+V1",
             local_types[EXCEPTIONAL_SUPPORT] == EXCEPTIONAL_TYPE,
         ),
         (
