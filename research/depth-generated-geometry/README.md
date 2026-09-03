@@ -39,6 +39,8 @@
 - **Proved over \(\mathbb Q\) at \(n=7\):** exceptional \((1,3\mid4,6)\) cross square の cokernel はちょうど \(\mathbb H\) で、閉形式 \(\kappa_{212}\) により完全に検出される。
 - **Proved for every even \(n\ge6\):** odd-even-even-odd support では、left/right cap collapse の五辺作用素が matching を消し、cokernel から \(\mathbb H\) への canonical surjection を与える。
 - **Proved over \(\mathbb Q\) at \(n=6\):** central-spectator quotient \(Y_{6,(1,2,4,5)}/E_{14}\) はちょうど \(\mathbb H\) で、閉形式 \(\chi_6=(-\lambda^L,+\lambda^L,0,-\lambda^R,+\lambda^R)\) により完全に検出される。
+- **Proved over \(\mathbb Q\) at \(n=6\):** outer edge で規格化された一意な48次元 quotient map \(\Omega_6\) が存在し、\(\beta((x\otimes y)\otimes w)=xw\bar y\) に対して \(\beta\Omega_6=\chi_6\) となる。
+- **Proved over \(\mathbb Q\) at \(n=6\):** \(\beta\) は \(K_4\otimes V\) を全消去し、long-edge image は \(\ker\beta\) に等しい。central-spectator \(\mathbb H\) は seed \(K_4\) の直積輸送ではなく、直交 channel \(W_{12}\otimes V\) の商から生じる。
 - **Open:** tetrahedral generation の all-\(n\) proof、placement-aware spectator transport、decorated quotient の一般分類、full intermediate filtration、および transport / curvature との接続。
 
 以下で「生成」という語を線形像・生成元の意味で使う場合を除き、確立している順序は ontological / causal order ではなく **visibility / reconstruction order** である。
@@ -78,6 +80,8 @@
 - この parity-collapse から全奇数 \(n\ge7\) の quaternionic square complex を構成し、\(n=7\) では \(3888\to1296\to4\) の exact sequence を有理数上で閉じた。
 - 奇数深度 response の left/right cap collapses \(\lambda_{2r+1}^L,\lambda_{2r+1}^R\) を構成し、odd-even / even-odd の actual common shadows を同じ total product へ落とす全 \(r\) 恒等式を証明した。
 - この cap-collapse から全偶数 \(n\ge6\) の capped five-edge complex を構成し、\(n=6\) では \(1296\to540\to4\) の exact sequence と central-spectator quotient を有理数上で閉じた。
+- central \(n=6\) local quotient を outer block で seed 座標へ一意に規格化し、48次元の \(\Omega_6\) を有理数上で構成した。
+- insert-between-and-conjugate contraction \(\beta((x\otimes y)\otimes w)=xw\bar y\) が \(\beta\Omega_6=\chi_6\) を満たし、\(K_4\otimes V\subset E_{14}=\ker\beta\) となる channel transfer を証明した。
 
 ## Reading order
 
@@ -151,6 +155,10 @@
 
     Frobenius 埋込みによる seed \(K_4\) の canonical quaternion coordinate、直交 \(12+4\) 分解、および六辺すべての中央成分。
 
+19. [notes/19-central-spectator-channel-transfer.md](notes/19-central-spectator-channel-transfer.md)
+
+    outer-normalized \(n=6\) quotient、閉 contraction \(\beta(x\otimes y\otimes w)=xw\bar y\)、および \(K_4\otimes V\) から \(W_{12}\otimes V\) への channel transfer。
+
 ## Exact certificate
 
 ```bash
@@ -171,11 +179,12 @@ python3 certificates/n7_tetrahedral_syzygy_modular_stress.py
 python3 certificates/spectator_placement_residual_certificate.py
 python3 certificates/n7_exceptional_square_operator_certificate.py
 python3 certificates/n6_capped_five_edge_operator_certificate.py
+python3 certificates/n6_seed_cap_bridge_certificate.py
 ```
 
 最初の十本は外部ライブラリを使わず、有理数上の完全計算で (n=2) の内在的応答塔、(n=3,d=1) の fiber product、(n=3,\ldots,7) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex、\(n=4,d=3\) の canonical terminal splitting、\(n=2,\ldots,5\) の terminal boundary theorem、\(n=5\) response tetrahedron の pairwise gluing と16次元 syzygy、all-\(n\) descent proof の固定局所恒等式、閉形式 \(\omega_5\) とその \(12+4\) channel decomposition、および seed \(K_4\) の Frobenius factorization と直交 projector を検証する。
 
-NumPy を使う七本は、整数行列の格納と有限体上の行基本変形にだけ用い、浮動小数点計算は行わない。\(n=6\) certificate は \(\mathbb F_{1009}\) と \(\mathbb F_{1013}\) 上で rank 904 を独立に確認し、有理数上の rank 上界と modular minor の下界から \(\mathbb Q\) 上の exactness と176次元 syzygy を証明する。\(n=7\) local descent stress は all-\(n\) proof の代用ではなく、最初の未使用局所次数 \(m=5\) を検査する。second-differential certificate は \(n=5\) を有理数上、\(n=6\) を両素数体上で検証する。\(n=7\) tetrahedral stress は十五の局所商、middle exactness、exceptional \(2\!-!1\!-!2\) residual、および次余核の Casimir 型を両素数体上で検査する。spectator-placement certificate は \(n=6,7\) の全 labelled edge-image profile と canonical outer-core quotient を同じ二素数体上で検査する。exceptional-square certificate は paired collapse と square cancellation を有理数上で確認し、二つの modular minors から cross-square exactness を \(\mathbb Q\) 上へ持ち上げる。capped-five-edge certificate は left/right cap identities を整数上で確認し、二つの modular minors から \(n=6\) central-spectator quotient の exactness を \(\mathbb Q\) 上へ持ち上げる。
+NumPy を使う八本は、整数行列の格納と有限体上の行基本変形にだけ用い、浮動小数点計算は行わない。\(n=6\) certificate は \(\mathbb F_{1009}\) と \(\mathbb F_{1013}\) 上で rank 904 を独立に確認し、有理数上の rank 上界と modular minor の下界から \(\mathbb Q\) 上の exactness と176次元 syzygy を証明する。\(n=7\) local descent stress は all-\(n\) proof の代用ではなく、最初の未使用局所次数 \(m=5\) を検査する。second-differential certificate は \(n=5\) を有理数上、\(n=6\) を両素数体上で検証する。\(n=7\) tetrahedral stress は十五の局所商、middle exactness、exceptional \(2\!-!1\!-!2\) residual、および次余核の Casimir 型を両素数体上で検査する。spectator-placement certificate は \(n=6,7\) の全 labelled edge-image profile と canonical outer-core quotient を同じ二素数体上で検査する。exceptional-square certificate は paired collapse と square cancellation を有理数上で確認し、二つの modular minors から cross-square exactness を \(\mathbb Q\) 上へ持ち上げる。capped-five-edge certificate は left/right cap identities を整数上で確認し、二つの modular minors から \(n=6\) central-spectator quotient の exactness を \(\mathbb Q\) 上へ持ち上げる。seed-cap bridge certificate は二素数から同じ \(4\Omega_6\) を復元した後、matching cancellation、\(\beta\Omega_6=\chi_6\)、channel ranks、および \(E_{14}=\ker\beta\) を整数・有理数上で検証する。
 
 Expected final line:
 
@@ -210,7 +219,17 @@ Note 16 は exceptional spacing \((2,1,2)\) の cross-edge quotient を、paired
 \varepsilon_4(F)=\sum_{a,b}F(e_a,e_a,e_b,e_b)
 \]
 
-の alternating square \(\kappa_{212}\) として有理数上で閉じた。さらに odd-odd \(\mid\) even-even support へ同じ構成が全奇数長で伸びる。Note 17 は \(n=6\) central-spectator quotient を left/right cap collapse \(\chi_6\) として有理数上で閉じ、odd-even-even-odd support へ全偶数長で伸ばした。Note 18 は seed channel を \(K_4=\iota(\mathbb H)\) と固定し、\(\nu=\frac14\iota^*\) によりその canonical quaternion coordinate と全 edge-incidence pattern を与えた。残る核心は、この固定された seed decoder と二つの exact quotient decoder を placement-aware chain transport が実際に結ぶかである。これが成立すれば、response-simplex complex
+の alternating square \(\kappa_{212}\) として有理数上で閉じた。さらに odd-odd \(\mid\) even-even support へ同じ構成が全奇数長で伸びる。Note 17 は \(n=6\) central-spectator quotient を left/right cap collapse \(\chi_6\) として有理数上で閉じ、odd-even-even-odd support へ全偶数長で伸ばした。Note 18 は seed channel を \(K_4=\iota(\mathbb H)\) と固定し、\(\nu=\frac14\iota^*\) によりその canonical quaternion coordinate と全 edge-incidence pattern を与えた。
+
+Note 19 は最初の一観客比較を閉じた。central support では一意な outer-normalized quotient \(\Omega_6\) が存在し、
+
+\[
+\beta((x\otimes y)\otimes w)=xw\bar y,
+\qquad
+\beta\Omega_6=\chi_6.
+\]
+
+しかし \(\beta(K_4\otimes V)=0\) であり、\(K_4\otimes V\subset E_{14}=\ker\beta\) となる。したがって cap residual は seed \(K_4\) の直積輸送ではなく、\(W_{12}\otimes V\) の商から生じる。残る核心は、\(\Omega_6\) の短い primitive formula、全 spectator placement を統一する insertion law、および二人目の spectator がこの channel transfer を \(n=7\) square へどう運ぶかである。これが成立すれば、response-simplex complex
 
 \[
 C_n^0\xrightarrow{\partial_n}C_n^1

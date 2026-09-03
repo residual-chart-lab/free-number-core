@@ -536,6 +536,11 @@ six edge images. The next calculation is now rigid:
    \(n=7\) cross-edge quotient \(K_{212}\) of Note 16 directly with the
    transported central channel \(K_4\cong\mathbb H\).
 
-If the last comparison is positive, the extra \(\mathbb H\) will no longer
-be merely a same-type residual. It will have an explicit local origin in the
-minimal tetrahedral operator.
+Note 19 subsequently performs the \(n=6\) comparison. The answer is not a
+direct transport of \(K_4\): the cap decoder kills
+\(K_4\otimes V\) and reads a quotient of \(W_{12}\otimes V\). It
+nevertheless factors exactly through the unique outer-normalized local
+quotient by the closed contraction
+\(\beta((x\otimes y)\otimes w)=xw\bar y\). The remaining problem is to
+compress that normalized quotient into a short all-placement formula and
+continue the channel transfer to \(n=7\).

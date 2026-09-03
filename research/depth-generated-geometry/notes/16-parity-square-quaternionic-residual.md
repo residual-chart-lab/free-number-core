@@ -626,10 +626,9 @@ questions are now:
    caps;
 3. determine the correction required for genuinely interleaved placements,
    where neither parity theorem directly applies;
-4. identify whether Note 14's \(K_4\) transports to the exact quotient
-   (6.4) and to Note 17's exact \(n=6\) quotient. Note 18 removes the
-   target-coordinate ambiguity by fixing \(K_4=\iota(\mathbb H)\) and
-   \(\nu=\frac14\iota^*\);
+4. determine whether Note 19's \(W_{12}\)-born \(n=6\) cap residual
+   transports to the exact square quotient (6.4). The direct
+   \(K_4\otimes V\) hypothesis has already been ruled out at \(n=6\);
 5. assemble overlapping cap and square residuals into the next differential only
    after their incidence relations are known.
 

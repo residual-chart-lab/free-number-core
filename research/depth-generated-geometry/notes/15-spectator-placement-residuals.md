@@ -496,9 +496,12 @@ chain-level identification. Note 16 supplies a closed
 characteristic-zero decoder for the third object, Note 17 supplies one for
 the second, and Note 18 identifies the first as
 \(K_4=\iota(\mathbb H)\) with normalized coordinate
-\(\nu=\frac14\iota^*\). An explicit placement-aware transport comparing
-these three fixed decoders has not yet been constructed. That missing map
-is now the sharply defined next problem.
+\(\nu=\frac14\iota^*\). A placement-aware transport comparing all three
+fixed decoders has not yet been constructed in general. Note 19 resolves
+the central \(n=6\) case: the full normalized quotient factors to the cap
+decoder, but the surviving quaternion comes from
+\(W_{12}\otimes V\), not from the direct extension
+\(K_4\otimes V\).
 
 ---
 
@@ -540,9 +543,8 @@ open tasks are:
    coordinate;
 2. prove over \(\mathbb Q\), and then uniformly in \(n\), the edge-image
    fingerprints detected here;
-3. determine whether that transport canonically identifies
-   \(K_4\), Note 17's exact \(n=6\) quotient, and Note 16's exact
-   \(K_{212}\);
+3. extend Note 19's \(n=6\) channel-transfer theorem to the \(n=7\)
+   quotient \(K_{212}\);
 4. classify the decorated quotients \(\mathscr Y_{n,Q}\) by general spectator
    words;
 5. only after such transport exists, test path nonconfluence and curvature

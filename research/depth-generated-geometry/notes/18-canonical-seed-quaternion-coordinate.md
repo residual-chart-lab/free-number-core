@@ -506,22 +506,23 @@ questions without coordinate ambiguity.
 
 ## 9. Next target
 
-Construct order-sensitive maps on the **source complexes**, not merely
-isomorphisms of their four-dimensional cokernels, so that the induced
-quaternion coordinates satisfy
+Note 19 subsequently resolves the first one-spectator comparison by
+constructing the unique outer-normalized \(n=6\) quotient
+\(\Omega_6\). Its result is
 
 \[
-\nu\circ\omega_5
-\quad\rightsquigarrow\quad
-\chi_6
-\quad\rightsquigarrow\quad
-\kappa_{212}.
+\chi_6=\beta\Omega_6,
+\qquad
+\beta((x\otimes y)\otimes w)=xw\bar y,
 \tag{9.1}
 \]
 
-The first local test is rigid: a one-spectator transport must recover the
-five-edge sign pattern of Note 17, preserve the central-free nature of the
-appropriate edge images, and convert the seed factor
-\(\sigma_R\) into its cap-side mirror \(\sigma_L\). Any failure is a
+with \(\beta(K_4\otimes V)=0\). Thus the one-spectator result is a channel
+transfer from \(W_{12}\otimes V\), not direct propagation of the seed
+\(K_4\).
+
+The next target is to compress the six blocks of \(\Omega_6\) into a short
+primitive formula, extend it to every spectator placement, and then test
+the second-spectator passage to \(\kappa_{212}\). Any failure is now a
 measurable correction term rather than an ambiguity of quotient
 coordinates.

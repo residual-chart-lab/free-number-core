@@ -613,8 +613,21 @@ the order-sensitive transport which compares these two explicit decoders
 with the central \(K_4\subset\mathbb H\otimes\mathbb H\) of Note 14.
 Note 18 fixes the latter as \(K_4=\iota(\mathbb H)\) with normalized
 coordinate \(\nu=\frac14\iota^*\), so this comparison now has no
-target-coordinate ambiguity.
+target-coordinate ambiguity. Note 19 carries out the \(n=6\) comparison:
+there is a unique outer-normalized local quotient \(\Omega_6\) and
 
-Only after that comparison is canonical should overlapping cap and square
-operators be assembled into a third differential or interpreted as
-transport nonconfluence.
+\[
+\chi_6=\beta\Omega_6,
+\qquad
+\beta((x\otimes y)\otimes w)=xw\bar y,
+\tag{9.2}
+\]
+
+but \(\beta(K_4\otimes V)=0\). The cap quaternion is therefore a quotient
+of \(W_{12}\otimes V\), not a direct tensor transport of \(K_4\).
+
+The next comparison is the second spectator: whether this
+\(W_{12}\)-born quaternion reaches the \(n=7\) square by a common
+order-sensitive insertion law. Only after that step should overlapping cap
+and square operators be assembled into a third differential or interpreted
+as transport nonconfluence.
