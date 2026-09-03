@@ -41,7 +41,9 @@
 - **Proved over \(\mathbb Q\) at \(n=6\):** central-spectator quotient \(Y_{6,(1,2,4,5)}/E_{14}\) はちょうど \(\mathbb H\) で、閉形式 \(\chi_6=(-\lambda^L,+\lambda^L,0,-\lambda^R,+\lambda^R)\) により完全に検出される。
 - **Proved over \(\mathbb Q\) at \(n=6\):** outer edge で規格化された一意な48次元 quotient map \(\Omega_6\) が存在し、\(\beta((x\otimes y)\otimes w)=xw\bar y\) に対して \(\beta\Omega_6=\chi_6\) となる。
 - **Proved over \(\mathbb Q\) at \(n=6\):** \(\beta\) は \(K_4\otimes V\) を全消去し、long-edge image は \(\ker\beta\) に等しい。central-spectator \(\mathbb H\) は seed \(K_4\) の直積輸送ではなく、直交 channel \(W_{12}\otimes V\) の商から生じる。
-- **Open:** tetrahedral generation の all-\(n\) proof、placement-aware spectator transport、decorated quotient の一般分類、full intermediate filtration、および transport / curvature との接続。
+- **Proved over \(\mathbb Q\) at \(n=6\):** 五つの spectator placements は direct seed の left/right 二 chart で被覆される。外側 overlap の transition は恒等だが、中央 overlap は閉形式 \(G=\operatorname{id}_{\mathbb H}\otimes\theta\) を持つ。
+- **Proved over \(\mathbb Q\) at \(n=6\):** 中央 transition は \(\theta(1\otimes w)=1\otimes w+\sum_a e_a\otimes(e_a\times w)\), \(\theta(a\otimes w)=-w\otimes a\) であり、最小多項式は \((t-1)^2(t+1)\)。seed の \(K_4\otimes V\) / \(W_{12}\otimes V\) channels を非自明に混合する。
+- **Open:** tetrahedral generation の all-\(n\) proof、multi-spectator transport、decorated quotient の一般分類、full intermediate filtration、および closed-path transport / curvature との接続。
 
 以下で「生成」という語を線形像・生成元の意味で使う場合を除き、確立している順序は ontological / causal order ではなく **visibility / reconstruction order** である。
 
@@ -82,6 +84,9 @@
 - この cap-collapse から全偶数 \(n\ge6\) の capped five-edge complex を構成し、\(n=6\) では \(1296\to540\to4\) の exact sequence と central-spectator quotient を有理数上で閉じた。
 - central \(n=6\) local quotient を outer block で seed 座標へ一意に規格化し、48次元の \(\Omega_6\) を有理数上で構成した。
 - insert-between-and-conjugate contraction \(\beta((x\otimes y)\otimes w)=xw\bar y\) が \(\beta\Omega_6=\chi_6\) を満たし、\(K_4\otimes V\subset E_{14}=\ker\beta\) となる channel transfer を証明した。
+- 五つの \(n=6\) spectator placements を direct seed の left/right 二 chart で完全被覆し、全 direct full-edge normalization の存在・非存在を有理数上で分類した。
+- 中央 spectator overlap の座標変換を \(G=\operatorname{id}_{\mathbb H}\otimes\theta\) と閉じ、\(\theta\) が involutive reflection と三次元 cross-product shear の和であることを証明した。
+- 外側 overlap では \(G=I\)、中央 overlap では \(m_G(t)=(t-1)^2(t+1)\) となること、および cap residual が \(\beta_R\Omega^R=\beta_L\Omega^L\) と chart-independent であることを得た。
 
 ## Reading order
 
@@ -159,6 +164,10 @@
 
     outer-normalized \(n=6\) quotient、閉 contraction \(\beta(x\otimes y\otimes w)=xw\bar y\)、および \(K_4\otimes V\) から \(W_{12}\otimes V\) への channel transfer。
 
+20. [notes/20-n6-spectator-atlas-and-central-shear.md](notes/20-n6-spectator-atlas-and-central-shear.md)
+
+    五つの spectator placements の二 chart 被覆、中央 overlap の閉 cross-product transition、および reflection-plus-shear decomposition。
+
 ## Exact certificate
 
 ```bash
@@ -180,11 +189,12 @@ python3 certificates/spectator_placement_residual_certificate.py
 python3 certificates/n7_exceptional_square_operator_certificate.py
 python3 certificates/n6_capped_five_edge_operator_certificate.py
 python3 certificates/n6_seed_cap_bridge_certificate.py
+python3 certificates/n6_spectator_chart_transition_certificate.py
 ```
 
 最初の十本は外部ライブラリを使わず、有理数上の完全計算で (n=2) の内在的応答塔、(n=3,d=1) の fiber product、(n=3,\ldots,7) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex、\(n=4,d=3\) の canonical terminal splitting、\(n=2,\ldots,5\) の terminal boundary theorem、\(n=5\) response tetrahedron の pairwise gluing と16次元 syzygy、all-\(n\) descent proof の固定局所恒等式、閉形式 \(\omega_5\) とその \(12+4\) channel decomposition、および seed \(K_4\) の Frobenius factorization と直交 projector を検証する。
 
-NumPy を使う八本は、整数行列の格納と有限体上の行基本変形にだけ用い、浮動小数点計算は行わない。\(n=6\) certificate は \(\mathbb F_{1009}\) と \(\mathbb F_{1013}\) 上で rank 904 を独立に確認し、有理数上の rank 上界と modular minor の下界から \(\mathbb Q\) 上の exactness と176次元 syzygy を証明する。\(n=7\) local descent stress は all-\(n\) proof の代用ではなく、最初の未使用局所次数 \(m=5\) を検査する。second-differential certificate は \(n=5\) を有理数上、\(n=6\) を両素数体上で検証する。\(n=7\) tetrahedral stress は十五の局所商、middle exactness、exceptional \(2\!-!1\!-!2\) residual、および次余核の Casimir 型を両素数体上で検査する。spectator-placement certificate は \(n=6,7\) の全 labelled edge-image profile と canonical outer-core quotient を同じ二素数体上で検査する。exceptional-square certificate は paired collapse と square cancellation を有理数上で確認し、二つの modular minors から cross-square exactness を \(\mathbb Q\) 上へ持ち上げる。capped-five-edge certificate は left/right cap identities を整数上で確認し、二つの modular minors から \(n=6\) central-spectator quotient の exactness を \(\mathbb Q\) 上へ持ち上げる。seed-cap bridge certificate は二素数から同じ \(4\Omega_6\) を復元した後、matching cancellation、\(\beta\Omega_6=\chi_6\)、channel ranks、および \(E_{14}=\ker\beta\) を整数・有理数上で検証する。
+NumPy を使う九本は、整数行列の格納と有限体上の行基本変形にだけ用い、浮動小数点計算は行わない。\(n=6\) certificate は \(\mathbb F_{1009}\) と \(\mathbb F_{1013}\) 上で rank 904 を独立に確認し、有理数上の rank 上界と modular minor の下界から \(\mathbb Q\) 上の exactness と176次元 syzygy を証明する。\(n=7\) local descent stress は all-\(n\) proof の代用ではなく、最初の未使用局所次数 \(m=5\) を検査する。second-differential certificate は \(n=5\) を有理数上、\(n=6\) を両素数体上で検証する。\(n=7\) tetrahedral stress は十五の局所商、middle exactness、exceptional \(2\!-!1\!-!2\) residual、および次余核の Casimir 型を両素数体上で検査する。spectator-placement certificate は \(n=6,7\) の全 labelled edge-image profile と canonical outer-core quotient を同じ二素数体上で検査する。exceptional-square certificate は paired collapse と square cancellation を有理数上で確認し、二つの modular minors から cross-square exactness を \(\mathbb Q\) 上へ持ち上げる。capped-five-edge certificate は left/right cap identities を整数上で確認し、二つの modular minors から \(n=6\) central-spectator quotient の exactness を \(\mathbb Q\) 上へ持ち上げる。seed-cap bridge certificate は二素数から同じ \(4\Omega_6\) を復元した後、matching cancellation、\(\beta\Omega_6=\chi_6\)、channel ranks、および \(E_{14}=\ker\beta\) を整数・有理数上で検証する。spectator-atlas certificate は全五配置の direct seed charts を同じ二素数から復元し、非存在側を exact rational rank で排除したうえで、中央 transition の閉形式、最小多項式、channel mixing、および chart-independent cap decoder を整数・有理数上で検証する。
 
 Expected final line:
 
@@ -229,7 +239,19 @@ Note 19 は最初の一観客比較を閉じた。central support では一意�
 \beta\Omega_6=\chi_6.
 \]
 
-しかし \(\beta(K_4\otimes V)=0\) であり、\(K_4\otimes V\subset E_{14}=\ker\beta\) となる。したがって cap residual は seed \(K_4\) の直積輸送ではなく、\(W_{12}\otimes V\) の商から生じる。残る核心は、\(\Omega_6\) の短い primitive formula、全 spectator placement を統一する insertion law、および二人目の spectator がこの channel transfer を \(n=7\) square へどう運ぶかである。これが成立すれば、response-simplex complex
+しかし \(\beta(K_4\otimes V)=0\) であり、\(K_4\otimes V\subset E_{14}=\ker\beta\) となる。したがって cap residual は seed \(K_4\) の直積輸送ではなく、\(W_{12}\otimes V\) の商から生じる。
+
+Note 20 は全五配置を left/right direct-seed charts で覆い、その overlap transition を完全に閉じた。外側 overlap は恒等だが、central spectator では
+
+\[
+G=\operatorname{id}_{\mathbb H}\otimes\theta,
+\qquad
+\theta(1\otimes w)=1\otimes w+\sum_a e_a\otimes(e_a\times w),
+\qquad
+\theta(a\otimes w)=-w\otimes a
+\]
+
+となる。\(m_G(t)=(t-1)^2(t+1)\) であり、これは単なる slot permutation ではなく三次元 nilpotent shear を含む。残る核心は、\(\Omega_6\) 全ブロックの短い primitive formula、二人目の spectator がこの transition を \(n=7\) parity square へどう運ぶか、および複数経路の閉比較である。これが成立すれば、response-simplex complex
 
 \[
 C_n^0\xrightarrow{\partial_n}C_n^1

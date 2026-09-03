@@ -602,6 +602,12 @@ This note does **not** prove:
 The finite matrix defining \(\Omega_6\) is exact and canonically normalized,
 but discovering its short all-placement formula remains a separate problem.
 
+**Subsequent resolution:** Note 20 classifies every direct full-seed
+normalization at all five spectator placements and constructs a two-chart
+cover. Its central overlap transition is the closed map
+\(\operatorname{id}_{\mathbb H}\otimes\theta\); the all-block primitive
+formula and multi-spectator iteration remain open.
+
 ---
 
 ## 9. Next target

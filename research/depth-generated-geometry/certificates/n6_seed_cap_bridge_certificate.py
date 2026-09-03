@@ -51,6 +51,7 @@ from second_response_simplex_differential_certificate import (
 
 
 PRIMES = (1009, 1013)
+GAPS = (1, 2, 3, 4, 5)
 SUPPORT = (1, 2, 4, 5)
 EDGES = tuple(combinations(SUPPORT, 2))
 FACE_DEPTH = 4
@@ -104,16 +105,17 @@ def exact_face_right_inverse(face):
     return pivots, inverse16
 
 
-def local_matching_tensor():
+def local_matching_tensor(support=SUPPORT):
     """Return 128 times the matching map in edge tensor coordinates."""
 
+    edges = tuple(combinations(support, 2))
     faces = {
         gap: build_integer_response(6, {gap})
-        for gap in SUPPORT
+        for gap in support
     }
     shadows = {
         edge: build_integer_response(6, set(edge))
-        for edge in EDGES
+        for edge in edges
     }
     right_inverse_data = {
         gap: exact_face_right_inverse(face)
@@ -135,13 +137,13 @@ def local_matching_tensor():
     ):
         raise AssertionError("the lifted J_3 inverse failed over Z")
 
-    face_index = {gap: index for index, gap in enumerate(SUPPORT)}
+    face_index = {gap: index for index, gap in enumerate(support)}
     matching = np.zeros(
         (6 * EDGE_DIMENSION, 4 * FACE_DIMENSION),
         dtype=np.int64,
     )
 
-    for edge_index, (first, second) in enumerate(EDGES):
+    for edge_index, (first, second) in enumerate(edges):
         shadow = shadows[(first, second)]
         first_pivots, first_inverse16 = right_inverse_data[first]
         second_pivots, second_inverse16 = right_inverse_data[second]
@@ -182,8 +184,8 @@ def local_matching_tensor():
     return matching
 
 
-def outer_anchor():
-    """Direct spectator extension of Lambda_34=P on actual edge (4,5)."""
+def outer_anchor(support=SUPPORT):
+    """Direct spectator extension of local Lambda_34=P."""
 
     operator = edge_operators()[(3, 4)]
     operator = as_integer_array(operator)
@@ -192,11 +194,18 @@ def outer_anchor():
         dtype=np.int64,
     )
 
-    # On edge (4,5), the remaining ordered gaps are (1,2,3).
-    # Gaps 1,2 feed Lambda_34 and gap 3 is carried as the spectator.
-    for column, (h_index, first, second, spectator) in enumerate(
+    outer_edge = support[2:]
+    remaining = tuple(gap for gap in GAPS if gap not in outer_edge)
+    active = support[:2]
+    spectator_gap = next(gap for gap in GAPS if gap not in support)
+    positions = {gap: index for index, gap in enumerate(remaining)}
+
+    for column, (h_index, *vectors) in enumerate(
         product(range(4), range(3), range(3), range(3))
     ):
+        first = vectors[positions[active[0]]]
+        second = vectors[positions[active[1]]]
+        spectator = vectors[positions[spectator_gap]]
         active_column = 9 * h_index + 3 * first + second
         for pair_component in range(16):
             anchor[
