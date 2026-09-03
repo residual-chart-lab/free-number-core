@@ -8,6 +8,8 @@
 
 [`notes/00-checkpoint-through-note12.md`](notes/00-checkpoint-through-note12.md) は、Note 01–12 の定理依存、次元表、到達点、未解決境界、および proof audit を一枚にまとめた入口である。
 
+[`synthesis/ordered-tetrahedral-spectator-atlas.md`](synthesis/ordered-tetrahedral-spectator-atlas.md) は、Note 14–20 を placement memory、二 chart 被覆、中央 cross-product transition、chart-independent residual という一本の有限代数として再構成した独立読解層である。probe-depth filtration 全体を先に追わず、現在の tetrahedral / spectator 機構だけを把握したい場合はこちらから読める。
+
 ## Claim boundary
 
 - **Proved:** probe depth は識別可能性と再構成の有限 filtration を与える。
