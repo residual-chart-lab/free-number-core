@@ -583,6 +583,13 @@ needed for
 Equation (8.1) is a program suggested by the exact decomposition, not yet an
 all-\(n\) theorem.
 
+**Subsequent resolution at \(n=7\).** Notes 23 and 24 complete every reduced
+word and every transported anchor history. Note 25 then proves that the two
+spacing-word hinges incident to \(212\) are exactly the outer edges on
+which \(\kappa_{212}\) vanishes. Hence the \(144\)-core transports flatly
+through the reduced word graph, while the remaining \(\mathbb H\) is
+supported at the exceptional vertex and is not core holonomy.
+
 ---
 
 ## 9. Certificate

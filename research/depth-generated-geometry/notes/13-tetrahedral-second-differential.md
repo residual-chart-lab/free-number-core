@@ -730,7 +730,7 @@ used.
 
 ---
 
-## 11. Next target — updated by Notes 14–24
+## 11. Next target — updated by Notes 14–25
 
 Note 14 has now replaced the quotient-basis construction at \(n=5\) by the
 direct quaternionic operator
@@ -788,16 +788,22 @@ and the exceptional full transition is
 \(S\oplus I_{\mathbb H}\). Thus \(\kappa_{212}\) is fixed by the first
 two-history comparison rather than produced as its defect.
 
+Note 25 constructs all adjacent-word transports from stationary shared
+outer edges. The unique independent loop in the reduced spacing graph has
+exact identity core holonomy. Meanwhile \(\kappa_{212}\) vanishes on both
+hinges incident to \(212\), so the complete layer is a flat
+144-dimensional core together with a quaternionic defect supported at the
+exceptional vertex.
+
 The remaining program is therefore:
 
-1. construct elementary transports between adjacent reduced spacing words;
-2. compose independently defined word-level paths and determine
-   whether any nonconfluence factors through \(\kappa_{212}\);
-3. extend the internal-word construction to three spectators and prove a
+1. extend the internal-word construction to three spectators and prove a
    uniform word theorem;
-4. prove all-\(n\) middle exactness and only then seek a third differential.
+2. compose its genuinely higher word-level paths and determine whether any
+   nonconfluence factors through a placement residual;
+3. prove all-\(n\) middle exactness and only then seek a third differential.
 
 The immediate mathematical target is therefore not curvature. It is the
-definition of arrows between different word objects. A curvature candidate
-becomes defined only after those arrows admit a closed comparison not forced
-tautologically by same-object coordinate changes.
+first three-internal-spectator word complex. Note 25 supplies the flat
+two-spectator base case against which any later nontrivial holonomy must be
+measured.

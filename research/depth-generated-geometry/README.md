@@ -8,7 +8,7 @@
 
 [`notes/00-checkpoint-through-note12.md`](notes/00-checkpoint-through-note12.md) は、Note 01–12 の定理依存、次元表、到達点、未解決境界、および proof audit を一枚にまとめた入口である。
 
-[`synthesis/ordered-tetrahedral-spectator-atlas.md`](synthesis/ordered-tetrahedral-spectator-atlas.md) は、Note 14–24 を placement memory、二 chart 被覆、中央 cross-product transition、two-spectator completion、exterior suspension、reduced internal-word atlas、および transported-anchor transition groupoid という一本の有限代数として再構成した独立読解層である。probe-depth filtration 全体を先に追わず、現在の tetrahedral / spectator 機構だけを把握したい場合はこちらから読める。
+[`synthesis/ordered-tetrahedral-spectator-atlas.md`](synthesis/ordered-tetrahedral-spectator-atlas.md) は、Note 14–25 を placement memory、二 chart 被覆、中央 cross-product transition、two-spectator completion、exterior suspension、reduced internal-word atlas、transported-anchor groupoid、および spacing-word connection という一本の有限代数として再構成した独立読解層である。probe-depth filtration 全体を先に追わず、現在の tetrahedral / spectator 機構だけを把握したい場合はこちらから読める。
 
 ## Claim boundary
 
@@ -51,7 +51,9 @@
 - **Proved over \(\mathbb Q\) at \(n=7\):** 六つの reduced words の全 quotient が完成し、五 generic words の六 edge rank / Casimir profiles も exact に回収された。Note 22 と合わせると全15 tetrahedral supports が characteristic zero で得られる。
 - **Proved over \(\mathbb Q\) at \(n=7\):** 全 transported direct-anchor histories は三つの pair-local operators \(A=(\theta^{-1})_{R,a}\), \(B=(\theta^{-1})_{R,b}\), \(S=(-\theta)_{L,b}\) で生成される。重なる因子対は非可換で、合成の最小多項式に \(\Phi_6\) と \(\Phi_4\) が現れる。
 - **Proved over \(\mathbb Q\) at \(n=7\):** exceptional \(212\) の二つの full coordinates の transition は \(S\oplus I_{\mathbb H}\)。\(\kappa_{212}\) は固定され、residual-to-core shear はゼロである。
-- **Open:** tetrahedral generation の all-\(n\) proof、隣接 internal words 間の transport、三 spectator 以上の interior transport、full intermediate filtration、および closed-path transport / curvature との接続。
+- **Proved over \(\mathbb Q\) at \(n=7\):** 六つの隣接 reduced words は、共有する stationary outer edge から一意な integral \(SO(3)\)-equivariant core transport を持つ。spacing graph の唯一の独立閉路の holonomy は厳密に \(I_{144}\) である。
+- **Proved over \(\mathbb Q\) at \(n=7\):** 隣接 tetrahedra の full common-face traces はすべて transverse だが、hinge 上の core row spaces は一致する。exceptional \(\mathbb H\) は両 incident hinges で消え、flat core の上で \(212\) のみに支持された defect となる。
+- **Open:** tetrahedral generation の all-\(n\) proof、三 spectator 以上の interior transport、full intermediate filtration、residual-coupled higher holonomy、および curvature との接続。
 
 以下で「生成」という語を線形像・生成元の意味で使う場合を除き、確立している順序は ontological / causal order ではなく **visibility / reconstruction order** である。
 
@@ -102,6 +104,9 @@
 - 全20 transported direct-anchor histories を列挙し、14個の distinct core coordinates と chains \(122:S,A\), \(131:B,S,A\), \(221:B,S\) を有理数上で完全に決定した。
 - \(A,B,S\) を \(\theta,\theta^{-1}\) の pair-local embeddings と同定し、\(\operatorname{rank}[A,B]=64\), \(\operatorname{rank}[S,B]=51\) および合成 \(ASB\) の最小多項式 \((t-1)^2(t+1)^3(t^2+1)(t^2-t+1)\) を証明した。
 - exceptional \(212\) の二構成履歴が \(S\oplus I_{\mathbb H}\) で移り、\(\kappa_{212}\) が chart-independent に固定されることを証明した。
+- 六つの reduced words を unit spectator slide の graph に組み、各隣接対の stationary outer edge から exact integral core transport を構成した。
+- 唯一の中央閉路 \(122\to131\to221\to212\to122\) の core holonomy が \(I_{144}\) であることを証明し、同時に common-face traces の最大 transverse 性を切り出した。
+- exceptional \(\kappa_{212}\) が両 incident hinges でゼロになることから、全 \(n=7\) two-spectator atlas を flat 144-dimensional core と \(212\)-supported quaternionic defect に分離した。
 
 ## Reading order
 
@@ -199,6 +204,10 @@
 
     全 transported direct-anchor histories の exhaustive census、三つの pair-local generators \(A,B,S\)、exact minimal polynomials、および exceptional residual の transition invariance。
 
+25. [notes/25-n7-spacing-word-flat-core-and-quaternionic-defect.md](notes/25-n7-spacing-word-flat-core-and-quaternionic-defect.md)
+
+    六つの adjacent spacing words の stationary-edge transport、唯一の closed-loop flatness、common-face transversality、および \(212\)-supported quaternionic defect。
+
 ## Exact certificate
 
 ```bash
@@ -225,6 +234,7 @@ python3 certificates/n7_exceptional_core_decomposition_certificate.py
 python3 certificates/exterior_spectator_suspension_certificate.py
 python3 certificates/n7_internal_word_atlas_certificate.py
 python3 certificates/n7_anchor_transition_groupoid_certificate.py
+python3 certificates/n7_spacing_word_transport_certificate.py
 ```
 
 最初の十本は外部ライブラリを使わず、有理数上の完全計算で \(n=2\) の内在的応答塔、\(n=3,d=1\) の fiber product、\(n=3,\ldots,7\) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex、\(n=4,d=3\) の canonical terminal splitting、\(n=2,\ldots,5\) の terminal boundary theorem、\(n=5\) response tetrahedron の pairwise gluing と16次元 syzygy、all-\(n\) descent proof の固定局所恒等式、閉形式 \(\omega_5\) とその \(12+4\) channel decomposition、および seed \(K_4\) の Frobenius factorization と直交 projector を検証する。exterior-suspension certificate も標準ライブラリだけを使い、左右の局所 decoder、全 basis product に対する prepend / append 恒等式、および strict interchange を exact に検査する。
@@ -239,7 +249,7 @@ Y_{7,(1,3,4,6)}
 ((\mathbb H\otimes\mathbb H)\otimes V^{\otimes2})\oplus\mathbb H
 \]
 
-を有理数上で証明する。internal-word-atlas certificate は残る五つの reduced words を二素数から同一の整数 quotient maps へ復元し、CRT bound、rank 1800、\(SO(3)\)-equivariance、および全 edge Casimir profiles によって generic \(n=7\) atlas を有理数上へ持ち上げる。anchor-transition-groupoid certificate は全20 histories を列挙し、二素数から同じ14 core coordinates を復元したうえで、三 generator chains、commutator ranks、minimal polynomials、top-spin action、および exceptional transition \(S\oplus I_{\mathbb H}\) を整数・有理数上で検証する。
+を有理数上で証明する。internal-word-atlas certificate は残る五つの reduced words を二素数から同一の整数 quotient maps へ復元し、CRT bound、rank 1800、\(SO(3)\)-equivariance、および全 edge Casimir profiles によって generic \(n=7\) atlas を有理数上へ持ち上げる。anchor-transition-groupoid certificate は全20 histories を列挙し、二素数から同じ14 core coordinates を復元したうえで、三 generator chains、commutator ranks、minimal polynomials、top-spin action、および exceptional transition \(S\oplus I_{\mathbb H}\) を整数・有理数上で検証する。spacing-word-transport certificate は六つの adjacent-word slides を共有 hinge から復元し、整数 inverse、\(SO(3)\)-equivariance、唯一の閉路の identity holonomy、common-face transversality、および exceptional defect kernel を検証する。
 
 Expected final line:
 
@@ -314,7 +324,22 @@ S=(-\theta)_{L,b}
 
 で閉じた。\(A,S\) は可換だが、\([A,B]\) と \([S,B]\) は非零であり、合成 \(ASB\) の最小多項式には \(\Phi_4\Phi_6\) が現れる。一方、exceptional full coordinate の遷移は \(S\oplus I_{\mathbb H}\) であり、\(\kappa_{212}\) は固定される。
 
-したがって次の仕事は同一 quotient 上の座標変換ではない。隣接 spacing words の間に elementary transport を直接構成し、独立に定義された複数経路を比較することである。この word-level transport graph から genuine closed loops が抽出できれば、response-simplex complex
+Note 25 はこの隣接-word 問題を閉じた。unit slide で隣り合う二つの tetrahedra は full common face を同一視しない。三本の face blocks は最大に transverse である。しかし、動かなかった側の outer edge は両 core の full anchor となり、その共通 row space から一意な integral transport が降りる。六本の arrows が作る唯一の閉路
+
+\[
+122\to131\to221\to212\to122
+\]
+
+の core holonomy は厳密に \(I_{144}\) である。一方 \(\kappa_{212}\) は \(212\) に接続する二本の hinges でゼロとなり、隣接 core へは運ばれない。したがって最初の complete word atlas は
+
+\[
+\text{flat 144-core}\oplus
+\text{\(212\)-supported }\mathbb H\text{ defect}
+\]
+
+として閉じる。非自明な chart shear \(\theta\) は存在するが、この最初の word loop は曲率を持たない。
+
+したがって次の仕事は、三つ以上の internal spectators を持つ最初の word complex を構成し、二次元 cells を通る residual transport を比較することである。その高次 word-level transport から genuine nontrivial closed loops が抽出できれば、response-simplex complex
 
 \[
 C_n^0\xrightarrow{\partial_n}C_n^1
@@ -325,4 +350,4 @@ C_n^0\xrightarrow{\partial_n}C_n^1
 
 Casimir complement 上の逆写像として得られた canonical section の短い response-side 局所公式も引き続き open である。
 
-その後で、response simplex に四元数値 transport を加えたときの path nonconfluence residual と curvature 候補を検討する。
+その後で、response simplex に四元数値 transport を加えたときの path nonconfluence residual と curvature 候補を検討する。Note 25 の flatness と vertex defect は、その定義が満たすべき最初の基準例である。

@@ -423,6 +423,12 @@ The next non-tautological target is therefore sharper:
 4. if the first closed comparison is flat, pass to three internal
    spectators rather than renaming a coordinate transition as curvature.
 
+**Subsequent resolution.** Note 25 constructs all six adjacent-word
+transports from stationary shared edges. Their unique independent core loop
+has exact identity holonomy. The exceptional \(\mathbb H\) vanishes on both
+incident hinges and remains a vertex-supported defect rather than becoming
+core curvature.
+
 ---
 
 ## 7. Certificate

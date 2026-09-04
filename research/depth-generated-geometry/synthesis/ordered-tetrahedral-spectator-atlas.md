@@ -1,32 +1,35 @@
 # Standalone Synthesis — Ordered Tetrahedral Spectator Atlas
 
-## Notes 14–24 reorganized around placement memory and chart transition
+## Notes 14–25 reorganized around placement memory, chart transition, and word transport
 
 **Status:** synthesis and reorganization; no new theorem is claimed here
 
-**Source:** Notes 14–24 and their exact certificates
+**Source:** Notes 14–25 and their exact certificates
 
 **Purpose:** isolate the finite algebraic mechanism that can be understood
 without first following the full probe-depth filtration program. The central
 object is the first exact spectator atlas at \(n=6\). The odd-length square
 at \(n=7\) is the exceptional two-spectator continuation, the full reduced
 six-word layer is exact over \(\mathbb Q\), exterior suspension propagates
-these finite objects to exact all-length towers, and the resulting
-transported-anchor groupoid has three closed pair-local generators.
+these finite objects to exact all-length towers, the resulting
+transported-anchor groupoid has three closed pair-local generators, and the
+adjacent-word connection splits into a flat core plus one localized
+quaternionic defect.
 
 **Claim boundary:** the results below prove an order-sensitive local quotient,
 a two-chart cover, a nontrivial quaternionic transition, a chart-independent
 residual, the complete exact two-spectator reduced atlas, an all-\(n\)
-exterior spectator functor, and every same-word transported-anchor
-transition at \(n=7\). They do not yet construct transports between
-different internal words, a closed-loop holonomy, a curvature theorem, or a
+exterior spectator functor, every same-word transported-anchor transition
+at \(n=7\), every adjacent-word stationary-edge transport, and the first
+closed-loop holonomy. They do not construct a three-internal-spectator
+atlas, nonzero curvature, an all-\(n\) internal-word transport theorem, or a
 physical interpretation.
 
 ---
 
 ## 0. Executive statement
 
-The eleven notes establish the following finite phenomenon and its exterior
+The twelve notes establish the following finite phenomenon and its exterior
 propagation.
 
 Four ordered face responses meet along six labelled edge responses.  At the
@@ -842,14 +845,106 @@ full transition is instead sharply block diagonal:
 \]
 
 The extra quaternion is fixed rather than converted into a core shear. This
-rules out the simplest attempt to call the two-history comparison curvature
-and makes the next target a transport between distinct spacing words.
+rules out the simplest attempt to call the two-history comparison curvature.
+Note 25 then constructs the required transport between distinct spacing
+words and tests its only independent loop.
 
 ---
 
-## 10. The independent theorem package
+## 10. The spacing-word connection and localized defect
 
-Stripped of the surrounding depth-filtration narrative, Notes 14–24 give
+The six positive compositions of \(5\) form the reduced word graph
+
+\[
+\Gamma_7
+=
+\{113\!-\!122,\ 122\!-\!131,\ 122\!-\!212,
+131\!-\!221,\ 212\!-\!221,\ 221\!-\!311\}.
+\tag{10.1}
+\]
+
+An elementary edge slides one internal support vertex by one gap. The two
+support tetrahedra share a triangular face. Inside that face, the outer
+edge on the stationary side is present as the same decoded response
+variable in both local complexes.
+
+For every adjacent pair \(\lambda,\mu\), the two selected 144-dimensional
+core coordinates have full rank and the same row space on that stationary
+hinge. Hence the equation
+
+\[
+\boxed{
+(C_\mu)_{h_{\lambda\mu}}
+=g_{\lambda\mu}(C_\lambda)_{h_{\lambda\mu}}
+}
+\tag{10.2}
+\]
+
+defines a unique integral \(SO(3)\)-equivariant isomorphism. These six
+arrows are genuine inter-object transports, not coordinate changes on one
+quotient.
+
+The graph has one independent cycle. Its exact holonomy is
+
+\[
+\boxed{
+g_{212,122}g_{221,212}g_{131,221}g_{122,131}
+=I_{144}.
+}
+\tag{10.3}
+\]
+
+Thus the complete core connection is flat. This does not make the gluing
+placement-blind. On the contrary, if all three common-face blocks are
+concatenated, the two trace row spaces are maximally transverse:
+
+\[
+\dim(L_{\lambda,F}\cap L_{\mu,F})=0
+\tag{10.4}
+\]
+
+on every graph edge. The same hinge supports two different graph
+extensions across the rest of the face. This is the exact algebraic fold
+which prevents naive facewise identification.
+
+At the exceptional word,
+
+\[
+Y_{7,Q_{212}}\cong T_{212}\oplus K_{212},
+\qquad K_{212}\cong\mathbb H.
+\tag{10.5}
+\]
+
+Both graph hinges incident to \(212\) are outer edges, and the closed square
+coordinate vanishes on them:
+
+\[
+(\kappa_{212})_{13}=(\kappa_{212})_{46}=0.
+\tag{10.6}
+\]
+
+The available full maps to the neighboring generic fibers therefore factor
+through the core projection and have kernel \(K_{212}\). The complete
+finite answer is
+
+\[
+\boxed{
+\text{flat transportable 144-core}
+\quad+\quad
+\text{\(212\)-supported quaternionic defect}.
+}
+\tag{10.7}
+\]
+
+This is not nonzero curvature: the core loop is exactly flat and the defect
+does not enter the hinge transport. It is the first rigorous separation of
+chart shear, word holonomy, and placement residual.
+
+---
+
+## 11. The independent theorem package
+
+Stripped of the surrounding depth-filtration narrative, Notes 14–25 give
 the following self-contained package.
 
 1. **Closed tetrahedral quotient.**  The minimal six-edge relation object is
@@ -889,6 +984,14 @@ the following self-contained package.
     histories are generated by pair-local \(A,B,S\), and the exceptional
     residual is fixed by its full transition.
 
+12. **Stationary-edge word connection.**  Every adjacent reduced word pair
+    has a unique integral equivariant core transport descending from its
+    shared outer hinge, and the unique independent loop is exactly flat.
+
+13. **Localized quaternionic defect.**  Full common-face traces are
+    transverse, while the exceptional quaternion vanishes on both incident
+    hinges and is supported only at \(212\).
+
 The central implication is
 
 \[
@@ -899,21 +1002,22 @@ The central implication is
 \longrightarrow
 \text{nontrivial transition}
 \longrightarrow
-\text{chart-independent residual}.
+\text{flat core transport plus localized residual}.
 }
-\tag{10.1}
+\tag{11.1}
 \]
 
 This is a complete finite algebraic atlas through two spectators, together
-with its exterior towers and same-word transition groupoid. Calling a
-transition curvature would still be premature: curvature requires
-independently defined transports between distinct word objects and a closed
-path comparison. Constructing those word-level arrows is the next
-mathematical problem.
+with its exterior towers, same-word transition groupoid, adjacent-word
+connection, and closed-loop test. Calling the quaternion curvature would
+still be premature: the first independently defined loop is flat, and the
+quaternion lies in the kernel of both incident transports. The next
+mathematical problem is the three-internal-spectator word complex, where
+higher cells can test residual-coupled holonomy.
 
 ---
 
-## 11. Source map
+## 12. Source map
 
 | Note | Role in this synthesis |
 |---:|---|
@@ -928,6 +1032,7 @@ mathematical problem.
 | [22](../notes/22-exterior-spectator-suspension.md) | all-length exterior suspension and strict left/right flatness |
 | [23](../notes/23-n7-reduced-internal-word-atlas.md) | complete rational atlas of the six reduced \(n=7\) words |
 | [24](../notes/24-n7-transported-anchor-transition-groupoid.md) | exhaustive anchor histories, three transition generators, and exceptional residual invariance |
+| [25](../notes/25-n7-spacing-word-flat-core-and-quaternionic-defect.md) | stationary-edge word transport, core flatness, face transversality, and localized quaternionic defect |
 
 The exact computations are supplied by
 
@@ -943,4 +1048,5 @@ certificates/n7_exceptional_core_decomposition_certificate.py
 certificates/exterior_spectator_suspension_certificate.py
 certificates/n7_internal_word_atlas_certificate.py
 certificates/n7_anchor_transition_groupoid_certificate.py
+certificates/n7_spacing_word_transport_certificate.py
 ```
