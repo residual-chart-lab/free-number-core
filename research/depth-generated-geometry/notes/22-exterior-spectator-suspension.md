@@ -672,16 +672,17 @@ The finite calculations through \(n=7\) reduce to:
 |---:|---|---|
 | \(0\) | \((1,1,1)\) | exact seed quotient \(\mathbb H\otimes\mathbb H\) |
 | \(1\) | \((2,1,1),(1,2,1),(1,1,2)\) | exact 48-dimensional quotients; the middle word has the cap defect and central shear |
-| \(2\) | \((3,1,1),(2,2,1),(2,1,2),(1,3,1),(1,2,2),(1,1,3)\) | complete two-prime classification; \((2,1,2)\) has the exact \(144+4\) decomposition |
+| \(2\) | \((3,1,1),(2,2,1),(2,1,2),(1,3,1),(1,2,2),(1,1,3)\) | Note 23 closes all five generic words over \(\mathbb Q\); \((2,1,2)\) has the exact \(144+4\) decomposition of Note 21 |
 
 All placements obtained by adding exterior spectators are theorems over the
-same base field as their reduced row. Consequently the next
-characteristic-zero calculations are needed only for the five unresolved
-generic two-internal-spectator words, not for their infinitely many exterior
-copies.
+same base field as their reduced row. Note 23 therefore upgrades the full
+two-internal-spectator row, and hence all fifteen \(n=7\) supports, to
+characteristic zero. No generic reduced word remains to be lifted.
 
-The next classification target is the set of internal spacing words and
-the elementary transition produced when one letter is increased.
+The next finite target is the transition graph among the multiple admissible
+anchored coordinates on these six exact reduced words. Beyond that lies the
+three-internal-spectator row and the general elementary passage produced when
+one letter is increased.
 
 ---
 

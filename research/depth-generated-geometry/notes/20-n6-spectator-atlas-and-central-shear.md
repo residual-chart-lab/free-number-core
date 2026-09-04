@@ -641,3 +641,10 @@ test whether their nonconfluence factors through Note 16's canonical
 \(\mathbb H\)-valued square residual. Only that comparison can promote the
 present cross-product shear from a chart transition to a curvature
 candidate.
+
+**Subsequent status.** Note 22 proves functorial exterior insertion for
+arbitrarily many spectators. Notes 21 and 23 construct exact anchored
+coordinates for all six reduced two-spectator words, including the
+exceptional \(144+4\) split. What remains is precisely the comparison step:
+enumerating the several admissible anchors, computing their transitions,
+and composing them around genuine closed paths.

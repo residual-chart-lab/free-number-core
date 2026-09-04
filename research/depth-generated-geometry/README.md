@@ -8,7 +8,7 @@
 
 [`notes/00-checkpoint-through-note12.md`](notes/00-checkpoint-through-note12.md) は、Note 01–12 の定理依存、次元表、到達点、未解決境界、および proof audit を一枚にまとめた入口である。
 
-[`synthesis/ordered-tetrahedral-spectator-atlas.md`](synthesis/ordered-tetrahedral-spectator-atlas.md) は、Note 14–20 を placement memory、二 chart 被覆、中央 cross-product transition、chart-independent residual という一本の有限代数として再構成した独立読解層である。probe-depth filtration 全体を先に追わず、現在の tetrahedral / spectator 機構だけを把握したい場合はこちらから読める。
+[`synthesis/ordered-tetrahedral-spectator-atlas.md`](synthesis/ordered-tetrahedral-spectator-atlas.md) は、Note 14–23 を placement memory、二 chart 被覆、中央 cross-product transition、two-spectator completion、exterior suspension、および reduced internal-word atlas という一本の有限代数として再構成した独立読解層である。probe-depth filtration 全体を先に追わず、現在の tetrahedral / spectator 機構だけを把握したい場合はこちらから読める。
 
 ## Claim boundary
 
@@ -45,19 +45,23 @@
 - **Proved over \(\mathbb Q\) at \(n=6\):** \(\beta\) は \(K_4\otimes V\) を全消去し、long-edge image は \(\ker\beta\) に等しい。central-spectator \(\mathbb H\) は seed \(K_4\) の直積輸送ではなく、直交 channel \(W_{12}\otimes V\) の商から生じる。
 - **Proved over \(\mathbb Q\) at \(n=6\):** 五つの spectator placements は direct seed の left/right 二 chart で被覆される。外側 overlap の transition は恒等だが、中央 overlap は閉形式 \(G=\operatorname{id}_{\mathbb H}\otimes\theta\) を持つ。
 - **Proved over \(\mathbb Q\) at \(n=6\):** 中央 transition は \(\theta(1\otimes w)=1\otimes w+\sum_a e_a\otimes(e_a\times w)\), \(\theta(a\otimes w)=-w\otimes a\) であり、最小多項式は \((t-1)^2(t+1)\)。seed の \(K_4\otimes V\) / \(W_{12}\otimes V\) channels を非自明に混合する。
-- **Open:** tetrahedral generation の all-\(n\) proof、multi-spectator transport、decorated quotient の一般分類、full intermediate filtration、および closed-path transport / curvature との接続。
+- **Proved over \(\mathbb Q\) at \(n=7\):** transported \(n=6\) long-cross anchor は一意な144次元 core map \(C_{212}\) へ延長され、\((C_{212},\kappa_{212})\) が exceptional 148次元 local quotient 全体を exact に与える。
+- **Proved for all \(n\ge5\):** support の左右外側への spectator insertion は local matching complex、quotient、および全 labelled edge images を厳密に \(V\) と tensorize し、左右 exterior suspensions は可換である。
+- **Proved over \(\mathbb Q\) at \(n=7\):** exceptional \(212\) 以外の五つの reduced internal words は、transported \(n=6\) edge anchor の一意な completion により144次元 target \((\mathbb H\otimes\mathbb H)\otimes V^{\otimes2}\) へ exact に閉じる。
+- **Proved over \(\mathbb Q\) at \(n=7\):** 六つの reduced words の全 quotient が完成し、五 generic words の六 edge rank / Casimir profiles も exact に回収された。Note 22 と合わせると全15 tetrahedral supports が characteristic zero で得られる。
+- **Open:** tetrahedral generation の all-\(n\) proof、三 spectator 以上の interior transport、internal-word transition の閉形式、full intermediate filtration、および closed-path transport / curvature との接続。
 
 以下で「生成」という語を線形像・生成元の意味で使う場合を除き、確立している順序は ontological / causal order ではなく **visibility / reconstruction order** である。
 
 ## 現在の到達点
 
-- (n=2) の深度1応答空間を、(V^{\otimes2}) を先に置かず内在的に定義した。
-- 新しい5次元誕生層 (S^2_0V) と埋込み係数 (-2) を証明した。
-- 全有限 (n) の終端 exact-response space を、局所デコーダだけから再帰構成した。
-- 固定 (n) の部分深度 response tower、birth layers、有限逆極限、depth ultrametric を構成した。
-- (n=2,3,4) の既知の exact checks を dimension-growth profile として読み替えた。
-- (n=3,d=1) の20次元空間を、二つの局所応答の fiber product として直接 presentation した。
-- 全 (n\ge3) の depth-one 空間を outer-gluing law だけで完全分類した。
+- \(n=2\) の深度1応答空間を、\(V^{\otimes2}\) を先に置かず内在的に定義した。
+- 新しい5次元誕生層 \(S^2_0V\) と埋込み係数 \(-2\) を証明した。
+- 全有限 \(n\) の終端 exact-response space を、局所デコーダだけから再帰構成した。
+- 固定 \(n\) の部分深度 response tower、birth layers、有限逆極限、depth ultrametric を構成した。
+- \(n=2,3,4\) の既知の exact checks を dimension-growth profile として読み替えた。
+- \(n=3,d=1\) の20次元空間を、二つの局所応答の fiber product として直接 presentation した。
+- 全 \(n\ge3\) の depth-one 空間を outer-gluing law だけで完全分類した。
 - \(n=4,d=2\) の72次元空間を、三つの36次元 pair charts の exact matching kernel として直接 presentation した。
 - 40次元 depth-two birth layer を \((V_2\oplus V_3)\oplus(V_0\oplus V_1\oplus V_2\oplus V_3)\oplus(V_2\oplus V_3)\) に局在分解した。
 - \(n=4,d=3\) の terminal filling を \(72+9\) の canonical \(SO(3)\)-splitting として閉じ、最高スピン・pair-boundary kernel・terminal birth・pure interior の四重一致を得た。
@@ -89,6 +93,10 @@
 - 五つの \(n=6\) spectator placements を direct seed の left/right 二 chart で完全被覆し、全 direct full-edge normalization の存在・非存在を有理数上で分類した。
 - 中央 spectator overlap の座標変換を \(G=\operatorname{id}_{\mathbb H}\otimes\theta\) と閉じ、\(\theta\) が involutive reflection と三次元 cross-product shear の和であることを証明した。
 - 外側 overlap では \(G=I\)、中央 overlap では \(m_G(t)=(t-1)^2(t+1)\) となること、および cap residual が \(\beta_R\Omega^R=\beta_L\Omega^L\) と chart-independent であることを得た。
+- exceptional \(n=7\) support で transported \(n=6\) anchor を一意な144次元 core map へ延長し、\(\kappa_{212}\cong\mathbb H\) と合わせて148次元 quotient を有理数上で完全に座標化した。
+- 左右 exterior spectator insertion が全 local complex と decorated quotient を \(V\) で tensorize し、両 insertion order が strict に可換であることを全長で証明した。
+- \(n=7\) の五つの generic reduced internal words を transported anchor から一意な144次元 coordinate へ completion し、整数 cancellation、\(SO(3)\)-equivariance、六辺 Casimir profile を exact に証明した。
+- reduced word 列 \(113,122,131,212,221,311\) の dimensions を \(144,144,144,148,144,144\) と characteristic zero で閉じ、exterior suspension と合わせて \(n=7\) 全15配置を完成した。
 
 ## Reading order
 
@@ -100,19 +108,19 @@
    最小反転定理。深度1の許容条件は「応答の虚部が自己共役」。
 
 2. [`notes/02-all-grade-intrinsic-terminal-response.md`](notes/02-all-grade-intrinsic-terminal-response.md)  
-   全 (n) の終端応答空間を ambient state なしに構成する再帰定理。
+   全 \(n\) の終端応答空間を ambient state なしに構成する再帰定理。
 
 3. [`notes/03-finite-depth-space-reconstruction.md`](notes/03-finite-depth-space-reconstruction.md)  
    部分深度の塔、誕生層、dimension profile、ultrametric。
 
 4. [`notes/04-n3-depth1-fiber-product.md`](notes/04-n3-depth1-fiber-product.md)  
-   二つの12次元局所応答を共通 (mathbb H) 上で貼り、20次元 depth-one space を作る。
+   二つの12次元局所応答を共通 \(\mathbb H\) 上で貼り、20次元 depth-one space を作る。
 
 5. [`notes/05-n4-depth1-factor-origin-and-outer-gluing.md`](notes/05-n4-depth1-factor-origin-and-outer-gluing.md)  
-   left / middle / right の factor origin と (n=4) multiplicity-depth splitting。
+   left / middle / right の factor origin と \(n=4\) multiplicity-depth splitting。
 
 6. [`notes/06-all-n-depth1-outer-gluing-theorem.md`](notes/06-all-n-depth1-outer-gluing-theorem.md)  
-   局所 zero-compression gadgets による全 (n\ge3) の depth-one direct presentation。
+   局所 zero-compression gadgets による全 \(n\ge3\) の depth-one direct presentation。
 
 7. [`notes/07-n4-depth2-pair-chart-gluing.md`](notes/07-n4-depth2-pair-chart-gluing.md)
 
@@ -170,6 +178,18 @@
 
     五つの spectator placements の二 chart 被覆、中央 overlap の閉 cross-product transition、および reflection-plus-shear decomposition。
 
+21. [notes/21-n7-exceptional-core-decomposition.md](notes/21-n7-exceptional-core-decomposition.md)
+
+    transported \(n=6\) long-cross anchor の一意な144次元 completion、\(\kappa_{212}\) との exact \(144+4\) 分解、および exceptional 六辺 profile の有理数上の回収。
+
+22. [notes/22-exterior-spectator-suspension.md](notes/22-exterior-spectator-suspension.md)
+
+    左右 exterior suspension による全 local complex の tensorization、strictly commuting exterior squares、および seed / cap / \(2\!-!1\!-!2\) の無限 exact towers。
+
+23. [notes/23-n7-reduced-internal-word-atlas.md](notes/23-n7-reduced-internal-word-atlas.md)
+
+    五つの generic reduced words の一意な anchored completion、全 edge Casimir profiles、および exceptional \(212\) を含む characteristic-zero \(n=7\) atlas の完結。
+
 ## Exact certificate
 
 ```bash
@@ -192,11 +212,24 @@ python3 certificates/n7_exceptional_square_operator_certificate.py
 python3 certificates/n6_capped_five_edge_operator_certificate.py
 python3 certificates/n6_seed_cap_bridge_certificate.py
 python3 certificates/n6_spectator_chart_transition_certificate.py
+python3 certificates/n7_exceptional_core_decomposition_certificate.py
+python3 certificates/exterior_spectator_suspension_certificate.py
+python3 certificates/n7_internal_word_atlas_certificate.py
 ```
 
-最初の十本は外部ライブラリを使わず、有理数上の完全計算で (n=2) の内在的応答塔、(n=3,d=1) の fiber product、(n=3,\ldots,7) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex、\(n=4,d=3\) の canonical terminal splitting、\(n=2,\ldots,5\) の terminal boundary theorem、\(n=5\) response tetrahedron の pairwise gluing と16次元 syzygy、all-\(n\) descent proof の固定局所恒等式、閉形式 \(\omega_5\) とその \(12+4\) channel decomposition、および seed \(K_4\) の Frobenius factorization と直交 projector を検証する。
+最初の十本は外部ライブラリを使わず、有理数上の完全計算で \(n=2\) の内在的応答塔、\(n=3,d=1\) の fiber product、\(n=3,\ldots,7\) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex、\(n=4,d=3\) の canonical terminal splitting、\(n=2,\ldots,5\) の terminal boundary theorem、\(n=5\) response tetrahedron の pairwise gluing と16次元 syzygy、all-\(n\) descent proof の固定局所恒等式、閉形式 \(\omega_5\) とその \(12+4\) channel decomposition、および seed \(K_4\) の Frobenius factorization と直交 projector を検証する。exterior-suspension certificate も標準ライブラリだけを使い、左右の局所 decoder、全 basis product に対する prepend / append 恒等式、および strict interchange を exact に検査する。
 
-NumPy を使う九本は、整数行列の格納と有限体上の行基本変形にだけ用い、浮動小数点計算は行わない。\(n=6\) certificate は \(\mathbb F_{1009}\) と \(\mathbb F_{1013}\) 上で rank 904 を独立に確認し、有理数上の rank 上界と modular minor の下界から \(\mathbb Q\) 上の exactness と176次元 syzygy を証明する。\(n=7\) local descent stress は all-\(n\) proof の代用ではなく、最初の未使用局所次数 \(m=5\) を検査する。second-differential certificate は \(n=5\) を有理数上、\(n=6\) を両素数体上で検証する。\(n=7\) tetrahedral stress は十五の局所商、middle exactness、exceptional \(2\!-!1\!-!2\) residual、および次余核の Casimir 型を両素数体上で検査する。spectator-placement certificate は \(n=6,7\) の全 labelled edge-image profile と canonical outer-core quotient を同じ二素数体上で検査する。exceptional-square certificate は paired collapse と square cancellation を有理数上で確認し、二つの modular minors から cross-square exactness を \(\mathbb Q\) 上へ持ち上げる。capped-five-edge certificate は left/right cap identities を整数上で確認し、二つの modular minors から \(n=6\) central-spectator quotient の exactness を \(\mathbb Q\) 上へ持ち上げる。seed-cap bridge certificate は二素数から同じ \(4\Omega_6\) を復元した後、matching cancellation、\(\beta\Omega_6=\chi_6\)、channel ranks、および \(E_{14}=\ker\beta\) を整数・有理数上で検証する。spectator-atlas certificate は全五配置の direct seed charts を同じ二素数から復元し、非存在側を exact rational rank で排除したうえで、中央 transition の閉形式、最小多項式、channel mixing、および chart-independent cap decoder を整数・有理数上で検証する。
+NumPy を使う十一の certificate は、整数行列の格納と有限体上の行基本変形にだけ用い、浮動小数点計算は行わない。既存の certificates は \(n=6,7\) の matching ranks、middle exactness、placement profiles、square/cap residuals、seed-cap bridge、および \(n=6\) chart transition を検査する。
+
+exceptional-core certificate は transported \(n=6\) anchor を144次元 core へ一意に completion し、CRT bound、整数 cancellation、および exact edge ranks によって
+
+\[
+Y_{7,(1,3,4,6)}
+\cong
+((\mathbb H\otimes\mathbb H)\otimes V^{\otimes2})\oplus\mathbb H
+\]
+
+を有理数上で証明する。internal-word-atlas certificate は残る五つの reduced words を二素数から同一の整数 quotient maps へ復元し、CRT bound、rank 1800、\(SO(3)\)-equivariance、および全 edge Casimir profiles によって generic \(n=7\) atlas を有理数上へ持ち上げる。
 
 Expected final line:
 
@@ -253,7 +286,13 @@ G=\operatorname{id}_{\mathbb H}\otimes\theta,
 \theta(a\otimes w)=-w\otimes a
 \]
 
-となる。\(m_G(t)=(t-1)^2(t+1)\) であり、これは単なる slot permutation ではなく三次元 nilpotent shear を含む。残る核心は、\(\Omega_6\) 全ブロックの短い primitive formula、二人目の spectator がこの transition を \(n=7\) parity square へどう運ぶか、および複数経路の閉比較である。これが成立すれば、response-simplex complex
+となる。\(m_G(t)=(t-1)^2(t+1)\) であり、これは単なる slot permutation ではなく三次元 nilpotent shear を含む。
+
+Note 21 は transported \(n=6\) edge anchor を exceptional \(212\) support 上で一意な144次元 core \(C_{212}\) へ完成し、\((C_{212},\kappa_{212})\) が148次元 quotient を余りなく与えることを証明した。Note 22 は左右 exterior insertion が全 local complex と edge-incidence lattice を \(V\) で tensorize し、両 suspension squares が strict に可換であることを全長で証明した。
+
+Note 23 は最初の reduced interior layer を characteristic zero で完結した。五つの generic words はすべて transported edge anchor から一意な144次元 coordinate へ完成し、exceptional \(212\) だけが \(144+4\) となる。したがって次の仕事は quotient dimension をさらに列挙することではない。同じ word 上で成立する複数 anchor completion を比較し、六つの reduced words の exact transition graph を作ることである。
+
+この transition graph から elementary interior transport と genuine closed loops が抽出できれば、response-simplex complex
 
 \[
 C_n^0\xrightarrow{\partial_n}C_n^1

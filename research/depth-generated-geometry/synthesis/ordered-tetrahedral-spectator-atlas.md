@@ -1,26 +1,31 @@
 # Standalone Synthesis — Ordered Tetrahedral Spectator Atlas
 
-## Notes 14–20 reorganized around placement memory and chart transition
+## Notes 14–23 reorganized around placement memory and chart transition
 
 **Status:** synthesis and reorganization; no new theorem is claimed here
 
-**Source:** Notes 14–20 and their exact certificates
+**Source:** Notes 14–23 and their exact certificates
 
 **Purpose:** isolate the finite algebraic mechanism that can be understood
-without first following the full probe-depth filtration program.  The central
-object is the first exact spectator atlas at \(n=6\).  The odd-length square at
-\(n=7\) is recorded separately as the first two-spectator continuation.
+without first following the full probe-depth filtration program. The central
+object is the first exact spectator atlas at \(n=6\). The odd-length square
+at \(n=7\) is the exceptional two-spectator continuation, the full reduced
+six-word layer is exact over \(\mathbb Q\), and exterior suspension propagates
+these finite objects to exact all-length towers.
 
 **Claim boundary:** the results below prove an order-sensitive local quotient,
-a two-chart cover, a nontrivial quaternionic transition, and a chart-independent
-residual.  They do not yet prove a closed-loop holonomy, a curvature theorem,
-an all-\(n\) spectator functor, or a physical interpretation.
+a two-chart cover, a nontrivial quaternionic transition, a chart-independent
+residual, the complete exact two-spectator reduced atlas, and an all-\(n\)
+exterior spectator functor. They do not yet prove an elementary transition
+formula between all internal words, a closed-loop holonomy, a curvature
+theorem, or a physical interpretation.
 
 ---
 
 ## 0. Executive statement
 
-The seven notes establish the following finite phenomenon.
+The ten notes establish the following finite phenomenon and its exterior
+propagation.
 
 Four ordered face responses meet along six labelled edge responses.  At the
 minimal tetrahedral level their compatibility quotient is
@@ -584,10 +589,10 @@ of the \(n=5\) seed.  The atlas transition forces it to reappear.
 
 ---
 
-## 7. The first two-spectator continuation at \(n=7\)
+## 7. The exceptional two-spectator quotient at \(n=7\)
 
-The \(n=6\) atlas is complete for one spectator.  Note 16 records a related
-but not yet atlas-connected phenomenon for two spectators.
+The \(n=6\) atlas is complete for one spectator. Notes 16 and 21 identify
+and then fully coordinate the exceptional two-spectator continuation.
 
 The first ordered support with parity separation
 
@@ -645,16 +650,122 @@ Thus the exceptional four-dimensional residual at \(n=7\) is the complete
 cokernel of an alternating quaternionic cross square.  Its position is
 forced by order and parity, not guessed from the dimension anomaly.
 
-What is not yet proved is the chain-level transport taking the one-spectator
-transition \(G\) to this two-spectator square.  Equation (7.5) is therefore
-the next compatible endpoint, not yet a face of the completed \(n=6\)
-atlas.
+Note 21 transports a full-rank edge anchor from the \(n=6\) atlas and proves
+that it has a unique compatible completion
+
+\[
+C_{212}:E_{(1,3,4,6)}\longrightarrow
+T_7:=(\mathbb H\otimes\mathbb H)\otimes V^{\otimes2}.
+\tag{7.6}
+\]
+
+The core coordinate and the square residual exactly exhaust the quotient:
+
+\[
+\boxed{
+Y_{7,(1,3,4,6)}
+\cong T_7\oplus\mathbb H,
+\qquad
+\dim Y_{7,(1,3,4,6)}=144+4=148.
+}
+\tag{7.7}
+\]
+
+The six labelled edge ranks split as
+
+\[
+\begin{array}{c|rrrrrr}
+&12&13&14&23&24&34\\ \hline
+\text{core}&144&108&144&36&108&144\\
+\text{full exceptional}&144&112&148&40&112&144.
+\end{array}
+\tag{7.8}
+\]
+
+Thus the extra quaternion is transverse to the transported 144-dimensional
+spectator core and is seen exactly on the four cross edges.
 
 ---
 
-## 8. The independent theorem package
+## 8. The complete reduced two-spectator atlas
 
-Stripped of the surrounding depth-filtration narrative, Notes 14–20 give
+Exterior suspension strips off every spectator lying strictly outside the
+support interval. At \(n=7\), the irreducible two-spectator problem therefore
+consists of the six positive spacing words
+
+\[
+113,\quad122,\quad131,\quad212,\quad221,\quad311.
+\tag{8.1}
+\]
+
+For each of the five generic words \(\lambda\ne212\), Note 23 transports one
+full-rank \(n=6\) edge anchor and proves that local compatibility completes it
+uniquely to an exact quotient coordinate
+
+\[
+C_\lambda:E_{Q_\lambda}\longrightarrow T_7,
+\qquad
+\ker C_\lambda=\operatorname{im}\widehat\partial_{7,Q_\lambda}.
+\tag{8.2}
+\]
+
+Consequently the full characteristic-zero dimension row is
+
+\[
+\boxed{
+\begin{array}{c|rrrrrr}
+\lambda&113&122&131&212&221&311\\ \hline
+\dim Y_{7,Q_\lambda}&144&144&144&148&144&144.
+\end{array}}
+\tag{8.3}
+\]
+
+The generic words fall into two edge-incidence classes. The exterior-type
+words \(113,311\) have ranks
+
+\[
+(144,108,144,36,108,144),
+\tag{8.4}
+\]
+
+whereas the three central words \(122,131,221\) have
+
+\[
+(144,108,132,36,108,144).
+\tag{8.5}
+\]
+
+The latter lose precisely the \(\mathbb H\otimes V\) spin profile
+
+\[
+(1,6,5,0,0)
+\tag{8.6}
+\]
+
+from the long-edge image. The exceptional word \(212\) instead restores the
+144-dimensional standard core and adds the transverse cross-edge quaternion
+of Section 7. Hence the reduced layer has three exact structural classes:
+
+\[
+\boxed{
+\begin{array}{c|c}
+113,311&\text{standard exterior-type profile}\\
+122,131,221&\text{central long-edge defect}\\
+212&\text{standard core plus cross-edge }\mathbb H.
+\end{array}}
+\tag{8.7}
+\]
+
+Together with exterior suspension, this closes all fifteen tetrahedral
+supports at \(n=7\) over \(\mathbb Q\). The remaining finite problem is no
+longer quotient existence or dimension. It is to compare the several valid
+anchor completions and compute their transition graph.
+
+---
+
+## 9. The independent theorem package
+
+Stripped of the surrounding depth-filtration narrative, Notes 14–23 give
 the following self-contained package.
 
 1. **Closed tetrahedral quotient.**  The minimal six-edge relation object is
@@ -681,6 +792,15 @@ the following self-contained package.
 7. **Parity continuation.**  The first admissible two-spectator cross square
    produces an exact quaternionic residual at \(n=7\).
 
+8. **Exceptional core–residual decomposition.**  A transported spectator
+   core and the cross square give the exact split \(144+4\).
+
+9. **Exterior functoriality.**  Left and right exterior spectators tensorize
+   every quotient and labelled edge image, and the two suspensions commute.
+
+10. **Complete reduced two-spectator layer.**  All six internal words have
+    exact rational coordinates and certified edge-incidence profiles.
+
 The central implication is
 
 \[
@@ -693,18 +813,19 @@ The central implication is
 \longrightarrow
 \text{chart-independent residual}.
 }
-\tag{8.1}
+\tag{9.1}
 \]
 
-This is already a finite algebraic atlas.  Calling its transition
-``curvature'' would still be premature: curvature requires a closed
-comparison of multiple transport paths.  The next mathematical problem is
-to construct the second-spectator transport and then ask whether a genuine
-closed-path obstruction survives.
+This is a complete finite algebraic atlas through two spectators, together
+with its exterior towers. Calling a transition ``curvature'' would still be
+premature: curvature requires a closed comparison of multiple transport
+paths. The next mathematical problem is to compute the exact transition
+graph among the already constructed second-spectator coordinates and then
+ask whether a genuine closed-path obstruction survives.
 
 ---
 
-## 9. Source map
+## 10. Source map
 
 | Note | Role in this synthesis |
 |---:|---|
@@ -715,6 +836,9 @@ closed-path obstruction survives.
 | [18](../notes/18-canonical-seed-quaternion-coordinate.md) | Frobenius coordinate and orthogonal seed channels |
 | [19](../notes/19-central-spectator-channel-transfer.md) | normalized \(n=6\) quotient, contraction \(\beta\), and channel transfer |
 | [20](../notes/20-n6-spectator-atlas-and-central-shear.md) | complete one-spectator atlas and central transition |
+| [21](../notes/21-n7-exceptional-core-decomposition.md) | exact exceptional \(144+4\) core–residual coordinate |
+| [22](../notes/22-exterior-spectator-suspension.md) | all-length exterior suspension and strict left/right flatness |
+| [23](../notes/23-n7-reduced-internal-word-atlas.md) | complete rational atlas of the six reduced \(n=7\) words |
 
 The exact computations are supplied by
 
@@ -726,4 +850,7 @@ certificates/n7_exceptional_square_operator_certificate.py
 certificates/n6_capped_five_edge_operator_certificate.py
 certificates/n6_seed_cap_bridge_certificate.py
 certificates/n6_spectator_chart_transition_certificate.py
+certificates/n7_exceptional_core_decomposition_certificate.py
+certificates/exterior_spectator_suspension_certificate.py
+certificates/n7_internal_word_atlas_certificate.py
 ```

@@ -15,7 +15,10 @@ not construct a general spectator transport, identify the displayed
 quaternionic quotients with Note 14's \(K_4\), or interpret them as
 curvature. Notes 16 and 17 subsequently give characteristic-zero decoders
 for the exceptional \(n=7\) quotient and the central \(n=6\) quotient;
-Note 18 gives the seed \(K_4\) its canonical quaternion coordinate.
+Note 18 gives the seed \(K_4\) its canonical quaternion coordinate. Notes
+19–23 subsequently construct the \(n=6\) chart transition, the exact
+exceptional core–residual split, exterior suspension, and the complete
+rational reduced \(n=7\) atlas.
 
 ---
 
@@ -554,3 +557,11 @@ The safe conclusion is exact and already nontrivial: the response quotient
 retains order-placement memory in its internal incidence structure, and the
 first surviving two-spectator residual is a canonical quaternionic
 cross-edge quotient.
+
+**Subsequent resolution.** Notes 20–23 settle the characteristic-zero
+finite part of item 2 at \(n=7\), supply an exact core–residual coordinate
+for the exceptional quotient, and settle exterior spectator transport in
+item 4 for every length. The channel-level comparison in item 3, the
+general internal-word theorem, and closed-path comparison remain open. The
+next finite problem is the exact transition graph among the multiple
+anchored coordinates of the six reduced \(n=7\) words.
