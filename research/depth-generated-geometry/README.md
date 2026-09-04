@@ -8,7 +8,7 @@
 
 [`notes/00-checkpoint-through-note12.md`](notes/00-checkpoint-through-note12.md) は、Note 01–12 の定理依存、次元表、到達点、未解決境界、および proof audit を一枚にまとめた入口である。
 
-[`synthesis/ordered-tetrahedral-spectator-atlas.md`](synthesis/ordered-tetrahedral-spectator-atlas.md) は、Note 14–23 を placement memory、二 chart 被覆、中央 cross-product transition、two-spectator completion、exterior suspension、および reduced internal-word atlas という一本の有限代数として再構成した独立読解層である。probe-depth filtration 全体を先に追わず、現在の tetrahedral / spectator 機構だけを把握したい場合はこちらから読める。
+[`synthesis/ordered-tetrahedral-spectator-atlas.md`](synthesis/ordered-tetrahedral-spectator-atlas.md) は、Note 14–24 を placement memory、二 chart 被覆、中央 cross-product transition、two-spectator completion、exterior suspension、reduced internal-word atlas、および transported-anchor transition groupoid という一本の有限代数として再構成した独立読解層である。probe-depth filtration 全体を先に追わず、現在の tetrahedral / spectator 機構だけを把握したい場合はこちらから読める。
 
 ## Claim boundary
 
@@ -49,7 +49,9 @@
 - **Proved for all \(n\ge5\):** support の左右外側への spectator insertion は local matching complex、quotient、および全 labelled edge images を厳密に \(V\) と tensorize し、左右 exterior suspensions は可換である。
 - **Proved over \(\mathbb Q\) at \(n=7\):** exceptional \(212\) 以外の五つの reduced internal words は、transported \(n=6\) edge anchor の一意な completion により144次元 target \((\mathbb H\otimes\mathbb H)\otimes V^{\otimes2}\) へ exact に閉じる。
 - **Proved over \(\mathbb Q\) at \(n=7\):** 六つの reduced words の全 quotient が完成し、五 generic words の六 edge rank / Casimir profiles も exact に回収された。Note 22 と合わせると全15 tetrahedral supports が characteristic zero で得られる。
-- **Open:** tetrahedral generation の all-\(n\) proof、三 spectator 以上の interior transport、internal-word transition の閉形式、full intermediate filtration、および closed-path transport / curvature との接続。
+- **Proved over \(\mathbb Q\) at \(n=7\):** 全 transported direct-anchor histories は三つの pair-local operators \(A=(\theta^{-1})_{R,a}\), \(B=(\theta^{-1})_{R,b}\), \(S=(-\theta)_{L,b}\) で生成される。重なる因子対は非可換で、合成の最小多項式に \(\Phi_6\) と \(\Phi_4\) が現れる。
+- **Proved over \(\mathbb Q\) at \(n=7\):** exceptional \(212\) の二つの full coordinates の transition は \(S\oplus I_{\mathbb H}\)。\(\kappa_{212}\) は固定され、residual-to-core shear はゼロである。
+- **Open:** tetrahedral generation の all-\(n\) proof、隣接 internal words 間の transport、三 spectator 以上の interior transport、full intermediate filtration、および closed-path transport / curvature との接続。
 
 以下で「生成」という語を線形像・生成元の意味で使う場合を除き、確立している順序は ontological / causal order ではなく **visibility / reconstruction order** である。
 
@@ -97,6 +99,9 @@
 - 左右 exterior spectator insertion が全 local complex と decorated quotient を \(V\) で tensorize し、両 insertion order が strict に可換であることを全長で証明した。
 - \(n=7\) の五つの generic reduced internal words を transported anchor から一意な144次元 coordinate へ completion し、整数 cancellation、\(SO(3)\)-equivariance、六辺 Casimir profile を exact に証明した。
 - reduced word 列 \(113,122,131,212,221,311\) の dimensions を \(144,144,144,148,144,144\) と characteristic zero で閉じ、exterior suspension と合わせて \(n=7\) 全15配置を完成した。
+- 全20 transported direct-anchor histories を列挙し、14個の distinct core coordinates と chains \(122:S,A\), \(131:B,S,A\), \(221:B,S\) を有理数上で完全に決定した。
+- \(A,B,S\) を \(\theta,\theta^{-1}\) の pair-local embeddings と同定し、\(\operatorname{rank}[A,B]=64\), \(\operatorname{rank}[S,B]=51\) および合成 \(ASB\) の最小多項式 \((t-1)^2(t+1)^3(t^2+1)(t^2-t+1)\) を証明した。
+- exceptional \(212\) の二構成履歴が \(S\oplus I_{\mathbb H}\) で移り、\(\kappa_{212}\) が chart-independent に固定されることを証明した。
 
 ## Reading order
 
@@ -190,6 +195,10 @@
 
     五つの generic reduced words の一意な anchored completion、全 edge Casimir profiles、および exceptional \(212\) を含む characteristic-zero \(n=7\) atlas の完結。
 
+24. [notes/24-n7-transported-anchor-transition-groupoid.md](notes/24-n7-transported-anchor-transition-groupoid.md)
+
+    全 transported direct-anchor histories の exhaustive census、三つの pair-local generators \(A,B,S\)、exact minimal polynomials、および exceptional residual の transition invariance。
+
 ## Exact certificate
 
 ```bash
@@ -215,11 +224,12 @@ python3 certificates/n6_spectator_chart_transition_certificate.py
 python3 certificates/n7_exceptional_core_decomposition_certificate.py
 python3 certificates/exterior_spectator_suspension_certificate.py
 python3 certificates/n7_internal_word_atlas_certificate.py
+python3 certificates/n7_anchor_transition_groupoid_certificate.py
 ```
 
 最初の十本は外部ライブラリを使わず、有理数上の完全計算で \(n=2\) の内在的応答塔、\(n=3,d=1\) の fiber product、\(n=3,\ldots,7\) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex、\(n=4,d=3\) の canonical terminal splitting、\(n=2,\ldots,5\) の terminal boundary theorem、\(n=5\) response tetrahedron の pairwise gluing と16次元 syzygy、all-\(n\) descent proof の固定局所恒等式、閉形式 \(\omega_5\) とその \(12+4\) channel decomposition、および seed \(K_4\) の Frobenius factorization と直交 projector を検証する。exterior-suspension certificate も標準ライブラリだけを使い、左右の局所 decoder、全 basis product に対する prepend / append 恒等式、および strict interchange を exact に検査する。
 
-NumPy を使う十一の certificate は、整数行列の格納と有限体上の行基本変形にだけ用い、浮動小数点計算は行わない。既存の certificates は \(n=6,7\) の matching ranks、middle exactness、placement profiles、square/cap residuals、seed-cap bridge、および \(n=6\) chart transition を検査する。
+NumPy を使う十二の certificate は、整数行列の格納と有限体上の行基本変形にだけ用い、浮動小数点計算は行わない。既存の certificates は \(n=6,7\) の matching ranks、middle exactness、placement profiles、square/cap residuals、seed-cap bridge、および \(n=6\) chart transition を検査する。
 
 exceptional-core certificate は transported \(n=6\) anchor を144次元 core へ一意に completion し、CRT bound、整数 cancellation、および exact edge ranks によって
 
@@ -229,7 +239,7 @@ Y_{7,(1,3,4,6)}
 ((\mathbb H\otimes\mathbb H)\otimes V^{\otimes2})\oplus\mathbb H
 \]
 
-を有理数上で証明する。internal-word-atlas certificate は残る五つの reduced words を二素数から同一の整数 quotient maps へ復元し、CRT bound、rank 1800、\(SO(3)\)-equivariance、および全 edge Casimir profiles によって generic \(n=7\) atlas を有理数上へ持ち上げる。
+を有理数上で証明する。internal-word-atlas certificate は残る五つの reduced words を二素数から同一の整数 quotient maps へ復元し、CRT bound、rank 1800、\(SO(3)\)-equivariance、および全 edge Casimir profiles によって generic \(n=7\) atlas を有理数上へ持ち上げる。anchor-transition-groupoid certificate は全20 histories を列挙し、二素数から同じ14 core coordinates を復元したうえで、三 generator chains、commutator ranks、minimal polynomials、top-spin action、および exceptional transition \(S\oplus I_{\mathbb H}\) を整数・有理数上で検証する。
 
 Expected final line:
 
@@ -290,9 +300,21 @@ G=\operatorname{id}_{\mathbb H}\otimes\theta,
 
 Note 21 は transported \(n=6\) edge anchor を exceptional \(212\) support 上で一意な144次元 core \(C_{212}\) へ完成し、\((C_{212},\kappa_{212})\) が148次元 quotient を余りなく与えることを証明した。Note 22 は左右 exterior insertion が全 local complex と edge-incidence lattice を \(V\) で tensorize し、両 suspension squares が strict に可換であることを全長で証明した。
 
-Note 23 は最初の reduced interior layer を characteristic zero で完結した。五つの generic words はすべて transported edge anchor から一意な144次元 coordinate へ完成し、exceptional \(212\) だけが \(144+4\) となる。したがって次の仕事は quotient dimension をさらに列挙することではない。同じ word 上で成立する複数 anchor completion を比較し、六つの reduced words の exact transition graph を作ることである。
+Note 23 は最初の reduced interior layer を characteristic zero で完結した。五つの generic words はすべて transported edge anchor から一意な144次元 coordinate へ完成し、exceptional \(212\) だけが \(144+4\) となる。
 
-この transition graph から elementary interior transport と genuine closed loops が抽出できれば、response-simplex complex
+Note 24 は同じ word 上の複数 anchor completion をすべて比較し、その transition groupoid を三つの pair-local operators
+
+\[
+A=(\theta^{-1})_{R,a},
+\qquad
+B=(\theta^{-1})_{R,b},
+\qquad
+S=(-\theta)_{L,b}
+\]
+
+で閉じた。\(A,S\) は可換だが、\([A,B]\) と \([S,B]\) は非零であり、合成 \(ASB\) の最小多項式には \(\Phi_4\Phi_6\) が現れる。一方、exceptional full coordinate の遷移は \(S\oplus I_{\mathbb H}\) であり、\(\kappa_{212}\) は固定される。
+
+したがって次の仕事は同一 quotient 上の座標変換ではない。隣接 spacing words の間に elementary transport を直接構成し、独立に定義された複数経路を比較することである。この word-level transport graph から genuine closed loops が抽出できれば、response-simplex complex
 
 \[
 C_n^0\xrightarrow{\partial_n}C_n^1

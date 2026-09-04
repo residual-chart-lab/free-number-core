@@ -684,6 +684,11 @@ anchored coordinates on these six exact reduced words. Beyond that lies the
 three-internal-spectator row and the general elementary passage produced when
 one letter is increased.
 
+**Subsequent resolution.** Note 24 closes the same-word transported-anchor
+groupoid and writes all of its arrows as products of three pair-local copies
+of \(\theta,\theta^{-1}\). The unresolved transition is now specifically
+the arrow between two different internal words.
+
 ---
 
 ## 8. What remains open
