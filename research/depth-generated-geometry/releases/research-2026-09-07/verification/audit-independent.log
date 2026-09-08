@@ -1,0 +1,34 @@
+01:14:20 exact quotient certified 7 (1, 2, 4, 6) 144 matching rank 1800 L scale 4
+01:14:20 independent matching lower bound 7 (1, 2, 4, 6) [450, 450, 450, 450] 1800
+01:14:20 all literal state/probe products agree 7 (1, 2)
+01:14:20 all literal state/probe products agree 7 (1, 4)
+01:14:20 all literal state/probe products agree 7 (1, 6)
+01:14:20 all literal state/probe products agree 7 (2, 4)
+01:14:20 all literal state/probe products agree 7 (2, 6)
+01:14:20 all literal state/probe products agree 7 (4, 6)
+01:14:21 exact quotient certified 7 (1, 3, 4, 6) 148 matching rank 1796 L scale 4
+01:14:22 independent matching lower bound 7 (1, 3, 4, 6) [449, 449, 449, 449] 1796
+01:14:22 all literal state/probe products agree 7 (1, 3)
+01:14:22 all literal state/probe products agree 7 (1, 4)
+01:14:22 all literal state/probe products agree 7 (1, 6)
+01:14:22 all literal state/probe products agree 7 (3, 4)
+01:14:22 all literal state/probe products agree 7 (3, 6)
+01:14:22 all literal state/probe products agree 7 (4, 6)
+01:14:23 exact quotient certified 7 (1, 3, 5, 6) 144 matching rank 1800 L scale 4
+01:14:23 independent matching lower bound 7 (1, 3, 5, 6) [450, 450, 450, 450] 1800
+01:14:23 all literal state/probe products agree 7 (1, 3)
+01:14:24 all literal state/probe products agree 7 (1, 5)
+01:14:24 all literal state/probe products agree 7 (1, 6)
+01:14:24 all literal state/probe products agree 7 (3, 5)
+01:14:24 all literal state/probe products agree 7 (3, 6)
+01:14:24 all literal state/probe products agree 7 (5, 6)
+01:14:44 exact quotient certified 8 (1, 3, 5, 7) 444 matching rank 5388 L scale 4
+01:14:48 independent matching lower bound 8 (1, 3, 5, 7) [1347, 1347, 1347, 1347] 5388
+01:14:49 all literal state/probe products agree 8 (1, 3)
+01:14:50 all literal state/probe products agree 8 (1, 5)
+01:14:50 all literal state/probe products agree 8 (1, 7)
+01:14:51 all literal state/probe products agree 8 (3, 5)
+01:14:52 all literal state/probe products agree 8 (3, 7)
+01:14:52 all literal state/probe products agree 8 (5, 7)
+01:15:04 independent edge, parent comparison and obstruction ranks agree
+01:15:04 ALL CHECKS PASSED

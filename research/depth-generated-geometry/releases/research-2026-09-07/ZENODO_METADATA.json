@@ -1,0 +1,76 @@
+{
+  "title": "Depth-Generated Geometry: Ordered Quaternionic Response Quotients, Flat Cores, and Residual Descent",
+  "version": "research-2026-09-07-audit1",
+  "resource_type": "publication / preprint",
+  "creators": [
+    {
+      "name": "Residual Chart Lab",
+      "type": "organizational"
+    }
+  ],
+  "language": "eng",
+  "license": "MIT",
+  "keywords": [
+    "quaternion algebra",
+    "exact response",
+    "local cokernel",
+    "spectator placement",
+    "flat connection",
+    "residual quotient",
+    "exact arithmetic"
+  ],
+  "description_file": "ZENODO_DESCRIPTION.md",
+  "related_works": [
+    {
+      "identifier": "10.5281/zenodo.21328471",
+      "scheme": "doi",
+      "relationship": "references",
+      "title": "Free Numbers Core v1.0.0",
+      "resource_type": "software"
+    }
+  ],
+  "publication_date": "2026-09-07",
+  "record_strategy": "Separate DGG record; do not change the Core v1.0.0 record.",
+  "workflow_status": "Published on Zenodo; DOI resolution and the public record were verified.",
+  "schema_note": "Local publication record, not a Zenodo API response or request payload.",
+  "record_doi": "10.5281/zenodo.22646591",
+  "concept_doi": "10.5281/zenodo.22646590",
+  "record_url": "https://zenodo.org/records/22646591",
+  "access": "public",
+  "publisher": "Zenodo",
+  "archive_source": {
+    "commit": "b9ec03f3e9788b41ba1a560e299407b388db41e1",
+    "tag": "dgg-research-2026-09-07-audit1",
+    "tree": "24dd03c1f118752f5a08914076a7669055acbd9b"
+  },
+  "navigation_source_commit": "32c38d70b81a23ae19ff42d881c19e5b53659205",
+  "metadata_updated": "2026-09-08",
+  "archive_note": "The published ZIP retains prepublication metadata at the archive source commit. Public research navigation was added after that archive was fixed. Current Git metadata records the assigned DOIs without altering the published files.",
+  "files": [
+    {
+      "filename": "DGG-ordered-quaternionic-response-quotients-2026-09-07-audit1.pdf",
+      "bytes": 214708,
+      "sha256": "35f1cee2e6270ca2db3dd909f193c3fd7cbe0e8beaa9a985d65793b2e8471b3f",
+      "md5": "cf0019062fb17b12edad81136bd0b2aa"
+    },
+    {
+      "filename": "DGG-research-2026-09-07-audit1.zip",
+      "bytes": 539819,
+      "sha256": "752a5894768d2f25b642f354fd7e2cd63abab5532d2f08af1fe67b9d2d989400",
+      "md5": "40d772c1d7503607cb2586164518bd0b"
+    },
+    {
+      "filename": "DGG-audit-report-2026-09-07.md",
+      "bytes": 7682,
+      "sha256": "c087e1ddcc6f2fa9035e04a2c2d3b391a89e4ab87cd144ff8f01172bda56c42d",
+      "md5": "a4188e6e2fe3c893f2d9f07907b20120"
+    }
+  ],
+  "github_source": {
+    "commit": "110113dd763da371bb6e02c6c5083b40dd12aecc",
+    "tree": "24dd03c1f118752f5a08914076a7669055acbd9b",
+    "url": "https://github.com/residual-chart-lab/free-number-core/tree/110113dd763da371bb6e02c6c5083b40dd12aecc",
+    "relationship": "Same complete source tree as archive_source; commit identity differs after transfer through the GitHub connection."
+  },
+  "original_git_history": "Original commits and DGG tags are preserved in a recovery Git bundle. Native GitHub tag push is pending because native Git credentials are unavailable in this workspace."
+}

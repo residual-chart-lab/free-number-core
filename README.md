@@ -63,6 +63,49 @@ The current root-only certified reduction is deterministic and locally confluent
 
 The release bundle contains the PDF and LaTeX sources, the claims ledger, supporting notes, exact computational certificates, a release manifest, and SHA-256 checksums.
 
+## Depth-Generated Geometry research snapshot
+
+A separate [DGG Research Snapshot 2026-09-07](research/depth-generated-geometry/releases/research-2026-09-07/README.md)
+consolidates the ordered quaternionic quotient atlas through Note 26, with a
+standalone manuscript, claim ledger and reproducibility records. The audited
+snapshot was published on Zenodo on September 7, 2026 as an independent preprint.
+
+- **Version:** `research-2026-09-07-audit1`
+- **Version DOI:** [10.5281/zenodo.22646591](https://doi.org/10.5281/zenodo.22646591)
+- **All DGG versions:** [10.5281/zenodo.22646590](https://doi.org/10.5281/zenodo.22646590)
+- **Archived source:** [audited source tree](https://github.com/residual-chart-lab/free-number-core/tree/110113dd763da371bb6e02c6c5083b40dd12aecc)
+
+## Research navigation for readers and AI agents
+
+This work develops a quaternionic exact-response framework for finite ordered
+words in the Free Numbers Program.
+
+**[Note 25](research/depth-generated-geometry/notes/25-n7-spacing-word-flat-core-and-quaternionic-defect.md)** establishes a flat, 144-dimensional stationary-edge core
+connection on the reduced two-spectator spacing-word graph, with identity
+holonomy \(I_{144}\).
+
+**[Note 26](research/depth-generated-geometry/notes/26-n8-222-residual-redetection.md)** studies the three-internal-spectator word \(222\). Its quotient
+has dimension 444, with a 432-dimensional outer-edge core and a 12-dimensional
+residual quotient. A specified central-slot right decoder induces an
+isomorphism of residual quotients, while its full descent obstruction has
+image equal to the entire 432-dimensional core.
+
+For exact rational verification, run from the repository root:
+
+```bash
+python3 research/depth-generated-geometry/certificates/n8_222_redetection_certificate.py --certificate
+```
+
+From the extracted DGG snapshot directory, use:
+
+```bash
+python3 certificates/n8_222_redetection_certificate.py --certificate
+```
+
+See the DGG [claims ledger](research/depth-generated-geometry/releases/research-2026-09-07/CLAIMS_LEDGER.md)
+for theorem scope and [reproducibility guide](research/depth-generated-geometry/releases/research-2026-09-07/REPRODUCIBILITY.md)
+for dependencies and verification records.
+
 ## Repository map
 
 | Path | Contents |
@@ -82,6 +125,16 @@ Residual Chart Lab. (2026). Free Numbers Core v1.0.0 (Version 1.0.0) [Computer s
 ```
 
 Machine-readable citation metadata is provided in [`CITATION.cff`](CITATION.cff).
+
+For the DGG results and their computational certificates, cite the independent
+research snapshot:
+
+```text
+Residual Chart Lab. (2026). Depth-Generated Geometry: Ordered Quaternionic Response Quotients, Flat Cores, and Residual Descent (research-2026-09-07-audit1) [Preprint]. Zenodo. https://doi.org/10.5281/zenodo.22646591
+```
+
+DGG citation metadata is provided in its
+[`CITATION.cff`](research/depth-generated-geometry/releases/research-2026-09-07/CITATION.cff).
 
 ## License
 

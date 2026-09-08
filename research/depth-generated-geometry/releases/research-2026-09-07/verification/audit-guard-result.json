@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "certificate_source_sha256": "bcbc3aa7f877bdb88ac0e67ffa6ee4153da5c56e3d6a3e6635e07a3b961922a1",
+  "incomplete_cached_annihilator_rejected": true,
+  "optimized_execution_rejected": true,
+  "invalid_prime_inputs_rejected": true
+}

@@ -1,0 +1,26 @@
+\usepackage{mathpazo}
+\usepackage{mathrsfs}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\usepackage{titlesec}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{breaklines,fontsize=\small}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textsc{Depth-Generated Geometry}}
+\fancyhead[R]{\small Research Snapshot 2026-09-07}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{3em}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\titlespacing*{\section}{0pt}{18pt}{8pt}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.6em}{}
+\titlespacing*{\subsection}{0pt}{12pt}{6pt}
+\let\originalsection\section
+\renewcommand{\section}{\needspace{7\baselineskip}\originalsection}
+\allowdisplaybreaks[1]
+\AtBeginDocument{\hypersetup{linkcolor=black,urlcolor=blue}}

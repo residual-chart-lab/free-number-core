@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "For the DGG results and certificates, cite the published preprint in preferred-citation."
+title: "Depth-Generated Geometry: Ordered Quaternionic Response Quotients, Flat Cores, and Residual Descent"
+type: software
+authors:
+  - name: "Residual Chart Lab"
+version: "research-2026-09-07-audit1"
+date-released: "2026-09-07"
+doi: "10.5281/zenodo.22646591"
+url: "https://zenodo.org/records/22646591"
+# GitHub commit with the same source tree as the original archive commit b9ec03f.
+commit: "110113dd763da371bb6e02c6c5083b40dd12aecc"
+license: MIT
+repository-code: "https://github.com/residual-chart-lab/free-number-core"
+keywords:
+  - quaternion algebra
+  - exact response
+  - local cokernel
+  - residual quotient
+  - exact arithmetic
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22646590"
+    description: "Concept DOI for all versions of the independent DGG record."
+preferred-citation:
+  type: article
+  title: "Depth-Generated Geometry: Ordered Quaternionic Response Quotients, Flat Cores, and Residual Descent"
+  authors:
+    - name: "Residual Chart Lab"
+  year: 2026
+  month: 9
+  date-published: "2026-09-07"
+  version: "research-2026-09-07-audit1"
+  doi: "10.5281/zenodo.22646591"
+  url: "https://zenodo.org/records/22646591"
+  publisher:
+    name: "Zenodo"
+  notes: "Preprint with accompanying computational certificates and internal audit records."
+references:
+  - type: software
+    title: "Free Numbers Core v1.0.0"
+    authors:
+      - name: "Residual Chart Lab"
+    version: "1.0.0"
+    doi: "10.5281/zenodo.21328471"

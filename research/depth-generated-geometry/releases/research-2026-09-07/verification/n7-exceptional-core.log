@@ -1,0 +1,39 @@
+reconstructing the n=6 transported anchor
+building exceptional local matching mod 1009
+building exceptional local matching mod 1013
+support: (1, 3, 4, 6) spectators: (2, 5)
+transport anchor edge: (1, 6)
+16*matching alphabet: [-2, -1, 0, 1, 2]
+core alphabet: [-4, -3, -1, 0, 1, 3, 4, 8, 9]
+CRT bound/modulus: 629872 1022117
+ranks: matching/core/kappa/stacked = 1796 144 4 148
+core edge ranks: (144, 108, 144, 36, 108, 144)
+exceptional edge ranks: (144, 112, 148, 40, 112, 144)
+[PASS] the right encoder is integral with entries 0,+/-1
+[PASS] all face matrices have entries 0,+/-1
+[PASS] the transported long-cross anchor has rank 144
+[PASS] both primes reconstruct the same integral 16*matching
+[PASS] 16*matching has alphabet 0,+/-1,+/-2
+[PASS] both primes reconstruct the same integral core operator
+[PASS] the core entry alphabet is the expected nine values
+[PASS] the core has the transported anchor over Z
+[PASS] the factorization coefficient bound fits below the CRT modulus
+[PASS] the integral core kills 16*matching over Z
+[PASS] the integral square residual kills 16*matching over Z
+[PASS] the integral core is SO(3)-equivariant over Z
+[PASS] the integral square residual is SO(3)-equivariant over Z
+[PASS] the core has the generic six-edge rank profile
+[PASS] kappa adds four dimensions on exactly the four cross edges
+[PASS] the matching has rank 1796 mod 1009
+[PASS] the local quotient has dimension 148 mod 1009
+[PASS] the anchor edge sees the full quotient dual mod 1009
+[PASS] the anchored core has rank 144 mod 1009
+[PASS] the anchored core kills matching mod 1009
+[PASS] core plus kappa has rank 148 mod 1009
+[PASS] the matching has rank 1796 mod 1013
+[PASS] the local quotient has dimension 148 mod 1013
+[PASS] the anchor edge sees the full quotient dual mod 1013
+[PASS] the anchored core has rank 144 mod 1013
+[PASS] the anchored core kills matching mod 1013
+[PASS] core plus kappa has rank 148 mod 1013
+ALL CHECKS PASSED

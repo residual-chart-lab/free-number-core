@@ -1,0 +1,23 @@
+rank iota: 4
+rank central parameter: 4
+rank Lambda_23: 4
+central coordinate ranks: {(1, 2): 4, (1, 3): 0, (1, 4): 4, (2, 3): 4, (2, 4): 0, (3, 4): 4}
+[PASS] iota is injective
+[PASS] iota star iota equals 4 id_H
+[PASS] the central projector is idempotent
+[PASS] the central projector is self-adjoint
+[PASS] iota is SO(3)-equivariant
+[PASS] A equals iota of u v conjugate(h)
+[PASS] C equals iota of u v h
+[PASS] Lambda_23 has the closed iota factorization
+[PASS] the quaternion parameter map is onto
+[PASS] A, C, and Lambda_23 have the same four-dimensional image
+[PASS] one-quarter iota star recovers the central quaternion parameter
+[PASS] the five primitive central coordinates are closed
+[PASS] the normalized central coordinates of all six edges are closed
+[PASS] the common rank-twelve edge image is orthogonal to iota(H)
+[PASS] the central projector fixes Lambda_23 and kills the rank-twelve edges
+[PASS] ker(nu) is the common rank-twelve edge image
+[PASS] the complementary projector has rank twelve
+[PASS] A and C remain SO(3)-equivariant
+ALL CHECKS PASSED

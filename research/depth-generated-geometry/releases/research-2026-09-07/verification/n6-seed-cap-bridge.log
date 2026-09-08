@@ -1,0 +1,24 @@
+tensor matching shape: (648, 1296)
+normalized quotient shape: (48, 648)
+entries of 4 Omega_6: [np.int64(-8), np.int64(-4), np.int64(-3), np.int64(-1), np.int64(0), np.int64(1), np.int64(3), np.int64(4), np.int64(9)]
+full edge ranks: (48, 36, 44, 12, 36, 48)
+W tensor V projection ranks: (36, 36, 32, 12, 36, 36)
+K tensor V coordinate ranks: (12, 12, 12, 0, 12, 12)
+beta edge ranks: (4, 4, 0, 0, 4, 4)
+[PASS] local matching has rank 600 mod 1009
+[PASS] outer anchor has rank 48 mod 1009
+[PASS] local matching has rank 600 mod 1013
+[PASS] outer anchor has rank 48 mod 1013
+[PASS] both primes reconstruct the same integer matrix 4 Omega_6
+[PASS] 4 Omega_6 kills the tensor-coordinate matching over Z
+[PASS] the edge-34 block is exactly four times the outer anchor
+[PASS] beta Omega_6 equals chi_6 exactly over Q
+[PASS] beta kills iota(H) tensor V over Z
+[PASS] beta is onto H
+[PASS] all four labelled channel profiles hold exactly over Q
+[PASS] the four labelled channel profiles hold mod 1009
+[PASS] the long edge contains K_4 tensor V mod 1009
+[PASS] the four labelled channel profiles hold mod 1013
+[PASS] the long edge contains K_4 tensor V mod 1013
+[PASS] the long edge lies in ker beta over Z
+ALL CHECKS PASSED

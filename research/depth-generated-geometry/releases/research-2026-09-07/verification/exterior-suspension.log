@@ -1,0 +1,18 @@
+det(Theta_R), det(Theta_L): 256 256
+basis suspension identities checked: 764478
+strict interchange identities checked: 324
+seed ranks after two exterior suspensions: (144, 108, 144, 36, 108, 144)
+exceptional tower dimensions r=0..4: (148, 444, 1332, 3996, 11988)
+exceptional residual dimensions r=0..4: (4, 12, 36, 108, 324)
+[PASS] the right local encoder is invertible
+[PASS] the left local encoder is invertible
+[PASS] prepend and append identities hold through n=5
+[PASS] left and right exterior suspensions commute strictly
+[PASS] the first seed suspension gives the exact n=6 edge ranks
+[PASS] the second seed suspension gives the exact n=7 edge ranks
+[PASS] the central-cap defect tensors from 4 to 4*3^r
+[PASS] the exceptional quotient tensors as 148=144+4
+[PASS] the exceptional core edge profile tensors uniformly
+[PASS] the full exceptional edge profile tensors uniformly
+[PASS] the n=6 cap edge profile has the certified long-edge defect
+ALL CHECKS PASSED

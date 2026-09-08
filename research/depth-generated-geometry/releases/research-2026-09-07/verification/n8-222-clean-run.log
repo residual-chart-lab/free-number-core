@@ -1,0 +1,277 @@
+01:11:56 restriction 7 1 3 1009
+01:11:56 restriction 7 3 1 1009
+01:11:56 restriction 7 1 4 1009
+01:11:56 restriction 7 4 1 1009
+01:11:56 restriction 7 1 6 1009
+01:11:56 restriction 7 6 1 1009
+01:11:56 restriction 7 3 4 1009
+01:11:56 restriction 7 4 3 1009
+01:11:56 restriction 7 3 6 1009
+01:11:56 restriction 7 6 3 1009
+01:11:56 restriction 7 4 6 1009
+01:11:56 restriction 7 6 4 1009
+01:11:56 nullspace 7 0 972 486 1009
+01:11:56 dimension 0 37
+01:11:56 nullspace 7 1 972 486 1009
+01:11:56 dimension 1 37
+01:11:56 nullspace 7 2 972 486 1009
+01:11:56 dimension 2 37
+01:11:56 nullspace 7 3 972 486 1009
+01:11:56 dimension 3 37
+01:11:57 quotient dimension 7 (1, 3, 4, 6) 148
+01:11:57 restriction 7 1 3 1013
+01:11:57 restriction 7 3 1 1013
+01:11:57 restriction 7 1 4 1013
+01:11:57 restriction 7 4 1 1013
+01:11:57 restriction 7 1 6 1013
+01:11:57 restriction 7 6 1 1013
+01:11:57 restriction 7 3 4 1013
+01:11:57 restriction 7 4 3 1013
+01:11:57 restriction 7 3 6 1013
+01:11:57 restriction 7 6 3 1013
+01:11:57 restriction 7 4 6 1013
+01:11:57 restriction 7 6 4 1013
+01:11:57 nullspace 7 0 972 486 1013
+01:11:57 dimension 0 37
+01:11:57 nullspace 7 1 972 486 1013
+01:11:57 dimension 1 37
+01:11:57 nullspace 7 2 972 486 1013
+01:11:57 dimension 2 37
+01:11:57 nullspace 7 3 972 486 1013
+01:11:57 dimension 3 37
+01:11:57 quotient dimension 7 (1, 3, 4, 6) 148
+01:11:58 exact quotient certified 7 (1, 3, 4, 6) 148 matching rank 1796 L scale 4
+01:11:58 restriction 8 1 3 1009
+01:11:59 restriction 8 3 1 1009
+01:11:59 restriction 8 1 5 1009
+01:12:00 restriction 8 5 1 1009
+01:12:00 restriction 8 1 7 1009
+01:12:00 restriction 8 7 1 1009
+01:12:01 restriction 8 3 5 1009
+01:12:01 restriction 8 5 3 1009
+01:12:02 restriction 8 3 7 1009
+01:12:02 restriction 8 7 3 1009
+01:12:03 restriction 8 5 7 1009
+01:12:03 restriction 8 7 5 1009
+01:12:04 nullspace 8 0 2916 1458 1009
+01:12:04 dimension 0 111
+01:12:04 nullspace 8 1 2916 1458 1009
+01:12:05 dimension 1 111
+01:12:05 nullspace 8 2 2916 1458 1009
+01:12:06 dimension 2 111
+01:12:06 nullspace 8 3 2916 1458 1009
+01:12:07 dimension 3 111
+01:12:09 quotient dimension 8 (1, 3, 5, 7) 444
+01:12:09 restriction 8 1 3 1013
+01:12:10 restriction 8 3 1 1013
+01:12:10 restriction 8 1 5 1013
+01:12:10 restriction 8 5 1 1013
+01:12:11 restriction 8 1 7 1013
+01:12:11 restriction 8 7 1 1013
+01:12:12 restriction 8 3 5 1013
+01:12:12 restriction 8 5 3 1013
+01:12:12 restriction 8 3 7 1013
+01:12:13 restriction 8 7 3 1013
+01:12:13 restriction 8 5 7 1013
+01:12:13 restriction 8 7 5 1013
+01:12:14 nullspace 8 0 2916 1458 1013
+01:12:15 dimension 0 111
+01:12:15 nullspace 8 1 2916 1458 1013
+01:12:16 dimension 1 111
+01:12:16 nullspace 8 2 2916 1458 1013
+01:12:17 dimension 2 111
+01:12:17 nullspace 8 3 2916 1458 1013
+01:12:17 dimension 3 111
+01:12:19 quotient dimension 8 (1, 3, 5, 7) 444
+01:12:34 exact quotient certified 8 (1, 3, 5, 7) 444 matching rank 5388 L scale 4
+01:12:34 certified edge rank (1, 3) 432
+01:12:35 certified edge rank (1, 5) 336
+01:12:35 certified edge rank (1, 7) 408
+01:12:35 certified edge rank (3, 5) 120
+01:12:35 certified edge rank (3, 7) 336
+01:12:35 certified edge rank (5, 7) 432
+01:12:35 restriction 7 1 2 1009
+01:12:35 restriction 7 2 1 1009
+01:12:35 restriction 7 1 4 1009
+01:12:35 restriction 7 4 1 1009
+01:12:35 restriction 7 1 6 1009
+01:12:35 restriction 7 6 1 1009
+01:12:35 restriction 7 2 4 1009
+01:12:35 restriction 7 4 2 1009
+01:12:35 restriction 7 2 6 1009
+01:12:35 restriction 7 6 2 1009
+01:12:35 restriction 7 4 6 1009
+01:12:35 restriction 7 6 4 1009
+01:12:35 nullspace 7 0 972 486 1009
+01:12:35 dimension 0 36
+01:12:35 nullspace 7 1 972 486 1009
+01:12:35 dimension 1 36
+01:12:35 nullspace 7 2 972 486 1009
+01:12:35 dimension 2 36
+01:12:35 nullspace 7 3 972 486 1009
+01:12:35 dimension 3 36
+01:12:36 quotient dimension 7 (1, 2, 4, 6) 144
+01:12:36 restriction 7 1 2 1013
+01:12:36 restriction 7 2 1 1013
+01:12:36 restriction 7 1 4 1013
+01:12:36 restriction 7 4 1 1013
+01:12:36 restriction 7 1 6 1013
+01:12:36 restriction 7 6 1 1013
+01:12:36 restriction 7 2 4 1013
+01:12:36 restriction 7 4 2 1013
+01:12:36 restriction 7 2 6 1013
+01:12:36 restriction 7 6 2 1013
+01:12:36 restriction 7 4 6 1013
+01:12:36 restriction 7 6 4 1013
+01:12:36 nullspace 7 0 972 486 1013
+01:12:36 dimension 0 36
+01:12:36 nullspace 7 1 972 486 1013
+01:12:36 dimension 1 36
+01:12:36 nullspace 7 2 972 486 1013
+01:12:36 dimension 2 36
+01:12:36 nullspace 7 3 972 486 1013
+01:12:36 dimension 3 36
+01:12:36 quotient dimension 7 (1, 2, 4, 6) 144
+01:12:37 exact quotient certified 7 (1, 2, 4, 6) 144 matching rank 1800 L scale 4
+01:12:40 generic parent core transport certified 122
+01:12:40 restriction 7 1 3 1009
+01:12:40 restriction 7 3 1 1009
+01:12:40 restriction 7 1 5 1009
+01:12:40 restriction 7 5 1 1009
+01:12:40 restriction 7 1 6 1009
+01:12:40 restriction 7 6 1 1009
+01:12:40 restriction 7 3 5 1009
+01:12:40 restriction 7 5 3 1009
+01:12:40 restriction 7 3 6 1009
+01:12:40 restriction 7 6 3 1009
+01:12:40 restriction 7 5 6 1009
+01:12:40 restriction 7 6 5 1009
+01:12:40 nullspace 7 0 972 486 1009
+01:12:40 dimension 0 36
+01:12:40 nullspace 7 1 972 486 1009
+01:12:40 dimension 1 36
+01:12:40 nullspace 7 2 972 486 1009
+01:12:40 dimension 2 36
+01:12:40 nullspace 7 3 972 486 1009
+01:12:40 dimension 3 36
+01:12:40 quotient dimension 7 (1, 3, 5, 6) 144
+01:12:40 restriction 7 1 3 1013
+01:12:40 restriction 7 3 1 1013
+01:12:40 restriction 7 1 5 1013
+01:12:40 restriction 7 5 1 1013
+01:12:40 restriction 7 1 6 1013
+01:12:40 restriction 7 6 1 1013
+01:12:40 restriction 7 3 5 1013
+01:12:41 restriction 7 5 3 1013
+01:12:41 restriction 7 3 6 1013
+01:12:41 restriction 7 6 3 1013
+01:12:41 restriction 7 5 6 1013
+01:12:41 restriction 7 6 5 1013
+01:12:41 nullspace 7 0 972 486 1013
+01:12:41 dimension 0 36
+01:12:41 nullspace 7 1 972 486 1013
+01:12:41 dimension 1 36
+01:12:41 nullspace 7 2 972 486 1013
+01:12:41 dimension 2 36
+01:12:41 nullspace 7 3 972 486 1013
+01:12:41 dimension 3 36
+01:12:41 quotient dimension 7 (1, 3, 5, 6) 144
+01:12:42 exact quotient certified 7 (1, 3, 5, 6) 144 matching rank 1800 L scale 4
+01:12:44 generic parent core transport certified 221
+01:12:51 full-suspension obstruction rank certified 432
+{
+  "base_commit": "09b77f329d0c825c794443a0cd98cde89d8f1d73",
+  "field": "Q (exact integer identities plus modular nonzero minors)",
+  "primes": [
+    1009,
+    1013
+  ],
+  "child_word": "222",
+  "child_support": [
+    1,
+    3,
+    5,
+    7
+  ],
+  "certificate_source_sha256": "bcbc3aa7f877bdb88ac0e67ffa6ee4153da5c56e3d6a3e6635e07a3b961922a1",
+  "matching_lower_bound_recomputed": true,
+  "source_edge_dimension": 5832,
+  "matching_rank": 5388,
+  "quotient_dimension": 444,
+  "edge_order": [
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      7
+    ],
+    [
+      5,
+      7
+    ]
+  ],
+  "edge_ranks": [
+    432,
+    336,
+    408,
+    120,
+    336,
+    432
+  ],
+  "common_outer_core_dimension": 432,
+  "residual_dimension": 12,
+  "residual_operator_rank": 12,
+  "residual_operator_kernel_in_E_dimension": 5820,
+  "residual_operator_kernel_in_Y_dimension": 432,
+  "generic_parent_core_transports": [
+    {
+      "word": "122",
+      "new_spectator": 2,
+      "edge": [
+        1,
+        3
+      ],
+      "rank": 432,
+      "kernel_dimension": 0
+    },
+    {
+      "word": "221",
+      "new_spectator": 6,
+      "edge": [
+        5,
+        7
+      ],
+      "rank": 432,
+      "kernel_dimension": 0
+    }
+  ],
+  "residual_bridge_domain_dimension": 12,
+  "residual_bridge_rank": 12,
+  "residual_bridge_kernel_dimension": 0,
+  "fixed_unit_vector_bridge_rank": 4,
+  "fixed_unit_vector_bridge_kernel_dimension": 0,
+  "full_central_suspension_descends": false,
+  "full_suspension_obstruction_rank": 432,
+  "full_suspension_common_denominator": 2,
+  "integer_obstruction_witness": {
+    "row": 3,
+    "column": 216,
+    "value": -16
+  },
+  "claim_boundary": "An explicitly chosen central-slot right decoder induces an isomorphism of residual quotients. Its full quotient descent fails; no time update, curvature, or choice-independent full residual-to-core transport is proved."
+}
+01:12:51 ALL CHECKS PASSED

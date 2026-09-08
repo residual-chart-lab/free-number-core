@@ -1,0 +1,379 @@
+# Depth-Generated Geometry — Research Notes
+
+> 作業仮説：空間が深度を許すのではなく、関係深度が空間を紡ぐ。
+
+自由数の probe-depth filtration から、depth-gated observability を独立した代数幾何プログラムとして切り出す研究ノート群。
+
+## Start here
+
+[**Research Snapshot 2026-09-07**](releases/research-2026-09-07/README.md) は、
+Notes 14–26 を独立した数学稿・主張台帳・再現資料に固定し、2026-09-07に公開したプレプリントである。
+Core v1.0.0とは別の公開単位とし、本文は四元数と局所応答の定義から読める。
+Note 26では222の444次元商、432次元コア、12次元残差商を閉じ、指定した
+右デコーダでの残差商接続と、同じ操作の全体降下障害を確定した。
+
+公開版 `research-2026-09-07-audit1` のDOIは
+[10.5281/zenodo.22646591](https://doi.org/10.5281/zenodo.22646591)。
+DGGの全版共通DOIは [10.5281/zenodo.22646590](https://doi.org/10.5281/zenodo.22646590)。
+公開ZIPと同じ内容の[ソースコミット](https://github.com/residual-chart-lab/free-number-core/tree/110113dd763da371bb6e02c6c5083b40dd12aecc)から、監査時点のファイルを取得できる。
+
+
+[`notes/00-checkpoint-through-note12.md`](notes/00-checkpoint-through-note12.md) は、Note 01–12 の定理依存、次元表、到達点、未解決境界、および proof audit を一枚にまとめた入口である。
+
+[`synthesis/ordered-tetrahedral-spectator-atlas.md`](synthesis/ordered-tetrahedral-spectator-atlas.md) は、Note 14–25 を placement memory、二 chart 被覆、中央 cross-product transition、two-spectator completion、exterior suspension、reduced internal-word atlas、transported-anchor groupoid、および spacing-word connection という一本の有限代数として再構成した独立読解層である。probe-depth filtration 全体を先に追わず、現在の tetrahedral / spectator 機構だけを把握したい場合はこちらから読める。
+
+## Claim boundary
+
+- **Proved:** probe depth は識別可能性と再構成の有限 filtration を与える。
+- **Proved at depth 0→1:** response space は value space と新生層の明示的な代数的 extension として組み上がる。
+- **Exact-checked:** 低 grade の dimension profiles と、全長 depth-one formula の有限範囲検算。
+- **Hypothesis:** depth filtration が幾何学的空間そのものの生成機構である。
+- **Proved at \(n=4,d=2\):** 三つの pair charts は明示的 boundary maps により exact に貼り合わさる。
+- **Proved:** 40次元 birth layer は coherence 条件そのものではなく、pair origin により \(12+16+12\) へ分解する。
+- **Proved at \(n=4,d=3\):** compatible pair boundary は一意な \(SO(3)\)-equivariant top-spin-free filler を持ち、全 filler は terminal \(V_4\) だけ異なる。
+- **Proved:** terminal response から三つの pair faces への局所公式は、一層の decoder だけで明示できる。
+- **Proved for all \(n\):** exact-depth-\((n-2)\) terminal boundary の kernel は \(S^n_0V\) であり、terminal birth 全体と一致する。
+- **Proved for all \(n\):** penultimate dimension は \(3^n-(2n+1)\)、terminal birth は \(2n+1\)、canonical \(SO(3)\)-equivariant filling は一意。
+- **Proved at \(n=5\):** 四つの terminal faces は六つの pairwise common shadows の一致だけで完全に glue し、\(\mathcal P_{5,3}=\ker\partial_5\) となる。
+- **Proved at \(n=5\):** matching equations の最初の syzygy は16次元で、\(2V_0\oplus3V_1\oplus V_2\) に分解する。
+- **Proved at \(n=6\):** 五つの terminal faces は十個の pairwise common shadows の一致だけで完全に glue し、\(\mathcal P_{6,4}=\ker\partial_6\) となる。
+- **Proved at \(n=6\):** 1080個の matching coordinates の compatibility syzygy は176次元で、\(10V_0\oplus21V_1\oplus15V_2\oplus4V_3\) に分解する。
+- **Proved for all \(n\):** pairwise common-shadow compatibility は terminal boundary の global filling に十分であり、\(\mathcal P_{n,n-2}=\ker\partial_n\) となる。
+- **Proved for all \(n\):** 最初の compatibility syzygy は普遍 character law を持ち、\(n=7\) では1200次元 \(45V_0\oplus100V_1\oplus90V_2\oplus45V_3\oplus10V_4\) となる。
+- **Constructed for all \(n\ge5\):** 四つの face と六つの edge の局所 cokernel から tetrahedral second differential \(\partial_n^{(2)}\) を定義し、\(\partial_n^{(2)}\partial_n=0\) を得る。
+- **Proved at \(n=5\):** \(\ker\partial_5^{(2)}=\operatorname{im}\partial_5\) が有理数上で成立し、16次元局所商は \(\mathbb H\otimes\mathbb H\) 型である。
+- **Exact-checked at \(n=6,7\):** tetrahedral second complex は二つの素数体上で middle-exact である。
+- **Exact-checked at \(n=7\):** exceptional \(2\!-!1\!-!2\) support \(Q=(1,3,4,6)\) だけに generic local quotient より余分な \(\mathbb H\) が生じ、その全体が次の cokernel へ survive する。
+- **Proved at \(n=5\):** 16次元 tetrahedral quotient は五つの明示的な四元数作用素からなる閉写像 \(\omega_5:\mathcal R_2^{\oplus6}\to\mathbb H\otimes\mathbb H\) で実現され、\(\ker\omega_5=\operatorname{im}\partial_5\) である。
+- **Proved at \(n=5\):** \(\omega_5\) の edge images は \(16,12,16,4,12,16\) 次元となり、共通12次元 channel と中央 \(\mathbb H\) channel が \(\mathbb H\otimes\mathbb H\) を直和分解する。
+- **Proved at \(n=5\):** 中央 channel は Frobenius 埋込み \(\iota(q)=\sum_\alpha e_\alpha\otimes qe_\alpha\) の像であり、\(\nu=\frac14\iota^*\) が canonical quaternion coordinate を与える。\(12+4\) 分解は直交し、六つの labelled edge の中央成分も閉形式で決まる。
+- **Exact-checked at \(n=6,7\):** total local quotient が同型でも、六つの labelled edge images は spectator placement を記憶する。中央区間への挿入は long-edge image から \(\mathbb H\) または \(\mathbb H\otimes V\) を隠す。
+- **Exact-checked at \(n=7\):** exceptional \(2\!-!1\!-!2\) residual は、等しい二つの outer-edge images による144次元 core の商として canonical に切り出され、四つの cross edges だけがその \(\mathbb H\) へ全射する。
+- **Proved for every odd \(n\ge7\):** odd-odd \(\mid\) even-even support では、adjacent-pair metric collapse の \(+,-,-,+\) square operator が cross-edge matching を消し、cokernel から \(\mathbb H\) への canonical surjection を与える。
+- **Proved over \(\mathbb Q\) at \(n=7\):** exceptional \((1,3\mid4,6)\) cross square の cokernel はちょうど \(\mathbb H\) で、閉形式 \(\kappa_{212}\) により完全に検出される。
+- **Proved for every even \(n\ge6\):** odd-even-even-odd support では、left/right cap collapse の五辺作用素が matching を消し、cokernel から \(\mathbb H\) への canonical surjection を与える。
+- **Proved over \(\mathbb Q\) at \(n=6\):** central-spectator quotient \(Y_{6,(1,2,4,5)}/E_{14}\) はちょうど \(\mathbb H\) で、閉形式 \(\chi_6=(-\lambda^L,+\lambda^L,0,-\lambda^R,+\lambda^R)\) により完全に検出される。
+- **Proved over \(\mathbb Q\) at \(n=6\):** outer edge で規格化された一意な48次元 quotient map \(\Omega_6\) が存在し、\(\beta((x\otimes y)\otimes w)=xw\bar y\) に対して \(\beta\Omega_6=\chi_6\) となる。
+- **Proved over \(\mathbb Q\) at \(n=6\):** \(\beta\) は \(K_4\otimes V\) を全消去し、long-edge image は \(\ker\beta\) に等しい。central-spectator \(\mathbb H\) は seed \(K_4\) の直積輸送ではなく、直交 channel \(W_{12}\otimes V\) の商から生じる。
+- **Proved over \(\mathbb Q\) at \(n=6\):** 五つの spectator placements は direct seed の left/right 二 chart で被覆される。外側 overlap の transition は恒等だが、中央 overlap は閉形式 \(G=\operatorname{id}_{\mathbb H}\otimes\theta\) を持つ。
+- **Proved over \(\mathbb Q\) at \(n=6\):** 中央 transition は \(\theta(1\otimes w)=1\otimes w+\sum_a e_a\otimes(e_a\times w)\), \(\theta(a\otimes w)=-w\otimes a\) であり、最小多項式は \((t-1)^2(t+1)\)。seed の \(K_4\otimes V\) / \(W_{12}\otimes V\) channels を非自明に混合する。
+- **Proved over \(\mathbb Q\) at \(n=7\):** transported \(n=6\) long-cross anchor は一意な144次元 core map \(C_{212}\) へ延長され、\((C_{212},\kappa_{212})\) が exceptional 148次元 local quotient 全体を exact に与える。
+- **Proved for all \(n\ge5\):** support の左右外側への spectator insertion は local matching complex、quotient、および全 labelled edge images を厳密に \(V\) と tensorize し、左右 exterior suspensions は可換である。
+- **Proved over \(\mathbb Q\) at \(n=7\):** exceptional \(212\) 以外の五つの reduced internal words は、transported \(n=6\) edge anchor の一意な completion により144次元 target \((\mathbb H\otimes\mathbb H)\otimes V^{\otimes2}\) へ exact に閉じる。
+- **Proved over \(\mathbb Q\) at \(n=7\):** 六つの reduced words の全 quotient が完成し、五 generic words の六 edge rank / Casimir profiles も exact に回収された。Note 22 と合わせると全15 tetrahedral supports が characteristic zero で得られる。
+- **Proved over \(\mathbb Q\) at \(n=7\):** 全 transported direct-anchor histories は三つの pair-local operators \(A=(\theta^{-1})_{R,a}\), \(B=(\theta^{-1})_{R,b}\), \(S=(-\theta)_{L,b}\) で生成される。重なる因子対は非可換で、合成の最小多項式に \(\Phi_6\) と \(\Phi_4\) が現れる。
+- **Proved over \(\mathbb Q\) at \(n=7\):** exceptional \(212\) の二つの full coordinates の transition は \(S\oplus I_{\mathbb H}\)。\(\kappa_{212}\) は固定され、residual-to-core shear はゼロである。
+- **Proved over \(\mathbb Q\) at \(n=7\):** 六つの隣接 reduced words は、共有する stationary outer edge から一意な integral \(SO(3)\)-equivariant core transport を持つ。spacing graph の唯一の独立閉路の holonomy は厳密に \(I_{144}\) である。
+- **Proved over \(\mathbb Q\) at \(n=7\):** 隣接 tetrahedra の full common-face traces はすべて transverse だが、hinge 上の core row spaces は一致する。exceptional \(\mathbb H\) は両 incident hinges で消え、flat core の上で \(212\) のみに支持された defect となる。
+- **Open:** tetrahedral generation の all-\(n\) proof、三 spectator 以上の interior transport、full intermediate filtration、residual-coupled higher holonomy、および curvature との接続。
+
+以下で「生成」という語を線形像・生成元の意味で使う場合を除き、確立している順序は ontological / causal order ではなく **visibility / reconstruction order** である。
+
+## 現在の到達点
+
+- \(n=2\) の深度1応答空間を、\(V^{\otimes2}\) を先に置かず内在的に定義した。
+- 新しい5次元誕生層 \(S^2_0V\) と埋込み係数 \(-2\) を証明した。
+- 全有限 \(n\) の終端 exact-response space を、局所デコーダだけから再帰構成した。
+- 固定 \(n\) の部分深度 response tower、birth layers、有限逆極限、depth ultrametric を構成した。
+- \(n=2,3,4\) の既知の exact checks を dimension-growth profile として読み替えた。
+- \(n=3,d=1\) の20次元空間を、二つの局所応答の fiber product として直接 presentation した。
+- 全 \(n\ge3\) の depth-one 空間を outer-gluing law だけで完全分類した。
+- \(n=4,d=2\) の72次元空間を、三つの36次元 pair charts の exact matching kernel として直接 presentation した。
+- 40次元 depth-two birth layer を \((V_2\oplus V_3)\oplus(V_0\oplus V_1\oplus V_2\oplus V_3)\oplus(V_2\oplus V_3)\) に局在分解した。
+- \(n=4,d=3\) の terminal filling を \(72+9\) の canonical \(SO(3)\)-splitting として閉じ、最高スピン・pair-boundary kernel・terminal birth・pure interior の四重一致を得た。
+- 全 \(n\ge2\) で highest spin = terminal boundary kernel = terminal birth = pure interior を証明した。
+- 新しい \(n=5\) rung \(232+11=243\) と terminal coefficient \(A_5=16C\) を exact-check した。
+- \(n=5\) の232次元 terminal boundary を、四つの108次元 faces と六つの36次元 common shadows の pairwise matching kernel として intrinsic に presentation した。
+- \(n=4\) response triangle では消えていた compatibility syzygy が、\(n=5\) response tetrahedron で16次元 \(2V_0\oplus3V_1\oplus V_2\) として初出することを証明した。
+- \(n=6\) の716次元 terminal boundary を、五つの324次元 faces と十個の108次元 common shadows の pairwise matching kernel として intrinsic に presentation した。
+- response 4-simplex の matching rank 904 と176次元 syzygy \(10V_0\oplus21V_1\oplus15V_2\oplus4V_3\) を二つの素数体上の exact rank certificate から有理数上へ持ち上げた。
+- 全 \(n\ge2\) で actual face restrictions を simple slot contractions へ局所的に triangularize し、その Cartan kernel \(S^m_0V\oplus S^{m+1}_0V\) から pairwise terminal descent を証明した。
+- \(n=4,5,6\) の個別 exactness を普遍定理の事例へ引き上げ、matching rank・compatible boundary dimension・first syzygy character の全長公式を得た。
+- naive な triangle descent が存在しないことを \(n=5\) で確認し、最初の row relation の最小支持が四つの faces であることを切り出した。
+- 全 \(n\ge5\) で四面体支持の局所 cokernel を束ねた second differential を構成し、complex identity \(\partial_n^{(2)}\partial_n=0\) を得た。
+- \(n=5\) では有理数上、\(n=6,7\) では二素数体上で \(\ker\partial_n^{(2)}=\operatorname{im}\partial_n\) を確認した。
+- \(n=7\) で、単純な spectator tensor law を破る exceptional \(2\!-!1\!-!2\) \(\mathbb H\) residual を初めて検出した。
+- \(n=5\) の16次元 tetrahedral quotient を quotient basis から解放し、五つの \(SO(3)\)-natural quaternion operators による閉形式 \(\omega_5\) として実現した。
+- \(\omega_5\) の内部に \((\mathbb H\otimes V)\oplus\mathbb H\) という \(12+4\) channel decomposition を同定した。
+- 中央 channel を \(K_4=\iota(\mathbb H)\) と同定し、\(\mathbb H\otimes\mathbb H=W_{12}\overset{\perp}{\oplus}K_4\) および projector \(P_{K_4}=\frac14\iota\iota^*\) を得た。
+- canonical coordinate \(\nu=\frac14\iota^*\) により六つの seed edge の中央成分を \((+\,\frac14uv\bar h,0,-\,\frac14uv\bar h,-\,\frac14uv(\bar h+2h),0,+\,\frac14uv\bar h)\) として完全に書き下した。
+- \(n=6,7\) の全四面体支持について、total quotient に加えて六つの labelled edge images の rank と Casimir profile を二素数体上で完全分類した。
+- 同じ total \(SO(3)\)-type の背後に spectator placement が edge-incidence data として残ることを検出し、中央挿入の \(\mathbb H\) / \(\mathbb H\otimes V\) defect を分離した。
+- exceptional \(2\!-!1\!-!2\) の148次元商を、144次元 outer core と canonical cross-edge quotient \(K_{212}\cong\mathbb H\) に分解した。
+- 偶数深度 response の adjacent-pair metric collapse \(\varepsilon_{2r}\) を構成し、odd-before-even の actual common shadows がすべて同じ reverse quaternion product へ落ちる全 \(r\) 恒等式を証明した。
+- この parity-collapse から全奇数 \(n\ge7\) の quaternionic square complex を構成し、\(n=7\) では \(3888\to1296\to4\) の exact sequence を有理数上で閉じた。
+- 奇数深度 response の left/right cap collapses \(\lambda_{2r+1}^L,\lambda_{2r+1}^R\) を構成し、odd-even / even-odd の actual common shadows を同じ total product へ落とす全 \(r\) 恒等式を証明した。
+- この cap-collapse から全偶数 \(n\ge6\) の capped five-edge complex を構成し、\(n=6\) では \(1296\to540\to4\) の exact sequence と central-spectator quotient を有理数上で閉じた。
+- central \(n=6\) local quotient を outer block で seed 座標へ一意に規格化し、48次元の \(\Omega_6\) を有理数上で構成した。
+- insert-between-and-conjugate contraction \(\beta((x\otimes y)\otimes w)=xw\bar y\) が \(\beta\Omega_6=\chi_6\) を満たし、\(K_4\otimes V\subset E_{14}=\ker\beta\) となる channel transfer を証明した。
+- 五つの \(n=6\) spectator placements を direct seed の left/right 二 chart で完全被覆し、全 direct full-edge normalization の存在・非存在を有理数上で分類した。
+- 中央 spectator overlap の座標変換を \(G=\operatorname{id}_{\mathbb H}\otimes\theta\) と閉じ、\(\theta\) が involutive reflection と三次元 cross-product shear の和であることを証明した。
+- 外側 overlap では \(G=I\)、中央 overlap では \(m_G(t)=(t-1)^2(t+1)\) となること、および cap residual が \(\beta_R\Omega^R=\beta_L\Omega^L\) と chart-independent であることを得た。
+- exceptional \(n=7\) support で transported \(n=6\) anchor を一意な144次元 core map へ延長し、\(\kappa_{212}\cong\mathbb H\) と合わせて148次元 quotient を有理数上で完全に座標化した。
+- 左右 exterior spectator insertion が全 local complex と decorated quotient を \(V\) で tensorize し、両 insertion order が strict に可換であることを全長で証明した。
+- \(n=7\) の五つの generic reduced internal words を transported anchor から一意な144次元 coordinate へ completion し、整数 cancellation、\(SO(3)\)-equivariance、六辺 Casimir profile を exact に証明した。
+- reduced word 列 \(113,122,131,212,221,311\) の dimensions を \(144,144,144,148,144,144\) と characteristic zero で閉じ、exterior suspension と合わせて \(n=7\) 全15配置を完成した。
+- 全20 transported direct-anchor histories を列挙し、14個の distinct core coordinates と chains \(122:S,A\), \(131:B,S,A\), \(221:B,S\) を有理数上で完全に決定した。
+- \(A,B,S\) を \(\theta,\theta^{-1}\) の pair-local embeddings と同定し、\(\operatorname{rank}[A,B]=64\), \(\operatorname{rank}[S,B]=51\) および合成 \(ASB\) の最小多項式 \((t-1)^2(t+1)^3(t^2+1)(t^2-t+1)\) を証明した。
+- exceptional \(212\) の二構成履歴が \(S\oplus I_{\mathbb H}\) で移り、\(\kappa_{212}\) が chart-independent に固定されることを証明した。
+- 六つの reduced words を unit spectator slide の graph に組み、各隣接対の stationary outer edge から exact integral core transport を構成した。
+- 唯一の中央閉路 \(122\to131\to221\to212\to122\) の core holonomy が \(I_{144}\) であることを証明し、同時に common-face traces の最大 transverse 性を切り出した。
+- exceptional \(\kappa_{212}\) が両 incident hinges でゼロになることから、全 \(n=7\) two-spectator atlas を flat 144-dimensional core と \(212\)-supported quaternionic defect に分離した。
+
+## Reading order
+
+0. [`notes/00-checkpoint-through-note12.md`](notes/00-checkpoint-through-note12.md)
+
+   Note 12 までの統合地図。最初に全体と claim boundary を確認するための checkpoint。
+
+1. [`notes/01-n2-intrinsic-response-tower.md`](notes/01-n2-intrinsic-response-tower.md)  
+   最小反転定理。深度1の許容条件は「応答の虚部が自己共役」。
+
+2. [`notes/02-all-grade-intrinsic-terminal-response.md`](notes/02-all-grade-intrinsic-terminal-response.md)  
+   全 \(n\) の終端応答空間を ambient state なしに構成する再帰定理。
+
+3. [`notes/03-finite-depth-space-reconstruction.md`](notes/03-finite-depth-space-reconstruction.md)  
+   部分深度の塔、誕生層、dimension profile、ultrametric。
+
+4. [`notes/04-n3-depth1-fiber-product.md`](notes/04-n3-depth1-fiber-product.md)  
+   二つの12次元局所応答を共通 \(\mathbb H\) 上で貼り、20次元 depth-one space を作る。
+
+5. [`notes/05-n4-depth1-factor-origin-and-outer-gluing.md`](notes/05-n4-depth1-factor-origin-and-outer-gluing.md)  
+   left / middle / right の factor origin と \(n=4\) multiplicity-depth splitting。
+
+6. [`notes/06-all-n-depth1-outer-gluing-theorem.md`](notes/06-all-n-depth1-outer-gluing-theorem.md)  
+   局所 zero-compression gadgets による全 \(n\ge3\) の depth-one direct presentation。
+
+7. [`notes/07-n4-depth2-pair-chart-gluing.md`](notes/07-n4-depth2-pair-chart-gluing.md)
+
+   三つの pair charts の exact matching complex と、40次元 birth layer の \(12+16+12\) 分解。
+
+8. [`notes/08-n4-canonical-terminal-filling.md`](notes/08-n4-canonical-terminal-filling.md)
+
+   compatible pair boundary の一意な \(SO(3)\)-equivariant top-spin-free completion と、terminal interior \(V_4\)。
+
+9. [`notes/09-all-n-terminal-boundary-and-filling.md`](notes/09-all-n-terminal-boundary-and-filling.md)
+
+   adjacent-pair kernel theorem による全 \(n\) last-survivor equality、universal terminal dimension law、canonical filling。
+
+10. [`notes/10-n5-terminal-response-tetrahedron.md`](notes/10-n5-terminal-response-tetrahedron.md)
+
+    四つの terminal faces の intrinsic pairwise gluing、232次元 matching kernel、および16次元 compatibility syzygy。
+
+11. [`notes/11-n6-terminal-response-4simplex.md`](notes/11-n6-terminal-response-4simplex.md)
+
+    五つの terminal faces の intrinsic pairwise gluing、716次元 matching kernel、および176次元 compatibility syzygy。
+
+12. [`notes/12-all-n-pairwise-terminal-descent.md`](notes/12-all-n-pairwise-terminal-descent.md)
+
+    局所 quaternion slide、Cartan kernel、last-face correction による全 \(n\) pairwise descent と普遍 syzygy law。
+
+13. [`notes/13-tetrahedral-second-differential.md`](notes/13-tetrahedral-second-differential.md)
+
+    四面体支持の second differential、\(n=5,6,7\) middle exactness、および \(n=7\) exceptional \(2\!-!1\!-!2\) quaternionic residual。
+
+14. [`notes/14-closed-quaternionic-tetrahedral-operator.md`](notes/14-closed-quaternionic-tetrahedral-operator.md)
+
+    五つの明示的 quaternion operators による \(\omega_5\) の閉形式、tetrahedral exact sequence、および target 内部の \(12+4\) channel decomposition。
+
+15. [`notes/15-spectator-placement-residuals.md`](notes/15-spectator-placement-residuals.md)
+
+    六つの labelled edge images による配置記憶、中央 spectator defect、および exceptional \(2\!-!1\!-!2\) の canonical quaternionic cross-edge quotient。
+
+16. [`notes/16-parity-square-quaternionic-residual.md`](notes/16-parity-square-quaternionic-residual.md)
+
+    adjacent-pair metric collapse、全奇数長の parity-square complex、および \(n=7\) exceptional cross-square cokernel の閉四元数公式。
+
+17. [notes/17-even-length-capped-five-edge-residual.md](notes/17-even-length-capped-five-edge-residual.md)
+
+    left/right cap collapse、全偶数長の odd-even-even-odd complex、および \(n=6\) central-spectator quotient の閉四元数公式。
+
+18. [notes/18-canonical-seed-quaternion-coordinate.md](notes/18-canonical-seed-quaternion-coordinate.md)
+
+    Frobenius 埋込みによる seed \(K_4\) の canonical quaternion coordinate、直交 \(12+4\) 分解、および六辺すべての中央成分。
+
+19. [notes/19-central-spectator-channel-transfer.md](notes/19-central-spectator-channel-transfer.md)
+
+    outer-normalized \(n=6\) quotient、閉 contraction \(\beta(x\otimes y\otimes w)=xw\bar y\)、および \(K_4\otimes V\) から \(W_{12}\otimes V\) への channel transfer。
+
+20. [notes/20-n6-spectator-atlas-and-central-shear.md](notes/20-n6-spectator-atlas-and-central-shear.md)
+
+    五つの spectator placements の二 chart 被覆、中央 overlap の閉 cross-product transition、および reflection-plus-shear decomposition。
+
+21. [notes/21-n7-exceptional-core-decomposition.md](notes/21-n7-exceptional-core-decomposition.md)
+
+    transported \(n=6\) long-cross anchor の一意な144次元 completion、\(\kappa_{212}\) との exact \(144+4\) 分解、および exceptional 六辺 profile の有理数上の回収。
+
+22. [notes/22-exterior-spectator-suspension.md](notes/22-exterior-spectator-suspension.md)
+
+    左右 exterior suspension による全 local complex の tensorization、strictly commuting exterior squares、および seed / cap / \(2\!-!1\!-!2\) の無限 exact towers。
+
+23. [notes/23-n7-reduced-internal-word-atlas.md](notes/23-n7-reduced-internal-word-atlas.md)
+
+    五つの generic reduced words の一意な anchored completion、全 edge Casimir profiles、および exceptional \(212\) を含む characteristic-zero \(n=7\) atlas の完結。
+
+24. [notes/24-n7-transported-anchor-transition-groupoid.md](notes/24-n7-transported-anchor-transition-groupoid.md)
+
+    全 transported direct-anchor histories の exhaustive census、三つの pair-local generators \(A,B,S\)、exact minimal polynomials、および exceptional residual の transition invariance。
+
+25. [notes/25-n7-spacing-word-flat-core-and-quaternionic-defect.md](notes/25-n7-spacing-word-flat-core-and-quaternionic-defect.md)
+
+    六つの adjacent spacing words の stationary-edge transport、唯一の closed-loop flatness、common-face transversality、および \(212\)-supported quaternionic defect。
+
+26. [notes/26-n8-222-residual-redetection.md](notes/26-n8-222-residual-redetection.md)
+
+    222の444次元商と432次元外側コア、12次元残差商、指定した中央スロット
+    右デコーダによる212残差の再検出、および全体輸送の432次元降下障害。
+
+## Exact certificate
+
+```bash
+python3 certificates/n2_intrinsic_response_certificate.py
+python3 certificates/n3_depth1_fiber_product_certificate.py
+python3 certificates/depth1_outer_gluing_certificate.py
+python3 certificates/n4_depth2_structure_certificate.py
+python3 certificates/n4_canonical_filling_certificate.py
+python3 certificates/all_n_terminal_boundary_certificate.py
+python3 certificates/n5_response_tetrahedron_certificate.py
+python3 certificates/all_n_pairwise_terminal_descent_certificate.py
+python3 certificates/n5_quaternionic_second_differential_certificate.py
+python3 certificates/n5_central_channel_factorization_certificate.py
+python3 certificates/n6_response_4simplex_modular_certificate.py
+python3 certificates/n7_local_descent_modular_stress.py
+python3 certificates/second_response_simplex_differential_certificate.py
+python3 certificates/n7_tetrahedral_syzygy_modular_stress.py
+python3 certificates/spectator_placement_residual_certificate.py
+python3 certificates/n7_exceptional_square_operator_certificate.py
+python3 certificates/n6_capped_five_edge_operator_certificate.py
+python3 certificates/n6_seed_cap_bridge_certificate.py
+python3 certificates/n6_spectator_chart_transition_certificate.py
+python3 certificates/n7_exceptional_core_decomposition_certificate.py
+python3 certificates/exterior_spectator_suspension_certificate.py
+python3 certificates/n7_internal_word_atlas_certificate.py
+python3 certificates/n7_anchor_transition_groupoid_certificate.py
+python3 certificates/n7_spacing_word_transport_certificate.py
+python3 certificates/n8_222_redetection_certificate.py --certificate
+```
+
+最初の十本は外部ライブラリを使わず、有理数上の完全計算で \(n=2\) の内在的応答塔、\(n=3,d=1\) の fiber product、\(n=3,\ldots,7\) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex、\(n=4,d=3\) の canonical terminal splitting、\(n=2,\ldots,5\) の terminal boundary theorem、\(n=5\) response tetrahedron の pairwise gluing と16次元 syzygy、all-\(n\) descent proof の固定局所恒等式、閉形式 \(\omega_5\) とその \(12+4\) channel decomposition、および seed \(K_4\) の Frobenius factorization と直交 projector を検証する。exterior-suspension certificate も標準ライブラリだけを使い、左右の局所 decoder、全 basis product に対する prepend / append 恒等式、および strict interchange を exact に検査する。
+
+NumPy を使う十二の certificate は、整数行列の格納と有限体上の行基本変形にだけ用い、浮動小数点計算は行わない。既存の certificates は \(n=6,7\) の matching ranks、middle exactness、placement profiles、square/cap residuals、seed-cap bridge、および \(n=6\) chart transition を検査する。
+
+exceptional-core certificate は transported \(n=6\) anchor を144次元 core へ一意に completion し、CRT bound、整数 cancellation、および exact edge ranks によって
+
+\[
+Y_{7,(1,3,4,6)}
+\cong
+((\mathbb H\otimes\mathbb H)\otimes V^{\otimes2})\oplus\mathbb H
+\]
+
+を有理数上で証明する。internal-word-atlas certificate は残る五つの reduced words を二素数から同一の整数 quotient maps へ復元し、CRT bound、rank 1800、\(SO(3)\)-equivariance、および全 edge Casimir profiles によって generic \(n=7\) atlas を有理数上へ持ち上げる。anchor-transition-groupoid certificate は全20 histories を列挙し、二素数から同じ14 core coordinates を復元したうえで、三 generator chains、commutator ranks、minimal polynomials、top-spin action、および exceptional transition \(S\oplus I_{\mathbb H}\) を整数・有理数上で検証する。spacing-word-transport certificate は六つの adjacent-word slides を共有 hinge から復元し、整数 inverse、\(SO(3)\)-equivariance、唯一の閉路の identity holonomy、common-face transversality、および exceptional defect kernel を検証する。
+
+Expected final line:
+
+```text
+ALL CHECKS PASSED
+```
+
+## Current stopping point after Note 26
+
+222の局所商と三つの親との比較は閉じた。指定した中央スロット右デコーダは
+残差商上で同型を与える一方、全体への降下障害の像は432次元コア全体である。
+補空間や代表の選択を隠して全体輸送と呼ばない。次は、必要な局所条件や補正を
+定められるか、または別の三観客wordを調べるか、対象を絞って進める。
+全三観客atlas、曲率、時間更新則の完成は主張していない。
+
+## Development history and broader targets
+
+pairwise terminal descent は全 \(n\) で成立し、tetrahedral second map も構成された。さらに Note 14 で、最小局所商は quotient basis なしの閉四元数写像
+
+\[
+\omega_5:\mathcal R_2^{\oplus6}
+\longrightarrow\mathbb H\otimes\mathbb H,
+\qquad
+\ker\omega_5=\operatorname{im}\partial_5
+\]
+
+として解決した。Note 15 は、placement-blind な spectator tensor law では不十分であることを edge-image incidence から示した。次の主標的は、五つの primitive operators に order-sensitive slide/correction を加え、\(n=6,7\) の全 decorated local quotients
+
+\[
+\mathscr Y_{n,Q}
+=
+\left(Y_{n,Q};E_{12},E_{13},E_{14},E_{23},E_{24},E_{34}\right)
+\]
+
+を同じ placement-aware transport law から回収することである。
+
+Note 16 は exceptional spacing \((2,1,2)\) の cross-edge quotient を、paired collapse
+
+\[
+\varepsilon_4(F)=\sum_{a,b}F(e_a,e_a,e_b,e_b)
+\]
+
+の alternating square \(\kappa_{212}\) として有理数上で閉じた。さらに odd-odd \(\mid\) even-even support へ同じ構成が全奇数長で伸びる。Note 17 は \(n=6\) central-spectator quotient を left/right cap collapse \(\chi_6\) として有理数上で閉じ、odd-even-even-odd support へ全偶数長で伸ばした。Note 18 は seed channel を \(K_4=\iota(\mathbb H)\) と固定し、\(\nu=\frac14\iota^*\) によりその canonical quaternion coordinate と全 edge-incidence pattern を与えた。
+
+Note 19 は最初の一観客比較を閉じた。central support では一意な outer-normalized quotient \(\Omega_6\) が存在し、
+
+\[
+\beta((x\otimes y)\otimes w)=xw\bar y,
+\qquad
+\beta\Omega_6=\chi_6.
+\]
+
+しかし \(\beta(K_4\otimes V)=0\) であり、\(K_4\otimes V\subset E_{14}=\ker\beta\) となる。したがって cap residual は seed \(K_4\) の直積輸送ではなく、\(W_{12}\otimes V\) の商から生じる。
+
+Note 20 は全五配置を left/right direct-seed charts で覆い、その overlap transition を完全に閉じた。外側 overlap は恒等だが、central spectator では
+
+\[
+G=\operatorname{id}_{\mathbb H}\otimes\theta,
+\qquad
+\theta(1\otimes w)=1\otimes w+\sum_a e_a\otimes(e_a\times w),
+\qquad
+\theta(a\otimes w)=-w\otimes a
+\]
+
+となる。\(m_G(t)=(t-1)^2(t+1)\) であり、これは単なる slot permutation ではなく三次元 nilpotent shear を含む。
+
+Note 21 は transported \(n=6\) edge anchor を exceptional \(212\) support 上で一意な144次元 core \(C_{212}\) へ完成し、\((C_{212},\kappa_{212})\) が148次元 quotient を余りなく与えることを証明した。Note 22 は左右 exterior insertion が全 local complex と edge-incidence lattice を \(V\) で tensorize し、両 suspension squares が strict に可換であることを全長で証明した。
+
+Note 23 は最初の reduced interior layer を characteristic zero で完結した。五つの generic words はすべて transported edge anchor から一意な144次元 coordinate へ完成し、exceptional \(212\) だけが \(144+4\) となる。
+
+Note 24 は同じ word 上の複数 anchor completion をすべて比較し、その transition groupoid を三つの pair-local operators
+
+\[
+A=(\theta^{-1})_{R,a},
+\qquad
+B=(\theta^{-1})_{R,b},
+\qquad
+S=(-\theta)_{L,b}
+\]
+
+で閉じた。\(A,S\) は可換だが、\([A,B]\) と \([S,B]\) は非零であり、合成 \(ASB\) の最小多項式には \(\Phi_4\Phi_6\) が現れる。一方、exceptional full coordinate の遷移は \(S\oplus I_{\mathbb H}\) であり、\(\kappa_{212}\) は固定される。
+
+Note 25 はこの隣接-word 問題を閉じた。unit slide で隣り合う二つの tetrahedra は full common face を同一視しない。三本の face blocks は最大に transverse である。しかし、動かなかった側の outer edge は両 core の full anchor となり、その共通 row space から一意な integral transport が降りる。六本の arrows が作る唯一の閉路
+
+\[
+122\to131\to221\to212\to122
+\]
+
+の core holonomy は厳密に \(I_{144}\) である。一方 \(\kappa_{212}\) は \(212\) に接続する二本の hinges でゼロとなり、隣接 core へは運ばれない。したがって最初の complete word atlas は
+
+\[
+\text{flat 144-core}\oplus
+\text{\(212\)-supported }\mathbb H\text{ defect}
+\]
+
+として閉じる。非自明な chart shear \(\theta\) は存在するが、この最初の word loop は曲率を持たない。
+
+したがって次の仕事は、三つ以上の internal spectators を持つ最初の word complex を構成し、二次元 cells を通る residual transport を比較することである。その高次 word-level transport から genuine nontrivial closed loops が抽出できれば、response-simplex complex
+
+\[
+C_n^0\xrightarrow{\partial_n}C_n^1
+\xrightarrow{\partial_n^{(2)}}C_n^2
+\]
+
+の middle exactness を全 \(n\) へ上げるための local transport law が得られる。
+
+Casimir complement 上の逆写像として得られた canonical section の短い response-side 局所公式も引き続き open である。
+
+その後で、response simplex に四元数値 transport を加えたときの path nonconfluence residual と curvature 候補を検討する。Note 25 の flatness と vertex defect は、その定義が満たすべき最初の基準例である。
