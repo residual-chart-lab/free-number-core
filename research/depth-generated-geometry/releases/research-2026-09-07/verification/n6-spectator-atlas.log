@@ -1,0 +1,33 @@
+spectator coverage: {1: ((1, 2), (1, 4), (3, 4)), 2: ((1, 2), (1, 4)), 3: ((1, 2), (3, 4)), 4: ((3, 4),), 5: ((3, 4),)}
+exact direct-anchor join ranks (12,14,34): {1: (48, 48, 48), 2: (48, 48, 80), 3: (48, 80, 48), 4: (56, 80, 48), 5: (80, 80, 48)}
+theta entry alphabet: [-1, 0, 1]
+theta minimal polynomial: (t-1)^2(t+1)
+central transition ranks rank(G-I), rank((G-I)^2): (36, 24)
+central K/W block ranks: (12, 12, 12, 24)
+[PASS] the seed edge ranks are 16,12,16,4,12,16
+[PASS] the exact direct-seed coverage table holds
+[PASS] all direct-anchor incidence ranks hold exactly over Q
+[PASS] the edge-14 chart equals the left chart at spectators 1 and 2
+[PASS] the exterior left/right transition is the identity
+[PASS] the central transition is id_H tensor theta over Z
+[PASS] scalar, alternating, and symmetric channels span H tensor V
+[PASS] theta sends scalar V to scalar V plus delta V
+[PASS] theta fixes the alternating V channel
+[PASS] theta negates Sym^2 V
+[PASS] theta obeys (theta-I)^2(theta+I)=0 over Z
+[PASS] theta has exact ranks 9,6,6 for theta-I,(theta-I)^2,theta+I
+[PASS] the repeated +1 factor is necessary
+[PASS] the shear numerator is even
+[PASS] the shear has rank three
+[PASS] the shear squares to zero
+[PASS] the reflection is involutive
+[PASS] the reflection fixes the shear on both sides
+[PASS] the central transition has exact ranks 36 and 24 after one and two differences
+[PASS] the central transition is SO(3)-equivariant over Z
+[PASS] the K/W transition block ranks are 12,12,12,24
+[PASS] G(K_4 tensor V) meets K_4 tensor V trivially
+[PASS] G(W_12 tensor V) contains K_4 tensor V
+[PASS] the polynomial inverse is exact
+[PASS] beta_R G^{-1}=beta_L
+[PASS] left and right central charts give the same cap residual
+ALL CHECKS PASSED

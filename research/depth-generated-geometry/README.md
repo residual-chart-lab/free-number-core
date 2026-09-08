@@ -6,6 +6,13 @@
 
 ## Start here
 
+[**Research Snapshot 2026-09-07**](releases/research-2026-09-07/README.md) は、
+Notes 14–26 を独立した数学稿・主張台帳・再現資料に固定した公開候補である。
+Core v1.0.0とは別の公開単位とし、本文は四元数と局所応答の定義から読める。
+Note 26では222の444次元商、432次元コア、12次元残差商を閉じ、指定した
+右デコーダでの残差商接続と、同じ操作の全体降下障害を確定した。
+
+
 [`notes/00-checkpoint-through-note12.md`](notes/00-checkpoint-through-note12.md) は、Note 01–12 の定理依存、次元表、到達点、未解決境界、および proof audit を一枚にまとめた入口である。
 
 [`synthesis/ordered-tetrahedral-spectator-atlas.md`](synthesis/ordered-tetrahedral-spectator-atlas.md) は、Note 14–25 を placement memory、二 chart 被覆、中央 cross-product transition、two-spectator completion、exterior suspension、reduced internal-word atlas、transported-anchor groupoid、および spacing-word connection という一本の有限代数として再構成した独立読解層である。probe-depth filtration 全体を先に追わず、現在の tetrahedral / spectator 機構だけを把握したい場合はこちらから読める。
@@ -208,6 +215,11 @@
 
     六つの adjacent spacing words の stationary-edge transport、唯一の closed-loop flatness、common-face transversality、および \(212\)-supported quaternionic defect。
 
+26. [notes/26-n8-222-residual-redetection.md](notes/26-n8-222-residual-redetection.md)
+
+    222の444次元商と432次元外側コア、12次元残差商、指定した中央スロット
+    右デコーダによる212残差の再検出、および全体輸送の432次元降下障害。
+
 ## Exact certificate
 
 ```bash
@@ -235,6 +247,7 @@ python3 certificates/exterior_spectator_suspension_certificate.py
 python3 certificates/n7_internal_word_atlas_certificate.py
 python3 certificates/n7_anchor_transition_groupoid_certificate.py
 python3 certificates/n7_spacing_word_transport_certificate.py
+python3 certificates/n8_222_redetection_certificate.py --certificate
 ```
 
 最初の十本は外部ライブラリを使わず、有理数上の完全計算で \(n=2\) の内在的応答塔、\(n=3,d=1\) の fiber product、\(n=3,\ldots,7\) の all-length depth-one formula、\(n=4,d=2\) の exact pair-chart complex、\(n=4,d=3\) の canonical terminal splitting、\(n=2,\ldots,5\) の terminal boundary theorem、\(n=5\) response tetrahedron の pairwise gluing と16次元 syzygy、all-\(n\) descent proof の固定局所恒等式、閉形式 \(\omega_5\) とその \(12+4\) channel decomposition、および seed \(K_4\) の Frobenius factorization と直交 projector を検証する。exterior-suspension certificate も標準ライブラリだけを使い、左右の局所 decoder、全 basis product に対する prepend / append 恒等式、および strict interchange を exact に検査する。
@@ -257,7 +270,15 @@ Expected final line:
 ALL CHECKS PASSED
 ```
 
-## Next target
+## Current stopping point after Note 26
+
+222の局所商と三つの親との比較は閉じた。指定した中央スロット右デコーダは
+残差商上で同型を与える一方、全体への降下障害の像は432次元コア全体である。
+補空間や代表の選択を隠して全体輸送と呼ばない。次は、必要な局所条件や補正を
+定められるか、または別の三観客wordを調べるか、対象を絞って進める。
+全三観客atlas、曲率、時間更新則の完成は主張していない。
+
+## Development history and broader targets
 
 pairwise terminal descent は全 \(n\) で成立し、tetrahedral second map も構成された。さらに Note 14 で、最小局所商は quotient basis なしの閉四元数写像
 

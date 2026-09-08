@@ -359,8 +359,9 @@ concatenated rank reaches the sum of the two row counts in every case, so
 the zero intersections in the last column hold over \(\mathbb Q\).
 
 There is no contradiction between (2.3) and (5.3). Projection to the hinge
-has the same 144-dimensional row space, but the other two blocks make the
-two face traces different graphs over that common projection. In geometric
+has the same 144-dimensional row space. Each generic trace is a graph over
+that space; the full exceptional trace has dimension 148 and a
+four-dimensional projection kernel, so it is not such a graph. In geometric
 language, the tetrahedra share a hinge but do not lie in one common flat
 face chart. Algebraically, this is exactly why the transport must be solved
 from the hinge rather than imposed as equality of the whole face.
@@ -438,7 +439,17 @@ The core transports are reversible. The defect-forgetting maps incident to
 \(212\) are not: the shared hinge contains no information from which to
 reconstruct \(\kappa_{212}\). The hinge equation alone also cannot prescribe
 any nonzero image for that invisible summand; such an extension would be
-additional data. Thus the full 148-dimensional atlas is not a local system
+additional data. Explicitly, all linear extensions have the form
+\[
+\rho_B(t,k)=g_{212,\mu}t+B k,\qquad
+B\in\operatorname{Hom}(K_{212},T_\mu).
+\]
+Equivariance alone does not remove this freedom: using
+\(K_{212}\cong\mathbb H\), the map
+\(q\mapsto q\otimes1\otimes\sum_a e_a\otimes e_a\) into \(T_7\)
+is a nonzero equivariant example. Equation (6.5) specifies \(B=0\);
+it is not forced by the hinge equation alone.
+Thus the full 148-dimensional atlas is not a local system
 of constant rank. Its canonically available part is the flat core system
 together with a four-dimensional component supported only at one
 vertex—equivalently, a quaternionic vertex defect over the spacing graph.

@@ -1,0 +1,4 @@
+[PASS] incomplete cached annihilator rejected
+[PASS] optimized Python cannot silently disable certification
+[PASS] invalid prime inputs rejected
+ALL CHECKS PASSED

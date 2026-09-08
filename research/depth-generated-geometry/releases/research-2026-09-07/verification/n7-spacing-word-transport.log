@@ -1,0 +1,171 @@
+reconstructing exact n=6 parent charts
+building transported-anchor census mod 1009
+  word 113
+  word 122
+  word 131
+  word 221
+  word 311
+  word 212
+building transported-anchor census mod 1013
+  word 113
+  word 122
+  word 131
+  word 221
+  word 311
+  word 212
+spacing-word graph:
+  113--122--131
+       |     |
+      212--221--311
+stationary-edge slides:
+  113->122 hinge (1, 2) minpoly (-1, 1, 2, -2, -1, 1)
+  122->131 hinge (1, 2) minpoly (-1, -1, 1, 1)
+  122->212 hinge (4, 6) minpoly (1, 1)
+  131->221 hinge (5, 6) minpoly (1, 1)
+  212->221 hinge (1, 3) minpoly (-1, -1, 1, 1)
+  221->311 hinge (5, 6) minpoly (1, 1)
+central square holonomy: identity
+exceptional full fiber: flat core direct-sum vertex H defect
+common-face intersections: zero on all six graph edges
+[PASS] 113-122: the supports share one triangular face
+[PASS] 113->122 mod 1009: source hinge rank 144
+[PASS] 113->122 mod 1009: target hinge rank 144
+[PASS] 113->122 mod 1009: hinge row spaces agree
+[PASS] 113->122 mod 1009: forward and reverse slides are inverse
+[PASS] 113-122 mod 1009: common-face traces are transverse
+[PASS] 122-131: the supports share one triangular face
+[PASS] 122->131 mod 1009: source hinge rank 144
+[PASS] 122->131 mod 1009: target hinge rank 144
+[PASS] 122->131 mod 1009: hinge row spaces agree
+[PASS] 122->131 mod 1009: forward and reverse slides are inverse
+[PASS] 122-131 mod 1009: common-face traces are transverse
+[PASS] 122-212: the supports share one triangular face
+[PASS] 122->212 mod 1009: source hinge rank 144
+[PASS] 122->212 mod 1009: target hinge rank 144
+[PASS] 122->212 mod 1009: hinge row spaces agree
+[PASS] 122->212 mod 1009: forward and reverse slides are inverse
+[PASS] 122-212 mod 1009: common-face traces are transverse
+[PASS] 131-221: the supports share one triangular face
+[PASS] 131->221 mod 1009: source hinge rank 144
+[PASS] 131->221 mod 1009: target hinge rank 144
+[PASS] 131->221 mod 1009: hinge row spaces agree
+[PASS] 131->221 mod 1009: forward and reverse slides are inverse
+[PASS] 131-221 mod 1009: common-face traces are transverse
+[PASS] 212-221: the supports share one triangular face
+[PASS] 212->221 mod 1009: source hinge rank 144
+[PASS] 212->221 mod 1009: target hinge rank 144
+[PASS] 212->221 mod 1009: hinge row spaces agree
+[PASS] 212->221 mod 1009: forward and reverse slides are inverse
+[PASS] 212-221 mod 1009: common-face traces are transverse
+[PASS] 221-311: the supports share one triangular face
+[PASS] 221->311 mod 1009: source hinge rank 144
+[PASS] 221->311 mod 1009: target hinge rank 144
+[PASS] 221->311 mod 1009: hinge row spaces agree
+[PASS] 221->311 mod 1009: forward and reverse slides are inverse
+[PASS] 221-311 mod 1009: common-face traces are transverse
+[PASS] 113-122: the supports share one triangular face
+[PASS] 113->122 mod 1013: source hinge rank 144
+[PASS] 113->122 mod 1013: target hinge rank 144
+[PASS] 113->122 mod 1013: hinge row spaces agree
+[PASS] 113->122 mod 1013: forward and reverse slides are inverse
+[PASS] 113-122 mod 1013: common-face traces are transverse
+[PASS] 122-131: the supports share one triangular face
+[PASS] 122->131 mod 1013: source hinge rank 144
+[PASS] 122->131 mod 1013: target hinge rank 144
+[PASS] 122->131 mod 1013: hinge row spaces agree
+[PASS] 122->131 mod 1013: forward and reverse slides are inverse
+[PASS] 122-131 mod 1013: common-face traces are transverse
+[PASS] 122-212: the supports share one triangular face
+[PASS] 122->212 mod 1013: source hinge rank 144
+[PASS] 122->212 mod 1013: target hinge rank 144
+[PASS] 122->212 mod 1013: hinge row spaces agree
+[PASS] 122->212 mod 1013: forward and reverse slides are inverse
+[PASS] 122-212 mod 1013: common-face traces are transverse
+[PASS] 131-221: the supports share one triangular face
+[PASS] 131->221 mod 1013: source hinge rank 144
+[PASS] 131->221 mod 1013: target hinge rank 144
+[PASS] 131->221 mod 1013: hinge row spaces agree
+[PASS] 131->221 mod 1013: forward and reverse slides are inverse
+[PASS] 131-221 mod 1013: common-face traces are transverse
+[PASS] 212-221: the supports share one triangular face
+[PASS] 212->221 mod 1013: source hinge rank 144
+[PASS] 212->221 mod 1013: target hinge rank 144
+[PASS] 212->221 mod 1013: hinge row spaces agree
+[PASS] 212->221 mod 1013: forward and reverse slides are inverse
+[PASS] 212-221 mod 1013: common-face traces are transverse
+[PASS] 221-311: the supports share one triangular face
+[PASS] 221->311 mod 1013: source hinge rank 144
+[PASS] 221->311 mod 1013: target hinge rank 144
+[PASS] 221->311 mod 1013: hinge row spaces agree
+[PASS] 221->311 mod 1013: forward and reverse slides are inverse
+[PASS] 221-311 mod 1013: common-face traces are transverse
+[PASS] word 113: selected core lift is prime-independent
+[PASS] word 122: selected core lift is prime-independent
+[PASS] word 131: selected core lift is prime-independent
+[PASS] word 221: selected core lift is prime-independent
+[PASS] word 311: selected core lift is prime-independent
+[PASS] word 212: selected core lift is prime-independent
+[PASS] 113->122: integral slide lift is prime-independent
+[PASS] 113->122: integral reverse lift is prime-independent
+[PASS] 113->122: slide alphabet is 0,+/-1
+[PASS] 113->122: exact stationary-edge transition
+[PASS] 113->122: exact inverse transition
+[PASS] 113->122: exact SO(3)-equivariance
+[PASS] 113->122: exact annihilating polynomial
+[PASS] 113->122: minimal polynomial mod 1009
+[PASS] 113->122: minimal polynomial mod 1013
+[PASS] 122->131: integral slide lift is prime-independent
+[PASS] 122->131: integral reverse lift is prime-independent
+[PASS] 122->131: slide alphabet is 0,+/-1
+[PASS] 122->131: exact stationary-edge transition
+[PASS] 122->131: exact inverse transition
+[PASS] 122->131: exact SO(3)-equivariance
+[PASS] 122->131: exact annihilating polynomial
+[PASS] 122->131: minimal polynomial mod 1009
+[PASS] 122->131: minimal polynomial mod 1013
+[PASS] 122->212: integral slide lift is prime-independent
+[PASS] 122->212: integral reverse lift is prime-independent
+[PASS] 122->212: slide alphabet is 0,+/-1
+[PASS] 122->212: exact stationary-edge transition
+[PASS] 122->212: exact inverse transition
+[PASS] 122->212: exact SO(3)-equivariance
+[PASS] 122->212: exact annihilating polynomial
+[PASS] 122->212: minimal polynomial mod 1009
+[PASS] 122->212: minimal polynomial mod 1013
+[PASS] 131->221: integral slide lift is prime-independent
+[PASS] 131->221: integral reverse lift is prime-independent
+[PASS] 131->221: slide alphabet is 0,+/-1
+[PASS] 131->221: exact stationary-edge transition
+[PASS] 131->221: exact inverse transition
+[PASS] 131->221: exact SO(3)-equivariance
+[PASS] 131->221: exact annihilating polynomial
+[PASS] 131->221: minimal polynomial mod 1009
+[PASS] 131->221: minimal polynomial mod 1013
+[PASS] 212->221: integral slide lift is prime-independent
+[PASS] 212->221: integral reverse lift is prime-independent
+[PASS] 212->221: slide alphabet is 0,+/-1
+[PASS] 212->221: exact stationary-edge transition
+[PASS] 212->221: exact inverse transition
+[PASS] 212->221: exact SO(3)-equivariance
+[PASS] 212->221: exact annihilating polynomial
+[PASS] 212->221: minimal polynomial mod 1009
+[PASS] 212->221: minimal polynomial mod 1013
+[PASS] 221->311: integral slide lift is prime-independent
+[PASS] 221->311: integral reverse lift is prime-independent
+[PASS] 221->311: slide alphabet is 0,+/-1
+[PASS] 221->311: exact stationary-edge transition
+[PASS] 221->311: exact inverse transition
+[PASS] 221->311: exact SO(3)-equivariance
+[PASS] 221->311: exact annihilating polynomial
+[PASS] 221->311: minimal polynomial mod 1009
+[PASS] 221->311: minimal polynomial mod 1013
+[PASS] the two horizontal central slides are the same R
+[PASS] the three vertical/right-tail slides are -identity
+[PASS] the unique spacing-word cycle has exact identity holonomy
+[PASS] 212->122: kappa vanishes on the hinge
+[PASS] 212->122: full transport factors through core
+[PASS] 212->122: defect kernel has dimension four
+[PASS] 212->221: kappa vanishes on the hinge
+[PASS] 212->221: full transport factors through core
+[PASS] 212->221: defect kernel has dimension four
+ALL CHECKS PASSED

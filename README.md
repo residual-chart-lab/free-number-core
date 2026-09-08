@@ -63,6 +63,14 @@ The current root-only certified reduction is deterministic and locally confluent
 
 The release bundle contains the PDF and LaTeX sources, the claims ledger, supporting notes, exact computational certificates, a release manifest, and SHA-256 checksums.
 
+## Depth-Generated Geometry research snapshot
+
+A separate [DGG Research Snapshot 2026-09-07](research/depth-generated-geometry/releases/research-2026-09-07/README.md)
+consolidates the ordered quaternionic quotient atlas through Note 26, with a
+standalone manuscript, claim ledger and reproducibility records. This is a
+prepared research publication unit; it does not change the frozen Core
+v1.0.0 artifact or its DOI.
+
 ## Repository map
 
 | Path | Contents |

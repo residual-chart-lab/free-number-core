@@ -1,0 +1,36 @@
+{
+  "title": "Depth-Generated Geometry: Ordered Quaternionic Response Quotients, Flat Cores, and Residual Descent",
+  "version": "research-2026-09-07-audit1",
+  "resource_type": "publication / preprint (proposed)",
+  "creators": [
+    {
+      "name": "Residual Chart Lab"
+    }
+  ],
+  "language": "eng",
+  "license": "MIT",
+  "keywords": [
+    "quaternion algebra",
+    "exact response",
+    "local cokernel",
+    "spectator placement",
+    "flat connection",
+    "residual quotient",
+    "exact arithmetic"
+  ],
+  "description_file": "ZENODO_DESCRIPTION.md",
+  "related_works": [
+    {
+      "identifier": "10.5281/zenodo.21328471",
+      "scheme": "doi",
+      "relationship": "references",
+      "title": "Free Numbers Core v1.0.0"
+    }
+  ],
+  "new_record_doi": null,
+  "new_concept_doi": null,
+  "publication_date": null,
+  "record_strategy": "Separate DGG record; do not change the Core v1.0.0 record.",
+  "workflow_status": "Internally audited review candidate; no deposit or publication has been performed.",
+  "schema_note": "Review metadata, not an API-validated payload. Assign actual DOI and publication date only during publication."
+}

@@ -1,0 +1,122 @@
+{
+  "snapshot": "research-2026-09-07-audit1",
+  "audit_base_commit": "74395434fe6441c272ccf4d345297fd9c427ea22",
+  "scope": "Internal audit of the manuscript finite theorem chain and Note 26; not an external referee report or a rerun of all historical exploratory notes.",
+  "checks": [
+    {
+      "name": "Note 26 clean reconstruction",
+      "status": "passed",
+      "record": "verification/n8-222-clean-run.log",
+      "require_pass_marker": true,
+      "execution": "fresh audit run",
+      "source": "certificates/n8_222_redetection_certificate.py",
+      "source_sha256": "8977e2bd0e383d6f4c877dbc1a1862759f5141f629ce60c89c0ccec7f70f7f94"
+    },
+    {
+      "name": "Independent component products and third-prime ranks",
+      "status": "passed",
+      "record": "verification/audit-independent.log",
+      "require_pass_marker": true,
+      "execution": "fresh audit run"
+    },
+    {
+      "name": "Cache and execution regression checks",
+      "status": "passed",
+      "record": "verification/audit-guard.log",
+      "require_pass_marker": true,
+      "execution": "fresh audit run"
+    },
+    {
+      "name": "Canonical seed quaternion coordinate",
+      "status": "passed",
+      "record": "verification/n5-central-channel.log",
+      "require_pass_marker": true,
+      "execution": "fresh audit run",
+      "source": "certificates/n5_central_channel_factorization_certificate.py",
+      "source_sha256": "bb46408fe011510ab830dcaf678b54a856a9fd342f12ae0d21f79f791fba5192"
+    },
+    {
+      "name": "Full five-placement n=6 atlas",
+      "status": "passed",
+      "record": "verification/n6-spectator-atlas.log",
+      "require_pass_marker": true,
+      "execution": "fresh audit run",
+      "source": "certificates/n6_spectator_chart_transition_certificate.py",
+      "source_sha256": "2c80bed869a4cae97455e09d1286e32a9a7626cfcc03d86b78cb51a3d3c63339"
+    },
+    {
+      "name": "Exact seed-to-cap residual bridge",
+      "status": "passed",
+      "record": "verification/n6-seed-cap-bridge.log",
+      "require_pass_marker": true,
+      "execution": "fresh audit run",
+      "source": "certificates/n6_seed_cap_bridge_certificate.py",
+      "source_sha256": "856b4684578989659e9c18e950d195661dfe5366092ea3d59eb34b76729929a4"
+    },
+    {
+      "name": "Exceptional n=7 full decomposition",
+      "status": "passed",
+      "record": "verification/n7-exceptional-core.log",
+      "require_pass_marker": true,
+      "execution": "fresh audit run",
+      "source": "certificates/n7_exceptional_core_decomposition_certificate.py",
+      "source_sha256": "53460bac7487b2f8dcc40afd8e178538e3683868991281862f13e17a1fe8b388"
+    },
+    {
+      "name": "Exterior suspension finite identities",
+      "status": "passed",
+      "record": "verification/exterior-suspension.log",
+      "require_pass_marker": true,
+      "execution": "fresh audit run",
+      "source": "certificates/exterior_spectator_suspension_certificate.py",
+      "source_sha256": "72f3cc4a89442735263db823afd872fd77483d054966723df035b9d5d517d92b"
+    },
+    {
+      "name": "Full generic n=7 word atlas and spin profiles",
+      "status": "passed",
+      "record": "verification/n7-internal-word-atlas.log",
+      "require_pass_marker": true,
+      "execution": "fresh audit run",
+      "source": "certificates/n7_internal_word_atlas_certificate.py",
+      "source_sha256": "98b1ccf8fcbd1e12f6982a2f95e2d90c4b13e730b603234bfa17d084e25919fd"
+    },
+    {
+      "name": "Full n=7 anchor census and transition groupoid",
+      "status": "passed",
+      "record": "verification/n7-anchor-groupoid.log",
+      "require_pass_marker": true,
+      "execution": "fresh audit run",
+      "source": "certificates/n7_anchor_transition_groupoid_certificate.py",
+      "source_sha256": "2aad1e89c3d9b184dda2f11ced43d9e98d8042ffdcba9562964dda966d35bb2a"
+    },
+    {
+      "name": "Full n=7 spacing-word transport and holonomy",
+      "status": "passed",
+      "record": "verification/n7-spacing-word-transport.log",
+      "require_pass_marker": true,
+      "execution": "fresh audit run",
+      "source": "certificates/n7_spacing_word_transport_certificate.py",
+      "source_sha256": "6b481a9492d271c6c503ce7ef66aa1311ffb73c33bfc9e19064b0827d8dd3240"
+    },
+    {
+      "name": "Original seed tetrahedron",
+      "status": "passed",
+      "record": "verification/seed-tetrahedron.log",
+      "require_pass_marker": true,
+      "execution": "original candidate preparation earlier in the same work session; unchanged source"
+    },
+    {
+      "name": "Closed theta operator",
+      "status": "passed",
+      "record": "verification/theta-operator.log",
+      "require_pass_marker": true,
+      "execution": "original candidate preparation earlier in the same work session; unchanged source"
+    },
+    {
+      "name": "PDF build and visual inspection",
+      "status": "passed",
+      "pages": 16,
+      "details": "All 16 pages rendered and visually inspected; no overfull boxes in the final compilation."
+    }
+  ]
+}

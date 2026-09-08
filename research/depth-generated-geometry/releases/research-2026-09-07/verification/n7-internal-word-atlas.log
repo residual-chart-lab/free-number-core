@@ -1,0 +1,117 @@
+reconstructing exact n=6 chart atlas
+building all n=7 restrictions mod 1009
+  completing word (1, 1, 3) mod 1009
+  completing word (1, 2, 2) mod 1009
+  completing word (1, 3, 1) mod 1009
+  completing word (2, 2, 1) mod 1009
+  completing word (3, 1, 1) mod 1009
+building all n=7 restrictions mod 1013
+  completing word (1, 1, 3) mod 1013
+  completing word (1, 2, 2) mod 1013
+  completing word (1, 3, 1) mod 1013
+  completing word (2, 2, 1) mod 1013
+  completing word (3, 1, 1) mod 1013
+CRT bound/modulus: 629872 1022117
+word 113 anchor {'new': 5, 'old': 4, 'parent_position': 4, 'chart': (3, 4), 'edge': (1, 6), 'side': 'right'}
+  core alphabet: [-4, -3, -1, 0, 1, 3, 4, 8, 9, 12]
+  exact edge ranks: (144, 108, 144, 36, 108, 144)
+  exact edge profiles: ((6, 39, 55, 35, 9), (4, 27, 40, 28, 9), (6, 39, 55, 35, 9), (2, 12, 15, 7, 0), (4, 27, 40, 28, 9), (6, 39, 55, 35, 9))
+word 122 anchor {'new': 3, 'old': 5, 'parent_position': 4, 'chart': (3, 4), 'edge': (1, 2), 'side': 'left'}
+  core alphabet: [-12, -9, -4, -3, -1, 0, 1, 3, 4, 8]
+  exact edge ranks: (144, 108, 132, 36, 108, 144)
+  exact edge profiles: ((6, 39, 55, 35, 9), (4, 27, 40, 28, 9), (5, 33, 50, 35, 9), (2, 12, 15, 7, 0), (4, 27, 40, 28, 9), (6, 39, 55, 35, 9))
+word 131 anchor {'new': 3, 'old': 4, 'parent_position': 3, 'chart': (1, 2), 'edge': (1, 2), 'side': 'left'}
+  core alphabet: [-4, -3, -1, 0, 1, 3, 4, 8, 9, 12]
+  exact edge ranks: (144, 108, 132, 36, 108, 144)
+  exact edge profiles: ((6, 39, 55, 35, 9), (4, 27, 40, 28, 9), (5, 33, 50, 35, 9), (2, 12, 15, 7, 0), (4, 27, 40, 28, 9), (6, 39, 55, 35, 9))
+word 221 anchor {'new': 2, 'old': 4, 'parent_position': 3, 'chart': (1, 2), 'edge': (1, 3), 'side': 'left'}
+  core alphabet: [-12, -9, -4, -3, -1, 0, 1, 3, 4, 8]
+  exact edge ranks: (144, 108, 132, 36, 108, 144)
+  exact edge profiles: ((6, 39, 55, 35, 9), (4, 27, 40, 28, 9), (5, 33, 50, 35, 9), (2, 12, 15, 7, 0), (4, 27, 40, 28, 9), (6, 39, 55, 35, 9))
+word 311 anchor {'new': 2, 'old': 3, 'parent_position': 2, 'chart': (1, 2), 'edge': (1, 4), 'side': 'left'}
+  core alphabet: [-4, -3, -1, 0, 1, 3, 4, 8, 9]
+  exact edge ranks: (144, 108, 144, 36, 108, 144)
+  exact edge profiles: ((6, 39, 55, 35, 9), (4, 27, 40, 28, 9), (6, 39, 55, 35, 9), (2, 12, 15, 7, 0), (4, 27, 40, 28, 9), (6, 39, 55, 35, 9))
+[PASS] word (1, 1, 3): both primes lift the same 16*matching
+[PASS] word (1, 1, 3): 16*matching has alphabet 0,+/-1,+/-2
+[PASS] word (1, 1, 3): both primes lift the same integer anchor
+[PASS] word (1, 1, 3): both primes lift the same integer completion
+[PASS] word (1, 1, 3): completion coefficients have size at most 12
+[PASS] word (1, 1, 3): integer completion kills 16*matching
+[PASS] word (1, 1, 3): the specified anchor is the completed block
+[PASS] word (1, 1, 3): matching rank is 1800 mod 1009
+[PASS] word (1, 1, 3): quotient dimension is 144 mod 1009
+[PASS] word (1, 1, 3): completion rank is 144 mod 1009
+[PASS] word (1, 1, 3): matching rank is 1800 mod 1013
+[PASS] word (1, 1, 3): quotient dimension is 144 mod 1013
+[PASS] word (1, 1, 3): completion rank is 144 mod 1013
+[PASS] word (1, 2, 2): both primes lift the same 16*matching
+[PASS] word (1, 2, 2): 16*matching has alphabet 0,+/-1,+/-2
+[PASS] word (1, 2, 2): both primes lift the same integer anchor
+[PASS] word (1, 2, 2): both primes lift the same integer completion
+[PASS] word (1, 2, 2): completion coefficients have size at most 12
+[PASS] word (1, 2, 2): integer completion kills 16*matching
+[PASS] word (1, 2, 2): the specified anchor is the completed block
+[PASS] word (1, 2, 2): matching rank is 1800 mod 1009
+[PASS] word (1, 2, 2): quotient dimension is 144 mod 1009
+[PASS] word (1, 2, 2): completion rank is 144 mod 1009
+[PASS] word (1, 2, 2): matching rank is 1800 mod 1013
+[PASS] word (1, 2, 2): quotient dimension is 144 mod 1013
+[PASS] word (1, 2, 2): completion rank is 144 mod 1013
+[PASS] word (1, 3, 1): both primes lift the same 16*matching
+[PASS] word (1, 3, 1): 16*matching has alphabet 0,+/-1,+/-2
+[PASS] word (1, 3, 1): both primes lift the same integer anchor
+[PASS] word (1, 3, 1): both primes lift the same integer completion
+[PASS] word (1, 3, 1): completion coefficients have size at most 12
+[PASS] word (1, 3, 1): integer completion kills 16*matching
+[PASS] word (1, 3, 1): the specified anchor is the completed block
+[PASS] word (1, 3, 1): matching rank is 1800 mod 1009
+[PASS] word (1, 3, 1): quotient dimension is 144 mod 1009
+[PASS] word (1, 3, 1): completion rank is 144 mod 1009
+[PASS] word (1, 3, 1): matching rank is 1800 mod 1013
+[PASS] word (1, 3, 1): quotient dimension is 144 mod 1013
+[PASS] word (1, 3, 1): completion rank is 144 mod 1013
+[PASS] word (2, 2, 1): both primes lift the same 16*matching
+[PASS] word (2, 2, 1): 16*matching has alphabet 0,+/-1,+/-2
+[PASS] word (2, 2, 1): both primes lift the same integer anchor
+[PASS] word (2, 2, 1): both primes lift the same integer completion
+[PASS] word (2, 2, 1): completion coefficients have size at most 12
+[PASS] word (2, 2, 1): integer completion kills 16*matching
+[PASS] word (2, 2, 1): the specified anchor is the completed block
+[PASS] word (2, 2, 1): matching rank is 1800 mod 1009
+[PASS] word (2, 2, 1): quotient dimension is 144 mod 1009
+[PASS] word (2, 2, 1): completion rank is 144 mod 1009
+[PASS] word (2, 2, 1): matching rank is 1800 mod 1013
+[PASS] word (2, 2, 1): quotient dimension is 144 mod 1013
+[PASS] word (2, 2, 1): completion rank is 144 mod 1013
+[PASS] word (3, 1, 1): both primes lift the same 16*matching
+[PASS] word (3, 1, 1): 16*matching has alphabet 0,+/-1,+/-2
+[PASS] word (3, 1, 1): both primes lift the same integer anchor
+[PASS] word (3, 1, 1): both primes lift the same integer completion
+[PASS] word (3, 1, 1): completion coefficients have size at most 12
+[PASS] word (3, 1, 1): integer completion kills 16*matching
+[PASS] word (3, 1, 1): the specified anchor is the completed block
+[PASS] word (3, 1, 1): matching rank is 1800 mod 1009
+[PASS] word (3, 1, 1): quotient dimension is 144 mod 1009
+[PASS] word (3, 1, 1): completion rank is 144 mod 1009
+[PASS] word (3, 1, 1): matching rank is 1800 mod 1013
+[PASS] word (3, 1, 1): quotient dimension is 144 mod 1013
+[PASS] word (3, 1, 1): completion rank is 144 mod 1013
+[PASS] the matching factorization bound fits below the CRT modulus
+[PASS] the core target has the generic n=7 spin profile
+[PASS] word (1, 1, 3): completion is SO(3)-equivariant over Z
+[PASS] word (1, 1, 3): exact edge Casimir profiles agree with the atlas
+[PASS] word (1, 1, 3): exact edge ranks are profile dimensions
+[PASS] word (1, 2, 2): completion is SO(3)-equivariant over Z
+[PASS] word (1, 2, 2): exact edge Casimir profiles agree with the atlas
+[PASS] word (1, 2, 2): exact edge ranks are profile dimensions
+[PASS] word (1, 3, 1): completion is SO(3)-equivariant over Z
+[PASS] word (1, 3, 1): exact edge Casimir profiles agree with the atlas
+[PASS] word (1, 3, 1): exact edge ranks are profile dimensions
+[PASS] word (2, 2, 1): completion is SO(3)-equivariant over Z
+[PASS] word (2, 2, 1): exact edge Casimir profiles agree with the atlas
+[PASS] word (2, 2, 1): exact edge ranks are profile dimensions
+[PASS] word (3, 1, 1): completion is SO(3)-equivariant over Z
+[PASS] word (3, 1, 1): exact edge Casimir profiles agree with the atlas
+[PASS] word (3, 1, 1): exact edge ranks are profile dimensions
+ALL CHECKS PASSED

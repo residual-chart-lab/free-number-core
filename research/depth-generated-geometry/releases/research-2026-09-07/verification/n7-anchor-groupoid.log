@@ -1,0 +1,176 @@
+reconstructing exact n=6 parent charts
+building transported-anchor census mod 1009
+  word 113
+  word 122
+  word 131
+  word 221
+  word 311
+  word 212
+building transported-anchor census mod 1013
+  word 113
+  word 122
+  word 131
+  word 221
+  word 311
+  word 212
+history counts / distinct coordinates:
+  113 2 / 1
+  122 3 / 3
+  131 4 / 4
+  221 4 / 3
+  311 4 / 1
+  212 3 / 2
+generic transition chains: 122=S,A; 131=B,S,A; 221=B,S
+commutator ranks [A,B], [S,B]: 64 51
+minimal polynomials:
+  A (1, -1, -1, 1)
+  B (1, -1, -1, 1)
+  S (-1, -1, 1, 1)
+  SB (-1, 0, 1, -1, 0, 1)
+  AS (1, 1, -2, -2, 1, 1)
+  ASB (1, 0, -1, 1, -1, -1, 1, -1, 0, 1)
+exceptional transition: S direct-sum id_H; kappa shear rank 0
+CRT bound/modulus: 629872 1022117
+[PASS] word (1, 1, 3): both primes lift the same 16*matching
+[PASS] word (1, 1, 3): matching alphabet is 0,+/-1,+/-2
+[PASS] word (1, 1, 3): matching rank mod 1009
+[PASS] word (1, 1, 3): matching rank mod 1013
+[PASS] word (1, 1, 3): completion count is prime-independent
+[PASS] word (1, 1, 3): exhaustive history census
+[PASS] word (1, 1, 3), core 0: history labels agree
+[PASS] word (1, 1, 3), core 0: integer lift agrees
+[PASS] word (1, 1, 3), core 0: exact cancellation
+[PASS] word (1, 1, 3), core 0: rank 144 mod 1009
+[PASS] word (1, 1, 3), core 0: rank 144 mod 1013
+[PASS] word (1, 2, 2): both primes lift the same 16*matching
+[PASS] word (1, 2, 2): matching alphabet is 0,+/-1,+/-2
+[PASS] word (1, 2, 2): matching rank mod 1009
+[PASS] word (1, 2, 2): matching rank mod 1013
+[PASS] word (1, 2, 2): completion count is prime-independent
+[PASS] word (1, 2, 2): exhaustive history census
+[PASS] word (1, 2, 2), core 0: history labels agree
+[PASS] word (1, 2, 2), core 0: integer lift agrees
+[PASS] word (1, 2, 2), core 0: exact cancellation
+[PASS] word (1, 2, 2), core 0: rank 144 mod 1009
+[PASS] word (1, 2, 2), core 0: rank 144 mod 1013
+[PASS] word (1, 2, 2), core 1: history labels agree
+[PASS] word (1, 2, 2), core 1: integer lift agrees
+[PASS] word (1, 2, 2), core 1: exact cancellation
+[PASS] word (1, 2, 2), core 1: rank 144 mod 1009
+[PASS] word (1, 2, 2), core 1: rank 144 mod 1013
+[PASS] word (1, 2, 2), core 2: history labels agree
+[PASS] word (1, 2, 2), core 2: integer lift agrees
+[PASS] word (1, 2, 2), core 2: exact cancellation
+[PASS] word (1, 2, 2), core 2: rank 144 mod 1009
+[PASS] word (1, 2, 2), core 2: rank 144 mod 1013
+[PASS] word (1, 3, 1): both primes lift the same 16*matching
+[PASS] word (1, 3, 1): matching alphabet is 0,+/-1,+/-2
+[PASS] word (1, 3, 1): matching rank mod 1009
+[PASS] word (1, 3, 1): matching rank mod 1013
+[PASS] word (1, 3, 1): completion count is prime-independent
+[PASS] word (1, 3, 1): exhaustive history census
+[PASS] word (1, 3, 1), core 0: history labels agree
+[PASS] word (1, 3, 1), core 0: integer lift agrees
+[PASS] word (1, 3, 1), core 0: exact cancellation
+[PASS] word (1, 3, 1), core 0: rank 144 mod 1009
+[PASS] word (1, 3, 1), core 0: rank 144 mod 1013
+[PASS] word (1, 3, 1), core 1: history labels agree
+[PASS] word (1, 3, 1), core 1: integer lift agrees
+[PASS] word (1, 3, 1), core 1: exact cancellation
+[PASS] word (1, 3, 1), core 1: rank 144 mod 1009
+[PASS] word (1, 3, 1), core 1: rank 144 mod 1013
+[PASS] word (1, 3, 1), core 2: history labels agree
+[PASS] word (1, 3, 1), core 2: integer lift agrees
+[PASS] word (1, 3, 1), core 2: exact cancellation
+[PASS] word (1, 3, 1), core 2: rank 144 mod 1009
+[PASS] word (1, 3, 1), core 2: rank 144 mod 1013
+[PASS] word (1, 3, 1), core 3: history labels agree
+[PASS] word (1, 3, 1), core 3: integer lift agrees
+[PASS] word (1, 3, 1), core 3: exact cancellation
+[PASS] word (1, 3, 1), core 3: rank 144 mod 1009
+[PASS] word (1, 3, 1), core 3: rank 144 mod 1013
+[PASS] word (2, 2, 1): both primes lift the same 16*matching
+[PASS] word (2, 2, 1): matching alphabet is 0,+/-1,+/-2
+[PASS] word (2, 2, 1): matching rank mod 1009
+[PASS] word (2, 2, 1): matching rank mod 1013
+[PASS] word (2, 2, 1): completion count is prime-independent
+[PASS] word (2, 2, 1): exhaustive history census
+[PASS] word (2, 2, 1), core 0: history labels agree
+[PASS] word (2, 2, 1), core 0: integer lift agrees
+[PASS] word (2, 2, 1), core 0: exact cancellation
+[PASS] word (2, 2, 1), core 0: rank 144 mod 1009
+[PASS] word (2, 2, 1), core 0: rank 144 mod 1013
+[PASS] word (2, 2, 1), core 1: history labels agree
+[PASS] word (2, 2, 1), core 1: integer lift agrees
+[PASS] word (2, 2, 1), core 1: exact cancellation
+[PASS] word (2, 2, 1), core 1: rank 144 mod 1009
+[PASS] word (2, 2, 1), core 1: rank 144 mod 1013
+[PASS] word (2, 2, 1), core 2: history labels agree
+[PASS] word (2, 2, 1), core 2: integer lift agrees
+[PASS] word (2, 2, 1), core 2: exact cancellation
+[PASS] word (2, 2, 1), core 2: rank 144 mod 1009
+[PASS] word (2, 2, 1), core 2: rank 144 mod 1013
+[PASS] word (3, 1, 1): both primes lift the same 16*matching
+[PASS] word (3, 1, 1): matching alphabet is 0,+/-1,+/-2
+[PASS] word (3, 1, 1): matching rank mod 1009
+[PASS] word (3, 1, 1): matching rank mod 1013
+[PASS] word (3, 1, 1): completion count is prime-independent
+[PASS] word (3, 1, 1): exhaustive history census
+[PASS] word (3, 1, 1), core 0: history labels agree
+[PASS] word (3, 1, 1), core 0: integer lift agrees
+[PASS] word (3, 1, 1), core 0: exact cancellation
+[PASS] word (3, 1, 1), core 0: rank 144 mod 1009
+[PASS] word (3, 1, 1), core 0: rank 144 mod 1013
+[PASS] word (2, 1, 2): both primes lift the same 16*matching
+[PASS] word (2, 1, 2): matching alphabet is 0,+/-1,+/-2
+[PASS] word (2, 1, 2): matching rank mod 1009
+[PASS] word (2, 1, 2): matching rank mod 1013
+[PASS] word (2, 1, 2): completion count is prime-independent
+[PASS] word (2, 1, 2): exhaustive history census
+[PASS] word (2, 1, 2), core 0: history labels agree
+[PASS] word (2, 1, 2), core 0: integer lift agrees
+[PASS] word (2, 1, 2), core 0: exact cancellation
+[PASS] word (2, 1, 2), core 0: rank 144 mod 1009
+[PASS] word (2, 1, 2), core 0: rank 144 mod 1013
+[PASS] word (2, 1, 2), core 1: history labels agree
+[PASS] word (2, 1, 2), core 1: integer lift agrees
+[PASS] word (2, 1, 2), core 1: exact cancellation
+[PASS] word (2, 1, 2), core 1: rank 144 mod 1009
+[PASS] word (2, 1, 2), core 1: rank 144 mod 1013
+[PASS] the matching CRT bound fits below the modulus
+[PASS] the closed theta inverse is exact
+[PASS] A, B, and S are integral automorphisms
+[PASS] word 122 has chain S,A
+[PASS] word 131 has chain B,S,A
+[PASS] word 221 has chain B,S
+[PASS] the two exterior words each have one coordinate
+[PASS] kappa kills the exceptional matching over Z
+[PASS] the exceptional cores are related by S with no kappa shear
+[PASS] the full exceptional transition is S direct-sum id_H
+[PASS] both exceptional full coordinates have rank 148 mod 1009
+[PASS] both exceptional full coordinates have rank 148 mod 1013
+[PASS] A, B, and S are SO(3)-equivariant over Z
+[PASS] A and S commute on disjoint factor pairs
+[PASS] A and B do not commute
+[PASS] S and B do not commute
+[PASS] A: exact annihilating polynomial
+[PASS] A: minimal polynomial mod 1009
+[PASS] A: minimal polynomial mod 1013
+[PASS] B: exact annihilating polynomial
+[PASS] B: minimal polynomial mod 1009
+[PASS] B: minimal polynomial mod 1013
+[PASS] S: exact annihilating polynomial
+[PASS] S: minimal polynomial mod 1009
+[PASS] S: minimal polynomial mod 1013
+[PASS] SB: exact annihilating polynomial
+[PASS] SB: minimal polynomial mod 1009
+[PASS] SB: minimal polynomial mod 1013
+[PASS] AS: exact annihilating polynomial
+[PASS] AS: minimal polynomial mod 1009
+[PASS] AS: minimal polynomial mod 1013
+[PASS] ASB: exact annihilating polynomial
+[PASS] ASB: minimal polynomial mod 1009
+[PASS] ASB: minimal polynomial mod 1013
+[PASS] A and B negate the top-spin sector while S fixes it
+[PASS] the full ASB passage fixes the top-spin sector
+ALL CHECKS PASSED
