@@ -94,6 +94,17 @@ n=6 atlas reconstruction listed above.
 
 ## PDF and archive integrity
 
+The published snapshot is available at https://doi.org/10.5281/zenodo.22646591.
+The original archive records commit `b9ec03f3e9788b41ba1a560e299407b388db41e1`
+and tag `dgg-research-2026-09-07-audit1`. On GitHub, check out commit
+`110113dd763da371bb6e02c6c5083b40dd12aecc` to retrieve the same source files.
+The two commits share the exact Git tree `24dd03c1f118752f5a08914076a7669055acbd9b`.
+The GitHub transfer changed commit identity, not file content. Original history
+and tags are retained in a recovery Git bundle; native tag synchronization is pending.
+Later Git commits update publication metadata and navigation.
+`ZENODO_METADATA.json` in the current release directory records the three uploaded
+files and their checksums; it is not part of the historical ZIP.
+
 Pandoc, pdfLaTeX and the included manuscript/preamble.tex produce the PDF.
 Run manuscript/build.sh to rebuild from Markdown. The standalone generated
 LaTeX source is also included. The revised 16-page PDF was rendered and
@@ -107,3 +118,7 @@ The checksum list covers every payload file except itself, not the
 surrounding ZIP. MANIFEST.json records the committed source, byte lengths
 and file hashes. The repository snapshot builder requires a clean committed
 DGG source tree before recording its source commit.
+The published ZIP is the reference for byte-level archive checks; a newly built
+ZIP can have different timestamps even when its payload files are identical.
+The builder records the current Git commit in MANIFEST.json, so a build from
+the equivalent GitHub commit also has a different manifest from the original ZIP.

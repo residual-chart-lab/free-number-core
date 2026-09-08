@@ -7,10 +7,15 @@
 ## Start here
 
 [**Research Snapshot 2026-09-07**](releases/research-2026-09-07/README.md) は、
-Notes 14–26 を独立した数学稿・主張台帳・再現資料に固定した公開候補である。
+Notes 14–26 を独立した数学稿・主張台帳・再現資料に固定し、2026-09-07に公開したプレプリントである。
 Core v1.0.0とは別の公開単位とし、本文は四元数と局所応答の定義から読める。
 Note 26では222の444次元商、432次元コア、12次元残差商を閉じ、指定した
 右デコーダでの残差商接続と、同じ操作の全体降下障害を確定した。
+
+公開版 `research-2026-09-07-audit1` のDOIは
+[10.5281/zenodo.22646591](https://doi.org/10.5281/zenodo.22646591)。
+DGGの全版共通DOIは [10.5281/zenodo.22646590](https://doi.org/10.5281/zenodo.22646590)。
+公開ZIPと同じ内容の[ソースコミット](https://github.com/residual-chart-lab/free-number-core/tree/110113dd763da371bb6e02c6c5083b40dd12aecc)から、監査時点のファイルを取得できる。
 
 
 [`notes/00-checkpoint-through-note12.md`](notes/00-checkpoint-through-note12.md) は、Note 01–12 の定理依存、次元表、到達点、未解決境界、および proof audit を一枚にまとめた入口である。

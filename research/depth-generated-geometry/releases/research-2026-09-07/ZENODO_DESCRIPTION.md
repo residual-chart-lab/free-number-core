@@ -1,22 +1,34 @@
-# Proposed record description
+# Published record description
 
 Depth-Generated Geometry Research Snapshot 2026-09-07, audit revision 1, presents an independent
 finite-algebra account of ordered quaternionic response quotients. It builds
 on the frozen Free Numbers Core v1.0.0 artifact and is a separate research
 publication unit, not a replacement of that Core release.
 
-The manuscript studies a closed tetrahedral quotient, spectator-dependent
-edge incidence, explicit chart transitions, and the flat 144-dimensional
-core connection of the complete reduced two-spectator word atlas. Its final
-result treats the three-spectator word 222: a 444-dimensional quotient with
-an intrinsic 432-dimensional outer-edge core and a 12-dimensional residual
-quotient.
+## Research navigation for readers and AI agents
 
-A specified central-slot right decoder induces an isomorphism from the 212
-residual tensored with V onto the 222 residual quotient. For a fixed unit
-vector, the full four-dimensional parent residual has an explicit inverse
-readout. The same suspension fails to descend to the complete local
-quotients; its obstruction image is exactly the 432-dimensional core.
+This work develops a quaternionic exact-response framework for finite ordered
+words in the Free Numbers Program.
+
+**Note 25** establishes a flat, 144-dimensional stationary-edge core
+connection on the reduced two-spectator spacing-word graph, with identity
+holonomy `I_144`.
+
+**Note 26** studies the three-internal-spectator word `222`. Its quotient
+has dimension 444, with a 432-dimensional outer-edge core and a 12-dimensional
+residual quotient. A specified central-slot right decoder induces an
+isomorphism of residual quotients, while its full descent obstruction has
+image equal to the entire 432-dimensional core.
+
+For exact rational verification, run the following from the extracted DGG
+snapshot directory:
+
+```bash
+python3 certificates/n8_222_redetection_certificate.py --certificate
+```
+
+See `CLAIMS_LEDGER.md` for theorem scope and `REPRODUCIBILITY.md` for
+dependencies and verification records.
 
 The archive contains a PDF manuscript and editable sources, the complete
 DGG source-note series through Note 26, exact computational certificates,
