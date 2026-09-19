@@ -113,6 +113,13 @@ The full output is then well-defined, but the update still has a
 432-dimensional kernel. The proof and exact certificate are separate from
 the frozen Core release and published DGG snapshot.
 
+**Post-snapshot Note 28:** [decoder continuations and retained core](research/depth-generated-geometry/notes/28-decoder-continuations-and-retained-core.md)
+shows that the existing central-probe coefficient readouts jointly detect
+all 432 directions lost by that update. Supporting one, two, or three
+independent coefficient directions requires a minimal child refinement of
+dimension 588, 732, or 876. With full retention, the specified encoding and
+decoding induce inverse maps between the two 876-dimensional refinements.
+
 ## Repository map
 
 | Path | Contents |

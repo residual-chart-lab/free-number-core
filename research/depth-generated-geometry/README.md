@@ -17,7 +17,7 @@ Note 26では222の444次元商、432次元コア、12次元残差商を閉じ�
 DGGの全版共通DOIは [10.5281/zenodo.22646590](https://doi.org/10.5281/zenodo.22646590)。
 公開ZIPと同じ内容の[ソースコミット](https://github.com/residual-chart-lab/free-number-core/tree/110113dd763da371bb6e02c6c5083b40dd12aecc)から、監査時点のファイルを取得できる。
 
-### Post-snapshot development: Note 27
+### Post-snapshot development: Notes 27–28
 
 [Note 27 — Minimal state refinement for the central update](notes/27-minimal-state-refinement-for-central-update.md)
 は、Note 26の指定した右デコーダと全体出力を固定し、親状態をどこまで細かく
@@ -27,6 +27,15 @@ DGGの全版共通DOIは [10.5281/zenodo.22646590](https://doi.org/10.5281/zenod
 すべて保存する更新ではない。一般の最小性の証明と
 [exact certificate](certificates/n8_222_minimal_refinement_certificate.py)を収録する。
 これは公開済みCoreおよびSeptember 7 snapshotを変更しない後続研究である。
+
+[Note 28 — Decoder continuations and retained core](notes/28-decoder-continuations-and-retained-core.md)
+は、既存の右デコーダによる中央probeの係数読出しが、更新で失われる432次元を
+すべて検出することを証明する。独立な係数方向を一つ・二つ・三つ読むための
+最小の子状態は、それぞれ588・732・876次元となる。全三方向を保持すれば、
+指定した符号化と読出しは876次元同士の可逆な輸送として閉じる。
+[exact certificate](certificates/n8_222_decoder_continuation_certificate.py)は局所公式から
+読出しを直接構成し、全係数部分集合の階数と具体的な再検出例を検証する。
+次の焦点は、さらにspectatorを加える前向きの内部操作への閉性である。
 
 
 [`notes/00-checkpoint-through-note12.md`](notes/00-checkpoint-through-note12.md) は、Note 01–12 の定理依存、次元表、到達点、未解決境界、および proof audit を一枚にまとめた入口である。
