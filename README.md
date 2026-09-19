@@ -106,6 +106,13 @@ See the DGG [claims ledger](research/depth-generated-geometry/releases/research-
 for theorem scope and [reproducibility guide](research/depth-generated-geometry/releases/research-2026-09-07/REPRODUCIBILITY.md)
 for dependencies and verification records.
 
+**Post-snapshot Note 27:** [minimal state refinement for the central update](research/depth-generated-geometry/notes/27-minimal-state-refinement-for-central-update.md)
+keeps Note 26's specified operation and full target fixed. Its coarsest linear
+source refinement has dimension 876, retaining 432 additional dimensions.
+The full output is then well-defined, but the update still has a
+432-dimensional kernel. The proof and exact certificate are separate from
+the frozen Core release and published DGG snapshot.
+
 ## Repository map
 
 | Path | Contents |

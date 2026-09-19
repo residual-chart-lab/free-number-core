@@ -17,6 +17,17 @@ Note 26では222の444次元商、432次元コア、12次元残差商を閉じ�
 DGGの全版共通DOIは [10.5281/zenodo.22646590](https://doi.org/10.5281/zenodo.22646590)。
 公開ZIPと同じ内容の[ソースコミット](https://github.com/residual-chart-lab/free-number-core/tree/110113dd763da371bb6e02c6c5083b40dd12aecc)から、監査時点のファイルを取得できる。
 
+### Post-snapshot development: Note 27
+
+[Note 27 — Minimal state refinement for the central update](notes/27-minimal-state-refinement-for-central-update.md)
+は、Note 26の指定した右デコーダと全体出力を固定し、親状態をどこまで細かく
+すれば更新が定義できるかを解く。最小の線形拡張は876次元で、従来の444次元に
+432次元の情報を保持する必要がある。親と子の残差が一致するfiber productとして
+代表選択なしに実現できる。ただし子への更新には432次元の核が残り、情報を
+すべて保存する更新ではない。一般の最小性の証明と
+[exact certificate](certificates/n8_222_minimal_refinement_certificate.py)を収録する。
+これは公開済みCoreおよびSeptember 7 snapshotを変更しない後続研究である。
+
 
 [`notes/00-checkpoint-through-note12.md`](notes/00-checkpoint-through-note12.md) は、Note 01–12 の定理依存、次元表、到達点、未解決境界、および proof audit を一枚にまとめた入口である。
 
@@ -276,6 +287,9 @@ ALL CHECKS PASSED
 ```
 
 ## Current stopping point after Note 26
+
+以下は公開snapshot時点の停止位置である。指定操作に必要な最小の状態拡張と、
+拡張後にも残る更新の核については、上記のNote 27を参照。
 
 222の局所商と三つの親との比較は閉じた。指定した中央スロット右デコーダは
 残差商上で同型を与える一方、全体への降下障害の像は432次元コア全体である。
