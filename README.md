@@ -128,6 +128,16 @@ dimension 3924. The extra 1296 dimensions map onto the entire new outer
 core. The certificate includes a counterexample with the new vector fixed
 to i and a compatible-triple description over the 36-dimensional residual.
 
+**Post-snapshot Note 30:** [ordered insertion paths and local interchange](research/depth-generated-geometry/notes/30-ordered-insertion-paths-and-local-interchange.md)
+compares two insertion orders with the same input and final labels. Their
+endpoint difference has rank 1320. A fixed local quaternionic comparison
+accounts for the raw ordering difference, and its descent obstruction on
+the endpoint quotient has dimension 1296. Retaining both paths' intermediate
+and final states requires a minimal common state of dimension 6516.
+Even equal nonzero endpoints can differ under the same later gap-5
+coefficient readout; the hidden difference has rank 1296. Supporting that
+readout on both retained paths raises the minimum to 7668.
+
 ## Repository map
 
 | Path | Contents |

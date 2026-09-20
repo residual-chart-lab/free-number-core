@@ -17,7 +17,7 @@ Note 26では222の444次元商、432次元コア、12次元残差商を閉じ�
 DGGの全版共通DOIは [10.5281/zenodo.22646590](https://doi.org/10.5281/zenodo.22646590)。
 公開ZIPと同じ内容の[ソースコミット](https://github.com/residual-chart-lab/free-number-core/tree/110113dd763da371bb6e02c6c5083b40dd12aecc)から、監査時点のファイルを取得できる。
 
-### Post-snapshot development: Notes 27–29
+### Post-snapshot development: Notes 27–30
 
 [Note 27 — Minimal state refinement for the central update](notes/27-minimal-state-refinement-for-central-update.md)
 は、Note 26の指定した右デコーダと全体出力を固定し、親状態をどこまで細かく
@@ -45,6 +45,17 @@ DGGの全版共通DOIは [10.5281/zenodo.22646590](https://doi.org/10.5281/zenod
 三段の状態が共通の36次元残差で整合する組として実現される。
 [exact certificate](certificates/n9_232_continuation_certificate.py)はn=9のmatching mapから
 再構成し、新入力をiに固定した具体的な保持不足の例も検証する。
+
+[Note 30 — Ordered insertion paths and local interchange](notes/30-ordered-insertion-paths-and-local-interchange.md)
+は、同じ入力・同じ最終ラベルで二つの内部挿入順序を比較する。
+終点の差は階数1320となり、局所四元数の順序差と一致する。対応する局所比較操作は
+終点の商へ降下せず、その障害は1296次元のouter core全体となる。
+共通の始点、二つの途中状態、二つの終点を保持する最小状態は6516次元。
+[exact certificate](certificates/n9_232_path_comparison_certificate.py)は二経路を直接構成し、
+既存の一段挿入の合成との一致、局所比較、共通保持量、同じ後続読出しを検証する。
+さらに、同じ非零の終点でも同じgap 5の係数読出しで差が再検出される具体例を得る。
+終点一致の条件下に隠れる読出し差は1296次元。途中状態も含む両経路の保持情報に
+この読出しを加えると、追加1152次元、合計7668次元が必要十分となる。
 
 
 [`notes/00-checkpoint-through-note12.md`](notes/00-checkpoint-through-note12.md) は、Note 01–12 の定理依存、次元表、到達点、未解決境界、および proof audit を一枚にまとめた入口である。
