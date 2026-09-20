@@ -138,6 +138,17 @@ Even equal nonzero endpoints can differ under the same later gap-5
 coefficient readout; the hidden difference has rank 1296. Supporting that
 readout on both retained paths raises the minimum to 7668.
 
+**Post-snapshot Note 31:** [symmetric endpoint law and recovered core](research/depth-generated-geometry/notes/31-symmetric-endpoint-law-and-recovered-core.md)
+identifies the determined 144-dimensional readout-core quotient with the
+original core T212 through an explicit equivariant isomorphism. The common
+source and the sum of the two endpoints already determine this quotient.
+On the source core, the two new vectors contribute through their inner
+product; the endpoint sum contributes through a rank-144 map.
+
+**[Retention and path-readout checkpoint, Notes 27–31](research/depth-generated-geometry/synthesis/retention-and-path-readout-checkpoint.md)**
+collects the theorem chain, the conditions attached to each dimension,
+the recovered-core law, and the remaining research branches.
+
 ## Repository map
 
 | Path | Contents |

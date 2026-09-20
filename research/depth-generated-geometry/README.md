@@ -17,7 +17,10 @@ Note 26では222の444次元商、432次元コア、12次元残差商を閉じ�
 DGGの全版共通DOIは [10.5281/zenodo.22646590](https://doi.org/10.5281/zenodo.22646590)。
 公開ZIPと同じ内容の[ソースコミット](https://github.com/residual-chart-lab/free-number-core/tree/110113dd763da371bb6e02c6c5083b40dd12aecc)から、監査時点のファイルを取得できる。
 
-### Post-snapshot development: Notes 27–30
+### Post-snapshot development: Notes 27–31
+
+[**保持・更新・経路読出しの見取り図**](synthesis/retention-and-path-readout-checkpoint.md)
+に、27〜31の証明の流れ、各次元が意味する条件、確定した読出し則、次の課題をまとめた。
 
 [Note 27 — Minimal state refinement for the central update](notes/27-minimal-state-refinement-for-central-update.md)
 は、Note 26の指定した右デコーダと全体出力を固定し、親状態をどこまで細かく
@@ -56,6 +59,13 @@ DGGの全版共通DOIは [10.5281/zenodo.22646590](https://doi.org/10.5281/zenod
 さらに、同じ非零の終点でも同じgap 5の係数読出しで差が再検出される具体例を得る。
 終点一致の条件下に隠れる読出し差は1296次元。途中状態も含む両経路の保持情報に
 この読出しを加えると、追加1152次元、合計7668次元が必要十分となる。
+
+[Note 31 — Symmetric endpoint law and recovered core](notes/31-symmetric-endpoint-law-and-recovered-core.md)
+は、確定している144次元の読出し商を元のcore \(T_{212}\) と明示的な同型で結ぶ。
+この商は共通始点と二つの終点の和だけで決まり、途中状態を加えても不定部分は変わらない。
+始点のcoreからの寄与は新入力二つの内積による収縮、終点の和からの寄与は階数144の写像となる。
+[exact certificate](certificates/n9_232_determined_core_certificate.py)はこの因子化、同型、
+スカラー収縮則、回転表現の成分を厳密に検証する。
 
 
 [`notes/00-checkpoint-through-note12.md`](notes/00-checkpoint-through-note12.md) は、Note 01–12 の定理依存、次元表、到達点、未解決境界、および proof audit を一枚にまとめた入口である。
@@ -408,15 +418,19 @@ Note 25 はこの隣接-word 問題を閉じた。unit slide で隣り合う二�
 
 として閉じる。非自明な chart shear \(\theta\) は存在するが、この最初の word loop は曲率を持たない。
 
-したがって次の仕事は、三つ以上の internal spectators を持つ最初の word complex を構成し、二次元 cells を通る residual transport を比較することである。その高次 word-level transport から genuine nontrivial closed loops が抽出できれば、response-simplex complex
+Notes 26〜31は三つ以上のinternal spectatorsを持つ指定配置・操作を進め、
+最小保持量、係数読出しによる再検出、二経路比較、確定するcoreの同定を与えた。
+現在の具体的な次手は、Note 31の同型と読出し則を隣接配置へ運んだときの整合を検査すること。
+全体のword complexと二次元cellsでの輸送比較を揃え、response-simplex complex
 
 \[
 C_n^0\xrightarrow{\partial_n}C_n^1
 \xrightarrow{\partial_n^{(2)}}C_n^2
 \]
 
-の middle exactness を全 \(n\) へ上げるための local transport law が得られる。
+のmiddle exactnessを全 \(n\) へ上げるために必要なlocal transport lawを特定する。
 
 Casimir complement 上の逆写像として得られた canonical section の短い response-side 局所公式も引き続き open である。
 
-その後で、response simplex に四元数値 transport を加えたときの path nonconfluence residual と curvature 候補を検討する。Note 25 の flatness と vertex defect は、その定義が満たすべき最初の基準例である。
+並行して、閉路を備えた輸送網でpath nonconfluence residualとcurvature候補を検討する。
+Note 25のflatnessとvertex defect、Note 30の固定した二経路比較は、その基準例となる。
