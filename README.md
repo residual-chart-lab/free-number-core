@@ -120,6 +120,14 @@ independent coefficient directions requires a minimal child refinement of
 dimension 588, 732, or 876. With full retention, the specified encoding and
 decoding induce inverse maps between the two 876-dimensional refinements.
 
+**Post-snapshot Note 29:** [forward insertion beyond decoder closure](research/depth-generated-geometry/notes/29-forward-insertion-beyond-decoder-closure.md)
+tests the next fixed internal insertion, from 222 to 232. The retained
+state tensored with the new vector has dimension 2628; preserving its
+information and the new full output requires a minimal refinement of
+dimension 3924. The extra 1296 dimensions map onto the entire new outer
+core. The certificate includes a counterexample with the new vector fixed
+to i and a compatible-triple description over the 36-dimensional residual.
+
 ## Repository map
 
 | Path | Contents |

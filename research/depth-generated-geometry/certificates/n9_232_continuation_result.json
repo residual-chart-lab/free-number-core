@@ -1,0 +1,129 @@
+{
+  "base_commit": "cb23eb4258396bb1d248972c2f86da084d200f67",
+  "field": "Q and R, exact integer identities and certified rational ranks",
+  "primes": [
+    1009,
+    1013
+  ],
+  "sources_sha256": {
+    "n9_232_continuation_certificate.py": "a9731364d838a73e26ec6f1fe5baf33d709cedf0566309fcb1f83142bcf57b3c",
+    "n8_222_redetection_certificate.py": "8977e2bd0e383d6f4c877dbc1a1862759f5141f629ce60c89c0ccec7f70f7f94",
+    "n8_222_decoder_continuation_certificate.py": "85f0b31c6a0517f9d5c7dfbd4689a25e09450e3ef7af49d56da34d971b22232d",
+    "n8_222_minimal_refinement_certificate.py": "b5c8c2e0361bb0b961a8e62439303964c002354b3f1f92273ef8e247bb578658",
+    "n8_222_exact_backend.cpp": "dbd637622982fd45915d6187d19da7bac960fe6c4d65f6194965922a5f90a632"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "python_flint": "0.9.0"
+  },
+  "operation": {
+    "parent_word": "222",
+    "child_word": "232",
+    "child_support": [
+      1,
+      3,
+      6,
+      8
+    ],
+    "inserted_actual_gap": 5,
+    "hand": "right",
+    "formula": "F(old probes) z w",
+    "raw_common_denominator": 2
+  },
+  "raw_input_dimension": 17496,
+  "child_matching_rank": 16164,
+  "child_quotient_dimension": 1332,
+  "child_outer_core_dimension": 1296,
+  "child_residual_dimension": 36,
+  "residual_square_verified": true,
+  "rank_profiles_retained_output_joint": [
+    [
+      657,
+      333,
+      981
+    ],
+    [
+      657,
+      333,
+      981
+    ],
+    [
+      657,
+      333,
+      981
+    ],
+    [
+      657,
+      333,
+      981
+    ]
+  ],
+  "old_refinement_dimension": 876,
+  "tensor_extended_retained_dimension": 2628,
+  "forward_descends_to_retained_state": false,
+  "new_obstruction_rank": 1296,
+  "new_obstruction_equals_full_outer_core": true,
+  "minimal_refinement_dimension": 3924,
+  "safe_relation_dimension_before": 14868,
+  "safe_relation_dimension_after": 13572,
+  "refined_update_kernel_dimension": 2592,
+  "fixed_vector_counterexample": {
+    "input_coordinates": [
+      [
+        0,
+        1
+      ],
+      [
+        12,
+        1
+      ],
+      [
+        24,
+        1
+      ],
+      [
+        774,
+        -3
+      ],
+      [
+        792,
+        3
+      ],
+      [
+        864,
+        3
+      ],
+      [
+        918,
+        -3
+      ],
+      [
+        2916,
+        1
+      ],
+      [
+        2928,
+        1
+      ],
+      [
+        2940,
+        1
+      ],
+      [
+        5832,
+        3
+      ]
+    ],
+    "output_numerator": -48,
+    "retained_zero": true,
+    "output_nonzero": true,
+    "fixed_new_vector": "i",
+    "output_row": 10,
+    "output_denominator": 2
+  },
+  "elapsed_seconds": 306.579,
+  "scope": "Fixed new-gap-5 right insertion 222 -> 232 with full V input; minimal linear refinement preserving the Note 28 retained state and this prescribed full output.",
+  "all_checks_passed": true
+}

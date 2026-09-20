@@ -17,7 +17,7 @@ Note 26では222の444次元商、432次元コア、12次元残差商を閉じ�
 DGGの全版共通DOIは [10.5281/zenodo.22646590](https://doi.org/10.5281/zenodo.22646590)。
 公開ZIPと同じ内容の[ソースコミット](https://github.com/residual-chart-lab/free-number-core/tree/110113dd763da371bb6e02c6c5083b40dd12aecc)から、監査時点のファイルを取得できる。
 
-### Post-snapshot development: Notes 27–28
+### Post-snapshot development: Notes 27–29
 
 [Note 27 — Minimal state refinement for the central update](notes/27-minimal-state-refinement-for-central-update.md)
 は、Note 26の指定した右デコーダと全体出力を固定し、親状態をどこまで細かく
@@ -35,7 +35,16 @@ DGGの全版共通DOIは [10.5281/zenodo.22646590](https://doi.org/10.5281/zenod
 指定した符号化と読出しは876次元同士の可逆な輸送として閉じる。
 [exact certificate](certificates/n8_222_decoder_continuation_certificate.py)は局所公式から
 読出しを直接構成し、全係数部分集合の階数と具体的な再検出例を検証する。
-次の焦点は、さらにspectatorを加える前向きの内部操作への閉性である。
+さらにspectatorを加える前向きの内部操作への閉性を、次のNote 29で検証する。
+
+[Note 29 — Forward insertion beyond decoder closure](notes/29-forward-insertion-beyond-decoder-closure.md)
+は、次の内部挿入を新しいgap 5での右操作 `222 → 232` に固定する。
+876次元の保持状態を新入力とtensorizeした2628次元では出力が決まらず、
+追加の1296次元が必要となる。これは挿入先のouter core全体に対応する。
+従来の保持情報と指定出力をともに保存する最小状態は3924次元で、
+三段の状態が共通の36次元残差で整合する組として実現される。
+[exact certificate](certificates/n9_232_continuation_certificate.py)はn=9のmatching mapから
+再構成し、新入力をiに固定した具体的な保持不足の例も検証する。
 
 
 [`notes/00-checkpoint-through-note12.md`](notes/00-checkpoint-through-note12.md) は、Note 01–12 の定理依存、次元表、到達点、未解決境界、および proof audit を一枚にまとめた入口である。
