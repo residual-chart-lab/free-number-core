@@ -17,10 +17,10 @@ Note 26では222の444次元商、432次元コア、12次元残差商を閉じ�
 DGGの全版共通DOIは [10.5281/zenodo.22646590](https://doi.org/10.5281/zenodo.22646590)。
 公開ZIPと同じ内容の[ソースコミット](https://github.com/residual-chart-lab/free-number-core/tree/110113dd763da371bb6e02c6c5083b40dd12aecc)から、監査時点のファイルを取得できる。
 
-### Post-snapshot development: Notes 27–31
+### Post-snapshot development: Notes 27–32
 
 [**保持・更新・経路読出しの見取り図**](synthesis/retention-and-path-readout-checkpoint.md)
-に、27〜31の証明の流れ、各次元が意味する条件、確定した読出し則、次の課題をまとめた。
+に、27〜32の証明の流れ、各次元が意味する条件、確定した読出し則と最初の隣接輸送、次の課題をまとめた。
 
 [Note 27 — Minimal state refinement for the central update](notes/27-minimal-state-refinement-for-central-update.md)
 は、Note 26の指定した右デコーダと全体出力を固定し、親状態をどこまで細かく
@@ -66,6 +66,14 @@ DGGの全版共通DOIは [10.5281/zenodo.22646590](https://doi.org/10.5281/zenod
 始点のcoreからの寄与は新入力二つの内積による収縮、終点の和からの寄与は階数144の写像となる。
 [exact certificate](certificates/n9_232_determined_core_certificate.py)はこの因子化、同型、
 スカラー収縮則、回転表現の成分を厳密に検証する。
+
+[Note 32 — Adjacent core transport preserves the readout law](notes/32-adjacent-core-transport-preserves-readout.md)
+は、共通の右外辺で固定した隣接輸送 \(122/132/142\to212/222/232\) が、
+1152次元の読出し不定部分をそのまま運ぶことを証明する。
+誘導される144次元の商の輸送は、元のcoreとの同型と終点項の双方で可換となる。
+この指定した比較で、確定するcoreを運ぶための追加保持量はゼロ。
+[exact certificate](certificates/n9_adjacent_core_transport_certificate.py)は六つのmatching商と
+二経路・読出しを最初から構成し、二つの輸送欠陥が厳密にゼロであることを検証する。
 
 
 [`notes/00-checkpoint-through-note12.md`](notes/00-checkpoint-through-note12.md) は、Note 01–12 の定理依存、次元表、到達点、未解決境界、および proof audit を一枚にまとめた入口である。
@@ -418,9 +426,10 @@ Note 25 はこの隣接-word 問題を閉じた。unit slide で隣り合う二�
 
 として閉じる。非自明な chart shear \(\theta\) は存在するが、この最初の word loop は曲率を持たない。
 
-Notes 26〜31は三つ以上のinternal spectatorsを持つ指定配置・操作を進め、
+Notes 26〜32は三つ以上のinternal spectatorsを持つ指定配置・操作を進め、
 最小保持量、係数読出しによる再検出、二経路比較、確定するcoreの同定を与えた。
-現在の具体的な次手は、Note 31の同型と読出し則を隣接配置へ運んだときの整合を検査すること。
+Note 32で、最初の隣接配置への輸送が同型と読出し則を保つことまで確定した。
+現在の具体的な次手は、別の隣接辺でも輸送を独立に固定し、配置cellを回る二経路を比較すること。
 全体のword complexと二次元cellsでの輸送比較を揃え、response-simplex complex
 
 \[

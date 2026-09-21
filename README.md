@@ -145,9 +145,16 @@ source and the sum of the two endpoints already determine this quotient.
 On the source core, the two new vectors contribute through their inner
 product; the endpoint sum contributes through a rank-144 map.
 
-**[Retention and path-readout checkpoint, Notes 27–31](research/depth-generated-geometry/synthesis/retention-and-path-readout-checkpoint.md)**
+**Post-snapshot Note 32:** [adjacent core transport preserves the readout law](research/depth-generated-geometry/notes/32-adjacent-core-transport-preserves-readout.md)
+fixes common-right-edge transports from the adjacent 122/132/142 ladder
+to 212/222/232. They preserve the entire 1152-dimensional readout ambiguity;
+the induced 144-dimensional quotient transport commutes with the recovered-core
+identification and endpoint term. This specified comparison requires no
+additional retention for the determined core.
+
+**[Retention and path-readout checkpoint, Notes 27–32](research/depth-generated-geometry/synthesis/retention-and-path-readout-checkpoint.md)**
 collects the theorem chain, the conditions attached to each dimension,
-the recovered-core law, and the remaining research branches.
+the recovered-core law, its first adjacent extension, and the remaining research branches.
 
 ## Repository map
 
