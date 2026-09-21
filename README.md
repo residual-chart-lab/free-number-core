@@ -152,9 +152,17 @@ the induced 144-dimensional quotient transport commutes with the recovered-core
 identification and endpoint term. This specified comparison requires no
 additional retention for the determined core.
 
-**[Retention and path-readout checkpoint, Notes 27–32](research/depth-generated-geometry/synthesis/retention-and-path-readout-checkpoint.md)**
+**Post-snapshot Note 33:** [readout transport around a configuration cell](research/depth-generated-geometry/notes/33-readout-transport-around-a-configuration-cell.md)
+closes the four-placement cell at all three insertion stages. Independently
+anchored transports give exact holonomies I144, I432, and I1296. Every edge
+preserves the 1152-dimensional ambiguity and intertwines both terms of the
+determined readout law. The 144-dimensional determined core is path-independent
+on this cell, with no additional retention required for its transport.
+
+**[Retention and path-readout checkpoint, Notes 27–33](research/depth-generated-geometry/synthesis/retention-and-path-readout-checkpoint.md)**
 collects the theorem chain, the conditions attached to each dimension,
-the recovered-core law, its first adjacent extension, and the remaining research branches.
+the recovered-core law, its adjacent transports and first configuration cell,
+and the remaining research branches.
 
 ## Repository map
 

@@ -1,0 +1,929 @@
+{
+  "base_commit": "4c6aa068e9844be940a676eaa9da661af42397d7",
+  "field": "Q and R",
+  "sources_sha256": {
+    "n9_readout_transport_cell_certificate.py": "79b3c83e2fd8befc70989d04149292ffed72cc5fbe0444af4abc4f30e2aba11a",
+    "n9_adjacent_core_transport_certificate.py": "5641fc1b2d915a7cba5dfd3a9a6c367661fb39ca0ffcaef7c8ebafe4212d3886",
+    "n9_232_path_comparison_certificate.py": "6eaf9f72cf2fcf78aa18a1331080803c0c248dac893773ff922502bc7f177d11",
+    "n9_232_continuation_certificate.py": "a9731364d838a73e26ec6f1fe5baf33d709cedf0566309fcb1f83142bcf57b3c",
+    "n8_222_redetection_certificate.py": "8977e2bd0e383d6f4c877dbc1a1862759f5141f629ce60c89c0ccec7f70f7f94",
+    "n8_222_minimal_refinement_certificate.py": "b5c8c2e0361bb0b961a8e62439303964c002354b3f1f92273ef8e247bb578658",
+    "n8_222_decoder_continuation_certificate.py": "85f0b31c6a0517f9d5c7dfbd4689a25e09450e3ef7af49d56da34d971b22232d",
+    "n8_222_exact_backend.cpp": "dbd637622982fd45915d6187d19da7bac960fe6c4d65f6194965922a5f90a632"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "python_flint": "0.9.0"
+  },
+  "supports": {
+    "122": {
+      "7": [
+        1,
+        2,
+        4,
+        6
+      ],
+      "8": [
+        1,
+        2,
+        5,
+        7
+      ],
+      "9": [
+        1,
+        2,
+        6,
+        8
+      ]
+    },
+    "131": {
+      "7": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "8": [
+        1,
+        2,
+        6,
+        7
+      ],
+      "9": [
+        1,
+        2,
+        7,
+        8
+      ]
+    },
+    "221": {
+      "7": [
+        1,
+        3,
+        5,
+        6
+      ],
+      "8": [
+        1,
+        3,
+        6,
+        7
+      ],
+      "9": [
+        1,
+        3,
+        7,
+        8
+      ]
+    },
+    "212": {
+      "7": [
+        1,
+        3,
+        4,
+        6
+      ],
+      "8": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "9": [
+        1,
+        3,
+        6,
+        8
+      ]
+    }
+  },
+  "quotients": {
+    "122": {
+      "7": {
+        "dimension": 144,
+        "core_dimension": 144,
+        "embedding_denominator": 1,
+        "grades": [
+          {
+            "grade": 0,
+            "quotient_dimension": 36,
+            "matching_rank": 450,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 1,
+            "quotient_dimension": 36,
+            "matching_rank": 450,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 2,
+            "quotient_dimension": 36,
+            "matching_rank": 450,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 3,
+            "quotient_dimension": 36,
+            "matching_rank": 450,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          }
+        ]
+      },
+      "8": {
+        "dimension": 432,
+        "core_dimension": 432,
+        "embedding_denominator": 1,
+        "grades": [
+          {
+            "grade": 0,
+            "quotient_dimension": 108,
+            "matching_rank": 1350,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 1,
+            "quotient_dimension": 108,
+            "matching_rank": 1350,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 2,
+            "quotient_dimension": 108,
+            "matching_rank": 1350,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 3,
+            "quotient_dimension": 108,
+            "matching_rank": 1350,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          }
+        ]
+      },
+      "9": {
+        "dimension": 1296,
+        "core_dimension": 1296,
+        "embedding_denominator": 1,
+        "grades": [
+          {
+            "grade": 0,
+            "quotient_dimension": 324,
+            "matching_rank": 4050,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 1,
+            "quotient_dimension": 324,
+            "matching_rank": 4050,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 2,
+            "quotient_dimension": 324,
+            "matching_rank": 4050,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 3,
+            "quotient_dimension": 324,
+            "matching_rank": 4050,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          }
+        ]
+      }
+    },
+    "131": {
+      "7": {
+        "dimension": 144,
+        "core_dimension": 144,
+        "embedding_denominator": 1,
+        "grades": [
+          {
+            "grade": 0,
+            "quotient_dimension": 36,
+            "matching_rank": 450,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 1,
+            "quotient_dimension": 36,
+            "matching_rank": 450,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 2,
+            "quotient_dimension": 36,
+            "matching_rank": 450,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 3,
+            "quotient_dimension": 36,
+            "matching_rank": 450,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          }
+        ]
+      },
+      "8": {
+        "dimension": 432,
+        "core_dimension": 432,
+        "embedding_denominator": 1,
+        "grades": [
+          {
+            "grade": 0,
+            "quotient_dimension": 108,
+            "matching_rank": 1350,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 1,
+            "quotient_dimension": 108,
+            "matching_rank": 1350,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 2,
+            "quotient_dimension": 108,
+            "matching_rank": 1350,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 3,
+            "quotient_dimension": 108,
+            "matching_rank": 1350,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          }
+        ]
+      },
+      "9": {
+        "dimension": 1296,
+        "core_dimension": 1296,
+        "embedding_denominator": 1,
+        "grades": [
+          {
+            "grade": 0,
+            "quotient_dimension": 324,
+            "matching_rank": 4050,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 1,
+            "quotient_dimension": 324,
+            "matching_rank": 4050,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 2,
+            "quotient_dimension": 324,
+            "matching_rank": 4050,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 3,
+            "quotient_dimension": 324,
+            "matching_rank": 4050,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          }
+        ]
+      }
+    },
+    "221": {
+      "7": {
+        "dimension": 144,
+        "core_dimension": 144,
+        "embedding_denominator": 1,
+        "grades": [
+          {
+            "grade": 0,
+            "quotient_dimension": 36,
+            "matching_rank": 450,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 1,
+            "quotient_dimension": 36,
+            "matching_rank": 450,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 2,
+            "quotient_dimension": 36,
+            "matching_rank": 450,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 3,
+            "quotient_dimension": 36,
+            "matching_rank": 450,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          }
+        ]
+      },
+      "8": {
+        "dimension": 432,
+        "core_dimension": 432,
+        "embedding_denominator": 1,
+        "grades": [
+          {
+            "grade": 0,
+            "quotient_dimension": 108,
+            "matching_rank": 1350,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 1,
+            "quotient_dimension": 108,
+            "matching_rank": 1350,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 2,
+            "quotient_dimension": 108,
+            "matching_rank": 1350,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 3,
+            "quotient_dimension": 108,
+            "matching_rank": 1350,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          }
+        ]
+      },
+      "9": {
+        "dimension": 1296,
+        "core_dimension": 1296,
+        "embedding_denominator": 1,
+        "grades": [
+          {
+            "grade": 0,
+            "quotient_dimension": 324,
+            "matching_rank": 4050,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 1,
+            "quotient_dimension": 324,
+            "matching_rank": 4050,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 2,
+            "quotient_dimension": 324,
+            "matching_rank": 4050,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 3,
+            "quotient_dimension": 324,
+            "matching_rank": 4050,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          }
+        ]
+      }
+    },
+    "212": {
+      "7": {
+        "dimension": 148,
+        "core_dimension": 144,
+        "embedding_denominator": 1,
+        "grades": [
+          {
+            "grade": 0,
+            "quotient_dimension": 37,
+            "matching_rank": 449,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 1,
+            "quotient_dimension": 37,
+            "matching_rank": 449,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 2,
+            "quotient_dimension": 37,
+            "matching_rank": 449,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 3,
+            "quotient_dimension": 37,
+            "matching_rank": 449,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          }
+        ]
+      },
+      "8": {
+        "dimension": 444,
+        "core_dimension": 432,
+        "embedding_denominator": 1,
+        "grades": [
+          {
+            "grade": 0,
+            "quotient_dimension": 111,
+            "matching_rank": 1347,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 1,
+            "quotient_dimension": 111,
+            "matching_rank": 1347,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 2,
+            "quotient_dimension": 111,
+            "matching_rank": 1347,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 3,
+            "quotient_dimension": 111,
+            "matching_rank": 1347,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          }
+        ]
+      },
+      "9": {
+        "dimension": 1332,
+        "core_dimension": 1296,
+        "embedding_denominator": 1,
+        "grades": [
+          {
+            "grade": 0,
+            "quotient_dimension": 333,
+            "matching_rank": 4041,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 1,
+            "quotient_dimension": 333,
+            "matching_rank": 4041,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 2,
+            "quotient_dimension": 333,
+            "matching_rank": 4041,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          },
+          {
+            "grade": 3,
+            "quotient_dimension": 333,
+            "matching_rank": 4041,
+            "lift_scale": 4,
+            "primes": [
+              1009
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "transports": {
+    "122->131": {
+      "7": {
+        "common_edge": [
+          1,
+          2
+        ],
+        "rank": 144,
+        "denominator": 1,
+        "anchor_identity_exact": true
+      },
+      "8": {
+        "common_edge": [
+          1,
+          2
+        ],
+        "rank": 432,
+        "denominator": 1,
+        "anchor_identity_exact": true
+      },
+      "9": {
+        "common_edge": [
+          1,
+          2
+        ],
+        "rank": 1296,
+        "denominator": 1,
+        "anchor_identity_exact": true
+      }
+    },
+    "131->221": {
+      "7": {
+        "common_edge": [
+          5,
+          6
+        ],
+        "rank": 144,
+        "denominator": 1,
+        "anchor_identity_exact": true
+      },
+      "8": {
+        "common_edge": [
+          6,
+          7
+        ],
+        "rank": 432,
+        "denominator": 1,
+        "anchor_identity_exact": true
+      },
+      "9": {
+        "common_edge": [
+          7,
+          8
+        ],
+        "rank": 1296,
+        "denominator": 1,
+        "anchor_identity_exact": true
+      }
+    },
+    "122->212": {
+      "7": {
+        "common_edge": [
+          4,
+          6
+        ],
+        "rank": 144,
+        "denominator": 1,
+        "anchor_identity_exact": true
+      },
+      "8": {
+        "common_edge": [
+          5,
+          7
+        ],
+        "rank": 432,
+        "denominator": 1,
+        "anchor_identity_exact": true
+      },
+      "9": {
+        "common_edge": [
+          6,
+          8
+        ],
+        "rank": 1296,
+        "denominator": 1,
+        "anchor_identity_exact": true
+      }
+    },
+    "212->221": {
+      "7": {
+        "common_edge": [
+          1,
+          3
+        ],
+        "rank": 144,
+        "denominator": 1,
+        "anchor_identity_exact": true
+      },
+      "8": {
+        "common_edge": [
+          1,
+          3
+        ],
+        "rank": 432,
+        "denominator": 1,
+        "anchor_identity_exact": true
+      },
+      "9": {
+        "common_edge": [
+          1,
+          3
+        ],
+        "rank": 1296,
+        "denominator": 1,
+        "anchor_identity_exact": true
+      }
+    }
+  },
+  "cells": {
+    "7": {
+      "dimension": 144,
+      "two_route_defect_rank": 0,
+      "upper_denominator": 1,
+      "lower_denominator": 1
+    },
+    "8": {
+      "dimension": 432,
+      "two_route_defect_rank": 0,
+      "upper_denominator": 1,
+      "lower_denominator": 1
+    },
+    "9": {
+      "dimension": 1296,
+      "two_route_defect_rank": 0,
+      "upper_denominator": 1,
+      "lower_denominator": 1
+    }
+  },
+  "readout_laws": {
+    "122": {
+      "graded_Hplus_N_joint_ranks": [
+        [
+          648,
+          324,
+          936
+        ],
+        [
+          648,
+          324,
+          936
+        ],
+        [
+          648,
+          324,
+          936
+        ],
+        [
+          648,
+          324,
+          936
+        ]
+      ],
+      "Hplus_rank": 2592,
+      "N_rank": 1296,
+      "joint_rank": 3744,
+      "ambiguity_dimension": 1152,
+      "determined_quotient_dimension": 144,
+      "determined_core_dimension": 144,
+      "source_scalar_identity_exact": true,
+      "endpoint_coefficient_rank": 144,
+      "D_denominator": 1,
+      "Lambda_denominator": 1,
+      "Psi_denominator": 1
+    },
+    "131": {
+      "graded_Hplus_N_joint_ranks": [
+        [
+          648,
+          324,
+          936
+        ],
+        [
+          648,
+          324,
+          936
+        ],
+        [
+          648,
+          324,
+          936
+        ],
+        [
+          648,
+          324,
+          936
+        ]
+      ],
+      "Hplus_rank": 2592,
+      "N_rank": 1296,
+      "joint_rank": 3744,
+      "ambiguity_dimension": 1152,
+      "determined_quotient_dimension": 144,
+      "determined_core_dimension": 144,
+      "source_scalar_identity_exact": true,
+      "endpoint_coefficient_rank": 144,
+      "D_denominator": 1,
+      "Lambda_denominator": 1,
+      "Psi_denominator": 1
+    },
+    "221": {
+      "graded_Hplus_N_joint_ranks": [
+        [
+          648,
+          324,
+          936
+        ],
+        [
+          648,
+          324,
+          936
+        ],
+        [
+          648,
+          324,
+          936
+        ],
+        [
+          648,
+          324,
+          936
+        ]
+      ],
+      "Hplus_rank": 2592,
+      "N_rank": 1296,
+      "joint_rank": 3744,
+      "ambiguity_dimension": 1152,
+      "determined_quotient_dimension": 144,
+      "determined_core_dimension": 144,
+      "source_scalar_identity_exact": true,
+      "endpoint_coefficient_rank": 144,
+      "D_denominator": 1,
+      "Lambda_denominator": 1,
+      "Psi_denominator": 1
+    },
+    "212": {
+      "graded_Hplus_N_joint_ranks": [
+        [
+          657,
+          333,
+          945
+        ],
+        [
+          657,
+          333,
+          945
+        ],
+        [
+          657,
+          333,
+          945
+        ],
+        [
+          657,
+          333,
+          945
+        ]
+      ],
+      "Hplus_rank": 2628,
+      "N_rank": 1332,
+      "joint_rank": 3780,
+      "ambiguity_dimension": 1152,
+      "determined_quotient_dimension": 180,
+      "determined_core_dimension": 144,
+      "source_scalar_identity_exact": true,
+      "endpoint_coefficient_rank": 144,
+      "D_denominator": 1,
+      "Lambda_denominator": 1,
+      "Psi_denominator": 1
+    }
+  },
+  "adjacent_comparisons": {
+    "122->131": {
+      "readout_defect_rank": 0,
+      "endpoint_defect_rank": 0
+    },
+    "131->221": {
+      "readout_defect_rank": 0,
+      "endpoint_defect_rank": 0
+    },
+    "122->212": {
+      "readout_defect_rank": 0,
+      "endpoint_defect_rank": 0
+    },
+    "212->221": {
+      "readout_defect_rank": 0,
+      "endpoint_defect_rank": 0
+    }
+  },
+  "execution_mode": "All twelve matching quotients and literal path/readout operators rebuilt; no saved matrix or result is an input.",
+  "elapsed_seconds": 897.841,
+  "all_checks_passed": true
+}
