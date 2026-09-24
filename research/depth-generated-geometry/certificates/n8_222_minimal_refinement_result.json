@@ -1,0 +1,191 @@
+{
+  "base_commit": "bf26e5f2681096b0a15549f0edebdcc452128705",
+  "field": "Q and R: exact integer identities plus certified rational ranks",
+  "primes": [
+    1009,
+    1013
+  ],
+  "operation": "Note 26 central-slot right decoder Sigma_4^R; tensor-extended over V",
+  "sources_sha256": {
+    "n8_222_minimal_refinement_certificate.py": "b5c8c2e0361bb0b961a8e62439303964c002354b3f1f92273ef8e247bb578658",
+    "n8_222_redetection_certificate.py": "8977e2bd0e383d6f4c877dbc1a1862759f5141f629ce60c89c0ccec7f70f7f94",
+    "n8_222_exact_backend.cpp": "dbd637622982fd45915d6187d19da7bac960fe6c4d65f6194965922a5f90a632"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "raw_source_dimension": 5832,
+  "original_parent_dimension": 444,
+  "child_dimension": 444,
+  "original_relation_dimension": 5388,
+  "safe_relation_dimension": 4956,
+  "obstruction_rank": 432,
+  "minimum_additional_linear_dimensions": 432,
+  "refined_dimension": 876,
+  "joint_rank_by_quaternion_grade": [
+    219,
+    219,
+    219,
+    219
+  ],
+  "common_residual_dimension": 12,
+  "fiber_product_ambient_dimension": 888,
+  "fiber_product_constraint_rank": 12,
+  "fiber_product_constraint_times_joint_map_is_zero": true,
+  "joint_image_equals_fiber_product": true,
+  "parent_projection_kernel_dimension": 432,
+  "update_kernel_dimension": 432,
+  "joint_parent_and_update_kernel_dimension": 0,
+  "update_surjective": true,
+  "update_injective": false,
+  "residual_preserved": true,
+  "operation_common_denominator": 2,
+  "old_relation_witness": {
+    "relation_column": 216,
+    "nonzero_child_row": 3,
+    "scaled_child_value": -16,
+    "raw_relation_nonzero_coordinates": [
+      [
+        135,
+        1
+      ],
+      [
+        315,
+        -1
+      ],
+      [
+        333,
+        -1
+      ],
+      [
+        351,
+        1
+      ],
+      [
+        393,
+        1
+      ],
+      [
+        399,
+        -1
+      ],
+      [
+        423,
+        1
+      ],
+      [
+        627,
+        1
+      ],
+      [
+        867,
+        -1
+      ],
+      [
+        1107,
+        -1
+      ],
+      [
+        1161,
+        1
+      ],
+      [
+        1215,
+        1
+      ],
+      [
+        1251,
+        1
+      ],
+      [
+        1287,
+        1
+      ],
+      [
+        1365,
+        -1
+      ],
+      [
+        1371,
+        1
+      ],
+      [
+        1419,
+        1
+      ],
+      [
+        1425,
+        -1
+      ],
+      [
+        1599,
+        -1
+      ],
+      [
+        1653,
+        1
+      ],
+      [
+        1839,
+        1
+      ],
+      [
+        1893,
+        -1
+      ],
+      [
+        1959,
+        1
+      ],
+      [
+        1977,
+        -1
+      ],
+      [
+        2001,
+        -1
+      ],
+      [
+        2007,
+        1
+      ],
+      [
+        2103,
+        -1
+      ],
+      [
+        2157,
+        1
+      ],
+      [
+        2259,
+        1
+      ],
+      [
+        2505,
+        1
+      ],
+      [
+        2751,
+        1
+      ]
+    ],
+    "parent_output_zero": true,
+    "child_output_nonzero": true,
+    "child_residual_zero": true
+  },
+  "continuation_negative_control": {
+    "state_dimension": 3,
+    "relation_dimensions_by_horizon": [
+      2,
+      1,
+      0
+    ],
+    "one_step_refinement_closed_under_continuation": false
+  },
+  "elapsed_seconds": 37.557,
+  "claim_boundary": "Coarsest linear source refinement for fixed q and Sigma_4^R full child output. The 876-to-444 update still loses a 432-dimensional subspace. No decoder-independent operation, lossless full update, time law, or backward causal force is proved.",
+  "all_checks_passed": true
+}

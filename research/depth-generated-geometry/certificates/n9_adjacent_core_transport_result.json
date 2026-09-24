@@ -1,0 +1,421 @@
+{
+  "base_commit": "08d7ea8306c33a171ec52ca53fb8594a85f6a952",
+  "field": "Q and R; exact integer identities and certified characteristic-zero ranks",
+  "sources_sha256": {
+    "n9_adjacent_core_transport_certificate.py": "5641fc1b2d915a7cba5dfd3a9a6c367661fb39ca0ffcaef7c8ebafe4212d3886",
+    "n9_232_path_comparison_certificate.py": "6eaf9f72cf2fcf78aa18a1331080803c0c248dac893773ff922502bc7f177d11",
+    "n9_232_continuation_certificate.py": "a9731364d838a73e26ec6f1fe5baf33d709cedf0566309fcb1f83142bcf57b3c",
+    "n8_222_redetection_certificate.py": "8977e2bd0e383d6f4c877dbc1a1862759f5141f629ce60c89c0ccec7f70f7f94",
+    "n8_222_minimal_refinement_certificate.py": "b5c8c2e0361bb0b961a8e62439303964c002354b3f1f92273ef8e247bb578658",
+    "n8_222_decoder_continuation_certificate.py": "85f0b31c6a0517f9d5c7dfbd4689a25e09450e3ef7af49d56da34d971b22232d",
+    "n8_222_exact_backend.cpp": "dbd637622982fd45915d6187d19da7bac960fe6c4d65f6194965922a5f90a632"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "python_flint": "0.9.0"
+  },
+  "supports": {
+    "source": {
+      "7": [
+        1,
+        3,
+        4,
+        6
+      ],
+      "8": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "9": [
+        1,
+        3,
+        6,
+        8
+      ]
+    },
+    "neighbor": {
+      "7": [
+        1,
+        2,
+        4,
+        6
+      ],
+      "8": [
+        1,
+        2,
+        5,
+        7
+      ],
+      "9": [
+        1,
+        2,
+        6,
+        8
+      ]
+    }
+  },
+  "quotient_dimensions": {
+    "source": {
+      "7": 148,
+      "8": 444,
+      "9": 1332
+    },
+    "neighbor": {
+      "7": 144,
+      "8": 432,
+      "9": 1296
+    }
+  },
+  "quotient_rank_certificates": {
+    "source": {
+      "7": [
+        {
+          "grade": 0,
+          "quotient_dimension": 37,
+          "matching_rank": 449,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        },
+        {
+          "grade": 1,
+          "quotient_dimension": 37,
+          "matching_rank": 449,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        },
+        {
+          "grade": 2,
+          "quotient_dimension": 37,
+          "matching_rank": 449,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        },
+        {
+          "grade": 3,
+          "quotient_dimension": 37,
+          "matching_rank": 449,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        }
+      ],
+      "8": [
+        {
+          "grade": 0,
+          "quotient_dimension": 111,
+          "matching_rank": 1347,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        },
+        {
+          "grade": 1,
+          "quotient_dimension": 111,
+          "matching_rank": 1347,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        },
+        {
+          "grade": 2,
+          "quotient_dimension": 111,
+          "matching_rank": 1347,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        },
+        {
+          "grade": 3,
+          "quotient_dimension": 111,
+          "matching_rank": 1347,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        }
+      ],
+      "9": [
+        {
+          "grade": 0,
+          "quotient_dimension": 333,
+          "matching_rank": 4041,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        },
+        {
+          "grade": 1,
+          "quotient_dimension": 333,
+          "matching_rank": 4041,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        },
+        {
+          "grade": 2,
+          "quotient_dimension": 333,
+          "matching_rank": 4041,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        },
+        {
+          "grade": 3,
+          "quotient_dimension": 333,
+          "matching_rank": 4041,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        }
+      ]
+    },
+    "neighbor": {
+      "7": [
+        {
+          "grade": 0,
+          "quotient_dimension": 36,
+          "matching_rank": 450,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        },
+        {
+          "grade": 1,
+          "quotient_dimension": 36,
+          "matching_rank": 450,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        },
+        {
+          "grade": 2,
+          "quotient_dimension": 36,
+          "matching_rank": 450,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        },
+        {
+          "grade": 3,
+          "quotient_dimension": 36,
+          "matching_rank": 450,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        }
+      ],
+      "8": [
+        {
+          "grade": 0,
+          "quotient_dimension": 108,
+          "matching_rank": 1350,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        },
+        {
+          "grade": 1,
+          "quotient_dimension": 108,
+          "matching_rank": 1350,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        },
+        {
+          "grade": 2,
+          "quotient_dimension": 108,
+          "matching_rank": 1350,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        },
+        {
+          "grade": 3,
+          "quotient_dimension": 108,
+          "matching_rank": 1350,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        }
+      ],
+      "9": [
+        {
+          "grade": 0,
+          "quotient_dimension": 324,
+          "matching_rank": 4050,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        },
+        {
+          "grade": 1,
+          "quotient_dimension": 324,
+          "matching_rank": 4050,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        },
+        {
+          "grade": 2,
+          "quotient_dimension": 324,
+          "matching_rank": 4050,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        },
+        {
+          "grade": 3,
+          "quotient_dimension": 324,
+          "matching_rank": 4050,
+          "lift_scale": 4,
+          "primes": [
+            1009
+          ]
+        }
+      ]
+    }
+  },
+  "transport_direction": "neighbor core to source core, uniquely fixed by the shared right outer edge",
+  "transports": {
+    "7": {
+      "common_edge": [
+        4,
+        6
+      ],
+      "dimension": 144,
+      "denominator": 1,
+      "anchor_identity_exact": true
+    },
+    "8": {
+      "common_edge": [
+        5,
+        7
+      ],
+      "dimension": 432,
+      "denominator": 1,
+      "anchor_identity_exact": true
+    },
+    "9": {
+      "common_edge": [
+        6,
+        8
+      ],
+      "dimension": 1296,
+      "denominator": 1,
+      "anchor_identity_exact": true
+    }
+  },
+  "readout_quotients": {
+    "source": {
+      "graded_Hplus_N_joint_ranks": [
+        [
+          657,
+          333,
+          945
+        ],
+        [
+          657,
+          333,
+          945
+        ],
+        [
+          657,
+          333,
+          945
+        ],
+        [
+          657,
+          333,
+          945
+        ]
+      ],
+      "Hplus_rank": 2628,
+      "N_rank": 1332,
+      "joint_rank": 3780,
+      "ambiguity_dimension": 1152,
+      "determined_quotient_dimension": 180,
+      "core_identification_rank": 144,
+      "source_scalar_identity_exact": true,
+      "endpoint_coefficient_rank": 144,
+      "endpoint_sum_denominator": 4,
+      "readout_denominator": 8
+    },
+    "neighbor": {
+      "graded_Hplus_N_joint_ranks": [
+        [
+          648,
+          324,
+          936
+        ],
+        [
+          648,
+          324,
+          936
+        ],
+        [
+          648,
+          324,
+          936
+        ],
+        [
+          648,
+          324,
+          936
+        ]
+      ],
+      "Hplus_rank": 2592,
+      "N_rank": 1296,
+      "joint_rank": 3744,
+      "ambiguity_dimension": 1152,
+      "determined_quotient_dimension": 144,
+      "core_identification_rank": 144,
+      "source_scalar_identity_exact": true,
+      "endpoint_coefficient_rank": 144,
+      "endpoint_sum_denominator": 4,
+      "readout_denominator": 8
+    }
+  },
+  "comparison": {
+    "readout_defect_rank": 0,
+    "endpoint_defect_rank": 0,
+    "pulled_readout_kernel_joint_rank": 144,
+    "induced_core_transport_rank": 144,
+    "ambiguity_transport_equality": true,
+    "core_identification_square_exact": true,
+    "endpoint_readout_square_exact": true
+  },
+  "interpretation": "J1 tensor I maps the neighbor ambiguity onto the source ambiguity; the induced quotient transport intertwines Psi, and J0 Lambda_neighbor=Lambda_source J2.",
+  "scope": "The fixed right-edge ladder 122/132/142 to 212/222/232, with right insertions at final gaps 4 and 5 and the same later gap-5 readout. Source residuals of dimensions 4,12,36 remain outside these core transports.",
+  "execution_mode": "Full reconstruction of all six matching quotients and all literal path/readout operators; no saved matrices or result records used as inputs.",
+  "elapsed_seconds": 408.916,
+  "all_checks_passed": true
+}

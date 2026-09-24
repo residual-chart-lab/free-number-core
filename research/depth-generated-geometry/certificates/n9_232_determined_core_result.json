@@ -1,0 +1,121 @@
+{
+  "base_commit": "65fa8fa94bd82747ce5fa4041dc1f113771dafce",
+  "field": "Q and R; exact integer identities, reconstructed annihilators and modular lower bounds",
+  "sources_sha256": {
+    "n9_232_determined_core_certificate.py": "999f3ffe22112d1445a2e7b306e87a19592174bdeebcf424642050020114439a",
+    "n9_232_path_comparison_certificate.py": "6eaf9f72cf2fcf78aa18a1331080803c0c248dac893773ff922502bc7f177d11",
+    "n9_232_continuation_certificate.py": "a9731364d838a73e26ec6f1fe5baf33d709cedf0566309fcb1f83142bcf57b3c",
+    "n8_222_redetection_certificate.py": "8977e2bd0e383d6f4c877dbc1a1862759f5141f629ce60c89c0ccec7f70f7f94",
+    "n8_222_minimal_refinement_certificate.py": "b5c8c2e0361bb0b961a8e62439303964c002354b3f1f92273ef8e247bb578658",
+    "n8_222_decoder_continuation_certificate.py": "85f0b31c6a0517f9d5c7dfbd4689a25e09450e3ef7af49d56da34d971b22232d",
+    "n8_222_exact_backend.cpp": "dbd637622982fd45915d6187d19da7bac960fe6c4d65f6194965922a5f90a632"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "python_flint": "0.9.0"
+  },
+  "primes": [
+    1009,
+    1013
+  ],
+  "observation": "H_plus=(S,F_ab+F_ba); same final labels and source tensor order as Note 30",
+  "graded_ranks_Hplus_N_joint": [
+    [
+      657,
+      333,
+      945
+    ],
+    [
+      657,
+      333,
+      945
+    ],
+    [
+      657,
+      333,
+      945
+    ],
+    [
+      657,
+      333,
+      945
+    ]
+  ],
+  "ranks": {
+    "H_plus": 2628,
+    "N": 1332,
+    "joint": 3780,
+    "ambiguity": 1152,
+    "determined_quotient": 180,
+    "residual": 36,
+    "determined_core": 144,
+    "source_law_coefficient": 180,
+    "endpoint_sum_law_coefficient": 144,
+    "scalar_coevaluation_core_embedding": 144
+  },
+  "matrix_denominators": {
+    "endpoint_sum": 4,
+    "readout": 8,
+    "beta8": 4,
+    "residual_factor": 1,
+    "beta7": 4
+  },
+  "factor_identity": "K @ N_num = A @ S + B @ T_num; T=F_ab+F_ba",
+  "factor_shapes": {
+    "K": [
+      180,
+      1332
+    ],
+    "A": [
+      180,
+      1332
+    ],
+    "B": [
+      180,
+      1332
+    ]
+  },
+  "K_row_nonzero_counts": {
+    "1": 36,
+    "3": 144
+  },
+  "quotient_casimir_eigenspace_dimensions_spin_0_to_4": [
+    8,
+    51,
+    70,
+    42,
+    9
+  ],
+  "core_casimir_eigenspace_dimensions_spin_0_to_4": [
+    6,
+    39,
+    55,
+    35,
+    9
+  ],
+  "core_spin_multiplicities": [
+    6,
+    13,
+    11,
+    5,
+    1
+  ],
+  "symmetric_residual_bridge_rank": 36,
+  "core_identification": "c maps to [N x] for S x=c tensor (sum(e_i tensor e_i)/3), (F_ab+F_ba)x=0",
+  "source_core_law": "A_actual(c tensor a tensor b)=dot(a,b)*Psi(c)",
+  "endpoint_core_law_rank": 144,
+  "note30_dependency": "Its proved rank 1152 for N(ker H5), together with ker H5 subset ker Hplus, identifies the two ambiguity spaces.",
+  "scope": "Fixed two insertion paths and fixed later readout; identifies the determined core with T212. Compatibility with an enlarged transport family remains to be checked.",
+  "elapsed_seconds": 44.267,
+  "all_checks_passed": true,
+  "execution_mode": "Literal operators and all final checks rerun using recovered, revalidated quotient coordinates.",
+  "quotient_checkpoints_sha256": {
+    "q7-recovered.npz": "6c12600797e550e849848611b43f30c98450a8fa271f3227c2719b9ebf6b3a44",
+    "q8-recovered.npz": "f0bf83fa1bf7c11af1655750cd15009e21dd3b6f2b2a5bf5870c073736f877b6",
+    "Q-recovered.npz": "b5beed94e548ec1b62737badc4cd82751de3ede0ac6a3be53f14572341e1fe22"
+  },
+  "assembly_provenance": "The first uninterrupted exploratory run reconstructed and exactly verified q7/q8/q9. A workspace reset interrupted a later full restart. Quotient coordinates were recovered from intact observation blocks using the exact cap inverses. Their full row ranks and annihilation of freshly reconstructed literal matching maps were rechecked; completeness also follows from the quotient dimensions proved in Notes 26 and 29. With these quotient coordinates, the delivered certificate rebuilt all literal path/readout operators and reran every new check. Default certificate execution reconstructs all quotient coordinates as well and requires no checkpoints.",
+  "elapsed_seconds_scope": "Literal operator assembly and final checks; excludes quotient recovery and matching revalidation."
+}

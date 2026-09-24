@@ -6,6 +6,10 @@
 
 ## Start here
 
+[**自由数の体系仕様 — Core と Notes 1–33**](../../docs/FREE_NUMBER_SYSTEM_SPECIFICATION.md)
+は、CoreからDGGの保持・更新・輸送までをつなぐ統合仕様である。対象の型、
+証明の適用範囲、演算が商へ降下する条件、および次の完成条件を確認できる。
+
 [**Research Snapshot 2026-09-07**](releases/research-2026-09-07/README.md) は、
 Notes 14–26 を独立した数学稿・主張台帳・再現資料に固定し、2026-09-07に公開したプレプリントである。
 Core v1.0.0とは別の公開単位とし、本文は四元数と局所応答の定義から読める。
@@ -16,6 +20,72 @@ Note 26では222の444次元商、432次元コア、12次元残差商を閉じ�
 [10.5281/zenodo.22646591](https://doi.org/10.5281/zenodo.22646591)。
 DGGの全版共通DOIは [10.5281/zenodo.22646590](https://doi.org/10.5281/zenodo.22646590)。
 公開ZIPと同じ内容の[ソースコミット](https://github.com/residual-chart-lab/free-number-core/tree/110113dd763da371bb6e02c6c5083b40dd12aecc)から、監査時点のファイルを取得できる。
+
+### Post-snapshot development: Notes 27–33
+
+[**保持・更新・経路読出しの見取り図**](synthesis/retention-and-path-readout-checkpoint.md)
+に、27〜33の証明の流れ、各次元が意味する条件、読出し則と隣接輸送・閉路の整合、次の課題をまとめた。
+
+[Note 27 — Minimal state refinement for the central update](notes/27-minimal-state-refinement-for-central-update.md)
+は、Note 26の指定した右デコーダと全体出力を固定し、親状態をどこまで細かく
+すれば更新が定義できるかを解く。最小の線形拡張は876次元で、従来の444次元に
+432次元の情報を保持する必要がある。親と子の残差が一致するfiber productとして
+代表選択なしに実現できる。ただし子への更新には432次元の核が残り、情報を
+すべて保存する更新ではない。一般の最小性の証明と
+[exact certificate](certificates/n8_222_minimal_refinement_certificate.py)を収録する。
+これは公開済みCoreおよびSeptember 7 snapshotを変更しない後続研究である。
+
+[Note 28 — Decoder continuations and retained core](notes/28-decoder-continuations-and-retained-core.md)
+は、既存の右デコーダによる中央probeの係数読出しが、更新で失われる432次元を
+すべて検出することを証明する。独立な係数方向を一つ・二つ・三つ読むための
+最小の子状態は、それぞれ588・732・876次元となる。全三方向を保持すれば、
+指定した符号化と読出しは876次元同士の可逆な輸送として閉じる。
+[exact certificate](certificates/n8_222_decoder_continuation_certificate.py)は局所公式から
+読出しを直接構成し、全係数部分集合の階数と具体的な再検出例を検証する。
+さらにspectatorを加える前向きの内部操作への閉性を、次のNote 29で検証する。
+
+[Note 29 — Forward insertion beyond decoder closure](notes/29-forward-insertion-beyond-decoder-closure.md)
+は、次の内部挿入を新しいgap 5での右操作 `222 → 232` に固定する。
+876次元の保持状態を新入力とtensorizeした2628次元では出力が決まらず、
+追加の1296次元が必要となる。これは挿入先のouter core全体に対応する。
+従来の保持情報と指定出力をともに保存する最小状態は3924次元で、
+三段の状態が共通の36次元残差で整合する組として実現される。
+[exact certificate](certificates/n9_232_continuation_certificate.py)はn=9のmatching mapから
+再構成し、新入力をiに固定した具体的な保持不足の例も検証する。
+
+[Note 30 — Ordered insertion paths and local interchange](notes/30-ordered-insertion-paths-and-local-interchange.md)
+は、同じ入力・同じ最終ラベルで二つの内部挿入順序を比較する。
+終点の差は階数1320となり、局所四元数の順序差と一致する。対応する局所比較操作は
+終点の商へ降下せず、その障害は1296次元のouter core全体となる。
+共通の始点、二つの途中状態、二つの終点を保持する最小状態は6516次元。
+[exact certificate](certificates/n9_232_path_comparison_certificate.py)は二経路を直接構成し、
+既存の一段挿入の合成との一致、局所比較、共通保持量、同じ後続読出しを検証する。
+さらに、同じ非零の終点でも同じgap 5の係数読出しで差が再検出される具体例を得る。
+終点一致の条件下に隠れる読出し差は1296次元。途中状態も含む両経路の保持情報に
+この読出しを加えると、追加1152次元、合計7668次元が必要十分となる。
+
+[Note 31 — Symmetric endpoint law and recovered core](notes/31-symmetric-endpoint-law-and-recovered-core.md)
+は、確定している144次元の読出し商を元のcore \(T_{212}\) と明示的な同型で結ぶ。
+この商は共通始点と二つの終点の和だけで決まり、途中状態を加えても不定部分は変わらない。
+始点のcoreからの寄与は新入力二つの内積による収縮、終点の和からの寄与は階数144の写像となる。
+[exact certificate](certificates/n9_232_determined_core_certificate.py)はこの因子化、同型、
+スカラー収縮則、回転表現の成分を厳密に検証する。
+
+[Note 32 — Adjacent core transport preserves the readout law](notes/32-adjacent-core-transport-preserves-readout.md)
+は、共通の右外辺で固定した隣接輸送 \(122/132/142\to212/222/232\) が、
+1152次元の読出し不定部分をそのまま運ぶことを証明する。
+誘導される144次元の商の輸送は、元のcoreとの同型と終点項の双方で可換となる。
+この指定した比較で、確定するcoreを運ぶための追加保持量はゼロ。
+[exact certificate](certificates/n9_adjacent_core_transport_certificate.py)は六つのmatching商と
+二経路・読出しを最初から構成し、二つの輸送欠陥が厳密にゼロであることを検証する。
+
+[Note 33 — Readout transport around a configuration cell](notes/33-readout-transport-around-a-configuration-cell.md)
+は、四配置のcellを挿入前・一回挿入後・二回挿入後で比較する。
+各辺の輸送を共通外辺から独立に固定すると、三段のholonomyは厳密に
+\(I_{144},I_{432},I_{1296}\) となる。四辺すべてで読出し商と終点項の可換性も成立し、
+1152次元の不定部分と144次元の確定部分が閉路全体で整合する。
+[exact certificate](certificates/n9_readout_transport_cell_certificate.py)は十二のmatching商と
+四配置の操作を再構成し、三つの閉路差と八つの読出し則の欠陥がゼロであることを検証する。
 
 
 [`notes/00-checkpoint-through-note12.md`](notes/00-checkpoint-through-note12.md) は、Note 01–12 の定理依存、次元表、到達点、未解決境界、および proof audit を一枚にまとめた入口である。
@@ -277,6 +347,9 @@ ALL CHECKS PASSED
 
 ## Current stopping point after Note 26
 
+以下は公開snapshot時点の停止位置である。指定操作に必要な最小の状態拡張と、
+拡張後にも残る更新の核については、上記のNote 27を参照。
+
 222の局所商と三つの親との比較は閉じた。指定した中央スロット右デコーダは
 残差商上で同型を与える一方、全体への降下障害の像は432次元コア全体である。
 補空間や代表の選択を隠して全体輸送と呼ばない。次は、必要な局所条件や補正を
@@ -365,15 +438,20 @@ Note 25 はこの隣接-word 問題を閉じた。unit slide で隣り合う二�
 
 として閉じる。非自明な chart shear \(\theta\) は存在するが、この最初の word loop は曲率を持たない。
 
-したがって次の仕事は、三つ以上の internal spectators を持つ最初の word complex を構成し、二次元 cells を通る residual transport を比較することである。その高次 word-level transport から genuine nontrivial closed loops が抽出できれば、response-simplex complex
+Notes 26〜33は三つ以上のinternal spectatorsを持つ指定配置・操作を進め、
+最小保持量、係数読出しによる再検出、二経路比較、確定するcoreの同定を与えた。
+Notes 32–33で、隣接輸送が同型と読出し則を保ち、最初の三段の配置cellで経路独立となることまで確定した。
+現在の具体的な次手は、更新を支える最小保持状態へ輸送を持ち上げ、更新との可換性を検査すること。
+全体のword complexと二次元cellsでの輸送比較を揃え、response-simplex complex
 
 \[
 C_n^0\xrightarrow{\partial_n}C_n^1
 \xrightarrow{\partial_n^{(2)}}C_n^2
 \]
 
-の middle exactness を全 \(n\) へ上げるための local transport law が得られる。
+のmiddle exactnessを全 \(n\) へ上げるために必要なlocal transport lawを特定する。
 
 Casimir complement 上の逆写像として得られた canonical section の短い response-side 局所公式も引き続き open である。
 
-その後で、response simplex に四元数値 transport を加えたときの path nonconfluence residual と curvature 候補を検討する。Note 25 の flatness と vertex defect は、その定義が満たすべき最初の基準例である。
+並行して、閉路を備えた輸送網でpath nonconfluence residualとcurvature候補を検討する。
+Note 25のflatnessとvertex defect、Note 30の固定した二経路比較は、その基準例となる。

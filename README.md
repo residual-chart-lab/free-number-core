@@ -77,6 +77,10 @@ snapshot was published on Zenodo on September 7, 2026 as an independent preprint
 
 ## Research navigation for readers and AI agents
 
+**[自由数の体系仕様 — Core と Notes 1–33](docs/FREE_NUMBER_SYSTEM_SPECIFICATION.md)**
+統合仕様の入口。完全な自由数・配置の応答商・操作族に対する保持状態を定義し、
+基礎演算、深度加法性、最小保持、更新・輸送の成立条件と完成までの課題を整理する。
+
 This work develops a quaternionic exact-response framework for finite ordered
 words in the Free Numbers Program.
 
@@ -105,6 +109,64 @@ python3 certificates/n8_222_redetection_certificate.py --certificate
 See the DGG [claims ledger](research/depth-generated-geometry/releases/research-2026-09-07/CLAIMS_LEDGER.md)
 for theorem scope and [reproducibility guide](research/depth-generated-geometry/releases/research-2026-09-07/REPRODUCIBILITY.md)
 for dependencies and verification records.
+
+**Post-snapshot Note 27:** [minimal state refinement for the central update](research/depth-generated-geometry/notes/27-minimal-state-refinement-for-central-update.md)
+keeps Note 26's specified operation and full target fixed. Its coarsest linear
+source refinement has dimension 876, retaining 432 additional dimensions.
+The full output is then well-defined, but the update still has a
+432-dimensional kernel. The proof and exact certificate are separate from
+the frozen Core release and published DGG snapshot.
+
+**Post-snapshot Note 28:** [decoder continuations and retained core](research/depth-generated-geometry/notes/28-decoder-continuations-and-retained-core.md)
+shows that the existing central-probe coefficient readouts jointly detect
+all 432 directions lost by that update. Supporting one, two, or three
+independent coefficient directions requires a minimal child refinement of
+dimension 588, 732, or 876. With full retention, the specified encoding and
+decoding induce inverse maps between the two 876-dimensional refinements.
+
+**Post-snapshot Note 29:** [forward insertion beyond decoder closure](research/depth-generated-geometry/notes/29-forward-insertion-beyond-decoder-closure.md)
+tests the next fixed internal insertion, from 222 to 232. The retained
+state tensored with the new vector has dimension 2628; preserving its
+information and the new full output requires a minimal refinement of
+dimension 3924. The extra 1296 dimensions map onto the entire new outer
+core. The certificate includes a counterexample with the new vector fixed
+to i and a compatible-triple description over the 36-dimensional residual.
+
+**Post-snapshot Note 30:** [ordered insertion paths and local interchange](research/depth-generated-geometry/notes/30-ordered-insertion-paths-and-local-interchange.md)
+compares two insertion orders with the same input and final labels. Their
+endpoint difference has rank 1320. A fixed local quaternionic comparison
+accounts for the raw ordering difference, and its descent obstruction on
+the endpoint quotient has dimension 1296. Retaining both paths' intermediate
+and final states requires a minimal common state of dimension 6516.
+Even equal nonzero endpoints can differ under the same later gap-5
+coefficient readout; the hidden difference has rank 1296. Supporting that
+readout on both retained paths raises the minimum to 7668.
+
+**Post-snapshot Note 31:** [symmetric endpoint law and recovered core](research/depth-generated-geometry/notes/31-symmetric-endpoint-law-and-recovered-core.md)
+identifies the determined 144-dimensional readout-core quotient with the
+original core T212 through an explicit equivariant isomorphism. The common
+source and the sum of the two endpoints already determine this quotient.
+On the source core, the two new vectors contribute through their inner
+product; the endpoint sum contributes through a rank-144 map.
+
+**Post-snapshot Note 32:** [adjacent core transport preserves the readout law](research/depth-generated-geometry/notes/32-adjacent-core-transport-preserves-readout.md)
+fixes common-right-edge transports from the adjacent 122/132/142 ladder
+to 212/222/232. They preserve the entire 1152-dimensional readout ambiguity;
+the induced 144-dimensional quotient transport commutes with the recovered-core
+identification and endpoint term. This specified comparison requires no
+additional retention for the determined core.
+
+**Post-snapshot Note 33:** [readout transport around a configuration cell](research/depth-generated-geometry/notes/33-readout-transport-around-a-configuration-cell.md)
+closes the four-placement cell at all three insertion stages. Independently
+anchored transports give exact holonomies I144, I432, and I1296. Every edge
+preserves the 1152-dimensional ambiguity and intertwines both terms of the
+determined readout law. The 144-dimensional determined core is path-independent
+on this cell, with no additional retention required for its transport.
+
+**[Retention and path-readout checkpoint, Notes 27–33](research/depth-generated-geometry/synthesis/retention-and-path-readout-checkpoint.md)**
+collects the theorem chain, the conditions attached to each dimension,
+the recovered-core law, its adjacent transports and first configuration cell,
+and the remaining research branches.
 
 ## Repository map
 

@@ -1,0 +1,258 @@
+{
+  "base_commit": "3e479034f1834542eb8679cca6638eeee7d82e0c",
+  "field": "Q and R: exact integer identities and certified rational ranks",
+  "primes": [
+    1009,
+    1013
+  ],
+  "sources_sha256": {
+    "n8_222_decoder_continuation_certificate.py": "85f0b31c6a0517f9d5c7dfbd4689a25e09450e3ef7af49d56da34d971b22232d",
+    "n8_222_redetection_certificate.py": "8977e2bd0e383d6f4c877dbc1a1862759f5141f629ce60c89c0ccec7f70f7f94",
+    "n8_222_minimal_refinement_certificate.py": "b5c8c2e0361bb0b961a8e62439303964c002354b3f1f92273ef8e247bb578658",
+    "n8_222_exact_backend.cpp": "dbd637622982fd45915d6187d19da7bac960fe6c4d65f6194965922a5f90a632"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "continuations": "central-probe i,j,k coefficient readouts from the existing right local decoder",
+  "caps_built_from_probe_evaluations_before_inverse_check": true,
+  "local_decoder_denominator": 2,
+  "raw_cap_common_denominator": 2,
+  "raw_suspension_common_denominator": 2,
+  "checked_central_probe_positions_zero_based": [
+    1,
+    2,
+    3
+  ],
+  "raw_source_dimension": 5832,
+  "coarse_child_dimension": 444,
+  "readout_target_dimension": 444,
+  "discarded_subspace_dimension": 432,
+  "readout_rank_on_discarded_subspace": 432,
+  "full_decoder_readout_descends_to_coarse_child": false,
+  "channel_profiles": [
+    {
+      "channels": [],
+      "readout_obstruction_rank": 0,
+      "minimal_child_dimension": 444
+    },
+    {
+      "channels": [
+        "i"
+      ],
+      "readout_obstruction_rank": 144,
+      "minimal_child_dimension": 588,
+      "joint_rank_by_quaternion_grade": [
+        147,
+        147,
+        147,
+        147
+      ]
+    },
+    {
+      "channels": [
+        "j"
+      ],
+      "readout_obstruction_rank": 144,
+      "minimal_child_dimension": 588,
+      "joint_rank_by_quaternion_grade": [
+        147,
+        147,
+        147,
+        147
+      ]
+    },
+    {
+      "channels": [
+        "k"
+      ],
+      "readout_obstruction_rank": 144,
+      "minimal_child_dimension": 588,
+      "joint_rank_by_quaternion_grade": [
+        147,
+        147,
+        147,
+        147
+      ]
+    },
+    {
+      "channels": [
+        "i",
+        "j"
+      ],
+      "readout_obstruction_rank": 288,
+      "minimal_child_dimension": 732,
+      "joint_rank_by_quaternion_grade": [
+        183,
+        183,
+        183,
+        183
+      ]
+    },
+    {
+      "channels": [
+        "i",
+        "k"
+      ],
+      "readout_obstruction_rank": 288,
+      "minimal_child_dimension": 732,
+      "joint_rank_by_quaternion_grade": [
+        183,
+        183,
+        183,
+        183
+      ]
+    },
+    {
+      "channels": [
+        "j",
+        "k"
+      ],
+      "readout_obstruction_rank": 288,
+      "minimal_child_dimension": 732,
+      "joint_rank_by_quaternion_grade": [
+        183,
+        183,
+        183,
+        183
+      ]
+    },
+    {
+      "channels": [
+        "i",
+        "j",
+        "k"
+      ],
+      "readout_obstruction_rank": 432,
+      "minimal_child_dimension": 876,
+      "joint_rank_by_quaternion_grade": [
+        219,
+        219,
+        219,
+        219
+      ]
+    }
+  ],
+  "minimum_full_retention_dimensions": 432,
+  "refined_child_dimension": 876,
+  "refined_source_dimension": 876,
+  "refined_encode_decode_are_inverse": true,
+  "all_alternating_encode_decode_loops_identity": true,
+  "child_relation_witness": {
+    "matching_column": 63,
+    "nonzero_readout_row": 3,
+    "coefficient_channel": "i",
+    "readout_numerator": -16,
+    "readout_denominator": 2,
+    "raw_relation_nonzero_coordinates": [
+      [
+        264,
+        -1
+      ],
+      [
+        372,
+        -1
+      ],
+      [
+        480,
+        -1
+      ],
+      [
+        972,
+        -1
+      ],
+      [
+        1220,
+        -1
+      ],
+      [
+        1222,
+        1
+      ],
+      [
+        1230,
+        1
+      ],
+      [
+        1236,
+        -1
+      ],
+      [
+        1260,
+        -1
+      ],
+      [
+        1278,
+        1
+      ],
+      [
+        1350,
+        1
+      ],
+      [
+        1404,
+        -1
+      ],
+      [
+        1460,
+        -1
+      ],
+      [
+        1702,
+        1
+      ],
+      [
+        1948,
+        -1
+      ],
+      [
+        1954,
+        1
+      ],
+      [
+        1964,
+        -1
+      ],
+      [
+        1968,
+        1
+      ],
+      [
+        1996,
+        1
+      ],
+      [
+        2014,
+        -1
+      ],
+      [
+        2086,
+        -1
+      ],
+      [
+        2140,
+        1
+      ],
+      [
+        2208,
+        -1
+      ],
+      [
+        2452,
+        -1
+      ],
+      [
+        2696,
+        -1
+      ]
+    ],
+    "coarse_child_zero": true,
+    "decoder_readout_nonzero": true,
+    "parent_residual_zero": true
+  },
+  "elapsed_seconds": 33.452,
+  "scope": "Full recovery of the Note 27 update kernel for the specified local decoder readouts, using retained data. A forward-only next-spectator insertion atlas is a separate remaining target.",
+  "all_checks_passed": true
+}

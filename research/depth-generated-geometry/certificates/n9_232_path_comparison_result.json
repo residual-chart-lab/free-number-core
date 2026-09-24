@@ -1,0 +1,1004 @@
+{
+  "base_commit": "be89eec9b5cc6a2ed3c558d5b0ccd62565127f4a",
+  "field": "Q and R: exact integer identities and certified rational ranks",
+  "primes": [
+    1009,
+    1013
+  ],
+  "sources_sha256": {
+    "n9_232_path_comparison_certificate.py": "6eaf9f72cf2fcf78aa18a1331080803c0c248dac893773ff922502bc7f177d11",
+    "n9_232_continuation_certificate.py": "a9731364d838a73e26ec6f1fe5baf33d709cedf0566309fcb1f83142bcf57b3c",
+    "n8_222_redetection_certificate.py": "8977e2bd0e383d6f4c877dbc1a1862759f5141f629ce60c89c0ccec7f70f7f94",
+    "n8_222_decoder_continuation_certificate.py": "85f0b31c6a0517f9d5c7dfbd4689a25e09450e3ef7af49d56da34d971b22232d",
+    "n8_222_minimal_refinement_certificate.py": "b5c8c2e0361bb0b961a8e62439303964c002354b3f1f92273ef8e247bb578658",
+    "n8_222_exact_backend.cpp": "dbd637622982fd45915d6187d19da7bac960fe6c4d65f6194965922a5f90a632"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "python_flint": "0.9.0"
+  },
+  "source_word": "212",
+  "target_word": "232",
+  "final_support": [
+    1,
+    3,
+    6,
+    8
+  ],
+  "fixed_probe_labels": {
+    "a": 4,
+    "b": 5
+  },
+  "source_tensor_order": "E212, Va, Vb",
+  "path_ab": "first a at gap 4, then b at gap 5; F za a zb b",
+  "path_ba": "first b at gap 4, then a at gap 4, shifting b to 5; F zb b za a",
+  "ranks": {
+    "endpoint_ab": {
+      "total": 1332,
+      "grades": [
+        333,
+        333,
+        333,
+        333
+      ]
+    },
+    "endpoint_ba": {
+      "total": 1332,
+      "grades": [
+        333,
+        333,
+        333,
+        333
+      ]
+    },
+    "endpoint_difference": {
+      "total": 1320,
+      "grades": [
+        330,
+        330,
+        330,
+        330
+      ]
+    },
+    "both_endpoints": {
+      "total": 2628,
+      "grades": [
+        657,
+        657,
+        657,
+        657
+      ]
+    },
+    "retained_ab": {
+      "total": 3924,
+      "grades": [
+        981,
+        981,
+        981,
+        981
+      ]
+    },
+    "retained_ba": {
+      "total": 3924,
+      "grades": [
+        981,
+        981,
+        981,
+        981
+      ]
+    },
+    "retained_ab_and_other_endpoint": {
+      "total": 5220,
+      "grades": [
+        1305,
+        1305,
+        1305,
+        1305
+      ]
+    },
+    "both_retained_paths": {
+      "total": 6516,
+      "grades": [
+        1629,
+        1629,
+        1629,
+        1629
+      ]
+    },
+    "same_gap5_readout_difference": {
+      "total": 1320,
+      "grades": [
+        330,
+        330,
+        330,
+        330
+      ]
+    },
+    "endpoint_and_readout_difference": {
+      "total": 2616,
+      "grades": [
+        654,
+        654,
+        654,
+        654
+      ]
+    },
+    "both_paths_with_same_gap5_readout": {
+      "total": 7668,
+      "grades": [
+        1917,
+        1917,
+        1917,
+        1917
+      ]
+    },
+    "quotient_and_local_comparison": {
+      "total": 2628,
+      "grades": [
+        657,
+        657,
+        657,
+        657
+      ]
+    }
+  },
+  "witnesses": {
+    "comparison_descent": {
+      "input_coordinates": [
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          -1
+        ],
+        [
+          10,
+          -3
+        ],
+        [
+          20,
+          -6
+        ],
+        [
+          28,
+          -3
+        ],
+        [
+          40,
+          -3
+        ],
+        [
+          50,
+          6
+        ],
+        [
+          56,
+          3
+        ],
+        [
+          68,
+          -3
+        ],
+        [
+          140,
+          -3
+        ],
+        [
+          146,
+          -3
+        ],
+        [
+          194,
+          3
+        ],
+        [
+          200,
+          3
+        ],
+        [
+          734,
+          -9
+        ],
+        [
+          740,
+          9
+        ],
+        [
+          748,
+          -18
+        ],
+        [
+          758,
+          9
+        ],
+        [
+          770,
+          9
+        ],
+        [
+          778,
+          18
+        ],
+        [
+          784,
+          9
+        ],
+        [
+          796,
+          -9
+        ],
+        [
+          868,
+          -9
+        ],
+        [
+          874,
+          -9
+        ],
+        [
+          922,
+          9
+        ],
+        [
+          928,
+          9
+        ],
+        [
+          2916,
+          -4
+        ],
+        [
+          2920,
+          4
+        ]
+      ],
+      "output_numerator": 96,
+      "retained_zero": true,
+      "output_nonzero": true,
+      "output_row": 9,
+      "output_denominator": 4
+    },
+    "equal_endpoints_different_readouts": {
+      "input_coordinates": [
+        [
+          10,
+          1
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          20,
+          -15
+        ],
+        [
+          24,
+          -15
+        ],
+        [
+          28,
+          2
+        ],
+        [
+          36,
+          9
+        ],
+        [
+          40,
+          -1
+        ],
+        [
+          44,
+          -2
+        ],
+        [
+          50,
+          -1
+        ],
+        [
+          52,
+          -7
+        ],
+        [
+          56,
+          -4
+        ],
+        [
+          60,
+          2
+        ],
+        [
+          72,
+          -6
+        ],
+        [
+          76,
+          -6
+        ],
+        [
+          82,
+          4
+        ],
+        [
+          90,
+          -13
+        ],
+        [
+          94,
+          -3
+        ],
+        [
+          98,
+          -6
+        ],
+        [
+          104,
+          -6
+        ],
+        [
+          106,
+          -2
+        ],
+        [
+          108,
+          8
+        ],
+        [
+          118,
+          -4
+        ],
+        [
+          120,
+          6
+        ],
+        [
+          128,
+          -10
+        ],
+        [
+          132,
+          -9
+        ],
+        [
+          140,
+          -2
+        ],
+        [
+          142,
+          2
+        ],
+        [
+          146,
+          2
+        ],
+        [
+          154,
+          4
+        ],
+        [
+          156,
+          -2
+        ],
+        [
+          164,
+          2
+        ],
+        [
+          168,
+          -2
+        ],
+        [
+          176,
+          7
+        ],
+        [
+          178,
+          3
+        ],
+        [
+          180,
+          -3
+        ],
+        [
+          184,
+          11
+        ],
+        [
+          194,
+          -4
+        ],
+        [
+          196,
+          -2
+        ],
+        [
+          200,
+          -13
+        ],
+        [
+          204,
+          -9
+        ],
+        [
+          208,
+          -1
+        ],
+        [
+          210,
+          -8
+        ],
+        [
+          216,
+          2
+        ],
+        [
+          226,
+          -2
+        ],
+        [
+          236,
+          2
+        ],
+        [
+          240,
+          -4
+        ],
+        [
+          244,
+          2
+        ],
+        [
+          252,
+          2
+        ],
+        [
+          260,
+          8
+        ],
+        [
+          266,
+          12
+        ],
+        [
+          268,
+          8
+        ],
+        [
+          270,
+          2
+        ],
+        [
+          278,
+          2
+        ],
+        [
+          280,
+          -1
+        ],
+        [
+          290,
+          -5
+        ],
+        [
+          294,
+          -3
+        ],
+        [
+          302,
+          -2
+        ],
+        [
+          308,
+          -2
+        ],
+        [
+          316,
+          2
+        ],
+        [
+          324,
+          2
+        ],
+        [
+          332,
+          -2
+        ],
+        [
+          334,
+          3
+        ],
+        [
+          344,
+          -2
+        ],
+        [
+          348,
+          -2
+        ],
+        [
+          374,
+          3
+        ],
+        [
+          410,
+          2
+        ],
+        [
+          416,
+          -6
+        ],
+        [
+          424,
+          -1
+        ],
+        [
+          446,
+          2
+        ],
+        [
+          450,
+          2
+        ],
+        [
+          460,
+          2
+        ],
+        [
+          468,
+          2
+        ],
+        [
+          482,
+          6
+        ],
+        [
+          484,
+          4
+        ],
+        [
+          488,
+          2
+        ],
+        [
+          500,
+          6
+        ],
+        [
+          504,
+          -8
+        ],
+        [
+          524,
+          -1
+        ],
+        [
+          532,
+          2
+        ],
+        [
+          540,
+          -2
+        ],
+        [
+          550,
+          2
+        ],
+        [
+          560,
+          2
+        ],
+        [
+          572,
+          -2
+        ],
+        [
+          578,
+          3
+        ],
+        [
+          586,
+          -2
+        ],
+        [
+          608,
+          4
+        ],
+        [
+          612,
+          -8
+        ],
+        [
+          622,
+          -2
+        ],
+        [
+          630,
+          -2
+        ],
+        [
+          644,
+          -2
+        ],
+        [
+          658,
+          6
+        ],
+        [
+          668,
+          -3
+        ],
+        [
+          684,
+          -6
+        ],
+        [
+          698,
+          -3
+        ],
+        [
+          740,
+          -57
+        ],
+        [
+          744,
+          -33
+        ],
+        [
+          748,
+          -27
+        ],
+        [
+          750,
+          -15
+        ],
+        [
+          770,
+          3
+        ],
+        [
+          772,
+          -27
+        ],
+        [
+          774,
+          -27
+        ],
+        [
+          778,
+          3
+        ],
+        [
+          782,
+          6
+        ],
+        [
+          784,
+          24
+        ],
+        [
+          812,
+          6
+        ],
+        [
+          824,
+          -30
+        ],
+        [
+          828,
+          21
+        ],
+        [
+          832,
+          9
+        ],
+        [
+          836,
+          18
+        ],
+        [
+          848,
+          -42
+        ],
+        [
+          852,
+          -27
+        ],
+        [
+          856,
+          12
+        ],
+        [
+          858,
+          -18
+        ],
+        [
+          864,
+          18
+        ],
+        [
+          892,
+          -6
+        ],
+        [
+          900,
+          -21
+        ],
+        [
+          904,
+          27
+        ],
+        [
+          914,
+          -3
+        ],
+        [
+          916,
+          -9
+        ],
+        [
+          928,
+          15
+        ],
+        [
+          930,
+          -18
+        ],
+        [
+          938,
+          39
+        ],
+        [
+          942,
+          27
+        ],
+        [
+          950,
+          -18
+        ],
+        [
+          974,
+          -6
+        ],
+        [
+          986,
+          30
+        ],
+        [
+          988,
+          24
+        ],
+        [
+          990,
+          -24
+        ],
+        [
+          998,
+          -24
+        ],
+        [
+          1010,
+          -33
+        ],
+        [
+          1014,
+          -27
+        ],
+        [
+          1018,
+          3
+        ],
+        [
+          1026,
+          18
+        ],
+        [
+          1072,
+          -9
+        ],
+        [
+          1094,
+          9
+        ],
+        [
+          1134,
+          6
+        ],
+        [
+          1144,
+          3
+        ],
+        [
+          1154,
+          12
+        ],
+        [
+          1170,
+          42
+        ],
+        [
+          1184,
+          -6
+        ],
+        [
+          1190,
+          6
+        ],
+        [
+          1216,
+          6
+        ],
+        [
+          1224,
+          -42
+        ],
+        [
+          1238,
+          -12
+        ],
+        [
+          1252,
+          6
+        ],
+        [
+          1262,
+          3
+        ],
+        [
+          1274,
+          -6
+        ],
+        [
+          1296,
+          -6
+        ],
+        [
+          1306,
+          -12
+        ],
+        [
+          1316,
+          -3
+        ],
+        [
+          1332,
+          -60
+        ],
+        [
+          1346,
+          -12
+        ],
+        [
+          1352,
+          -6
+        ],
+        [
+          1388,
+          -9
+        ],
+        [
+          1396,
+          -18
+        ],
+        [
+          1418,
+          -9
+        ],
+        [
+          1422,
+          18
+        ],
+        [
+          2944,
+          2
+        ],
+        [
+          2946,
+          -2
+        ],
+        [
+          2966,
+          -4
+        ],
+        [
+          2968,
+          4
+        ],
+        [
+          2972,
+          2
+        ],
+        [
+          2976,
+          -2
+        ],
+        [
+          2998,
+          -2
+        ],
+        [
+          3000,
+          2
+        ],
+        [
+          3044,
+          4
+        ],
+        [
+          3048,
+          -4
+        ],
+        [
+          3056,
+          2
+        ],
+        [
+          3058,
+          -2
+        ],
+        [
+          3080,
+          -2
+        ],
+        [
+          3084,
+          2
+        ],
+        [
+          3110,
+          -2
+        ],
+        [
+          3112,
+          2
+        ],
+        [
+          3124,
+          -4
+        ],
+        [
+          3126,
+          4
+        ]
+      ],
+      "output_numerator": 768,
+      "retained_zero": true,
+      "output_nonzero": true,
+      "output_row": 345,
+      "output_denominator": 64,
+      "common_endpoint_nonzero": true,
+      "readout_coefficient_channel": "i"
+    },
+    "direct_path_difference": {
+      "input_basis_column": 2916,
+      "output_row": 0,
+      "difference_numerator": -64,
+      "difference_denominator": 16
+    }
+  },
+  "denominators": {
+    "primitive": 2,
+    "middle": 2,
+    "ab": 4,
+    "ba": 4,
+    "comparison": 4,
+    "readout_ab": 8,
+    "readout_ba": 8
+  },
+  "local_interchange_built_before_quotient": true,
+  "local_interchange_mixes_response_coordinates": true,
+  "residual_path_difference_rank": 24,
+  "comparison_descent_obstruction_rank": 1296,
+  "hidden_path_readout_rank": 1296,
+  "extra_for_other_endpoint": 1296,
+  "extra_for_both_retained_paths": 2592,
+  "extra_for_same_gap5_readout": 1152,
+  "raw_adjusted_defect_zero": true,
+  "scope": "Fixed two right-insertion paths with final labels and input tensor order held fixed; raw equality after adding the local comparison is distinguished from uncorrected path equality and quotient descent.",
+  "elapsed_seconds": 456.126,
+  "all_checks_passed": true
+}
