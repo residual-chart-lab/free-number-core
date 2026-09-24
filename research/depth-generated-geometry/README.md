@@ -6,6 +6,10 @@
 
 ## Start here
 
+[**自由数の体系仕様 — Core と Notes 1–33**](../../docs/FREE_NUMBER_SYSTEM_SPECIFICATION.md)
+は、CoreからDGGの保持・更新・輸送までをつなぐ統合仕様である。対象の型、
+証明の適用範囲、演算が商へ降下する条件、および次の完成条件を確認できる。
+
 [**Research Snapshot 2026-09-07**](releases/research-2026-09-07/README.md) は、
 Notes 14–26 を独立した数学稿・主張台帳・再現資料に固定し、2026-09-07に公開したプレプリントである。
 Core v1.0.0とは別の公開単位とし、本文は四元数と局所応答の定義から読める。

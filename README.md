@@ -77,6 +77,10 @@ snapshot was published on Zenodo on September 7, 2026 as an independent preprint
 
 ## Research navigation for readers and AI agents
 
+**[自由数の体系仕様 — Core と Notes 1–33](docs/FREE_NUMBER_SYSTEM_SPECIFICATION.md)**
+統合仕様の入口。完全な自由数・配置の応答商・操作族に対する保持状態を定義し、
+基礎演算、深度加法性、最小保持、更新・輸送の成立条件と完成までの課題を整理する。
+
 This work develops a quaternionic exact-response framework for finite ordered
 words in the Free Numbers Program.
 
