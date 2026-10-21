@@ -122,56 +122,78 @@ class Compiler:
         return Polynomial.constant(value, self.policy.max_terms)
 
     def tensor(self, node, gaps):
-        key = (node.digest,gaps)
-        if key in self.tensor_cache:
-            self.meter.compile_cache_hits += 1
-            return self.tensor_cache[key]
-        self.meter.compiled_tensor_slices += 1
-        if node.kind == 'block':
-            result = self.constant(ZERO)
-            for word, a in node.data:
-                result = result.add(self.constant(qscale(a, primitive(word,gaps))))
-        elif node.kind == 'sum':
-            result = self.tensor(node.children[0],gaps).add(self.tensor(node.children[1],gaps))
-        elif node.kind == 'scale':
-            result = self.tensor(node.children[0],gaps).scaled(node.data[0])
-        elif node.kind == 'retained':
-            ref = node.data[0]
-            self.vault.verify(ref)
-            variable = Polynomial((((ref.key,),ONE),), self.policy.max_terms)
-            result = self.tensor(node.children[0],gaps).add(variable.mul(self.tensor(node.children[1],gaps)))
-        elif node.kind == 'concat':
-            left, right = node.children
-            a = self.tensor(left,gaps[:left.grade-1])
-            b = self.tensor(right,gaps[left.grade:])
-            bridge = gaps[left.grade-1]
-            # A_{m+n}(x|y) = A_n(y) * bridge * A_m(x).
-            result = b.mul(self.constant(ONE if bridge is None else (Q(0),)+bridge)).mul(a)
-        else:
-            raise ValueError('unregistered tensor operation')
-        self.tensor_cache[key] = result
-        return result
+        root_key = (node.digest,gaps)
+        stack = [(node,gaps,False)]
+        while stack:
+            current,pattern,leaving = stack.pop()
+            key = (current.digest,pattern)
+            if key in self.tensor_cache:
+                self.meter.compile_cache_hits += 1
+                continue
+            if not leaving:
+                self.meter.compiled_tensor_slices += 1
+                stack.append((current,pattern,True))
+                if current.kind == 'concat':
+                    left,right = current.children
+                    dependencies = ((left,pattern[:left.grade-1]),(right,pattern[left.grade:]))
+                else:
+                    dependencies = tuple((child,pattern) for child in current.children)
+                stack.extend((child,part,False) for child,part in reversed(dependencies))
+                continue
+            def cached(child, part=pattern):
+                return self.tensor_cache[child.digest,part]
+            if current.kind == 'block':
+                result = self.constant(ZERO)
+                for word,a in current.data:
+                    result = result.add(self.constant(qscale(a,primitive(word,pattern))))
+            elif current.kind == 'sum':
+                result = cached(current.children[0]).add(cached(current.children[1]))
+            elif current.kind == 'scale':
+                result = cached(current.children[0]).scaled(current.data[0])
+            elif current.kind == 'retained':
+                ref = current.data[0]
+                self.vault.verify(ref)
+                variable = Polynomial((((ref.key,),ONE),),self.policy.max_terms)
+                result = cached(current.children[0]).add(variable.mul(cached(current.children[1])))
+            elif current.kind == 'concat':
+                left,right = current.children
+                a = cached(left,pattern[:left.grade-1])
+                b = cached(right,pattern[left.grade:])
+                bridge = pattern[left.grade-1]
+                # The coefficient order remains right * bridge * left.
+                result = b.mul(self.constant(ONE if bridge is None else (Q(0),)+bridge)).mul(a)
+            else:
+                raise ValueError('unregistered tensor operation')
+            self.tensor_cache[key] = result
+        return self.tensor_cache[root_key]
 
     def circuit(self, node):
-        if node.digest in self.circuit_cache:
-            self.meter.compile_cache_hits += 1
-            return self.circuit_cache[node.digest]
-        if node.kind == 'constant':
-            result = self.constant(node.data[0])
-        elif node.kind == 'read':
-            tensor, obs = node.data
-            result = self.constant(ZERO)
-            for c in obs.channels:
-                part = self.constant(c.left).mul(self.tensor(tensor,c.gaps)).mul(self.constant(c.right))
-                result = result.add(part.scaled(c.weight))
-        elif node.kind == 'add':
-            result = self.circuit(node.children[0]).add(self.circuit(node.children[1]))
-        elif node.kind == 'mul':
-            result = self.circuit(node.children[0]).mul(self.circuit(node.children[1]))
-        else:
-            raise ValueError('unregistered observation operation')
-        self.circuit_cache[node.digest] = result
-        return result
+        stack = [(node,False)]
+        while stack:
+            current,leaving = stack.pop()
+            if current.digest in self.circuit_cache:
+                self.meter.compile_cache_hits += 1
+                continue
+            if not leaving:
+                stack.append((current,True))
+                stack.extend((child,False) for child in reversed(current.children))
+                continue
+            if current.kind == 'constant':
+                result = self.constant(current.data[0])
+            elif current.kind == 'read':
+                tensor,obs = current.data
+                result = self.constant(ZERO)
+                for c in obs.channels:
+                    part = self.constant(c.left).mul(self.tensor(tensor,c.gaps)).mul(self.constant(c.right))
+                    result = result.add(part.scaled(c.weight))
+            elif current.kind == 'add':
+                result = self.circuit_cache[current.children[0].digest].add(self.circuit_cache[current.children[1].digest])
+            elif current.kind == 'mul':
+                result = self.circuit_cache[current.children[0].digest].mul(self.circuit_cache[current.children[1].digest])
+            else:
+                raise ValueError('unregistered observation operation')
+            self.circuit_cache[current.digest] = result
+        return self.circuit_cache[node.digest]
 
 
 def plan(query, vault, policy=Policy(), meter=None):

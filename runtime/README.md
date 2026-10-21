@@ -1,4 +1,4 @@
-# Free Numbers — 要求に応じて残差を読む実行層 v0.1
+# Free Numbers — 要求に応じて残差を読む実行層 v0.1.1
 
 Free Numbers Core v1.0.0を土台に、保持した差を必要な範囲だけ読むためのPython実装を加える。Coreの凍結版・定理・等値関係は変更しない。
 
@@ -16,7 +16,7 @@ Python 3.10以上、標準ライブラリのみ。インストールは不要。
 python runtime/validate.py
 ```
 
-新規29テストと主実験9群を実行し、`.work/demand-runtime-validation/`へ新しい結果を書く。公開済みの検証記録は上書きしない。
+当初の29件とAstra監査の回帰11件、計40テストと主実験9群を実行し、`.work/demand-runtime-validation/`へ新しい結果を書く。公開済みの検証記録は上書きしない。
 
 TEとの任意の照合も含める場合は、固定したTEのcheckoutを用意する。
 
@@ -60,3 +60,16 @@ assert evaluate(query,vault).value != ZERO
 - `checkpoint.loads`には外部から信頼したSHA-256を渡す。自己申告されたハッシュは作者認証にならない。
 
 [設計・保証範囲](../research/demand-runtime-v001/DESIGN.md) ／ [Astra向け監査手順](../research/demand-runtime-v001/AUDIT.md)
+
+## Astra監査への補修：v0.1.1
+
+保存と復元は共通の`CheckpointLimits`を使う。既定値はnode 10,000、保持参照10,000、20,000,000 bytes。超過時は保存成功を返さない。上限を変更する場合は同じ設定を保存・復元の両方へ渡す。未使用参照は削除しない。
+
+```python
+from free_numbers.checkpoint import CheckpointLimits, dumps, loads
+limits = CheckpointLimits(max_references=12000)
+payload, trusted_hash = dumps(roots, vault, limits)
+restored_roots, restored_vault = loads(payload, trusted_hash, limits)
+```
+
+コンパイルとDAG走査は明示的なstackを用いる。生成式の鎖長を観測深さと混同せず、Pythonの再帰設定を変更しない。整数の十進変換は9桁以下の塊で行い、Python全体の十進変換制限を変更しない。[修正記録と再検証結果](../research/demand-runtime-v001/repairs-2026-10-21/REPAIR.md)。

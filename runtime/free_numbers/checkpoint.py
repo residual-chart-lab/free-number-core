@@ -4,35 +4,57 @@ This is a structural replay format, not a signature or a TE occurrence receipt.
 Every retained exact value survives, including values unused by the last query.
 """
 from fractions import Fraction as Q
+from dataclasses import dataclass
 from hashlib import sha256
 import json
-from .algebra import canonical
+from .algebra import canonical, integer_text, parse_integer_text
 from .expression import Tensor, Circuit, Channel, Observation
 from .retention import Vault
+from .traversal import postorder
 
 
-def _postorder(roots):
-    seen, result = set(), []
-    def visit(node):
-        if node.digest in seen:
-            return
-        seen.add(node.digest)
+@dataclass(frozen=True)
+class CheckpointLimits:
+    max_nodes: int = 10000
+    max_references: int = 10000
+    max_bytes: int = 20_000_000
+
+    def __post_init__(self):
+        if any(type(n) is not int or n < 1 for n in (self.max_nodes,self.max_references,self.max_bytes)):
+            raise ValueError('checkpoint budgets must be positive finite integers')
+
+
+DEFAULT_LIMITS = CheckpointLimits()
+
+
+def _check_counts(node_count, reference_count, limits):
+    if type(limits) is not CheckpointLimits:
+        raise TypeError('explicit checkpoint limits are required')
+    if node_count > limits.max_nodes or reference_count > limits.max_references:
+        raise ValueError('checkpoint node or retained-reference budget exceeded')
+
+
+def _check_bytes(size, limits):
+    if size > limits.max_bytes:
+        raise ValueError('checkpoint byte budget exceeded')
+
+
+def _postorder(roots, limits=DEFAULT_LIMITS):
+    if any(type(root) is not Circuit for root in roots):
+        raise ValueError('checkpoint roots must be observation circuits')
+    def children(node):
         if type(node) is Circuit and node.kind == 'read':
-            visit(node.data[0])
-        for child in node.children:
-            visit(child)
-        result.append(node)
-    for root in roots:
-        if type(root) is not Circuit:
-            raise ValueError('checkpoint roots must be observation circuits')
-        visit(root)
-    return result
+            return (node.data[0],) + node.children
+        return node.children
+    return tuple(postorder(roots,children,limits.max_nodes))
 
 
-def dumps(roots, vault):
+def dumps(roots, vault, limits=DEFAULT_LIMITS):
     roots = tuple(roots)
+    retained = vault._records()
+    _check_counts(0,len(retained),limits)
     nodes = []
-    for node in _postorder(roots):
+    for node in _postorder(roots,limits):
         record = {'id':node.digest, 'type':'tensor' if type(node) is Tensor else 'circuit',
                   'kind':node.kind, 'children':[c.digest for c in node.children]}
         if type(node) is Tensor:
@@ -49,9 +71,11 @@ def dumps(roots, vault):
         else:
             record['data'] = node.data
         nodes.append(record)
-    values = [(r.key,value,r.envelope,r.origin,r.digest) for r,value in vault._records()]
+    values = [(r.key,value,r.envelope,r.origin,r.digest) for r,value in retained]
+    _check_counts(len(nodes),len(values),limits)
     payload = canonical({'format':'free-numbers-demand-dag-v1', 'nodes':nodes,
                          'roots':[r.digest for r in roots], 'retained':values})
+    _check_bytes(len(payload),limits)
     return payload, sha256(payload).hexdigest()
 
 
@@ -65,10 +89,15 @@ def _object(pairs):
         v = d['q']
         if type(v) is not list or len(v) != 2 or any(type(a) is not str for a in v):
             raise ValueError('invalid exact rational record')
-        q = Q(int(v[0]),int(v[1]))
-        if v != [str(q.numerator),str(q.denominator)]:
+        q = Q(parse_integer_text(v[0]),parse_integer_text(v[1]))
+        if v != [integer_text(q.numerator),integer_text(q.denominator)]:
             raise ValueError('rational records must be normalized')
         return q
+    if set(d) == {'integer'}:
+        value = parse_integer_text(d['integer'])
+        if value.bit_length() <= 2000:
+            raise ValueError('small metadata integers must use JSON integer encoding')
+        return value
     return d
 
 
@@ -78,20 +107,20 @@ def _freeze(x):
     return x
 
 
-def loads(payload, expected_sha256):
+def loads(payload, expected_sha256, limits=DEFAULT_LIMITS):
+    _check_counts(0,0,limits)
     if type(payload) is not bytes or not isinstance(expected_sha256,str) or sha256(payload).hexdigest() != expected_sha256:
         raise ValueError('a matching externally trusted checkpoint hash is required')
-    if len(payload) > 20_000_000:
-        raise ValueError('checkpoint byte budget exceeded')
+    _check_bytes(len(payload),limits)
     def reject(value):
         raise ValueError('JSON floating values are not part of the exact format')
     doc = json.loads(payload.decode('utf-8'), object_pairs_hook=_object,
-                     parse_float=reject, parse_constant=reject)
+                     parse_int=parse_integer_text, parse_float=reject, parse_constant=reject)
     if (type(doc) is not dict or set(doc) != {'format','nodes','roots','retained'} or
             doc['format'] != 'free-numbers-demand-dag-v1' or type(doc['nodes']) is not list or
-            type(doc['roots']) is not list or type(doc['retained']) is not list or
-            len(doc['nodes']) > 10000 or len(doc['retained']) > 10000):
-        raise ValueError('unknown checkpoint schema or resource budget exceeded')
+            type(doc['roots']) is not list or type(doc['retained']) is not list):
+        raise ValueError('unknown checkpoint schema')
+    _check_counts(len(doc['nodes']),len(doc['retained']),limits)
     vault, seen_keys = Vault(), set()
     for key,value,envelope,origin,digest in doc['retained']:
         if key in seen_keys:
@@ -102,6 +131,8 @@ def loads(payload, expected_sha256):
             raise ValueError('the exact value, bound or provenance changed')
     nodes = {}
     for record in doc['nodes']:
+        if type(record) is not dict:
+            raise ValueError('invalid graph record')
         expected_keys = {'id','type','kind','children','data'}
         if record.get('type') == 'tensor':
             expected_keys.add('grade')
@@ -139,6 +170,6 @@ def loads(payload, expected_sha256):
         roots = tuple(nodes[key] for key in doc['roots'])
     except KeyError as exc:
         raise ValueError('missing checkpoint root') from exc
-    if any(type(root) is not Circuit for root in roots) or len(_postorder(roots)) != len(nodes):
+    if any(type(root) is not Circuit for root in roots) or len(_postorder(roots,limits)) != len(nodes):
         raise ValueError('all operation nodes must be reachable from declared roots')
     return roots,vault

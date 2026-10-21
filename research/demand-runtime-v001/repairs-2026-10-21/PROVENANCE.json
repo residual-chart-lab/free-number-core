@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-21",
+  "runtime": "0.1.1",
+  "pull_request": 13,
+  "parent_commit": "f7837c4e3a1fa3ef095da2bad59ae59ff10a9ea0",
+  "audit_branch": "audit/pr13-astra-2026-10-21",
+  "audit_review_blob": "ae870fea78c131a8ceee5a6941b8891591a00b1a",
+  "audit_reproducer_blob": "869be77b18440e4395deb7c64589600c35f12ba2",
+  "exact_original_reproducer_run_before_repairs": true,
+  "fixed_Core_tag": "core-v1.0.0",
+  "fixed_Core_commit": "9efc241d38e5ca2cd07f425b747bfb5d67ea0235",
+  "original_evidence_preserved": true,
+  "source_sha256": {
+    "examples/strengthening_study.py": "11b6943565b7dee36b8b0674fabbff03100c09e61148efb6d03e978ac546c284",
+    "examples/time_engine_bridge.py": "4042984f53d230cde5e4f91dfb45ba62b4dbc8fc3ea0454f2fc816a0d29cb753",
+    "runtime/free_numbers/__init__.py": "6fc16abf333d49ad8dec9603578a6eaacb31530713cba41065990906a80f6ab5",
+    "runtime/free_numbers/algebra.py": "0e8ebfe0bcf7872f8ea2a96c0cdf20be327087879cddad3d519e9a00bed547b0",
+    "runtime/free_numbers/checkpoint.py": "39206f41ce982cfe6d8586ca9b2a4829478702e743446fb03efcfc1b8e1b654a",
+    "runtime/free_numbers/demand.py": "c3ea6349d4149bd8674a3585b711ef50729ca36bca7da892effe2119681bf055",
+    "runtime/free_numbers/evaluate.py": "d472c51e384147edeff21ae9f571ce76828279c0186ea5f5d94c427ce4ea7590",
+    "runtime/free_numbers/expression.py": "2aeafdd375cd38f09c3091937bbc660bb0df802f0b1d37a7ffece3e5bf8fbaac",
+    "runtime/free_numbers/retention.py": "6c7958bf20ec16193ad2b07be553ffc5fc2fff99ed73b7ca682546162e1122c9",
+    "runtime/free_numbers/traversal.py": "b0ef3ccfdc57ceaa449f513cb245c3000939772643d7327321c25163d82b7cc9",
+    "runtime/validate.py": "3199b056e75b1f8b931aa46a052d9ef25aef5ace78b084ca5d06529c8722758f",
+    "tests/oracle.py": "cfd43bb679c2766fa287e9c183da129c56367d217432c64b9dc97174675afa67",
+    "tests/test_audit_repairs.py": "d8d72cb2468a652e78a3962a83f3f7baa79e5f95e0ed1e936960b57c9c5681e1",
+    "tests/test_runtime.py": "a897fb49f8cac4ca8173ce90f44165fe49fa46d85559503d4dd4dca9efa699f2",
+    "pyproject.toml": "b90db5624a664915bc6d26f4c006b7fc3eae844a275c94dffc3f5af79e783316"
+  }
+}

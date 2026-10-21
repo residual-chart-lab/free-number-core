@@ -63,9 +63,45 @@ def primitive(word, gaps):
     return out
 
 
+def integer_text(value):
+    """Canonical decimal text without Python's environment-wide digit limit."""
+    if type(value) is not int:
+        raise TypeError('an exact integer is required')
+    if not value:
+        return '0'
+    negative = value < 0
+    value = abs(value)
+    chunks = []
+    while value:
+        value, chunk = divmod(value, 10**9)
+        chunks.append(chunk)
+    return ('-' if negative else '') + str(chunks[-1]) + ''.join(
+        format(chunk,'09d') for chunk in reversed(chunks[:-1]))
+
+
+def parse_integer_text(text):
+    """Inverse of integer_text; never passes a long string to int()."""
+    if type(text) is not str or not text:
+        raise ValueError('canonical decimal integer text is required')
+    negative = text[0] == '-'
+    digits = text[1:] if negative else text
+    if (not digits or any(c < '0' or c > '9' for c in digits) or
+            (len(digits) > 1 and digits[0] == '0') or (negative and digits == '0')):
+        raise ValueError('noncanonical decimal integer text')
+    value = 0
+    for start in range(0,len(digits),9):
+        chunk = digits[start:start+9]
+        value = value * (10**len(chunk)) + int(chunk)
+    return -value if negative else value
+
+
 def encode(x):
     if type(x) is Q:
-        return {'q': [str(x.numerator), str(x.denominator)]}
+        return {'q': [integer_text(x.numerator), integer_text(x.denominator)]}
+    # 2000 bits have at most 603 decimal digits: below Python's minimum
+    # configurable limit of 640. Larger metadata integers get an exact tag.
+    if type(x) is int and x.bit_length() > 2000:
+        return {'integer': integer_text(x)}
     if isinstance(x, (tuple, list)):
         return [encode(y) for y in x]
     if isinstance(x, dict):

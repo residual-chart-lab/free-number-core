@@ -1,4 +1,4 @@
-"""Demand runtime v0.1 over Free Numbers Core v1.0.0.
+"""Demand runtime v0.1.1 over Free Numbers Core v1.0.0.
 
 Compression does not define identity. No operation deletes a retained scalar.
 """
