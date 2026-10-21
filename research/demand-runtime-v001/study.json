@@ -1,0 +1,111 @@
+{
+  "schema": "free-numbers-demand-runtime-study-v1",
+  "checks": [
+    {
+      "name": "compression_skips_a_retained_nonzero_difference",
+      "passed": true
+    },
+    {
+      "name": "coupled_demand_finds_the_mixed_residual_term",
+      "passed": true,
+      "dependencies": [
+        "alpha",
+        "beta"
+      ],
+      "monomials": [
+        [
+          "alpha",
+          "beta"
+        ]
+      ],
+      "value": [
+        {
+          "q": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "q": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "q": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "q": [
+            "-8",
+            "15"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "all_nine_depth_one_basis_channels_remain_blind",
+      "passed": true,
+      "channels": 9
+    },
+    {
+      "name": "extra_bits_cannot_replace_a_missing_response_depth",
+      "passed": true
+    },
+    {
+      "name": "a_predicate_can_skip_values_needed_by_an_exact_action_read",
+      "passed": true,
+      "predicate_meter": {
+        "coarse_reads": 1,
+        "refinement_reads": 0,
+        "exact_reads": 0,
+        "compiled_tensor_slices": 3,
+        "compile_cache_hits": 0
+      },
+      "exact_read_meter": {
+        "coarse_reads": 2,
+        "refinement_reads": 0,
+        "exact_reads": 2,
+        "compiled_tensor_slices": 6,
+        "compile_cache_hits": 1
+      }
+    },
+    {
+      "name": "requested_precision_increases_independently_of_response_depth",
+      "passed": true,
+      "final_bits": 48,
+      "requested_depth": 1,
+      "meter": {
+        "coarse_reads": 1,
+        "refinement_reads": 3,
+        "exact_reads": 0,
+        "compiled_tensor_slices": 3,
+        "compile_cache_hits": 0
+      }
+    },
+    {
+      "name": "lossless_checkpoint_preserves_dormant_values_and_order",
+      "passed": true,
+      "bytes": 2702,
+      "sha256": "1dd8d64465069c67d73e469471705a05d350cd399c7014774fc1121ab57c9812"
+    },
+    {
+      "name": "grade_128_reuses_seven_tensor_nodes_instead_of_dense_response_coordinates",
+      "passed": true,
+      "grade": 128,
+      "dense_coordinate_dimension": "11790184577738583171520872861412518665678211592275841109096961",
+      "tensor_slices": 7
+    },
+    {
+      "name": "a_certificate_is_not_reused_in_a_new_scope",
+      "passed": true
+    }
+  ],
+  "groups": 9,
+  "runtime_is_a_core_extension": true,
+  "core_release_changed": false,
+  "response_depth_is_not_flower_count": true,
+  "global_speedup_claimed": false
+}

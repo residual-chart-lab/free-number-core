@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "free-numbers-demand-runtime"
+version = "0.1.1"
+description = "Scoped, demand-directed evaluation over the frozen Free Numbers exact-response core"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+[tool.setuptools.packages.find]
+where = ["runtime"]

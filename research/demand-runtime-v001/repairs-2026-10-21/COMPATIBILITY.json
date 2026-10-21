@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "baseline_commit": "f7837c4e3a1fa3ef095da2bad59ae59ff10a9ea0",
+  "tests": 40,
+  "existing_tests": 29,
+  "new_regressions": 11,
+  "study_groups": 9,
+  "TE_bridge_groups": 9,
+  "model_results": {
+    "study.json": {
+      "bytes_match": true,
+      "sha256": "e025495d884bf885b281496d6cec7ccaf0ffb3a55e9b2033c4133d8020c8c475"
+    },
+    "te-bridge.json": {
+      "bytes_match": true,
+      "sha256": "5e54c29d95d8327e978b459ec60f8d4d5a31258268450b823bf378267d4017d8"
+    }
+  },
+  "TE_pinned_commit": "5e0b40871ccda4f0bbf2b6d49b6a9c62d0580bd8",
+  "TE_verified_blobs": 259,
+  "unused_references_preserved": true,
+  "global_python_limits_changed": false,
+  "decimal_limit_subprocesses": [
+    4300,
+    640
+  ],
+  "expression_nodes_regression": 1201,
+  "shared_square_nodes": 16,
+  "exact_coefficient_bits": 32769,
+  "default_checkpoint_limits": {
+    "nodes": 10000,
+    "references": 10000,
+    "bytes": 20000000
+  }
+}

@@ -63,6 +63,31 @@ The current root-only certified reduction is deterministic and locally confluent
 
 The release bundle contains the PDF and LaTeX sources, the claims ledger, supporting notes, exact computational certificates, a release manifest, and SHA-256 checksums.
 
+
+## Demand-directed runtime v0.1.1 — review candidate
+
+A separate [Python runtime](runtime/README.md) uses the frozen Core to evaluate
+registered observations without expanding every retained difference. It adds
+exact residual-dependency pullback (including mixed terms), separate response-depth
+and numeric-precision budgets, and lossless ordered-expression checkpoints.
+
+Core v1.0.0 and its frozen tag are unchanged. This is a finite rational runtime
+extension, not a new all-grade reconstruction theorem. See the
+[design and scope](research/demand-runtime-v001/DESIGN.md) and
+[audit instructions](research/demand-runtime-v001/AUDIT.md).
+
+```text
+python runtime/validate.py
+```
+
+The optional TE bridge checks the unchanged RR62 implementation and executes one
+second flower from the newly computed context. New bundle-wide future demands
+remain a TE research task.
+
+Astra's three runtime findings are addressed by shared checkpoint budgets,
+iterative expression traversal, and environment-independent exact integer
+conversion. See the [repair record](research/demand-runtime-v001/repairs-2026-10-21/REPAIR.md).
+
 ## Depth-Generated Geometry research snapshot
 
 A separate [DGG Research Snapshot 2026-09-07](research/depth-generated-geometry/releases/research-2026-09-07/README.md)
