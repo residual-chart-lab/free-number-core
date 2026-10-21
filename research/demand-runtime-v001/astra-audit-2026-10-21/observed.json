@@ -1,0 +1,45 @@
+{
+  "audited_commit": "f7837c4e3a1fa3ef095da2bad59ae59ff10a9ea0",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "recursion_limit": 1000,
+  "integer_string_limit": 4300,
+  "checkpoint_writer_reader": {
+    "retained": 10001,
+    "roots": 1,
+    "bytes": 1349363,
+    "writer_returned": true,
+    "digest_matches": true,
+    "reader": {
+      "returned": false,
+      "exception": "ValueError",
+      "message": "unknown checkpoint schema or resource budget exceeded"
+    }
+  },
+  "long_expression": {
+    "unique_nodes": 1201,
+    "max_nodes": 10000,
+    "required_observation_depth": 0,
+    "deliberate_lower_budget": "UNDETERMINED_PROOF_BUDGET",
+    "evaluation": {
+      "returned": false,
+      "exception": "RecursionError",
+      "message": "maximum recursion depth exceeded"
+    },
+    "checkpoint": {
+      "returned": false,
+      "exception": "RecursionError",
+      "message": "maximum recursion depth exceeded"
+    }
+  },
+  "exact_integer_serialization": {
+    "unique_nodes": 16,
+    "monomials": 1,
+    "plan_status": "AVAILABLE",
+    "coefficient_bits": 32769,
+    "evaluation": {
+      "returned": false,
+      "exception": "ValueError",
+      "message": "Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit"
+    }
+  }
+}
