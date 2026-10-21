@@ -1,0 +1,59 @@
+{
+  "schema": "free-numbers-demand-runtime-validation-v1",
+  "passed": true,
+  "tests": 29,
+  "study_groups": 9,
+  "TE_bridge_groups": 9,
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "commands": [
+    {
+      "command": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "examples/strengthening_study.py",
+        "--output",
+        "C:\\Users\\sadat\\Documents\\Codex\\2026-10-12\\new-chat\\work\\free-number-demand-runtime\\.work\\demand-runtime-validation\\study.json"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "examples/time_engine_bridge.py",
+        "--time-engine",
+        "C:\\Users\\sadat\\Documents\\Codex\\2026-10-12\\new-chat\\work\\time-engine-development",
+        "--output",
+        "C:\\Users\\sadat\\Documents\\Codex\\2026-10-12\\new-chat\\work\\free-number-demand-runtime\\.work\\demand-runtime-validation\\te-bridge.json"
+      ],
+      "returncode": 0
+    }
+  ],
+  "source_sha256": {
+    "examples/strengthening_study.py": "11b6943565b7dee36b8b0674fabbff03100c09e61148efb6d03e978ac546c284",
+    "examples/time_engine_bridge.py": "4042984f53d230cde5e4f91dfb45ba62b4dbc8fc3ea0454f2fc816a0d29cb753",
+    "runtime/free_numbers/__init__.py": "6a049c275a4b67f6aac0124266a02d08830d99cdaf75b61d8ae5848ddc4590fc",
+    "runtime/free_numbers/algebra.py": "3942fc93d318d89cacc4aec09cc3d7a2ad920f6cac97ced097964a950ab688d3",
+    "runtime/free_numbers/checkpoint.py": "e003a75e47136ac17c0d6b813583ded3490be50ceeb57da36faa3fb3a7ca277d",
+    "runtime/free_numbers/demand.py": "ef45988dcf9a3b189e423103cdb842720d8e8fbd0bd214405fe040fcd1a4c98f",
+    "runtime/free_numbers/evaluate.py": "d472c51e384147edeff21ae9f571ce76828279c0186ea5f5d94c427ce4ea7590",
+    "runtime/free_numbers/expression.py": "2aeafdd375cd38f09c3091937bbc660bb0df802f0b1d37a7ffece3e5bf8fbaac",
+    "runtime/free_numbers/retention.py": "6c7958bf20ec16193ad2b07be553ffc5fc2fff99ed73b7ca682546162e1122c9",
+    "runtime/validate.py": "3199b056e75b1f8b931aa46a052d9ef25aef5ace78b084ca5d06529c8722758f",
+    "tests/oracle.py": "cfd43bb679c2766fa287e9c183da129c56367d217432c64b9dc97174675afa67",
+    "tests/test_runtime.py": "a897fb49f8cac4ca8173ce90f44165fe49fa46d85559503d4dd4dca9efa699f2",
+    "pyproject.toml": "2355873917f1f9b1ae0852c62f88bc92b1d6298a313f17d73bc8c6bb3aa143b4"
+  },
+  "result_sha256": {
+    "study.json": "e025495d884bf885b281496d6cec7ccaf0ffb3a55e9b2033c4133d8020c8c475",
+    "te-bridge.json": "5e54c29d95d8327e978b459ec60f8d4d5a31258268450b823bf378267d4017d8"
+  }
+}

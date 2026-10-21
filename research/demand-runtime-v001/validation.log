@@ -1,0 +1,38 @@
+test_all_depth_one_channels_are_blind_to_pair (test_runtime.AlgebraTests.test_all_depth_one_channels_are_blind_to_pair) ... ok
+test_all_small_grade_basis_words_and_masks (test_runtime.AlgebraTests.test_all_small_grade_basis_words_and_masks) ... ok
+test_associative_composition_preserves_order (test_runtime.AlgebraTests.test_associative_composition_preserves_order) ... ok
+test_interactions_survive_zero_first_derivatives (test_runtime.AlgebraTests.test_interactions_survive_zero_first_derivatives) ... ok
+test_long_shared_expression_does_not_expand_tensor (test_runtime.AlgebraTests.test_long_shared_expression_does_not_expand_tensor) ... ok
+test_registered_component_projection (test_runtime.AlgebraTests.test_registered_component_projection) ... ok
+test_repeated_reference_is_a_power (test_runtime.AlgebraTests.test_repeated_reference_is_a_power) ... ok
+test_reversed_order_and_bridge (test_runtime.AlgebraTests.test_reversed_order_and_bridge) ... ok
+test_sum_scale_general_probes_and_ordered_circuit (test_runtime.AlgebraTests.test_sum_scale_general_probes_and_ordered_circuit) ... ok
+test_whole_polynomial_cancellation_avoids_reads (test_runtime.AlgebraTests.test_whole_polynomial_cancellation_avoids_reads) ... ok
+test_zero_compression_does_not_delete_residual (test_runtime.AlgebraTests.test_zero_compression_does_not_delete_residual) ... ok
+test_internal_changes_rejected_even_with_new_outer_hash (test_runtime.CheckpointTests.test_internal_changes_rejected_even_with_new_outer_hash) ... ok
+test_roundtrip_preserves_unused_values_and_shared_subgraphs (test_runtime.CheckpointTests.test_roundtrip_preserves_unused_values_and_shared_subgraphs) ... ok
+test_scope_certificate_does_not_transfer_after_restore (test_runtime.CheckpointTests.test_scope_certificate_does_not_transfer_after_restore) ... ok
+test_untrusted_outer_hash_rejected (test_runtime.CheckpointTests.test_untrusted_outer_hash_rejected) ... ok
+test_wrong_types_and_float_inputs_rejected (test_runtime.CheckpointTests.test_wrong_types_and_float_inputs_rejected) ... ok
+test_certificate_binds_scope_target_policy_and_expression (test_runtime.EvaluationTests.test_certificate_binds_scope_target_policy_and_expression) ... ok
+test_channel_and_graph_budgets_remain_unknown (test_runtime.EvaluationTests.test_channel_and_graph_budgets_remain_unknown) ... ok
+test_deterministic_mixed_polynomials_match_dense_oracle_and_bounds (test_runtime.EvaluationTests.test_deterministic_mixed_polynomials_match_dense_oracle_and_bounds) ... ok
+test_existence_style_predicate_needs_no_exact_value (test_runtime.EvaluationTests.test_existence_style_predicate_needs_no_exact_value) ... ok
+test_more_bits_cannot_fix_missing_depth (test_runtime.EvaluationTests.test_more_bits_cannot_fix_missing_depth) ... ok
+test_no_envelope_or_key_rebinding (test_runtime.EvaluationTests.test_no_envelope_or_key_rebinding) ... ok
+test_plan_and_reference_tampering_rejected (test_runtime.EvaluationTests.test_plan_and_reference_tampering_rejected) ... ok
+test_precision_increases_without_changing_observation (test_runtime.EvaluationTests.test_precision_increases_without_changing_observation) ... ok
+test_query_selects_only_visible_direction (test_runtime.EvaluationTests.test_query_selects_only_visible_direction) ... ok
+test_replacement_judgement_is_scoped_and_preserves_difference (test_runtime.EvaluationTests.test_replacement_judgement_is_scoped_and_preserves_difference) ... ok
+test_small_and_large_residues_follow_response_not_magnitude (test_runtime.EvaluationTests.test_small_and_large_residues_follow_response_not_magnitude) ... ok
+test_strict_threshold_and_exact_fallback (test_runtime.EvaluationTests.test_strict_threshold_and_exact_fallback) ... ok
+test_symbolic_budget_failure_is_not_a_zero_witness (test_runtime.EvaluationTests.test_symbolic_budget_failure_is_not_a_zero_witness) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 4.394s
+
+OK
+
+{"groups": 9, "passed": true, "output": "C:\\Users\\sadat\\Documents\\Codex\\2026-10-12\\new-chat\\work\\free-number-demand-runtime\\.work\\demand-runtime-validation\\study.json"}
+
+{"groups": 9, "passed": true, "actual_second_flowers": 1, "output": "C:\\Users\\sadat\\Documents\\Codex\\2026-10-12\\new-chat\\work\\free-number-demand-runtime\\.work\\demand-runtime-validation\\te-bridge.json"}

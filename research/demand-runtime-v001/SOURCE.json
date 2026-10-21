@@ -1,0 +1,34 @@
+{
+  "repository": "residual-chart-lab/free-number-core",
+  "base_commit": "bf26e5f2681096b0a15549f0edebdcc452128705",
+  "base_tree": "2fd367f04ccadf611e70c54cf1ac31b046661abb",
+  "frozen_release": "Core v1.0.0",
+  "frozen_tag": "core-v1.0.0",
+  "frozen_commit": "9efc241d38e5ca2cd07f425b747bfb5d67ea0235",
+  "core_references": {
+    "core/08-all-grade-response-reconstruction.md": {
+      "git_blob_sha": "176a9e9764b0547519fb205a0ba161b522197c48",
+      "sha256": "ba8806a3740571dbd4505453d92d644a545aa64c4dfe38269664d1328b18bf16"
+    },
+    "core/07-length-four-cross-boundary-propagation.md": {
+      "git_blob_sha": "a1cc0fd984a0fcbc5c9ed528de1e5dbc0dd7e80c",
+      "sha256": "fdd6aa72b3f60a968e3f4bb737a393dba996266689b12a8050ff59b077ac7c48"
+    },
+    "core/09-core-closure-theorem.md": {
+      "git_blob_sha": "5456905ca8a88c91b44f566e148e1d1c4021ffc7",
+      "sha256": "e2fd9b8fe49c8f056c277a533e45971d83e84f6d298469bfad3ae84882251ab7"
+    },
+    "core/04-length-two-exact-splitting.md": {
+      "git_blob_sha": "58e7fc040ff12bd3d9136d15d44e07e73b40e907",
+      "sha256": "60742f59f7bdfc56f4edf4da262e2a0a5f1d6908322469c7b055dacc8a9306d0"
+    }
+  },
+  "base_blob_count": 132,
+  "only_preexisting_file_to_modify": "README.md",
+  "all_other_preexisting_blobs_to_preserve": true,
+  "new_layer": "finite rational demand runtime v0.1",
+  "test_count": 29,
+  "study_groups": 9,
+  "TE_bridge_groups": 9,
+  "old_Core_or_DGG_certificate_suites_rerun": false
+}
