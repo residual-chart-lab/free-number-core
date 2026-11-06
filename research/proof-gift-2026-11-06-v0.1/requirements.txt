@@ -1,0 +1,2 @@
+# Python >= 3.12; standard library only for verification.
+# Optional plotting in examples requires matplotlib.

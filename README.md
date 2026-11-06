@@ -13,6 +13,22 @@
 
 Free Numbers Core v1.0.0 is a quaternionic exact-response framework for finite boundary words. It studies information that is lost under ordinary quaternionic compression but remains recoverable through canonical probe insertion.
 
+## November 6 proof gift — companion research v0.1
+
+Another gift alongside the unchanged Core: **16 written claims plus two supplements**,
+independent mathematical reviews, correction history and executable checks.
+Two applications explore KK-inspired connection geometry and residual transport.
+
+- [Download the proof gift](https://github.com/residual-chart-lab/free-number-core/releases/tag/proof-gift-2026-11-06-v0.1)
+- [Start here (English)](research/proof-gift-2026-11-06-v0.1/README.md)
+- [日本語の入口](research/proof-gift-2026-11-06-v0.1/README_JA.md)
+- [Relationship to the frozen Core](research/proof-gift-2026-11-06-v0.1/CORE_RELATIONSHIP.md)
+
+All-grade reconstruction is already a Core result. The companion distinguishes
+rederivations, explicit bounds and application-specific hypotheses. Its audit
+verdict includes the verified F01 correction; old and corrected text remain available.
+Core v1.0.0, its tag, license and DOI stay unchanged.
+
 ## Core v1.0.0
 
 For \(V=\operatorname{Im}\mathbb H\), let

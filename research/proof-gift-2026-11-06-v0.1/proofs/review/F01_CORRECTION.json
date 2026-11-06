@@ -1,0 +1,20 @@
+{
+  "finding": "Astra F01 (P2)",
+  "auditor_commit": "86414fc13581b95ae34c8f821615542a8df4f487",
+  "previous_proof_sha256": "4b77cf1cb037a9b1dc04521c431a0dc37b828e3bd650954c1f2179b90e13ff0f",
+  "corrected_proof_sha256": "3fe2ac101634d584fe8dd26c6f75087fa869d590a56355304d8cf340db9c79e5",
+  "change": "Only the post-T08 amplitude paragraph: center S by S0=S-tr(S)I/3 before the trace quotient, handle isotropic case separately.",
+  "counterexample": {
+    "S_diagonal": [
+      2,
+      1,
+      1
+    ],
+    "old_formula": 5,
+    "corrected_formula": 1
+  },
+  "checks": "36 nonisotropic rational rotations/shifts/signs and 4 isotropic separate branches",
+  "main_proof_changed": false,
+  "main_checker_changed": false,
+  "all_original_drafts_preserved": true
+}

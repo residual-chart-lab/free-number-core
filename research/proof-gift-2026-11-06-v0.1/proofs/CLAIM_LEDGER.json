@@ -1,0 +1,169 @@
+{
+  "id": "FN-GENERAL-PROOFS-001-v0.1",
+  "claim_count": 16,
+  "proof_standard": "Written mathematical proof, with hypotheses; finite exact checks are separate regression evidence. Not proof-assistant certified.",
+  "claims": [
+    {
+      "id": "T01",
+      "source": "01_ALGEBRA_AND_PATHS_EN.md",
+      "origin": "INHERITED_CORE_THEOREM_WITH_EXPLICIT_INSERTION_FORMULA",
+      "prior": "fixed Core note 04; KK-FN-HOLONOMY-001",
+      "quantifier": "every real length-two tensor and every quaternion probe",
+      "result": "exact value/residual coordinates and full insertion response",
+      "independent_proof_review": "PASS_UNDER_STATED_HYPOTHESES; initial review plus F01 correction closure"
+    },
+    {
+      "id": "T02",
+      "source": "01_ALGEBRA_AND_PATHS_EN.md",
+      "origin": "STANDARD_LINEAR_ALGEBRA_DERIVED_HERE",
+      "prior": "single-probe incompleteness control",
+      "quantifier": "all trace-free symmetric 3x3 residuals; fixed scalar linear samples",
+      "result": "five samples necessary and sufficient",
+      "independent_proof_review": "PASS_UNDER_STATED_HYPOTHESES; initial review plus F01 correction closure"
+    },
+    {
+      "id": "T03",
+      "source": "01_ALGEBRA_AND_PATHS_EN.md",
+      "origin": "EXPLICIT_ALL_GAP_EXTENSION_OF_KNOWN_QUATERNION_LEFT_RIGHT_ACTION",
+      "prior": "one insertion in KK-FN-HOLONOMY-001",
+      "quantifier": "every finite tensor length m>=1; all quaternion gap arguments",
+      "result": "scaled isometry, explicit inverse, concatenation",
+      "boundary": "formal external assays on tensor spaces; not an automatic declaration of Core admissibility or constant-size history memory",
+      "independent_proof_review": "PASS_UNDER_STATED_HYPOTHESES; initial review plus F01 correction closure",
+      "supplement": "04_IMAGINARY_GAPS_EN.md: imaginary probes suffice on V tensor words; explicit inverse on the image and norm bounds",
+      "public_attribution": "All-grade reconstruction is already proved by frozen Core notes 08 and 09; here rederived with explicit quaternion normalization and inverse/norm bounds. See ../CORE_RELATIONSHIP.md."
+    },
+    {
+      "id": "T04",
+      "source": "01_ALGEBRA_AND_PATHS_EN.md",
+      "origin": "STANDARD_FACTORIZATION_LEMMA",
+      "prior": "same-value/different-response examples; provenance compression principle",
+      "quantifier": "any sets, compression and specified response",
+      "result": "factorization iff fiberwise constancy",
+      "independent_proof_review": "PASS_UNDER_STATED_HYPOTHESES; initial review plus F01 correction closure"
+    },
+    {
+      "id": "T05",
+      "source": "01_ALGEBRA_AND_PATHS_EN.md",
+      "origin": "STANDARD_MATRIX_LEMMA",
+      "prior": "finite rank-3 commutator check",
+      "quantifier": "symmetric trace-free matrices in every n>=2",
+      "result": "commutators span so(n)",
+      "boundary": "quaternion Core itself remains n=3",
+      "independent_proof_review": "PASS_UNDER_STATED_HYPOTHESES; initial review plus F01 correction closure"
+    },
+    {
+      "id": "T06",
+      "source": "01_ALGEBRA_AND_PATHS_EN.md",
+      "origin": "GENERAL_ASSOCIATIVITY_AND_REPRESENTATION_PROOF",
+      "prior": "KK-FN-HOLONOMY-001 finite graph",
+      "quantifier": "all finite graph paths and concatenations with specified unit-quaternion links",
+      "result": "transport, exact signature, inverse and vertex gauge covariance",
+      "independent_proof_review": "PASS_UNDER_STATED_HYPOTHESES; initial review plus F01 correction closure"
+    },
+    {
+      "id": "T07",
+      "source": "02_SPECTRAL_TRANSPORT_EN.md",
+      "origin": "STANDARD_SPECTRAL_GEOMETRY_DERIVED_AND_CONNECTED_TO_FIXED_RESPONSE",
+      "prior": "uniaxial minimum generator",
+      "quantifier": "every real symmetric S,D in finite dimension",
+      "result": "orthogonal split, unique minimum generator, response pseudoinverse",
+      "boundary": "full spectral tracking uses constant multiplicities; eigenvalue drift retained separately",
+      "independent_proof_review": "PASS_UNDER_STATED_HYPOTHESES; initial review plus F01 correction closure"
+    },
+    {
+      "id": "T08",
+      "source": "02_SPECTRAL_TRANSPORT_EN.md",
+      "origin": "CONDITIONAL_FIRST_JET_EQUIVARIANCE_CHARACTERIZATION",
+      "prior": "FN-LOCAL-RULE-001 uniaxial proof",
+      "quantifier": "all constant-multiplicity spectral first jets in R3",
+      "result": "unique tracking rule under common SO(3) equivariance; no linearity or norm axiom",
+      "boundary": "fails for extra directional input, multiplicity-splitting jets, or unqualified SO(4) extension",
+      "independent_proof_review": "PASS_UNDER_STATED_HYPOTHESES; initial review plus F01 correction closure",
+      "supplement": "05_LINE_DIMENSION_CLASSIFICATION_EN.md: rank-one O(n)/SO(n) classification in every n>=2",
+      "F01": "Centered amplitude formula applied and independently rechecked"
+    },
+    {
+      "id": "T09",
+      "source": "02_SPECTRAL_TRANSPORT_EN.md",
+      "origin": "STANDARD_SHORTEST_ROTATION_CONSTRUCTION_WITH_EXPLICIT_BOUNDARY",
+      "prior": "rational finite-step formula",
+      "quantifier": "all nonorthogonal real rank-one projection pairs in R3",
+      "result": "unique shortest real line rotation; no common-frame selector on all orthogonal pairs",
+      "boundary": "real formula versus arithmetic support; supplied short path versus unknown interpolation",
+      "independent_proof_review": "PASS_UNDER_STATED_HYPOTHESES; initial review plus F01 correction closure"
+    },
+    {
+      "id": "T10",
+      "source": "02_SPECTRAL_TRANSPORT_EN.md",
+      "origin": "GENERAL_COVARIANCE_PROOF",
+      "prior": "finite reference-link tests",
+      "quantifier": "every admissible pair, reference and independent endpoint frames",
+      "result": "reference-assisted transport transforms correctly",
+      "independent_proof_review": "PASS_UNDER_STATED_HYPOTHESES; initial review plus F01 correction closure"
+    },
+    {
+      "id": "T11",
+      "source": "02_SPECTRAL_TRANSPORT_EN.md",
+      "origin": "GENERAL_STABILIZER_OBSTRUCTION",
+      "prior": "selected endpoint counterexample",
+      "quantifier": "any target data with nontrivial stabilizer, single-valued invertible frame map",
+      "result": "endpoint-only independent-frame covariance impossible",
+      "independent_proof_review": "PASS_UNDER_STATED_HYPOTHESES; initial review plus F01 correction closure"
+    },
+    {
+      "id": "T12",
+      "source": "02_SPECTRAL_TRANSPORT_EN.md",
+      "origin": "GAP_ESTIMATE_AND_REALIZABLE_COUNTEREXAMPLE_FAMILY",
+      "prior": "nonzero/spectral-domain caveat",
+      "quantifier": "every nonzero gap; sequence of valid stable spectral jets",
+      "result": "inverse-gap bound and no unrestricted continuous extension at collision",
+      "independent_proof_review": "PASS_UNDER_STATED_HYPOTHESES; initial review plus F01 correction closure"
+    },
+    {
+      "id": "T13",
+      "source": "03_SPIN_AND_KK_EN.md",
+      "origin": "STANDARD_SPIN_QUADRUPOLE_PROPERTIES_REDERIVED",
+      "prior": "SPIN-001 spin 1 and 1/2 cases",
+      "quantifier": "all irreducible spins j=0,1/2,1,... and all residuals",
+      "result": "zero for j<1, injective for j>=1, explicit trace coefficient",
+      "independent_proof_review": "PASS_UNDER_STATED_HYPOTHESES; initial review plus F01 correction closure"
+    },
+    {
+      "id": "T14",
+      "source": "03_SPIN_AND_KK_EN.md",
+      "origin": "GENERAL_EHRENFEST_ENERGY_AND_NOETHER_IDENTITIES",
+      "prior": "SPIN-ROTOR-001 and INPUT-ROTOR-001 finite controls",
+      "quantifier": "finite-dimensional smooth Hermitian couplings; positive inertia; all solutions",
+      "result": "norm, energy/work, axial angular momentum balances; local/global existence conditions",
+      "independent_proof_review": "PASS_UNDER_STATED_HYPOTHESES; initial review plus F01 correction closure"
+    },
+    {
+      "id": "T15",
+      "source": "03_SPIN_AND_KK_EN.md",
+      "origin": "GENERAL_RESCALE_IDENTITY",
+      "prior": "ROTOR-SI-001 five cases",
+      "quantifier": "every positive hbar, inertia and energy scale",
+      "result": "bijective SI/dimensionless equations and balances",
+      "independent_proof_review": "PASS_UNDER_STATED_HYPOTHESES; initial review plus F01 correction closure"
+    },
+    {
+      "id": "T16",
+      "source": "03_SPIN_AND_KK_EN.md",
+      "origin": "STANDARD_KK_ROUTH_REDUCTION_REDERIVED",
+      "prior": "KK-001 prescribed flat-base examples",
+      "quantifier": "all smooth prescribed nondegenerate base metrics, nonzero phi, A independent of extra coordinate",
+      "result": "reduction, converse lift, gauge invariance",
+      "boundary": "no background field-equation solution, spin or material coupling",
+      "independent_proof_review": "PASS_UNDER_STATED_HYPOTHESES; initial review plus F01 correction closure"
+    }
+  ],
+  "intentionally_open": [
+    "Core final multiplication and quotient/admissibility at arbitrary grade",
+    "transport choices at changing spectral multiplicity with additional physical conditions",
+    "which retained memory tensor should control transport",
+    "constant-size compression for all possible future interventions",
+    "quantum/classical approximation errors and real-material calibration",
+    "self-consistent KK field equations or new physical effects"
+  ]
+}

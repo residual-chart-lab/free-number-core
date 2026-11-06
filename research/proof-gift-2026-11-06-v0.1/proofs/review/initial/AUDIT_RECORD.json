@@ -1,0 +1,234 @@
+{
+  "id": "ASTRA-FN-GENERAL-PROOFS-AUDIT-v0.1",
+  "auditor": "Astra",
+  "date": "2026-11-06",
+  "repository": "[original research workspace]",
+  "visibility": "private",
+  "output_prefix": "original-submissions/astra/2026-11-06-general-proofs-audit-v0.1/",
+  "source_files": [
+    {
+      "commit": "698cc1cd500b3f4c8cd05e1d50c861c6e0b437a3",
+      "repository_path": "original-submissions/ronnie/2026-11-06-general-proofs-draft1/study/README_JA.md",
+      "blob_sha": "493b898495dbcdd4f61f57eee8ec327d79578ba4",
+      "sha256": "64512dfcbc81348614de2df4f925458b71358d4a733e77325d79ecdcea5608d2",
+      "utf8_bytes": 4465,
+      "git_blob_verified": true
+    },
+    {
+      "commit": "698cc1cd500b3f4c8cd05e1d50c861c6e0b437a3",
+      "repository_path": "original-submissions/ronnie/2026-11-06-general-proofs-draft1/study/CLAIM_LEDGER.json",
+      "blob_sha": "12b59a13c6e6065b999a86d9fdb9cc0a67c39bc8",
+      "sha256": "76eac9edcdfbc15c91965e5a807e3101f6310d64f5873390b3cac1c2c2cf9a22",
+      "utf8_bytes": 6065,
+      "git_blob_verified": true
+    },
+    {
+      "commit": "698cc1cd500b3f4c8cd05e1d50c861c6e0b437a3",
+      "repository_path": "original-submissions/ronnie/2026-11-06-general-proofs-draft1/study/01_ALGEBRA_AND_PATHS_EN.md",
+      "blob_sha": "19ff8ae263d5d9089c27cfa337692f2e5f5bc792",
+      "sha256": "308515a09e8fc5560e6c78453b561e838f31cb163289577c7e7f4caa25082eda",
+      "utf8_bytes": 8947,
+      "git_blob_verified": true
+    },
+    {
+      "commit": "698cc1cd500b3f4c8cd05e1d50c861c6e0b437a3",
+      "repository_path": "original-submissions/ronnie/2026-11-06-general-proofs-draft1/study/02_SPECTRAL_TRANSPORT_EN.md",
+      "blob_sha": "39cccc1f5a7b50145bf65074af38058ec78810b5",
+      "sha256": "4b77cf1cb037a9b1dc04521c431a0dc37b828e3bd650954c1f2179b90e13ff0f",
+      "utf8_bytes": 11330,
+      "git_blob_verified": true
+    },
+    {
+      "commit": "698cc1cd500b3f4c8cd05e1d50c861c6e0b437a3",
+      "repository_path": "original-submissions/ronnie/2026-11-06-general-proofs-draft1/study/03_SPIN_AND_KK_EN.md",
+      "blob_sha": "a60d928c7a4cab3c737b902b7bcb1faf28755d1a",
+      "sha256": "bd58b3ab4910f3e66c296375655a59c10efa491e0a1aa939e175712f7829e64d",
+      "utf8_bytes": 8869,
+      "git_blob_verified": true
+    },
+    {
+      "commit": "698cc1cd500b3f4c8cd05e1d50c861c6e0b437a3",
+      "repository_path": "original-submissions/ronnie/2026-11-06-general-proofs-draft1/study/checker.py",
+      "blob_sha": "2316a2d4fd56a1f1a5f0ae72e868c375b1d4d946",
+      "sha256": "39c535b69f6633d65549153496ec33c22d2a2203dc02d2afce512edf68215dea",
+      "utf8_bytes": 12475,
+      "git_blob_verified": true
+    },
+    {
+      "commit": "698cc1cd500b3f4c8cd05e1d50c861c6e0b437a3",
+      "repository_path": "original-submissions/ronnie/2026-11-06-general-proofs-draft1/study/exact.py",
+      "blob_sha": "3e339eaeb4def02eecf412c41c60e911bc1e38d0",
+      "sha256": "6b453313839b1582bdcc90202052c923cca9f400316ec413211fad21cd44d036",
+      "utf8_bytes": 3934,
+      "git_blob_verified": true
+    },
+    {
+      "commit": "698cc1cd500b3f4c8cd05e1d50c861c6e0b437a3",
+      "repository_path": "original-submissions/ronnie/2026-11-06-general-proofs-draft1/study/kk_jets.py",
+      "blob_sha": "99ab4fbcb54c3827819ce23b4892b45624149756",
+      "sha256": "4ed2d1a285474b345209ce0bc764007264a64228567b2f0cb04e8be456a5510f",
+      "utf8_bytes": 5383,
+      "git_blob_verified": true
+    },
+    {
+      "commit": "698cc1cd500b3f4c8cd05e1d50c861c6e0b437a3",
+      "repository_path": "original-submissions/ronnie/2026-11-06-general-proofs-draft1/study/SOURCES.json",
+      "blob_sha": "2c11d0cf0660d8222bf10b39cc3e513bf79df6dd",
+      "sha256": "ea1635f79a4649268ce973e4b5db22ae91e8bb550be3a5878773ea69cc292c11",
+      "utf8_bytes": 2779,
+      "git_blob_verified": true
+    },
+    {
+      "commit": "698cc1cd500b3f4c8cd05e1d50c861c6e0b437a3",
+      "repository_path": "original-submissions/ronnie/2026-11-06-general-proofs-draft1/study/PROOF_PLAN.json",
+      "blob_sha": "01004cbc2cf00fb692c259bf2a75b758f57e2de7",
+      "sha256": "fe4d021f202f9d2cd127e695df6106c305228654f261b7b62c705f2e2a7655aa",
+      "utf8_bytes": 2608,
+      "git_blob_verified": true
+    },
+    {
+      "commit": "698cc1cd500b3f4c8cd05e1d50c861c6e0b437a3",
+      "repository_path": "original-submissions/ronnie/2026-11-06-general-proofs-draft1/study/run/RESULTS.json",
+      "blob_sha": "2d1c100bffcb219cd97707201dbd9e0d17430344",
+      "sha256": "491fb4d982a6f7a1d5066816e3e1e0f80420e489764447c61a2f6c4e0e196dda",
+      "utf8_bytes": 2301,
+      "git_blob_verified": true
+    },
+    {
+      "commit": "698cc1cd500b3f4c8cd05e1d50c861c6e0b437a3",
+      "repository_path": "original-submissions/ronnie/2026-11-06-general-proofs-draft1/study/run/EXACT_CERTIFICATES.json",
+      "blob_sha": "73ef3392af35ad89f31ebf301273d9e07f79bf91",
+      "sha256": "89bacb4371ebcbfe49c5d3bb2ccf6ec602ecc9beece9c8327b30d48b5af8d414",
+      "utf8_bytes": 15281,
+      "git_blob_verified": true
+    },
+    {
+      "commit": "b0e0d181863412dc5f5c42450382af0ed3e26a4a",
+      "repository_path": "original-submissions/ronnie/2026-11-06-general-proofs-draft1-extra/04_IMAGINARY_GAPS_EN.md",
+      "blob_sha": "56f3a5123a6ba47e6ca733a70f040b05ecd63c8b",
+      "sha256": "13be5f2f989aaba2737b6b70e19790f3ebc10ed2df9671f6f0391257a17898f6",
+      "utf8_bytes": 2629,
+      "git_blob_verified": true
+    },
+    {
+      "commit": "b0e0d181863412dc5f5c42450382af0ed3e26a4a",
+      "repository_path": "original-submissions/ronnie/2026-11-06-general-proofs-draft1-extra/pure_gap_checks.py",
+      "blob_sha": "ec25ce41573b780c9bc674269acca6813a33d2d1",
+      "sha256": "d11ab3bcb8f03a19ad37ef392d8d3eb908b62d25155ad880a8fd4fe8c066ba19",
+      "utf8_bytes": 2435,
+      "git_blob_verified": true
+    },
+    {
+      "commit": "b0e0d181863412dc5f5c42450382af0ed3e26a4a",
+      "repository_path": "original-submissions/ronnie/2026-11-06-general-proofs-draft1-extra/PURE_GAP_RESULTS.json",
+      "blob_sha": "881b6ec6e95759934f6c0d1984662aba685de826",
+      "sha256": "c6829e8b2f0c53bbe554e9a3ee979978100bfc6d996efc246d6f8fd84c01de73",
+      "utf8_bytes": 1207,
+      "git_blob_verified": true
+    },
+    {
+      "commit": "8a6f918659a4c4ed7b6b331306cec29cfa655d38",
+      "repository_path": "original-submissions/ronnie/2026-11-06-general-proofs-draft1-extra/05_LINE_DIMENSION_CLASSIFICATION_EN.md",
+      "blob_sha": "9f822e800aebbd76f1b993e79ece47a8fb57ca1e",
+      "sha256": "6b188da5dfa251b2089bbca670d56990ab614a5a482da40eba24887e01650b77",
+      "utf8_bytes": 3678,
+      "git_blob_verified": true
+    },
+    {
+      "commit": "8a6f918659a4c4ed7b6b331306cec29cfa655d38",
+      "repository_path": "original-submissions/ronnie/2026-11-06-general-proofs-draft1-extra/line_dimension_checks.py",
+      "blob_sha": "ce7908b2f2749a8a77e4578107bc7e839c09f695",
+      "sha256": "cb259423b2cf14e31b1ffa5b64ce83e4767ca24e96e5add1a4330e2593f8a2db",
+      "utf8_bytes": 1663,
+      "git_blob_verified": true
+    },
+    {
+      "commit": "8a6f918659a4c4ed7b6b331306cec29cfa655d38",
+      "repository_path": "original-submissions/ronnie/2026-11-06-general-proofs-draft1-extra/LINE_DIMENSION_RESULTS.json",
+      "blob_sha": "d5fa7593c85affd0271668d45fbe73e2ccd574a3",
+      "sha256": "263c1d74b53acc0500e8a2a18c2a8ec3e6706982412b7e0c0f77f6e0a73bd534",
+      "utf8_bytes": 856,
+      "git_blob_verified": true
+    }
+  ],
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+    "dependencies": "standard library only",
+    "spin_Gram_exception": "Floating Python complex Hermitian matrices; exact weight sums are separate"
+  },
+  "replay_comparisons": [
+    {
+      "reference": "source/study/run/RESULTS.json",
+      "replay": "replay/RESULTS.json",
+      "byte_equal": false,
+      "differing_top_level_fields": [
+        "platform",
+        "python"
+      ],
+      "all_other_structure_equal": true,
+      "reference_sha256": "491fb4d982a6f7a1d5066816e3e1e0f80420e489764447c61a2f6c4e0e196dda",
+      "replay_sha256": "6c021fd81dc2ccec55075d7b7a9b9c00d36f436d33c4313fc78d23d011dede85"
+    },
+    {
+      "reference": "source/study/run/EXACT_CERTIFICATES.json",
+      "replay": "replay/EXACT_CERTIFICATES.json",
+      "byte_equal": true,
+      "differing_top_level_fields": [],
+      "all_other_structure_equal": true,
+      "reference_sha256": "89bacb4371ebcbfe49c5d3bb2ccf6ec602ecc9beece9c8327b30d48b5af8d414",
+      "replay_sha256": "89bacb4371ebcbfe49c5d3bb2ccf6ec602ecc9beece9c8327b30d48b5af8d414"
+    },
+    {
+      "reference": "extra-source/PURE_GAP_RESULTS.json",
+      "replay": "replay/PURE_GAP_RESULTS.json",
+      "byte_equal": true,
+      "differing_top_level_fields": [],
+      "all_other_structure_equal": true,
+      "reference_sha256": "c6829e8b2f0c53bbe554e9a3ee979978100bfc6d996efc246d6f8fd84c01de73",
+      "replay_sha256": "c6829e8b2f0c53bbe554e9a3ee979978100bfc6d996efc246d6f8fd84c01de73"
+    },
+    {
+      "reference": "extra-source/LINE_DIMENSION_RESULTS.json",
+      "replay": "replay/LINE_DIMENSION_RESULTS.json",
+      "byte_equal": true,
+      "differing_top_level_fields": [],
+      "all_other_structure_equal": true,
+      "reference_sha256": "263c1d74b53acc0500e8a2a18c2a8ec3e6706982412b7e0c0f77f6e0a73bd534",
+      "replay_sha256": "263c1d74b53acc0500e8a2a18c2a8ec3e6706982412b7e0c0f77f6e0a73bd534"
+    }
+  ],
+  "independent_counts": {
+    "main": 35,
+    "supplements": 18
+  },
+  "commands": [
+    "python -I -B source/study/checker.py --out NEW_REPLAY_DIR",
+    "python source/study/extensions/pure_gap_checks.py --out NEW_PURE_GAP_JSON",
+    "python source/study/extensions/line_dimension_checks.py --out NEW_LINE_DIMENSION_JSON",
+    "python -I -B independent_checks.py --study source/study --out NEW_INDEPENDENT_JSON",
+    "python -I -B supplement_independent_checks.py --out NEW_SUPPLEMENT_JSON"
+  ],
+  "layout": "Fetch source files at the exact commits/paths listed. Place main study under source/study; copy supplement checkers into source/study/extensions for parent exact.py imports. Do not alter originals. Independent scripts sit together in this audit directory.",
+  "claim_verdicts": "CLAIM_VERDICTS.json",
+  "written_proof_review": "REPORT_JA.md",
+  "limits": [
+    "No proof assistant",
+    "No comprehensive novelty/priority audit",
+    "No new physical simulation, material experiment or background field equation solution",
+    "No blanket transfer of earlier audit PASS",
+    "No corrected source version received yet"
+  ],
+  "artifact_sha256": {
+    "REPORT_JA.md": "35688ecb788c357e494255054aeada528149abb9bdf24976a2a44ca82cd0d68f",
+    "CLAIM_VERDICTS.json": "129561e3d60e283e790147edcc9b8441fa78e5ccb217af411eb8b0e8985f69d6",
+    "independent_checks.py": "3a6383246033db16ac1fa7589f113812427f11ab3a97caaf4f506c57473547bc",
+    "INDEPENDENT_RESULTS.json": "e2e3c9d27cd9e72994357b07083105ab63e3fb6958ace6285dfecb65c5ddf1c6",
+    "supplement_independent_checks.py": "acedbd5839415b5601f00ef9a61f0b3424cd7105555b1e14d7c69f8dbe2277e8",
+    "SUPPLEMENT_INDEPENDENT_RESULTS.json": "dfe3a4170a6149adfb44900c92c97e67f55dbfa101884dd44633a39a6b65a663",
+    "replay/RESULTS.json": "6c021fd81dc2ccec55075d7b7a9b9c00d36f436d33c4313fc78d23d011dede85",
+    "replay/EXACT_CERTIFICATES.json": "89bacb4371ebcbfe49c5d3bb2ccf6ec602ecc9beece9c8327b30d48b5af8d414",
+    "replay/PURE_GAP_RESULTS.json": "c6829e8b2f0c53bbe554e9a3ee979978100bfc6d996efc246d6f8fd84c01de73",
+    "replay/LINE_DIMENSION_RESULTS.json": "263c1d74b53acc0500e8a2a18c2a8ec3e6706982412b7e0c0f77f6e0a73bd534"
+  }
+}

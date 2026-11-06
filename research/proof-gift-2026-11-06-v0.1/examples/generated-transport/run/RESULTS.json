@@ -1,0 +1,129 @@
+{
+  "id": "FN-GENERATED-CONNECTION-001-v0.1",
+  "status": "PASS",
+  "source_sha256": "c4e065b9bb331c32c799ebec0734fa9a200182765ab538ad400b3239ff361706",
+  "algebra_sha256": "25880d2a6da94d179ef213f538943889484deb245ceb71c21dd1e1f733d56ea6",
+  "protocol_sha256": "030271d93148d7fc820cea4d718dee2d56f21b1b0f6941910ad515ee464d658f",
+  "input_sha256": "3c8f02c14bac2764f6b2f548c2e93ac83d692deaf3f97fa414ac53a78460ce94",
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "arithmetic": "Fraction; exact equalities"
+  },
+  "checks": {
+    "forward_triangle_SO3": true,
+    "forward_triangle_cargo_stays_zero_valued": true,
+    "forward_triangle_cargo_norm_preserved": true,
+    "reverse_triangle_SO3": true,
+    "reverse_triangle_cargo_stays_zero_valued": true,
+    "reverse_triangle_cargo_norm_preserved": true,
+    "other_subdivision_SO3": true,
+    "other_subdivision_cargo_stays_zero_valued": true,
+    "other_subdivision_cargo_norm_preserved": true,
+    "backtrack_SO3": true,
+    "backtrack_cargo_stays_zero_valued": true,
+    "backtrack_cargo_norm_preserved": true,
+    "varying_amplitude_SO3": true,
+    "varying_amplitude_cargo_stays_zero_valued": true,
+    "varying_amplitude_cargo_norm_preserved": true,
+    "negative_amplitude_SO3": true,
+    "negative_amplitude_cargo_stays_zero_valued": true,
+    "negative_amplitude_cargo_norm_preserved": true,
+    "constant_axis_SO3": true,
+    "constant_axis_cargo_stays_zero_valued": true,
+    "constant_axis_cargo_norm_preserved": true,
+    "arc_upper_SO3": true,
+    "arc_upper_cargo_stays_zero_valued": true,
+    "arc_upper_cargo_norm_preserved": true,
+    "arc_lower_SO3": true,
+    "arc_lower_cargo_stays_zero_valued": true,
+    "arc_lower_cargo_norm_preserved": true,
+    "sign_flipped_directions_SO3": true,
+    "sign_flipped_directions_cargo_stays_zero_valued": true,
+    "sign_flipped_directions_cargo_norm_preserved": true,
+    "repeated_sample_SO3": true,
+    "repeated_sample_cargo_stays_zero_valued": true,
+    "repeated_sample_cargo_norm_preserved": true,
+    "forward_quarter_turn": true,
+    "reverse_quarter_turn": true,
+    "opposite_zero_value_cargo_response": true,
+    "source_returns_but_cargo_changes": true,
+    "backtrack_identity": true,
+    "same_arcs_other_subdivision": true,
+    "amplitude_does_not_choose_rotation": true,
+    "amplitude_only_no_geometric_rotation": true,
+    "axis_sign_not_hidden_input": true,
+    "repeated_sample_invariant": true,
+    "opposite_refinements_resolve_orthogonal_pair_differently": true,
+    "independent_axis_Rodrigues_comparison": true,
+    "underdetermined_inputs_are_explicit": true,
+    "minimal_generator_transports_projector": true,
+    "minimum_twist_norm_decomposition": true,
+    "compatibility_does_not_fix_transport": true,
+    "same_driver_allows_different_cargo_if_twist_not_fixed": true,
+    "local_gauge_obstruction_without_reference": true,
+    "response_commutators_skew": true,
+    "response_commutators_span_so3": true,
+    "global_frame_0": true,
+    "local_frames_with_reference_0": true,
+    "global_frame_1": true,
+    "local_frames_with_reference_1": true,
+    "global_frame_2": true,
+    "local_frames_with_reference_2": true,
+    "global_frame_3": true,
+    "local_frames_with_reference_3": true,
+    "global_frame_4": true,
+    "local_frames_with_reference_4": true,
+    "global_frame_5": true,
+    "local_frames_with_reference_5": true
+  },
+  "gauge_trials": [
+    {
+      "trial": 0,
+      "local_frame_equalities": 7,
+      "all_pass": true
+    },
+    {
+      "trial": 1,
+      "local_frame_equalities": 7,
+      "all_pass": true
+    },
+    {
+      "trial": 2,
+      "local_frame_equalities": 7,
+      "all_pass": true
+    },
+    {
+      "trial": 3,
+      "local_frame_equalities": 7,
+      "all_pass": true
+    },
+    {
+      "trial": 4,
+      "local_frame_equalities": 7,
+      "all_pass": true
+    },
+    {
+      "trial": 5,
+      "local_frame_equalities": 7,
+      "all_pass": true
+    }
+  ],
+  "summary": {
+    "response_commutators_span_dimension": 3,
+    "forward_cargo_response": "-2",
+    "reverse_cargo_response": "2",
+    "conditional_generation": true,
+    "unique_transport_from_Core_alone": false,
+    "local_covariance_without_reference": false,
+    "local_covariance_with_reference": true
+  },
+  "generation_inputs": [
+    "an ordered path of free-number tensors",
+    "a common ambient Euclidean frame or reference connection",
+    "the minimum-twist/horizontal condition",
+    "short projector arcs for finite steps"
+  ],
+  "independent_audit": false,
+  "Core_modified": false,
+  "scope": "Conditional generation of transport, plus exact nonuniqueness and reference-data certificates; not a unique law implied by the bare Core, not autonomous generation of the driver path, not physical gauge-field dynamics."
+}

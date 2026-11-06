@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "tag": "core-v1.0.0",
+  "commit": "9efc241d38e5ca2cd07f425b747bfb5d67ea0235",
+  "license": "MIT",
+  "version_doi": "10.5281/zenodo.21328471",
+  "concept_doi": "10.5281/zenodo.21328470",
+  "core_modified": false,
+  "companion_tag": "proof-gift-2026-11-06-v0.1"
+}

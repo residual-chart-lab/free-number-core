@@ -1,0 +1,28 @@
+{
+  "id": "FN-GENERAL-PROOFS-001-v0.1",
+  "date_jst": "2026-11-06",
+  "human_request": "Prove the general statements obtainable from the preceding research, rather than leaving them as finite examples.",
+  "fixed_before_checker_run": true,
+  "deliverables": ["precise statements and written proofs", "claim ledger linking old finite studies", "standard-library exact identity checker", "counterexamples at hypotheses' boundaries", "independent Astra review with separate scope"],
+  "proofs": {
+    "T01": "Existing B2 coordinate and response theorem, restated with explicit full insertion formula",
+    "T02": "Five fixed scalar probes are necessary and sufficient for a trace-free symmetric residual",
+    "T03": "All-gap quaternion response is a scaled isometry at every finite tensor length; explicit inverse",
+    "T04": "A response factors through compression iff it is constant on compression fibers",
+    "T05": "Response commutators span the skew matrices",
+    "T06": "Tensor transport and gauge covariance for arbitrary finite graph paths and concatenations",
+    "T07": "Arbitrary-dimensional symmetric matrix first-variation decomposition and minimum generator",
+    "T08": "Three-dimensional first-jet equivariant spectral transport uniqueness, with four-dimensional counterexample",
+    "T09": "Finite shortest line transport on nonorthogonal pairs and failure at orthogonal pairs",
+    "T10": "Reference-assisted transport covariance",
+    "T11": "General stabilizer obstruction to independent-endpoint-frame transport from endpoints alone",
+    "T12": "Spectral gap bound and no continuous extension over all collisions",
+    "T13": "Quadratic spin response is injective for every irreducible spin j>=1 and zero for j=0,1/2",
+    "T14": "Norm, energy/work and axial angular momentum identities for finite quantum spin/classical rotor systems",
+    "T15": "Exact SI/dimensionless scaling for arbitrary positive inertia and energy scale",
+    "T16": "KK Routh reduction and converse lift for arbitrary smooth prescribed background"
+  },
+  "checker_scope": "Finite independent exact checks support identities and conventions; written proofs carry the universally quantified claims. No proof-assistant certification is claimed.",
+  "nonclaims": ["new multiplication of Free Number Core", "fixed-size signature for unbounded tensor length", "all formal gap probes admitted as existing Core operations", "three-dimensional uniqueness in every dimension", "smooth transport through every eigenvalue collision", "physical material calibration or field-equation solution"],
+  "Core_modified": false
+}

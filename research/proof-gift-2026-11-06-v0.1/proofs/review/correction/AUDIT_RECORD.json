@@ -1,0 +1,87 @@
+{
+  "id": "ASTRA-GENERAL-PROOFS-CORRECTION-AUDIT-v0.1",
+  "auditor": "Astra",
+  "date": "2026-11-06",
+  "repository": "[original research workspace]",
+  "source_commit": "3bd56721a8eb53965ed44e124d171a68351f5620",
+  "source_prefix": "original-submissions/ronnie/2026-11-06-general-proofs-correction-v0.1/",
+  "previous_audit_commit": "86414fc13581b95ae34c8f821615542a8df4f487",
+  "source_files": [
+    {
+      "path": "02_SPECTRAL_TRANSPORT_EN.md",
+      "blob_sha": "8422979b3a9f0c771befc7edadb06086ce0817c6",
+      "sha256": "3fe2ac101634d584fe8dd26c6f75087fa869d590a56355304d8cf340db9c79e5",
+      "utf8_bytes": 11517,
+      "git_blob_verified": true
+    },
+    {
+      "path": "CORRECTION.json",
+      "blob_sha": "4e3a1980933187cdd157fdde9632895ac44a3cfb",
+      "sha256": "cbb658702238582e13ffe36e45ca9fee0a7259ffdee192a156319880b28e2520",
+      "utf8_bytes": 761,
+      "git_blob_verified": true
+    },
+    {
+      "path": "extensions/centered_amplitude_checks.py",
+      "blob_sha": "6e0cd3830657fd82593deca0132d8828d05199d1",
+      "sha256": "04fef02b68466a1963ca6e6b527b12bce8c59dc2a117e0e6f04a6580f07fb335",
+      "utf8_bytes": 1739,
+      "git_blob_verified": true
+    },
+    {
+      "path": "run/CENTERED_AMPLITUDE_RESULTS.json",
+      "blob_sha": "957f20ae9c7572d3d1c58ebac250f1e185943691",
+      "sha256": "e4a58de7619dccf75cef5db66414aa979f3bfba1cc8b8234639045b114d6e993",
+      "utf8_bytes": 4080,
+      "git_blob_verified": true
+    },
+    {
+      "path": "exact.py",
+      "blob_sha": "3e339eaeb4def02eecf412c41c60e911bc1e38d0",
+      "sha256": "6b453313839b1582bdcc90202052c923cca9f400316ec413211fad21cd44d036",
+      "utf8_bytes": 3934,
+      "git_blob_verified": true
+    }
+  ],
+  "main_checker_at_correction_commit": {
+    "path": "original-submissions/ronnie/2026-11-06-general-proofs-draft1/study/checker.py",
+    "blob_sha": "2316a2d4fd56a1f1a5f0ae72e868c375b1d4d946",
+    "sha256": "39c535b69f6633d65549153496ec33c22d2a2203dc02d2afce512edf68215dea",
+    "unchanged_from_previous_audit": true
+  },
+  "verdict": "PASS_UNDER_STATED_HYPOTHESES",
+  "finding": {
+    "id": "F01",
+    "previous_severity": "P2",
+    "status": "CLOSED_VERIFIED"
+  },
+  "scope": "Previous 16 principal claims and two supplements, with only the spectral document replaced by the corrected source listed here",
+  "diff": {
+    "changed_paragraphs": 1,
+    "other_text_identical": true,
+    "declared_old_and_new_sha256_verified": true,
+    "exact_module_byte_identical": true
+  },
+  "execution": {
+    "command": "python -I -B source/extensions/centered_amplitude_checks.py --out CENTERED_AMPLITUDE_RESULTS.json",
+    "status": "PASS",
+    "nonisotropic_cases": 36,
+    "isotropic_cases": 4,
+    "original_counterexample_verified": true,
+    "arithmetic": "Fraction exact rational",
+    "result_byte_identical_to_source": true,
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.39"
+  },
+  "limitations": [
+    "Previous main checker and independent 53 checks not re-executed in this narrow follow-up",
+    "Proof established by algebra separately from finite regression",
+    "No proof-assistant certification or physical/novelty certification",
+    "Future final package not yet inspected"
+  ],
+  "artifact_sha256": {
+    "REPORT_JA.md": "e3b2bcd9ae7964de82f530636a3c77379b268d798672c572ead615eab77ea3b1",
+    "VERIFIED_DIFF.patch": "1abc9fe983fce3f112981f77c0887612aab229384ace7b27d4f795c34bbb5586",
+    "CENTERED_AMPLITUDE_RESULTS.json": "e4a58de7619dccf75cef5db66414aa979f3bfba1cc8b8234639045b114d6e993"
+  }
+}

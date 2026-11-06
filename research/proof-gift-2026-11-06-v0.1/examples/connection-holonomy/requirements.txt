@@ -1,0 +1,2 @@
+# Numeric experiment: Python 3.12+ standard library only.
+# Optional figure regeneration: matplotlib.

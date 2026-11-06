@@ -1,0 +1,44 @@
+{
+  "date_read_jst": "2026-11-06",
+  "fixed_Core": {
+    "repository": "residual-chart-lab/free-number-core",
+    "commit": "9efc241d38e5ca2cd07f425b747bfb5d67ea0235",
+    "path": "core/04-length-two-exact-splitting.md",
+    "sha256": "60742f59f7bdfc56f4edf4da262e2a0a5f1d6908322469c7b055dacc8a9306d0",
+    "url": "https://github.com/residual-chart-lab/free-number-core/blob/9efc241d38e5ca2cd07f425b747bfb5d67ea0235/core/04-length-two-exact-splitting.md",
+    "read_scope": "Orthogonal tensor decomposition, compression, exact splitting; existing residual response A2=-2S and the deliberate non-claims. Unchanged source hash confirmed.",
+    "Core_modified": false
+  },
+  "primary_references": [
+    {
+      "author": "J.S. Milne",
+      "title": "Class Field Theory v4.03",
+      "url": "https://www.jmilne.org/math/CourseNotes/CFTc.pdf",
+      "scope": "Chapter IV, Brauer groups: central simple algebras and their left/right actions; background for the one-gap case. Explicit all-gap norm and inverse are proved in this note."
+    },
+    {
+      "authors": "Joseph E. Avron and Alexander Elgart",
+      "title": "Adiabatic Theorem without a Gap Condition",
+      "url": "https://arxiv.org/abs/math-ph/9805022",
+      "pdf": "https://arxiv.org/pdf/math-ph/9805022",
+      "version": "v4, 19 April 1999",
+      "read_scope": "Geometric evolution discussion on page 5; equations (4)-(6) and the intertwining identity on pages 7-8 of the PDF.",
+      "used_for": "An existing projector-transport construction using [dot P,P]. No adiabatic theorem, quantum Hamiltonian approximation or physical transitionless protocol is claimed for this new finite matrix model."
+    },
+    {
+      "authors": "Arecchi, Courtens, Gilmore, Thomas",
+      "title": "Atomic Coherent States in Quantum Optics",
+      "url": "https://doi.org/10.1103/PhysRevA.6.2211",
+      "scope": "Original research abstract and bibliographic record. Coherent-state moments and trace constants used here are derived explicitly, not assumed from an unseen full article."
+    },
+    {
+      "author": "G.F. Torres del Castillo",
+      "title": "An introduction to the Kaluza-Klein formulation",
+      "url": "https://rmf.smf.mx/ojs/index.php/rmf-e/article/download/4451/5784/13959",
+      "scope": "Original author exposition of the prescribed metric and geodesic formulation; general Routh calculation and converse are written explicitly here."
+    }
+  ],
+  "priority": "No new-discovery priority is claimed for standard quaternion algebra, spectral transport, quadrupole identities, Noether balances or KK reduction.",
+  "proofs": "The proofs are self-contained given the stated standard matrix/ODE/spin assumptions. References distinguish established constructions from the present organization and extensions.",
+  "publication_attribution_addendum": "See ../CORE_RELATIONSHIP.md: frozen Core 08 and 09 already establish all-grade reconstruction/composition. Original read-scope is retained as research history."
+}

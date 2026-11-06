@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "source_sha256": "d11ab3bcb8f03a19ad37ef392d8d3eb908b62d25155ad880a8fd4fe8c066ba19",
+  "cases": [
+    {
+      "length": 1,
+      "rank": 3,
+      "tensor_dimension": 3,
+      "quaternion_evaluations": 1,
+      "tensor_norm_squared": "30",
+      "restricted_response_norm_squared": "30",
+      "recursive_inverse_exact": true
+    },
+    {
+      "length": 2,
+      "rank": 9,
+      "tensor_dimension": 9,
+      "quaternion_evaluations": 3,
+      "tensor_norm_squared": "731/18",
+      "restricted_response_norm_squared": "895/6",
+      "recursive_inverse_exact": true
+    },
+    {
+      "length": 3,
+      "rank": 27,
+      "tensor_dimension": 27,
+      "quaternion_evaluations": 9,
+      "tensor_norm_squared": "5045/48",
+      "restricted_response_norm_squared": "107365/144",
+      "recursive_inverse_exact": true
+    },
+    {
+      "length": 4,
+      "rank": 81,
+      "tensor_dimension": 81,
+      "quaternion_evaluations": 27,
+      "tensor_norm_squared": "7279/24",
+      "restricted_response_norm_squared": "457843/72",
+      "recursive_inverse_exact": true
+    }
+  ],
+  "scope": "Finite checks at lengths 1..4; all-length proof is the induction in 04_IMAGINARY_GAPS_EN.md."
+}

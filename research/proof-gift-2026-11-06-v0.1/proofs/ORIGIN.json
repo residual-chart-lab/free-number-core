@@ -1,0 +1,53 @@
+{
+  "id": "FN-GENERAL-PROOFS-001-v0.1",
+  "owner": "Aki",
+  "author": "Ronnie",
+  "date_jst": "2026-11-06",
+  "human_request": "Obtain the generally provable statements, not merely finite tests.",
+  "fixed_models_unchanged": {
+    "KK-001": {
+      "path": "experiments/KK-001-v0.1/model.py",
+      "sha256": "6c999a36a51588472be4fb9790142204a1dd3d2ed42cf0cc39b21ee76fd0c24e"
+    },
+    "SPIN-001": {
+      "path": "experiments/SPIN-001-v0.1/model.py",
+      "sha256": "71a92821e342917c8020252e6e60a0566734f06ce2b44027aee533777e567855"
+    },
+    "SPIN-ROTOR-001": {
+      "path": "experiments/SPIN-ROTOR-001-v0.1/model.py",
+      "sha256": "5637cf5e46ff7fe3112228a0eec3f2d054078ee30d6335abd734a5b4f6015b83"
+    },
+    "ROTOR-SI-001": {
+      "path": "experiments/ROTOR-SI-001-v0.1/model.py",
+      "sha256": "62bc9038688b113bb2262ce37f0816bb21f58262d1d6d35eab44eef33263aea7"
+    },
+    "INPUT-ROTOR-001": {
+      "path": "experiments/INPUT-ROTOR-001-v0.1/model.py",
+      "sha256": "aad91d7481fd72173890406aa25738dfffc8fd75c44e2ad1316e9e19ae51533f"
+    },
+    "KK-FN-HOLONOMY-001": {
+      "path": "experiments/KK-FN-HOLONOMY-001-v0.1/model.py",
+      "sha256": "1a4c0451999b6ba253d370fd2b4891432a03cd72e0c7ccaf5617bb573abccbcc"
+    },
+    "FN-GENERATED-CONNECTION-001": {
+      "path": "experiments/FN-GENERATED-CONNECTION-001-v0.1/model.py",
+      "sha256": "c4e065b9bb331c32c799ebec0734fa9a200182765ab538ad400b3239ff361706"
+    },
+    "FN-LOCAL-RULE-001": {
+      "path": "experiments/FN-LOCAL-RULE-001-v0.1/model.py",
+      "sha256": "8c56e1585b44d4097c5d512ac4629b38eab273e3456b8b4360042242f5fdfe11"
+    }
+  },
+  "Core_note_sha256": "60742f59f7bdfc56f4edf4da262e2a0a5f1d6908322469c7b055dacc8a9306d0",
+  "Core_modified": false,
+  "theorems_are_written_proofs": true,
+  "finite_checks_are_not_universal_proofs": true,
+  "proof_assistant_used": false,
+  "main_draft_commit": "698cc1cd500b3f4c8cd05e1d50c861c6e0b437a3",
+  "pure_gap_supplement_commit": "b0e0d181863412dc5f5c42450382af0ed3e26a4a",
+  "dimension_supplement_commit": "8a6f918659a4c4ed7b6b331306cec29cfa655d38",
+  "F01_correction_commit": "3bd56721a8eb53965ed44e124d171a68351f5620",
+  "supplement_timing": "Pure-imaginary gaps and the all-dimensional line classification were added as deductive supplements after the fixed main checker run; separately checked and independently reviewed.",
+  "audit_status": "AUDIT_STATUS.json",
+  "correction_history": "review/F01_CORRECTION.json"
+}

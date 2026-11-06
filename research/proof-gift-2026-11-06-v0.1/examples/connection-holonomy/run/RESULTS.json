@@ -1,0 +1,128 @@
+{
+  "id": "KK-FN-HOLONOMY-001-v0.1",
+  "status": "PASS",
+  "source_sha256": "1a4c0451999b6ba253d370fd2b4891432a03cd72e0c7ccaf5617bb573abccbcc",
+  "protocol_sha256": "1fb0cfe45d511b4eddff5a65a015fd210d8009cb734b34ceaa54eb9c7bc08fa3",
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "arithmetic": "fractions.Fraction; exact; floats never used for assertions"
+  },
+  "checks": {
+    "all_links_are_exact_units": true,
+    "reverse_links_are_inverses": true,
+    "prescribed_loop_holonomies": true,
+    "x_direct_loop_and_compression_match": true,
+    "x_residual_in_kernel": true,
+    "x_residual_response": true,
+    "x_coordinates_restore_tensor": true,
+    "x_coordinates_restore_midpoint_action": true,
+    "y_direct_loop_and_compression_match": true,
+    "y_residual_in_kernel": true,
+    "y_residual_response": true,
+    "y_coordinates_restore_tensor": true,
+    "y_coordinates_restore_midpoint_action": true,
+    "full_endpoint_holonomies_equal": true,
+    "no_probe_readouts_equal": true,
+    "midpoint_readout_contrast": true,
+    "midpoint_trace_still_equal": true,
+    "all_appended_controls_equal": true,
+    "value_only_lift_is_not_a_unitary_prediction": true,
+    "same_endpoints_different_transported_residuals": true,
+    "route_response_contrast": true,
+    "both_transports_leave_compressed_word_value_equal": true,
+    "transport_and_reverse_restore_residual": true,
+    "loop_then_return_can_rotate_residual": true,
+    "ordinary_axis_tensor_calculation_matches": true,
+    "residual_response_transport_covariant": true,
+    "independent_exact_complex_matrix_representation": true,
+    "U1_control_no_midpoint_contrast": true,
+    "independent_local_gauge_trial_0": true,
+    "independent_local_gauge_trial_1": true,
+    "independent_local_gauge_trial_2": true,
+    "independent_local_gauge_trial_3": true,
+    "independent_local_gauge_trial_4": true,
+    "independent_local_gauge_trial_5": true,
+    "independent_local_gauge_trial_6": true,
+    "independent_local_gauge_trial_7": true
+  },
+  "gauge_trials": [
+    {
+      "trial": 0,
+      "vertices": 8,
+      "exact_equalities": 18,
+      "all_pass": true
+    },
+    {
+      "trial": 1,
+      "vertices": 8,
+      "exact_equalities": 18,
+      "all_pass": true
+    },
+    {
+      "trial": 2,
+      "vertices": 8,
+      "exact_equalities": 18,
+      "all_pass": true
+    },
+    {
+      "trial": 3,
+      "vertices": 8,
+      "exact_equalities": 18,
+      "all_pass": true
+    },
+    {
+      "trial": 4,
+      "vertices": 8,
+      "exact_equalities": 18,
+      "all_pass": true
+    },
+    {
+      "trial": 5,
+      "vertices": 8,
+      "exact_equalities": 18,
+      "all_pass": true
+    },
+    {
+      "trial": 6,
+      "vertices": 8,
+      "exact_equalities": 18,
+      "all_pass": true
+    },
+    {
+      "trial": 7,
+      "vertices": 8,
+      "exact_equalities": 18,
+      "all_pass": true
+    }
+  ],
+  "display_summary": {
+    "unprobed": [
+      0.0,
+      0.0
+    ],
+    "midpoint": [
+      0.96,
+      -0.96
+    ],
+    "appended": [
+      0.96,
+      0.96
+    ],
+    "same_endpoint_routes_residual_response": [
+      -1.3333333333333333,
+      0.5098666666666667
+    ]
+  },
+  "independent_audit": false,
+  "Core_modified": false,
+  "interpretation": "A gauge-covariant exterior encoding of prescribed loop protocols. Equal completed holonomy has equal appended evolution; the difference concerns midpoint interventions and connection transport of the retained protocol descriptor.",
+  "scope_limits": [
+    "no KK field equations or geodesics solved",
+    "no material or needle dynamics",
+    "no new force or extra-dimension observation",
+    "no claim that residuals are the extra spin components of a KK particle",
+    "no claim of superiority over ordinary tensors or storing the full path",
+    "no Core modification",
+    "no free response difference after identical full endpoint state without a midpoint interaction"
+  ]
+}

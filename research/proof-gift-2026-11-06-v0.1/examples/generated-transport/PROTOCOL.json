@@ -1,0 +1,33 @@
+{
+  "id": "FN-GENERATED-CONNECTION-001-v0.1",
+  "date_jst": "2026-11-05",
+  "owner": "Aki",
+  "author": "Ronnie",
+  "question": "How far can a transport law be generated from ordered B2 residuals and their existing response operators, rather than supplied as independent edge rotations?",
+  "arithmetic": "exact rational matrices; no floating point used for decisions",
+  "Core": "unchanged note 04, A2(S)=-2S and B2=H plus symmetric trace-free residual",
+  "generation": "commutators of response operators supply skew generators; on the uniaxial stratum use the isolated rank-one projector and minimal-twist direct rotation",
+  "additional_choices": ["an ordered path of free-number tensors", "a common ambient Euclidean frame or reference connection", "the minimum-twist/horizontal condition", "short projector arcs for finite steps"],
+  "driver_family": "S=a(P-I/3), P real rank-one orthogonal projector, a nonzero; the amplitude and P are recovered from invariants of S",
+  "cargo": [["0","1","0"],["1","0","0"],["0","0","0"]],
+  "probe": ["0","0","1"],
+  "analyzer": ["1","0","0"],
+  "gauge_trials": 6,
+  "expected_results": [
+    "response commutators of five independent residual basis tensors span so(3)",
+    "forward and reverse projector triangles return all driver tensors but have opposite quarter-turn holonomies",
+    "zero-valued cargo has opposite residual-response readouts after these two loops",
+    "amplitude changes and subdivisions on the same short arcs do not change generated transport",
+    "out-and-back transport is identity",
+    "constant-axis amplitude changes generate identity under the selected geometric rule",
+    "zero residual and unsupported spectral families are explicitly rejected, not assigned invented axes",
+    "a directly orthogonal projector pair is ambiguous and needs path refinement",
+    "a stabilizer counterexample prevents unique transport from compatibility alone",
+    "global frame covariance holds; independent local frame covariance needs reference-link data",
+    "transforming the reference connection restores local covariance"
+  ],
+  "scope": "Conditional generation of transport, plus exact nonuniqueness and reference-data certificates; not a unique law implied by the bare Core, not autonomous generation of the driver path, not physical gauge-field dynamics.",
+  "independent_audit": "NOT_PERFORMED",
+  "input_construction": "prepare_inputs.py specifies free-number tensors from rational directions only to build INPUT.json. The transport generator reads tensors/residuals, never directions or assigned rotation links.",
+  "construction_disclosure": "Designed analytical examples and expected identities, not blinded predictions."
+}

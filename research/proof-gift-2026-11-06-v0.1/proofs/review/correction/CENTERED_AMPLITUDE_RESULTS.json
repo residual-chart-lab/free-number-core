@@ -1,0 +1,246 @@
+{
+  "status": "PASS",
+  "finding": "Astra F01",
+  "source_sha256": "04fef02b68466a1963ca6e6b527b12bce8c59dc2a117e0e6f04a6580f07fb335",
+  "counterexample": {
+    "S": [
+      [
+        "2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "old_uncentered_formula": "5",
+    "corrected_centered_formula": "1"
+  },
+  "nonisotropic_cases": [
+    {
+      "shift": "-3",
+      "a": "-2",
+      "trace": "-11",
+      "recovered": "-2"
+    },
+    {
+      "shift": "-3",
+      "a": "-2",
+      "trace": "-11",
+      "recovered": "-2"
+    },
+    {
+      "shift": "-3",
+      "a": "-2",
+      "trace": "-11",
+      "recovered": "-2"
+    },
+    {
+      "shift": "-3",
+      "a": "1",
+      "trace": "-8",
+      "recovered": "1"
+    },
+    {
+      "shift": "-3",
+      "a": "1",
+      "trace": "-8",
+      "recovered": "1"
+    },
+    {
+      "shift": "-3",
+      "a": "1",
+      "trace": "-8",
+      "recovered": "1"
+    },
+    {
+      "shift": "-3",
+      "a": "3/5",
+      "trace": "-42/5",
+      "recovered": "3/5"
+    },
+    {
+      "shift": "-3",
+      "a": "3/5",
+      "trace": "-42/5",
+      "recovered": "3/5"
+    },
+    {
+      "shift": "-3",
+      "a": "3/5",
+      "trace": "-42/5",
+      "recovered": "3/5"
+    },
+    {
+      "shift": "0",
+      "a": "-2",
+      "trace": "-2",
+      "recovered": "-2"
+    },
+    {
+      "shift": "0",
+      "a": "-2",
+      "trace": "-2",
+      "recovered": "-2"
+    },
+    {
+      "shift": "0",
+      "a": "-2",
+      "trace": "-2",
+      "recovered": "-2"
+    },
+    {
+      "shift": "0",
+      "a": "1",
+      "trace": "1",
+      "recovered": "1"
+    },
+    {
+      "shift": "0",
+      "a": "1",
+      "trace": "1",
+      "recovered": "1"
+    },
+    {
+      "shift": "0",
+      "a": "1",
+      "trace": "1",
+      "recovered": "1"
+    },
+    {
+      "shift": "0",
+      "a": "3/5",
+      "trace": "3/5",
+      "recovered": "3/5"
+    },
+    {
+      "shift": "0",
+      "a": "3/5",
+      "trace": "3/5",
+      "recovered": "3/5"
+    },
+    {
+      "shift": "0",
+      "a": "3/5",
+      "trace": "3/5",
+      "recovered": "3/5"
+    },
+    {
+      "shift": "1",
+      "a": "-2",
+      "trace": "1",
+      "recovered": "-2"
+    },
+    {
+      "shift": "1",
+      "a": "-2",
+      "trace": "1",
+      "recovered": "-2"
+    },
+    {
+      "shift": "1",
+      "a": "-2",
+      "trace": "1",
+      "recovered": "-2"
+    },
+    {
+      "shift": "1",
+      "a": "1",
+      "trace": "4",
+      "recovered": "1"
+    },
+    {
+      "shift": "1",
+      "a": "1",
+      "trace": "4",
+      "recovered": "1"
+    },
+    {
+      "shift": "1",
+      "a": "1",
+      "trace": "4",
+      "recovered": "1"
+    },
+    {
+      "shift": "1",
+      "a": "3/5",
+      "trace": "18/5",
+      "recovered": "3/5"
+    },
+    {
+      "shift": "1",
+      "a": "3/5",
+      "trace": "18/5",
+      "recovered": "3/5"
+    },
+    {
+      "shift": "1",
+      "a": "3/5",
+      "trace": "18/5",
+      "recovered": "3/5"
+    },
+    {
+      "shift": "5/7",
+      "a": "-2",
+      "trace": "1/7",
+      "recovered": "-2"
+    },
+    {
+      "shift": "5/7",
+      "a": "-2",
+      "trace": "1/7",
+      "recovered": "-2"
+    },
+    {
+      "shift": "5/7",
+      "a": "-2",
+      "trace": "1/7",
+      "recovered": "-2"
+    },
+    {
+      "shift": "5/7",
+      "a": "1",
+      "trace": "22/7",
+      "recovered": "1"
+    },
+    {
+      "shift": "5/7",
+      "a": "1",
+      "trace": "22/7",
+      "recovered": "1"
+    },
+    {
+      "shift": "5/7",
+      "a": "1",
+      "trace": "22/7",
+      "recovered": "1"
+    },
+    {
+      "shift": "5/7",
+      "a": "3/5",
+      "trace": "96/35",
+      "recovered": "3/5"
+    },
+    {
+      "shift": "5/7",
+      "a": "3/5",
+      "trace": "96/35",
+      "recovered": "3/5"
+    },
+    {
+      "shift": "5/7",
+      "a": "3/5",
+      "trace": "96/35",
+      "recovered": "3/5"
+    }
+  ],
+  "isotropic_separate_branch_cases": 4,
+  "scope": "Finite regression; general correction follows from S0=a(P-I/3), tr(S0^2)=2a^2/3 and tr(S0^3)=2a^3/9."
+}

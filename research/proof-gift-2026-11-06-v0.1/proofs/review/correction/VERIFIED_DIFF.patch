@@ -1,0 +1,11 @@
+--- draft1/02_SPECTRAL_TRANSPORT_EN.md
++++ correction/02_SPECTRAL_TRANSPORT_EN.md
+@@ -59,7 +59,7 @@
+ 
+ These cases exhaust real symmetric 3-by-3 matrices. ∎
+ 
+-The same proof allows any additional rotation-invariant scalar parameters: the stabilizer fixes them too. Scalars such as an external time do not by themselves permit an axial twist. Directional extra data are different. For rational uniaxial data the amplitude also has the rational formula `a=3 tr(S^3)/tr(S^2)`; the square root used in the old first-jet checker is therefore exact on every valid rational input. More generally T07's rational minimum linear solve avoids a finite-step square root altogether.
++The same proof allows any additional rotation-invariant scalar parameters: the stabilizer fixes them too. Scalars such as an external time do not by themselves permit an axial twist. Directional extra data are different. For a rational **nonisotropic uniaxial** matrix S, first center it: `S0=S-tr(S)I/3`. Then `S0=a(P-I/3)` and `a=3 tr(S0^3)/tr(S0^2)`. In the trace-free residual domain S0=S, so the square root used in the old first-jet checker is exact on every valid rational input of that domain. The isotropic case has S0=0 and is handled by the separate isotropic branch, without this quotient. More generally T07's rational minimum linear solve avoids a finite-step square root altogether.
+ 
+ **Why the assumptions matter.**
+ 

@@ -1,0 +1,874 @@
+{
+  "tomography": [
+    {
+      "length": 1,
+      "tensor_dimension": 4,
+      "pure_imaginary_dimension": 3,
+      "quaternion_evaluations": 1,
+      "Gram_factor": 1,
+      "Gram_diagonal_and_inverse_exact": true
+    },
+    {
+      "length": 2,
+      "tensor_dimension": 16,
+      "pure_imaginary_dimension": 9,
+      "quaternion_evaluations": 4,
+      "Gram_factor": 4,
+      "Gram_diagonal_and_inverse_exact": true
+    },
+    {
+      "length": 3,
+      "tensor_dimension": 64,
+      "pure_imaginary_dimension": 27,
+      "quaternion_evaluations": 16,
+      "Gram_factor": 16,
+      "Gram_diagonal_and_inverse_exact": true
+    },
+    {
+      "length": 4,
+      "tensor_dimension": 256,
+      "pure_imaginary_dimension": 81,
+      "quaternion_evaluations": 64,
+      "Gram_factor": 64,
+      "Gram_diagonal_and_inverse_exact": true
+    }
+  ],
+  "spectral_cases": [
+    {
+      "eigenvalues": [
+        1,
+        -1
+      ],
+      "dimension": 2,
+      "rank": 1,
+      "kernel_dimension": 0,
+      "coefficients": [
+        "1/3"
+      ],
+      "Omega": [
+        [
+          "0",
+          "-1/3"
+        ],
+        [
+          "1/3",
+          "0"
+        ]
+      ],
+      "rotated_Omega": [
+        [
+          "0",
+          "-1/3"
+        ],
+        [
+          "1/3",
+          "0"
+        ]
+      ]
+    },
+    {
+      "eigenvalues": [
+        0,
+        0
+      ],
+      "dimension": 2,
+      "rank": 0,
+      "kernel_dimension": 1,
+      "coefficients": [
+        "0"
+      ],
+      "Omega": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "rotated_Omega": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ]
+    },
+    {
+      "eigenvalues": [
+        1,
+        0,
+        -1
+      ],
+      "dimension": 3,
+      "rank": 3,
+      "kernel_dimension": 0,
+      "coefficients": [
+        "1/3",
+        "1/2",
+        "3/5"
+      ],
+      "Omega": [
+        [
+          "0",
+          "-1/3",
+          "-1/2"
+        ],
+        [
+          "1/3",
+          "0",
+          "-3/5"
+        ],
+        [
+          "1/2",
+          "3/5",
+          "0"
+        ]
+      ],
+      "rotated_Omega": [
+        [
+          "0",
+          "1/3",
+          "9/50"
+        ],
+        [
+          "-1/3",
+          "0",
+          "-19/25"
+        ],
+        [
+          "-9/50",
+          "19/25",
+          "0"
+        ]
+      ]
+    },
+    {
+      "eigenvalues": [
+        2,
+        -1,
+        -1
+      ],
+      "dimension": 3,
+      "rank": 2,
+      "kernel_dimension": 1,
+      "coefficients": [
+        "1/3",
+        "1/2",
+        "0"
+      ],
+      "Omega": [
+        [
+          "0",
+          "-1/3",
+          "-1/2"
+        ],
+        [
+          "1/3",
+          "0",
+          "0"
+        ],
+        [
+          "1/2",
+          "0",
+          "0"
+        ]
+      ],
+      "rotated_Omega": [
+        [
+          "0",
+          "1/3",
+          "-3/10"
+        ],
+        [
+          "-1/3",
+          "0",
+          "-2/5"
+        ],
+        [
+          "3/10",
+          "2/5",
+          "0"
+        ]
+      ]
+    },
+    {
+      "eigenvalues": [
+        0,
+        0,
+        0
+      ],
+      "dimension": 3,
+      "rank": 0,
+      "kernel_dimension": 3,
+      "coefficients": [
+        "0",
+        "0",
+        "0"
+      ],
+      "Omega": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "rotated_Omega": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ]
+    },
+    {
+      "eigenvalues": [
+        3,
+        1,
+        -1,
+        -3
+      ],
+      "dimension": 4,
+      "rank": 6,
+      "kernel_dimension": 0,
+      "coefficients": [
+        "1/3",
+        "1/2",
+        "3/5",
+        "2/3",
+        "5/7",
+        "3/4"
+      ],
+      "Omega": [
+        [
+          "0",
+          "-1/3",
+          "-1/2",
+          "-3/5"
+        ],
+        [
+          "1/3",
+          "0",
+          "-2/3",
+          "-5/7"
+        ],
+        [
+          "1/2",
+          "2/3",
+          "0",
+          "-3/4"
+        ],
+        [
+          "3/5",
+          "5/7",
+          "3/4",
+          "0"
+        ]
+      ],
+      "rotated_Omega": [
+        [
+          "0",
+          "-1/3",
+          "-1439/13650",
+          "27/91"
+        ],
+        [
+          "1/3",
+          "0",
+          "1208/2275",
+          "-99/91"
+        ],
+        [
+          "1439/13650",
+          "-1208/2275",
+          "0",
+          "-3/4"
+        ],
+        [
+          "-27/91",
+          "99/91",
+          "3/4",
+          "0"
+        ]
+      ]
+    },
+    {
+      "eigenvalues": [
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "dimension": 4,
+      "rank": 4,
+      "kernel_dimension": 2,
+      "coefficients": [
+        "0",
+        "1/2",
+        "3/5",
+        "2/3",
+        "5/7",
+        "0"
+      ],
+      "Omega": [
+        [
+          "0",
+          "0",
+          "-1/2",
+          "-3/5"
+        ],
+        [
+          "0",
+          "0",
+          "-2/3",
+          "-5/7"
+        ],
+        [
+          "1/2",
+          "2/3",
+          "0",
+          "0"
+        ],
+        [
+          "3/5",
+          "5/7",
+          "0",
+          "0"
+        ]
+      ],
+      "rotated_Omega": [
+        [
+          "0",
+          "0",
+          "-1439/13650",
+          "27/91"
+        ],
+        [
+          "0",
+          "0",
+          "1208/2275",
+          "-99/91"
+        ],
+        [
+          "1439/13650",
+          "-1208/2275",
+          "0",
+          "0"
+        ],
+        [
+          "-27/91",
+          "99/91",
+          "0",
+          "0"
+        ]
+      ]
+    },
+    {
+      "eigenvalues": [
+        3,
+        -1,
+        -1,
+        -1
+      ],
+      "dimension": 4,
+      "rank": 3,
+      "kernel_dimension": 3,
+      "coefficients": [
+        "1/3",
+        "1/2",
+        "3/5",
+        "0",
+        "0",
+        "0"
+      ],
+      "Omega": [
+        [
+          "0",
+          "-1/3",
+          "-1/2",
+          "-3/5"
+        ],
+        [
+          "1/3",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/2",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "3/5",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "rotated_Omega": [
+        [
+          "0",
+          "-1/3",
+          "141/650",
+          "-27/65"
+        ],
+        [
+          "1/3",
+          "0",
+          "94/325",
+          "-36/65"
+        ],
+        [
+          "-141/650",
+          "-94/325",
+          "0",
+          "0"
+        ],
+        [
+          "27/65",
+          "36/65",
+          "0",
+          "0"
+        ]
+      ]
+    },
+    {
+      "eigenvalues": [
+        2,
+        2,
+        -1,
+        -1,
+        -2
+      ],
+      "dimension": 5,
+      "rank": 8,
+      "kernel_dimension": 2,
+      "coefficients": [
+        "0",
+        "1/2",
+        "3/5",
+        "2/3",
+        "5/7",
+        "3/4",
+        "7/9",
+        "0",
+        "9/11",
+        "5/6"
+      ],
+      "Omega": [
+        [
+          "0",
+          "0",
+          "-1/2",
+          "-3/5",
+          "-2/3"
+        ],
+        [
+          "0",
+          "0",
+          "-5/7",
+          "-3/4",
+          "-7/9"
+        ],
+        [
+          "1/2",
+          "5/7",
+          "0",
+          "0",
+          "-9/11"
+        ],
+        [
+          "3/5",
+          "3/4",
+          "0",
+          "0",
+          "-5/6"
+        ],
+        [
+          "2/3",
+          "7/9",
+          "9/11",
+          "5/6",
+          "0"
+        ]
+      ],
+      "rotated_Omega": [
+        [
+          "0",
+          "0",
+          "19/70",
+          "-22/195",
+          "898/2925"
+        ],
+        [
+          "0",
+          "0",
+          "-29/35",
+          "147/260",
+          "-404/325"
+        ],
+        [
+          "-19/70",
+          "29/35",
+          "0",
+          "108/143",
+          "-45/143"
+        ],
+        [
+          "22/195",
+          "-147/260",
+          "-108/143",
+          "0",
+          "-5/6"
+        ],
+        [
+          "-898/2925",
+          "404/325",
+          "45/143",
+          "5/6",
+          "0"
+        ]
+      ]
+    }
+  ],
+  "uniqueness_boundaries": {
+    "splitting_jet": [
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ]
+    ],
+    "extra_twist": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ]
+    ],
+    "dimension4_Omega": [
+      [
+        "0",
+        "-1",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "dimension4_extra": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-1"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ]
+    ]
+  },
+  "collision_family": [
+    {
+      "r": "1",
+      "input_norm_squared": "4",
+      "generator_norm_squared": "1/2"
+    },
+    {
+      "r": "1/2",
+      "input_norm_squared": "5/8",
+      "generator_norm_squared": "2"
+    },
+    {
+      "r": "1/5",
+      "input_norm_squared": "52/625",
+      "generator_norm_squared": "25/2"
+    },
+    {
+      "r": "1/11",
+      "input_norm_squared": "244/14641",
+      "generator_norm_squared": "121/2"
+    }
+  ],
+  "spin_cases": [
+    {
+      "j": "0",
+      "dimension": 1,
+      "residual_rank": 0,
+      "trace_coefficient": "0"
+    },
+    {
+      "j": "1/2",
+      "dimension": 2,
+      "residual_rank": 0,
+      "trace_coefficient": "0"
+    },
+    {
+      "j": "1",
+      "dimension": 3,
+      "residual_rank": 5,
+      "trace_coefficient": "1"
+    },
+    {
+      "j": "3/2",
+      "dimension": 4,
+      "residual_rank": 5,
+      "trace_coefficient": "6"
+    },
+    {
+      "j": "2",
+      "dimension": 5,
+      "residual_rank": 5,
+      "trace_coefficient": "21"
+    },
+    {
+      "j": "3",
+      "dimension": 7,
+      "residual_rank": 5,
+      "trace_coefficient": "126"
+    }
+  ],
+  "paths": {
+    "length": 13,
+    "holonomy": [
+      "-5255112333/11927216405",
+      "-10244355644/11927216405",
+      "490742784/2385443281",
+      "383392800/2385443281"
+    ],
+    "transformed": [
+      "-30190834968/40552535777",
+      "-15949346420/31010762653",
+      "811611708/11927216405",
+      "1107671782449/2635914825505"
+    ]
+  },
+  "KK_jets": {
+    "projection_and_lift": true,
+    "gauge": true,
+    "cases": [
+      {
+        "base_dimension": 2,
+        "trial": 0,
+        "p": "1/7",
+        "phi": "2",
+        "full_projected_acceleration": [
+          "-4093/107800",
+          "16211/1024100"
+        ],
+        "Routh_acceleration": [
+          "-4093/107800",
+          "16211/1024100"
+        ],
+        "independent_field_formula": [
+          "-4093/107800",
+          "16211/1024100"
+        ],
+        "lift_acceleration": "-866473/35843500",
+        "gauge_extra_coordinate_acceleration": "-84243816/1980353375",
+        "exact": true
+      },
+      {
+        "base_dimension": 2,
+        "trial": 1,
+        "p": "2/7",
+        "phi": "2",
+        "full_projected_acceleration": [
+          "-12827/512050",
+          "-2561/512050"
+        ],
+        "Routh_acceleration": [
+          "-12827/512050",
+          "-2561/512050"
+        ],
+        "independent_field_formula": [
+          "-12827/512050",
+          "-2561/512050"
+        ],
+        "lift_acceleration": "-56543/17921750",
+        "gauge_extra_coordinate_acceleration": "-23088029/792141350",
+        "exact": true
+      },
+      {
+        "base_dimension": 3,
+        "trial": 0,
+        "p": "1/7",
+        "phi": "2",
+        "full_projected_acceleration": [
+          "-7755127/165904200",
+          "-189389/82952100",
+          "-2837561/55301400"
+        ],
+        "Routh_acceleration": [
+          "-7755127/165904200",
+          "-189389/82952100",
+          "-2837561/55301400"
+        ],
+        "independent_field_formula": [
+          "-7755127/165904200",
+          "-189389/82952100",
+          "-2837561/55301400"
+        ],
+        "lift_acceleration": "-26551171/725830875",
+        "gauge_extra_coordinate_acceleration": "-7070779756/160408623375",
+        "exact": true
+      },
+      {
+        "base_dimension": 3,
+        "trial": 1,
+        "p": "2/7",
+        "phi": "2",
+        "full_projected_acceleration": [
+          "1244413/41476050",
+          "-595547/13825350",
+          "-68051/2765070"
+        ],
+        "Routh_acceleration": [
+          "1244413/41476050",
+          "-595547/13825350",
+          "-68051/2765070"
+        ],
+        "independent_field_formula": [
+          "1244413/41476050",
+          "-595547/13825350",
+          "-68051/2765070"
+        ],
+        "lift_acceleration": "-3850013/241943625",
+        "gauge_extra_coordinate_acceleration": "-49452341/1944346950",
+        "exact": true
+      },
+      {
+        "base_dimension": 4,
+        "trial": 0,
+        "p": "1/7",
+        "phi": "2",
+        "full_projected_acceleration": [
+          "19216903/1824946200",
+          "-39439129/912473100",
+          "-34111171/608315400",
+          "-224347/10862775"
+        ],
+        "Routh_acceleration": [
+          "19216903/1824946200",
+          "-39439129/912473100",
+          "-34111171/608315400",
+          "-224347/10862775"
+        ],
+        "independent_field_formula": [
+          "19216903/1824946200",
+          "-39439129/912473100",
+          "-34111171/608315400",
+          "-224347/10862775"
+        ],
+        "lift_acceleration": "-881923907/17565107175",
+        "gauge_extra_coordinate_acceleration": "-115102043954/3881888685675",
+        "exact": true
+      },
+      {
+        "base_dimension": 4,
+        "trial": 1,
+        "p": "2/7",
+        "phi": "2",
+        "full_projected_acceleration": [
+          "23724334/228118275",
+          "-5480017/152078850",
+          "170722/15207885",
+          "1818847/41476050"
+        ],
+        "Routh_acceleration": [
+          "23724334/228118275",
+          "-5480017/152078850",
+          "170722/15207885",
+          "1818847/41476050"
+        ],
+        "independent_field_formula": [
+          "23724334/228118275",
+          "-5480017/152078850",
+          "170722/15207885",
+          "1818847/41476050"
+        ],
+        "lift_acceleration": "-2255031547/29275178625",
+        "gauge_extra_coordinate_acceleration": "-429688438189/6469814476125",
+        "exact": true
+      }
+    ],
+    "method": "Exact second-order multivariate automatic differentiation of the full and Routh Lagrangians, separately solved Euler-Lagrange systems; polynomial x-dependent metric/A/phi and quadratic gauge functions."
+  }
+}

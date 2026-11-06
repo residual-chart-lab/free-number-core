@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "source_sha256": "cb259423b2cf14e31b1ffa5b64ce83e4767ca24e96e5add1a4330e2593f8a2db",
+  "cases": [
+    {
+      "underlying_dimension": 2,
+      "SO_free_twists": 0,
+      "O_free_twists": 0
+    },
+    {
+      "underlying_dimension": 3,
+      "SO_free_twists": 0,
+      "O_free_twists": 0
+    },
+    {
+      "underlying_dimension": 4,
+      "SO_free_twists": 1,
+      "O_free_twists": 0
+    },
+    {
+      "underlying_dimension": 5,
+      "SO_free_twists": 0,
+      "O_free_twists": 0
+    },
+    {
+      "underlying_dimension": 6,
+      "SO_free_twists": 0,
+      "O_free_twists": 0
+    },
+    {
+      "underlying_dimension": 7,
+      "SO_free_twists": 0,
+      "O_free_twists": 0
+    }
+  ],
+  "scope": "Finite invariant-subspace verification in dimensions 2..7; all-dimensional proof is in 05_LINE_DIMENSION_CLASSIFICATION_EN.md."
+}

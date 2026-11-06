@@ -1,0 +1,886 @@
+{
+  "status": "PASS",
+  "count": 35,
+  "checks": {
+    "T03_length5_all_inverse_coefficients": true,
+    "T03_length5_exact_norm_identity": true,
+    "T03_all_gap_concatenation_with_nonbasis_probes": true,
+    "T07_full_symmetric_D_case_0": true,
+    "T12_gap_bound_case_0": true,
+    "T07_full_symmetric_D_case_1": true,
+    "T07_full_symmetric_D_case_2": true,
+    "T12_gap_bound_case_2": true,
+    "T07_full_symmetric_D_case_3": true,
+    "T07_full_symmetric_D_case_4": true,
+    "T12_gap_bound_case_4": true,
+    "T07_full_symmetric_D_case_5": true,
+    "T12_gap_bound_case_5": true,
+    "T07_full_symmetric_D_case_6": true,
+    "T12_gap_bound_case_6": true,
+    "T07_full_symmetric_D_case_7": true,
+    "T12_gap_bound_case_7": true,
+    "T07_rational_solve_with_irrational_eigenvalues": true,
+    "T08_uncentered_amplitude_counterexample": true,
+    "T08_splitting_term_preserves_only_instantaneous_orbit_component": true,
+    "T13_Hermitian_Gram_and_exact_weight_sum_2j_0": true,
+    "T13_Hermitian_Gram_and_exact_weight_sum_2j_1": true,
+    "T13_Hermitian_Gram_and_exact_weight_sum_2j_2": true,
+    "T13_Hermitian_Gram_and_exact_weight_sum_2j_3": true,
+    "T13_Hermitian_Gram_and_exact_weight_sum_2j_4": true,
+    "T13_Hermitian_Gram_and_exact_weight_sum_2j_5": true,
+    "T13_Hermitian_Gram_and_exact_weight_sum_2j_6": true,
+    "T13_Hermitian_Gram_and_exact_weight_sum_2j_7": true,
+    "T13_Hermitian_Gram_and_exact_weight_sum_2j_9": true,
+    "T13_Hermitian_Gram_and_exact_weight_sum_2j_14": true,
+    "T13_Hermitian_Gram_and_exact_weight_sum_2j_31": true,
+    "T16_independent_Hamilton_equations_case_0": true,
+    "T16_independent_Hamilton_equations_case_1": true,
+    "T16_independent_Hamilton_equations_case_2": true,
+    "T16_independent_Hamilton_equations_case_3": true
+  },
+  "evidence": {
+    "T03": {
+      "length": 5,
+      "all_inverse_coefficients": 1024,
+      "quaternion_evaluations": 256,
+      "nonzero_input_coefficients": 21,
+      "inner_product_factor": 256,
+      "norm_factor": 16,
+      "response_norm_squared": "26720",
+      "concatenation_trials": 6
+    },
+    "T07": [
+      {
+        "spectrum": [
+          1,
+          -1
+        ],
+        "arbitrary_D": [
+          [
+            "-3/2",
+            "-2/3"
+          ],
+          [
+            "-2/3",
+            "-1/4"
+          ]
+        ],
+        "commuting_part": [
+          [
+            "-3/2",
+            "0"
+          ],
+          [
+            "0",
+            "-1/4"
+          ]
+        ],
+        "Omega": [
+          [
+            "0",
+            "1/3"
+          ],
+          [
+            "-1/3",
+            "0"
+          ]
+        ]
+      },
+      {
+        "spectrum": [
+          0,
+          0
+        ],
+        "arbitrary_D": [
+          [
+            "-1",
+            "-1/3"
+          ],
+          [
+            "-1/3",
+            "0"
+          ]
+        ],
+        "commuting_part": [
+          [
+            "-1",
+            "-1/3"
+          ],
+          [
+            "-1/3",
+            "0"
+          ]
+        ],
+        "Omega": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ]
+      },
+      {
+        "spectrum": [
+          2,
+          1,
+          1
+        ],
+        "arbitrary_D": [
+          [
+            "-1/2",
+            "0",
+            "1/4"
+          ],
+          [
+            "0",
+            "1/4",
+            "2/5"
+          ],
+          [
+            "1/4",
+            "2/5",
+            "1/2"
+          ]
+        ],
+        "commuting_part": [
+          [
+            "-1/2",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1/4",
+            "2/5"
+          ],
+          [
+            "0",
+            "2/5",
+            "1/2"
+          ]
+        ],
+        "Omega": [
+          [
+            "0",
+            "0",
+            "-1/4"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "1/4",
+            "0",
+            "0"
+          ]
+        ]
+      },
+      {
+        "spectrum": [
+          0,
+          0,
+          0
+        ],
+        "arbitrary_D": [
+          [
+            "0",
+            "1/3",
+            "1/2"
+          ],
+          [
+            "1/3",
+            "1/2",
+            "3/5"
+          ],
+          [
+            "1/2",
+            "3/5",
+            "-1/2"
+          ]
+        ],
+        "commuting_part": [
+          [
+            "0",
+            "1/3",
+            "1/2"
+          ],
+          [
+            "1/3",
+            "1/2",
+            "3/5"
+          ],
+          [
+            "1/2",
+            "3/5",
+            "-1/2"
+          ]
+        ],
+        "Omega": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ]
+      },
+      {
+        "spectrum": [
+          3,
+          1,
+          -1,
+          -3
+        ],
+        "arbitrary_D": [
+          [
+            "1/2",
+            "2/3",
+            "3/4",
+            "-3/5"
+          ],
+          [
+            "2/3",
+            "3/4",
+            "-3/5",
+            "-1/3"
+          ],
+          [
+            "3/4",
+            "-3/5",
+            "-1/3",
+            "-1/7"
+          ],
+          [
+            "-3/5",
+            "-1/3",
+            "-1/7",
+            "0"
+          ]
+        ],
+        "commuting_part": [
+          [
+            "1/2",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3/4",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-1/3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "Omega": [
+          [
+            "0",
+            "-1/3",
+            "-3/16",
+            "1/10"
+          ],
+          [
+            "1/3",
+            "0",
+            "3/10",
+            "1/12"
+          ],
+          [
+            "3/16",
+            "-3/10",
+            "0",
+            "1/14"
+          ],
+          [
+            "-1/10",
+            "-1/12",
+            "-1/14",
+            "0"
+          ]
+        ]
+      },
+      {
+        "spectrum": [
+          2,
+          2,
+          -1,
+          -1
+        ],
+        "arbitrary_D": [
+          [
+            "1",
+            "1",
+            "-3/4",
+            "-2/5"
+          ],
+          [
+            "1",
+            "-3/4",
+            "-2/5",
+            "-1/6"
+          ],
+          [
+            "-3/4",
+            "-2/5",
+            "-1/6",
+            "0"
+          ],
+          [
+            "-2/5",
+            "-1/6",
+            "0",
+            "1/8"
+          ]
+        ],
+        "commuting_part": [
+          [
+            "1",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "-3/4",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-1/6",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1/8"
+          ]
+        ],
+        "Omega": [
+          [
+            "0",
+            "0",
+            "1/4",
+            "2/15"
+          ],
+          [
+            "0",
+            "0",
+            "2/15",
+            "1/18"
+          ],
+          [
+            "-1/4",
+            "-2/15",
+            "0",
+            "0"
+          ],
+          [
+            "-2/15",
+            "-1/18",
+            "0",
+            "0"
+          ]
+        ]
+      },
+      {
+        "spectrum": [
+          3,
+          1,
+          1,
+          -2,
+          -3
+        ],
+        "arbitrary_D": [
+          [
+            "3/2",
+            "-1",
+            "-1/2",
+            "-1/5",
+            "0"
+          ],
+          [
+            "-1",
+            "-1/2",
+            "-1/5",
+            "0",
+            "1/7"
+          ],
+          [
+            "-1/2",
+            "-1/5",
+            "0",
+            "1/7",
+            "1/4"
+          ],
+          [
+            "-1/5",
+            "0",
+            "1/7",
+            "1/4",
+            "1/3"
+          ],
+          [
+            "0",
+            "1/7",
+            "1/4",
+            "1/3",
+            "-3/10"
+          ]
+        ],
+        "commuting_part": [
+          [
+            "3/2",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-1/2",
+            "-1/5",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-1/5",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1/4",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "-3/10"
+          ]
+        ],
+        "Omega": [
+          [
+            "0",
+            "1/2",
+            "1/4",
+            "1/25",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0",
+            "0",
+            "0",
+            "-1/28"
+          ],
+          [
+            "-1/4",
+            "0",
+            "0",
+            "-1/21",
+            "-1/16"
+          ],
+          [
+            "-1/25",
+            "0",
+            "1/21",
+            "0",
+            "-1/3"
+          ],
+          [
+            "0",
+            "1/28",
+            "1/16",
+            "1/3",
+            "0"
+          ]
+        ]
+      },
+      {
+        "spectrum": [
+          2,
+          2,
+          2,
+          -1,
+          -1,
+          -4
+        ],
+        "arbitrary_D": [
+          [
+            "-3/2",
+            "-2/3",
+            "-1/4",
+            "0",
+            "1/6",
+            "2/7"
+          ],
+          [
+            "-2/3",
+            "-1/4",
+            "0",
+            "1/6",
+            "2/7",
+            "3/8"
+          ],
+          [
+            "-1/4",
+            "0",
+            "1/6",
+            "2/7",
+            "3/8",
+            "-1/3"
+          ],
+          [
+            "0",
+            "1/6",
+            "2/7",
+            "3/8",
+            "-1/3",
+            "-1/5"
+          ],
+          [
+            "1/6",
+            "2/7",
+            "3/8",
+            "-1/3",
+            "-1/5",
+            "-1/11"
+          ],
+          [
+            "2/7",
+            "3/8",
+            "-1/3",
+            "-1/5",
+            "-1/11",
+            "0"
+          ]
+        ],
+        "commuting_part": [
+          [
+            "-3/2",
+            "-2/3",
+            "-1/4",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "-2/3",
+            "-1/4",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "-1/4",
+            "0",
+            "1/6",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "3/8",
+            "-1/3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-1/3",
+            "-1/5",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "Omega": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "-1/18",
+            "-1/21"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-1/18",
+            "-2/21",
+            "-1/16"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-2/21",
+            "-1/8",
+            "1/18"
+          ],
+          [
+            "0",
+            "1/18",
+            "2/21",
+            "0",
+            "0",
+            "1/15"
+          ],
+          [
+            "1/18",
+            "2/21",
+            "1/8",
+            "0",
+            "0",
+            "1/33"
+          ],
+          [
+            "1/21",
+            "1/16",
+            "-1/18",
+            "-1/15",
+            "-1/33",
+            "0"
+          ]
+        ]
+      }
+    ],
+    "T08_formula_correction": {
+      "S": [
+        [
+          "2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "actual_simple_minus_double_gap": 1,
+      "uncentered_formula": "5",
+      "centered_formula": "1",
+      "S_centered": [
+        [
+          "2/3",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1/3",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-1/3"
+        ]
+      ]
+    },
+    "T13": {
+      "floating_tolerance": 1e-12,
+      "weight_sum_arithmetic": "Fraction",
+      "offdiagonal_Gram_arithmetic": "Python complex, orthonormal Hermitian ladder matrices",
+      "cases": [
+        {
+          "j": "0",
+          "dimension": 1,
+          "exact_coefficient": "0",
+          "max_scaled_Hermitian_Gram_error": 0.0
+        },
+        {
+          "j": "1/2",
+          "dimension": 2,
+          "exact_coefficient": "0",
+          "max_scaled_Hermitian_Gram_error": 0.0
+        },
+        {
+          "j": "1",
+          "dimension": 3,
+          "exact_coefficient": "1",
+          "max_scaled_Hermitian_Gram_error": 4.440892098500626e-16
+        },
+        {
+          "j": "3/2",
+          "dimension": 4,
+          "exact_coefficient": "6",
+          "max_scaled_Hermitian_Gram_error": 1.4802973661668753e-16
+        },
+        {
+          "j": "2",
+          "dimension": 5,
+          "exact_coefficient": "21",
+          "max_scaled_Hermitian_Gram_error": 1.691768418476429e-16
+        },
+        {
+          "j": "5/2",
+          "dimension": 6,
+          "exact_coefficient": "56",
+          "max_scaled_Hermitian_Gram_error": 1.2688263138573217e-16
+        },
+        {
+          "j": "3",
+          "dimension": 7,
+          "exact_coefficient": "126",
+          "max_scaled_Hermitian_Gram_error": 3.52451753849256e-17
+        },
+        {
+          "j": "7/2",
+          "dimension": 8,
+          "exact_coefficient": "252",
+          "max_scaled_Hermitian_Gram_error": 1.409807015397024e-17
+        },
+        {
+          "j": "9/2",
+          "dimension": 10,
+          "exact_coefficient": "792",
+          "max_scaled_Hermitian_Gram_error": 1.794299837778031e-17
+        },
+        {
+          "j": "7",
+          "dimension": 15,
+          "exact_coefficient": "6188",
+          "max_scaled_Hermitian_Gram_error": 6.889554645379123e-18
+        },
+        {
+          "j": "31/2",
+          "dimension": 32,
+          "exact_coefficient": "278256",
+          "max_scaled_Hermitian_Gram_error": 2.144988420873168e-18
+        }
+      ]
+    },
+    "T16": [
+      {
+        "position": [
+          "1/3",
+          "2/5"
+        ],
+        "p": "-2/7",
+        "kappa": "3/5",
+        "phi": "7/3",
+        "Hamilton_acceleration": [
+          "-763419/1680700",
+          "252/625"
+        ],
+        "reduced_field_acceleration": [
+          "-763419/1680700",
+          "252/625"
+        ]
+      },
+      {
+        "position": [
+          "1/2",
+          "-1/5"
+        ],
+        "p": "0",
+        "kappa": "2/3",
+        "phi": "5/2",
+        "Hamilton_acceleration": [
+          "-1592/3675",
+          "12/35"
+        ],
+        "reduced_field_acceleration": [
+          "-1592/3675",
+          "12/35"
+        ]
+      },
+      {
+        "position": [
+          "2/3",
+          "1/5"
+        ],
+        "p": "3/7",
+        "kappa": "0",
+        "phi": "8/3",
+        "Hamilton_acceleration": [
+          "-1279671/3136000",
+          "72/245"
+        ],
+        "reduced_field_acceleration": [
+          "-1279671/3136000",
+          "72/245"
+        ]
+      },
+      {
+        "position": [
+          "1/4",
+          "3/5"
+        ],
+        "p": "2/7",
+        "kappa": "4/5",
+        "phi": "-9/4",
+        "Hamilton_acceleration": [
+          "-2306624/4465125",
+          "752/1575"
+        ],
+        "reduced_field_acceleration": [
+          "-2306624/4465125",
+          "752/1575"
+        ]
+      }
+    ]
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.39"
+  },
+  "limits": [
+    "Finite verification does not prove universal claims",
+    "Hermitian-spin off-diagonal Gram comparison is floating point; exact weight sums are separately checked",
+    "No new trajectory integration or field-equation solution"
+  ]
+}

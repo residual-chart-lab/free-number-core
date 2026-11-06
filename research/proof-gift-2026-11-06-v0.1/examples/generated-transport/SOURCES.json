@@ -1,0 +1,30 @@
+{
+  "date_read_jst": "2026-11-05",
+  "core": {
+    "repository": "residual-chart-lab/free-number-core",
+    "commit": "9efc241d38e5ca2cd07f425b747bfb5d67ea0235",
+    "path": "core/04-length-two-exact-splitting.md",
+    "sha256": "60742f59f7bdfc56f4edf4da262e2a0a5f1d6908322469c7b055dacc8a9306d0",
+    "url": "https://github.com/residual-chart-lab/free-number-core/blob/9efc241d38e5ca2cd07f425b747bfb5d67ea0235/core/04-length-two-exact-splitting.md",
+    "read_scope": "Orthogonal tensor decomposition, compression, exact splitting; existing residual response A2=-2S and the deliberate non-claims. Unchanged source hash confirmed.",
+    "Core_modified": false
+  },
+  "primary_reference": {
+    "authors": "Joseph E. Avron and Alexander Elgart",
+    "title": "Adiabatic Theorem without a Gap Condition",
+    "url": "https://arxiv.org/abs/math-ph/9805022",
+    "pdf": "https://arxiv.org/pdf/math-ph/9805022",
+    "version": "v4, 19 April 1999",
+    "read_scope": "Geometric evolution discussion on page 5; equations (4)-(6) and the intertwining identity on pages 7-8 of the PDF.",
+    "used_for": "An existing projector-transport construction using [dot P,P]. No adiabatic theorem, quantum Hamiltonian approximation or physical transitionless protocol is claimed for this new finite matrix model."
+  },
+  "secondary_primary_record": {
+    "author": "Barry Simon",
+    "title": "Holonomy, the Quantum Adiabatic Theorem, and Berry's Phase",
+    "url": "https://doi.org/10.1103/PhysRevLett.51.2167",
+    "read_scope": "Original research abstract and bibliographic record only.",
+    "used_for": "Background that eigenspace evolution can induce a connection; not a numerical validation."
+  },
+  "not_used_as_evidence": "Search snippets from secondary summaries were not used as mathematical authority; the commutator formula was checked in the Avron-Elgart primary paper.",
+  "scope": "Conditional synthesis from fixed Core responses plus chosen geometric principles; no new Core multiplication or fundamental field law."
+}

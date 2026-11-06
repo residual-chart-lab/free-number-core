@@ -1,0 +1,36 @@
+{
+  "id": "FN-GENERAL-PROOFS-001-v0.1",
+  "independent_review_of_this_bundle": "ASTRA_WRITTEN_PROOFS_PASS_WITH_F01_CORRECTION_VERIFIED",
+  "scope": "T01-T16 under the stated hypotheses, plus the imaginary-gap and all-dimensional rank-one supplements; mathematical independent review, not proof-assistant certification.",
+  "initial_review": {
+    "commit": "86414fc13581b95ae34c8f821615542a8df4f487",
+    "report": "review/initial/REPORT_JA.md",
+    "finding": "F01: center general uniaxial matrices before amplitude quotient"
+  },
+  "correction_review": {
+    "commit": "78c6cbb2922939ba8fdf101f6cdb7de81ad306d4",
+    "prefix": "original-submissions/astra/2026-11-06-general-proofs-correction-audit-v0.1",
+    "report": "review/correction/REPORT_JA.md",
+    "report_sha256": "e3b2bcd9ae7964de82f530636a3c77379b268d798672c572ead615eab77ea3b1",
+    "corrected_proof_sha256": "3fe2ac101634d584fe8dd26c6f75087fa869d590a56355304d8cf340db9c79e5",
+    "target_correction_commit": "3bd56721a8eb53965ed44e124d171a68351f5620"
+  },
+  "local_report": "audits/2026-11-06-general-proofs-correction-audit-v0.1/REPORT_JA.md",
+  "finite_evidence": {
+    "fixed_main_checks": 29,
+    "Astra_independent_main_checks_replayed": 35,
+    "Astra_independent_supplement_checks_replayed": 18,
+    "arithmetic_scope": "Exact rational identities except separately labeled independent Hermitian-spin floating comparisons; all tolerances retained."
+  },
+  "prior_uniaxial_rule_audit": "ab4fe824508d79ac75fa941907f3416d62142664",
+  "final_proof_file_sha256": {
+    "01_ALGEBRA_AND_PATHS_EN.md": "308515a09e8fc5560e6c78453b561e838f31cb163289577c7e7f4caa25082eda",
+    "02_SPECTRAL_TRANSPORT_EN.md": "3fe2ac101634d584fe8dd26c6f75087fa869d590a56355304d8cf340db9c79e5",
+    "03_SPIN_AND_KK_EN.md": "bd58b3ab4910f3e66c296375655a59c10efa491e0a1aa939e175712f7829e64d",
+    "04_IMAGINARY_GAPS_EN.md": "13be5f2f989aaba2737b6b70e19790f3ebc10ed2df9671f6f0391257a17898f6",
+    "05_LINE_DIMENSION_CLASSIFICATION_EN.md": "6b188da5dfa251b2089bbca670d56990ab614a5a482da40eba24887e01650b77"
+  },
+  "formal_proof_assistant": false,
+  "Core_modified": false,
+  "original_drafts_and_finding_preserved": true
+}

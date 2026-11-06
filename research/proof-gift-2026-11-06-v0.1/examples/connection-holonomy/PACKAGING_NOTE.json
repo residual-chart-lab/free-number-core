@@ -1,0 +1,11 @@
+{
+  "packaging_revision": 2,
+  "date_jst": "2026-11-05",
+  "reason": "Visual inspection of the first package found clipped Japanese figure title. Adjusted plot margins and rebuilt before external handoff.",
+  "numerical_source_changed": false,
+  "protocol_changed": false,
+  "exact_results_changed": false,
+  "previous_archive_preserved": "packages/kk-free-numbers-transport-v0.1-2026-11-05.zip",
+  "previous_archive_sha256": "15b00b5e3354a86f3c1132581b1c579e81c6eb9a5c6852602503f1e858e0b894",
+  "previous_archive_bytes": 124806
+}

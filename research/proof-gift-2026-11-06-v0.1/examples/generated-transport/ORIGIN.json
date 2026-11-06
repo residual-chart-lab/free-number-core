@@ -1,0 +1,16 @@
+{
+  "id": "FN-GENERATED-CONNECTION-001-v0.1",
+  "owner": "Aki",
+  "author": "Ronnie",
+  "date_jst": "2026-11-05",
+  "prior_study": "KK-FN-HOLONOMY-001-v0.1",
+  "Core_note_sha256": "60742f59f7bdfc56f4edf4da262e2a0a5f1d6908322469c7b055dacc8a9306d0",
+  "Core_modified": false,
+  "independent_audit": "NOT_PERFORMED",
+  "mathematical_construction": "fixed response commutators, uniaxial spectral projector, minimal-twist transport in a common frame",
+  "extra_choices_explicit": true,
+  "unique_Core_law_claimed": false,
+  "original_64_check_output": "runs/2026-11-05-generated-connection/run",
+  "final_65_check_output": "runs/2026-11-05-generated-connection/run-final",
+  "development_note": "Added a scalar cargo-readout comparison to the original stabilizer counterexample, then reran all checks. Main generation formulas unchanged."
+}

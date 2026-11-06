@@ -1,0 +1,17 @@
+{
+  "id": "KK-FN-HOLONOMY-001-v0.1",
+  "author": "Ronnie",
+  "owner": "Aki",
+  "date_jst": "2026-11-05",
+  "focus": "needle application paused; connection geometry / Free Numbers",
+  "construction": "prescribed finite graph SU(2) connection + unchanged B2 coordinates",
+  "Core_note_sha256": "60742f59f7bdfc56f4edf4da262e2a0a5f1d6908322469c7b055dacc8a9306d0",
+  "Core_modified": false,
+  "independent_audit": "NOT_PERFORMED",
+  "geodesic_or_field_solution": false,
+  "runs": {
+    "initial": "runs/2026-11-05-kk-fn-holonomy/run",
+    "final": "runs/2026-11-05-kk-fn-holonomy/run-final"
+  },
+  "development_note": "After the first 35 checks, replaced a duplicate tensor check by an independent transported-axis formula and added exact Gaussian-rational 2x2 matrix composition; final 36 checks rerun."
+}

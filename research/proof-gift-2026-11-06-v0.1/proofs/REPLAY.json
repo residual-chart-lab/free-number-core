@@ -1,0 +1,14 @@
+{
+  "all_bytes_identical": true,
+  "files": {
+    "RESULTS.json": {
+      "sha256": "491fb4d982a6f7a1d5066816e3e1e0f80420e489764447c61a2f6c4e0e196dda",
+      "byte_identical": true
+    },
+    "EXACT_CERTIFICATES.json": {
+      "sha256": "89bacb4371ebcbfe49c5d3bb2ccf6ec602ecc9beece9c8327b30d48b5af8d414",
+      "byte_identical": true
+    }
+  },
+  "method": "Separate Python process; no redefinition of the proof plan."
+}

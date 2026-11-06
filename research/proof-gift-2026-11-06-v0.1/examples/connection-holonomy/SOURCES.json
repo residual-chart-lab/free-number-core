@@ -1,0 +1,23 @@
+{
+  "date_read_jst": "2026-11-05",
+  "core": {
+    "repository": "residual-chart-lab/free-number-core",
+    "commit": "9efc241d38e5ca2cd07f425b747bfb5d67ea0235",
+    "path": "core/04-length-two-exact-splitting.md",
+    "sha256": "60742f59f7bdfc56f4edf4da262e2a0a5f1d6908322469c7b055dacc8a9306d0",
+    "url": "https://github.com/residual-chart-lab/free-number-core/blob/9efc241d38e5ca2cd07f425b747bfb5d67ea0235/core/04-length-two-exact-splitting.md",
+    "local_read_scope": "Section headings and sections 8-13; deliberate non-claims and next propagation questions; the source SHA was independently recalculated from the unchanged vendored note.",
+    "copied_into_bundle": false,
+    "Core_modified": false
+  },
+  "physics_reference": {
+    "author": "Ryszard Kerner",
+    "title": "Generalization of the Kaluza-Klein theory for an arbitrary non-abelian gauge group",
+    "publication": "Annales de l'I.H.P., section A, 9(2), 143-152 (1968)",
+    "url": "https://www.numdam.org/item/AIHPA_1968__9_2_143_0/",
+    "pdf": "https://www.numdam.org/item/AIHPA_1968__9_2_143_0.pdf",
+    "read_scope": "Principal bundle and connection construction, pp.144-146; motion and internal charge-vector rotation, pp.150-151. No claim of reproducing the field equations.",
+    "used_for": "Choice of an exterior non-Abelian connection viewpoint. The finite graph links, sources, analyzer, and B2 transport rule are explicitly constructed here, not inferred as natural data from the paper."
+  },
+  "scope": "Existing gauge geometry and fixed Core B2 identities are connected as an exterior construction. This is not a new natural law, a full KK solution, or an identification of S with physical extra-spin components."
+}

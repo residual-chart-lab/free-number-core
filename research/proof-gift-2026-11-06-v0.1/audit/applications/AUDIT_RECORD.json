@@ -1,0 +1,479 @@
+{
+  "target_commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+  "date_jst": "2026-11-06",
+  "reviewer": "Astra",
+  "fetches": [
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "40_CURRENT/MagneticNeedle.md",
+      "blob_sha": "d0bfe1cb509c063e784dcd2b1eab75fbccda8898",
+      "bytes": 4343,
+      "sha256": "ebbfa66378b0a3210ed9a4572e5e50edee372cdeeeaa1373c59c14aae6049f08"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-generated-connection-v0.1/HANDOFF_JA.md",
+      "blob_sha": "835375d80ac549c3555a8943c41298b55e436fbd",
+      "bytes": 2005,
+      "sha256": "3380f81827e78f7c5ab4dc4c2b80a90b966413d65bb5b399c6350a8fd3dae38b"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-kk-fn-v0.1/HANDOFF_JA.md",
+      "blob_sha": "a70f146eb07ed5ba348e0a50825f3eeeccf797b4",
+      "bytes": 1847,
+      "sha256": "cd6f013ca5e93cd5d97c97b6d5ba91eb3e579693529923f668fb96726e4733d2"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-generated-connection-v0.1/study/README_JA.md",
+      "blob_sha": "482223c937c69e4726bcc5537d382249f5d11de5",
+      "bytes": 9772,
+      "sha256": "f3803680e67bbef367f0b5d34da611a8c9c402a8d41a9c8a7d0f25008a1476fe"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-generated-connection-v0.1/study/DERIVATION_JA.md",
+      "blob_sha": "780ae256d0acd27fee62fef05a9a39c967f0e70a",
+      "bytes": 4812,
+      "sha256": "a75405ffb6a43efff875a55924aa76ff6a4e6d340896b9991ee19d2816788499"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-generated-connection-v0.1/study/PROTOCOL.json",
+      "blob_sha": "e88fc340fe09e3eadba26b710cefd3471939b5ca",
+      "bytes": 2703,
+      "sha256": "030271d93148d7fc820cea4d718dee2d56f21b1b0f6941910ad515ee464d658f"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-generated-connection-v0.1/study/SOURCES.json",
+      "blob_sha": "eab4e39cb9da9454c562a3d99e789905e9b98e2b",
+      "bytes": 2017,
+      "sha256": "c6dfbf7d4c660da1d6b7c42d128fe70e797d2d740f0d32b5261d3a4c283a63e3"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-kk-fn-v0.1/study/README_JA.md",
+      "blob_sha": "fc9e0e053282c5387f9b03b9227be88a5f7af048",
+      "bytes": 9671,
+      "sha256": "b0a9bf4c87864d5f98b12d813ed04c6c6aac157222fba907ba985ef021ea4bd1"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-kk-fn-v0.1/study/DERIVATION_JA.md",
+      "blob_sha": "fe80bc31e2d04ed79c611c591c10bcd670b5ed5c",
+      "bytes": 3336,
+      "sha256": "2b01978d09f4423bcf12c2ae4c529b5f8a5f5541e798c7b17897da6e7bf4d13e"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-kk-fn-v0.1/study/PROTOCOL.json",
+      "blob_sha": "507f67ee815e8b6f4370f7fb701edf539d16d209",
+      "bytes": 3356,
+      "sha256": "1fb0cfe45d511b4eddff5a65a015fd210d8009cb734b34ceaa54eb9c7bc08fa3"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-kk-fn-v0.1/study/SOURCES.json",
+      "blob_sha": "c7dbcf68f70f83f9bead822f08339f9ef6363904",
+      "bytes": 1703,
+      "sha256": "80b7e8a6a384cc1330bd337a7e645264fedad6c635a310479b80189191e02ba8"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-generated-connection-v0.1/SHARING_MANIFEST.json",
+      "blob_sha": "e244414e77ab5a9dfa9a8f87c5fb30237abb390b",
+      "bytes": 3266,
+      "sha256": "e08279f83d4f909ff391b94593444707c769f52367f14a9bbeff288d73dde33e"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-generated-connection-v0.1/free-numbers-generated-connection-v0.1-2026-11-05.zip.sha256",
+      "blob_sha": "c30ae142b1b121d88d5258f09da5817fa2e24c99",
+      "bytes": 120,
+      "sha256": "3bd9eb3c28f18b766bdb0050779b241c74aaeb4a610da5c896791182694f3f5f"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-generated-connection-v0.1/study/INPUT.json",
+      "blob_sha": "82d8c76a4961a9bcb149d72e3dcc43b7aff1fcfd",
+      "bytes": 17002,
+      "sha256": "3c8f02c14bac2764f6b2f548c2e93ac83d692deaf3f97fa414ac53a78460ce94"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-generated-connection-v0.1/study/MANIFEST.json",
+      "blob_sha": "8a851bdd7f6a61459b0919307919e961310a06b8",
+      "bytes": 2318,
+      "sha256": "14ff399233e282250b6cb74401e3c0ac78e797c92587779574d773cbd90330cb"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-generated-connection-v0.1/study/ORIGIN.json",
+      "blob_sha": "98016d64ec1ad7549c07ee2d04bccf25351e6aa8",
+      "bytes": 836,
+      "sha256": "259e9ace8f5daeb40ea3ac06b743c7ebc4efb389f908d46f3d888add3ee360da"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-generated-connection-v0.1/study/b2.py",
+      "blob_sha": "2ece0c487aa7ec498b13335fd4cd2002f1dde181",
+      "bytes": 2820,
+      "sha256": "25880d2a6da94d179ef213f538943889484deb245ceb71c21dd1e1f733d56ea6"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-generated-connection-v0.1/study/bundle.py",
+      "blob_sha": "25c9ad1542a9d774a45fdbac1aba8184e4fc455c",
+      "bytes": 2163,
+      "sha256": "05907c0c3b79aa69526c7421ad213e49b7c389022ddcfffa31d243d375d9dfab"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-generated-connection-v0.1/study/model.py",
+      "blob_sha": "16fa59b0d89861e8cb7b54b3fde8976be760a83e",
+      "bytes": 13499,
+      "sha256": "c4e065b9bb331c32c799ebec0734fa9a200182765ab538ad400b3239ff361706"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-generated-connection-v0.1/study/plot.py",
+      "blob_sha": "1dacb3eb01c5e88bc3571224fd0430b73ae9ca3e",
+      "bytes": 2007,
+      "sha256": "fb170df90a1b4fa5ab4298a21c68a02e87e4842e4e2b5ae7cc87630c385b6a26"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-generated-connection-v0.1/study/prepare_inputs.py",
+      "blob_sha": "d2b7ab7deb8a1bc80a3a5a3b060f4cd4f5363f01",
+      "bytes": 1747,
+      "sha256": "ee7403177298f3f084864b77f96d59c64d7517a04aa7670c8ef3a64cd1b8502f"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-generated-connection-v0.1/study/requirements.txt",
+      "blob_sha": "51516223240a72759317b147e37f3ca2add4a886",
+      "bytes": 94,
+      "sha256": "3213fb584b7a0e7048ffdaa56c5b38eab3cfe1f90dc6e41cfa8e9fb2f472038f"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-generated-connection-v0.1/study/run/EXACT_CERTIFICATE.json",
+      "blob_sha": "e21b44cefb71e9acaf8261506b7e5d8691c7cc37",
+      "bytes": 95855,
+      "sha256": "788dfb0a0bedb9bb5f9f45cb0da5fc45d2a847d88db7e6ab1a81b023652bc878"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-generated-connection-v0.1/study/run/RESULTS.json",
+      "blob_sha": "c000d95dd05125bc1b665731b746b75a9a4565da",
+      "bytes": 4822,
+      "sha256": "8c8b5470fd025ba0b1a4edaa235dda9cb48666f12fded2b33347eb85afa2b6f6"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-kk-fn-v0.1/SHARING_MANIFEST.json",
+      "blob_sha": "cd4d956f6305c26954949c4f886bc8eead6acd6e",
+      "bytes": 3059,
+      "sha256": "90027d33ce9377f0044dcd772be27b2ce1c9d1a5f679bb16d61ac24c9b5a4613"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-kk-fn-v0.1/kk-free-numbers-transport-v0.1-2026-11-05-r2.zip.sha256",
+      "blob_sha": "ad541ecdbf67bb404afe1e69443356e63b5c7423",
+      "bytes": 115,
+      "sha256": "8e86f0d340f30763bbbabcd4b621b2cf9719db4725cfd5def110355d7f886383"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-kk-fn-v0.1/study/MANIFEST.json",
+      "blob_sha": "dbcc939905676f8294feedde642e87a6314baca9",
+      "bytes": 2259,
+      "sha256": "ec4bbb08be7c01562757cbab7975f1e59c2da8c6af1277e3751f011c5f58ac78"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-kk-fn-v0.1/study/ORIGIN.json",
+      "blob_sha": "8e6e2ffb6c13ad585a2c9ca90e750f5f808b224b",
+      "bytes": 802,
+      "sha256": "e70880346bf9157e0762925458e12d3c14802758aadffd79320af797fccd3dd8"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-kk-fn-v0.1/study/PACKAGING_NOTE.json",
+      "blob_sha": "f449d990330d54abf3ccd609325cb7f40cd0b097",
+      "bytes": 531,
+      "sha256": "5ef87a4d0cf1d7f246b61201f865ee19d2b019a9aa795db5d294921cbf597275"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-kk-fn-v0.1/study/bundle.py",
+      "blob_sha": "a9904a57b9679ac69a00d12f1218dfd2a21e558c",
+      "bytes": 2437,
+      "sha256": "7fa284480b82ee3d174604c294d71cc22c9ab0070f397379d2a6540bc7049754"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-kk-fn-v0.1/study/model.py",
+      "blob_sha": "060c07973f5a464bb7a407b1c3dcbac71c0a8cc5",
+      "bytes": 15416,
+      "sha256": "1a4c0451999b6ba253d370fd2b4891432a03cd72e0c7ccaf5617bb573abccbcc"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-kk-fn-v0.1/study/plot.py",
+      "blob_sha": "065bc656c0701f47b1064a0723e8ab294ed74009",
+      "bytes": 2171,
+      "sha256": "3aca73e88b2fa2735a31ca93a1f13f83f93b799da246d90bc8b26cabdd26c370"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-kk-fn-v0.1/study/requirements.txt",
+      "blob_sha": "e8226be6539fe22285a5af9c80421bf395b6cecc",
+      "bytes": 102,
+      "sha256": "a86d27b5262962626d0c794dd84316d41725c979b8df59c20e1d7d890b33b56a"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-kk-fn-v0.1/study/run/CONNECTION.json",
+      "blob_sha": "c0c8709ff278b566a1a250329de0feea02a94758",
+      "bytes": 3302,
+      "sha256": "0ec8eab7a86d0f6a1c53354961a6020315918ff39e012e59d15a84cf375bc2ef"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-kk-fn-v0.1/study/run/EXACT_CERTIFICATE.json",
+      "blob_sha": "3997bf6f58c1a895c12232c4f468d0881b53b8bb",
+      "bytes": 2954,
+      "sha256": "2e5b32ecbaf8d5259ebe98a035e5e5ebefe8c6ef6faaf8318268e17020c0c662"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-kk-fn-v0.1/study/run/RESULTS.json",
+      "blob_sha": "5d8578281f5048e47dc6edff2d72f256f813d98c",
+      "bytes": 3961,
+      "sha256": "199a7435743d6d19a76d97e4f8c7c30e0890791957fe1cc4e31a46d5ad15af96"
+    },
+    {
+      "repository": "residual-chart-lab/free-number-core",
+      "commit": "9efc241d38e5ca2cd07f425b747bfb5d67ea0235",
+      "path": "core/04-length-two-exact-splitting.md",
+      "blob_sha": "58e7fc040ff12bd3d9136d15d44e07e73b40e907",
+      "bytes": 16261,
+      "sha256": "60742f59f7bdfc56f4edf4da262e2a0a5f1d6908322469c7b055dacc8a9306d0"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-generated-connection-v0.1/free-numbers-generated-connection-v0.1-2026-11-05.zip",
+      "blob_sha": "30187c7e59e944f3ad513f3385d6e7693b4e36cd",
+      "bytes": 109315,
+      "sha256": "5efda2fd9dd4b7c0fce8d6b2e2985b1ca7439db43c040a7da592ee62b345bfd9"
+    },
+    {
+      "repository": "[original research workspace]",
+      "commit": "1d70d4146bce0492c9b7bedc4702bbb23bd1de30",
+      "path": "original-submissions/ronnie/2026-11-05-kk-fn-v0.1/kk-free-numbers-transport-v0.1-2026-11-05-r2.zip",
+      "blob_sha": "395476675ed84f763a747d458e178b1fbbe0a65a",
+      "bytes": 125520,
+      "sha256": "83b43244fb766f3592da94a92eae0e7f177e8d0f8103414141c7376f8443ecf3"
+    }
+  ],
+  "verification": {
+    "A": {
+      "checks": {
+        "archive_manifest:README_JA.md": true,
+        "archive_manifest:DERIVATION_JA.md": true,
+        "archive_manifest:PROTOCOL.json": true,
+        "archive_manifest:model.py": true,
+        "archive_manifest:plot.py": true,
+        "archive_manifest:PACKAGING_NOTE.json": true,
+        "archive_manifest:requirements.txt": true,
+        "archive_manifest:ORIGIN.json": true,
+        "archive_manifest:SOURCES.json": true,
+        "archive_manifest:bundle.py": true,
+        "archive_manifest:run/CONNECTION.json": true,
+        "archive_manifest:run/EXACT_CERTIFICATE.json": true,
+        "archive_manifest:run/RESULTS.json": true,
+        "archive_manifest:run/transport-comparison.png": true,
+        "archive_manifest:run/transport-comparison.svg": true,
+        "direct_vs_archive:bundle.py": true,
+        "direct_vs_archive:plot.py": true,
+        "direct_vs_archive:DERIVATION_JA.md": true,
+        "direct_vs_archive:PACKAGING_NOTE.json": true,
+        "direct_vs_archive:README_JA.md": true,
+        "direct_vs_archive:SOURCES.json": true,
+        "direct_vs_archive:requirements.txt": true,
+        "direct_vs_archive:PROTOCOL.json": true,
+        "direct_vs_archive:ORIGIN.json": true,
+        "direct_vs_archive:MANIFEST.json": true,
+        "direct_vs_archive:model.py": true,
+        "direct_vs_archive:run/RESULTS.json": true,
+        "direct_vs_archive:run/EXACT_CERTIFICATE.json": true,
+        "direct_vs_archive:run/CONNECTION.json": true,
+        "sharing_manifest:HANDOFF_JA.md": true,
+        "sharing_manifest:kk-free-numbers-transport-v0.1-2026-11-05-r2.zip": true,
+        "sharing_manifest:kk-free-numbers-transport-v0.1-2026-11-05-r2.zip.sha256": true,
+        "sharing_manifest:study/bundle.py": true,
+        "sharing_manifest:study/DERIVATION_JA.md": true,
+        "sharing_manifest:study/MANIFEST.json": true,
+        "sharing_manifest:study/model.py": true,
+        "sharing_manifest:study/ORIGIN.json": true,
+        "sharing_manifest:study/PACKAGING_NOTE.json": true,
+        "sharing_manifest:study/plot.py": true,
+        "sharing_manifest:study/PROTOCOL.json": true,
+        "sharing_manifest:study/README_JA.md": true,
+        "sharing_manifest:study/requirements.txt": true,
+        "sharing_manifest:study/run/CONNECTION.json": true,
+        "sharing_manifest:study/run/EXACT_CERTIFICATE.json": true,
+        "sharing_manifest:study/run/RESULTS.json": true,
+        "sharing_manifest:study/run/transport-comparison.png": true,
+        "sharing_manifest:study/run/transport-comparison.svg": true,
+        "sharing_manifest:study/SOURCES.json": true,
+        "RESULTS_excluding_runtime": true,
+        "byte_exact_replay:EXACT_CERTIFICATE.json": true,
+        "byte_exact_replay:CONNECTION.json": true
+      },
+      "all_pass": true,
+      "fixed_check_count": 36,
+      "original_runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "arithmetic": "fractions.Fraction; exact; floats never used for assertions"
+      },
+      "replay_runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "arithmetic": "fractions.Fraction; exact; floats never used for assertions"
+      },
+      "archive_file_count": 16
+    },
+    "B": {
+      "checks": {
+        "archive_manifest:README_JA.md": true,
+        "archive_manifest:DERIVATION_JA.md": true,
+        "archive_manifest:SOURCES.json": true,
+        "archive_manifest:ORIGIN.json": true,
+        "archive_manifest:PROTOCOL.json": true,
+        "archive_manifest:INPUT.json": true,
+        "archive_manifest:model.py": true,
+        "archive_manifest:b2.py": true,
+        "archive_manifest:prepare_inputs.py": true,
+        "archive_manifest:plot.py": true,
+        "archive_manifest:requirements.txt": true,
+        "archive_manifest:bundle.py": true,
+        "archive_manifest:run/EXACT_CERTIFICATE.json": true,
+        "archive_manifest:run/generated-transport.png": true,
+        "archive_manifest:run/generated-transport.svg": true,
+        "archive_manifest:run/RESULTS.json": true,
+        "direct_vs_archive:bundle.py": true,
+        "direct_vs_archive:plot.py": true,
+        "direct_vs_archive:DERIVATION_JA.md": true,
+        "direct_vs_archive:README_JA.md": true,
+        "direct_vs_archive:SOURCES.json": true,
+        "direct_vs_archive:requirements.txt": true,
+        "direct_vs_archive:b2.py": true,
+        "direct_vs_archive:INPUT.json": true,
+        "direct_vs_archive:PROTOCOL.json": true,
+        "direct_vs_archive:ORIGIN.json": true,
+        "direct_vs_archive:MANIFEST.json": true,
+        "direct_vs_archive:prepare_inputs.py": true,
+        "direct_vs_archive:model.py": true,
+        "direct_vs_archive:run/RESULTS.json": true,
+        "direct_vs_archive:run/EXACT_CERTIFICATE.json": true,
+        "sharing_manifest:free-numbers-generated-connection-v0.1-2026-11-05.zip": true,
+        "sharing_manifest:free-numbers-generated-connection-v0.1-2026-11-05.zip.sha256": true,
+        "sharing_manifest:HANDOFF_JA.md": true,
+        "sharing_manifest:study/b2.py": true,
+        "sharing_manifest:study/bundle.py": true,
+        "sharing_manifest:study/DERIVATION_JA.md": true,
+        "sharing_manifest:study/INPUT.json": true,
+        "sharing_manifest:study/MANIFEST.json": true,
+        "sharing_manifest:study/model.py": true,
+        "sharing_manifest:study/ORIGIN.json": true,
+        "sharing_manifest:study/plot.py": true,
+        "sharing_manifest:study/prepare_inputs.py": true,
+        "sharing_manifest:study/PROTOCOL.json": true,
+        "sharing_manifest:study/README_JA.md": true,
+        "sharing_manifest:study/requirements.txt": true,
+        "sharing_manifest:study/run/EXACT_CERTIFICATE.json": true,
+        "sharing_manifest:study/run/generated-transport.png": true,
+        "sharing_manifest:study/run/generated-transport.svg": true,
+        "sharing_manifest:study/run/RESULTS.json": true,
+        "sharing_manifest:study/SOURCES.json": true,
+        "RESULTS_excluding_runtime": true,
+        "byte_exact_replay:EXACT_CERTIFICATE.json": true
+      },
+      "all_pass": true,
+      "fixed_check_count": 65,
+      "original_runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "arithmetic": "Fraction; exact equalities"
+      },
+      "replay_runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "arithmetic": "Fraction; exact equalities"
+      },
+      "archive_file_count": 17
+    }
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.39"
+  },
+  "independent_script_sha256": "b95e2f6da8c1e5a6d82e255ad1d0e97661f341dc602b233a4dc1110d56566dbd",
+  "commands": [
+    "python -I -B <A-study>/model.py --out connection-audit/replay-A",
+    "python -I -B <B-study>/model.py --out connection-audit/replay-B",
+    "python -I -B connection-audit/independent_checks.py --source connection-audit/source --out connection-audit/INDEPENDENT_RESULTS.json"
+  ],
+  "verdict": {
+    "A": "PASS_WITHIN_FIXED_SCOPE",
+    "B": "PASS_FOR_DERIVATION_AND_FIXED_CASES_WITH_P2_INPUT_DOMAIN_NOTE"
+  },
+  "findings": [
+    {
+      "id": "P2-B-INPUT-DOMAIN",
+      "severity": "P2",
+      "scope": "Input contract/documentation; fixed examples remain valid",
+      "evidence": "INDEPENDENT_RESULTS.json:evidence.B_rational_domain_counterexample"
+    }
+  ],
+  "independent_check_count": 81,
+  "fetched_vs_reviewed": "39 files retrieved and hashed; main derivations, model sources, b2.py, protocol, Core and result evidence reviewed. Auxiliary plotting/packaging code only integrity-checked; not executed."
+}
