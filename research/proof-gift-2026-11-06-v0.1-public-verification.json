@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "anonymous": true,
+  "authentication_sent": false,
+  "release_url": "https://github.com/residual-chart-lab/free-number-core/releases/tag/proof-gift-2026-11-06-v0.1",
+  "published_at": "2026-11-06T09:20:58Z",
+  "assets": [
+    {
+      "file": "free-numbers-proof-gift-2026-11-06-v0.1.zip",
+      "url": "https://github.com/residual-chart-lab/free-number-core/releases/download/proof-gift-2026-11-06-v0.1/free-numbers-proof-gift-2026-11-06-v0.1.zip",
+      "bytes": 376831,
+      "sha256": "730b7c3f063bedd7ef54790f54ba0a59b7c155c002e9b1e266c2d876a4c07768",
+      "api_digest_matched": true
+    },
+    {
+      "file": "SHA256SUMS.txt",
+      "url": "https://github.com/residual-chart-lab/free-number-core/releases/download/proof-gift-2026-11-06-v0.1/SHA256SUMS.txt",
+      "bytes": 111,
+      "sha256": "1a8325965b395ec5cb78feeefe220b95dd18af148489b2bfa4f8da638722c307",
+      "api_digest_matched": true
+    },
+    {
+      "file": "FIRST_USE.md",
+      "url": "https://github.com/residual-chart-lab/free-number-core/releases/download/proof-gift-2026-11-06-v0.1/FIRST_USE.md",
+      "bytes": 4708,
+      "sha256": "c2b2b8469e3b3ee5ef52d283821770ae159465f904ce56c7b0c0046e8f93dcfe",
+      "api_digest_matched": true
+    }
+  ],
+  "files": 93,
+  "verified_manifest_files": 92,
+  "check_groups": 9,
+  "byte_identical_saved_evidence": 7,
+  "Core_modified": false,
+  "scope": "Public distribution retrieval and execution by Ronnie; independent mathematical review remains separately scoped."
+}

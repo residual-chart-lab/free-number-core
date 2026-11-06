@@ -23,6 +23,7 @@ Two applications explore KK-inspired connection geometry and residual transport.
 - [Start here (English)](research/proof-gift-2026-11-06-v0.1/README.md)
 - [日本語の入口](research/proof-gift-2026-11-06-v0.1/README_JA.md)
 - [Relationship to the frozen Core](research/proof-gift-2026-11-06-v0.1/CORE_RELATIONSHIP.md)
+- [Public download and execution verification](research/proof-gift-2026-11-06-v0.1-public-verification.json)
 
 All-grade reconstruction is already a Core result. The companion distinguishes
 rederivations, explicit bounds and application-specific hypotheses. Its audit
